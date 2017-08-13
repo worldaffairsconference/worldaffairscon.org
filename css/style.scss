@@ -13,7 +13,8 @@ Written by @malsf21, @jacksarick, @obrien66
 $primary-color: #2a262a;
 $spacing-unit: 1em;
 
-$instagram-color: #9C27B0;
+$twitter-blue: #1DA1F3;
+$instagram-purple: #9C27B0;
 
 // Font Imports
 
@@ -250,6 +251,9 @@ a.contact-color:hover{
 a.contact-color:visited {
 	color: #FFF;
 }
+.bg-twitter{
+	background-color: $twitter-blue;
+}
 .bg-instagram {
-	background-color:$instagram-color;
+	background-color:$instagram-purple;
 }

@@ -7,7 +7,7 @@ permalink: /plenaries/
 <div class="container">
   {% for plenary in site.plenaries %}
   {% cycle 'group1': '<div class="card-deck mt-2">', '' %}
-      <div class="card card-block">
+      <div class="card card-body">
         <div class="row">
           <div class="col-sm-4">
             <img class="img-fluid" src="{{site.baseurl}}/img/plen/{{plenary.pic}}" alt="{plenary.title} picture"/>

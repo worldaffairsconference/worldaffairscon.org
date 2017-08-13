@@ -5,7 +5,7 @@ permalink: /faq/
 ---
 
 <div class="container">
-  <div class="card card-block">
+  <div class="card card-body">
     <h1 class="text-xs-center">Frequently Asked Questions</h1>
     <h2 class="text-xs-center">Click on a question to expand the answer.</h2>
     <p class="lead text-xs-center">
@@ -13,7 +13,7 @@ permalink: /faq/
     </p>
   </div>
   {% for category in site.data.faq %}
-    <div class="card card-block mt-2">
+    <div class="card card-body mt-2">
       <h2 class="text-xs-center">{{ category[0] | capitalize }}</h2>
       <div id="accordion-{{category[0] | replace: ' ',''}}" role="tablist" aria-multiselectable="true">
         {% for question in category[1] %}
@@ -26,7 +26,7 @@ permalink: /faq/
             </h5>
           </div>
           <div id="collapse-{{question[0]}}" class="collapse" role="tabpanel" aria-labelledby="heading-{{question[0]}}">
-            <div class="card-block">
+            <div class="card-body">
               {{question[1].answer | markdownify}}
             </div>
           </div>
