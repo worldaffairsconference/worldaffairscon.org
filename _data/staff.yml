@@ -1,79 +1,48 @@
-kcheema:
-  name: Karman Cheema
+jsamek:
+  name: Julian Samek
   primary: Conference Chair
-  image: kcheema.jpg
+  image: jsamek.jpg
 
-kpollock:
-  name: Katya Pollock
+kkim:
+  name: Kathy Kim
   primary: Conference Chair
-  image: kpollock.jpg
-
-mjagdeo:
-  name: Matthew Jagdeo
-  primary: Head of Programs
-  image: mattjagdeo.jpg
+  image: avatar.jpg
 
 mwang:
   name: Matthew Wang
-  primary: Head of Registration and Media
-  secondary: Head of Technology
+  primary: Director General
   bio: How do Web Developers mark their work? They Graphic De-sign it.
   image: mattwang.png
   github: malsf21
 
-akhemani:
-  name: Anika Khemani
+rmonga:
+  name: Rohan Monga
+  primary: Secretary-Treasurer
+  image: rmonga.jpg
+
+aquinn:
+  name: Alexander Quinn
   primary: Head of Programs
-  image: akhemani.jpg
+  image: alexquinn.jpg
 
-pnicoletti:
-  name: Philip Nicoletti
+sosak:
+  name: Simon Osak
   primary: Head of Operations
-  image: philnicoletti.jpg
-
-sandrade:
-  name: Scotty Andrade
-  primary: Head of Security
-  image: scottyandrade.jpg
-
-kliu:
-  name: Kathy Liu
-  primary: Head of Security
-  image: avatar.jpg
-
-kparamaanantham:
-  name: Komahan Paramaanantham
-  primary: Secretary Treasurer
-  image: avatar.jpg
+  image: simonosak.jpg
 
 dnd:
   name: David Niddam-Dent
   primary: Head of Registration and Media
   image: dnd.jpg
 
-aquinn:
-  name: Alexander Quinn
-  primary: Head of Registration and Media
-  image: alexquinn.jpg
-
-sosak:
-  name: Simon Osak
-  primary: Head of Registration and Media
-  image: simonosak.jpg
-
-kkim:
-  name: Kathy Kim
-  primary: Head of Registration and Media
-  image: avatar.jpg
-
-elozhkin:
-  name: Emma Lozhkin
-  primary: Head of Registration and Media
-  image: elozhkin.jpg
+azakaria:
+  name: Ahed Zakaria
+  primary: Head of Security
+  image: azakaria.jpg
 
 hgoldhar:
   name: Hilli Goldhar
-  primary: Plenary Head
+  primary: Head of Security
   image: hgoldhar.jpg
 
 ecavanagh:
@@ -86,14 +55,9 @@ apaliwal:
   primary: Plenary Head
   image: apaliwal.jpg
 
-jamoranto:
-  name: Jacqueline Amoranto
-  primary: Plenary Head
-  image: jamoranto.jpg
-
 arothman:
   name: Adam Rothman
-  primary: Plenary Head
+  primary: Head of Opening Panel
   image: avatar.jpg
 
 kchan:
@@ -106,11 +70,6 @@ kparamaanantham2:
   primary: Plenary Head
   image: avatar.jpg
 
-azakaria:
-  name: Ahed Zakaria
-  primary: Plenary Head
-  image: azakaria.jpg
-
 cmahony:
   name: Conrad Mahony
   primary: Plenary Head
@@ -121,30 +80,15 @@ nmelchoir:
   primary: Plenary Head
   image: nmelchoir.jpg
 
-jsamek:
-  name: Julian Samek
-  primary: Plenary Head
-  image: jsamek.jpg
-
 cwaldie:
   name: Claire Waldie
   primary: Plenary Head
   image: cwaldie.jpg
 
-ebraithwaite:
-  name: Emerson Braithwaite
-  primary: Opening Addresses Head
-  image: ebraithwaite.jpg
-
 hkedwell:
   name: Hayley Kedwell
   primary: Opening Addresses Head
   image: avatar.jpg
-
-mhoaken:
-  name: Miles Hoaken
-  primary: Closing Addresses Head
-  image: mhoaken.jpg
 
 areeves:
   name: Alex Phillip-Reeves
@@ -179,17 +123,6 @@ sguo:
   image: sguo.jpg
   github: simonguozirui
 
-mmcgovern:
-  name: Michael Mcgovern
-  primary: Web Developer
-  secondary: Registration Team
-  image: mmcgovern.jpg
-
-shooey:
-  name: Shaan Hooey
-  primary: Web Developer
-  image: shooey.png
-
 aharradence:
   name: Aidan Harradence
   primary: Lead Graphic Designer
@@ -210,16 +143,6 @@ akazakov:
   name: Alexander Kazakov
   primary: Graphic Designer
   image: akazakov.jpg
-
-# ttran:
-#   name: Trung Tran
-#   primary: Graphic Designer
-#   image: ttran.jpg
-#
-# rbaird:
-#   name: Rahim Baird
-#   primary: Graphic Designer
-#   image: avatar.jpg
 
 achan:
   name: Ambrose Chan
@@ -246,58 +169,3 @@ ahwang:
   name: Alexander Hwang
   primary: Video Crew Lead
   image: ahwang.png
-
-tkemp:
-  name: Takoda Kemp
-  primary: Video Crew
-  image: tkemp.jpg
-
-rwong:
-  name: Robert Wong
-  primary: Video Crew
-  image: rwong.jpg
-
-bthorburn:
-  name: Blake Thorburn
-  primary: Video Crew
-  image: avatar.jpg
-
-eelia:
-  name: Emilio Elia
-  primary: Video Crew
-  image: avatar.jpg
-
-dreid:
-  name: Daniel Reid
-  primary: Video Crew
-  image: dreid.jpg
-
-rdean:
-  name: Rob Dean
-  primary: Registration Team
-  image: rdean.jpg
-
-bleung:
-  name: Brent Leung
-  primary: Registration Team
-  image: bleung.jpg
-
-rmonga:
-  name: Rohan Monga
-  primary: Registration Team
-  image: rmonga.jpg
-
-gjiang:
-  name: Geoffrey Jiang
-  primary: Registration Team
-  image: gjiang.jpg
-
-cpryde:
-  name: Cooper Pryde
-  primary: Registration Team
-  image: avatar.jpg
-
-apasricha:
-  name: Aryan Pasricha
-  primary: Registration Team
-  image: avatar.jpg
