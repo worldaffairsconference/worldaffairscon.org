@@ -11,6 +11,7 @@ kkim:
 mwang:
   name: Matthew Wang
   primary: Director General
+  secondary: Web Developer
   bio: How do Web Developers mark their work? They Graphic De-sign it.
   image: mattwang.png
   github: malsf21
@@ -25,124 +26,191 @@ aquinn:
   primary: Head of Programs
   image: alexquinn.jpg
 
+hkedwell:
+  name: Hayley Kedwell
+  primary: Head of Programs
+  image: avatar.jpg
+
 sosak:
   name: Simon Osak
   primary: Head of Operations
   image: simonosak.jpg
-
-dnd:
-  name: David Niddam-Dent
-  primary: Head of Registration and Media
-  image: dnd.jpg
-
-azakaria:
-  name: Ahed Zakaria
-  primary: Head of Security
-  image: azakaria.jpg
 
 hgoldhar:
   name: Hilli Goldhar
   primary: Head of Security
   image: hgoldhar.jpg
 
-ecavanagh:
-  name: Eve Cavanagh
-  primary: Plenary Head
-  image: ecavanagh.jpg
+sguo:
+  name: Simon Zirui Guo
+  primary: Head of Technology
+  image: sguo.jpg
+  github: simonguozirui
+
+azakaria:
+  name: Ahed Zakaria
+  primary: Head of Security
+  secondary: Head of Registration
+  image: azakaria.jpg
+
+owang:
+  name: Oscar Wang
+  primary: Head of Registration
+  image: avatar.jpg
+
+jmace:
+  name: John Mace
+  primary: Head of Operation Technologies
+  image: johnmace.png
+  github: j0hnmace
+
+gkung:
+  name: Gorden Kung
+  primary: Head of Media
+  secondary: Lead Package Designer
+  image: gkung.jpg
+
+cwaldie:
+  name: Claire Waldie
+  primary: Head of Communications
+  image: cwaldie.jpg
+
+kchan:
+  name: Katie Chan
+  primary: Head of Communications
+  image: kchan.jpg
 
 apaliwal:
   name: Aryan Paliwal
-  primary: Plenary Head
+  primary: Head of Communications
   image: apaliwal.jpg
 
 arothman:
   name: Adam Rothman
-  primary: Head of Opening Panel
+  primary: Opening Panel Head
   image: avatar.jpg
 
-kchan:
-  name: Katie Chan
-  primary: Plenary Head
-  image: kchan.jpg
-
-kparamaanantham2:
-  name: Kohilan Paramaanantham
-  primary: Plenary Head
-  image: avatar.jpg
+ecavanagh:
+  name: Eve Cavanagh
+  primary: Opening Panel Head
+  image: ecavanagh.jpg
 
 cmahony:
   name: Conrad Mahony
-  primary: Plenary Head
+  primary: Closing Panel Head
   image: cmahony.jpg
 
 nmelchoir:
   name: Nicole Melchoir
-  primary: Plenary Head
+  primary: Closing Panel Head
   image: nmelchoir.jpg
 
-cwaldie:
-  name: Claire Waldie
+vchindea:
+  name: Vladimir Chindea
   primary: Plenary Head
-  image: cwaldie.jpg
+  secondary: China
+  image: vchindea.jpg
 
-hkedwell:
-  name: Hayley Kedwell
-  primary: Opening Addresses Head
+elee:
+  name: Elaine Lee
+  primary: Plenary Head
+  secondary: China
+  image: avatar.jpg
+
+shooey:
+  name: Shaan Hooey
+  primary: Plenary Head
+  secondary: Cryptocurrencies
+  image: avatar.jpg
+
+zazim:
+  name: Zainab Azim
+  primary: Plenary Head
+  secondary: Cryptocurrencies
+  image: avatar.jpg
+
+moneill:
+  name: Molly O'Neill
+  primary: Plenary Head
+  secondary: Legalisation of Drugs
+  image: avatar.jpg
+
+eullman:
+  name: Ethan Ullman
+  primary: Plenary Head
+  secondary: Legalisation of Drugs
+  image: avatar.jpg
+
+akapur:
+  name: Arjun Kapur
+  primary: Plenary Head
+  secondary: Earth Overburdened
+  image: avatar.jpg
+
+amancini:
+  name: Athena Mancini
+  primary: Plenary Head
+  secondary: Earth Overburdened
   image: avatar.jpg
 
 areeves:
   name: Alex Phillip-Reeves
-  primary: Closing Addresses Head
+  primary: Plenary Head
+  secondary: Feminism
   image: areeves.jpg
 
-jmace:
-  name: John Mace
-  primary: Head of Audio/Visual Team
-  secondary: Web Developer
-  bio: There are some who call me John Mace. That is my name.
-  image: johnmace.png
-  github: j0hnmace
-
-ssobie:
-  name: Sloan Sobie
-  primary: Audio/Visual Team
+kparamaanantham:
+  name: Kohilan Paramaanantham
+  primary: Plenary Head
+  secondary: Feminism
   image: avatar.jpg
 
-nobrien:
-  name: Nicholas O'Brien
-  primary: Web Developer
-  secondary: Audio/Visual Team
-  bio: I heard I got to work with cookies.
-  image: nickobrien.jpg
-  github: obrien66
+sqaadri:
+  name: Shafiq Qaadri
+  primary: Plenary Head
+  secondary: WMDs
+  image: avatar.jpg
 
-sguo:
-  name: Simon Zirui Guo
-  primary: Web Developer
-  secondary: Registration Team
-  image: sguo.jpg
-  github: simonguozirui
+jmdouglas:
+  name: Jade Mair Douglas
+  primary: Plenary Head
+  secondary: WMDs
+  image: avatar.jpg
+
+jliao:
+  name: James Liao
+  primary: Assistant Programs
+  image: avatar.jpg
+
+apasricha:
+  name: Aryan Pasricha
+  primary: Assistant Programs
+  image: avatar.jpg
+
+akazakov:
+  name: Alexander Kazakov
+  primary: Lead Graphic Designer
+  image: akazakov.jpg
 
 aharradence:
   name: Aidan Harradence
-  primary: Lead Graphic Designer
+  primary: Specialised Graphic Designer
   image: aharradence.jpg
-
-gkung:
-  name: Gorden Kung
-  primary: Lead Package Designer
-  image: gkung.jpg
 
 alizzola:
   name: Aidan Lizzola
   primary: Graphic Designer
-  bio: I am Aidan Lizzola
   image: alizzola.jpg
 
-akazakov:
-  name: Alexander Kazakov
+spandiaraju:
+  name: Surya Pandiaraju
   primary: Graphic Designer
-  image: akazakov.jpg
+  image: avatar.jpg
+
+bsandeela:
+  name: Bassem Sandeela
+  primary: Graphic Designer
+  image: avatar.jpg
 
 achan:
   name: Ambrose Chan
@@ -154,18 +222,55 @@ ttam:
   primary: Package Designer
   image: ttam.jpg
 
-clau:
-  name: Carson Lau
+oosthuizen:
+  name: Omar Oosthuizen
   primary: Package Designer
-  secondary: Audio/Visual Team
-  image: clau.jpg
+  image: avatar.jpg
 
-vchindea:
-  name: Vladimir Chindea
+vli:
+  name: Victor Li
+  primary: Package Designer
+  image: avatar.jpg
+
+bbroer:
+  name: Ben Broer
+  primary: Package Designer
+  image: avatar.jpg
+
+nobrien:
+  name: Nicholas O'Brien
+  primary: Web Developer
+  secondary: Audio/Visual Team
+  bio: I heard I got to work with cookies.
+  image: nickobrien.jpg
+  github: obrien66
+
+# rknowles:
+#   name: Robbie Knowles
+#   primary: Web Developer
+#   image: avatar.jpg
+
+sstern:
+  name: Sheldon Stern
   primary: Video Crew Lead
-  image: vchindea.jpg
+  image: avatar.jpg
 
 ahwang:
   name: Alexander Hwang
   primary: Video Crew Lead
   image: ahwang.png
+
+mroden:
+  name: Morley Roden
+  primary: Video Crew
+  image: avatar.jpg
+
+ssobie:
+  name: Sloan Sobie
+  primary: Audio/Visual Team
+  image: avatar.jpg
+
+clau:
+  name: Carson Lau
+  primary: Audio/Visual Team
+  image: clau.jpg
