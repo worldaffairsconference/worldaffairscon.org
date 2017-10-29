@@ -1,9 +1,17 @@
 <footer class="footer text-center mt-3">
   <div class="container">
-    The {{ site.title }} website, made by the WAC team with <span class="fa fa-heart" style="color:red;"></span> and <a href="{{site.github}}" style="color:inherit;"><span class="fa fa-github"></span></a>
+    <p>
+      The {{ site.title }} website, made by the WAC team with <span class="fa fa-heart" style="color:red;"></span> and <a href="{{site.github}}" style="color:inherit;"><span class="fa fa-github"></span></a>
+    </p>
+    <p>
+      Have any questions or concerns? Check out <a class="white-icon" href="{{site.baseurl}}/faq/" style="text-decoration:underline;">our FAQ</a> or get in touch with us!
+    </p>
+    <a href="{{site.email}}"><span class="fa fa-fw fa-2x fa-envelope white-icon"></span></a>
+    <a href="{{site.facebook}}"><span class="fa fa-fw fa-2x fa-facebook white-icon"></span></a>
+    <a href="{{site.instagram}}"><span class="fa fa-fw fa-2x fa-instagram white-icon"></span></a>
+    <a href="{{site.twitter}}"><span class="fa fa-fw fa-2x fa-twitter white-icon"></span></a>
   </div>
 </footer>
 <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/js/tether.min.js" | prepend:site.baseurl}}"></script>
-
