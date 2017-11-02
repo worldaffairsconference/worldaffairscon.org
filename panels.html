@@ -4,7 +4,18 @@ title : "Addresses"
 permalink : /addresses/
 ---
 <div class="container">
+	<div class="card card-body mb-5">
+		<h1 class="text-center">Opening Address: The Rise of Globalization</h1>
+		<p>
+			More information is coming soon.
+		</p>
+	</div>
 	<div class="card card-body">
+		<h1 class="text-center">Closing Address</h1>
+		<p>
+			More information is coming soon.
+		</p>
+		{% comment %}
 		<h1 class="text-center">Opening Address: {{ site.data.panel.opening.title}}</h1>
 		<p>{{ site.data.panel.opening.blurb}}</p>
 		{% for item in site.data.panel.opening.speakers %}
@@ -31,5 +42,6 @@ permalink : /addresses/
 				</div>
 			</div>
 		{% endfor %}
+		{% endcomment %}
 	</div>
 </div>
