@@ -2,6 +2,7 @@ jsamek:
   name: Julian Samek
   primary: Conference Chair
   image: jsamek.jpg
+  email: julian.samek@ucc.on.ca
 
 kkim:
   name: Kathy Kim
@@ -14,7 +15,9 @@ mwang:
   secondary: Web Developer
   bio: How do Web Developers mark their work? They Graphic De-sign it.
   image: mattwang.png
+  email: matt@matthewwang.me
   github: malsf21
+  site: https://matthewwang.me
 
 rmonga:
   name: Rohan Monga
@@ -46,6 +49,7 @@ sguo:
   primary: Head of Technology
   image: sguo.jpg
   github: simonguozirui
+  site: http://simonguo.tech
 
 azakaria:
   name: Ahed Zakaria
@@ -244,6 +248,7 @@ nobrien:
   bio: I heard I got to work with cookies.
   image: nickobrien.jpg
   github: obrien66
+  site: http://obrien.tech
 
 # rknowles:
 #   name: Robbie Knowles

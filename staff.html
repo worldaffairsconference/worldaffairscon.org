@@ -16,7 +16,9 @@ permalink: /staff/
               <h4 class="card-title">{{ item[1].name }}</h4>
               <h5>{{item[1].primary}}</h5>
               {% if item[1].secondary%}<h6>{{item[1].secondary}}</h6>{% endif %}
+              {% if item[1].email%}<a class="black-icon" href="mailto:{{item[1].email}}"><span class="fa fa-2x fa-envelope"></span></a>{% endif %}
               {% if item[1].github%}<a class="black-icon" href="https://github.com/{{item[1].github}}"><span class="fa fa-2x fa-github"></span></a>{% endif %}
+              {% if item[1].site%}<a class="black-icon" href="{{item[1].site}}"><span class="fa fa-2x fa-link"></span></a>{% endif %}
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@
 
 # General Site Build Settings
 title: World Affairs Conference
-description: The WAC website!
+description: The website for the World Affairs Conference, Canada's oldest student-led current affairs conference that explores world issues relevant to youth.
 baseurl: ""
 url: "world.ac"
 regurl: "https://reg.world.ac"
