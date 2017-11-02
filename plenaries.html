@@ -5,11 +5,15 @@ permalink: /plenaries/
 ---
 
 <div class="container">
+  <div class="card card-body">
+    <h1>Plenaries</h1>
+    <p class="card-text">More information on plenaries, including speakers, is coming soon!</p>
+  </div>
   {% for plenary in site.plenaries %}
   {% cycle 'group1': '<div class="card-deck mt-2">', '' %}
       <div class="card card-body">
         <h4 class="card-title">{{ plenary.title }}</h4>
-        <p class="card-text">More information on plenaries, including speakers, is coming soon!</p>
+        <p class="card-text">{{ plenary.shortbio }}</p>
         {% comment %}
         <div class="row">
           <div class="col-sm-4">
