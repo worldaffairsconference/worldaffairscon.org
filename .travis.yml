@@ -5,8 +5,7 @@ rvm:
 
 script:
   - ./setup.sh
-# disable rake for now as our builds are unstable anyways
-#  - bundle exec rake test
+ - bundle exec rake test
 
 branches:
   only:
