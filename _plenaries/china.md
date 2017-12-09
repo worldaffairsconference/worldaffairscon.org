@@ -3,7 +3,7 @@ layout: plenary
 title: China and the World
 pic: china.png
 speaker1: mzeiler
-speaker2: ijurisica
+speaker2: 
 shortbio: "Will the 21st century belong to China? How is China extending its influence in the third world? How will it impact the rest of the world and its power dynamics?"
 ---
 

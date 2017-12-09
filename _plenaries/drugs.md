@@ -3,7 +3,7 @@ layout: plenary
 title: Drug Legalization
 pic: dug.svg
 speaker1: mzeiler
-speaker2: ijurisica
+speaker2: 
 shortbio: "Societies are already legalizing marijuana at growing rates. Does this provide more harms than benefits? As well, this opens the debate to legalizing other drugs."
 ---
 
