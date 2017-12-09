@@ -1,7 +1,7 @@
 ---
 layout: plenary
 title: Future of Feminism
-pic: ai.png
+pic: feminism.png
 speaker1: mzeiler
 speaker2: ijurisica
 shortbio: "How should the feminist movement act in order to progress? What needs development the most?"

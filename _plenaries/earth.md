@@ -1,7 +1,7 @@
 ---
 layout: plenary
 title: Earth Overburdened
-pic: ai.png
+pic: earth.png
 speaker1: mzeiler
 speaker2: ijurisica
 shortbio: "What will we need to do to accommodate for a growing population on a planet with diminishing resources? GMO’s? New technology? Better policy?"

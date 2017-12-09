@@ -1,7 +1,7 @@
 ---
 layout: plenary
 title: A Nuclear World
-pic: ai.png
+pic: nuclear.svg
 speaker1: mzeiler
 speaker2: ijurisica
 shortbio: "Are nuclear weapons still threats? Who should have access to them? How do they impact foreign relations and power dynamics?"
