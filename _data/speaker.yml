@@ -3,52 +3,16 @@ csoon:
   pic: avatar.png
   bio: This speaker's information is coming soon!
 
-jwzheng:
-  name: "Dr. W. Jim Zheng"
-  pic: jimwzheng.jpg
-  bio: Dr. Zheng is a professor from the University of Texas (Houston), and the associate director of the Centre for Computational Biomedicine. He has done research into genomics and computer ethics, and specializes in biomedical informatics. He also developed Genome3D, the first model-view framework to integrate and visualise 3D genomes.
-athorogood:
-  name: Adrian Thorogood
-  pic: athorogood.jpg
-  bio: Adrian Thorogood is a coordinator for the Global Alliance for Genomics and Health where he works with the Regulatory and Ethics Working Group, an academic associate at the Centre of Genomics and Policy at McGill University, as a well as a member of the Ontario Bar. His work focuses largely on professional health care responsibility in genetics, the privacy of health information, and the promotion of data sharing in genomic research. In addition to his professional responsibilities, Adrian is a jurist on the research ethics board of Montreal's Jewish General Hospital.
-tszaky:
-  name: Tom Szaky
-  pic: tszaky.jpg
-  bio: Tom Szaky is the founder and CEO of TerraCycle, a company that creates consumer products through a process referred to as "upcycling". Since it was first founded in 2001, the company has raised over 15 million dollars for charity, and recycled over 3.5 billion units of waste. His devotion to redefining what we understand as recyclable and waste material, has led his company from humble beginnings at Princeton University to recognition globally. In 2006, he was named "#1 CEO under 30" by Inc. Magazine, and he along with TerraCycle have went on to receive over 100 social, environmental and business awards from respected organizations like the United Nations, World Economic Forum and the Environmental Protection Agency.
-jwong:
-  name: Joseph Wong
-  pic: jwong.png
-  bio: Joseph Wong is the Ralph and Roz Halbert Professor of Innovation at the Munk School of Global Affairs, Professor of Political Science, and Canada Research Chair in Health, Democracy, and Development. He has written many academic articles and books about global innovation, and his current research focuses on poverty and innovation. He has also worked with the World Bank, the United Nations, and advising governments on global public policy.
-jcunningham:
-  name: Jack Cunningham
-  pic: jcunningham.jpg
-  bio: Jack Cunningham holds a BA in English and an MA in History from the University of Calgary and a PhD in History from the University of Toronto. His dissertation dealt with Anglo-American nuclear relations in the late 1950s and early 1960s. Jack’s research and teaching interests include nuclear strategy, counterinsurgency warfare, and American, British, and Canadian foreign policy. He has been Program Coordinator of The Bill Graham Centre since 2011, and has contributed numerous book reviews to the International Journal. His current projects include a collection of conference papers comparing the Australian and Canadian experiences in Afghanistan.
-rboisvert:
-  name: Lucan Gregory
-  pic: lgregory.jpg
-  bio: "Lucan (Luke) Gregory’s work straddles legal, political, and ethical issues.  As a lawyer for the Federal Department of Justice (Canada), his practice includes national security related litigation.  Luke also teaches philosophy (Ryerson University), where courses have included the 'Philosophy of Punishment' and the 'Philosophy of Law'.  He holds two law degrees from McGill University (LLB/BCL), and a PhD in legal and political philosophy from the University of Virginia.  Luke has presented papers on national security, human rights, and supreme emergencies (in the context of the ‘Laws of War’).  He tends to have more questions than answers… this could well be an occupational hazard. Outside of his legal and philosophical pursuits, Luke enjoys paddling a canoe.  Many moons ago he graduated from Upper Canada College."
-mwalma:
-  name: Michael Walma
-  pic: mwalma.jpg
-  bio: "Michael Walma is the Cyber Foreign Policy Coordinator at the Global Affairs Canada. His previous assignments include positions as Director of the Foreign Policy Planning Division, of the International Crime and Terrorism Division, of the Defence and Security Relations Division, and of the Canada-US Defence Relations Division at Global Affairs. He has served abroad in Romania, South Africa and at the United Nations in New York. He is an expert at the United Nations Group of Governmental Experts on Developments in the Field of Information and Telecommunications in the Context of International Security."
-mzeiler:
-  name: Matthew Zeiler
-  pic: mzeiler.jpg
-  bio: "Matthew Zeiler is an expert well versed in the artificial intelligence field. In 2013 he founded Clarifai (a startup with over 40 million dollars in funding), shortly after completing his PhD in machine learning at NYU. Before that he gained invaluable experience working alongside renowned machine learning pioneers Geoff Hinton, Rob Fergus and Jeff Dean."
-nmcdonald:
-  name: Nancy MacDonald
-  pic: nmcdonald.jpg
-  bio: "Nancy Macdonald is a writer for the national section of Maclean’s. She is from Winnipeg, but has relocated to Vancouver. She has written on a variety of topics such as the government’s relationship with indigenous communities, the Fort McMurray Fire, and the RCMP."
-ijurisica:
-  name: Igor Jurisica
-  pic: ijurisica.jpg
-  bio: "Igor Jurisica is a Tier 1 Research Chair in Integrative Cancer Informatics as well as a Professor in the departments of Computer Science and Medical Biophysics at the University of Toronto. His research focuses on integrative computational biology in the context of Cancer Informatics. It involves the representation, analysis, annotation, and visualization of high-dimensional data generated by high-throughput biology experiments. Working at the nexus of computer science and biology, he develops and uses algorithms to interpret the deluge of information being gleaned from cancer-related experiments. Jurisica’s work aims to unravel the molecular mechanisms of cancer, and aid in the development of more sensitive and improved diagnostic, prognosis and treatment approaches."
-dmann:
-  name: Douglas Mann
-  pic: dmann.jpg
-  bio: "Douglas Mann is a contract professor at Western University. He is the author of Structural Idealism, Philosophy: A New Introduction, Understanding Society: A Survey of Modern Social Theory, and Great Power and Great Responsibility: The Philosophical Politics of Comics, along with over a hundred articles in academic journals, newspapers, and on professional websites. Over the last fifteen years he has taught a wide variety of courses at UWO, including those on social theory, mass media, technology and values, advertising, comics, science fiction TV and popular culture."
-
-rkarkara:
-  name: Ravi Karkara
-  pic: rkarkara.jpg
-  bio: "Ravi Karkara is a trained social worker with a commitment to advancing human rights, gender equality, inclusion and social rights. Ravi has been a key player in many projects and programs including, serving as the Global Advisor on Youth + Partnership with United Nations Millennium Campaign and representing UN-HABITAT, a United Nations program working towards a better urban future, as the Co-chair of the UN Interagency Network on Youth Development. He was appointed the Global Advisor to the World Conference of Youth in 2014, by the government of Sri Lanka, focussing on youth perspective in developing post-2015 development agenda. Ravi has also been co-chairing the Policy Strategy Group for World We Want 2015 - a UN & CSO post-2015 data-curation-visualization platform."
+codsi:
+  name: Caroline Codsi
+  pic: codsi.png
+  bio: "Caroline Codsi was born in Beirut Lebanon and lived in Montreal. She is Senior Vice-President and General Manager, Eastern Canada for Cira Medical Services. Citizen of the world, she was born in Beirut, has lived on 3 continents and is perfectly fluent in 4 languages. She is the head behind Women in Governance, also known as La Gouvernance au Feminin, a non-for-profit organization that supports women in their leadership development, career enhancement and access to board seats. Her movement has inspired many in corporate positions to break the glass ceiling. Her story is one of ambition, resilience and the true meaning of never giving up. Caroline is also a multiple award recipient from the Quebec Business Women Network, the Arab Women Trophy, Premières en Affaires to name just a few. She was also recipient of a Gender Equality Award by the United Nations Women National Committee. Caroline was ranked among the Top 100 Most Powerful Women in Canada, the Top 75 Canadian Immigrants and the Top 20 Diversity Leading Figures of Quebec"
+bass:
+  name: John Bass
+  pic: bass.png
+  bio: "John Bass is the founder and CEO of Hashed health - a Nashville, Tennessee based startup that is focusing on the applications of blockchain in the healthcare industry. After graduating from University of North Carolina at Chapel Hill in 1994 with a Bachelor’s in Chemistry, John went on to working numerous jobs in the healthcare industry, including the Senior Product Manager at Global Healthcare Exchange and the Chief Operating Officer at InVivoLink."
+sumner:
+  name: Dr. Jennifer Sumner
+  pic: sumner.png
+  bio: "In an exponentially expanding world, will we be able to provide enough food and resources for future generations? Dr Jennifer Sumner believes, we can. This year at WAC she will be co-leading “The Global Food Crisis” plenary and helping us to understand how in an increasingly expanding and globalizing world, what methods and policies governments and the agricultural community can put in place to help the next generations survive. Dr. Jennifer Sumner is currently a professor and lecturer in the department for Higher Education and Leadership at the Ontario Institute for Studies in Education at the University of Toronto. She received a bachelor's degree at the University of Toronto and went on to earn a diploma in agriculture and a PHD in rural studies both from the University of Guelph. Since then she has researched or taught in an astounding eight separate subjects at University of Toronto. She is an expert in the fields Sustainability, Food and sustainable food systems, Organic agriculture, Globalization, Rural communities/rural women and the civil commons and the social economy all of which pertain to important issues facing society and to this year’s theme of “Paradigm shifts”. Since 2005 she has co-written eight novels discussing environmental and agricultural sustainability policy, in addition she has received seven research grants for her work in sustainable food systems and how organic agriculture affects the rural economy."
+  

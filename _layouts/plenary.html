@@ -14,12 +14,7 @@
 				<div class="card">
 					<div class="card-body">
 						<h1>{{ page.title }}</h1>
-						{% comment %}
 						<img class="img-fluid plenary-img" src="{{site.baseurl}}/img/plen/{{page.pic}}" alt="{{page.title}} picture"/>
-						<p class="card-text">
-							{{ content }}
-						</p>
-						{% endcomment %}
 						<p class="card-text">
 							{{ content }}
 						</p>
@@ -29,7 +24,6 @@
 					</div>
 				</div>
 			</div>
-			{% comment %}
 			<div class="card card-body mt-2">
 				<h1 class="text-center">Speakers</h1>
 				<div class="row pb-2">
@@ -51,7 +45,6 @@
 					</div>
 				</div>
 			</div>
-			{% endcomment %}
 			<div class="card card-body text-center mt-2">
 				<p class="card-text">
 					<a class="card-link" href="{{site.baseurl}}/plenaries"><span class="fa fa-arrow-left"></span> View the other plenaries.</a>

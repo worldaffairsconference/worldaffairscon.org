@@ -2,8 +2,8 @@
 layout: plenary
 title: Cryptocurrencies
 pic: crypto.svg
-speaker1: mzeiler
-speaker2: ijurisica
+speaker1: bass
+speaker2: csoon
 shortbio: "What are their benefits and harms? How have they changed commerce and transactions? How are countries and central banks evolving and even switching to cryptocurrencies?"
 ---
 

@@ -2,8 +2,8 @@
 layout: plenary
 title: Future of Feminism
 pic: feminism.png
-speaker1: mzeiler
-speaker2: ijurisica
+speaker1: codsi
+speaker2: csoon
 shortbio: "How should the feminist movement act in order to progress? What needs development the most?"
 ---
 
