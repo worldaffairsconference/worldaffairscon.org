@@ -1,10 +1,10 @@
 ---
 layout: plenary
 title: China and the World
-pic: ai.png
+pic: china.png
 speaker1: mzeiler
-speaker2: ijurisica
+speaker2: 
 shortbio: "Will the 21st century belong to China? How is China extending its influence in the third world? How will it impact the rest of the world and its power dynamics?"
 ---
 
-After decades of speculation and justifiable anxiety about the implications for humankind, the era of artificial intelligence is finally here. In this plenary, speakers will identify what they believe to be the future of AI, discussing the impacts of artificial intelligence on business, government policy and the ethics of it all. Artificial Intelligence has been called the defining revolution of our generation, but with every breakthrough, there emerges concerns that must be addressed and analyzed through every lens.
+Africa experiences the fastest growing demography and economy in the world; its need for foreign investment makes the continent a target for all companies and nations which seek new market possibilities. Over the last decade, investing into mines, roads, airports, hospitals, highways, and dams, China has become one of Africa’s biggest trading partners. As skepticism about its intentions in increasing economic, cultural, and, therefore, political presence in the continent, the plenary questions its positive and negative, short-term and long-term implications. At a moment of time when President Trump puts America first, Sino-African relations not only shape the African continent, but the nature of international affairs.
