@@ -2,7 +2,7 @@
 layout: plenary
 title: Future of Feminism
 pic: feminism.png
-speaker1: csoon
+speaker1: ccodsi
 speaker2: csoon
 shortbio: "How should the feminist movement act in order to progress? What needs development the most?"
 ---
