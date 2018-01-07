@@ -12,9 +12,6 @@ permalink: /plenaries/
   {% for plenary in site.plenaries %}
   {% cycle 'group1': '<div class="card-deck mt-2">', '' %}
       <div class="card card-body">
-        <h4 class="card-title">{{ plenary.title }}</h4>
-        <p class="card-text">{{ plenary.shortbio }}</p>
-        {% comment %}
         <div class="row">
           <div class="col-sm-4">
             <img class="img-fluid" src="{{site.baseurl}}/img/plen/{{plenary.pic}}" alt="{plenary.title} picture"/>
@@ -24,7 +21,6 @@ permalink: /plenaries/
             <p class="card-text">{{ plenary.shortbio }}</p>
           </div>
         </div>
-        {% endcomment %}
       </div>
   {% cycle 'group2': '', '</div>' %}
   {% endfor %}

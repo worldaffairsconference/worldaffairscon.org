@@ -1,10 +1,10 @@
 ---
 layout: plenary
 title: Cryptocurrencies
-pic: ai.png
-speaker1: mzeiler
-speaker2: ijurisica
+pic: crypto.svg
+speaker1: csoon
+speaker2: csoon
 shortbio: "What are their benefits and harms? How have they changed commerce and transactions? How are countries and central banks evolving and even switching to cryptocurrencies?"
 ---
 
-After decades of speculation and justifiable anxiety about the implications for humankind, the era of artificial intelligence is finally here. In this plenary, speakers will identify what they believe to be the future of AI, discussing the impacts of artificial intelligence on business, government policy and the ethics of it all. Artificial Intelligence has been called the defining revolution of our generation, but with every breakthrough, there emerges concerns that must be addressed and analyzed through every lens.
+Cryptocurrency is an emerging technology changing the way we transact money. Or is it? Since the emergence of the first cryptocurrency (Bitcoin) in 2009, banks have been on their feet to retain customers. You see, cryptocurrency is so different than any way we have ever managed our money because it is decentralized, meaning that no state owns cryptocurrencies, and therefore, no state can be in control of the currency. As well, cryptocurrencies can sustain transactions without ever having to use a bank. But there are some issues, too. If there is no bank involved, who will ensure there isn’t any fraud? How can you track someone down if their transactions are anonymous? What is our generation going to have to know to be prepared for the exponential increase of cryptocurrencies in the years to come?
