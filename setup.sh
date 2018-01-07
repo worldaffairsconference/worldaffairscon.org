@@ -3,8 +3,8 @@
 # Dependency locations and variables
 JQUERY=https://code.jquery.com/jquery-3.2.1.min.js
 TETHER=https://raw.githubusercontent.com/HubSpot/tether/master/dist/js/tether.min.js
-FA_VER=font-awesome-4.7.0
-FONTAWESOME=http://fontawesome.io/assets/$FA_VER.zip
+FA_VER=5.0.1
+FONTAWESOME=https://use.fontawesome.com/releases/v$FA_VER/fontawesome-free-$FA_VER.zip
 BS_VER=4.0.0-beta
 BOOTSTRAP=https://codeload.github.com/twbs/bootstrap/zip/v$BS_VER
 
@@ -17,7 +17,7 @@ hash curl 2>/dev/null || { echo >&2 "curl not installed, building it from wget";
 # Helper functions
 # This just curls and unzips the file
 uncurl() {
-	echo " . Downloading $2"
+	echo " . Downloading $2 from $1"
 	curl -s $1 > temp.zip
 	echo " . Unpacking $2"
 	unzip -q temp.zip
@@ -46,12 +46,11 @@ curl -s $TETHER > tether.min.js
 cd ..
 echo " √ Javascript done!"
 
-# FontAwesome
+# FontAwesome 5
 echo " - Starting FontAwesome"
 uncurl $FONTAWESOME FontAwesome
-mv $FA_VER fa-archive
-mv fa-archive/fonts .
-mv fa-archive/css/font-awesome.min.css css/
+mv fontawesome-free-$FA_VER fa-archive
+mv fa-archive/svg-with-js/js/fontawesome-all.min.js js/
 rm -r fa-archive
 echo " √ FontAwesome done!"
 
