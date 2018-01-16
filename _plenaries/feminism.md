@@ -1,6 +1,6 @@
 ---
 layout: plenary
-title: Future of Feminism
+title: The Changing Face of Feminism
 pic: feminism.png
 speaker1: ccodsi
 speaker2: csoon

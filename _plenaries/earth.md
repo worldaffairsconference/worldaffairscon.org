@@ -1,6 +1,6 @@
 ---
 layout: plenary
-title: Earth Overburdened
+title: The Global Food Crisis
 pic: earth.png
 speaker1: jsumner
 speaker2: csoon

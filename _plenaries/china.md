@@ -2,8 +2,8 @@
 layout: plenary
 title: China and the World
 pic: china.png
-speaker1: csoon
-speaker2: csoon
+speaker1: rpulfer
+speaker2: rmedhora
 shortbio: "Will the 21st century belong to China? How is China extending its influence in the developing world? How will it impact the rest of the world and its power dynamics?"
 ---
 
