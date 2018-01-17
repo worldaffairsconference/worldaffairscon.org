@@ -40,7 +40,7 @@ Setting up the WAC website on a local machine is simple. All you need to do is c
 First thing you need is the repository. Clone and get into the directory with this command:
 
 ```bash
-$ git clone --depth=1 https://github.com/malsf21/world.ac.git && cd world.ac
+$ git clone --depth=1 https://github.com/worldaffairsconference/world.ac.git && cd world.ac
 ```
 
 To setup your machine to run the server, you'll need the tools of the trade. The tools we use are:
