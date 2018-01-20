@@ -250,10 +250,10 @@ nobrien:
   github: obrien66
   site: http://obrien.tech
 
-# rknowles:
-#   name: Robbie Knowles
-#   primary: Web Developer
-#   image: avatar.jpg
+rknowles:
+  name: Robbie Knowles
+  primary: Web Developer
+  image: avatar.jpg
 
 sstern:
   name: Sheldon Stern
