@@ -2,8 +2,8 @@
 layout: plenary
 title: A Nuclear World
 pic: nuclear.svg
-speaker1: csoon
-speaker2: csoon
+speaker1: jclearwater
+speaker2: sjoshi
 shortbio: "Are nuclear weapons still threats? Who should have access to them? How do they impact foreign relations and power dynamics?"
 ---
 
