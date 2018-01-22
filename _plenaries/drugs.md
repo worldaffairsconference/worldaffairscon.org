@@ -2,7 +2,7 @@
 layout: plenary
 title: Drug Legalization
 pic: drug.svg
-speaker1: csoon
+speaker1: ayoung
 speaker2: csoon
 shortbio: "Societies are already legalizing marijuana at growing rates. Does this provide more harms than benefits? As well, this opens the debate to legalizing other drugs. Where should governments/societies draw the line?"
 ---

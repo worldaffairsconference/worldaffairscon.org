@@ -1,25 +1,62 @@
+# Place Holders
 csoon:
   name: Coming Soon
   pic: avatar.png
   bio: This speaker's information is coming soon!
 
+# Feminism
 ccodsi:
-  name: Caroline Codsi
+  name: "Caroline Codsi"
   pic: ccodsi.png
   bio: "Caroline Codsi was born in Beirut Lebanon and lived in Montreal. She is Senior Vice-President and General Manager, Eastern Canada for Cira Medical Services. Citizen of the world, she was born in Beirut, has lived on 3 continents and is perfectly fluent in 4 languages. She is the head behind Women in Governance, also known as La Gouvernance au Feminin, a non-for-profit organization that supports women in their leadership development, career enhancement and access to board seats. Her movement has inspired many in corporate positions to break the glass ceiling. Her story is one of ambition, resilience and the true meaning of never giving up. Caroline is also a multiple award recipient from the Quebec Business Women Network, the Arab Women Trophy, Premières en Affaires to name just a few. She was also recipient of a Gender Equality Award by the United Nations Women National Committee. Caroline was ranked among the Top 100 Most Powerful Women in Canada, the Top 75 Canadian Immigrants and the Top 20 Diversity Leading Figures of Quebec"
 
+kdogra:
+  name: "Kavita Dogra"
+  pic: kdogra.jpg
+  bio: "Kavita Dogra is the founder of We Talk Women, a humble organization working to raise awareness about girls’ and women’s rights issues. Through the organization, she hosts film and documentary screenings that work to expose the injustices being experienced by women in Canada and around the world. Kavita co-chaired the committee that organized the Women’s March in Toronto and is an active volunteer. Kavita believes that everyone needs to do their part in making the world a better place and hopes to inspire people to take meaningful action in their communities."
+  
+# Earth Overburdend
 jsumner:
   name: "Dr. Jennifer Sumner"
   pic: jsumner.png
   bio: "In an exponentially expanding world, will we be able to provide enough food and resources for future generations? Dr Jennifer Sumner believes, we can. This year at WAC she will be co-leading “The Global Food Crisis” plenary and helping us to understand how in an increasingly expanding and globalizing world, what methods and policies governments and the agricultural community can put in place to help the next generations survive. Dr. Jennifer Sumner is currently a professor and lecturer in the department for Higher Education and Leadership at the Ontario Institute for Studies in Education at the University of Toronto. She received a bachelor's degree at the University of Toronto and went on to earn a diploma in agriculture and a PHD in rural studies both from the University of Guelph. Since then she has researched or taught in an astounding eight separate subjects at University of Toronto. She is an expert in the fields Sustainability, Food and sustainable food systems, Organic agriculture, Globalization, Rural communities/rural women and the civil commons and the social economy all of which pertain to important issues facing society and to this year’s theme of “Paradigm shifts”. Since 2005 she has co-written eight novels discussing environmental and agricultural sustainability policy, in addition she has received seven research grants for her work in sustainable food systems and how organic agriculture affects the rural economy."
+  
+pdesrochers:
+  name: "Dr. Pierre Doesrochers"
+  pic: avatar.png
+  bio: "Pierre Desrochers, PhD is an Associate Professor of Geography at the University of Toronto Mississauga, specializing in economic development, technological innovation, Food History and Policy, and international trade among many others. Desrochers the co-author of the book 'The Locavore's Dilemma', published in 2012. The book highlights the use of international trade to promote sustainability, by opening trade routes and eating globally we can all work together to create a more sustainable planet. Desrochers was also the 2017 recipient of the Julian L. Simon Memorial Award that is given to an individual whose work promotes the vision of man as the ultimate resource."
+  
+# Drug Legalization
+ayoung:
+  name: "Alan Young"
+  pic: avatar.png
+  bio: "Alan Young is Co-Founder and Director of Osgoode Hall's innocence project, a clinical program that that guides JD students through the process of investigating suspected cases of wrongful conviction and imprisonment. In addition to this, he maintains a small practice specializing in criminal law and procedure that is primarily devoted to challenging state authority to criminalize consensual activity. Throughout his years of practice, he has represented countless numbers of people suffering from AIDS, cancer and multiple sclerosis who were charged after using marijuana for medicinal purposes, and as a result of these cases, the Federal Government was compelled to create a regulatory program authorizing the use of medical marijuana."
 
+#WMD's
+jclearwater:
+  name: "John Clearwater"
+  pic: avatar.png
+  bio: "Dr. John Clearwater is a military-strategic analyst and the current COO at Visa Services Canada Inc. A recipient of the Queen’s Diamond Jubilee Medal, Dr. Clearwater is a world-renowned expert on Nuclear Weapons. Dr. Clearwater did his doctoral work at the War Studies Department of King’s College, London and published his thesis, now a university textbook, The Birth of Strategic Arms Control. Dr. Clearwater has written extensively on global affairs; his works include Canadian Nuclear Weapons and U.S Nuclear Weapons in Canada. In 2002, he was invited to North Korea to witness and discuss their Nuclear Weapons policies and employment strategies. He is an advisor to government, think tanks, academia, the military, and other international institutions."
+  
+sjoshi:
+  name: "Dr. Sharad Joshi"
+  pic: avatar.png
+  bio: "Dr. Sharad Joshi holds a PhD from the Graduate School of Public and International Affairs at the University of Pittsburgh. Currently, he works at the Middlebury Institute of International Studies at Monterey where he is the assistant professor of Nonproliferation and Terrorism Studies. As part of The Graduate School of International Policy and Management, he teaches several courses including: terrorism and weapons of mass destruction in South Asia and South-East Asia, and Policy Analysis. Dr. Joshi is also a research associate at the Canadian Nuclear Society as well as the Monterey Terrorism Research and Education Program where he has conducted focused research on the different aspects of terrorism in South Asia, as well as arms control issues in the region."
+  
+#Cyrptocurrencies
 jbass:
-  name: John Bass
+  name: "John Bass"
   pic: jbass.png
   bio: "John Bass is the founder and CEO of Hashed health - a Nashville, Tennessee based startup that is focusing on the applications of blockchain in the healthcare industry. After graduating from University of North Carolina at Chapel Hill in 1994 with a Bachelor’s in Chemistry, John went on to working numerous jobs in the healthcare industry, including the Senior Product Manager at Global Healthcare Exchange and the Chief Operating Officer at InVivoLink."
 
+vschmid:
+  name: "Valentin Schmid"
+  pic: vschmid.png
+  bio: "Valentin Schmidis the business editor of the Epoch Times, an independent global news source headquartered in New York. His areas of expertise include global macroeconomic trends, financial markets, China, and Bitcoin. Before joining the paper in 2012, he worked as a portfolio manager for BNP Paribas, a retail banking company, in Amsterdam, London, Paris, and Hong Kong."
+  
+# China
 rmedhora:
-  name: Rohinton P. Medhora
+  name: "Rohinton P. Medhora"
   pic: rmedhora.jpg
   bio: "Rohinton P. Medhora is president of the Centre for International Governance Innovation (CIGI), joining in 2012. He served on CIGI's former International Board of Governors from 2009 to 2014. Previously, he was vice president of programs at Canada’s International Development Research Centre.
 
@@ -28,6 +65,6 @@ rmedhora:
   Rohinton was recently named as a member of the Commission on Global Economic Transformation co-chaired by Nobel economics Laureates Michael Spence and Joseph Stiglitz. He serves on the boards of the Institute for New Economic Thinking, the Partnership for African Social and Governance Research and the Balsillie School of International Affairs and on the advisory boards of the McLuhan Centre at the University of Toronto and the WTO Chairs Program."
 
 rpulfer:
-  name: Rachel Pulfer
+  name: "Rachel Pulfer"
   pic: rpulfer.jpg
   bio: "Rachel Pulfer is the Executive Director of Journalists for Human Rights (JHR), Canada’s leading media development organization, with which she has been managing projects in Liberia, Democratic Republic of Congo, Ghana, Malawi, and Sierra Leone. As a humanitarian who grew up in Swaziland, Lesotho and Papua New Guinea, Ms. Pulfer holds JHR’s mission to heart – empowering journalists to cover local human rights issues ethically and effectively. Prior to JHR, Ms. Pulfer won the 2009-2010 Webster/McConnell Canadian Journalism Fellowship. She has also contributed to the Globe and Mail, the Ottawa Citizen, the Walrus, the National Post, the Montreal Gazette, Toronto Life, Azure magazine and numerous other publications. Ms. Pulfer has a Bachelor of Applied Arts from Ryerson University's School of Journalism and a BA in History and Political Science from McGill University. Recognized as a leading voice in the role of media as a force for social change, Ms. Pulfer will discuss China’s different forms of influence on the African continent as well as human rights considerations."

@@ -3,7 +3,7 @@ layout: plenary
 title: The Global Food Crisis
 pic: earth.png
 speaker1: jsumner
-speaker2: csoon
+speaker2: pdesrochers
 shortbio: "What will we need to do to accommodate for a growing population on a planet with diminishing resources? GMO’s? New technology? Better policy?"
 ---
 
