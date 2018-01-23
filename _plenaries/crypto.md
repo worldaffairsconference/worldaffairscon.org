@@ -4,7 +4,7 @@ title: Cryptocurrencies
 pic: crypto.svg
 speaker1: adiiorio
 speaker2: csoon
-shortbio: "What about cryptocurrency has made it so popular in the last decade? Is cryptocurrency a viable long-term solution?"
+shortbio: "What are their benefits and harms? How have they changed commerce and transactions? How are countries and central banks evolving and even switching to cryptocurrencies?"
 ---
 
 Cryptocurrency is an emerging technology changing the way we transact money. Or is it? Since the emergence of the first cryptocurrency (Bitcoin) in 2009, banks have been on their feet to retain customers. Cryptocurrency is so different than any way we have ever managed our money because it is decentralized, meaning that no government owns cryptocurrencies, and therefore, no government can be in control of the currency. As well, cryptocurrencies can sustain transactions without ever having to use a bank.
