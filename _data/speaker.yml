@@ -44,15 +44,16 @@ sjoshi:
   bio: "Dr. Sharad Joshi holds a PhD from the Graduate School of Public and International Affairs at the University of Pittsburgh. Currently, he works at the Middlebury Institute of International Studies at Monterey where he is the assistant professor of Nonproliferation and Terrorism Studies. As part of The Graduate School of International Policy and Management, he teaches several courses including: terrorism and weapons of mass destruction in South Asia and South-East Asia, and Policy Analysis. Dr. Joshi is also a research associate at the Canadian Nuclear Society as well as the Monterey Terrorism Research and Education Program where he has conducted focused research on the different aspects of terrorism in South Asia, as well as arms control issues in the region."
   
 #Cyrptocurrencies
-jbass:
-  name: "John Bass"
-  pic: jbass.png
-  bio: "John Bass is the founder and CEO of Hashed health - a Nashville, Tennessee based startup that is focusing on the applications of blockchain in the healthcare industry. After graduating from University of North Carolina at Chapel Hill in 1994 with a Bachelor’s in Chemistry, John went on to working numerous jobs in the healthcare industry, including the Senior Product Manager at Global Healthcare Exchange and the Chief Operating Officer at InVivoLink."
-
-vschmid:
-  name: "Valentin Schmid"
-  pic: vschmid.png
-  bio: "Valentin Schmidis the business editor of the Epoch Times, an independent global news source headquartered in New York. His areas of expertise include global macroeconomic trends, financial markets, China, and Bitcoin. Before joining the paper in 2012, he worked as a portfolio manager for BNP Paribas, a retail banking company, in Amsterdam, London, Paris, and Hong Kong."
+adiiorio:
+ name: "Anthony Diiorio"
+ pic: adiiorio.png
+ bio: "Anthony Diiorio is a serial entrepreneur, VC, community organizer, and thought leader in the field of
+decentralized technologies. Born and raised in Toronto, Diiorio is the former Chief Digital Officer of
+the TMX Group and Toronto Stock Exchange, founder and CEO of Decentral, a software development
+company focused on blockchain technologies, and founder and CEO of Jaxx, a multi-token,
+blockchain interface that provides a unified experience across 9 platforms and devices. In 2013,
+Diiorio funded, and along with Vitalik Buterin and 3 others founded the smart contract platform
+Ethereum, which is the second largest cryptocurrency on the market today."
   
 # China
 rmedhora:
@@ -60,9 +61,9 @@ rmedhora:
   pic: rmedhora.jpg
   bio: "Rohinton P. Medhora is president of the Centre for International Governance Innovation (CIGI), joining in 2012. He served on CIGI's former International Board of Governors from 2009 to 2014. Previously, he was vice president of programs at Canada’s International Development Research Centre.
 
-  Rohinton received his doctorate in economics in 1988 from the University of Toronto, where he also subsequently taught for a number of years. In addition to his Ph.D., Rohinton earned his B.A. and M.A. at the University of Toronto, where he majored in economics. His fields of expertise are monetary and trade policy, international economic relations, aid effectiveness and development economics. He has published extensively on these issues in professional and non-technical journals, and produced two books: Finance and Competitiveness in Developing Countries (Routledge, 2001); and Financial Reform in Developing Countries (Macmillan, 1998), which he co-edited with José Fanelli. In 2013, he was co-editor of Canada-Africa Relations: Looking Back, Looking Ahead, which is volume 27 in the influential Canada Among Nations book series. In 2014, he co-edited International Development: Ideas, Experience, and Prospects (Oxford University Press) and Crisis and Reform: Canada and the International Financial System, which is volume 28 in the Canada Among Nations book series.
+Rohinton received his doctorate in economics in 1988 from the University of Toronto, where he also subsequently taught for a number of years. In addition to his Ph.D., Rohinton earned his B.A. and M.A. at the University of Toronto, where he majored in economics. His fields of expertise are monetary and trade policy, international economic relations, aid effectiveness and development economics. He has published extensively on these issues in professional and non-technical journals, and produced two books: Finance and Competitiveness in Developing Countries (Routledge, 2001); and Financial Reform in Developing Countries (Macmillan, 1998), which he co-edited with José Fanelli. In 2013, he was co-editor of Canada-Africa Relations: Looking Back, Looking Ahead, which is volume 27 in the influential Canada Among Nations book series. In 2014, he co-edited International Development: Ideas, Experience, and Prospects (Oxford University Press) and Crisis and Reform: Canada and the International Financial System, which is volume 28 in the Canada Among Nations book series.
 
-  Rohinton was recently named as a member of the Commission on Global Economic Transformation co-chaired by Nobel economics Laureates Michael Spence and Joseph Stiglitz. He serves on the boards of the Institute for New Economic Thinking, the Partnership for African Social and Governance Research and the Balsillie School of International Affairs and on the advisory boards of the McLuhan Centre at the University of Toronto and the WTO Chairs Program."
+Rohinton was recently named as a member of the Commission on Global Economic Transformation co-chaired by Nobel economics Laureates Michael Spence and Joseph Stiglitz. He serves on the boards of the Institute for New Economic Thinking, the Partnership for African Social and Governance Research and the Balsillie School of International Affairs and on the advisory boards of the McLuhan Centre at the University of Toronto and the WTO Chairs Program."
 
 rpulfer:
   name: "Rachel Pulfer"
