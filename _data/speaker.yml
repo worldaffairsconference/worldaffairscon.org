@@ -23,24 +23,29 @@ jsumner:
   
 pdesrochers:
   name: "Dr. Pierre Doesrochers"
-  pic: avatar.png
+  pic: pdesrochers.jpg
   bio: "Pierre Desrochers, PhD is an Associate Professor of Geography at the University of Toronto Mississauga, specializing in economic development, technological innovation, Food History and Policy, and international trade among many others. Desrochers the co-author of the book 'The Locavore's Dilemma', published in 2012. The book highlights the use of international trade to promote sustainability, by opening trade routes and eating globally we can all work together to create a more sustainable planet. Desrochers was also the 2017 recipient of the Julian L. Simon Memorial Award that is given to an individual whose work promotes the vision of man as the ultimate resource."
   
 # Drug Legalization
 ayoung:
   name: "Alan Young"
-  pic: avatar.png
+  pic: ayoung.jpg
   bio: "Alan Young is Co-Founder and Director of Osgoode Hall's innocence project, a clinical program that that guides JD students through the process of investigating suspected cases of wrongful conviction and imprisonment. In addition to this, he maintains a small practice specializing in criminal law and procedure that is primarily devoted to challenging state authority to criminalize consensual activity. Throughout his years of practice, he has represented countless numbers of people suffering from AIDS, cancer and multiple sclerosis who were charged after using marijuana for medicinal purposes, and as a result of these cases, the Federal Government was compelled to create a regulatory program authorizing the use of medical marijuana."
 
+nginsberg:
+  name: "Natalie Ginsberg"
+  pic: nginsberg.jpg
+  bio: "Natalie Lyla Ginsberg, M.S.W., Policy & Advocacy Director Natalie earned her Master's in Social Work from Columbia University in 2014, and her Bachelor's in History from Yale University in 2011. At Columbia, Natalie served as a Policy Fellow at the Drug Policy Alliance, where she helped legalize medical marijuana in her home state of New York, and worked to end New York's racist marijuana arrests. Natalie has also worked as a court-mandated therapist for individuals arrested for prostitution and drug-related offenses, and as a middle school guidance counselor at an NYC public school. Natalie's clinical work with trauma survivors spurred her interest in psychedelic-assisted therapy, which she believes can ease a wide variety of both mental and physical ailments by addressing the root cause of individuals' difficulties, rather than their symptoms. Through her work at MAPS, Natalie advocates for research to provide evidence-based alternatives to both the war on drugs and the current mental health paradigm."
+  
 #WMD's
 jclearwater:
   name: "John Clearwater"
-  pic: avatar.png
+  pic: jclearwater.jpg
   bio: "Dr. John Clearwater is a military-strategic analyst and the current COO at Visa Services Canada Inc. A recipient of the Queen’s Diamond Jubilee Medal, Dr. Clearwater is a world-renowned expert on Nuclear Weapons. Dr. Clearwater did his doctoral work at the War Studies Department of King’s College, London and published his thesis, now a university textbook, The Birth of Strategic Arms Control. Dr. Clearwater has written extensively on global affairs; his works include Canadian Nuclear Weapons and U.S Nuclear Weapons in Canada. In 2002, he was invited to North Korea to witness and discuss their Nuclear Weapons policies and employment strategies. He is an advisor to government, think tanks, academia, the military, and other international institutions."
   
 sjoshi:
   name: "Dr. Sharad Joshi"
-  pic: avatar.png
+  pic: sjoshi.jpg
   bio: "Dr. Sharad Joshi holds a PhD from the Graduate School of Public and International Affairs at the University of Pittsburgh. Currently, he works at the Middlebury Institute of International Studies at Monterey where he is the assistant professor of Nonproliferation and Terrorism Studies. As part of The Graduate School of International Policy and Management, he teaches several courses including: terrorism and weapons of mass destruction in South Asia and South-East Asia, and Policy Analysis. Dr. Joshi is also a research associate at the Canadian Nuclear Society as well as the Monterey Terrorism Research and Education Program where he has conducted focused research on the different aspects of terrorism in South Asia, as well as arms control issues in the region."
   
 #Cyrptocurrencies
@@ -54,6 +59,11 @@ company focused on blockchain technologies, and founder and CEO of Jaxx, a multi
 blockchain interface that provides a unified experience across 9 platforms and devices. In 2013,
 Diiorio funded, and along with Vitalik Buterin and 3 others founded the smart contract platform
 Ethereum, which is the second largest cryptocurrency on the market today."
+
+vschmid:
+ name: "Valentin Schmid"
+ pic: vschmid.png
+ bio: "Valentin Schmidis the business editor of the Epoch Times, an independent global news source headquartered in New York. His areas of expertise include global macroeconomic trends, financial markets, China, and Bitcoin. Before joining the paper in 2012, he worked as a portfolio manager for BNP Paribas, a retail banking company, in Amsterdam, London, Paris, and Hong Kong."
   
 # China
 rmedhora:
