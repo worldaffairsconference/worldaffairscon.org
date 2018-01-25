@@ -20,7 +20,7 @@ WAC is an annual event where thousands of students in Ontario gather to hear som
 
 Good question! This website displays information about WAC for delegates, advisors, and speakers. Hopefully, we make it easy for all of you to learn about what exactly WAC is, what it's about, when it is, and all those other useful tidbits of information.
 
-In addition, we also do registration through the website (though that source code will be closed-source, for now). It makes it easier for advisors to register for WAC, and also means we cut down less trees. Awesome!
+In addition, we also do registration through the website, using a system we built called [donna](https://github.com/worldaffairsconference/donna). It makes it easier for advisors to register for WAC, and also means we cut down less trees. Awesome!
 
 ## Development Notes
 
@@ -28,7 +28,7 @@ So you want to contribute to WAC? Great! We're aiming to have a full documentati
 
 ### Quick Pointers
 
-* Our production-ready version of the website is stored in `stable`, which is available for viewing at [world.ac](http://world.ac).
+* Our production-ready version of the website is stored in `master`, which is available for viewing at [world.ac](http://world.ac).
 * All other branches are not officially available on the web. Instead, you'll have to build and run them yourself. Refer to our setup section for more information.
 
 ### Setup
