@@ -1,6 +1,6 @@
 ---
 layout: plenary
-title: Drug Legalization
+title: Drug Legalization in a Progressive World
 pic: drug.svg
 speaker1: ayoung
 speaker2: nginsberg
