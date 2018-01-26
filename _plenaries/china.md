@@ -1,6 +1,6 @@
 ---
 layout: plenary
-title: China and the World
+title: China and Africa's New Era
 pic: china.png
 speaker1: rpulfer
 speaker2: rmedhora
