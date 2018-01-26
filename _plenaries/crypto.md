@@ -1,6 +1,6 @@
 ---
 layout: plenary
-title: Cryptocurrencies: Friend or Foe
+title: "Cryptocurrencies: Friend or Foe"
 pic: crypto.svg
 speaker1: adiiorio
 speaker2: vschmid

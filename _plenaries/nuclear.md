@@ -1,6 +1,6 @@
 ---
 layout: plenary
-title: Nuclear Weapons: Obsolete or the Future
+title: "Nuclear Weapons: Obsolete or the Future"
 pic: nuclear.svg
 speaker1: jclearwater
 speaker2: sjoshi
