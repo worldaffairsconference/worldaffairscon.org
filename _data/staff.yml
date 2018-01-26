@@ -7,14 +7,14 @@ jsamek:
 kkim:
   name: Kathy Kim
   primary: Conference Chair
-  image: avatar.jpg
+  image: kkim.jpg
 
 mwang:
   name: Matthew Wang
   primary: Director General
   secondary: Web Developer
   bio: How do Web Developers mark their work? They Graphic De-sign it.
-  image: mattwang.jpg
+  image: mwang.jpg
   email: matt@matthewwang.me
   github: malsf21
   site: https://matthewwang.me
@@ -27,7 +27,7 @@ rmonga:
 aquinn:
   name: Alexander Quinn
   primary: Head of Programs
-  image: alexquinn.jpg
+  image: aquinn.jpg
 
 hkedwell:
   name: Hayley Kedwell
@@ -37,7 +37,7 @@ hkedwell:
 sosak:
   name: Simon Osak
   primary: Head of Operations
-  image: simonosak.jpg
+  image: sosak.jpg
 
 hgoldhar:
   name: Hilli Goldhar
@@ -65,7 +65,7 @@ owang:
 jmace:
   name: John Mace
   primary: Head of Operation Technologies
-  image: johnmace.png
+  image: jmace.png
   github: j0hnmace
 
 gkung:
@@ -155,7 +155,7 @@ amancini:
   name: Athena Mancini
   primary: Plenary Head
   secondary: Earth Overburdened
-  image: avatar.jpg
+  image: amancini.jpg
 
 areeves:
   name: Alex Colville-Reeves
@@ -173,7 +173,7 @@ sqaadri:
   name: Shafiq Qaadri
   primary: Plenary Head
   secondary: WMDs
-  image: avatar.jpg
+  image: shafiq.png
 
 jmdouglas:
   name: Jade Mair Douglas
@@ -241,7 +241,7 @@ nobrien:
   primary: Web Developer
   secondary: Audio/Visual Team
   bio: I heard I got to work with cookies.
-  image: nickobrien.jpg
+  image: nobrien.jpg
   github: obrien66
   site: http://obrien.tech
 
