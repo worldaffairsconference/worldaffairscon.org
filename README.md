@@ -45,7 +45,7 @@ $ git clone --depth=1 https://github.com/worldaffairsconference/world.ac.git && 
 
 To setup your machine to run the server, you'll need the tools of the trade. The tools we use are:
 
-* [Ruby](https://www.ruby-lang.org/en/), to build our site
+* [Ruby](https://www.ruby-lang.org/en/), to build our site (we recommend v2.4.0+)
 * [Bundler](https://bundler.io/), to install our ruby dependencies
 * [Git](https://git-scm.com/), to clone this repository
 * A Browser, to view the website of course!
