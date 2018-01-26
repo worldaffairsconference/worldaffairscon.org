@@ -92,7 +92,7 @@ apaliwal:
 arothman:
   name: Adam Rothman
   primary: Opening Panel Head
-  image: avatar.jpg
+  image: arothman.jpg
 
 ecavanagh:
   name: Eve Cavanagh
@@ -125,7 +125,7 @@ shooey:
   name: Shaan Hooey
   primary: Plenary Head
   secondary: Cryptocurrencies
-  image: avatar.jpg
+  image: shooey.jpg
 
 zazim:
   name: Zainab Azim
@@ -167,7 +167,7 @@ jliao:
   name: James Liao
   primary: Plenary Head
   secondary: Feminism
-  image: avatar.jpg
+  image: jliao.jpg
 
 sqaadri:
   name: Shafiq Qaadri
@@ -268,7 +268,7 @@ mroden:
 ssobie:
   name: Sloan Sobie
   primary: Audio/Visual Team
-  image: avatar.jpg
+  image: ssobie.jpg
 
 clau:
   name: Carson Lau
