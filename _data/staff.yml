@@ -171,7 +171,8 @@ areeves:
 
 jliao:
   name: James Liao
-  primary: Assistant Programs
+  primary: Plenary Head
+  secondary: Feminism
   image: jliao.jpg
   
 sqaadri:
@@ -221,11 +222,6 @@ bsandeela:
   image: avatar.jpg
 
 # Package
-Gkung:
-  name: Gorden Kung
-  primary: Lead Package Designer
-  secondary: Graphic Designer
-  image: avatar.jpg
 
 achan:
   name: Ambrose Chan
