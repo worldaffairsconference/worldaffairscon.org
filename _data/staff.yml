@@ -1,3 +1,4 @@
+#Core Executives
 jsamek:
   name: Julian Samek
   primary: Conference Chair
@@ -12,7 +13,7 @@ kkim:
 mwang:
   name: Matthew Wang
   primary: Director General
-  secondary: Web Developer
+  secondary: Web Developer / Graphic Designer 
   bio: How do Web Developers mark their work? They Graphic De-sign it.
   image: mwang.jpg
   email: matt@matthewwang.me
@@ -65,6 +66,7 @@ owang:
 jmace:
   name: John Mace
   primary: Head of Operation Technologies
+  secondary: Audio/Visual Team
   image: jmace.png
   github: j0hnmace
 
@@ -89,6 +91,8 @@ apaliwal:
   primary: Head of Communications
   image: apaliwal.jpg
 
+# Programs
+
 arothman:
   name: Adam Rothman
   primary: Opening Panel Head
@@ -108,6 +112,8 @@ nmelchoir:
   name: Nicole Melchoir
   primary: Closing Panel Head
   image: nmelchoir.jpg
+  
+# Plen heads
 
 vchindea:
   name: Vladimir Chindea
@@ -163,12 +169,11 @@ areeves:
   secondary: Feminism
   image: areeves.jpg
 
-jliao:
-  name: James Liao
-  primary: Plenary Head
-  secondary: Feminism
-  image: jliao.jpg
 
+kparamaanatham:
+  name: Kohilan Paramaanantham
+  primary: Plenary Head
+  
 sqaadri:
   name: Shafiq Qaadri
   primary: Plenary Head
@@ -180,11 +185,18 @@ jmdouglas:
   primary: Plenary Head
   secondary: WMDs
   image: avatar.jpg
-
+ # Assistants
 apasricha:
   name: Aryan Pasricha
   primary: Assistant Programs
   image: apasricha.png
+  
+jliao:
+  name: James Liao
+  primary: Assistant Programs
+  image: jliao.jpg
+
+# Design
 
 akazakov:
   name: Alexander Kazakov
@@ -209,6 +221,13 @@ spandiaraju:
 bsandeela:
   name: Bassem Sandeela
   primary: Graphic Designer
+  image: avatar.jpg
+
+# Package
+Gkung:
+  name: Gorden Kung
+  primary: Lead Package Designer
+  secondary: Graphic Designer
   image: avatar.jpg
 
 achan:
@@ -236,6 +255,8 @@ bbroer:
   primary: Package Designer
   image: avatar.jpg
 
+# Dev
+
 nobrien:
   name: Nicholas O'Brien
   primary: Web Developer
@@ -250,6 +271,25 @@ rknowles:
   primary: Web Developer
   image: avatar.jpg
 
+#A/V
+
+clau:
+  name: Carson Lau
+  primary: Audio/Visual Team
+  image: clau.jpg
+  
+ssobie:
+  name: Sloan Sobie
+  primary: Audio/Visual Team
+  image: ssobie.jpg
+  
+tbajeojo:
+  name: Toni Agbaje-Ojo
+  primary: Audio/Visual Team
+  image: avatar.jpg
+
+# Video
+  
 sstern:
   name: Sheldon Stern
   primary: Video Crew Lead
@@ -257,20 +297,341 @@ sstern:
 
 ahwang:
   name: Alexander Hwang
-  primary: Video Crew Lead
+  primary: Video Crew 
   image: ahwang.png
-
-mroden:
-  name: Morley Roden
-  primary: Video Crew
+  
+erosen:
+  name: Eitan Rosen
+  primary: Video Crew 
   image: avatar.jpg
 
-ssobie:
-  name: Sloan Sobie
-  primary: Audio/Visual Team
-  image: ssobie.jpg
+jzhang:
+  name: Jessica Zheng
+  primary: Actor
+  image: avatar.jpg
 
-clau:
-  name: Carson Lau
-  primary: Audio/Visual Team
-  image: clau.jpg
+ybelkhou:
+  name: Yassine Belkhou
+  primary: Actor
+  image: avatar.jpg
+
+emcdermott:
+  name: Elliott McDermott
+  primary: Actor
+  image: avatar.jpg
+
+rthusuka:
+  name: Ryder Thusuka
+  primary: Actor
+  image: avatar.jpg
+
+# Photography
+
+kfernandez:
+  name: Kayla Fernandez
+  primary: Photographer
+  image: avatar.jpg
+
+stemple:
+  name: Samantha Temple
+  primary: Photographer
+  image: avatar.jpg
+  
+asteeves:
+  name: Avery Steeves
+  primary: Photographer
+  image: avatar.jpg
+
+cwilson:
+  name: Cecily Wilson
+  primary: Photographer
+  image: avatar.jpg
+
+jtannenbaum:
+  name: Jack Tannenbaum
+  primary: Photographer
+  image: avatar.jpg
+
+jyeresian:
+  name: James Yeretsian
+  primary: Photographer
+  image: avatar.jpg
+  
+# Security
+
+giannantuono:
+  name: Gianluca Iannantuono
+  primary: Security Team
+  image: avatar.jpg
+  
+ybelkhou:
+  name: Yassine Belkhou
+  primary: Security Team
+  image: avatar.jpg
+  
+mkegan:
+  name: Michael Kagan
+  primary: Security Team
+  image: avatar.jpg
+  
+tlittler:
+  name: Teddy Littler
+  primary: Security Team
+  image: avatar.jpg
+  
+nsinnathurai:
+  name: Nixon Sinnathurai
+  primary: Security Team
+  image: avatar.jpg
+  
+slanglois:
+  name: Sean Langlois
+  primary: Security Team
+  image: avatar.jpg
+  
+obrown:
+  name: Oscar Brown
+  primary: Security Team
+  image: avatar.jpg
+  
+pbujouves:
+  name: PJ Bujouves
+  primary: Security Team
+  image: avatar.jpg
+  
+kwennberg:
+  name: Karl Wennberg
+  primary: Security Team
+  image: avatar.jpg
+  
+mfard:
+  name: Milad Fard
+  primary: Security Team
+  image: avatar.jpg
+  
+afrancescutti:
+  name: Adam Francescutti
+  primary: Security Team
+  image: avatar.jpg
+  
+aspeirs:
+  name: Andrew Speirs
+  primary: Security Team
+  image: avatar.jpg
+  
+jzhang:
+  name: Jeremy Zhang
+  primary: Security Team
+  image: avatar.jpg
+  
+swaheed:
+  name: Sarosh Waheed
+  primary: Security Team
+  image: avatar.jpg
+  
+ahwang:
+  name: Alexander Hwang
+  primary: Security Team
+  image: avatar.jpg
+  
+tsantos:
+  name: Thomas Santos
+  primary: Security Team
+  image: avatar.jpg
+  
+cdowd:
+  name: Campbell Dowd
+  primary: Security Team
+  image: avatar.jpg
+  
+akukreja:
+  name: Ansh Kukreja
+  primary: Security Team
+  image: avatar.jpg
+  
+aganesh:
+  name: Akash Kennedy Ganesh
+  primary: Security Team
+  image: avatar.jpg
+  
+wmnzione:
+  name: William Monzione
+  primary: Security Team
+  image: avatar.jpg
+  
+adowning:
+  name: Andrew Downing
+  primary: Security Team
+  image: avatar.jpg
+
+mreilly:
+  name: Michael Reilly
+  primary: Security Team
+  image: avatar.jpg
+
+dtesfay:
+  name: Daniel Tesfay
+  primary: Security Team
+  image: avatar.jpg
+  
+drealini:
+  name: Dano Realini
+  primary: Security Team
+  image: avatar.jpg
+  
+lstevens:
+  name: Luke Stevens
+  primary: Security Team
+  image: avatar.jpg
+  
+dkutsec:
+  name: Davis Kutsec
+  primary: Security Team
+  image: avatar.jpg
+  
+aginanena:
+  name: Angelous Ginanena
+  primary: Security Team
+  image: avatar.jpg
+
+jcait:
+  name: Jeremy Cait
+  primary: Security Team
+  image: avatar.jpg
+  
+cmckinney:
+  name: Connor McKinney
+  primary: Security Team
+  image: avatar.jpg
+  
+aeppinghoven:
+  name: Alex Von Eppinghoven
+  primary: Security Team
+  image: avatar.jpg
+  
+rberz:
+  name: Raphael Berz
+  primary: Security Team
+  image: avatar.jpg
+  
+athoburn:
+  name: Anna Thoburn
+  primary: Security Team
+  image: avatar.jpg
+  
+msmith:
+  name: Madeline Smith
+  primary: Security Team
+  image: avatar.jpg
+  
+brusset:
+  name: Bess Russet
+  primary: Security Team
+  image: avatar.jpg
+  
+jyu:
+  name: Jacqueline Yu
+  primary: Security Team
+  image: avatar.jpg
+  
+gmatheson:
+  name: Ginny Matheson
+  primary: Security Team
+  image: avatar.jpg
+  
+csung:
+  name: Cailin Sung
+  primary: Security Team
+  image: avatar.jpg
+  
+jgriffith:
+  name: Julia Griffith
+  primary: Security Team
+  image: avatar.jpg
+  
+amarcus:
+  name: Ani Marcus
+  primary: Security Team
+  image: avatar.jpg
+  
+ehristov:
+  name: Emma Hristov
+  primary: Security Team
+  image: avatar.jpg
+  
+grichardson:
+  name: Gwyneth Richardson
+  primary: Security Team
+  image: avatar.jpg
+  
+jzheng:
+  name: Jessica Zheng
+  primary: Security Team
+  image: avatar.jpg
+  
+kbaldock:
+  name: Kate Baldock
+  primary: Security Team
+  image: avatar.jpg
+  
+mheadrick:
+  name: Morgan Headrick
+  primary: Security Team
+  image: avatar.jpg
+
+maheadrick:
+  name: Mary Headrick
+  primary: Security Team
+  image: avatar.jpg
+  
+mlangill:
+  name: Mary Langill
+  primary: Security Team
+  image: avatar.jpg
+  
+eholloway:
+  name: Emma Holloway
+  primary: Security Team
+  image: avatar.jpg
+  
+mlangill:
+  name: Mary Langill
+  primary: Security Team
+  image: avatar.jpg
+  
+eholloway:
+  name: Emma Holloway
+  primary: Security Team
+  image: avatar.jpg
+  
+echow:
+  name: Emma Chow
+  primary: Security Team
+  image: avatar.jpg
+  
+kwang:
+  name: Kaitlyn Wang
+  primary: Security Team
+  image: avatar.jpg
+  
+motton:
+  name: Malorie Otton
+  primary: Security Team
+  image: avatar.jpg
+  
+mkisob:
+  name: Massoma Kisob
+  primary: Security Team
+  image: avatar.jpg
+  
+mminnes:
+  name: Maddy Minnes
+  primary: Security Team
+  image: avatar.jpg
+  
+eburke:
+  name: Emily Burke
+  primary: Security Team
+  image: avatar.jpg
+
+
