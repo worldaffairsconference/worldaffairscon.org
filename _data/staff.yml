@@ -270,7 +270,7 @@ nobrien:
 rknowles:
   name: Robbie Knowles
   primary: Web Developer
-  image: avatar.jpg
+  image: rknowles.jpg
 
 #A/V
 
@@ -323,6 +323,52 @@ emcdermott:
 
 rthusuka:
   name: Ryder Thusuka
+  primary: Actor
+  image: avatar.jpg
+
+# Registration
+cgrasse:
+  name: Cooper Mendelson-Grasse
+  primary: Actor
+  image: avatar.jpg
+  
+ing:
+  name: Isaac Ng
+  primary: Actor
+  image: avatar.jpg
+  
+gdogra:
+  name: Gaurav Dogra
+  primary: Actor
+  image: avatar.jpg
+
+pkong:
+  name: Phillip Kong
+  primary: Actor
+  image: avatar.jpg
+  
+blee:
+  name: Benjamin Lee
+  primary: Actor
+  image: avatar.jpg
+  
+smakarov:
+  name: Stefan Makarov
+  primary: Actor
+  image: avatar.jpg
+  
+sofiara:
+  name: Simon Ofiara
+  primary: Actor
+  image: avatar.jpg
+  
+wblair:
+  name: Will Blair
+  primary: Actor
+  image: avatar.jpg
+  
+jli:
+  name: Jimmy Li
   primary: Actor
   image: avatar.jpg
 
