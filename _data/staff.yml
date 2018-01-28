@@ -169,11 +169,10 @@ areeves:
   secondary: Feminism
   image: areeves.jpg
 
-
-kparamaanatham:
-  name: Kohilan Paramaanantham
-  primary: Plenary Head
-  image: avatar.jpg
+jliao:
+  name: James Liao
+  primary: Assistant Programs
+  image: jliao.jpg
   
 sqaadri:
   name: Shafiq Qaadri
@@ -186,16 +185,13 @@ jmdouglas:
   primary: Plenary Head
   secondary: WMDs
   image: avatar.jpg
+  
  # Assistants
 apasricha:
   name: Aryan Pasricha
   primary: Assistant Programs
   image: apasricha.png
   
-jliao:
-  name: James Liao
-  primary: Assistant Programs
-  image: jliao.jpg
 
 # Design
 
