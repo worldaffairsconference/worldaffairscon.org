@@ -3,9 +3,9 @@
 # Dependency locations and variables
 JQUERY=https://code.jquery.com/jquery-3.2.1.min.js
 TETHER=https://raw.githubusercontent.com/HubSpot/tether/master/dist/js/tether.min.js
-FA_VER=5.0.1
+FA_VER=5.0.6
 FONTAWESOME=https://use.fontawesome.com/releases/v$FA_VER/fontawesome-free-$FA_VER.zip
-BS_VER=4.0.0-beta
+BS_VER=4.0.0
 BOOTSTRAP=https://codeload.github.com/twbs/bootstrap/zip/v$BS_VER
 
 # Check to see if the user has all the tools
@@ -66,5 +66,5 @@ echo " √ Bootstrap done!"
 # Build the resulting website (this is redundant but is useful for time efficiency)
 echo " - Building site"
 sass css/bootstrap/bootstrap.scss --style compressed > css/bootstrap.min.css # Sass -> CSS
-jekyll build
+bundle exec jekyll build
 echo " √ Build complete!"
