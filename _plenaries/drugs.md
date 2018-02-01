@@ -2,7 +2,7 @@
 layout: plenary
 title: Drug Legalization in a Progressive World
 pic: drug.svg
-speaker1: nginsberg
+speaker1: ayoung
 speaker2: dpavlova
 shortbio: "Societies are already legalizing marijuana at growing rates. Does this provide more harms than benefits? As well, this opens the debate to legalizing other drugs. Where should governments/societies draw the line?"
 ---
