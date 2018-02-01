@@ -321,47 +321,47 @@ rthusuka:
 # Registration
 cgrasse:
   name: Cooper Mendelson-Grasse
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 ing:
   name: Isaac Ng
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 gdogra:
   name: Gaurav Dogra
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 pkong:
   name: Phillip Kong
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 blee:
   name: Benjamin Lee
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 smakarov:
   name: Stefan Makarov
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 sofiara:
   name: Simon Ofiara
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 wblair:
   name: Will Blair
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 jli:
   name: Jimmy Li
-  primary: Actor
+  primary: Registration
   image: avatar.jpg
 
 # Photography
