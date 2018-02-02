@@ -193,6 +193,10 @@ apasricha:
   primary: Assistant Programs
   image: apasricha.png
 
+kparamaanatham:
+  name: Kohilan Paramaanantham
+  primary: Plenary Head
+  image: kparamaanatham.png
 
 # Design
 
@@ -577,7 +581,7 @@ swilliams:
   name: Sophia Williams
   primary: Security Team
   image: avatar.jpg
-  
+
 gmatheson:
   name: Ginny Matheson
   primary: Security Team
