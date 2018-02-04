@@ -26,14 +26,14 @@ In addition, we also do registration through the website, using a system we buil
 
 So you want to contribute to WAC? Great! We're aiming to have a full documentation set on how to edit this website, but in the meanwhile, we have a little guide for you.
 
-### Quick Pointers
+### Branch Info
 
 * Our production-ready version of the website is stored in `master`, which is available for viewing at [world.ac](http://world.ac).
 * All other branches are not officially available on the web. Instead, you'll have to build and run them yourself. Refer to our setup section for more information.
 
 ### Setup
 
-*Note: This guide assumes you're using a unix system. If you aren't (e.g. Windows), this setup method is currently unsupported.*
+*Note: This guide assumes you're using a unix system.*
 
 Setting up the WAC website on a local machine is simple. All you need to do is copy-paste a few commands into your command line.
 
@@ -64,10 +64,10 @@ To install our ruby dependencies, you need [Bundler](https://bundler.io/). You c
 $ gem install bundler
 ```
 
-Next step is to setup our dependencies. Just run `./setup.sh`. Boom. Done. `./setup.sh` runs `bundle`, which is why it's required for installation, as well as pulling a few libraries from the internet.
+Next step is to setup our dependencies. Just run `./setup.sh`. `./setup.sh` runs `bundle`to install our ruby dependencies and also downloads other non-ruby dependencies.
 
-*Note: You might have troubles running `.sh` files if you don't make it an executable. An easy way to do that is to type in `chmod +x ./setup.sh`, and then run `./setup.sh`!*
+*Note: You might have troubles running `.sh` files if you don't make them executables. Type in `chmod +x ./setup.sh`, and then run `./setup.sh`!*
 
-To actually see the website, run `./start.sh`. Visit what follows the "Server address:" line (which is normally [http://127.0.0.1:4000/](http://127.0.0.1:4000/), but that might change soon)!
+To "compile" and serve the website, run `./start.sh`. Then, visit [http://127.0.0.1:4000/](http://127.0.0.1:4000/) - and everything should work!
 
-And voila! Everything should work for you. If something isn't, please let one of us know on our [issues tracker](https://github.com/malsf21/world.ac/issues).
+And voila! Everything should work for you. If something doesn't, let us know on our [issues tracker](https://github.com/malsf21/world.ac/issues).
