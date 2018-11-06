@@ -1,23 +1,8 @@
----
-
----
-
 /*
 WAC Website Stylesheet
 Version: 2.0.0 (Last Major Release Edited)
 Written by @malsf21, @jacksarick, @obrien66
 */
-
-// Variables
-
-$primary-color: #2a262a;
-$spacing-unit: 1em;
-
-$twitter-blue: #1DA1F3;
-$instagram-purple: #9C27B0;
-
-// Font Imports
-
 /* | NEXA FONT |
 Nexa
 Nexa Italic
@@ -25,30 +10,25 @@ Nexa Bold
 Nexa Bold Italic
  */
 @font-face {
-	font-family: 'Nexa';
-	src: url('webfonts/3018A5_C_0.eot');
-	src: url('webfonts/3018A5_C_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_C_0.woff2') format('woff2'),url('webfonts/3018A5_C_0.woff') format('woff'),url('webfonts/3018A5_C_0.ttf') format('truetype');
-}
+  font-family: 'Nexa';
+  src: url("webfonts/3018A5_C_0.eot");
+  src: url("webfonts/3018A5_C_0.eot?#iefix") format("embedded-opentype"), url("webfonts/3018A5_C_0.woff2") format("woff2"), url("webfonts/3018A5_C_0.woff") format("woff"), url("webfonts/3018A5_C_0.ttf") format("truetype"); }
 @font-face {
-	font-family: 'Nexa';
-	src: url('webfonts/3018A5_B_0.eot');
-	src: url('webfonts/3018A5_B_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_B_0.woff2') format('woff2'),url('webfonts/3018A5_B_0.woff') format('woff'),url('webfonts/3018A5_B_0.ttf') format('truetype');
-	font-style:italic;
-}
+  font-family: 'Nexa';
+  src: url("webfonts/3018A5_B_0.eot");
+  src: url("webfonts/3018A5_B_0.eot?#iefix") format("embedded-opentype"), url("webfonts/3018A5_B_0.woff2") format("woff2"), url("webfonts/3018A5_B_0.woff") format("woff"), url("webfonts/3018A5_B_0.ttf") format("truetype");
+  font-style: italic; }
 @font-face {
-	font-family: 'Nexa';
-	src: url('webfonts/3018A5_4_0.eot');
-	src: url('webfonts/3018A5_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_4_0.woff2') format('woff2'),url('webfonts/3018A5_4_0.woff') format('woff'),url('webfonts/3018A5_4_0.ttf') format('truetype');
-	font-weight:bold;
-}
+  font-family: 'Nexa';
+  src: url("webfonts/3018A5_4_0.eot");
+  src: url("webfonts/3018A5_4_0.eot?#iefix") format("embedded-opentype"), url("webfonts/3018A5_4_0.woff2") format("woff2"), url("webfonts/3018A5_4_0.woff") format("woff"), url("webfonts/3018A5_4_0.ttf") format("truetype");
+  font-weight: bold; }
 @font-face {
-	font-family: 'Nexa';
-	src: url('webfonts/3018A5_3_0.eot');
-	src: url('webfonts/3018A5_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_3_0.woff2') format('woff2'),url('webfonts/3018A5_3_0.woff') format('woff'),url('webfonts/3018A5_3_0.ttf') format('truetype');
-	font-weight:bold;
-	font-style:italic;
-}
-
+  font-family: 'Nexa';
+  src: url("webfonts/3018A5_3_0.eot");
+  src: url("webfonts/3018A5_3_0.eot?#iefix") format("embedded-opentype"), url("webfonts/3018A5_3_0.woff2") format("woff2"), url("webfonts/3018A5_3_0.woff") format("woff"), url("webfonts/3018A5_3_0.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic; }
 /* | NEXA LIGHT |
 Nexa Light
 Nexa Light Italic
@@ -66,7 +46,6 @@ Nexa Light Italic
 	font-style:italic;
 }
 */
-
 /* | NEXA THIN | */
 /*
 @font-face {
@@ -75,7 +54,6 @@ Nexa Light Italic
 	src: url('webfonts/3018A5_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_0_0.woff2') format('woff2'),url('webfonts/3018A5_0_0.woff') format('woff'),url('webfonts/3018A5_0_0.ttf') format('truetype');
 }
 */
-
 /* | NEXA BLACK |
 Nexa Black
 Nexa Black Italic
@@ -93,7 +71,6 @@ Nexa Black Italic
 	font-style:italic;
 }
 */
-
 /* | NEXA BOOK |
 Nexa Book
 Nexa Book Italic
@@ -111,29 +88,23 @@ Nexa Book Italic
 	src: url('webfonts/3018A5_5_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_5_0.woff2') format('woff2'),url('webfonts/3018A5_5_0.woff') format('woff'),url('webfonts/3018A5_5_0.ttf') format('truetype');
 }
 */
-
-
 /* | NEXA HEAVY |
 Nexa Heavy
 Nexa Heavy Italic
 */
 @font-face {
-	font-family: 'Nexa Heavy';
-	src: url('webfonts/3018A5_8_0.eot');
-	src: url('webfonts/3018A5_8_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_8_0.woff2') format('woff2'),url('webfonts/3018A5_8_0.woff') format('woff'),url('webfonts/3018A5_8_0.ttf') format('truetype');
-}
+  font-family: 'Nexa Heavy';
+  src: url("webfonts/3018A5_8_0.eot");
+  src: url("webfonts/3018A5_8_0.eot?#iefix") format("embedded-opentype"), url("webfonts/3018A5_8_0.woff2") format("woff2"), url("webfonts/3018A5_8_0.woff") format("woff"), url("webfonts/3018A5_8_0.ttf") format("truetype"); }
 @font-face {
-	font-family: 'Nexa Heavy';
-	src: url('webfonts/3018A5_7_0.eot');
-	src: url('webfonts/3018A5_7_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3018A5_7_0.woff2') format('woff2'),url('webfonts/3018A5_7_0.woff') format('woff'),url('webfonts/3018A5_7_0.ttf') format('truetype');
-	font-style:italic;
-}
-
+  font-family: 'Nexa Heavy';
+  src: url("webfonts/3018A5_7_0.eot");
+  src: url("webfonts/3018A5_7_0.eot?#iefix") format("embedded-opentype"), url("webfonts/3018A5_7_0.woff2") format("woff2"), url("webfonts/3018A5_7_0.woff") format("woff"), url("webfonts/3018A5_7_0.ttf") format("truetype");
+  font-style: italic; }
 /* | NEXA EXTRA BOLD |
 NexaXBold
 NexaXBoldItalic
 */
-
 /*
 @font-face {
 	font-family: 'Nexa XBold';
@@ -147,7 +118,6 @@ NexaXBoldItalic
 	font-style:italic;
 }
 */
-
 /* |FREE LICENSED FONTS|
 
 	This was when we were poor. We don't use these any more, but in a pinch we can pull them back up. The EULA is MIT OPEN 2.0
@@ -162,119 +132,88 @@ NexaXBoldItalic
 	src:url(nexa/nexa_bold.otf);
 }
 */
-
-// Removes sideways scrollbar, and always has a full background.
-html{
-	position: relative;
-	min-width: 100%;
-	min-height: 100%;
-	overflow-x: hidden;
-}
-
-// Sets default font to Nexa, pads content so the navbar doesn't overlap, and sets a default background and text colour.
-body{
-	min-width: 100%;
+html {
+  position: relative;
+  min-width: 100%;
   min-height: 100%;
-	font-family:Nexa;
-	padding-top: 4*$spacing-unit;
-	padding-bottom: $spacing-unit;
-	background-color: $primary-color;
-	color:#FFF;
-}
+  overflow-x: hidden; }
 
-.card{
-	color: $primary-color;
-}
+body {
+  min-width: 100%;
+  min-height: 100%;
+  font-family: Nexa;
+  padding-top: 4em;
+  padding-bottom: 1em;
+  background-color: #2a262a;
+  color: #FFF; }
 
-// Sets default fonts for headers.
+.card {
+  color: #2a262a; }
+
 h1, h2, h3 {
-	font-family:Nexa Heavy;
-}
+  font-family: Nexa Heavy; }
 
-// Navbar CSS
+.mobile-nav {
+  color: #2a262a;
+  font-size: 1.5em; }
 
-.mobile-nav{
-	color: $primary-color;
-	font-size: 1.5*$spacing-unit;
-}
+.mobile-nav-section {
+  padding-top: 0.5em; }
 
-.mobile-nav-section{
-	padding-top: 0.5*$spacing-unit;
-}
+.nav-image {
+  height: 30px;
+  width: auto; }
 
-.nav-image{
-	height: 30px;
-	width: auto;
-}
-
-// Index classes
 .index-welcome {
-	background-color:rgba(0,0,0,0.4);
-	padding-top:2%;
-	padding-bottom:2%;
-}
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 2%;
+  padding-bottom: 2%; }
 
-// Plenary Classes
-.plenary-img{
-	max-width: 25%;
-	margin-left: auto;
-	margin-right: auto;
-}
+.plenary-img {
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto; }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .plenary-img {
-    max-width: 100%;
-  }
-}
+    max-width: 100%; } }
+.black-icon {
+  color: black; }
 
+a.black-icon:hover {
+  color: black; }
 
-// Icons
+a.black-icon:visited {
+  color: black; }
 
-.black-icon{
-	color: black;
-}
-a.black-icon:hover{
-	color: black;
-}
-a.black-icon:visited{
-	color:black;
-}
+.white-icon {
+  color: white; }
 
-.white-icon{
-	color: white;
-}
-a.white-icon:hover{
-	color: white;
-}
-a.white-icon:visited{
-	color:white;
-}
+a.white-icon:hover {
+  color: white; }
 
+a.white-icon:visited {
+  color: white; }
 
-// Contact Page
 .contact-color {
-	color: #FFF;
-}
-a.contact-color:hover{
-	color: #FFF;
-}
-a.contact-color:visited {
-	color: #FFF;
-}
-.bg-twitter{
-	background-color: $twitter-blue;
-}
-.bg-instagram {
-	background-color:$instagram-purple;
-}
+  color: #FFF; }
 
-// Embed Helper
+a.contact-color:hover {
+  color: #FFF; }
+
+a.contact-color:visited {
+  color: #FFF; }
+
+.bg-twitter {
+  background-color: #1DA1F3; }
+
+.bg-instagram {
+  background-color: #9C27B0; }
 
 .img-half {
   max-width: 50%;
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
 
 .embed-container {
   position: relative;
@@ -282,13 +221,11 @@ a.contact-color:visited {
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 .embed-container iframe, .embed-container object, .embed-container embed {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
