@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="{{ site.baseurl }}/"><img class="nav-image" src="../img/wac_logo_full.png" alt="WAC Logo"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item{% if page.url == '/keynote/' %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/keynote/">Keynote</a>
+      </li>
+      <li class="nav-item{% if page.url == '/addresses/' %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/addresses/">Addresses</a>
+      </li>
+      <li class="nav-item{% if page.url == '/plenaries/' %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/plenaries/">Plenaries</a>
+      </li>
+      <li class="nav-item{% if page.url == '/faq/' %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/faq/">FAQ</a>
+      </li>
+      <li class="nav-item{% if page.url == '/staff/' %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/staff/">Staff</a>
+      </li>
+      <li class="nav-item{% if page.url == '/schedule/' %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/schedule/">Schedule</a>
+      </li>
+      <li class="nav-item{% if page.url == '/contact/' %} active{% endif %}">
+        <a class="nav-link" href="{{ site.baseurl }}/contact/">Contact</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav float-lg-right">
+      <li class="nav-item">
+        <a class="btn btn-outline-primary" href="{{ site.regurl }}" data-proofer-ignore>Register</a>
+      </li>
+    </ul>
+  </div>
+</nav>
