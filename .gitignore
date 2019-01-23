@@ -15,3 +15,8 @@ bootstrap
 bootstrap.min.css
 bootstrap.min.js
 fontawesome-all.min.js
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/world.ac.iml
