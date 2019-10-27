@@ -150,8 +150,13 @@ body {
 .card {
   color: #2a262a; }
 
+.modal{
+  color:#2a262a;
+}
+
 h1, h2, h3 {
-  font-family: Nexa Heavy; }
+  font-family: Nexa Heavy; 
+}
 
 .mobile-nav {
   color: #2a262a;
