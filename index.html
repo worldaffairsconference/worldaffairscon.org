@@ -149,9 +149,14 @@
   </div>
 </div>
 <script type="text/javascript">
-
+    
+  document.cookie = "test1=Hello;"
+    
+    
   var wacdate = "2/3/2020"; //Countdown date in MM/DD/YYYY format (no 0's required)
   function getTimeRemaining(endtime){
+    
+    
   	var t = Date.parse(endtime) - Date.parse(new Date());
   	var seconds = Math.floor( (t/1000) % 60 );
   	var minutes = Math.floor( (t/1000/60) % 60 );
@@ -171,6 +176,8 @@
   window.setInterval(function(){
     $("#countdown").html(getTimeRemaining(wacdate));
   }, 1000);
+    
+
 
 </script>
 
