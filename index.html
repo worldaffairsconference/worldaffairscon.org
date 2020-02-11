@@ -85,7 +85,7 @@
         Thanks for coming to WAC 2020! Watch VODs of our programs <a class="alert-link" href="https://www.facebook.com/worldaffairsconference">on our Facebook Page</a>!
       </div>
 </div>
-      
+
 
  <div class="index-welcome">
   <div class="container">
@@ -155,18 +155,18 @@
       </div>
     </div>
 </div>
-    
-<!-- Pop Up -->
-      
 
-      
-    
+<!-- Pop Up -->
+
+
+
+
 <script type="text/javascript">
-  
+
   var wacdate = "2/3/2020"; //Countdown date in MM/DD/YYYY format (no 0's required)
   function getTimeRemaining(endtime){
-    
-    
+
+
   	var t = Date.parse(endtime) - Date.parse(new Date());
   	var seconds = Math.floor( (t/1000) % 60 );
   	var minutes = Math.floor( (t/1000/60) % 60 );
@@ -177,7 +177,8 @@
   		return "in " + days + " Days, " + hours + " Hours, " + minutes + " Minutes, and " + seconds + " Seconds";
   	}
     else if (t < 0) {
-      return "in progress!"
+      return "Over!";
+      // return "in progress!"
     }
   	else {
   		return "Oops!";
@@ -186,7 +187,7 @@
   window.setInterval(function(){
     $("#countdown").html(getTimeRemaining(wacdate));
   }, 1000);
-    
+
 
 
 </script>
@@ -211,7 +212,7 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/tether.min.js"></script>
-      
+
 <!-- Pop Up! -->
 <script type="text/javascript">
   if (document.cookie.indexOf("popup") == -1){
@@ -221,7 +222,7 @@
       document.cookie = "cookiename=popup; expires= Fri, 31 Jan 2020 20:00:00 UTC";
   }
 </script>
-      
+
   </body>
 
 </html>
