@@ -4,7 +4,6 @@ world.ac
 _site/
 .sass-cache/
 .jekyll-metadata
-reg/
 
 # installed items
 jquery.min.js
