@@ -23,6 +23,14 @@
 			background-image:url("../img/earth.png"),url("../img/stars.png");
 			background-repeat:no-repeat;
 		}
+    .vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
 	</style>
 </head>
 
@@ -66,13 +74,14 @@
   </div>
 </nav>
 
-
+<!--
     <div class="container">
       <div class="alert alert-info" role="alert">
         Thanks for coming to WAC 2018! Watch VODs of our programs <a class="alert-link" href="https://www.facebook.com/worldaffairsconference">on our Facebook Page</a>!
       </div>
     </div>
-
+    -->
+    <div class="vertical-center">
       <div class="container">
   <center>
     <div class="card card-body">
@@ -82,7 +91,7 @@
     </div>
   </center>
 </div>
-
+</div>
 
 
     <footer class="footer text-center mt-3">
