@@ -91,6 +91,7 @@
 }
 
   function handleLookup(){
+    document.getElementById("loading").classList.remove("d-none");
     var email = document.getElementById("emailLookup").value;
     fetch(`https://us-central1-wac2021-d98f6.cloudfunctions.net/lookUp?email=${email}`)
       .then(resp=>{
@@ -118,8 +119,10 @@
 						<span class="input-group-text" id="inputGroup-sizing-default">Email</span>
 					</div> -->
 					<input id="emailLookup" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Email...">
-					<button onclick="handleLookup();" class="btn btn-primary" style="margin-left: 15px;">Submit</button>
-				</div>
+          <button onclick="handleLookup();" class="btn btn-primary" style="margin-left: 15px;">Submit</button>
+          
+        </div>
+        <p id="loading" class="pl-2 d-none">Loading...</p>
 			</div>
 		</div>
 
