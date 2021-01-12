@@ -16,8 +16,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
   <link rel="stylesheet" href= "../css/bootstrap.min.css">
   <link rel="stylesheet" href= "../css/style.css">
-  <script src="../js/google_analytics.js"></script>
-  <script defer src="../js/fontawesome-all.min.js"></script>
   <style>
 		html, body {
 			width: 100%;
@@ -81,7 +79,34 @@
     </ul>
   </div>
 </nav>
+<script>
+  function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
 
+  function handleLookup(){
+    var email = document.getElementById("emailLookup").value;
+    fetch(`https://us-central1-wac2021-d98f6.cloudfunctions.net/lookUp?email=${email}`)
+      .then(resp=>{
+        return(resp.json())
+      })
+      .then(json=>{
+        if(!json.registered){
+          window.location.href="https://register.gotowebinar.com/register/6122619915197970701?source=Internal+Sign-up+Link";
+        }else{
+          setCookie("token",json.token,0.5)
+          window.location.href="./linkhub.html"
+        }
+        
+      })
+  }
+</script>
 	<div class="flex-vertical">
 		<div></div>
 		<div class="container">
@@ -92,8 +117,8 @@
 					<!-- <div class="input-group-prepend">
 						<span class="input-group-text" id="inputGroup-sizing-default">Email</span>
 					</div> -->
-					<input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Email...">
-					<button class="btn btn-primary" style="margin-left: 15px;">Submit</button>
+					<input id="emailLookup" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Email...">
+					<button onclick="handleLookup();" class="btn btn-primary" style="margin-left: 15px;">Submit</button>
 				</div>
 			</div>
 		</div>
@@ -113,16 +138,11 @@
 				<a href="https://github.com/worldaffairsconference/world.ac"><span class="fab fa-fw fa-2x fa-github white-icon"></span></a>
 			</div>
 		</footer>
-	</div>
-
-
-
-
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/tether.min.js></script>
-
-
+  </div>
+  
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/tether.min.js></script>
   </body>
 
 </html>

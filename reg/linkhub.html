@@ -81,13 +81,50 @@
     </ul>
   </div>
 </nav>
-
+<script>
+	function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+	var tr = ""
+	fetch(`https://us-central1-wac2021-d98f6.cloudfunctions.net/verifyToken?token=${getCookie("token")}`)
+		.then((resp,err)=>{
+			return(resp.json())
+		}).then(json=>{
+			const links = json.links.links
+			const name = json.firstName +" "+json.lastName
+			document.getElementById("greeting").innerText="Welcome Back: "+name;
+			for(var i=0;i<links.length;i++){
+				tr += "<tr>";
+				tr += "<td>" + links[i]["time"] + "</td>"
+				tr += "<td>" + links[i]["title"] + "</td>"
+				tr += "<td>" + links[i]["link"] + "</td>"
+				tr += "<td>" + links[i]["speaker"] + "</td>"
+				tr += "</tr>"
+			}
+			document.getElementById("loading").style.display = "none"
+			var parent = document.getElementById("linkHub")	
+			parent.innerHTML = tr
+		})
+		.catch(err=>{
+			window.location.href = './lookup.html'
+		})
+	
+		
+	
+</script>
 	<div class="flex-vertical">
 		<div></div>
 		<div class="container">
 			<div class="card card-body">
-				<h1>Links Hub</h1>
-
+				<h4 id="greeting">Welcome Back: </h4>
+				<h1>Event Links Hub</h1>
 				<table class="table">
 					<thead>
 						<tr>
@@ -97,19 +134,8 @@
 							<th scope="col">Speaker</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>TBD</td>
-							<td>TBD</td>
-							<td>TBD</td>
-							<td>TBD</td>
-						</tr>
-						<tr>
-							<td>TBD</td>
-							<td>TBD</td>
-							<td>TBD</td>
-							<td>TBD</td>
-						</tr>
+					<tbody id="linkHub">
+						<p id="loading">Loading...</p>
 					</tbody>
 				</table>
 			</div>
