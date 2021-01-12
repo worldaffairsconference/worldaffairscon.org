@@ -99,7 +99,7 @@
       })
       .then(json=>{
         if(!json.registered){
-          window.location.href="https://register.gotowebinar.com/register/6122619915197970701?source=Internal+Sign-up+Link";
+          window.location.href="https://register.gotowebinar.com/register/6122619915197970701?source=WebPage";
         }else{
           setCookie("token",json.token,0.5)
           window.location.href="./linkhub.html"

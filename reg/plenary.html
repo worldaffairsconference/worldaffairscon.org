@@ -76,7 +76,7 @@
         <a class="btn btn-outline-danger" href="../wacathon/index.html" data-proofer-ignore>SPRINT</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-outline-primary" href="https://register.gotowebinar.com/register/6122619915197970701?source=Internal+Sign-up+Link" data-proofer-ignore>Register</a>
+        <a class="btn btn-outline-primary" href="https://register.gotowebinar.com/register/6122619915197970701?source=WebPage" data-proofer-ignore>Register</a>
       </li>
     </ul>
   </div>
@@ -86,18 +86,40 @@
 		<div></div>
 		<div class="container">
 			<div class="card card-body">
-				<h1>A bit too early...</h1>
-
-        <p>Plenary selections are not open yet! Please come back later</p>
-        <hr/>
-        <p>You are being redirected, click <a href="https://worldaffairs.ucc.on.ca/reg/linkhub.html">here</a> if the browser does not redirect you automatically</p>
+				<h1 id="val">Select Plenary 1:</h1>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Title</th>
+							<th scope="col">Speaker</th>
+							<th scope="col"></th>
+						</tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Commercial Spaceflight: Humanity's Next Steps</td>
+              <td>Dr. Louis Friedman | Janet Ivey</td>
+              <td><a class="btn btn-primary btn-sm text-white" onclick="handleSelect(1);">Select</a></td>
+            </tr>
+            <tr>
+              <td>Social Justice: Our History and Future</td>
+              <td>Ajani Charles | Janet Ivey</td>
+              <td><a class="btn btn-primary btn-sm text-white text-white" onclick="handleSelect(2);">Select</a></td>
+            </tr>
+            <tr>
+              <td>Social Media: We are the Product</td>
+              <td>David Carroll | the Social Dilemma Film crew</td>
+              <td><a class="btn btn-primary btn-sm text-white" onclick="handleSelect(3);">Select</a></td>
+            </tr>
+            <tr>
+              <td>Businesses in COVID: Sink or Swim</td>
+              <td>Bharat Masrani | Opher Baron</td>
+              <td><a class="btn btn-primary btn-sm text-white" onclick="handleSelect(4);">Select</a></td>
+            </tr>
+          </tbody>
+				</table>
 			</div>
-    </div>
-    <script>
-      setTimeout(()=>{
-        window.location.href='https://worldaffairs.ucc.on.ca/reg/linkhub.html'
-      },5000)
-    </script>
+		</div>
 
 		<footer class="footer text-center mt-3">
 			<div class="container">
@@ -115,7 +137,20 @@
 			</div>
 		</footer>
 	</div>
-
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const plenary = urlParams.get('v');
+    if(plenary == 1){
+      document.getElementById("val").innerText = "Select Plenary 1:"
+    }else{
+      document.getElementById("val").innerText = "Select Plenary 2:"
+    }
+  
+  
+    function handleSelect(val){
+      window.location.href = "./plenarySuccess.html"
+    }
+  </script>
 
 
 
