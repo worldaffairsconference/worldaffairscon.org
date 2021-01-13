@@ -97,7 +97,7 @@
 		window.location.href = './lookup.html'
 	}else{
 	var tr = ""
-	fetch('https://us-central1-wac2021-d98f6.cloudfunctions.net/verifyToken?token=${getCookie("token")}`)
+	fetch(`https://us-central1-wac2021-d98f6.cloudfunctions.net/verifyToken?token=${getCookie("token")}`)
 		.then((resp,err)=>{
 			return(resp.json())
 		}).then(json=>{
