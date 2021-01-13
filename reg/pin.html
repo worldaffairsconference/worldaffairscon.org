@@ -16,8 +16,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
   <link rel="stylesheet" href= "../css/bootstrap.min.css">
   <link rel="stylesheet" href= "../css/style.css">
-  <script src="../js/google_analytics.js"></script>
-  <script defer src="../js/fontawesome-all.min.js"></script>
   <style>
 		html, body {
 			width: 100%;
@@ -36,9 +34,23 @@
 		}
 	</style>
 </head>
-
-
   <body>
+    <script>
+      function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+	if(getCookie("token") != null){
+		window.location.href = './linkhub.html'
+  }
+    </script>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <a class="navbar-brand" href="../index.html"><img class="nav-image" src="../img/wac_logo_full.png" alt="WAC Logo"/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +76,7 @@
         <a class="nav-link" href="../staff/index.html">Staff</a>
       </li>
       -->
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="../schedule/index.html">Schedule</a>
       </li>
       <li class="nav-item">
@@ -76,28 +88,35 @@
         <a class="btn btn-outline-danger" href="../wacathon/index.html" data-proofer-ignore>SPRINT</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-outline-primary" href="https://register.gotowebinar.com/register/6122619915197970701?source=WebPage" data-proofer-ignore>Register</a>
+        <a class="btn btn-outline-primary" href="https://attendee.gotowebinar.com/register/6122619915197970701?source=WebPage" data-proofer-ignore>Register</a>
       </li>
     </ul>
   </div>
 </nav>
-
 	<div class="flex-vertical">
 		<div></div>
 		<div class="container">
 			<div class="card card-body">
-				<h1>Success!</h1>
+        <div id="state">
+          <h1 id="title">Enter your pin:</h1>
+        </div>
+				<div class="input-group mb-3">
+					<!-- <div class="input-group-prepend">
+						<span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+					</div> -->
+          <input id="pin" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Pin">
+          <button onclick="handlePin();" class="btn btn-primary" style="margin-left: 15px;">Submit</button>
+          <div class="invalid-feedback">
+            Please enter a valid pin.
+          </div>
+        </div>
+        
+        <p id="loading" class="pl-2 d-none">Loading...</p>
+        <div id="footer">
 
-        <p>You are registered for WAC 2020. We look forward to seeing you!</p>
-        <hr/>
-        <p>You are being redirected, click <a href="https://worldaffairs.ucc.on.ca">here</a> if the browser does not redirect you automatically</p>
+        </div>
 			</div>
-    </div>
-    <script>
-      setTimeout(()=>{
-        window.location.href='https://worldaffairs.ucc.on.ca'
-      },3000)
-    </script>
+		</div>
 
 		<footer class="footer text-center mt-3">
 			<div class="container">
@@ -114,16 +133,60 @@
 				<a href="https://github.com/worldaffairsconference/world.ac"><span class="fab fa-fw fa-2x fa-github white-icon"></span></a>
 			</div>
 		</footer>
-	</div>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('e');
+    const setup = urlParams.get('setup')
 
+    function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
 
+    if(setup){
+      document.getElementById("state").innerHTML="<h1 id='title'>Setup your pin:</h1><p>Please enter a 6 digit number. You can only set this pin <strong>Once</strong><p>"
+      document.getElementById("footer").innerHTML="<hr/><p>If you forgot your pin or want to report a problem, please<a href='../contact'> contact</a> us."
+    }
 
+    function access(pin){
+      fetch(`http://localhost:5001/wac2021-d98f6/us-central1/verifyPin?email=${email}&p=${pin}`)
+        .then(resp=>{
+          return(resp.json())
+        })
+        .then(json=>{
+          setCookie("token",json.token,0.5)
+          window.location.href = './linkhub.html'
+        })
+        .catch(err=>{
+          document.getElementById("pin").classList.add("is-invalid")
+        })
+    }
+    
 
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/tether.min.js"></script>
+  function handlePin(){
+    var pin = document.getElementById("pin").value;
+    let reg = /^[0-9][0-9][0-9][0-9][0-9][0-9]$/
+    if(pin.match(reg)==null){
+      document.getElementById("pin").classList.add("is-invalid")
+    }else{
+      document.getElementById("pin").classList.remove("is-invalid")
+      document.getElementById("pin").classList.add("is-valid")
+      access(pin)
+      
+    }
 
-
+   
+  }
+</script>
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/tether.min.js"></script>
   </body>
 
 </html>

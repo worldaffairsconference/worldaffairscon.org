@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="The World Affairs Conference">
 
-  <title>Contact WAC | The World Affairs Conference</title>
+  <title>Schedule | The World Affairs Conference</title>
   <meta name="description" content="The website for the World Affairs Conference, Canada's oldest student-led current affairs conference that explores world issues relevant to youth.">
 
   <link rel="icon" type="image/png" sizes="192x192"  href="../img/android-icon-192x192.png">
@@ -92,8 +92,12 @@
     }
     return null;
 }
+
+	if(getCookie("token") == null){
+		window.location.href = './lookup.html'
+	}else{
 	var tr = ""
-	fetch(`https://us-central1-wac2021-d98f6.cloudfunctions.net/verifyToken?token=${getCookie("token")}`)
+	fetch(`http://localhost:5001/wac2021-d98f6/us-central1/verifyToken?token=${getCookie("token")}`)
 		.then((resp,err)=>{
 			return(resp.json())
 		}).then(json=>{
@@ -129,7 +133,7 @@
 			console.log(err)
 			window.location.href = './lookup.html'
 		})
-	
+	}
 		
 	
 </script>
