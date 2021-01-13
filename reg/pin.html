@@ -155,7 +155,7 @@
     }
 
     function access(pin){
-      fetch(`http://localhost:5001/wac2021-d98f6/us-central1/verifyPin?email=${email}&p=${pin}`)
+      fetch(`https://us-central1-wac2021-d98f6.cloudfunctions.net/verifyPin?email=${email}&p=${pin}`)
         .then(resp=>{
           return(resp.json())
         })

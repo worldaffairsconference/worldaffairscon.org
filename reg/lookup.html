@@ -139,7 +139,7 @@
         document.getElementById("loading").classList.remove("d-none");
         var email = document.getElementById("emailLookup").value;
         fetch(
-          `http://localhost:5001/wac2021-d98f6/us-central1/lookUp?email=${email}`
+          `https://us-central1-wac2021-d98f6.cloudfunctions.net/lookUp?email=${email}`
         )
           .then((resp) => {
             return resp.json();
