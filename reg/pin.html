@@ -97,7 +97,8 @@
         
         <p id="loading" class="pl-2 d-none">Loading...</p>
         <div id="footer">
-
+          <hr/>
+          <p>If you forgot your pin or want to report a problem, please<a href='../contact'> contact</a> us.</p>
         </div>
 			</div>
 		</div>
@@ -135,7 +136,6 @@
 
     if(setup){
       document.getElementById("state").innerHTML="<h1 id='title'>Setup your pin:</h1><p>Please enter a 6 digit number. You can only set this pin <strong>Once</strong><p>"
-      document.getElementById("footer").innerHTML="<hr/><p>If you forgot your pin or want to report a problem, please<a href='../contact'> contact</a> us."
     }
 
     function access(pin){

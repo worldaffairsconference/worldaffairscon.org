@@ -150,7 +150,20 @@
   
   
     function handleSelect(val){
-      window.location.href = "./plenarySuccess.html"
+      switch(val){
+        case 1:
+          window.location.href = `https://attendee.gotowebinar.com/register/6176775262172081932?source=p${plenary}`
+          break;
+        case 2:
+          window.location.href = `https://attendee.gotowebinar.com/register/5622721457331564558?source=p${plenary}`
+          break;
+        case 3:
+          window.location.href = `https://attendee.gotowebinar.com/register/9051817848899910158?source=p${plenary}`
+          break;
+        case 4:
+          window.location.href = `https://attendee.gotowebinar.com/register/8379658903024252430?source=p${plenary}`
+          break;
+      }
     }
   </script>
 
