@@ -83,7 +83,28 @@
 </nav>
 
 	<div class="flex-vertical">
-		<div></div>
+    <div></div>
+    <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="confirmationTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4>Please confirm your selection!</h4> 
+            <p>You will need to contact us and wait for us to process your request to change a plenary selection.</p>
+            <p2 id="confirmSelection"></p2>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button onclick="handleSelect();" type="button" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
 		<div class="container">
 			<div class="card card-body">
 				<h1 id="val">Select Plenary 1:</h1>
@@ -100,22 +121,22 @@
             <tr>
               <td>Commercial Spaceflight: Humanity's Next Steps</td>
               <td>Dr. Louis Friedman | Janet Ivey</td>
-              <td><a class="btn btn-primary btn-sm text-white" onclick="handleSelect(1);">Select</a></td>
+              <td><a data-toggle="modal" data-target="#confirmation" class="btn btn-primary btn-sm text-white" onclick="setVal(1);">Select</a></td>
             </tr>
             <tr>
               <td>Social Justice: Our History and Future</td>
               <td>Ajani Charles | Janet Ivey</td>
-              <td><a class="btn btn-primary btn-sm text-white text-white" onclick="handleSelect(2);">Select</a></td>
+              <td><a data-toggle="modal" data-target="#confirmation" class="btn btn-primary btn-sm text-white text-white" onclick="setVal(2);">Select</a></td>
             </tr>
             <tr>
               <td>Social Media: We are the Product</td>
               <td>David Carroll | the Social Dilemma Film crew</td>
-              <td><a class="btn btn-primary btn-sm text-white" onclick="handleSelect(3);">Select</a></td>
+              <td><a data-toggle="modal" data-target="#confirmation" class="btn btn-primary btn-sm text-white" onclick="setVal(3);">Select</a></td>
             </tr>
             <tr>
               <td>Businesses in COVID: Sink or Swim</td>
               <td>Bharat Masrani | Opher Baron</td>
-              <td><a class="btn btn-primary btn-sm text-white" onclick="handleSelect(4);">Select</a></td>
+              <td><a data-toggle="modal" data-target="#confirmation" class="btn btn-primary btn-sm text-white" onclick="setVal(4);">Select</a></td>
             </tr>
           </tbody>
         </table>
@@ -140,6 +161,7 @@
 		</footer>
 	</div>
   <script>
+    var val = 0
     const urlParams = new URLSearchParams(window.location.search);
     const plenary = urlParams.get('v');
     if(plenary == 1){
@@ -148,9 +170,47 @@
       document.getElementById("val").innerText = "Select Plenary 2:"
     }
   
-  
-    function handleSelect(val){
+    function setVal(num){
+      function getInfo(val){
       switch(val){
+				  		//Justice
+      					case 2:
+						  return({
+								  title:"Social Justice: Our History and Future",
+								  speaker:"Ajani Charles | Janet Ivey",
+							  })
+      						break;
+						//Space
+      					case 1:
+						  return({
+								  title:"Commercial Spaceflight: Humanity's Next Steps",
+								  speaker:"Dr. Louis Friedman | Janet Ivey",
+							  })
+      						break;
+						//Social Media
+      					case 3:
+						  return({
+								  title:"Social Media: We are the Product",
+								  speaker:"David Carroll | the Social Dilemma Film crew",
+							  })
+							  break;
+						//COVID
+      					case 4:
+						  return({
+								  title:"Businesses in COVID: Sink or Swim",
+								  speaker:"Bharat Masrani | Opher Baron",
+							  })
+      						break;
+      				}
+      }
+      document.getElementById("confirmSelection").innerHTML = `${getInfo(num).title} <br/>by ${getInfo(num).speaker}`
+      val = num
+    }
+
+    function handleSelect(){
+      switch(val){
+        case 0:
+          break;
         case 1:
           window.location.href = `https://attendee.gotowebinar.com/register/6176775262172081932?source=p${plenary}`
           break;
@@ -165,6 +225,7 @@
           break;
       }
     }
+
   </script>
 
 
