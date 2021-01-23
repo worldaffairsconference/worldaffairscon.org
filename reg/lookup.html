@@ -142,6 +142,18 @@
       function handleLookup() {
         document.getElementById("loading").classList.remove("d-none");
         var email = document.getElementById("emailLookup").value;
+        var reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (email.match(reg) == null) {
+          document.getElementById("emailLookup").classList.add("is-invalid");
+          document.getElementById("loading").innerText =
+            "Invalid Input, Please enter an email";
+        } else {
+          document.getElementById("emailLookup").classList.remove("is-invalid");
+          document.getElementById("emailLookup").classList.add("is-valid");
+          access(email);
+        }
+      }
+      function access(email) {
         fetch(
           `https://us-central1-wac2021-d98f6.cloudfunctions.net/lookUp?email=${email}`
         )
