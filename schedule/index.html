@@ -116,22 +116,53 @@
       </div>
     </nav>
 
-    <div class="container" color="red">
-      <div class="alert bg-danger text-center" role="alert">
-        <button type="button" class="close" data-bs-dismiss="alert">
-          &times;
-        </button>
-        <!-- Makes the banner closeable -->
-        Scroll down to make your own <b>personal</b> schedule with links to the
-        webinars!
-      </div>
-    </div>
-
     <div class="container">
+      <div
+        class="modal fade"
+        id="alertModal"
+        tabindex="-1"
+        aria-labelledby="alertModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="alertModalLabel">Select Plenaries</h5>
+              <a
+                class="btn btn-sm text-black"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <h3>&#215;</h3>
+              </a>
+            </div>
+            <div class="modal-body">
+              Have you selected your plenaries yet? Click continue to go to your
+              personal schedule where you could select your plenary for WAC
+              2021!
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <a href="../reg/linkhub.html" class="btn btn-primary">
+                Continue
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="card card-body">
         <h1 class="text-center">WAC Regular Stream</h1>
         <h2 class="text-center">Febuary 6th, Conference Day</h2>
         <h4 class="text-center">Note: All times listed are in EST.</h4>
+        <a href="../reg/linkhub.html" class="btn btn-primary mt-3">
+          Personal Schedule: Webinar Links + Plenary Selection
+        </a>
         <div class="table-responsive">
           <table class="table table-hover my-4">
             <thead class="thead-dark">
@@ -163,7 +194,10 @@
                 <td>GoToWebinar</td>
               </tr>
               <tr>
-                <td><a href="../startups/index.html">Startup Exhibition</a> &amp; Lunch (Optional)</td>
+                <td>
+                  <a href="../startups/index.html">Startup Exhibition</a> &amp;
+                  Lunch (Optional)
+                </td>
                 <td>11:10 to 11:40am</td>
                 <td>Zoom</td>
               </tr>
@@ -190,12 +224,6 @@
             </tbody>
           </table>
         </div>
-
-        <a href="../reg/linkhub.html" style="width: 100%">
-          <button class="btn btn-primary" style="width: 100%">
-            Webinar Links
-          </button>
-        </a>
       </div>
     </div>
 
@@ -253,5 +281,9 @@
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/tether.min.js"></script>
+    <script>
+      var alertM = new bootstrap.Modal(document.getElementById("alertModal"));
+      alertM.toggle();
+    </script>
   </body>
 </html>
