@@ -140,28 +140,40 @@
           case "5622721457331564558":
             return {
               title: "Social Justice: Our History and Future",
-              speaker: "Ajani Charles | Janet Ivey",
+              speaker: {
+                p1: "Mehrdad Baghai",
+                p2: "Ajani Charles",
+              },
             };
             break;
           //Space
           case "6176775262172081932":
             return {
               title: "Commercial Spaceflight: Humanity's Next Steps",
-              speaker: "Dr. Louis Friedman | Janet Ivey",
+              speaker: {
+                p1: "Janet Ivey",
+                p2: "Dr. Louis Friedman",
+              },
             };
             break;
           //Social Media
           case "9051817848899910158":
             return {
               title: "Social Media: We are the Product",
-              speaker: "David Carroll | the Social Dilemma Film crew",
+              speaker: {
+                p1: "David Carroll",
+                p2: "The Social Dilemma Producers Panel",
+              },
             };
             break;
           //COVID
           case "8379658903024252430":
             return {
               title: "Businesses in COVID: Sink or Swim",
-              speaker: "Bharat Masrani | Opher Baron",
+              speaker: {
+                p1: "Opher Baron",
+                p2: "Bharat Masrani",
+              },
             };
             break;
         }
@@ -204,7 +216,7 @@
             } else {
               const info = getWebInfo(p1);
               document.getElementById("p1t").innerText = info.title;
-              document.getElementById("p1s").innerText = info.speaker;
+              document.getElementById("p1s").innerText = info.speaker.p1;
               document.getElementById("p1").href = p1;
             }
 
@@ -216,7 +228,7 @@
             } else {
               const info = getWebInfo(p2);
               document.getElementById("p2t").innerText = info.title;
-              document.getElementById("p2s").innerText = info.speaker;
+              document.getElementById("p2s").innerText = info.speaker.p2;
               document.getElementById("p2").href = p2;
             }
 
