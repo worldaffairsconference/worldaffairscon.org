@@ -231,7 +231,7 @@
                       >Commercial Spaceflight: Humanity's Next Steps</a
                     >
                   </td>
-                  <td>Dr. Louis Friedman</td>
+                  <td id="s1">Dr. Louis Friedman</td>
                   <td>
                     <a
                       data-bs-toggle="modal"
@@ -249,7 +249,7 @@
                       >Social Justice: Our History and Future</a
                     >
                   </td>
-                  <td>Ajani Charles | Mehrdad Baghai</td>
+                  <td id="s2">Ajani Charles | Mehrdad Baghai</td>
                   <td>
                     <a
                       data-bs-toggle="modal"
@@ -267,7 +267,7 @@
                       >Social Media: We are the Product</a
                     >
                   </td>
-                  <td>David Carroll | the Social Dilemma Film crew</td>
+                  <td id="s3">David Carroll | the Social Dilemma Film crew</td>
                   <td>
                     <a
                       data-bs-toggle="modal"
@@ -285,7 +285,7 @@
                       >Businesses in COVID: Sink or Swim</a
                     >
                   </td>
-                  <td>Bharat Masrani | Opher Baron</td>
+                  <td id="s4">Bharat Masrani | Opher Baron</td>
                   <td>
                     <a
                       data-bs-toggle="modal"
@@ -360,10 +360,17 @@
       const plenary = urlParams.get("v");
       if (plenary == 1) {
         document.getElementById("val").innerText = "Select Plenary 1:";
+        document.getElementById("s1").innerText = "Opher Baron";
+        document.getElementById("s2").innerText = "Janet Ivey";
+        document.getElementById("s3").innerText = "Merhrdad Baghai";
+        document.getElementById("s4").innerText = "David Caroll";
       } else {
         document.getElementById("val").innerText = "Select Plenary 2:";
+        document.getElementById("s1").innerText = "Bharat Masrani";
+        document.getElementById("s2").innerText = "Dr. Louis Friedman";
+        document.getElementById("s3").innerText = "Ajani Charles";
+        document.getElementById("s4").innerText = "The Social Dilema";
       }
-
       function setVal(num) {
         function getInfo(val) {
           switch (val) {
@@ -371,28 +378,28 @@
             case 2:
               return {
                 title: "Social Justice: Our History and Future",
-                speaker: "Mehrdad Baghai | Ajani Charles",
+                speaker: [document.getElementById("s2").innerText],
               };
               break;
             //Space
             case 1:
               return {
                 title: "Commercial Spaceflight: Humanity's Next Steps",
-                speaker: "Dr. Louis Friedman | Janet Ivey",
+                speaker: [document.getElementById("s1").innerText],
               };
               break;
             //Social Media
             case 3:
               return {
                 title: "Social Media: We are the Product",
-                speaker: "David Carroll | the Social Dilemma Film crew",
+                speaker: [document.getElementById("s3").innerText],
               };
               break;
             //COVID
             case 4:
               return {
                 title: "Businesses in COVID: Sink or Swim",
-                speaker: "Opher Baron | Bharat Masrani",
+                speaker: [document.getElementById("s4").innerText],
               };
               break;
           }
