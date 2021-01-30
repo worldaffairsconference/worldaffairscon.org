@@ -450,8 +450,9 @@
               `https://us-central1-wac2021-d98f6.cloudfunctions.net/doubleWebinar?token=${getCookie(
                 "token"
               )}`
-            );
-            window.location.href = "./linkhub.html";
+            ).then(() => {
+              window.location.href = "./linkhub.html";
+            });
             break;
           case 1:
             window.location.href = `https://attendee.gotowebinar.com/register/6176775262172081932?source=p${plenary}`;
