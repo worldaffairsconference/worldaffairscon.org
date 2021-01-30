@@ -212,7 +212,8 @@
               document.getElementById("p1").innerText = "Select";
               document.getElementById("p1").classList =
                 "btn btn-primary btn-sm";
-              document.getElementById("p1").href = "./plenary.html?v=1";
+              document.getElementById("p1").href =
+                "./plenary.html?v=1&p=" + p2.split("/")[4];
             } else {
               const info = getWebInfo(p1);
               document.getElementById("p1t").innerText = info.title;
@@ -224,7 +225,8 @@
               document.getElementById("p2").innerText = "Select";
               document.getElementById("p2").classList =
                 "btn btn-primary btn-sm";
-              document.getElementById("p2").href = "./plenary.html?v=2";
+              document.getElementById("p2").href =
+                "./plenary.html?v=2&p=" + p1.split("/")[4];
             } else {
               const info = getWebInfo(p2);
               document.getElementById("p2t").innerText = info.title;

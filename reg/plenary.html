@@ -234,6 +234,7 @@
                   <td id="s1"></td>
                   <td>
                     <a
+                      id="sl1"
                       data-bs-toggle="modal"
                       data-bs-target="#confirmation"
                       class="btn btn-primary btn-sm text-white"
@@ -252,6 +253,7 @@
                   <td id="s2"></td>
                   <td>
                     <a
+                      id="sl2"
                       data-bs-toggle="modal"
                       data-bs-target="#confirmation"
                       class="btn btn-primary btn-sm text-white text-white"
@@ -270,6 +272,7 @@
                   <td id="s3"></td>
                   <td>
                     <a
+                      id="sl3"
                       data-bs-toggle="modal"
                       data-bs-target="#confirmation"
                       class="btn btn-primary btn-sm text-white"
@@ -288,6 +291,7 @@
                   <td id="s4"></td>
                   <td>
                     <a
+                      id="sl4"
                       data-bs-toggle="modal"
                       data-bs-target="#confirmation"
                       class="btn btn-primary btn-sm text-white"
@@ -358,6 +362,29 @@
       var val = 0;
       const urlParams = new URLSearchParams(window.location.search);
       const plenary = urlParams.get("v");
+      const p = urlParams.get("p");
+      switch (p) {
+        //Justice
+        case "5622721457331564558":
+          document.getElementById("sl2").setAttribute("onclick", "setVal(-2);");
+          break;
+        //Space
+        case "6176775262172081932":
+          document.getElementById("sl1").setAttribute("onclick", "setVal(-1);");
+          break;
+        //Social Media
+        case "9051817848899910158":
+          document.getElementById("sl3").setAttribute("onclick", "setVal(-3);");
+          break;
+        //COVID
+        case "8379658903024252430":
+          document.getElementById("sl4").setAttribute("onclick", "setVal(-4);");
+          break;
+        default:
+          break;
+      }
+    </script>
+    <script>
       if (plenary == 1) {
         document.getElementById("val").innerText = "Select Plenary 1:";
         document.getElementById("s1").innerText = "Janet Ivey";
@@ -405,15 +432,26 @@
               break;
           }
         }
+        if (num < 0) {
+          val = 0;
+          num = Math.abs(num);
+        } else {
+          val = num;
+        }
         document.getElementById("confirmSelection").innerHTML = `${
           getInfo(num).title
         } <br/>by ${getInfo(num).speaker}`;
-        val = num;
       }
 
       function handleSelect() {
         switch (val) {
           case 0:
+            fetch(
+              `https://us-central1-wac2021-d98f6.cloudfunctions.net/doubleWebinar?token=${getCookie(
+                "token"
+              )}`
+            );
+            window.location.href = "./linkhub.html";
             break;
           case 1:
             window.location.href = `https://attendee.gotowebinar.com/register/6176775262172081932?source=p${plenary}`;
