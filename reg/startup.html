@@ -132,234 +132,104 @@
         </ul>
       </div>
     </nav>
-    <script>
-      function getWebInfo(url) {
-        const id = url.split("/")[4];
-        switch (id) {
-          //Justice
-          case "5622721457331564558":
-            return {
-              title: "Social Justice: Our History and Future",
-              speaker: {
-                p1: "Mehrdad Baghai",
-                p2: "Ajani Charles",
-              },
-            };
-            break;
-          //Space
-          case "6176775262172081932":
-            return {
-              title: "Commercial Spaceflight: Humanity's Next Steps",
-              speaker: {
-                p1: "Janet Ivey",
-                p2: "Dr. Louis Friedman",
-              },
-            };
-            break;
-          //Social Media
-          case "9051817848899910158":
-            return {
-              title: "Social Media: We are the Product",
-              speaker: {
-                p1: "David Carroll",
-                p2: "The Social Dilemma Producers Panel",
-              },
-            };
-            break;
-          //COVID
-          case "8379658903024252430":
-            return {
-              title: "Businesses in COVID: Sink or Swim",
-              speaker: {
-                p1: "Opher Baron",
-                p2: "Bharat Masrani",
-              },
-            };
-            break;
-        }
-      }
 
-      function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(";");
-        for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == " ") c = c.substring(1, c.length);
-          if (c.indexOf(nameEQ) == 0)
-            return c.substring(nameEQ.length, c.length);
-        }
-        return null;
-      }
-
-      if (getCookie("token") == null) {
-        window.location.href = "./lookup.html";
-      } else {
-        var tr = "";
-        fetch(
-          `https://us-central1-wac2021-d98f6.cloudfunctions.net/verifyToken?token=${getCookie(
-            "token"
-          )}`
-        )
-          .then((resp, err) => {
-            return resp.json();
-          })
-          .then((json) => {
-            const name = json.firstName + " " + json.lastName;
-            const main = json.main;
-            var p1 = json.p1;
-            var p2 = json.p2;
-            if (p1 == "N/A") {
-              document.getElementById("p1").innerText = "Select";
-              document.getElementById("p1").classList =
-                "btn btn-primary btn-sm";
-              document.getElementById("p1").href =
-                "./plenary.html?v=1&p=" + p2.split("/")[4];
-            } else {
-              const info = getWebInfo(p1);
-              document.getElementById("p1t").innerText = info.title;
-              document.getElementById("p1s").innerText = info.speaker.p1;
-              document.getElementById("p1").href = p1;
-            }
-
-            if (p2 == "N/A") {
-              document.getElementById("p2").innerText = "Select";
-              document.getElementById("p2").classList =
-                "btn btn-primary btn-sm";
-              document.getElementById("p2").href =
-                "./plenary.html?v=2&p=" + p1.split("/")[4];
-            } else {
-              const info = getWebInfo(p2);
-              document.getElementById("p2t").innerText = info.title;
-              document.getElementById("p2s").innerText = info.speaker.p2;
-              document.getElementById("p2").href = p2;
-            }
-
-            const mains = document.getElementsByClassName("main");
-            for (const element of mains) {
-              element.href = main;
-            }
-
-            document.getElementById("greeting").innerText =
-              "Welcome Back: " + name;
-            document.getElementById("loading").style.display = "none";
-          })
-          .catch((err) => {
-            window.location.href = "./lookup.html";
-          });
-      }
-    </script>
     <div class="flex-vertical">
       <div></div>
+      <div
+        class="modal fade"
+        id="confirmation"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="confirmationTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">
+                Confirmation
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4>Please confirm your selection!</h4>
+              <p>
+                You will need to contact us and wait for us to process your
+                request to change a plenary selection.
+              </p>
+              <p2 id="confirmSelection"></p2>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                onclick="handleSelect();"
+                type="button"
+                class="btn btn-primary"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <div class="card card-body">
-          <h4 id="greeting">Welcome Back:</h4>
-          <h1>Event Links Hub</h1>
+          <h1 id="val">Select Startup Exhibition:</h1>
           <div class="table-responsive">
             <table class="table table-hover my-4">
-              <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Speakers</th>
+                <th scope="col"></th>
+              </tr>
+              <tbody>
                 <tr>
-                  <th scope="col">Time</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Link</th>
-                  <th scope="col">Speaker</th>
-                </tr>
-              </thead>
-              <tbody id="linkHub">
-                <p id="loading">Loading...</p>
-                <tr>
-                  <td>9:00-9:40</td>
-                  <td>Event Opening</td>
                   <td>
-                    <a class="main text-white btn btn-secondary btn-sm">Join</a>
+                    <a href="../startups/">Professional Start-Ups</a>
                   </td>
-                  <td>Lauren M.| Krishna B.| Andrew C.</td>
-                </tr>
-                <tr>
-                  <td>9:45-10:10</td>
-                  <td id="p1t">Plenary 1</td>
                   <td>
-                    <a id="p1" class="btn text-white btn-secondary btn-sm"
-                      >Join</a
-                    >
+                    Greenhouse Juice | Set Scouter | Hop In | UnWrapIt |
+                    Ecopia.Ai | Properly | Alice Insights | Future Fertility
                   </td>
-                  <td id="p1s">TBD</td>
-                </tr>
-                <tr>
-                  <td>10:15-10:35</td>
-                  <td>Networking Rooms</td>
                   <td>
                     <a
+                      class="btn btn-primary btn-sm text-white"
                       href="https://zoom.us/j/4605092111?pwd=eGRiL2p4blNleVIrNnAzQnNOQWxiUT09"
-                      class="btn text-white btn-secondary btn-sm"
                       >Join</a
                     >
                   </td>
-                  <td>N/A</td>
                 </tr>
                 <tr>
-                  <td>10:40-11:05</td>
-                  <td id="p2t">Plenary 2</td>
                   <td>
-                    <a id="p2" class="btn text-white btn-secondary btn-sm"
-                      >Join</a
-                    >
+                    <a href="../startups/">Student Start-Ups</a>
                   </td>
-                  <td id="p2s">TBD</td>
-                </tr>
-                <tr>
-                  <td>11:10-11:40</td>
-                  <td>Startup Exhibition</td>
+                  <td>
+                    DreakAI | Peer4Peer | Wavefrnt | TressCO2 | StyllShirts
+                  </td>
                   <td>
                     <a
-                      href="./startup.html"
-                      class="btn text-white btn-secondary btn-sm"
+                      class="btn btn-primary btn-sm text-white"
+                      href="https://zoom.us/j/7938478932?pwd=OTZNeE4rRmtnTGFpaHE2SCtLdCtqZz09"
                       >Join</a
                     >
                   </td>
-                  <td>N/A</td>
-                </tr>
-                <tr>
-                  <td>11:40-12:25</td>
-                  <td>Keynote Speaker</td>
-                  <td>
-                    <a class="btn text-white btn-secondary btn-sm main" href="#"
-                      >Join</a
-                    >
-                  </td>
-                  <td>TBD</td>
-                </tr>
-                <tr>
-                  <td>11:25-12:55</td>
-                  <td>Networking Rooms</td>
-                  <td>
-                    <a
-                      href="https://zoom.us/j/4605092111?pwd=eGRiL2p4blNleVIrNnAzQnNOQWxiUT09"
-                      class="text-white btn btn-secondary btn-sm"
-                      >Join</a
-                    >
-                  </td>
-                  <td>N/A</td>
-                </tr>
-                <tr>
-                  <td>13:00-13:45</td>
-                  <td>Closing Panel</td>
-                  <td>
-                    <a class="main text-white btn btn-secondary btn-sm">Join</a>
-                  </td>
-                  <td>Eva & Allen Lau | Krishna B.| Lauren M.</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <hr />
-          <p>
-            Please <a href="../contact/">contact us</a> if you have any issues
-            or would like to change your plenary selection.
-          </p>
-          <p>
-            Please wait a couple of seconds for the selections to take effect on
-            your schedule
-          </p>
         </div>
       </div>
 
@@ -415,7 +285,6 @@
         </div>
       </footer>
     </div>
-
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/tether.min.js"></script>
