@@ -158,7 +158,7 @@
       }
       function access(email) {
         fetch(
-          `https://us-central1-wac2021-d98f6.cloudfunctions.net/lookUp?email=${email}`
+          `https://us-central1-wac2021-d98f6.cloudfunctions.net/lookUp?email=${email.toLowerCase()}`
         )
           .then((resp) => {
             return resp.json();
