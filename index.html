@@ -120,29 +120,33 @@
       </div>
     </nav>
 
-    <div class="index-welcome">
-      <div class="container" color="red">
-        <div id="alerts" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="3500">
-              <div class="alert bg-danger text-center fade show" role="alert">
-                <button type="button" class="close" data-bs-dismiss="alert">
-                  &times;
-                </button>
-                Recordings of WAC 2021 is available! Check it
-                <a href="./schedule/"> here</a>!
-              </div>
+    <div class="container" color="red">
+      <div id="alerts" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="3500">
+            <div
+              class="alert bg-danger text-center fade show mt-4 mb-3"
+              role="alert"
+            >
+              <button type="button" class="close" data-bs-dismiss="alert">
+                &times;
+              </button>
+              Recordings of WAC 2021 is available! Check it
+              <a href="./schedule/"> here</a>!
             </div>
+          </div>
 
-            <div class="carousel-item" data-bs-interval="3500">
-              <div class="alert bg-danger text-center fade show" role="alert">
-                <button type="button" class="close" data-bs-dismiss="alert">
-                  &times;
-                </button>
-                <!-- Makes the banner closeable -->
-                Apply for SPRINT now! More details can be found on the
-                <a href="sprint/index.html">SPRINT page</a>.
-              </div>
+          <div class="carousel-item" data-bs-interval="3500">
+            <div
+              class="alert bg-danger text-center fade show mt-4 mb-3"
+              role="alert"
+            >
+              <button type="button" class="close" data-bs-dismiss="alert">
+                &times;
+              </button>
+              <!-- Makes the banner closeable -->
+              Apply for SPRINT now! More details can be found on the
+              <a href="sprint/index.html">SPRINT page</a>.
             </div>
           </div>
         </div>
@@ -155,14 +159,18 @@
         <h3 class="display-5">February 6th</h3>
       </div>
       <div class="text-center">
-        This Year's Theme:
+        <h3>This Year's Theme:</h3>
         <h1 class="display-4">Together Towards Tomorrow</h1>
       </div>
       <div class="text-center text-md-right">
         <h4>The Conference is</h4>
-        <h3><span id="countdown"></span></h3>
+        <h3><span id="countdown">Over!</span></h3>
       </div>
     </div>
+    <div class="index-welcome text-center">
+      <div id="quote"></div>
+    </div>
+
     <div class="container">
       <div class="card card-body mt-3 mx-3">
         <div class="row">
@@ -255,9 +263,6 @@
         }
         console.log(t);
       }
-      window.setInterval(function () {
-        $("#countdown").html("Over!");
-      }, 1000);
     </script>
 
     <footer class="footer text-center mt-3">
@@ -324,6 +329,53 @@
         document.cookie =
           "cookiename=popup; expires= Fri, 31 Jan 2020 20:00:00 UTC";
       }
+    </script>
+    <script>
+      var i = 0;
+      $.getJSON("./data/quotes.json", (json) => {
+        function shuffleArray(array) {
+          for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+          }
+          return array;
+        }
+
+        const setQuote = (data) => {
+          if (i >= data.length) {
+            i = 0;
+          }
+          $("#quote").fadeOut(() => {
+            $("#quote")
+              .html(
+                `
+               <h2>
+                 <i class="fas fa-quote-left mr-1"></i>
+                 ${data[i].quote}
+                 <i class="fas fa-quote-right ml-1"></i>
+               </h2>
+               <div>
+                 <div class="d-flex justify-content-end">
+                   <h3 class="display-5 mr-5">${data[i].name}</h3>
+                 </div>
+                 <div class="d-flex justify-content-end">
+                   <h4 class="mr-5">${data[i].role} ${data[i].year}</h4>
+                 </div>
+               </div>
+                  `
+              )
+              .fadeIn();
+            i++;
+          });
+        };
+        var data = shuffleArray(json);
+        setQuote(data);
+        setInterval(function () {
+          setQuote(data);
+        }, 3000);
+      });
     </script>
   </body>
 </html>
