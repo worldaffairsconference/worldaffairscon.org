@@ -130,33 +130,35 @@
         <div class="text-center text-md-left">
           <h2>Welcome to</h2>
           <h1 class="red">SPRINT</h1>
-          <h3 class="display-5">February 13th to April 3rd</h3>
+          <h3 class="display-5">February 20th to April 3rd</h3>
         </div>
         <div class="text-center">
-          This Year's Theme:
+          <h3>This Year's Theme:</h3>
           <h1 class="display-4">Innovate for Impact</h1>
         </div>
         <div class="text-center text-md-right">
           <h4>The challenge kicks off in</h4>
           <h3><span id="countdown"></span></h3>
+          <h4>Application Results Come out Feb. 16th, 19:00 ET</h4>
         </div>
+      </div>
+
+      <div class="mt-5 text-center">
+        <a
+          class="btn btn-outline-danger active center"
+          style="
+            padding-left: 2rem;
+            padding-right: 2rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          "
+          href="https://forms.gle/4B1jLSj2BdrQrnCz6"
+          data-proofer-ignore
+          ><h3>Apply Now!!</h3></a
+        >
       </div>
     </div>
     <br />
-    <div class="text-center">
-      <a
-        class="btn btn-outline-danger active center"
-        style="
-          padding-left: 2rem;
-          padding-right: 2rem;
-          padding-top: 1rem;
-          padding-bottom: 1rem;
-        "
-        href="https://forms.gle/4B1jLSj2BdrQrnCz6"
-        data-proofer-ignore
-        >Apply!</a
-      >
-    </div>
     <div class="container">
       <div class="card card-body mt-3 mx-3">
         <div class="row">
@@ -247,29 +249,25 @@
               <p>
                 <i
                   ><b>
-                    1. Getting into the Entrepreneurial Mindset
+                    1. Designing and Prototyping a Product/Solution
                     <br />
-                    2. Designing and Prototyping a Product/Solution
+                    2. Target Market, Types of Marketing, Developing a Brand
                     <br />
-                    3. Target Market, Types of Marketing, Developing a Brand
+                    3. Social Media Marketing
                     <br />
-                    4. Social Media Marketing
+                    4. Financing Your Startup
                     <br />
-                    5. Financing Your Startup
+                    5. Types of Investors and How to Attract Them
                     <br />
-                    6. Types of Investors and How to Attract Them
+                    6. Creating an Effective Pitch
                     <br />
-                    7. Creating an Effective Pitch
-                    <br />
-                    8. Demo Day
+                    7. Demo Day
                   </b></i
                 >
               </p>
             </div>
             <div class="col-sm-6">
               <p>
-                February 13, 2021
-                <br />
                 February 20, 2021
                 <br />
                 February 27, 2021
@@ -525,7 +523,7 @@
     <script src="../js/tether.min.js"></script>
 
     <script type="text/javascript">
-      var wacdate = "2/13/2021"; //Countdown date in MM/DD/YYYY format (no 0's required)
+      var sprintDate = "2/20/2021"; //Countdown date in MM/DD/YYYY format (no 0's required)
       function getTimeRemaining(endtime) {
         var t = Date.parse(endtime) - Date.parse(new Date());
         var seconds = Math.floor((t / 1000) % 60);
@@ -553,8 +551,9 @@
         }
         console.log(t);
       }
+      $("#countdown").html(getTimeRemaining(sprintDate));
       window.setInterval(function () {
-        $("#countdown").html(getTimeRemaining(wacdate));
+        $("#countdown").html(getTimeRemaining(sprintDate));
       }, 1000);
     </script>
   </body>
