@@ -1,7 +1,6 @@
 # worldaffairs.ucc.on.ca
 🌎Brand new React project for the worldaffairs.ucc.on.ca website!!  
-<br>
-**IMPORTANT: Changes made on the `master` branch will not update the site. Please deploy the application, detailed steps are below**
+**Any push or merge to the `master` branch will trigger the `Github Actions` script to automatically build and deloy to `GitHub Pages`**
 ## ⌛ It's time to move forward: Embracing Client Side Rendering
 Some limitations to the old WAC website:
 * non component-based design make it difficult to refactor code
@@ -50,6 +49,6 @@ One of the major benifits of React is its dynamic aspect.
 - To modify Schedule or Recording of the conference, modify `schedule.js`
 - To modify staff/ambassadors list and roles, modify `staff.js`
 ### Commit and Deploy
-To deploy the application, please run `npm run deploy` or `yarn run deploy`. This will automaticall create an optimized build and deploy it to the `gh-pages` branch which is associated with the url.  
+Any push or merge to the `master` branch will trigger the `Github Actions` script to automatically build and deloy to `GitHub Pages`
 
 # 💻Happy Hacking!🎉
