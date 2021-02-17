@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Card } from 'react-bootstrap';
 
 const NotFound = () => {
@@ -13,9 +14,9 @@ const NotFound = () => {
                 The page you&apos;re trying to visit is out of this world!
               </h1>
               <h3>
-                <a href="/index.html">
+                <Link to="/">
                   Maybe going back home will help you find your way.
-                </a>
+                </Link>
               </h3>
             </Card.Body>
           </Card>
