@@ -82,7 +82,9 @@ const Team = () => {
     <Container className="mt-4">
       <Card>
         <Card.Body>
-          <Card.Title as="h1">WAC 2021 Team</Card.Title>
+          <Card.Title as="h1" className="text-center">
+            WAC 2021 Team
+          </Card.Title>
           <Tabs id="uncontrolled-tab-example" defaultActiveKey="team">
             <Tab eventKey="team" title="Staff">
               {Staff}
