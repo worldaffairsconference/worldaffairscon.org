@@ -40,7 +40,7 @@ const Contact = () => {
     <Container className="mt-4">
       <Card>
         <Card.Body>
-          <h1>Need to talk?</h1>
+          <h1 className="text-center">Need to talk?</h1>
           <p className="lead">
             The World Affairs Conference has staff ready to talk to you about
             anything, whether i&apos;s registration, conference information, or

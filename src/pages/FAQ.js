@@ -44,7 +44,7 @@ const FAQ = () => {
     <Container className="mt-4">
       <Card>
         <Card.Body>
-          <h1 className="text-xs-center">Frequently Asked Questions</h1>
+          <h1 className="text-center">Frequently Asked Questions</h1>
           <h2 className="text-xs-center">
             Click on a question to expand the answer.
           </h2>
