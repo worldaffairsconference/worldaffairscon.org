@@ -1,5 +1,7 @@
 # worldaffairs.ucc.on.ca
-🌎Brand new React project for the worldaffairs.ucc.on.ca website!!
+🌎Brand new React project for the worldaffairs.ucc.on.ca website!!  
+<br>
+**IMPORTANT: Changes made on the `master` branch will not update the site. Please deploy the application, detailed steps are below**
 ## ⌛ It's time to move forward: Embracing Client Side Rendering
 Some limitations to the old WAC website:
 * non component-based design make it difficult to refactor code
@@ -34,7 +36,7 @@ Due to COVID-19, `WAC 2021: Together Towards Tomorrow` was the first ever virtua
 3. Run `npm install` or `yarn intsall` on the directory
 4. Run `npm start` or `yarn start` on the directory
 ### Modifications
-1. All pages of the website is located `/src/pages/` directory as individual `.js` files. Files may contain multiple `React Components` but only one is exported as the page.  
+1. All pages of the website are located `/src/pages/` directory as individual `.js` files. Files may contain multiple `React Components` but only one is exported.
 2. `Header` and `Footer` and other reusable components are located in `/src/components/`
 3. All user images are uploaded to `/src/img/`
 4. Dynamic data could be managed under `/src/data/`. 
@@ -47,3 +49,7 @@ One of the major benifits of React is its dynamic aspect.
 - To modify FAQ, edit `FAQ.js`
 - To modify Schedule or Recording of the conference, modify `schedule.js`
 - To modify staff/ambassadors list and roles, modify `staff.js`
+### Commit and Deploy
+To deploy the application, please run `npm run deploy` or `yarn run deploy`. This will automaticall create an optimized build and deploy it to the `gh-pages` branch which is associated with the url.  
+
+# 💻Happy Hacking!🎉
