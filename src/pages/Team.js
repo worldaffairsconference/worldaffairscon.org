@@ -6,7 +6,7 @@ import StaffData from '../data/staff';
 const Tile = (props) => {
   const data = props;
   return (
-    <Col>
+    <Col md className="text-center">
       <Row className="mt-4 mb-4">
         <Col sm={4}>
           <Image
@@ -16,7 +16,7 @@ const Tile = (props) => {
             roundedCircle
           />
         </Col>
-        <Col sm={8}>
+        <Col sm={8} className="mt-3">
           <Card.Title as="h4">{data.name}</Card.Title>
           <h5>{data.role}</h5>
         </Col>
@@ -41,7 +41,7 @@ const Staff = StaffData.staff.map((group) => {
     const members = row.map((staff) => {
       return <Tile src={staff.src} name={staff.name} role={staff.role} />;
     });
-    return <Row>{members}</Row>;
+    return <Row className="justify-content-around">{members}</Row>;
   });
   return (
     <>
