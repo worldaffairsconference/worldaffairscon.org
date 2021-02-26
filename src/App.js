@@ -16,7 +16,6 @@ import NotFound from './pages/404';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import { PageView, initGA } from './components/GAnalytics';
 
 const plenaryRoutes = PlenaryJSON.map((entry) => {
   return (
@@ -33,12 +32,10 @@ const plenaryRoutes = PlenaryJSON.map((entry) => {
 const App = () => {
   const location = useLocation();
   useEffect(() => {
-    initGA('UA-149829084-2');
-  }, []);
-
-  useEffect(() => {
     const curr = location.pathname + location.search;
-    PageView(curr);
+    window.gtag('event', 'page_view', {
+      page_path: curr,
+    });
   }, [location]);
   return (
     <>
