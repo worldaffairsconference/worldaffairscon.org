@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import PlenaryJSON from './data/plenary';
@@ -16,6 +16,7 @@ import NotFound from './pages/404';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import { PageView, initGA } from './components/GAnalytics';
 
 const plenaryRoutes = PlenaryJSON.map((entry) => {
   return (
@@ -29,6 +30,10 @@ const plenaryRoutes = PlenaryJSON.map((entry) => {
   );
 });
 const App = () => {
+  useEffect(() => {
+    initGA('G-DMJ54WBVQX');
+    PageView();
+  }, []);
   const location = useLocation();
   return (
     <>
