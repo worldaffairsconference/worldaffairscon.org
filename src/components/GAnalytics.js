@@ -4,8 +4,9 @@ export const initGA = (trackingID) => {
   ReactGA.initialize(trackingID);
 };
 
-export const PageView = () => {
-  ReactGA.pageview(window.location.pathname + window.location.search);
+export const PageView = (path) => {
+  ReactGA.set({ page: path });
+  ReactGA.pageview(path);
 };
 
 /**

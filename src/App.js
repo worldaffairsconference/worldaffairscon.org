@@ -29,12 +29,17 @@ const plenaryRoutes = PlenaryJSON.map((entry) => {
     </Route>
   );
 });
+
 const App = () => {
-  useEffect(() => {
-    initGA('G-DMJ54WBVQX');
-    PageView();
-  }, []);
   const location = useLocation();
+  useEffect(() => {
+    initGA('UA-149829084-2');
+  }, []);
+
+  useEffect(() => {
+    const curr = location.pathname + location.search;
+    PageView(curr);
+  }, [location]);
   return (
     <>
       <header>
