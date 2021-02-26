@@ -30,9 +30,9 @@ const SPRINT = () => {
     if (t > 0) {
       return `in ${days} Days, ${hours} Hours, ${minutes} Minutes, and ${seconds} Seconds`;
     }
-    if (t < 0 && t > -86400000) {
-      // 86400000 is 1000*60*60*24, one whole day in millis
-      return 'Today!';
+    if (t < 0 && t > -4838400000) {
+      // 4838400000 is 8 weeks in ms
+      return 'In Progress!';
     }
     return 'Over!';
   };
