@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { isFuture, isPast, formatDistanceToNowStrict } from 'date-fns';
 import { Container, Card, Row, Col, Image } from 'react-bootstrap';
 import Iframe from 'react-iframe';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,22 +15,22 @@ const Home = () => {
     name: 'Name',
     role: 'Role 2021',
   });
-  const wacdate = '2/6/2021'; // Countdown date in MM/DD/YYYY format (no 0's required)
-  const handleCountDown = (endtime) => {
-    const t = Date.parse(endtime) - Date.parse(new Date());
-    const seconds = Math.floor((t / 1000) % 60);
-    const minutes = Math.floor((t / 1000 / 60) % 60);
-    const hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    const days = Math.floor(t / (1000 * 60 * 60 * 24));
-
-    if (t > 0) {
-      return `in ${days} Days, ${hours} Hours, ${minutes} Minutes, and ${seconds} Seconds`;
+  const wacStartDate = '2/6/2021';
+  const wacEndDate = '2/6/2021'; // Countdown date in MM/DD/YYYY format (no 0's required)
+  const handleCountDown = (startTime, endTime) => {
+    let [month, day, year] = startTime.split('/');
+    const startDate = new Date(year, month - 1, day);
+    [month, day, year] = endTime.split('/');
+    const endDate = new Date(year, month - 1, day);
+    if (isFuture(startDate)) {
+      return formatDistanceToNowStrict(startDate, {
+        addSuffix: true,
+      });
     }
-    if (t < 0 && t > -86400000) {
-      // 86400000 is 1000*60*60*24, one whole day in millis
-      return 'Today!';
+    if (isPast(endDate)) {
+      return 'Over!';
     }
-    return 'Over!';
+    return 'In Progress!';
   };
   const handleQuote = () => {
     const data = Quotes[Math.floor(Math.random() * Quotes.length)];
@@ -41,9 +42,9 @@ const Home = () => {
   };
   useEffect(() => {
     handleQuote();
-    setCountDown(handleCountDown(wacdate));
+    setCountDown(handleCountDown(wacStartDate, wacEndDate));
     const countDownInterval = setInterval(() => {
-      setCountDown(handleCountDown(wacdate));
+      setCountDown(handleCountDown(wacStartDate, wacEndDate));
     }, 1000);
     return () => {
       clearInterval(countDownInterval);

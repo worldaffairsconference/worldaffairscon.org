@@ -8,6 +8,7 @@ import {
   Table,
   Carousel,
 } from 'react-bootstrap';
+import { formatDistanceToNowStrict, isFuture, isPast } from 'date-fns';
 import sprint from '../img/sprint/2020sprint1.jpg';
 import sprint1 from '../img/sprint/SPRINTfulllogocolor.png';
 import sprint2 from '../img/sprint/2020sprint2.jpg';
@@ -20,27 +21,27 @@ import NBardai from '../img/hackathon/nbardai.jpg';
 
 const SPRINT = () => {
   const [countDown, setCountDown] = useState('');
-  const handleCountDown = (endtime) => {
-    const t = Date.parse(endtime) - Date.parse(new Date());
-    const seconds = Math.floor((t / 1000) % 60);
-    const minutes = Math.floor((t / 1000 / 60) % 60);
-    const hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    const days = Math.floor(t / (1000 * 60 * 60 * 24));
-
-    if (t > 0) {
-      return `in ${days} Days, ${hours} Hours, ${minutes} Minutes, and ${seconds} Seconds`;
+  const handleCountDown = (startTime, endTime) => {
+    let [month, day, year] = startTime.split('/');
+    const startDate = new Date(year, month - 1, day);
+    [month, day, year] = endTime.split('/');
+    const endDate = new Date(year, month - 1, day);
+    if (isFuture(startDate)) {
+      return formatDistanceToNowStrict(startDate, {
+        addSuffix: true,
+      });
     }
-    if (t < 0 && t > -4838400000) {
-      // 4838400000 is 8 weeks in ms
-      return 'In Progress!';
+    if (isPast(endDate)) {
+      return 'Over!';
     }
-    return 'Over!';
+    return 'In Progress!';
   };
-  const sprintDate = '2/20/2021';
+  const sprintStartDate = '2/20/2021';
+  const sprintEndDate = '4/3/2021';
   useEffect(() => {
-    setCountDown(handleCountDown(sprintDate));
+    setCountDown(handleCountDown(sprintStartDate, sprintEndDate));
     const countDownInterval = setInterval(() => {
-      setCountDown(handleCountDown(sprintDate));
+      setCountDown(handleCountDown(sprintStartDate, sprintEndDate));
     }, 1000);
     return () => {
       clearInterval(countDownInterval);
@@ -60,7 +61,7 @@ const SPRINT = () => {
             <h1 className="display-4">Innovate for Impact</h1>
           </div>
           <div className="text-center text-md-right">
-            <h4>The challenge kicks off in</h4>
+            <h4>The challenge is:</h4>
             <h2>{countDown}</h2>
             <h4>Application Results Come out on Feb. 16th, 19:00 ET</h4>
           </div>
