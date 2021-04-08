@@ -33,6 +33,7 @@ const schedule = ScheduleData.map((entry) => {
   const entries = entry.events.map((events) => {
     return (
       <Entry
+        key={events.event}
         event={events.event}
         speaker={events.speaker}
         timeOrRecording={events.timeOrRecording}

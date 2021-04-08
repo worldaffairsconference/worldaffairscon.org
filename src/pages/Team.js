@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, Container, Card, Row, Col, Tabs, Tab } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
 import images from '../components/teamImages';
 import StaffData from '../data/staff';
 
@@ -24,59 +25,50 @@ const Tile = (props) => {
     </Col>
   );
 };
+const CreateGroup = (groups) => {
+  return groups.map((group) => {
+    const groupByN = (n, data) => {
+      const result = [];
+      for (let i = 0; i < data.length; i += n)
+        result.push(data.slice(i, i + n));
+      return result;
+    };
+    let rowsIndex = {};
+    if (group.group === 'Chairs' || group.group === 'Executives') {
+      rowsIndex = groupByN(2, group.members);
+    } else {
+      rowsIndex = groupByN(3, group.members);
+    }
+    const rows = rowsIndex.map((row) => {
+      const members = row.map((staff) => {
+        return (
+          <Tile
+            src={staff.src}
+            name={staff.name}
+            role={staff.role}
+            key={staff.name}
+          />
+        );
+      });
+      return (
+        <Row className="justify-content-around" key={uuid()}>
+          {members}
+        </Row>
+      );
+    });
 
-const Staff = StaffData.staff.map((group) => {
-  const groupByN = (n, data) => {
-    const result = [];
-    for (let i = 0; i < data.length; i += n) result.push(data.slice(i, i + n));
-    return result;
-  };
-  let rowsIndex = {};
-  if (group.group === 'Chairs' || group.group === 'Executives') {
-    rowsIndex = groupByN(2, group.members);
-  } else {
-    rowsIndex = groupByN(3, group.members);
-  }
-  const rows = rowsIndex.map((row) => {
-    const members = row.map((staff) => {
-      return <Tile src={staff.src} name={staff.name} role={staff.role} />;
-    });
-    return <Row className="justify-content-around">{members}</Row>;
+    return (
+      <div key={uuid()}>
+        <h2 className="text-center mt-4">{group.group}</h2>
+        <hr />
+        {rows}
+      </div>
+    );
   });
-  return (
-    <>
-      <h2 className="text-center mt-4">{group.group}</h2>
-      <hr />
-      {rows}
-    </>
-  );
-});
-const Ambassadors = StaffData.ambassadors.map((group) => {
-  const groupByN = (n, data) => {
-    const result = [];
-    for (let i = 0; i < data.length; i += n) result.push(data.slice(i, i + n));
-    return result;
-  };
-  let rowsIndex = {};
-  if (group.group === 'Chairs' || group.group === 'Executives') {
-    rowsIndex = groupByN(2, group.members);
-  } else {
-    rowsIndex = groupByN(3, group.members);
-  }
-  const rows = rowsIndex.map((row) => {
-    const members = row.map((staff) => {
-      return <Tile src={staff.src} name={staff.name} role={staff.role} />;
-    });
-    return <Row>{members}</Row>;
-  });
-  return (
-    <>
-      <h2 className="text-center mt-4">{group.group}</h2>
-      <hr />
-      {rows}
-    </>
-  );
-});
+};
+const Staff = CreateGroup(StaffData.staff);
+const Ambassadors = CreateGroup(StaffData.ambassadors);
+
 const Team = () => {
   return (
     <Container className="mt-4">

@@ -19,7 +19,7 @@ import Home from './pages/Home';
 
 const plenaryRoutes = PlenaryJSON.map((entry) => {
   return (
-    <Route exact path={entry.path}>
+    <Route exact path={entry.path} key={entry.props.title}>
       <Plenary
         title={entry.props.title}
         text={entry.props.text}

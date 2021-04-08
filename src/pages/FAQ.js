@@ -6,15 +6,14 @@ import FAQdata from '../data/FAQ';
 
 const FAQEntry = (props) => {
   const data = props;
-  const id = uuid();
   return (
     <Card>
       <Card.Header>
-        <Accordion.Toggle as="a" eventKey={id} className="h5">
+        <Accordion.Toggle as="a" eventKey={data.id} className="h5">
           {data.question}
         </Accordion.Toggle>
       </Card.Header>
-      <Accordion.Collapse eventKey={id}>
+      <Accordion.Collapse eventKey={data.id}>
         <Card.Body>{data.response}</Card.Body>
       </Accordion.Collapse>
     </Card>
@@ -23,8 +22,13 @@ const FAQEntry = (props) => {
 
 const FAQs = FAQdata.map((entry) => {
   const questions = entry.questions.map((question) => {
+    const id = uuid();
     return (
-      <FAQEntry question={question.question} response={question.response} />
+      <FAQEntry
+        question={question.question}
+        response={question.response}
+        key={id}
+      />
     );
   });
   return (
