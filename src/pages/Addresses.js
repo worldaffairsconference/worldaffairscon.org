@@ -9,7 +9,7 @@ const Addresses = () => {
   return (
     <Container className="mt-4">
       <KeynoteAddresses
-        title="Opening Address:"
+        title="Opening Address 2021:"
         speaker=""
         image={AChisholm}
         addressName="Andrew Chisholm"
@@ -18,7 +18,7 @@ const Addresses = () => {
       />
       <div className="mt-4">
         <KeynoteAddresses
-          title="Closing Address:"
+          title="Closing Address 2021:"
           image={ALau}
           addressName="Allen Lau"
           addressRole="Co-founder and CEO of Wattpad"
@@ -27,7 +27,7 @@ const Addresses = () => {
       </div>
       <div className="mt-2">
         <KeynoteAddresses
-          title="Closing Address:"
+          title="Closing Address 2021:"
           image={ELau}
           addressName="Eva Lau"
           addressRole="Co-founder and CEO of Two Small Fish"

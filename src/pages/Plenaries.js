@@ -25,7 +25,7 @@ const Plenaries = () => {
       <Container className="mt-4">
         <Card>
           <Card.Body className="text-center">
-            <h1>Plenaries</h1>
+            <h1>Plenaries 2021</h1>
           </Card.Body>
         </Card>
         <CardDeck className="mt-2">

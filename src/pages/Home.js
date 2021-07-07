@@ -15,8 +15,8 @@ const Home = () => {
     name: 'Name',
     role: 'Role 2021',
   });
-  const wacStartDate = '2/6/2021';
-  const wacEndDate = '2/6/2021'; // Countdown date in MM/DD/YYYY format (no 0's required)
+  const wacStartDate = '2/5/2022';
+  const wacEndDate = '2/5/2022'; // Countdown date in MM/DD/YYYY format (no 0's required)
   const handleCountDown = (startTime, endTime) => {
     let [month, day, year] = startTime.split('/');
     const startDate = new Date(year, month - 1, day);
@@ -54,13 +54,13 @@ const Home = () => {
     <>
       <Container className="mt-4">
         <div className="text-center text-md-left">
-          <h2>Welcome to the 2021</h2>
+          <h2>Welcome to the 2022</h2>
           <h1>World Affairs Conference</h1>
-          <h3 className="display-5">February 6th</h3>
+          <h3 className="display-5">February 5th</h3>
         </div>
         <div className="text-center">
           <h3>This Year&apos;s Theme:</h3>
-          <h1 className="display-4">Together Towards Tomorrow</h1>
+          <h1 className="display-4">TBD</h1>
         </div>
         <div className="text-center text-md-right">
           <h4>The Conference is</h4>
