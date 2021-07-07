@@ -11,12 +11,12 @@ const Quotes = [
     role: 'Chair',
     year: '2021',
   },
-  {
-    name: 'Drake Belanger Polak',
-    quote: 'If it makes dollars, it makes sense.',
-    role: 'Head Of Programs',
-    year: '2021',
-  },
+  // {
+  //   name: 'Drake Belanger Polak',
+  //   quote: 'If it makes dollars, it makes sense.',
+  //   role: 'Head Of Programs',
+  //   year: '2021',
+  // },
   {
     name: 'Max Rivett',
     quote: 'A wise man once said nothing at all.',
@@ -41,12 +41,12 @@ const Quotes = [
     role: 'Head of Communications & Registrationr',
     year: '2021',
   },
-  {
-    name: 'Lauren Mahony',
-    quote: 'U gotta live life with no regrets.',
-    role: 'Chair',
-    year: '2021',
-  },
+  // {
+  //   name: 'Lauren Mahony',
+  //   quote: 'U gotta live life with no regrets.',
+  //   role: 'Chair',
+  //   year: '2021',
+  // },
   {
     name: 'Karam Bambawale',
     quote: 'Live simply: dream big, be grateful, give love, laugh lots.',
@@ -59,12 +59,12 @@ const Quotes = [
     role: 'Head of Registration',
     year: '2021',
   },
-  {
-    name: 'Princeton Zhou',
-    quote:
-      'Ohana means family. Family means nobody gets left behind or forgotten.',
-    role: 'Head of Plenaries',
-    year: '2021',
-  },
+  // {
+  //   name: 'Princeton Zhou',
+  //   quote:
+  //     'Ohana means family. Family means nobody gets left behind or forgotten.',
+  //   role: 'Head of Plenaries',
+  //   year: '2021',
+  // },
 ];
 export default Quotes;
