@@ -33,7 +33,7 @@ const FAQ = [
       },
       {
         question: 'Where can I find more information on this?',
-        response: 'Click the red &quot;SPRINT&quot; button in the navbar!',
+        response: 'Click the red "SPRINT" button in the navbar!',
       },
     ],
   },
@@ -73,7 +73,7 @@ const FAQ = [
       {
         question: 'When does the Keynote Address start?',
         response:
-          'The Keynote Address starts at 12:00pm, as seen in the &quot;Schedule$quot; subpage. ',
+          'The Keynote Address starts at 12:00pm, as seen in the "Schedule" subpage. ',
       },
       {
         question: 'Who can attend the Keynote Address?',
