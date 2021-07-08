@@ -16,6 +16,16 @@ const KeynoteAddresses = (props) => {
           <Card.Title as="h3">{`${data.title} ${data.speaker}`}</Card.Title>
           <Card.Text>
             <Col md={12}>{data.text}</Col>
+            <Col className="mt-2" md={12}>
+              {data.li &&
+                data.li.map((text) => {
+                  return (
+                    <li>
+                      <b>{text}</b>
+                    </li>
+                  );
+                })}
+            </Col>
           </Card.Text>
         </Card.Body>
       </Card>
