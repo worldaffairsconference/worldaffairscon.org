@@ -86,7 +86,7 @@ const Keynote = () => {
           image={Avatar}
           text="WAC has featured many current, popular, and influential speakers in the past. Here's a quick summary of some big names at WAC: "
           li={[
-            'Nanor Balyozian - Syrian political advocate</br>',
+            'Nanor Balyozian - Syrian political advocate',
             'Dr. Samantha Nutt - Founder of War Child North America',
             'Stephen Lewis - former United Nations ambassador',
             'Ralph Nader - American political activist',
