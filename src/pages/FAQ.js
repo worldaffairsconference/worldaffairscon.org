@@ -6,14 +6,15 @@ import FAQdata from '../data/FAQ';
 
 const FAQEntry = (props) => {
   const data = props;
+  const id = uuid();
   return (
     <Card>
       <Card.Header>
-        <Accordion.Toggle as="a" eventKey={data.id} className="h5">
+        <Accordion.Toggle as="a" eventKey={id} className="h5">
           {data.question}
         </Accordion.Toggle>
       </Card.Header>
-      <Accordion.Collapse eventKey={data.id}>
+      <Accordion.Collapse eventKey={id}>
         <Card.Body>{data.response}</Card.Body>
       </Accordion.Collapse>
     </Card>
