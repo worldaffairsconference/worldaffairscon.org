@@ -90,20 +90,26 @@ const Home = () => {
         <Card className="mt-3 mx-3">
           <Card.Body>
             <Row>
-              <Col sm={3}>
+              <Col className="mt-5" md={3}>
                 <Image src={Logo} fluid />
               </Col>
-              <Col sm={9}>
+              <Col md={9}>
                 <h4>What&apos;s WAC?</h4>
                 <p>
-                  The World Affairs Conference (WAC) is North America&apos;s
-                  largest annual student-run current affairs conference.
-                  Annually held at Upper Canada College in Toronto, Canada, the
-                  World Affairs Conference connects over 1000 students, with a
-                  common interest in current affairs, typically from across
-                  North America. Due to the COVID-19 pandemic, the 2021 World
-                  Affairs Conference will be hosted online and available
-                  worldwide!
+                  The World Affairs Conference (WAC) is North America’s largest
+                  and Canada’s oldest annual student-run current events
+                  conference that provides high-quality discussion opportunities
+                  for thousands of inspired, curious, and globally-minded high
+                  school students from around the world. Our mission is to
+                  inspire high school students to proactively engage in world
+                  affairs and become aware of humanity&apos;s most pressing
+                  challenges.
+                </p>
+                <p>
+                  Our mission is to inspire the next generation of leaders to
+                  engage in the world’s most pressing issues, innovations, and
+                  trends by exposing them to experienced perspectives and by
+                  providing high-quality discussion opportunities.
                 </p>
               </Col>
             </Row>
@@ -128,10 +134,10 @@ const Home = () => {
             </Container>
             <hr />
             <Row className="pt-5">
-              <Col sm={3}>
+              <Col md={3}>
                 <Image src={ESnowden} alt="Edward Snowden" fluid />
               </Col>
-              <Col sm={9}>
+              <Col md={9}>
                 <h3>Edward Snowden</h3>
                 <p>
                   Six years ago, Edward Snowden gave the WAC 2015 Lionel Gelber
