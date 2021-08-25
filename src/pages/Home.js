@@ -63,7 +63,6 @@ const Home = () => {
     (async () => {
       // try {
       const token = await executeRecaptcha('email');
-      console.log(email, token, process.env);
       fetch(process.env.REACT_APP_EMAIL_LIST_API, {
         method: 'POST',
         body: JSON.stringify({
