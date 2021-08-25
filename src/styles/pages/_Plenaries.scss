@@ -1,0 +1,19 @@
+#plenaries {
+  h3 {
+    font-size: 1.6rem;
+  }
+  .plenary-img {
+    max-width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: 768px) {
+    .plenary-img {
+      max-width: 100%;
+    }
+  }
+  .plen-image {
+    filter: brightness(50%);
+    transition: transform 0.2s;
+  }
+}

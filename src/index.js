@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import './styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+require('dotenv').config();
 
 const sendToAnalytics = ({ id, name, value }) => {
   window.gtag('event', name, {
@@ -15,11 +20,21 @@ const sendToAnalytics = ({ id, name, value }) => {
 };
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router basename={process.env.PUBLIC_URL}>
-      <App />
-    </Router>
-  </React.StrictMode>,
+  <GoogleReCaptchaProvider
+    reCaptchaKey="6LesF6wbAAAAAOd5Spfbl46m_6r3Z9qbQO-aEiIb"
+    scriptProps={{
+      async: true, // optional, default to false,
+      defer: true, // optional, default to false
+      appendTo: 'head', // optional, default to "head", can be "head" or "body",
+      nonce: undefined, // optional, default undefined
+    }}
+  >
+    <React.StrictMode>
+      <Router basename={process.env.PUBLIC_URL}>
+        <App />
+      </Router>
+    </React.StrictMode>
+  </GoogleReCaptchaProvider>,
   document.getElementById('root')
 );
 

@@ -1,0 +1,57 @@
+#home {
+  .index-welcome {
+    background-color: $color-tint;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    h1 {
+      color: $color-green;
+    }
+  }
+  .landing {
+    padding-top: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .email-group {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      p {
+        display: block;
+        margin-top: 0.5em;
+        font-size: 1em;
+        color: $color-light;
+      }
+      .error {
+        color: $color-red;
+        transition: all 0.3s;
+      }
+    }
+    button {
+      background: none;
+      border: none;
+      color: $color-light;
+      font-size: 1.8em;
+      &:hover {
+        color: $color-grey;
+        background-color: transparent;
+        border: none;
+        transition: all 0.3s;
+      }
+      &.error {
+        color: $color-red;
+        transition: all 0.3s;
+      }
+    }
+  }
+  input {
+    background-color: transparent;
+    color: $color-light;
+  }
+}

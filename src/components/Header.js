@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, Button } from 'react-bootstrap';
+import Logo from '../img/general/wac_logo_full.png';
 
 const Header = () => {
   const [expand, setExpand] = useState(false);
@@ -14,7 +15,7 @@ const Header = () => {
     >
       <Navbar.Brand as={Link} to="/">
         <img
-          src="/assets/wac_logo_full.png"
+          src={Logo}
           width="auto"
           height="30"
           className="d-inline-block align-top"

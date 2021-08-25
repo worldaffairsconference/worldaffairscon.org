@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import maintenanceMode from './config';
 import PlenaryJSON from './data/plenary';
 import Keynote from './pages/Keynote';
 import Addresses from './pages/Addresses';
@@ -16,6 +17,8 @@ import NotFound from './pages/404';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Success from './pages/Success';
+import Maintenance from './pages/Maintenance';
 
 const plenaryRoutes = PlenaryJSON.map((entry) => {
   return (
@@ -37,6 +40,9 @@ const App = () => {
       page_path: curr,
     });
   }, [location]);
+  if (maintenanceMode) {
+    return <Maintenance />;
+  }
   return (
     <>
       <header>
@@ -75,6 +81,9 @@ const App = () => {
             </Route>
             <Route exact path="/sprint">
               <SPRINT />
+            </Route>
+            <Route exact path="/success">
+              <Success />
             </Route>
             <Route path="/404" component={NotFound} />
             <Redirect to="/404" />

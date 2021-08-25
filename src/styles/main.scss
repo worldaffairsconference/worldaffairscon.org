@@ -1,0 +1,91 @@
+/*
+WAC Website Stylesheet
+Version: 3.0.0
+Original by @malsf21, @jacksarick, @obrien66, 
+SCSS by @jeffersonDing
+*/
+// colors
+@import 'colors';
+// variables
+
+// page-specific styles
+@import './pages/Home';
+@import './pages/Maintenance';
+@import './pages/Plenaries';
+@import './pages/Contact';
+@import './pages/Sprint';
+
+// fonts
+@import 'fonts';
+
+// animations
+@import 'animations';
+
+// icons
+@import 'icons';
+
+// base styles
+html {
+  position: relative;
+  min-width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 100% !important;
+  min-height: 100% !important;
+  font-family: Nexa !important;
+  padding-top: 4em !important;
+  padding-bottom: 1em !important;
+  background-color: $color-dark !important;
+  color: $color-light !important;
+  background-image: url('../img/general/earth.png'),
+    url('../img/general/stars.png') !important;
+  background-repeat: no-repeat, repeat !important;
+}
+
+.card {
+  color: $color-dark;
+}
+
+.modal {
+  color: $color-dark;
+}
+
+.input {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.4em;
+  text-align: left;
+  input {
+    box-shadow: none !important;
+    width: 100%;
+    font-size: 1.3em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 5px solid;
+    outline: none;
+    color: $color-light;
+    transition: all 0.3s;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: Nexa Heavy;
+}
+
+.vertical-center {
+  min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+
+.vertical-center-div {
+  display: flex;
+  align-items: center;
+}

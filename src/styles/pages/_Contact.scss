@@ -1,0 +1,22 @@
+#contact {
+  a {
+    color: $color-light;
+  }
+  .contact-color {
+    color: $color-light;
+  }
+  a.contact-color {
+    &:hover {
+      color: $color-light;
+    }
+    &:visited {
+      color: $color-light;
+    }
+  }
+  .bg-twitter {
+    background-color: $color-twitter;
+  }
+  .bg-instagram {
+    background-color: $color-instagram;
+  }
+}

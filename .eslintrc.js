@@ -21,5 +21,13 @@ module.exports = {
     ],
     'no-unused-vars': 'warn',
     'react/jsx-wrap-multilines': 'off',
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        required: {
+          some: ['nesting', 'id'],
+        },
+      },
+    ],
   },
 };

@@ -37,7 +37,7 @@ const ContactCard = (props) => {
 };
 const Contact = () => {
   return (
-    <Container className="mt-4">
+    <Container id="contact" className="mt-4">
       <Card>
         <Card.Body>
           <h1 className="text-center">Need to talk?</h1>

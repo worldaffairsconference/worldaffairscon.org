@@ -21,7 +21,7 @@ const PlenariesCard = (props) => {
 };
 const Plenaries = () => {
   return (
-    <>
+    <div id="plenaries">
       <Container className="mt-4">
         <Card>
           <Card.Body className="text-center">
@@ -53,7 +53,7 @@ const Plenaries = () => {
           />
         </CardDeck>
       </Container>
-    </>
+    </div>
   );
 };
 export default Plenaries;
