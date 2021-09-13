@@ -33,7 +33,7 @@ const FAQs = FAQdata.map((entry) => {
     );
   });
   return (
-    <Card className="mt-2">
+    <Card className="mt-2" key={uuid()}>
       <Card.Body>
         <h2>{entry.name}</h2>
         <Accordion defaultActiveKey="0" className="m-2">

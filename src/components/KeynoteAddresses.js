@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image, Row, Col, Card } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
 
 const KeynoteAddresses = (props) => {
   const data = props;
@@ -20,7 +21,7 @@ const KeynoteAddresses = (props) => {
               {data.li &&
                 data.li.map((text) => {
                   return (
-                    <li>
+                    <li key={uuid()}>
                       <b>{text}</b>
                     </li>
                   );

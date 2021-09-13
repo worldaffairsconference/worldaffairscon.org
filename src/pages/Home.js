@@ -8,6 +8,7 @@ import {
   Image,
   Form,
   Button,
+  Carousel,
 } from 'react-bootstrap';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import fetch from 'node-fetch';
@@ -15,7 +16,11 @@ import Iframe from 'react-iframe';
 import { Checkmark } from 'react-checkmark';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-// import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
+import PastEventOne from '../img/home/past_event_1.JPG';
+import PastEventTwo from '../img/home/past_event_2.JPG';
+import PastEventThree from '../img/home/past_event_3.JPG';
+import PastEventFour from '../img/home/past_event_4.JPG';
+import PastEventFive from '../img/home/past_event_5.JPG';
 import Logo from '../img/wac_logo.png';
 // import Quotes from '../data/quotes';
 const Home = () => {
@@ -55,7 +60,8 @@ const Home = () => {
       return;
     }
     // email regex
-    const emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const emailRegex =
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!emailRegex.test(email)) {
       setError('Please enter a valid email address.');
       return;
@@ -217,6 +223,58 @@ const Home = () => {
                 </p>
               </Col>
             </Row>
+          </Card.Body>
+        </Card>
+      </Container>
+      <Container>
+        <Card className="mt-3 mx-3">
+          <Card.Body>
+            <h2 className="text-center">Past Conferences</h2>
+            <p className="text-center">
+              WAC has reached over
+              <span className="text-accent"> 4,000 students </span>
+              in over
+              <span className="text-accent"> 25 countries</span>
+              , and
+              <span className="text-accent"> 65 schools</span>.
+            </p>
+            <Carousel fade>
+              <Carousel.Item>
+                <img
+                  alt="Past Event 1"
+                  src={PastEventOne}
+                  className="carousel-img"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  alt="Past Event 2"
+                  src={PastEventTwo}
+                  className="carousel-img"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  alt="Past Event 3"
+                  src={PastEventThree}
+                  className="carousel-img"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  alt="Past Event 4"
+                  src={PastEventFour}
+                  className="carousel-img"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  alt="Past Event 5"
+                  src={PastEventFive}
+                  className="carousel-img"
+                />
+              </Carousel.Item>
+            </Carousel>
           </Card.Body>
         </Card>
       </Container>

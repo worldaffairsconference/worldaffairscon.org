@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Card, Row, Col, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { v4 as uuid } from 'uuid';
 
 const Speaker = (props) => {
   const data = props;
@@ -21,7 +22,7 @@ const Speaker = (props) => {
 const Plenary = (props) => {
   const data = props;
   const speakers = data.speaker.map((entry) => {
-    return <Speaker name={entry.name} img={entry.img} text={entry.text} />;
+    return <Speaker name={entry.name} img={entry.img} text={entry.text} key={uuid()} />;
   });
   return (
     <>

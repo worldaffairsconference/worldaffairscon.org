@@ -1,9 +1,10 @@
 module.exports = {
   env: {
     browser: true,
+    node: true,
     es2021: true,
   },
-  extends: ['airbnb', 'plugin:prettier/recommended'],
+  extends: [ 'eslint:recommended', 'plugin:react/recommended' ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -21,13 +22,5 @@ module.exports = {
     ],
     'no-unused-vars': 'warn',
     'react/jsx-wrap-multilines': 'off',
-    'jsx-a11y/label-has-associated-control': [
-      'error',
-      {
-        required: {
-          some: ['nesting', 'id'],
-        },
-      },
-    ],
   },
 };
