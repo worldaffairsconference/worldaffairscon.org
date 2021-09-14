@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { isFuture, isPast, formatDistanceToNowStrict } from 'date-fns';
+import React, { useState, useEffect, useRef } from "react";
+import { isFuture, isPast, formatDistanceToNowStrict } from "date-fns";
 import {
   Container,
   Card,
@@ -9,27 +9,24 @@ import {
   Form,
   Button,
   Carousel,
-} from 'react-bootstrap';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import fetch from 'node-fetch';
-import Iframe from 'react-iframe';
-import { Checkmark } from 'react-checkmark';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import PastEventOne from '../img/home/past_event_1.JPG';
-import PastEventTwo from '../img/home/past_event_2.JPG';
-import PastEventThree from '../img/home/past_event_3.JPG';
-import PastEventFour from '../img/home/past_event_4.JPG';
-import PastEventFive from '../img/home/past_event_5.JPG';
-import Logo from '../img/wac_logo.png';
+} from "react-bootstrap";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import fetch from "node-fetch";
+import Iframe from "react-iframe";
+import { Checkmark } from "react-checkmark";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import ImportAll from "../helpers/ImportAll";
+
+import Logo from "../img/wac_logo.png";
 // import Quotes from '../data/quotes';
 const Home = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [success, setSuccess] = useState(false);
   const [validated, setValidated] = useState(false);
-  const [countDown, setCountDown] = useState('');
-  const [error, setError] = useState('');
-  const [email, setEmail] = useState('');
+  const [countDown, setCountDown] = useState("");
+  const [error, setError] = useState("");
+  const [email, setEmail] = useState("");
 
   const divRef = useRef(null);
   // const [quote, setQuote] = useState({
@@ -37,12 +34,12 @@ const Home = () => {
   //   name: 'Name',
   //   role: 'Role 2021',
   // });
-  const wacStartDate = '2/5/2022';
-  const wacEndDate = '2/5/2022'; // Countdown date in MM/DD/YYYY format (no 0's required)
+  const wacStartDate = "2/5/2022";
+  const wacEndDate = "2/5/2022"; // Countdown date in MM/DD/YYYY format (no 0's required)
   const handleCountDown = (startTime, endTime) => {
-    let [month, day, year] = startTime.split('/');
+    let [month, day, year] = startTime.split("/");
     const startDate = new Date(year, month - 1, day);
-    [month, day, year] = endTime.split('/');
+    [month, day, year] = endTime.split("/");
     const endDate = new Date(year, month - 1, day);
     if (isFuture(startDate)) {
       return formatDistanceToNowStrict(startDate, {
@@ -50,9 +47,9 @@ const Home = () => {
       });
     }
     if (isPast(endDate)) {
-      return 'Over!';
+      return "Over!";
     }
-    return 'In Progress!';
+    return "In Progress!";
   };
 
   const handleReCaptchaVerify = () => {
@@ -63,14 +60,14 @@ const Home = () => {
     const emailRegex =
       /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address.');
+      setError("Please enter a valid email address.");
       return;
     }
     (async () => {
       // try {
-      const token = await executeRecaptcha('email');
+      const token = await executeRecaptcha("email");
       fetch(process.env.REACT_APP_EMAIL_LIST_API, {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify({
           email,
           token,
@@ -78,13 +75,13 @@ const Home = () => {
       }).then((res) => {
         if (res.status === 200) {
           divRef.current.setAttribute(
-            'style',
+            "style",
             `height: ${divRef.current.clientHeight}px;`
           );
           setSuccess(true);
         }
         setError(
-          'There was an error submitting your email. Please try again later or contact support.'
+          "There was an error submitting your email. Please try again later or contact support."
         );
       });
     })();
@@ -109,6 +106,22 @@ const Home = () => {
       clearInterval(countDownInterval);
     };
   }, []);
+
+  const galleryGenerator = () => {
+    const images = ImportAll(
+      require.context("../img/home/gallery", false, /\.(png|jpe?g|svg|JPG)$/)
+    );
+    const items = Object.entries(images).map(([key, value]) => {
+      return (
+        <Carousel.Item key={key}>
+          <img alt={key} src={value.default} className="carousel-img" />
+        </Carousel.Item>
+      );
+    });
+
+    return items;
+  };
+
   return (
     <div id="home">
       <div className="landing">
@@ -173,7 +186,7 @@ const Home = () => {
                 <Button
                   type="button"
                   bsPrefix="b"
-                  className={error ? 'error' : ''}
+                  className={error ? "error" : ""}
                   onClick={handleReCaptchaVerify}
                 >
                   <FontAwesomeIcon icon={faArrowRight} />
@@ -218,8 +231,9 @@ const Home = () => {
                 <p>
                   Our mission is to inspire the next generation of leaders to
                   engage in the world’s most pressing issues, innovations, and
-                  trends by exposing them to experienced perspectives and by
-                  providing high-quality discussion opportunities.
+                  trends. We do this by exposing students to experienced
+                  perspectives and by providing high-quality discussion
+                  opportunities.
                 </p>
               </Col>
             </Row>
@@ -229,64 +243,34 @@ const Home = () => {
       <Container>
         <Card className="mt-3 mx-3">
           <Card.Body>
-            <h2 className="text-center">Past Conferences</h2>
+            <h2 className="text-center">Why WAC?</h2>
             <p className="text-center">
               WAC has reached over
               <span className="text-accent"> 4,000 students </span>
               in over
-              <span className="text-accent"> 25 countries</span>
-              , and
+              <span className="text-accent"> 25 countries</span>, and
               <span className="text-accent"> 65 schools</span>.
             </p>
-            <Carousel fade>
-              <Carousel.Item>
-                <img
-                  alt="Past Event 1"
-                  src={PastEventOne}
-                  className="carousel-img"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  alt="Past Event 2"
-                  src={PastEventTwo}
-                  className="carousel-img"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  alt="Past Event 3"
-                  src={PastEventThree}
-                  className="carousel-img"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  alt="Past Event 4"
-                  src={PastEventFour}
-                  className="carousel-img"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  alt="Past Event 5"
-                  src={PastEventFive}
-                  className="carousel-img"
-                />
-              </Carousel.Item>
-            </Carousel>
           </Card.Body>
         </Card>
       </Container>
       <Container>
         <Card className="mt-3 mx-3">
           <Card.Body>
-            <h2 className="text-center">WAC Promotional Video</h2>
+            <h2 className="text-center">WAC Gallery</h2>
+            <Carousel fade>{galleryGenerator()}</Carousel>
+          </Card.Body>
+        </Card>
+      </Container>
+      <Container>
+        <Card className="mt-3 mx-3">
+          <Card.Body>
+            <h2 className="text-center">WAC in 2021</h2>
             <Container>
               <Iframe
                 width="100%"
                 height="465"
-                styles={{ border: '1px solid black', margin: 'auto' }}
+                styles={{ border: "1px solid black", margin: "auto" }}
                 src="https://www.youtube.com/embed/h8VBYlOQEBc"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
