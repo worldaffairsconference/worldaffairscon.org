@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Success from './pages/Success';
 import Maintenance from './pages/Maintenance';
+import Speakers from './pages/Speakers';
 
 const plenaryRoutes = PlenaryJSON.map((entry) => {
   return (
@@ -84,6 +85,9 @@ const App = () => {
             </Route>
             <Route exact path="/success">
               <Success />
+            </Route>
+            <Route exact path="/speakers">
+              <Speakers />
             </Route>
             <Route path="/404" component={NotFound} />
             <Redirect to="/404" />
