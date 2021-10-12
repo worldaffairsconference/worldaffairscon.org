@@ -52,6 +52,9 @@ const Header = () => {
           <Nav.Link as={Link} to="/startups" onClick={() => setExpand(false)}>
             Startups
           </Nav.Link>
+          <Nav.Link as={Link} to="/speakers" onClick={() => setExpand(false)}>
+            Speakers
+          </Nav.Link>
         </Nav>
         <Nav className="float-lg-right">
           <Nav.Link as={Link} to="/sprint" onClick={() => setExpand(false)}>
