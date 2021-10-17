@@ -72,9 +72,6 @@ const Speakers = () => {
               <Col md="4">
                 <Speaker name={"Dr. Louis Friedman"} img={LFriedman} subtitle={"Co-founder of The Planetary Society"} />
               </Col>
-              <Col md="4">
-                <Speaker name={"Ralph Nader"} img={RNader} subtitle={"Social and Political Activist"} />
-              </Col>
             </Row>
             <hr />
             <Row>
@@ -95,6 +92,9 @@ const Speakers = () => {
               </Col>
               <Col md="4">
                 <Speaker name={"Dr. Geoffrey Hinton"} img={GHinton} subtitle={"2018 recipient of the Turing Award for Computer Science"} />
+              </Col>
+              <Col md="4">
+                <Speaker name={"Ralph Nader"} img={RNader} subtitle={"Social and Political Activist"} />
               </Col>
             </Row>
           </Container>
