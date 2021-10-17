@@ -53,7 +53,7 @@ const Header = () => {
             Startups
           </Nav.Link>
           <Nav.Link as={Link} to="/speakers" onClick={() => setExpand(false)}>
-            Speakers
+            Past Speakers
           </Nav.Link>
         </Nav>
         <Nav className="float-lg-right">

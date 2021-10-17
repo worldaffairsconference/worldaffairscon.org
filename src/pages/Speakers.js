@@ -39,62 +39,62 @@ const Speakers = () => {
           <hr />
           <Container>
             <Row>
-              <Col>
-                <Speaker name={"Edward Snowden"} img={ESnowden} subtitle={"Former National Security Agency subcontractor who leaked top-secret information about NSA surveillance activities."} />
-              </Col>
-              <Col>
+              <Col md="4">
                 <Speaker name={"Bharat Masrani"} img={BMasrani} subtitle={"CEO and Group President of TD Bank"} />
               </Col>
-              <Col>
+              <Col md="4">
                 <Speaker name={"Michele Romanow"} img={MRomanow} subtitle={"President and Co-founder of Clearbanc"} />
               </Col>
+              <Col md="4">
+                <Speaker name={"Mehdi Hasan"} img={MHasan} subtitle={"British-American Political Journalist, Broadcaster and Author"} />
+              </Col>
             </Row>
             <hr />
             <Row>
-              <Col>
+              <Col md="4">
+                <Speaker name={"Edward Snowden"} img={ESnowden} subtitle={"Former National Security Agency subcontractor who leaked top-secret information about NSA surveillance activities."} />
+              </Col>
+              <Col md="4">
                 <Speaker name={"Andrew Chisholm"} img={AChisholm} subtitle={"Board of Directors of Royal Bank of Canada"} />
               </Col>
-              <Col>
-                <Speaker name={"Allen Lau"} img={ALau} subtitle={"CEO and Co-founder of Wattpad"} />
-              </Col>
-              <Col>
-                <Speaker name={"Eva Lau"} img={ELau} subtitle={"Co-founder and CEO of Two Small Fish"} />
+              <Col md="4">
+                <Speaker name={"Marc Garneau"} img={MGarneau} subtitle={"Former Canadian Astronaut"} />
               </Col>
             </Row>
             <hr />
             <Row>
-              <Col>
-                <Speaker name={"Dr. Geoffrey Hinton"} img={GHinton} subtitle={"2018 recipient of the Turing Award for Computer Science"} />
+              <Col md="4">
+                <Speaker name={"Allen Lau"} img={ALau} subtitle={"CEO and Co-founder of Wattpad"} />
               </Col>
-              <Col>
-                <Speaker name={"John Stackhouse"} img={JStackhouse} subtitle={"Former Editor-in-Chief of The Globe and Mail"} />
+              <Col md="4">
+                <Speaker name={"Eva Lau"} img={ELau} subtitle={"Co-founder and CEO of Two Small Fish"} />
               </Col>
-              <Col>
+              <Col md="4">
+                <Speaker name={"Dr. Louis Friedman"} img={LFriedman} subtitle={"Co-founder of The Planetary Society"} />
+              </Col>
+              <Col md="4">
                 <Speaker name={"Ralph Nader"} img={RNader} subtitle={"Social and Political Activist"} />
               </Col>
             </Row>
             <hr />
             <Row>
-              <Col>
+              <Col md="4">
+                <Speaker name={"John Stackhouse"} img={JStackhouse} subtitle={"Former Editor-in-Chief of The Globe and Mail"} />
+              </Col>
+              <Col md="4">
                 <Speaker name={"Dr. James Hansen"} img={JHansen} subtitle={"\"Father of climate change awareness\""} />
               </Col>
-              <Col>
+              <Col md="4">
                 <Speaker name={"Janet Ivey"} img={JIvey} subtitle={"President at Explore Mars and CEO of Janet's Planet"} />
-              </Col>
-              <Col>
-                <Speaker name={"Dr. Louis Friedman"} img={LFriedman} subtitle={"Co-founder of The Planetary Society"} />
               </Col>
             </Row>
             <hr />
             <Row>
-              <Col>
+              <Col md="4">
                 <Speaker name={"David Owen"} img={DOwen} subtitle={"Former British Foreign Secretary"} />
               </Col>
-              <Col>
-                <Speaker name={"Marc Garneau"} img={MGarneau} subtitle={"Former Canadian Astronaut"} />
-              </Col>
-              <Col>
-                <Speaker name={"Mehdi Hasan"} img={MHasan} subtitle={"British-American Political Journalist, Broadcaster and Author"} />
+              <Col md="4">
+                <Speaker name={"Dr. Geoffrey Hinton"} img={GHinton} subtitle={"2018 recipient of the Turing Award for Computer Science"} />
               </Col>
             </Row>
           </Container>
