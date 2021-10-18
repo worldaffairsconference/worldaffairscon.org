@@ -6,10 +6,13 @@
 }
 
 .speaker img {
-  max-width: 100%;
-  max-height: 300px;
+  width: 60%;
+  height: 60%;
+  max-height: 250px;
+  max-width: 250px;
   align-self: center;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .speaker h4 {
