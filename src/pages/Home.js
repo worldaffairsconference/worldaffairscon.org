@@ -10,6 +10,8 @@ import {
   Button,
   Carousel,
 } from "react-bootstrap";
+import { css } from "@emotion/react";
+import ClipLoader from "react-spinners/ClipLoader";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import fetch from "node-fetch";
 import Iframe from "react-iframe";
@@ -23,6 +25,7 @@ import Logo from "../img/wac_logo.png";
 const Home = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [success, setSuccess] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const [validated, setValidated] = useState(false);
   const [countDown, setCountDown] = useState("");
   const [error, setError] = useState("");
@@ -53,18 +56,20 @@ const Home = () => {
   };
 
   const handleReCaptchaVerify = () => {
+    setClicked(true);
     if (!executeRecaptcha) {
+      setClicked(false);
       return;
     }
     // email regex
     const emailRegex =
       /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!emailRegex.test(email)) {
+      setClicked(false);
       setError("Please enter a valid email address.");
       return;
     }
     (async () => {
-      // try {
       const token = await executeRecaptcha("email");
       fetch(process.env.REACT_APP_EMAIL_LIST_API, {
         method: "POST",
@@ -73,12 +78,18 @@ const Home = () => {
           token,
         }),
       }).then((res) => {
+        if (res.status === 406) {
+          setSuccess(true);
+          return;
+        }
         if (res.status === 200) {
           divRef.current.setAttribute(
             "style",
             `height: ${divRef.current.clientHeight}px;`
           );
+          setClicked(false);
           setSuccess(true);
+          return;
         }
         setError(
           "There was an error submitting your email. Please try again later or contact support."
@@ -121,6 +132,15 @@ const Home = () => {
 
     return items;
   };
+
+  // loading spinner for email list css
+  const override = css`
+    display: block;
+    width: 100%
+    margin: 0 auto;
+    border-color: #fcf8ed;
+    border-width: 7px;
+  `;
 
   return (
     <div id="home">
@@ -189,7 +209,16 @@ const Home = () => {
                   className={error ? "error" : ""}
                   onClick={handleReCaptchaVerify}
                 >
-                  <FontAwesomeIcon icon={faArrowRight} />
+                  {clicked ? (
+                    <ClipLoader
+                      color={"#fcf8ed"}
+                      loading={clicked}
+                      css={override}
+                      size={100}
+                    />
+                  ) : (
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  )}
                 </Button>
               </Form>
             </div>
