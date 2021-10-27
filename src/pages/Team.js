@@ -1,12 +1,12 @@
-import React from "react";
-import { Image, Container, Card, Row, Col, Tabs, Tab } from "react-bootstrap";
-import { v4 as uuid } from "uuid";
-import ImportAll from "../helpers/ImportAll";
+import React from 'react';
+import { Image, Container, Card, Row, Col, Tabs, Tab } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
+import ImportAll from '../helpers/ImportAll';
 
-import StaffData from "../data/staff";
+import StaffData from '../data/staff';
 
 const images = ImportAll(
-  require.context("../img/staff", false, /\.(png|jpe?g|svg)$/)
+  require.context('../img/staff', false, /\.(png|jpe?g|svg)$/)
 );
 
 const Tile = (props) => {
@@ -39,7 +39,7 @@ const CreateGroup = (groups) => {
       return result;
     };
     let rowsIndex = {};
-    if (group.group === "Chairs" || group.group === "Executives") {
+    if (group.group === 'Chairs' || group.group === 'Executives') {
       rowsIndex = groupByN(2, group.members);
     } else {
       rowsIndex = groupByN(3, group.members);
