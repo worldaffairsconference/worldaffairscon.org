@@ -1,13 +1,22 @@
 .speaker {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
 }
-
+.speaker-img {
+  height: 290px;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.speaker-text {
+  display: flex;
+}
 .speaker img {
-  width: 60%;
-  height: 60%;
+  width: 90%;
+  height: 90%;
   max-height: 250px;
   max-width: 250px;
   align-self: center;

@@ -1,3 +1,4 @@
+//TODO: Migrate static data from this file to src/data/speakers.js
 import React from 'react';
 import { Container, Card, Row, Col } from 'react-bootstrap';
 
@@ -21,9 +22,13 @@ const Speaker = (props) => {
   const data = props;
   return (
     <div className="speaker">
-      <img src={data.img} />
-      <h4 className="text-center">{data.name}</h4>
-      <h5 className="text-center">{data.subtitle}</h5>
+      <div className="speaker-img">
+        <img src={data.img} alt={data.name} />
+      </div>
+      <div className="speaker-info">
+        <h4 className="text-center">{data.name}</h4>
+        <h5 className="text-center">{data.subtitle}</h5>
+      </div>
     </div>
   );
 };
