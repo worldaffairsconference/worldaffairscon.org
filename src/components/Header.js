@@ -28,6 +28,9 @@ const Header = () => {
       />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
+          <Nav.Link as={Link} to="/speakers" onClick={() => setExpand(false)}>
+            Past Speakers
+          </Nav.Link>
           <Nav.Link as={Link} to="/keynote" onClick={() => setExpand(false)}>
             Keynote
           </Nav.Link>
@@ -40,9 +43,6 @@ const Header = () => {
           <Nav.Link as={Link} to="/faq" onClick={() => setExpand(false)}>
             FAQ
           </Nav.Link>
-          <Nav.Link as={Link} to="/speakers" onClick={() => setExpand(false)}>
-            Past Speakers
-          </Nav.Link>
           <Nav.Link as={Link} to="/schedule" onClick={() => setExpand(false)}>
             Recordings
           </Nav.Link>
@@ -52,9 +52,11 @@ const Header = () => {
           <Nav.Link as={Link} to="/team" onClick={() => setExpand(false)}>
             Team
           </Nav.Link>
-          <Nav.Link as={Link} to="/startups" onClick={() => setExpand(false)}>
-            Startups
-          </Nav.Link>
+          {/*
+            <Nav.Link as={Link} to="/startups" onClick={() => setExpand(false)}>
+              Startups
+            </Nav.Link>
+						*/}
         </Nav>
         <Nav className="float-lg-right">
           <Nav.Link as={Link} to="/sprint" onClick={() => setExpand(false)}>

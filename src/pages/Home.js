@@ -17,7 +17,12 @@ import fetch from 'node-fetch';
 import Iframe from 'react-iframe';
 import { Checkmark } from 'react-checkmark';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowRight,
+  faUserGraduate,
+  faGlobeAmericas,
+  faSchool,
+} from '@fortawesome/free-solid-svg-icons';
 import ImportAll from '../helpers/ImportAll';
 
 import Logo from '../img/wac_logo.png';
@@ -273,13 +278,21 @@ const Home = () => {
         <Card className="mt-3 mx-3">
           <Card.Body>
             <h2 className="text-center">Why WAC?</h2>
-            <p className="text-center">
-              WAC has reached over
-              <span className="text-accent"> 4,000 students </span>
-              in over
-              <span className="text-accent"> 25 countries</span>, and
-              <span className="text-accent"> 65 schools</span>.
-            </p>
+            <p className="text-center">WAC has reached over:</p>
+            <div className="stats-container text-center">
+              <div className="stats-group">
+                <span className="text-accent"> 4,000 students </span>
+                <FontAwesomeIcon icon={faUserGraduate} />
+              </div>
+              <div className="stats-group">
+                <span className="text-accent"> 25 countries</span>
+                <FontAwesomeIcon icon={faGlobeAmericas} />
+              </div>
+              <div className="stats-group">
+                <span className="text-accent"> 65 schools</span>
+                <FontAwesomeIcon icon={faSchool} />
+              </div>
+            </div>
           </Card.Body>
         </Card>
       </Container>
