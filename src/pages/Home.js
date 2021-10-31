@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { isFuture, isPast, formatDistanceToNowStrict } from "date-fns";
+import React, { useState, useEffect, useRef } from 'react';
+import { isFuture, isPast, formatDistanceToNowStrict } from 'date-fns';
 import {
   Container,
   Card,
@@ -9,24 +9,32 @@ import {
   Form,
   Button,
   Carousel,
-} from "react-bootstrap";
-import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import fetch from "node-fetch";
-import Iframe from "react-iframe";
-import { Checkmark } from "react-checkmark";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import ImportAll from "../helpers/ImportAll";
+} from 'react-bootstrap';
+import { css } from '@emotion/react';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import fetch from 'node-fetch';
+import Iframe from 'react-iframe';
+import { Checkmark } from 'react-checkmark';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowRight,
+  faUserGraduate,
+  faGlobeAmericas,
+  faSchool,
+} from '@fortawesome/free-solid-svg-icons';
+import ImportAll from '../helpers/ImportAll';
 
-import Logo from "../img/wac_logo.png";
+import Logo from '../img/wac_logo.png';
 // import Quotes from '../data/quotes';
 const Home = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
   const [success, setSuccess] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const [validated, setValidated] = useState(false);
-  const [countDown, setCountDown] = useState("");
-  const [error, setError] = useState("");
-  const [email, setEmail] = useState("");
+  const [countDown, setCountDown] = useState('');
+  const [error, setError] = useState('');
+  const [email, setEmail] = useState('');
 
   const divRef = useRef(null);
   // const [quote, setQuote] = useState({
@@ -34,12 +42,12 @@ const Home = () => {
   //   name: 'Name',
   //   role: 'Role 2021',
   // });
-  const wacStartDate = "2/5/2022";
-  const wacEndDate = "2/5/2022"; // Countdown date in MM/DD/YYYY format (no 0's required)
+  const wacStartDate = '2/5/2022';
+  const wacEndDate = '2/5/2022'; // Countdown date in MM/DD/YYYY format (no 0's required)
   const handleCountDown = (startTime, endTime) => {
-    let [month, day, year] = startTime.split("/");
+    let [month, day, year] = startTime.split('/');
     const startDate = new Date(year, month - 1, day);
-    [month, day, year] = endTime.split("/");
+    [month, day, year] = endTime.split('/');
     const endDate = new Date(year, month - 1, day);
     if (isFuture(startDate)) {
       return formatDistanceToNowStrict(startDate, {
@@ -47,41 +55,49 @@ const Home = () => {
       });
     }
     if (isPast(endDate)) {
-      return "Over!";
+      return 'Over!';
     }
-    return "In Progress!";
+    return 'In Progress!';
   };
 
   const handleReCaptchaVerify = () => {
+    setClicked(true);
     if (!executeRecaptcha) {
+      setClicked(false);
       return;
     }
     // email regex
     const emailRegex =
       /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!emailRegex.test(email)) {
-      setError("Please enter a valid email address.");
+      setClicked(false);
+      setError('Please enter a valid email address.');
       return;
     }
     (async () => {
-      // try {
-      const token = await executeRecaptcha("email");
+      const token = await executeRecaptcha('email');
       fetch(process.env.REACT_APP_EMAIL_LIST_API, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify({
           email,
           token,
         }),
       }).then((res) => {
+        if (res.status === 406) {
+          setSuccess(true);
+          return;
+        }
         if (res.status === 200) {
           divRef.current.setAttribute(
-            "style",
+            'style',
             `height: ${divRef.current.clientHeight}px;`
           );
+          setClicked(false);
           setSuccess(true);
+          return;
         }
         setError(
-          "There was an error submitting your email. Please try again later or contact support."
+          'There was an error submitting your email. Please try again later or contact support.'
         );
       });
     })();
@@ -109,7 +125,7 @@ const Home = () => {
 
   const galleryGenerator = () => {
     const images = ImportAll(
-      require.context("../img/home/gallery", false, /\.(png|jpe?g|svg|JPG)$/)
+      require.context('../img/home/gallery', false, /\.(png|jpe?g|svg|JPG)$/)
     );
     const items = Object.entries(images).map(([key, value]) => {
       return (
@@ -121,6 +137,15 @@ const Home = () => {
 
     return items;
   };
+
+  // loading spinner for email list css
+  const override = css`
+    display: block;
+    width: 100%
+    margin: 0 auto;
+    border-color: #fcf8ed;
+    border-width: 7px;
+  `;
 
   return (
     <div id="home">
@@ -186,10 +211,19 @@ const Home = () => {
                 <Button
                   type="button"
                   bsPrefix="b"
-                  className={error ? "error" : ""}
+                  className={error ? 'error' : ''}
                   onClick={handleReCaptchaVerify}
                 >
-                  <FontAwesomeIcon icon={faArrowRight} />
+                  {clicked ? (
+                    <ClipLoader
+                      color={'#fcf8ed'}
+                      loading={clicked}
+                      css={override}
+                      size={100}
+                    />
+                  ) : (
+                    <FontAwesomeIcon icon={faArrowRight} />
+                  )}
                 </Button>
               </Form>
             </div>
@@ -244,13 +278,21 @@ const Home = () => {
         <Card className="mt-3 mx-3">
           <Card.Body>
             <h2 className="text-center">Why WAC?</h2>
-            <p className="text-center">
-              WAC has reached over
-              <span className="text-accent"> 4,000 students </span>
-              in over
-              <span className="text-accent"> 25 countries</span>, and
-              <span className="text-accent"> 65 schools</span>.
-            </p>
+            <p className="text-center">WAC has reached over:</p>
+            <div className="stats-container text-center">
+              <div className="stats-group">
+                <span className="text-accent"> 4,000 students </span>
+                <FontAwesomeIcon icon={faUserGraduate} />
+              </div>
+              <div className="stats-group">
+                <span className="text-accent"> 25 countries</span>
+                <FontAwesomeIcon icon={faGlobeAmericas} />
+              </div>
+              <div className="stats-group">
+                <span className="text-accent"> 65 schools</span>
+                <FontAwesomeIcon icon={faSchool} />
+              </div>
+            </div>
           </Card.Body>
         </Card>
       </Container>
@@ -270,7 +312,7 @@ const Home = () => {
               <Iframe
                 width="100%"
                 height="465"
-                styles={{ border: "1px solid black", margin: "auto" }}
+                styles={{ border: '1px solid black', margin: 'auto' }}
                 src="https://www.youtube.com/embed/h8VBYlOQEBc"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
