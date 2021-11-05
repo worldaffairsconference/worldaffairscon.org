@@ -1,7 +1,7 @@
 function ImportAll(r) {
   const images = {};
   r.keys().forEach((item) => {
-    images[item.replace("./", "")] = r(item);
+    images[item.replace('./', '')] = r(item);
   });
   return images;
 }

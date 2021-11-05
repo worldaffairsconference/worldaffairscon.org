@@ -61,4 +61,19 @@
   .text-accent {
     font-weight: bolder;
   }
+	.stats-container{
+		display:flex;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		.stats-group{
+			display:flex;
+			flex-direction: column-reverse;
+			align-items: center;
+			svg{
+				height:4rem;
+				width:4rem;
+			}
+		}
+	}
 }

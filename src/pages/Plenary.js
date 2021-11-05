@@ -22,7 +22,14 @@ const Speaker = (props) => {
 const Plenary = (props) => {
   const data = props;
   const speakers = data.speaker.map((entry) => {
-    return <Speaker name={entry.name} img={entry.img} text={entry.text} key={uuid()} />;
+    return (
+      <Speaker
+        name={entry.name}
+        img={entry.img}
+        text={entry.text}
+        key={uuid()}
+      />
+    );
   });
   return (
     <>
