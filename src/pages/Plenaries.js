@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Card, CardDeck } from 'react-bootstrap';
-import Justice from '../img/plen/justice.png';
-import Media from '../img/plen/media.png';
-import Business from '../img/plen/business.png';
-import Space from '../img/plen/space.png';
+import plen from '../img/misc/plen.jpg';
+// import Justice from '../img/plen/justice.png';
+// import Media from '../img/plen/media.png';
+// import Business from '../img/plen/business.png';
+// import Space from '../img/plen/space.png';
 
 const PlenariesCard = (props) => {
   const data = props;
@@ -25,10 +26,16 @@ const Plenaries = () => {
       <Container className="mt-4">
         <Card>
           <Card.Body className="text-center">
-            <h1>Plenaries 2021</h1>
+            <h1>Plenaries 2022</h1>
+            <Card.Img
+              className="plen-image"
+              src={plen}
+              alt="plen image"
+            ></Card.Img>
+            <h1 className="overlay text-white text-center">To be Announced!</h1>
           </Card.Body>
         </Card>
-        <CardDeck className="mt-2">
+        {/* <CardDeck className="mt-2">
           <PlenariesCard
             href="plenary/space"
             image={Space}
@@ -51,7 +58,7 @@ const Plenaries = () => {
             image={Business}
             title="Buisness in COVID: Sink or Swim"
           />
-        </CardDeck>
+        </CardDeck> */}
       </Container>
     </div>
   );

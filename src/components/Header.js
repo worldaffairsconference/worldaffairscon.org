@@ -34,9 +34,9 @@ const Header = () => {
           <Nav.Link as={Link} to="/keynote" onClick={() => setExpand(false)}>
             Keynote
           </Nav.Link>
-          <Nav.Link as={Link} to="/addresses" onClick={() => setExpand(false)}>
+          {/* <Nav.Link as={Link} to="/addresses" onClick={() => setExpand(false)}>
             Addresses
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link as={Link} to="/plenaries" onClick={() => setExpand(false)}>
             Plenaries
           </Nav.Link>
@@ -44,7 +44,7 @@ const Header = () => {
             FAQ
           </Nav.Link>
           <Nav.Link as={Link} to="/schedule" onClick={() => setExpand(false)}>
-            Recordings
+            Past Recordings
           </Nav.Link>
           <Nav.Link as={Link} to="/contact" onClick={() => setExpand(false)}>
             Contact
