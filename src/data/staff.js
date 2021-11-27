@@ -11,17 +11,17 @@ const staff = {
         {
           src: 'sshepherd.jpg',
           name: 'Sophie Shepherd',
-          role: 'Conference Chair'
+          role: 'Conference Chair',
         },
         {
           src: 'jding.jpg',
           name: 'Jefferson Ding',
-          role: 'Conference Chair'
+          role: 'Conference Chair',
         },
         {
           src: 'lshatilla.jpg',
           name: 'Lauren Shatilla',
-          role: 'Conference Chair'
+          role: 'Conference Chair',
         },
       ],
     },
@@ -36,17 +36,17 @@ const staff = {
         {
           src: 'avatar.jpg',
           name: 'Michael Daiello',
-          role: 'Head of SPRINT'
+          role: 'Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'czhou.jpg',
           name: 'Catherine Zhou',
-          role: 'Head of SPRINT'
+          role: 'Head of SPRINT',
         },
         {
           src: 'avatar.jpg',
           name: 'Will Huang',
-          role: 'Head of Plenaries'
+          role: 'Head of Plenaries',
         },
         {
           src: 'slee.jpg',
@@ -56,67 +56,67 @@ const staff = {
         {
           src: 'avatar.jpg',
           name: 'Ibrahim Fadel',
-          role: 'Head of Technology'
+          role: 'Head of Technology',
         },
         {
           src: 'jlee.jpg',
           name: 'Justin Lee',
-          role: 'Head of Marketing'
+          role: 'Head of Marketing',
         },
         {
-          src: 'avatar.jpg',
+          src: 'kkhatri.jpg',
           name: 'Kashish Khatri',
-          role: 'Head of Marketing & Design'
+          role: 'Head of Marketing & Design',
         },
         {
-          src: 'avatar.jpg',
+          src: 'jfejer.jpeg',
           name: 'Jack Fejer',
-          role: 'Head of Design'
+          role: 'Head of Design',
         },
         {
           src: 'avatar.jpg',
           name: 'Jamie Selfe',
-          role: 'Head of Finance'
+          role: 'Head of Finance',
         },
         {
           src: 'avatar.jpg',
           name: 'Jack Zhu',
-          role: 'Head of Programs'
+          role: 'Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'myang.jpg',
           name: 'Miranda Yang',
-          role: 'Head of Programs'
+          role: 'Head of Programs',
         },
         {
           src: 'avatar.jpg',
           name: 'Jayson Tian',
-          role: 'Head of Registration'
+          role: 'Head of Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'vjackman.jpg',
           name: 'Vita Jackman Kuwabara',
-          role: 'Head of Registration'
+          role: 'Head of Registration',
         },
         {
           src: 'avatar.jpg',
           name: 'Jason Gao',
-          role: 'Head of Production'
+          role: 'Head of Production',
         },
         {
           src: 'avatar.jpg',
           name: 'Robbie Tamblyn',
-          role: 'Head of Facilities'
+          role: 'Head of Facilities',
         },
         {
           src: 'avatar.jpg',
           name: 'Kalen Janmohamed',
-          role: 'Head of Security'
+          role: 'Head of Security',
         },
         {
-          src: 'avatar.jpg',
+          src: 'akypreos.jpg',
           name: 'Annie Kypreos',
-          role: 'Head of Security'
+          role: 'Head of Security',
         },
       ],
     },
@@ -124,12 +124,12 @@ const staff = {
       group: 'Senior Team',
       members: [
         {
-          src: 'avatar.jpg',
+          src: 'jvoudouris.jpg',
           name: 'John Voudouris',
           role: 'Assistant Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'ali.jpg',
           name: 'Amonda Li',
           role: 'Assistant Head of Programs',
         },
@@ -139,7 +139,7 @@ const staff = {
           role: 'Assistant Head of Plenaries',
         },
         {
-          src: 'avatar.jpg',
+          src: 'omaxwell.jpg',
           name: 'Ore Maxwell',
           role: 'Assistant Head of Plenaries',
         },
@@ -154,12 +154,7 @@ const staff = {
           role: 'Assistant Head of Marketing & Design',
         },
         {
-          src: 'avatar.jpg',
-          name: 'Ray Wu',
-          role: 'Assistant Head of Design',
-        },
-        {
-          src: 'avatar.jpg',
+          src: 'rwu.jpeg',
           name: 'Ray Wu',
           role: 'Assistant Head of Design',
         },
@@ -169,17 +164,17 @@ const staff = {
           role: 'Assistant Head of Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'tmcdonald2.png',
           name: 'Thea McDonald',
           role: 'Assistant Head of Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'khan.jpg',
           name: 'Kevin Han',
           role: 'Assistant Head of Finance',
         },
         {
-          src: 'avatar.jpg',
+          src: 'nfinney.jpeg',
           name: 'Nate Finney',
           role: 'Assistant Head of Technology',
         },
@@ -190,22 +185,17 @@ const staff = {
         },
         {
           src: 'avatar.jpg',
-          name: 'Ray Wu',
-          role: 'Assistant Head of Design',
-        },
-        {
-          src: 'avatar.jpg',
           name: 'Eva Zeng',
           role: 'Assistant Head of Design & Production',
         },
         {
           src: 'avatar.jpg',
-          name: 'Fatima 	Gohar',
+          name: 'Fatima Gohar',
           role: 'Assistant Head of Communications',
         },
 
         {
-          src: 'avatar.jpg',
+          src: 'kmoniz.png',
           name: 'Kaelem	Moniz',
           role: 'Plenary Head',
         },
@@ -225,8 +215,8 @@ const staff = {
           role: 'Plenary Head',
         },
         {
-          src: 'avatar.jpg',
-          name: 'Samantha	Schacter',
+          src: 'sschachter.jpeg',
+          name: 'Samantha	Schachter',
           role: 'Plenary Head',
         },
         {
@@ -256,27 +246,6 @@ const staff = {
           name: 'Cindy Han',
           role: 'Closing Panel',
         },
-
-        {
-          src: 'avatar.jpg',
-          name: 'Adam	Tarsky',
-          role: 'Ambassador Team',
-        },
-        {
-          src: 'avatar.jpg',
-          name: 'Mateo Gjinali',
-          role: 'Ambassador Team',
-        },
-        {
-          src: 'avatar.jpg',
-          name: 'Ryan	Chen',
-          role: 'Ambassador Team',
-        },
-        {
-          src: 'avatar.jpg',
-          name: 'Zohair	Pervez',
-          role: 'Ambassador Team',
-        },
       ],
     },
   ],
@@ -284,35 +253,35 @@ const staff = {
     {
       group: 'Global Ambassadors',
       members: [
-        { src: 'chui.jpg', name: 'Christina Hui', role: 'Branksome Hall Asia' },
-        {
-          src: 'ycheong.jpg',
-          name: 'Yubin Cheong',
-          role: 'Branksome Hall Asia',
-        },
-        {
-          src: 'mbezubiak.jpg',
-          name: 'Maya Bezubiak',
-          role: 'Lillian Osborne High School',
-        },
-        { src: 'dgovas.jpg', name: 'Danai Govas', role: 'Bayview Glen' },
-        {
-          src: 'jpitsillides.jpg',
-          name: 'Jessie Pitsillides',
-          role: 'Godolphin & Latymer School',
-        },
-        {
-          src: 'morlow.jpg',
-          name: 'Marcus Orlow',
-          role: 'Northern Secondary School',
-        },
-        {
-          src: 'mhsu.jpg',
-          name: 'Maddie Hsu',
-          role: 'Design Tech High School',
-        },
-        { src: 'jsmith.jpg', name: 'Jade Smith', role: 'Havergal College' },
-        { src: 'avatar.jpg', name: ' ', role: ' ' },
+        //   { src: 'chui.jpg', name: 'Christina Hui', role: 'Branksome Hall Asia' },
+        //   {
+        //     src: 'ycheong.jpg',
+        //     name: 'Yubin Cheong',
+        //     role: 'Branksome Hall Asia',
+        //   },
+        //   {
+        //     src: 'mbezubiak.jpg',
+        //     name: 'Maya Bezubiak',
+        //     role: 'Lillian Osborne High School',
+        //   },
+        //   { src: 'dgovas.jpg', name: 'Danai Govas', role: 'Bayview Glen' },
+        //   {
+        //     src: 'jpitsillides.jpg',
+        //     name: 'Jessie Pitsillides',
+        //     role: 'Godolphin & Latymer School',
+        //   },
+        //   {
+        //     src: 'morlow.jpg',
+        //     name: 'Marcus Orlow',
+        //     role: 'Northern Secondary School',
+        //   },
+        //   {
+        //     src: 'mhsu.jpg',
+        //     name: 'Maddie Hsu',
+        //     role: 'Design Tech High School',
+        //   },
+        //   { src: 'jsmith.jpg', name: 'Jade Smith', role: 'Havergal College' },
+        //   { src: 'avatar.jpg', name: ' ', role: ' ' },
       ],
     },
   ],
