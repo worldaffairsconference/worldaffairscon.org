@@ -158,7 +158,7 @@ const Home = () => {
           </div>
           <div className="text-center">
             <h3>This Year&apos;s Theme:</h3>
-            <h1 className="display-4">TBD</h1>
+            <h1 className="display-4">Affairs that Matter</h1>
           </div>
           <div className="text-center text-md-right">
             <h4>The Conference is</h4>
