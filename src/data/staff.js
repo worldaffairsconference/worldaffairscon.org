@@ -54,7 +54,7 @@ const staff = {
           role: 'Head of Plenaries',
         },
         {
-          src: 'avatar.jpg',
+          src: 'ifadel.jpg',
           name: 'Ibrahim Fadel',
           role: 'Head of Technology',
         },
