@@ -14,7 +14,7 @@ const staff = {
           role: 'Conference Chair',
         },
         {
-          src: 'jding.jpg',
+          src: 'jding2.png',
           name: 'Jefferson Ding',
           role: 'Conference Chair',
         },
@@ -29,7 +29,7 @@ const staff = {
       group: 'Executives',
       members: [
         {
-          src: 'avatar.jpg',
+          src: 'imccreadie.png',
           name: 'Ian McCreadie',
           role: 'Head of SPRINT',
         },
@@ -104,7 +104,7 @@ const staff = {
           role: 'Head of Production',
         },
         {
-          src: 'avatar.jpg',
+          src: 'rtamblyn.jpeg',
           name: 'Robbie Tamblyn',
           role: 'Head of Facilities',
         },
@@ -129,7 +129,7 @@ const staff = {
           role: 'Assistant Head of Programs',
         },
         {
-          src: 'ali.jpg',
+          src: 'ali2.jpeg',
           name: 'Amonda Li',
           role: 'Assistant Head of Programs',
         },
@@ -184,7 +184,7 @@ const staff = {
           role: 'Assistant Head of Production',
         },
         {
-          src: 'avatar.jpg',
+          src: 'ezeng.jpg',
           name: 'Eva Zeng',
           role: 'Assistant Head of Design & Production',
         },
@@ -242,7 +242,7 @@ const staff = {
         },
 
         {
-          src: 'avatar.jpg',
+          src: 'chan.jpg',
           name: 'Cindy Han',
           role: 'Closing Panel',
         },
