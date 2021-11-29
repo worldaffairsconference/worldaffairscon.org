@@ -89,7 +89,7 @@ const staff = {
           role: 'Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'jtian.jpg',
           name: 'Jayson Tian',
           role: 'Head of Registration',
         },
