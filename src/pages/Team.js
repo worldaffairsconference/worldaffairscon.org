@@ -14,7 +14,7 @@ const Tile = (props) => {
   return (
     <Col md className="text-center">
       <Row className="mt-4 mb-4">
-        <Col sm={4}>
+        <Col sm={5}>
           <Image
             src={images[data.src].default}
             alt={data.name}
@@ -22,8 +22,8 @@ const Tile = (props) => {
             roundedCircle
           />
         </Col>
-        <Col sm={8} className="mt-3">
-          <Card.Title as="h4">{data.name}</Card.Title>
+        <Col sm={7} className="mt-3">
+          <Card.Title as="h3">{data.name}</Card.Title>
           <h5>{data.role}</h5>
         </Col>
       </Row>
