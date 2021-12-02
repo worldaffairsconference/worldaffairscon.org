@@ -31,11 +31,11 @@ const Footer = () => {
       </p>
       <p>
         Have any questions or concerns? Check out&nbsp;
-        <a className="text-white" href="faq/index.html">
+        <a className="text-white" href="faq">
           our FAQ&nbsp;
         </a>
         or&nbsp;
-        <a className="text-white" href="contact/index.html">
+        <a className="text-white" href="contact">
           get in touch with us!
         </a>
       </p>
