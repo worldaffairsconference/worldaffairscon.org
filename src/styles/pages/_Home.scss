@@ -1,4 +1,24 @@
 #home {
+  .icon {
+    font-size: clamp(24px, 10vw, 50px);
+  }
+  .logo {
+    width: 30em;
+    margin: 0.5rem;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: scale-down;
+  }
+  .logo-container {
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .index-welcome {
     background-color: $color-tint;
     padding-top: 2%;
@@ -61,19 +81,19 @@
   .text-accent {
     font-weight: bolder;
   }
-	.stats-container{
-		display:flex;
-		flex-direction: row;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		.stats-group{
-			display:flex;
-			flex-direction: column-reverse;
-			align-items: center;
-			svg{
-				height:4rem;
-				width:4rem;
-			}
-		}
-	}
+  .stats-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .stats-group {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      svg {
+        height: 4rem;
+        width: 4rem;
+      }
+    }
+  }
 }
