@@ -34,7 +34,7 @@ const staff = {
           role: 'Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'mdaiello.png',
           name: 'Michael Daiello',
           role: 'Head of SPRINT',
         },
