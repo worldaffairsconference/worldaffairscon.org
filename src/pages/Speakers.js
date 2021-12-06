@@ -75,7 +75,7 @@ const Speakers = () => {
                   name={'Edward Snowden'}
                   img={ESnowden}
                   subtitle={
-                    'Former National Security Agency subcontractor who leaked top-secret information about NSA surveillance activities.'
+                    'Former National Security Agency Computer Intelligence Consultant & Wistleblower'
                   }
                 />
               </Col>

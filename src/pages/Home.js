@@ -22,10 +22,14 @@ import {
   faUserGraduate,
   faGlobeAmericas,
   faSchool,
+  faTimes,
 } from '@fortawesome/free-solid-svg-icons';
 import ImportAll from '../helpers/ImportAll';
 
 import Logo from '../img/wac_logo.png';
+import UCC from '../img/home/ucc-logo.png';
+import BH from '../img/home/bh-logo.png';
+
 // import Quotes from '../data/quotes';
 const Home = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -269,6 +273,36 @@ const Home = () => {
                   perspectives and by providing high-quality discussion
                   opportunities.
                 </p>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      </Container>
+      <Container>
+        <Card className="mt-3 mx-3">
+          <Card.Body>
+            <h2 className="text-center">Hosted by:</h2>
+            <Row sm={1} md={1} lg={3} className="logos">
+              <Col lg={5} className="logo-container">
+                <a
+                  href="https://www.ucc.on.ca"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image className="logo" alt="UCC Logo" src={UCC} />
+                </a>
+              </Col>
+              <Col lg={2} className="logo-container">
+                <FontAwesomeIcon className="icon" icon={faTimes} />
+              </Col>
+              <Col lg={5} className="logo-container">
+                <a
+                  href="https://www.branksome.on.ca/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image className="logo" alt="BH Logo" src={BH} />
+                </a>
               </Col>
             </Row>
           </Card.Body>

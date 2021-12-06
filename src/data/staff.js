@@ -34,7 +34,7 @@ const staff = {
           role: 'Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'mdaiello.png',
           name: 'Michael Daiello',
           role: 'Head of SPRINT',
         },
@@ -134,7 +134,7 @@ const staff = {
           role: 'Assistant Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'rnanda.jpg',
           name: 'Rahul Nanda',
           role: 'Assistant Head of Plenaries',
         },
@@ -159,7 +159,7 @@ const staff = {
           role: 'Assistant Head of Design',
         },
         {
-          src: 'avatar.jpg',
+          src: 'iye.jpg',
           name: 'Ian Ye',
           role: 'Assistant Head of Registration',
         },
@@ -174,8 +174,13 @@ const staff = {
           role: 'Assistant Head of Finance',
         },
         {
-          src: 'nfinney.jpeg',
+          src: 'nfinney.png',
           name: 'Nate Finney',
+          role: 'Assistant Head of Technology',
+        },
+        {
+          src: 'avatar.jpg',
+          name: 'Rohin Arya',
           role: 'Assistant Head of Technology',
         },
         {
@@ -240,11 +245,20 @@ const staff = {
           name: 'Jamie Mann',
           role: 'Opening Panel',
         },
-
         {
           src: 'chan.jpg',
           name: 'Cindy Han',
           role: 'Closing Panel',
+        },
+        {
+          src: 'avatar.jpg',
+          name: '',
+          role: '',
+        },
+        {
+          src: 'avatar.jpg',
+          name: '',
+          role: '',
         },
       ],
     },
