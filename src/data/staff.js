@@ -99,7 +99,7 @@ const staff = {
           role: 'Head of Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'jgao.jpg',
           name: 'Jason Gao',
           role: 'Head of Production',
         },
@@ -109,7 +109,7 @@ const staff = {
           role: 'Head of Facilities',
         },
         {
-          src: 'avatar.jpg',
+          src: 'kjanmohamed.jpg',
           name: 'Kalen Janmohamed',
           role: 'Head of Security',
         },
