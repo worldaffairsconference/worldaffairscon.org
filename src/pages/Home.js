@@ -29,6 +29,7 @@ import ImportAll from '../helpers/ImportAll';
 import Logo from '../img/wac_logo.png';
 import UCC from '../img/home/ucc-logo.png';
 import BH from '../img/home/bh-logo.png';
+import Live from '../img/home/live_logo.svg';
 
 // import Quotes from '../data/quotes';
 const Home = () => {
@@ -143,13 +144,13 @@ const Home = () => {
   };
 
   // loading spinner for email list css
-  const override = css`
-    display: block;
-    width: 100%
-    margin: 0 auto;
-    border-color: #fcf8ed;
-    border-width: 7px;
-  `;
+  //const override = css`
+  //display: block;
+  //width: 100%
+  //margin: 0 auto;
+  //border-color: #fcf8ed;
+  //border-width: 7px;
+  //`;
 
   return (
     <div id="home">
@@ -172,7 +173,18 @@ const Home = () => {
           </div>
         </Container>
         <div ref={divRef} className="index-welcome text-center">
-          {success ? (
+          <Container>
+            <Row>
+              <Row>
+                <Image id="live_logo" src={Live} alt="live logo" />
+                <h2> Register Now! </h2>
+                <a href="https://hopin.com/events/world-affairs-conference-2022?ref=4f11049a4875">
+                  <FontAwesomeIcon icon={faArrowRight} />
+                </a>
+              </Row>
+            </Row>
+          </Container>
+          {/*success ? (
             <Container>
               <Row>
                 <Col md={8}>
