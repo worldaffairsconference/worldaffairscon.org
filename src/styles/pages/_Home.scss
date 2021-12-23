@@ -26,6 +26,42 @@
     h1 {
       color: $color-green;
     }
+    a {
+      background: none;
+      border: none;
+      color: $color-light;
+			font-size: clamp(24px, 7vw, 40px);
+      width: 15%;
+      &:hover {
+        color: $color-grey;
+        background-color: transparent;
+        border: none;
+        transition: all 0.3s;
+      }
+      &.error {
+        color: $color-red;
+        transition: all 0.3s;
+      }
+    }
+		.row{
+			display: flex;
+			justify-content: center;
+			align-items: baseline;
+			h2{
+				color: $color-light;
+				font-size:2.3rem;
+			}
+		}
+		#live_logo{
+				width:12%;
+				margin-right: 15px;
+				animation: blinker 1.5s linear infinite;
+				@keyframes blinker {
+					50% {
+						opacity: 0;
+							}
+					}
+		}
   }
   .landing {
     padding-top: 8%;
