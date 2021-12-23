@@ -177,7 +177,7 @@ const Home = () => {
             <Row>
               <Row>
                 <Image id="live_logo" src={Live} alt="live logo" />
-                <h2> Register Now! </h2>
+                <h3> Register Now! </h3>
                 <a href="https://hopin.com/events/world-affairs-conference-2022?ref=4f11049a4875">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </a>
