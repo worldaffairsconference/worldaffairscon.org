@@ -30,7 +30,7 @@
       background: none;
       border: none;
       color: $color-light;
-			font-size: clamp(24px, 7vw, 40px);
+      font-size: clamp(24px, 7vw, 40px);
       width: 15%;
       &:hover {
         color: $color-grey;
@@ -43,25 +43,25 @@
         transition: all 0.3s;
       }
     }
-		.row{
-			display: flex;
-			justify-content: center;
-			align-items: baseline;
-			h2{
-				color: $color-light;
-				font-size:2.3rem;
-			}
-		}
-		#live_logo{
-				width:12%;
-				margin-right: 15px;
-				animation: blinker 1.5s linear infinite;
-				@keyframes blinker {
-					50% {
-						opacity: 0;
-							}
-					}
-		}
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      h2 {
+        color: $color-light;
+        font-size: 2.3rem;
+      }
+    }
+    #live_logo {
+      width: 12%;
+      margin-right: 15px;
+      animation: blinker 1.5s linear infinite;
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+    }
   }
   .landing {
     padding-top: 8%;
@@ -129,6 +129,19 @@
       svg {
         height: 4rem;
         width: 4rem;
+      }
+    }
+  }
+  .letters {
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .col {
+      padding: 2rem 3rem 2rem 3rem;
+      img {
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
       }
     }
   }
