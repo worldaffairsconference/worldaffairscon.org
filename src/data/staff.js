@@ -14,7 +14,7 @@ const staff = {
           role: 'Conference Chair',
         },
         {
-          src: 'jding2.png',
+          src: 'jding3.jpg',
           name: 'Jefferson Ding',
           role: 'Conference Chair',
         },

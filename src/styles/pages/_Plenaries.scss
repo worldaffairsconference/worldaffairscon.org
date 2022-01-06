@@ -2,19 +2,31 @@
   h3 {
     font-size: 1.6rem;
   }
-  .plenary-img {
-    max-width: 25%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (max-width: 768px) {
-    .plenary-img {
-      max-width: 100%;
+  .card-deck {
+    .card {
+      height: 33vh;
+      border-width: 1px;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;
+      a {
+        height: 100%;
+        .card-img-overlay {
+          top: 35%;
+        }
+      }
+      &:hover {
+        border-width: 7px;
+        .plen-image {
+          filter: brightness(40%);
+        }
+      }
     }
   }
   .plen-image {
-    filter: brightness(50%);
-    transition: transform 0.2s;
+    filter: brightness(70%);
+    transition: all 0.2s ease-in-out;
+    object-fit: cover;
+    height: 100%;
   }
   .overlay {
     font-size: 8vw;

@@ -7,4 +7,24 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .card-deck {
+    .card {
+      img {
+        max-width: 400px;
+        border-radius: 5px;
+        clip-path: circle();
+      }
+      .card-text {
+        div {
+          max-height: 400px;
+          overflow-y: scroll;
+        }
+      }
+    }
+  }
+  .other {
+    img {
+      clip-path: none !important;
+    }
+  }
 }

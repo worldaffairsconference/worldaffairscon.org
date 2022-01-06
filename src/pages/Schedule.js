@@ -62,14 +62,14 @@ const Schedule = () => {
       <Card>
         <Card.Body>
           <Card.Title as="h1" className="text-center">
-            WAC 2021 Recordings
+            WAC 2022 Schedule
           </Card.Title>
           <Table responsive hover className="my-4">
             <thead className="thead-dark">
               <tr>
                 <th>Event</th>
                 <th>Speakers</th>
-                <th>Recording</th>
+                <th>Time</th>
               </tr>
             </thead>
             <tbody>{schedule}</tbody>

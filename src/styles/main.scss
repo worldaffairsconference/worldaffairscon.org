@@ -16,6 +16,7 @@ SCSS by @jeffersonDing
 @import './pages/Sprint';
 @import './pages/Speakers';
 @import './pages/Keynote';
+@import './pages/Events';
 
 // fonts
 @import 'fonts';
@@ -33,7 +34,16 @@ html {
   min-height: 100%;
   overflow-x: hidden;
 }
-
+::-webkit-scrollbar {
+  // Width of vertical scroll bar
+  width: 8px;
+  // Height of horizontal scroll bar
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #c2c9d2;
+}
 body {
   min-width: 100% !important;
   min-height: 100% !important;
