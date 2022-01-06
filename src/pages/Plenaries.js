@@ -1,11 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Card, CardDeck } from 'react-bootstrap';
-import plen from '../img/misc/plen.jpg';
-// import Justice from '../img/plen/justice.png';
-// import Media from '../img/plen/media.png';
-// import Business from '../img/plen/business.png';
-// import Space from '../img/plen/space.png';
+import Education from '../img/plen/education.jpg';
+import Tech from '../img/plen/tech.jpg';
+import Sustainability from '../img/plen/sustainability.jpg';
 
 const PlenariesCard = (props) => {
   const data = props;
@@ -13,7 +11,7 @@ const PlenariesCard = (props) => {
     <Card>
       <Link to={data.href}>
         <Card.Img className="plen-image" src={data.image} alt="card image" />
-        <Card.ImgOverlay className="text-center text-white">
+        <Card.ImgOverlay className="text-center text-white p-4">
           <Card.Title as="h3">{data.title}</Card.Title>
         </Card.ImgOverlay>
       </Link>
@@ -27,38 +25,27 @@ const Plenaries = () => {
         <Card>
           <Card.Body className="text-center">
             <h1>Plenaries 2022</h1>
-            <Card.Img
-              className="plen-image"
-              src={plen}
-              alt="plen image"
-            ></Card.Img>
-            <h1 className="overlay text-white text-center">To be Announced!</h1>
           </Card.Body>
         </Card>
-        {/* <CardDeck className="mt-2">
+        <CardDeck className="mt-2">
           <PlenariesCard
-            href="plenary/space"
-            image={Space}
-            title="Commercial Spaceflight: Humanity's Next Steps"
+            href="plenary/education"
+            image={Education}
+            title="Democratizing Education: New Opportunities, New Possibilities"
           />
           <PlenariesCard
-            href="/plenary/justice"
-            image={Justice}
-            title="Social Justice: Our History and Future"
+            href="/plenary/sustainability"
+            image={Sustainability}
+            title="Rethinking Sustainability: A New Vision for the Environment"
           />
         </CardDeck>
         <CardDeck className="mt-2">
           <PlenariesCard
-            href="/plenary/social"
-            image={Media}
-            title="Social Media: We are the Product"
+            href="/plenary/technology"
+            image={Tech}
+            title="Re-Searching Into our Digital Future: A Token for Tomorrow"
           />
-          <PlenariesCard
-            href="/plenary/business"
-            image={Business}
-            title="Buisness in COVID: Sink or Swim"
-          />
-        </CardDeck> */}
+        </CardDeck>
       </Container>
     </div>
   );

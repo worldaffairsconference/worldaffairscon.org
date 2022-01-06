@@ -2,21 +2,24 @@
 import React from 'react';
 import { Container, Card, Row, Col } from 'react-bootstrap';
 
-import ESnowden from '../img/speakers/old/esnowden.jpg';
-import BMasrani from '../img/speakers/old/bmasrani.jpg';
-import MRomanow from '../img/speakers/old/mromanow.jpg';
-import AChisholm from '../img/speakers/old/achisholm.png';
-import ALau from '../img/speakers/old/alau.jpg';
-import ELau from '../img/speakers/old/elau.jpg';
-import GHinton from '../img/speakers/old/ghinton.jpg';
-import JStackhouse from '../img/speakers/old/jstackhouse.jpg';
-import RNader from '../img/speakers/old/rnader.jpg';
-import JHansen from '../img/speakers/old/jhansen.jpg';
-import JIvey from '../img/speakers/old/jivey.jpg';
-import LFriedman from '../img/speakers/old/lfriedman.jpg';
-import DOwen from '../img/speakers/old/dowen.jpg';
-import MGarneau from '../img/speakers/old/mgarneau.jpg';
-import MHasan from '../img/speakers/old/mhasan.jpg';
+import ESnowden from '../img/speakers/prev/esnowden.jpg';
+import BMasrani from '../img/speakers/prev/bmasrani.jpg';
+import MRomanow from '../img/speakers/prev/mromanow.jpg';
+import AChisholm from '../img/speakers/prev/achisholm.png';
+import ALau from '../img/speakers/prev/alau.jpg';
+import ELau from '../img/speakers/prev/elau.jpg';
+import GHinton from '../img/speakers/prev/ghinton.jpg';
+import JStackhouse from '../img/speakers/prev/jstackhouse.jpg';
+import RNader from '../img/speakers/prev/rnader.jpg';
+import JHansen from '../img/speakers/prev/jhansen.jpg';
+import JIvey from '../img/speakers/prev/jivey.jpg';
+import LFriedman from '../img/speakers/prev/lfriedman.jpg';
+import DOwen from '../img/speakers/prev/dowen.jpg';
+import MGarneau from '../img/speakers/prev/mgarneau.jpg';
+import MHasan from '../img/speakers/prev/mhasan.jpg';
+import GClarke from '../img/speakers/prev/gclarke.png';
+import DCarroll from '../img/speakers/prev/dcarroll.png';
+import ACharles from '../img/speakers/prev/acharles.png';
 
 const Speaker = (props) => {
   const data = props;
@@ -167,6 +170,32 @@ const Speakers = () => {
                   name={'Ralph Nader'}
                   img={RNader}
                   subtitle={'Social and Political Activist'}
+                />
+              </Col>
+            </Row>
+            <hr />
+            <Row>
+              <Col md="4">
+                <Speaker
+                  name={'George E. Clarke'}
+                  img={GClarke}
+                  subtitle={'Canadian Poet, Playwright and Literary Critic'}
+                />
+              </Col>
+              <Col md="4">
+                <Speaker
+                  name={'David Carroll'}
+                  img={DCarroll}
+                  subtitle={
+                    'Associate Professor of Media Design at Parsons School of Design'
+                  }
+                />
+              </Col>
+              <Col md="4">
+                <Speaker
+                  name={'Ajani Charles'}
+                  img={ACharles}
+                  subtitle={'Photographer, Director and Producer'}
                 />
               </Col>
             </Row>
