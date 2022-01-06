@@ -36,7 +36,7 @@ const Plenaries = () => {
           <PlenariesCard
             href="/plenary/sustainability"
             image={Sustainability}
-            title="Rethinking Sustainability: A New Vision for the Environment"
+            title="Rethinking Sustainability: Innovations for the Environment"
           />
         </CardDeck>
         <CardDeck className="mt-2">

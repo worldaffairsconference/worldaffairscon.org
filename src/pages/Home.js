@@ -26,7 +26,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import ImportAll from '../helpers/ImportAll';
 
-import Logo from '../img/wac_logo.png';
+import Logo from '../img/general/wac_logo.png';
 import UCC from '../img/home/ucc-logo.png';
 import BH from '../img/home/bh-logo.png';
 import Live from '../img/home/live_logo.svg';
