@@ -35,11 +35,9 @@ const KeynoteAddresses = (props) => {
   return (
     <Card>
       <Card.Body>
-        <h1 className="text-center">
-          {data.title}
-          <p>{data.speaker}</p>
-        </h1>
-        <hr />
+        <h1 className="text-center">{data.title}</h1>
+        <h3 className="text-center">{data.speaker}</h3>
+        {data.title && <hr />}
         <Row className="pb-2">
           <Col md={12}>
             <Image src={data.image} className="mx-auto d-block" fluid rounded />
