@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import maintenanceMode from './config';
 import PlenaryJSON from './data/plenary';
 import Keynote from './pages/Keynote';
-import Addresses from './pages/Addresses';
+import Events from './pages/Events';
 import Plenaries from './pages/Plenaries';
 import Plenary from './pages/Plenary';
 import Team from './pages/Team';
@@ -58,8 +58,8 @@ const App = () => {
         <Route exact path="/keynote">
           <Keynote />
         </Route>
-        <Route exact path="/addresses">
-          <Addresses />
+        <Route exact path="/events">
+          <Events />
         </Route>
         <Route exact path="/plenaries">
           <Plenaries />
