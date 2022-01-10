@@ -36,8 +36,8 @@ const SPRINT = () => {
     }
     return 'In Progress!';
   };
-  const sprintStartDate = '2/20/2021';
-  const sprintEndDate = '4/3/2021';
+  const sprintStartDate = '1/29/2022';
+  const sprintEndDate = '2/5/2022';
   useEffect(() => {
     setCountDown(handleCountDown(sprintStartDate, sprintEndDate));
     const countDownInterval = setInterval(() => {
@@ -54,21 +54,30 @@ const SPRINT = () => {
           <div className="text-center text-md-left">
             <h2>Welcome to</h2>
             <h1 className="text-danger">SPRINT</h1>
-            <h3 className="display-5">February 20th to April 3rd</h3>
+            <h3 className="display-5">January 29th to February 5th</h3>
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <h3>This Year&apos;s Theme:</h3>
             <h1 className="display-4">Innovate for Impact</h1>
-          </div>
+          </div> */}
           <div className="text-center text-md-right">
             <h4>The challenge is:</h4>
             <h2>{countDown}</h2>
-            <h4>Application Results Come out on Feb. 16th, 19:00 ET</h4>
+            <h4>Application Due on Jan. 22nd</h4>
           </div>
         </Container>
       </div>
       <Container className="mt-4">
         <Card>
+          <Card.Body className="mt-3 mx-3">
+            <Row style={{ justifyContent: "center" }}>
+              <a target="__blank" href="https://forms.gle/vuQ7ffHpKb2A1PjR9">
+                <h3>Apply Now!</h3>
+              </a>
+            </Row>
+          </Card.Body>
+        </Card>
+        <Card className="mt-4">
           <Card.Body className="mt-3 mx-3">
             <Row>
               <Col sm={3}>
