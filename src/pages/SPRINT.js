@@ -56,10 +56,10 @@ const SPRINT = () => {
             <h1 className="text-danger">SPRINT</h1>
             <h3 className="display-5">January 29th to February 5th</h3>
           </div>
-          <div className="text-center">
+          {/* <div className="text-center">
             <h3>This Year&apos;s Theme:</h3>
             <h1 className="display-4">Innovate for Impact</h1>
-          </div>
+          </div> */}
           <div className="text-center text-md-right">
             <h4>The challenge is:</h4>
             <h2>{countDown}</h2>
