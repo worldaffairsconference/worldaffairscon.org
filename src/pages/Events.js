@@ -11,6 +11,7 @@ const Events = () => {
       <KeynoteAddresses
         title="The Future of Diversity, Equity and Inclusion: STEM and Beyond"
         speaker="Roundtable Discussion"
+        description="In today’s society, the importance of representation has become increasingly prevalent. Discussions on gender, racial, and ethnic prejudices are taking place on a global level, examining the importance and value of an inclusive and diverse environment. Students will learn more about societal biases, as well as the future of workplace environments taking on diversity, equity and inclusion (DEI) policies. This plenary will be a roundtable discussion offering an interactive environment for students to learn, and ask any questions for the plenary speaker."
         image={EHennessey}
         addressName="Eden Hennessey"
         addressRole="Head of Equity, Diversity, and Inclusion and Director of the Women in Science Program at Wilfrid Laurier University"
@@ -19,6 +20,7 @@ const Events = () => {
       <div className="mt-4">
         <KeynoteAddresses
           title="From Parliament Hill to Turtle Island: The Future for Canadian Truth and Reconciliation"
+          description="The history of Canada is both of pride and tragedy. Over the past centuries the First Nations people of our country have endured oppression and disenfranchisement. The time is now to right past wrongs from Parliament Hill to our own communities. Join Canadian Senator Mary Jane McCallum and Specialist in Indigenous legal traditions Dr. Valarie Waboose as we discuss the path forward for Truth and Reconciliation in Canada, and learn about our own roles in the journey towards justice."
           speaker="Roundtable Discussion"
           image={MMcCallum}
           addressName="Sen. Mary Jane McCallum"

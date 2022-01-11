@@ -24,7 +24,7 @@ const PlenaryJSON = [
     component: 'Plenary',
     props: {
       title: 'Re-Searching Into our Digital Future: A Token For Tomorrow',
-      text: '',
+      text: 'In the past few decades, the digital world has been playing a more and more important role in our lives. We can talk to friends, transfer money, and even use cryptocurrency such as Bitcoin. These technologies have made our lives more convenient, but at the same time, they bring new challenges. Cyberbullying is prevalent on social media, banks and cryptocurrency can be hacked by others. Join Jaime Leverton, CEO of Hut8, and John Hammond, Senior Security Researcher at Huntress, as we dive deeper into the digital world of tomorrow.',
       speakers: [
         {
           name: 'John Hammond',
@@ -44,7 +44,7 @@ const PlenaryJSON = [
     component: 'Plenary',
     props: {
       title: 'Rethinking Sustainability: Innovations for the Environment',
-      text: '',
+      text: 'Since the 20th century, increased human activity has created a noticeable problem for the environment, effectively demolishing the natural world and threatening ecosystems. Through industrialization, overpopulation, deforestation, and overconsumption, overt changes have affected the environment, triggering climate change. Throughout the world, water has become undrinkable, burning fossil fuels has diminished air quality, and greenhouse gasses have concealed our atmosphere. Although human activity created these problems, can it be used to solve them? From recycling and waste management to global emissions monitoring using satellites, this plenary investigates how technology and innovation have yielded creative solutions to help redefine our methods to sustainability.',
       speakers: [
         {
           name: 'Tom Sazky',

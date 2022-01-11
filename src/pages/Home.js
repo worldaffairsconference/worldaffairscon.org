@@ -352,23 +352,23 @@ const Home = () => {
         </Card>
         <Card className="mt-3 mx-3">
           <Card.Body>
-            <h2 className="text-center">WAC Gallery</h2>
-            <Carousel fade>{galleryGenerator()}</Carousel>
-          </Card.Body>
-        </Card>
-        <Card className="mt-3 mx-3">
-          <Card.Body>
-            <h2 className="text-center">WAC in 2021</h2>
+            <h2 className="text-center">WAC 2022 Teaser</h2>
             <Container>
               <Iframe
                 width="100%"
                 height="465"
                 styles={{ border: '1px solid black', margin: 'auto' }}
-                src="https://www.youtube.com/embed/h8VBYlOQEBc"
+                src="https://www.youtube.com/embed/FmRyfd9fpVs"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               />
             </Container>
+          </Card.Body>
+        </Card>
+        <Card className="mt-3 mx-3">
+          <Card.Body>
+            <h2 className="text-center">WAC Gallery</h2>
+            <Carousel fade>{galleryGenerator()}</Carousel>
           </Card.Body>
         </Card>
       </Container>
