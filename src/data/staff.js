@@ -88,11 +88,11 @@ const staff = {
           name: 'Miranda Yang',
           role: 'Head of Programs',
         },
-				{
-					src: 'avatar.jpg',
-					name: 'Sofia	Suleman',
-					role: 'Head of Communications'
-				},
+				// {
+				// 	src: 'avatar.jpg',
+				// 	name: 'Sofia	Suleman',
+				// 	role: 'Head of Communications'
+				// },
         {
           src: 'jtian.jpg',
           name: 'Jayson Tian',
