@@ -88,6 +88,11 @@ const staff = {
           name: 'Miranda Yang',
           role: 'Head of Programs',
         },
+				{
+					src: 'avatar.jpg',
+					name: 'Sofia	Suleman',
+					role: 'Head of Communications'
+				},
         {
           src: 'jtian.jpg',
           name: 'Jayson Tian',
@@ -143,6 +148,11 @@ const staff = {
           name: 'Ore Maxwell',
           role: 'Assistant Head of Plenaries',
         },
+				{
+					src: 'avatar.jpg',
+					name: 'Sophie Schreiweis',
+					role: 'Assistant Head of SPRINT'
+				},
         {
           src: 'avatar.jpg',
           name: 'Aric Aggarwal',
