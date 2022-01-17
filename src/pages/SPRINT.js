@@ -12,8 +12,8 @@ import { formatDistanceToNowStrict, isFuture, isPast } from 'date-fns';
 import sprint from '../img/sprint/2020sprint1.jpg';
 import sprint1 from '../img/sprint/SPRINTfulllogocolor.png';
 import sprint2 from '../img/sprint/2020sprint2.jpg';
-import ARodricks from '../img/hackathon/arodricks.jpg';
-import CSoo from '../img/hackathon/csoo.jpg';
+import KBambawale from '../img/hackathon/kbambawale.jpg';
+import SLakhani from '../img/hackathon/slakhani.jpeg';
 import BNashman from '../img/hackathon/bnashman.jpg';
 import MRomanow from '../img/hackathon/mromanow.jpg';
 import KDamen from '../img/hackathon/kdamen.jpg';
@@ -71,7 +71,7 @@ const SPRINT = () => {
         <Card>
           <Card.Body className="mt-3 mx-3">
             <Row style={{ justifyContent: "center" }}>
-              <a target="__blank" href="https://forms.gle/vuQ7ffHpKb2A1PjR9">
+              <a target="__blank" href="https://forms.gle/w6hfSbVBufnYKASWA">
                 <h3>Apply Now!</h3>
               </a>
             </Row>
@@ -88,49 +88,36 @@ const SPRINT = () => {
               <Col sm={9}>
                 <h3>What is SPRINT?</h3>
                 <p>
-                  A 2-month virtual startup incubator for ambitious high-school
-                  students to turn innovative ideas into action and compete for
-                  a prize of up to $1,000.
+                  A 2-week virtual entrepreneurial challenge for ambitious high-school students to turn innovative ideas into action and compete for prizes.
                 </p>
                 <hr />
                 <br />
                 <h3>Why SPRINT?</h3>
                 <p>
-                  In a world filled with Zoom meetings and mask-wearing one
-                  constant remains: Innovate for Impact. We must continuously
-                  seek ways to ideate, create, and adapt to stay alive - and
-                  thrive. At SPRINT, you will be given the opportunity to
-                  immerse yourself in an eight-week virtual incubator to
-                  reimagine society by bringing your most disruptive ideas to
-                  life.
+                  In a world filled with Zoom meetings and mask-wearing, we must continuously seek ways to ideate, create, and adapt to stay alive and thrive. At SPRINT, you will be given the opportunity to immerse yourself in a two-week virtual challenge to tackle world issues and bring your most disruptive ideas to life.
                 </p>
                 <hr />
                 <br />
                 <h3>SPRINT Highlights</h3>
                 <p>
-                  - Collaborate alongside passionate students from diverse walks
-                  of life to learn entrepreneurial skills in a startup
-                  ecosystem!
+                  - Collaborate alongside passionate students from diverse walks of life to tackle real-world issues using entrepreneurial skills
                 </p>
                 <p>
-                  - Validate ideas through specialized workshops on Marketing,
-                  Tech, and Finance 101!
+                  - Validate ideas through guest speakers and specialized workshops
                 </p>
                 <p>
-                  - Craft a pitch to be presented to a panel of experts judges
-                  for prizes up to $1,000!
+                  - Craft a pitch to be presented to a panel of expert judges for prizes!
                 </p>
                 <hr />
                 <br />
                 <h3>How can you apply for SPRINT?</h3>
                 <p>
-                  - As a secondary-school student, you are eligible to apply to
-                  our SPRINT cohort, for free!
+                  - As a secondary-school student, you are eligible to apply to our SPRINT cohort, for free!
                 </p>
                 <p>
                   - Fill out
                   <a
-                    href="https://forms.gle/4B1jLSj2BdrQrnCz6"
+                    href="https://forms.gle/w6hfSbVBufnYKASWA"
                     className="mx-1"
                   >
                     our application
@@ -138,20 +125,20 @@ const SPRINT = () => {
                   for either yourself or a team of up to 4 participants.
                 </p>
                 <p>
-                  - Check out our schedule below and
+                  -
                   <a
                     href="https://www.instagram.com/sprint_wac/"
                     className="mx-1"
                   >
-                    follow us on Instagram
+                    Follow us on Instagram
                   </a>
-                  !
+                  for more information and updates!
                 </p>
               </Col>
             </Row>
           </Card.Body>
         </Card>
-        <Card className="mt-4">
+        {/* <Card className="mt-4">
           <Card.Body>
             <Row>
               <Col sm={12}>
@@ -205,7 +192,7 @@ const SPRINT = () => {
               </tbody>
             </Table>
           </Card.Body>
-        </Card>
+        </Card> */}
         <Card className="mt-4">
           <Card.Body>
             <h3>Speakers&apos; Spotlight</h3>
@@ -257,40 +244,27 @@ const SPRINT = () => {
                   <Carousel.Item>
                     <img
                       className="d-block w-100 carousel-image"
-                      src={ARodricks}
-                      alt="Adam Rodricks"
+                      src={KBambawale}
+                      alt="Karam Bambawale"
                     />
 
                     <Carousel.Caption>
-                      <h3>Adam Rodricks</h3>
-                      <p>Senior Manager of Social Media & Community at KPMG</p>
+                      <h3>Karam Bambawale</h3>
+                      <p>UCC Alum & Founding Member of Surf</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                   <Carousel.Item>
                     <img
                       className="d-block w-100 carousel-image"
-                      src={CSoo}
-                      alt="Cindy Soo"
+                      src={SLakhani}
+                      alt="Shak Lakhani"
                     />
 
                     <Carousel.Caption>
-                      <h3>Cindy Soo</h3>
+                      <h3>Shak Lakhani</h3>
                       <p>
-                        Global Innovation Lead / Innovation & Co-Creation Matrix
-                        Manager at Ikea
+                        Founder of Avro Lifesciences
                       </p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100 carousel-image"
-                      src={BNashman}
-                      alt="Ben Nashman"
-                    />
-
-                    <Carousel.Caption>
-                      <h3>Ben Nashman</h3>
-                      <p>Founder and CEO of Synex Medical</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 </Carousel>
