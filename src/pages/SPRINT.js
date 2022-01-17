@@ -12,8 +12,8 @@ import { formatDistanceToNowStrict, isFuture, isPast } from 'date-fns';
 import sprint from '../img/sprint/2020sprint1.jpg';
 import sprint1 from '../img/sprint/SPRINTfulllogocolor.png';
 import sprint2 from '../img/sprint/2020sprint2.jpg';
-import ARodricks from '../img/hackathon/arodricks.jpg';
-import CSoo from '../img/hackathon/csoo.jpg';
+import KBambawale from '../img/hackathon/kbambawale.jpg';
+import SLakhani from '../img/hackathon/slakhani.jpeg';
 import BNashman from '../img/hackathon/bnashman.jpg';
 import MRomanow from '../img/hackathon/mromanow.jpg';
 import KDamen from '../img/hackathon/kdamen.jpg';
@@ -244,40 +244,27 @@ const SPRINT = () => {
                   <Carousel.Item>
                     <img
                       className="d-block w-100 carousel-image"
-                      src={ARodricks}
-                      alt="Adam Rodricks"
+                      src={KBambawale}
+                      alt="Karam Bambawale"
                     />
 
                     <Carousel.Caption>
-                      <h3>Adam Rodricks</h3>
-                      <p>Senior Manager of Social Media & Community at KPMG</p>
+                      <h3>Karam Bambawale</h3>
+                      <p>UCC Alum & Founding Member of Surf</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                   <Carousel.Item>
                     <img
                       className="d-block w-100 carousel-image"
-                      src={CSoo}
-                      alt="Cindy Soo"
+                      src={SLakhani}
+                      alt="Shak Lakhani"
                     />
 
                     <Carousel.Caption>
-                      <h3>Cindy Soo</h3>
+                      <h3>Shak Lakhani</h3>
                       <p>
-                        Global Innovation Lead / Innovation & Co-Creation Matrix
-                        Manager at Ikea
+                        Founder of Avro Lifesciences
                       </p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100 carousel-image"
-                      src={BNashman}
-                      alt="Ben Nashman"
-                    />
-
-                    <Carousel.Caption>
-                      <h3>Ben Nashman</h3>
-                      <p>Founder and CEO of Synex Medical</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 </Carousel>
