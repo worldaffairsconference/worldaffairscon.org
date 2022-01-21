@@ -89,7 +89,7 @@ const staff = {
           role: 'Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'ssuleman.jpg',
           name: 'Sofia	Suleman',
           role: 'Head of Communications',
         },
