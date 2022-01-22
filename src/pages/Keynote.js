@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, CardDeck } from 'react-bootstrap';
+import { Container, CardDeck, Card } from 'react-bootstrap';
+import Iframe from 'react-iframe';
 import SGalloway from '../img/speakers/current/sgalloway.jpg';
 import MHasan from '../img/speakers/prev/mhasan.jpg';
 import ESnowden from '../img/speakers/prev/esnowden.jpg';
@@ -42,6 +43,19 @@ const Keynote = () => {
           </>
         }
       />
+      <Card className="mt-3">
+        <Card.Body>
+          <h2 className="text-center">Scott Galloway Teaser Video</h2>
+          <Iframe
+            width="100%"
+            height="465"
+            styles={{ border: '1px solid black', margin: 'auto' }}
+            src="https://www.youtube.com/embed/jXExarjqvW4"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          />
+        </Card.Body>
+      </Card>
       <CardDeck className="mt-4 my-card-deck">
         <KeynoteAddresses
           deck
