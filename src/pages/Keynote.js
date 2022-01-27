@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, CardDeck, Card } from 'react-bootstrap';
 import Iframe from 'react-iframe';
 import SGalloway from '../img/speakers/current/sgalloway.jpg';
-import AHussen from '../img/speakers/current/ahussen.jpg';
+import AHussen from '../img/speakers/current/ahussen1.jpeg';
 import MHasan from '../img/speakers/prev/mhasan.jpg';
 import ESnowden from '../img/speakers/prev/esnowden.jpg';
 import WAC from '../img/general/wac_logo.svg';
@@ -44,29 +44,51 @@ const Keynote = () => {
           </>
         }
       />
-			<KeynoteAddresses
+      <KeynoteAddresses
         title="WAC 2022 Closing Keynote Speaker:"
         speaker="The Honourable Ahmed Hussen"
         image={AHussen}
         text={
           <>
-						The Honourable Ahmed Hussen was first elected in 2015 to represent the riding of York South—Weston. He has previously served as Minister of Families, Children and Social Development and Minister of Immigration, Refugees and Citizenship.
-						<br />
-						<br />
-						Minister Hussen immigrated to Canada in 1993 and settled in Toronto. He began his career in public service after high school, working with the Hamilton-Wentworth social services department.
-						<br />
-						<br />
-						Minister Hussen co-founded the Regent Park Community Council in 2002. As its president, he played a key role in securing the $500‑million revitalization project for Regent Park, while advocating for its 15,000 residents to ensure that their interests were protected. He was awarded the Queen Elizabeth II Golden Jubilee Medal for his leadership efforts in the Regent Park community.
-						<br />
-						<br />
-						Serving as National President for the Canadian Somali Congress, Minister Hussen worked with national and regional authorities to advocate on important issues to Canadians of Somali heritage, strengthening civic engagement and integration. His results-driven reputation led to an invitation from the Toronto City Summit Alliance to join a task force for modernizing income security for adults.
-						<br />
-						<br />
-						As a result of his advocacy work, the Toronto Star recognized Minister Hussen in 2004 as one of 10 individuals in Toronto to have made substantial contributions to the community.
-						<br />
-						<br />
-						After earning a law degree from the University of Ottawa, Minister Hussen practised law in the areas of criminal defence, immigration and refugee law, and human rights. He served as a director on the board of the Global Enrichment Foundation, an organization that has enabled women in East Africa to access education in colleges and universities in the region, and on the board of Journalists for Human Rights, an organization that empowers journalists in developing countries to cover human rights and governance issues objectively and effectively. Minister Hussen also previously worked as a Special Assistant for intergovernmental affairs to former Ontario Premier Dalton McGuinty, and sat on the Government of Canada’s Cross-Cultural Roundtable on Security.
-						<br />
+            The Honourable Ahmed Hussen was first elected in 2015 to represent
+            the riding of York South—Weston. He has previously served as
+            Minister of Families, Children and Social Development and Minister
+            of Immigration, Refugees and Citizenship. Minister Hussen immigrated
+            to Canada in 1993 and settled in Toronto. He began his career in
+            public service after high school, working with the
+            Hamilton-Wentworth social services department.
+            <br />
+            <br />
+            Minister Hussen co-founded the Regent Park Community Council in
+            2002. As its president, he played a key role in securing the
+            $500-million revitalization project for Regent Park, while
+            advocating for its 15,000 residents to ensure that their interests
+            were protected. He was awarded the Queen Elizabeth II Golden Jubilee
+            Medal for his leadership efforts in the Regent Park community.
+            Serving as National President for the Canadian Somali Congress,
+            Minister Hussen worked with national and regional authorities to
+            advocate on important issues to Canadians of Somali heritage,
+            strengthening civic engagement and integration. His results-driven
+            reputation led to an invitation from the Toronto City Summit
+            Alliance to join a task force for modernizing income security for
+            adults. As a result of his advocacy work, the Toronto Star
+            recognized Minister Hussen in 2004 as one of 10 individuals in
+            Toronto to have made substantial contributions to the community.
+            <br />
+            <br />
+            After earning a law degree from the University of Ottawa, Minister
+            Hussen practised law in the areas of criminal defence, immigration
+            and refugee law, and human rights. He served as a director on the
+            board of the Global Enrichment Foundation, an organization that has
+            enabled women in East Africa to access education in colleges and
+            universities in the region, and on the board of Journalists for
+            Human Rights, an organization that empowers journalists in
+            developing countries to cover human rights and governance issues
+            objectively and effectively. Minister Hussen also previously worked
+            as a Special Assistant for intergovernmental affairs to former
+            Ontario Premier Dalton McGuinty, and sat on the Government of
+            Canada’s Cross-Cultural Roundtable on Security.
+            <br />
           </>
         }
       />
