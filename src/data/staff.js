@@ -91,7 +91,7 @@ const staff = {
         {
           src: 'ssuleman.jpg',
           name: 'Sofia	Suleman',
-          role: 'Head of Communications'
+          role: 'Head of Communications',
         },
         {
           src: 'jtian.jpg',
@@ -123,8 +123,7 @@ const staff = {
           name: 'Annie Kypreos',
           role: 'Head of Security',
         },
-        {
-        }
+        {},
       ],
     },
     {
@@ -153,7 +152,7 @@ const staff = {
         {
           src: 'avatar.jpg',
           name: 'Sophie Schreiweis',
-          role: 'Assistant Head of SPRINT'
+          role: 'Assistant Head of SPRINT',
         },
         {
           src: 'avatar.jpg',
@@ -218,7 +217,7 @@ const staff = {
         },
         {
           src: 'avatar.jpg',
-          name: 'Randy Chang',
+          name: 'Harry Patel',
           role: 'Plenary Head',
         },
         {
@@ -262,8 +261,7 @@ const staff = {
           name: 'Cindy Han',
           role: 'Closing Panel',
         },
-        {
-        },
+        {},
       ],
     },
   ],

@@ -26,10 +26,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import ImportAll from '../helpers/ImportAll';
 
-import Logo from '../img/wac_logo.png';
+import Logo from '../img/general/wac_logo.png';
 import UCC from '../img/home/ucc-logo.png';
 import BH from '../img/home/bh-logo.png';
 import Live from '../img/home/live_logo.svg';
+
+import JTory from '../img/home/letters/JTory.png';
+import JTrudeau from '../img/home/letters/JTrudeau.png';
 
 // import Quotes from '../data/quotes';
 const Home = () => {
@@ -289,8 +292,6 @@ const Home = () => {
             </Row>
           </Card.Body>
         </Card>
-      </Container>
-      <Container>
         <Card className="mt-3 mx-3">
           <Card.Body>
             <h2 className="text-center">Hosted by:</h2>
@@ -319,8 +320,6 @@ const Home = () => {
             </Row>
           </Card.Body>
         </Card>
-      </Container>
-      <Container>
         <Card className="mt-3 mx-3">
           <Card.Body>
             <h2 className="text-center">Why WAC?</h2>
@@ -341,29 +340,35 @@ const Home = () => {
             </div>
           </Card.Body>
         </Card>
-      </Container>
-      <Container>
-        <Card className="mt-3 mx-3">
-          <Card.Body>
-            <h2 className="text-center">WAC Gallery</h2>
-            <Carousel fade>{galleryGenerator()}</Carousel>
-          </Card.Body>
+        <Card className="mt-3 mx-3 letters">
+          <Row xl={2} lg={2} md={1} sm={1} xs={1}>
+            <Col>
+              <Image src={JTory} />
+            </Col>
+            <Col>
+              <Image src={JTrudeau} />
+            </Col>
+          </Row>
         </Card>
-      </Container>
-      <Container>
         <Card className="mt-3 mx-3">
           <Card.Body>
-            <h2 className="text-center">WAC in 2021</h2>
+            <h2 className="text-center">WAC 2022 Teaser</h2>
             <Container>
               <Iframe
                 width="100%"
                 height="465"
                 styles={{ border: '1px solid black', margin: 'auto' }}
-                src="https://www.youtube.com/embed/h8VBYlOQEBc"
+                src="https://www.youtube.com/embed/FmRyfd9fpVs"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               />
             </Container>
+          </Card.Body>
+        </Card>
+        <Card className="mt-3 mx-3">
+          <Card.Body>
+            <h2 className="text-center">WAC Gallery</h2>
+            <Carousel fade>{galleryGenerator()}</Carousel>
           </Card.Body>
         </Card>
       </Container>

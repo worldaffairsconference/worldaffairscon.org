@@ -10,7 +10,8 @@
   .card-deck {
     .card {
       img {
-        max-width: 400px;
+        margin-top: 1rem;
+        max-width: 250px;
         border-radius: 5px;
         clip-path: circle();
       }
