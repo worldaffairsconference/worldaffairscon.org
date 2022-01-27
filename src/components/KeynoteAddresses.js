@@ -6,7 +6,7 @@ const KeynoteAddresses = (props) => {
   const data = props;
   if (data.deck === true) {
     return (
-      <Card>
+      <Card className="mt-3">
         <Card.Img
           variant="top"
           src={data.image}
@@ -33,7 +33,7 @@ const KeynoteAddresses = (props) => {
     );
   }
   return (
-    <Card>
+    <Card className="mt-3">
       <Card.Body>
         <h1 className="text-center">{data.title}</h1>
         <h3 className="text-center">{data.speaker}</h3>
@@ -41,7 +41,7 @@ const KeynoteAddresses = (props) => {
         {data.title && <hr />}
         <Row className="pb-2">
           <Col md={12}>
-            <Image src={data.image} className="mx-auto d-block" fluid rounded />
+            <Image src={data.image} style={{ maxWidth: '50%' }} className="mx-auto d-block" fluid rounded />
             {data.children}
             <h2 className="text-center">{data.addressName}</h2>
             <h4 className="text-center">{data.addressRole}</h4>
