@@ -37,7 +37,7 @@ const schedule = ScheduleData.map((entry) => {
         event={events.event}
         speaker={events.speaker}
         timeOrRecording={events.timeOrRecording}
-        recording
+        recording={events.recording}
       />
     );
   });
@@ -50,7 +50,9 @@ const schedule = ScheduleData.map((entry) => {
           </h4>
         </td>
         <td />
-        <td />
+        <td>
+						{entry.time}
+				</td>
       </tr>
       {entries}
     </>
