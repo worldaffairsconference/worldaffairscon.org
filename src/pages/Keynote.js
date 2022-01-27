@@ -46,49 +46,22 @@ const Keynote = () => {
       />
       <KeynoteAddresses
         title="WAC 2022 Closing Keynote Speaker:"
-        speaker="The Honourable Ahmed Hussen"
+        speaker="The Honourable Ahmed Hussen, Minister of Housing and Diversity and Inclusion"
         image={AHussen}
         text={
           <>
-            The Honourable Ahmed Hussen was first elected in 2015 to represent
-            the riding of York South—Weston. He has previously served as
-            Minister of Families, Children and Social Development and Minister
-            of Immigration, Refugees and Citizenship. Minister Hussen immigrated
-            to Canada in 1993 and settled in Toronto. He began his career in
-            public service after high school, working with the
-            Hamilton-Wentworth social services department.
-            <br />
-            <br />
-            Minister Hussen co-founded the Regent Park Community Council in
-            2002. As its president, he played a key role in securing the
-            $500-million revitalization project for Regent Park, while
-            advocating for its 15,000 residents to ensure that their interests
-            were protected. He was awarded the Queen Elizabeth II Golden Jubilee
-            Medal for his leadership efforts in the Regent Park community.
-            Serving as National President for the Canadian Somali Congress,
-            Minister Hussen worked with national and regional authorities to
-            advocate on important issues to Canadians of Somali heritage,
-            strengthening civic engagement and integration. His results-driven
-            reputation led to an invitation from the Toronto City Summit
-            Alliance to join a task force for modernizing income security for
-            adults. As a result of his advocacy work, the Toronto Star
-            recognized Minister Hussen in 2004 as one of 10 individuals in
-            Toronto to have made substantial contributions to the community.
-            <br />
-            <br />
-            After earning a law degree from the University of Ottawa, Minister
-            Hussen practised law in the areas of criminal defence, immigration
-            and refugee law, and human rights. He served as a director on the
-            board of the Global Enrichment Foundation, an organization that has
-            enabled women in East Africa to access education in colleges and
-            universities in the region, and on the board of Journalists for
-            Human Rights, an organization that empowers journalists in
-            developing countries to cover human rights and governance issues
-            objectively and effectively. Minister Hussen also previously worked
-            as a Special Assistant for intergovernmental affairs to former
-            Ontario Premier Dalton McGuinty, and sat on the Government of
-            Canada’s Cross-Cultural Roundtable on Security.
-            <br />
+						<br />
+						A passionate advocate for his community, the Honourable Ahmed Hussen has been proudly representing the residents of York South—Weston since 2015.
+						<br />
+						<br />
+						Before he started in politics, Minister Hussen worked at the grassroots with neighbours and allies to create “local solutions to local problems.” This would lead to the Minister helping to secure $500 million to revitalise Toronto’s, Regent Park in 2006.
+						<br />
+						<br />
+						Minister Hussen is a firm believer that diversity is a fact and inclusion is a choice. During his time as the National President for the Canadian Somali Congress, he worked with national and regional authorities to advocate on important issues to Canadians of Somali heritage, which helped foster better civic engagement and integration.     
+						<br />
+						<br />
+						Having lived in social housing himself, Canada’s first dedicated Housing minister understands the positive impact of having an affordable, reliable place to live. In his new role, Minister Hussen is focused on bringing home ownership back within reach while ensuring that everyone in Canada has a safe and affordable place to call home.
+						<br />
           </>
         }
       />
