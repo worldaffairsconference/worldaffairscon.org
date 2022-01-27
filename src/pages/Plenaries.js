@@ -31,7 +31,7 @@ const Plenaries = () => {
           <PlenariesCard
             href="plenary/education"
             image={Education}
-            title="Democratizing Education: New Opportunities, New Possibilities"
+            title="Advancing Education: New Opportunities, New Possibilities"
           />
           <PlenariesCard
             href="/plenary/sustainability"
