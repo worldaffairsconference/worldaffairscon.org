@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, CardDeck, Card } from 'react-bootstrap';
 import Iframe from 'react-iframe';
 import SGalloway from '../img/speakers/current/sgalloway.jpg';
-import AHussen from '../img/speakers/current/ahussen.jpg';
+import AHussen from '../img/speakers/current/ahussen1.jpeg';
 import MHasan from '../img/speakers/prev/mhasan.jpg';
 import ESnowden from '../img/speakers/prev/esnowden.jpg';
 import WAC from '../img/general/wac_logo.svg';
@@ -44,7 +44,7 @@ const Keynote = () => {
           </>
         }
       />
-			<KeynoteAddresses
+      <KeynoteAddresses
         title="WAC 2022 Closing Keynote Speaker:"
         speaker="The Honourable Ahmed Hussen, Minister of Housing and Diversity and Inclusion"
         image={AHussen}
