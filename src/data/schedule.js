@@ -24,7 +24,7 @@ const Schedule = [
     events: [
 			{
 				event: 'Re-Searching Into our Digital Future: A Token For Tomorrow',
-				speaker: 'Jamie Leverton',
+				speaker: 'Jaime Leverton',
 				timeOrRecording: '10:05 AM',
 			},
 			{
