@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, CardDeck, Card } from 'react-bootstrap';
 import Iframe from 'react-iframe';
 import SGalloway from '../img/speakers/current/sgalloway.jpg';
+import AHussen from '../img/speakers/current/ahussen1.jpeg';
 import MHasan from '../img/speakers/prev/mhasan.jpg';
 import ESnowden from '../img/speakers/prev/esnowden.jpg';
 import WAC from '../img/general/wac_logo.svg';
@@ -11,7 +12,7 @@ const Keynote = () => {
   return (
     <Container className="mt-4" id="keynote">
       <KeynoteAddresses
-        title="WAC 2022 Keynote Speaker:"
+        title="WAC 2022 Opening Keynote Speaker:"
         speaker="Professor Scott Galloway"
         image={SGalloway}
         text={
@@ -40,6 +41,27 @@ const Keynote = () => {
             tech. In 2021, CNN announced that Galloway will be a host on its
             CNN+ streaming platform.
             <br />
+          </>
+        }
+      />
+      <KeynoteAddresses
+        title="WAC 2022 Closing Keynote Speaker:"
+        speaker="The Honourable Ahmed Hussen, Minister of Housing and Diversity and Inclusion"
+        image={AHussen}
+        text={
+          <>
+						<br />
+						A passionate advocate for his community, the Honourable Ahmed Hussen has been proudly representing the residents of York South—Weston since 2015.
+						<br />
+						<br />
+						Before he started in politics, Minister Hussen worked at the grassroots with neighbours and allies to create “local solutions to local problems.” This would lead to the Minister helping to secure $500 million to revitalise Toronto’s, Regent Park in 2006.
+						<br />
+						<br />
+						Minister Hussen is a firm believer that diversity is a fact and inclusion is a choice. During his time as the National President for the Canadian Somali Congress, he worked with national and regional authorities to advocate on important issues to Canadians of Somali heritage, which helped foster better civic engagement and integration.     
+						<br />
+						<br />
+						Having lived in social housing himself, Canada’s first dedicated Housing minister understands the positive impact of having an affordable, reliable place to live. In his new role, Minister Hussen is focused on bringing home ownership back within reach while ensuring that everyone in Canada has a safe and affordable place to call home.
+						<br />
           </>
         }
       />

@@ -2,19 +2,26 @@ import XLiang from '../img/speakers/current/xliang.jpg';
 import JHammond from '../img/speakers/current/jhammond.jpg';
 import JLeverton from '../img/speakers/current/jleverton.jpg';
 import TSzaky from '../img/speakers/current/tszaky.jpg';
+import JGauthier from '../img/speakers/current/jgauthier.png';
+import SGallagher from '../img/speakers/current/sgallagher.jpg';
 
 const PlenaryJSON = [
   {
     path: '/plenary/education',
     component: 'Plenary',
     props: {
-      title: 'Democratizing Education: New Opportunities, New Possibilities',
+      title: 'Impact Through Education: New Opportunities, New Possibilities',
       text: '',
       speakers: [
         {
           name: 'Dr. Xiaoyan Liang',
           text: 'Dr. Xiaoyan Liang is a Senior Education Specialist and the World Bank’s Education Team Leader for China, Malaysia, Mongolia, and the Republic of Korea. Dr. Liang joined the World Bank as a Young Professional almost two decades ago, after graduating from Harvard University with a doctor of education degree. Since then, she has led policy analysis and dialogue and managed education programs in African, Latin American, and East Asian countries. Dr. Liang is passionate about development through education and has solid education policy and program expertise in wide-ranging areas, including early childhood education, technical and vocational education and skills development, higher education and science and technology, education finance, and teacher education. She is widely published on various education topics within and outside the World Bank.',
           img: XLiang,
+        },
+        {
+          name: 'Dr. Sarah Gallagher',
+          text: 'Dr. Sarah Gallagher is the Science Advisor to the President of the Canadian Space Agency, where she is the liaison to the space science community and the Chief Science Advisor of Canada. She has been a professor of physics and astronomy at Western University since 2008, and the Director of the Institute for Earth and Space Exploration since 2021. Her research focuses on windy supermassive black holes and interacting galaxies. Dr. Gallagher teaches first-year physics and regularly talks to the public about astronomy, space science, and science policy.',
+          img: SGallagher,
         },
       ],
     },
@@ -32,7 +39,7 @@ const PlenaryJSON = [
           img: JHammond,
         },
         {
-          name: 'Jamie Leverton',
+          name: 'Jaime Leverton',
           text: 'As CEO of Hut 8, Jaime sets the strategic direction for the company that is defining the digital asset revolution. Jaime is passionate about advancing high-growth and future-forward technology companies, most recently serving as the Chief Commercial Officer at eStruxture Data Centers. Her 20-plus years of leadership experience also includes driving revenue programs as General Manager of Canada and APAC, with data center and cloud provider Cogeco Peer 1 (now Aptum). Previously, she held leadership roles with National Bank, BlackBerry, Bell Canada and IBM Canada. She sits on the boards of the Stratford Festival, Technation and ComKids, and serves as the Chair of IMWomen Canada.',
           img: JLeverton,
         },
@@ -50,6 +57,11 @@ const PlenaryJSON = [
           name: 'Tom Sazky',
           text: 'Tom Szaky is the CEO and founder of TerraCycle, a private, US-based business headquartered in Trenton, New Jersey that turns non-recyclable pre-consumer and post-consumer waste into raw material to be used in new products. Szaky\'s parents are medical doctors, and Szaky is an only child. At age four, Szaky left his home in Hungary after the Chernobyl disaster. In 1987, Szaky immigrated to Canada, where he grew up in Toronto. His company TeraCycle has served over 200M recylers, recycled over 7B of waste and donated $45M to charity. TerraCycle is Eliminating the Idea of Waste by recycling the "non-recyclable."',
           img: TSzaky,
+        },
+        {
+          name: 'Jean-Francois Gauthier',
+          text: 'GHGSat is the global leader in high-resolution remote-sensing of greenhouse gas from space – an approach they pioneered. They provide unique emissions data and intelligence to businesses, governments, regulators, and investors worldwide in order to optimize their performance and uphold environmental standards.\nGHGSat is a  cutting-edge space and data technology company accelerating the decarbonization of our planet. Through their emission monitoring solutions and analytics tools, they provide actionable metrics and insights that empower the economies of tomorrow.\nWith evolving climate dynamics, GHGSat shares their expertise, and their compelling perspective for the future of humanity with the global community.',
+          img: JGauthier,
         },
       ],
     },
