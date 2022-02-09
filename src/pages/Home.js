@@ -1,24 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { isFuture, isPast, formatDistanceToNowStrict } from 'date-fns';
-import {
-  Container,
-  Card,
-  Row,
-  Col,
-  Image,
-  Form,
-  Button,
-  Carousel,
-} from 'react-bootstrap';
-import { css } from '@emotion/react';
-import ClipLoader from 'react-spinners/ClipLoader';
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import fetch from 'node-fetch';
+import { Container, Card, Row, Col, Image, Carousel } from 'react-bootstrap';
+//import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+//import fetch from 'node-fetch';
 import Iframe from 'react-iframe';
-import { Checkmark } from 'react-checkmark';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faArrowRight,
   faUserGraduate,
   faGlobeAmericas,
   faSchool,
@@ -29,22 +16,21 @@ import ImportAll from '../helpers/ImportAll';
 import Logo from '../img/general/wac_logo.png';
 import UCC from '../img/home/ucc-logo.png';
 import BH from '../img/home/bh-logo.png';
-import Live from '../img/home/live_logo.svg';
 
 import JTory from '../img/home/letters/JTory.png';
 import JTrudeau from '../img/home/letters/JTrudeau.png';
 
 // import Quotes from '../data/quotes';
 const Home = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
-  const [success, setSuccess] = useState(false);
-  const [clicked, setClicked] = useState(false);
-  const [validated, setValidated] = useState(false);
+  //const { executeRecaptcha } = useGoogleReCaptcha();
+  //const [success, setSuccess] = useState(false);
+  //const [clicked, setClicked] = useState(false);
+  //const [validated, setValidated] = useState(false);
   const [countDown, setCountDown] = useState('');
-  const [error, setError] = useState('');
-  const [email, setEmail] = useState('');
+  //const [error, setError] = useState('');
+  //const [email, setEmail] = useState('');
 
-  const divRef = useRef(null);
+  //const divRef = useRef(null);
   // const [quote, setQuote] = useState({
   //   quote: 'Quote',
   //   name: 'Name',
@@ -68,7 +54,8 @@ const Home = () => {
     return 'In Progress!';
   };
 
-  const handleReCaptchaVerify = () => {
+  /*  
+   const handleReCaptchaVerify = () => {
     setClicked(true);
     if (!executeRecaptcha) {
       setClicked(false);
@@ -111,15 +98,16 @@ const Home = () => {
     })();
   };
 
-  // const handleQuote = () => {
-  //   const data = Quotes[Math.floor(Math.random() * Quotes.length)];
-  //   setQuote({
-  //     quote: data.quote,
-  //     name: data.name,
-  //     role: `${data.role} ${data.year}`,
-  //   });
-  // };
+  const handleQuote = () => {
+    const data = Quotes[Math.floor(Math.random() * Quotes.length)];
+    setQuote({
+      quote: data.quote,
+      name: data.name,
+      role: `${data.role} ${data.year}`,
+    });
+  };
 
+	*/
   useEffect(() => {
     // handleQuote();
     setCountDown(handleCountDown(wacStartDate, wacEndDate));
