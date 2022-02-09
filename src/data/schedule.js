@@ -10,7 +10,7 @@ const Schedule = [
 			{
 				event: 'Keynote',
 				speaker: 'Prof. Scott Galloway',
-				timeOrRecording: '9:10 AM'
+				recording: true,
 			}
 		],
   },
@@ -25,12 +25,12 @@ const Schedule = [
 			{
 				event: 'Re-Searching Into our Digital Future: A Token For Tomorrow',
 				speaker: 'Jamie Leverton',
-				timeOrRecording: '10:05 AM',
+				recording: true,
 			},
 			{
 				event: 'Advancing Education: New Opportunities, New Possibilities',
 				speaker: 'Dr. Xiaoyang Liang',
-				timeOrRecording: '10:05 AM',
+				recording: true,
 			},
 		],
   },
@@ -40,12 +40,12 @@ const Schedule = [
 			{
 				event: 'The Future of Diversity, Equity and Inclusion: STEM and Beyond',
 				speaker: 'Eden Hennessey',
-				timeOrRecording: '10:45 AM',
+				recording: true,
 			},
 			{
 				event: 'From Parliament Hill to Turtle Island: The Future for Canadian Truth and Reconciliation',
 				speaker: 'Sen. Mary Jane McCallum & Valarie Waboose',
-				timeOrRecording: '10:45 AM',
+				recording: true,
 			},
 		],
   },
@@ -60,12 +60,12 @@ const Schedule = [
 			{
 				event: 'Re-Searching Into our Digital Future: A Token For Tomorrow',
 				speaker: 'John Hammond',
-				timeOrRecording: '12:15 PM',
+				recording: true,
 			},
 			{
 				event: 'Advancing Education: New Opportunities, New Possibilities',
 				speaker: 'Sarah Gallagher',
-				timeOrRecording: '12:15 PM',
+				recording: true,
 			},
 		],
   },
@@ -80,12 +80,12 @@ const Schedule = [
 			{
 				event: 'Rethinking Sustainability: Innovations for the Environment',
 				speaker: 'Tom Szaky',
-				timeOrRecording: '1:15 PM',
+				recording: true,
 			},
 			{
 				event: 'Rethinking Sustainability: Innovations for the Environment',
 				speaker: 'Jean-Francois Gauthier',
-				timeOrRecording: '1:15 PM',
+				recording: true,
 			},
 		],
   },
@@ -95,7 +95,7 @@ const Schedule = [
 			{
 				event: 'Keynote #2',
 				speaker: 'Honourable Ahmed Hussen',
-				timeOrRecording: '2:00 PM',
+				recording: true,
 			},
 			{
 				event: 'Closing Remarks',
