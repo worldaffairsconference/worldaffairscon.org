@@ -93,11 +93,27 @@ const Entry = (props) => {
 
 const Schedule = () => {
   const [show, setShow] = useState(false);
+	const [email, setEmail] = useState("");
+	const [url, setUrl] = useState("");
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+		setEmail("");
+		setUrl("");
+		setShow(false);
+	}
   const handleShow = (speaker) => {
     setShow(true);
   };
+
+	const getURL = async () => {
+		// const res = await fetch(`https://us-central1-worldaffairscon-8fdc5.cloudfunctions.net/subscribe`, {
+		// });
+		// console.log(res);
+		// const data = await res.json();
+		// console.log(data);
+		const data = { href: "https://www.youtube.com/playlist?list=PLrWZUIfx9kEKaYKQ7VtV8d-v46zGV0Q9H" };
+		setUrl(data.href);
+	}
 
   const schedule = ScheduleData.map((entry) => {
     const entries = entry.events.map((events) => {
@@ -175,8 +191,14 @@ const Schedule = () => {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+							{url ? (
+								<Form.Text className="mt-4" style={{ fontSize: '1em' }}><a href={url} target="__blank">WAC 2022 Playlist</a></Form.Text>
+							) : (
+								<>
+									<Form.Label>Email address</Form.Label>
+									<Form.Control type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} />
+								</>
+							)}
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -184,7 +206,7 @@ const Schedule = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={getURL}>
             Get URL
           </Button>
         </Modal.Footer>
