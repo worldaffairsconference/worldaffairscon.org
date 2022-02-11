@@ -2,66 +2,10 @@ import React, { useState } from 'react';
 import { Table, Container, Card, Modal, Button, Form } from 'react-bootstrap';
 import { faDotCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { v4 as uuid } from 'uuid';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import fetch from 'node-fetch';
 import ScheduleData from '../data/schedule';
-
-/*
- * TODO:Add API endpoint support with recaptcha verification(reference home page for example)
- * Send data to process.env.REACT_APP_EMAIL_LIST_API as listed
- * Data in the for of a POST request with body
-  {
-		 "token":"RECAPTCHA TOKEN",
-		 "email":"USER EMAIL"
-  }
-
- *responce in the form of
- {
-	"href":"LINK TO HREF"
- }
- If captcha fails, API retunrs 503 ERROR
-
-	const handleReCaptchaVerify = () => {
-  setClicked(true);
-  if (!executeRecaptcha) {
-    setClicked(false);
-    return;
-  }
-  // email regex
-  const emailRegex =
-    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  if (!emailRegex.test(email)) {
-    setClicked(false);
-    setError('Please enter a valid email address.');
-    return;
-  }
-  (async () => {
-    const token = await executeRecaptcha('email');
-    fetch(process.env.REACT_APP_EMAIL_LIST_API, {
-      method: 'POST',
-      body: JSON.stringify({
-        email,
-        token,
-      }),
-    }).then((res) => {
-      if (res.status === 406) {
-        setSuccess(true);
-        return;
-      }
-      if (res.status === 200) {
-        divRef.current.setAttribute(
-          'style',
-          `height: ${divRef.current.clientHeight}px;`
-        );
-        setClicked(false);
-        setSuccess(true);
-        return;
-      }
-      setError(
-        'There was an error submitting your email. Please try again later or contact support.'
-      );
-    });
-  })();
-};
-*/
 
 const Entry = (props) => {
   const data = props;
@@ -93,33 +37,55 @@ const Entry = (props) => {
 
 const Schedule = () => {
   const [show, setShow] = useState(false);
-	const [email, setEmail] = useState("");
-	const [url, setUrl] = useState("");
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [url, setUrl] = useState('');
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleClose = () => {
-		setEmail("");
-		setUrl("");
-		setShow(false);
-	}
-  const handleShow = (speaker) => {
+    setEmail('');
+    setError('');
+    setUrl('');
+    setShow(false);
+  };
+
+  const handleShow = () => {
     setShow(true);
   };
 
-	const getURL = async () => {
-		// const res = await fetch(`https://us-central1-worldaffairscon-8fdc5.cloudfunctions.net/subscribe`, {
-		// });
-		// console.log(res);
-		// const data = await res.json();
-		// console.log(data);
-		const data = { href: "https://www.youtube.com/playlist?list=PLrWZUIfx9kEKaYKQ7VtV8d-v46zGV0Q9H" };
-		setUrl(data.href);
-	}
+  const getURL = async () => {
+    const emailRegex =
+      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email.');
+      return;
+    }
+    setError('Fetching...');
+    const token = await executeRecaptcha('email');
+    fetch(process.env.REACT_APP_EMAIL_LIST_API, {
+      method: 'POST',
+      body: JSON.stringify({
+        email,
+        token,
+      }),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setError('');
+        setUrl(data.href);
+      })
+      .catch((err) => {
+        setEmail('Access Denied.');
+      });
+  };
 
   const schedule = ScheduleData.map((entry) => {
     const entries = entry.events.map((events) => {
       return (
         <Entry
-          key={events.event}
+          key={uuid()}
           event={events.event}
           speaker={events.speaker}
           timeOrRecording={events.timeOrRecording}
@@ -128,6 +94,7 @@ const Schedule = () => {
         />
       );
     });
+
     return (
       <>
         <tr>
@@ -168,7 +135,6 @@ const Schedule = () => {
           <Card.Title as="h1" className="text-center">
             WAC 2021
           </Card.Title>
-          {/* TODO: Make an onClick that opens the modal and gives last year's recordings */}
           <p>
             Please click the following link to retrieve all recordings for
             WAC2021: Together Towards Tomorrow
@@ -191,14 +157,25 @@ const Schedule = () => {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3">
-							{url ? (
-								<Form.Text className="mt-4" style={{ fontSize: '1em' }}><a href={url} target="__blank">WAC 2022 Playlist</a></Form.Text>
-							) : (
-								<>
-									<Form.Label>Email address</Form.Label>
-									<Form.Control type="email" placeholder="Enter email" value={email} onChange={e => setEmail(e.target.value)} />
-								</>
-							)}
+              {url ? (
+                <Form.Text as="p" className="mt-4">
+                  <p>Thank you for joining WAC 2022.</p>
+                  <a href={url} target="__blank">
+                    WAC 2022 Playlist
+                  </a>
+                </Form.Text>
+              ) : (
+                <>
+                  <Form.Label>Email address</Form.Label>
+                  <Form.Control
+                    type="email"
+                    placeholder="Enter email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </>
+              )}
+              {error && <p>{error}</p>}
             </Form.Group>
           </Form>
         </Modal.Body>
