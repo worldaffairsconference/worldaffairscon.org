@@ -39,6 +39,7 @@ const Entry = (props) => {
 const Schedule = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState('');
+  const [valid, setValid] = useState();
   const [error, setError] = useState('');
   const [url, setUrl] = useState('');
   const [init, setInit] = useState(false);
@@ -48,6 +49,7 @@ const Schedule = () => {
     setEmail('');
     setError('');
     setUrl('');
+    setValid(false);
     setShow(false);
   };
 
@@ -55,20 +57,15 @@ const Schedule = () => {
     setShow(true);
   };
 
-  const getURL = async () => {
-    const emailRegex =
-      /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email.');
-      return;
-    }
-    setError('Fetching...');
+  const getURL = async (e) => {
+    e.preventDefault();
+    setValid(true);
     const token = await executeRecaptcha('email');
     fetch(process.env.REACT_APP_EMAIL_LIST_API, {
       method: 'POST',
       body: JSON.stringify({
         email,
-        token,
+        token: token,
       }),
     })
       .then((res) => {
@@ -82,7 +79,8 @@ const Schedule = () => {
         setUrl(data.href);
       })
       .catch((err) => {
-        setError('Access Denied.');
+        setValid(false);
+        setError('Access Denied. Please contact us for further information.');
       });
   };
 
@@ -159,9 +157,9 @@ const Schedule = () => {
         <Modal.Header closeButton>
           <Modal.Title>Retrieve Video</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3">
+        <Form onSubmit={getURL}>
+          <Form.Group className="mb-3">
+            <Modal.Body>
               {url ? (
                 <>
                   {init ? (
@@ -171,7 +169,7 @@ const Schedule = () => {
                       </Form.Text>
                       <Form.Check
                         type="checkbox"
-                        id="testcheck"
+                        id="checkbox"
                         label="I agree"
                       />
                     </>
@@ -191,38 +189,44 @@ const Schedule = () => {
                     type="email"
                     placeholder="Enter email"
                     value={email}
+                    isValid={valid}
+                    isInvalid={error}
                     onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <Form.Control
+                    type="submit"
+                    value="Submit"
+                    className="d-none"
                   />
                 </>
               )}
               {error && <p className="error">{error}</p>}
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-
-          {init ? (
-            <Button
-              variant="primary"
-              onClick={() => {
-                setInit(false);
-              }}
-            >
-              Get URL
-            </Button>
-          ) : (
-            <>
-              {!url && (
-                <Button variant="primary" onClick={getURL}>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              {init ? (
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    setInit(false);
+                  }}
+                >
                   Get URL
                 </Button>
+              ) : (
+                <>
+                  {!url && (
+                    <Button type="submit" variant="primary">
+                      Get URL
+                    </Button>
+                  )}
+                </>
               )}
-            </>
-          )}
-        </Modal.Footer>
+            </Modal.Footer>
+          </Form.Group>
+        </Form>
       </Modal>
     </Container>
   );
