@@ -153,7 +153,7 @@ const Schedule = () => {
           </a>
         </Card.Body>
       </Card>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} centered>
         <Modal.Header closeButton>
           <Modal.Title>Retrieve Video</Modal.Title>
         </Modal.Header>
