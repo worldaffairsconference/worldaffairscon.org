@@ -39,7 +39,7 @@ const PlenaryJSON = [
           img: JHammond,
         },
         {
-          name: 'Jamie Leverton',
+          name: 'Jaime Leverton',
           text: 'As CEO of Hut 8, Jaime sets the strategic direction for the company that is defining the digital asset revolution. Jaime is passionate about advancing high-growth and future-forward technology companies, most recently serving as the Chief Commercial Officer at eStruxture Data Centers. Her 20-plus years of leadership experience also includes driving revenue programs as General Manager of Canada and APAC, with data center and cloud provider Cogeco Peer 1 (now Aptum). Previously, she held leadership roles with National Bank, BlackBerry, Bell Canada and IBM Canada. She sits on the boards of the Stratford Festival, Technation and ComKids, and serves as the Chair of IMWomen Canada.',
           img: JLeverton,
         },

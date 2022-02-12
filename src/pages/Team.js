@@ -34,8 +34,7 @@ const Tile = (props) => {
   return (
     <Col md className="text-center">
       <Row className="mt-4 mb-4">
-        <Col sm={5}>
-        </Col>
+        <Col sm={5}></Col>
         <Col sm={7} className="mt-3">
           <Card.Title as="h3">{data.name}</Card.Title>
           <h5>{data.role}</h5>
@@ -94,7 +93,7 @@ const Team = () => {
       <Card>
         <Card.Body>
           <Card.Title as="h1" className="text-center">
-            WAC 2021 Team
+            WAC 2022 Team
           </Card.Title>
           <Tabs id="uncontrolled-tab-example" defaultActiveKey="team">
             <Tab eventKey="team" title="Staff">
