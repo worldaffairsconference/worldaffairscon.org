@@ -62,7 +62,9 @@ const Header = () => {
             href="https://hopin.com/events/world-affairs-conference-2022?ref=4f11049a4875"
             onClick={() => setExpand(false)}
           >
-            <Button variant="outline-primary">Register</Button>
+            {/*
+						<Button variant="outline-primary">Register</Button>
+						*/}
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>

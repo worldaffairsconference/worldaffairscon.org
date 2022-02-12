@@ -1,20 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Row,
-  Col,
-  Image,
-  Container,
-  Card,
-  Table,
-  Carousel,
-} from 'react-bootstrap';
+import { Row, Col, Image, Container, Card, Carousel } from 'react-bootstrap';
 import { formatDistanceToNowStrict, isFuture, isPast } from 'date-fns';
 import sprint from '../img/sprint/2020sprint1.jpg';
 import sprint1 from '../img/sprint/SPRINTfulllogocolor.png';
 import sprint2 from '../img/sprint/2020sprint2.jpg';
 import KBambawale from '../img/hackathon/kbambawale.jpg';
 import SLakhani from '../img/hackathon/slakhani.jpeg';
-import BNashman from '../img/hackathon/bnashman.jpg';
 import MRomanow from '../img/hackathon/mromanow.jpg';
 import KDamen from '../img/hackathon/kdamen.jpg';
 import NBardai from '../img/hackathon/nbardai.jpg';
@@ -68,15 +59,6 @@ const SPRINT = () => {
         </Container>
       </div>
       <Container className="mt-4">
-        <Card>
-          <Card.Body className="mt-3 mx-3">
-            <Row style={{ justifyContent: "center" }}>
-              <a target="__blank" href="https://forms.gle/w6hfSbVBufnYKASWA">
-                <h3>Apply Now!</h3>
-              </a>
-            </Row>
-          </Card.Body>
-        </Card>
         <Card className="mt-4">
           <Card.Body className="mt-3 mx-3">
             <Row>
@@ -88,31 +70,42 @@ const SPRINT = () => {
               <Col sm={9}>
                 <h3>What is SPRINT?</h3>
                 <p>
-                  A 2-week virtual entrepreneurial challenge for ambitious high-school students to turn innovative ideas into action and compete for prizes.
+                  A 2-week virtual entrepreneurial challenge for ambitious
+                  high-school students to turn innovative ideas into action and
+                  compete for prizes.
                 </p>
                 <hr />
                 <br />
                 <h3>Why SPRINT?</h3>
                 <p>
-                  In a world filled with Zoom meetings and mask-wearing, we must continuously seek ways to ideate, create, and adapt to stay alive and thrive. At SPRINT, you will be given the opportunity to immerse yourself in a two-week virtual challenge to tackle world issues and bring your most disruptive ideas to life.
+                  In a world filled with Zoom meetings and mask-wearing, we must
+                  continuously seek ways to ideate, create, and adapt to stay
+                  alive and thrive. At SPRINT, you will be given the opportunity
+                  to immerse yourself in a two-week virtual challenge to tackle
+                  world issues and bring your most disruptive ideas to life.
                 </p>
                 <hr />
                 <br />
                 <h3>SPRINT Highlights</h3>
                 <p>
-                  - Collaborate alongside passionate students from diverse walks of life to tackle real-world issues using entrepreneurial skills
+                  - Collaborate alongside passionate students from diverse walks
+                  of life to tackle real-world issues using entrepreneurial
+                  skills
                 </p>
                 <p>
-                  - Validate ideas through guest speakers and specialized workshops
+                  - Validate ideas through guest speakers and specialized
+                  workshops
                 </p>
                 <p>
-                  - Craft a pitch to be presented to a panel of expert judges for prizes!
+                  - Craft a pitch to be presented to a panel of expert judges
+                  for prizes!
                 </p>
                 <hr />
                 <br />
                 <h3>How can you apply for SPRINT?</h3>
                 <p>
-                  - As a secondary-school student, you are eligible to apply to our SPRINT cohort, for free!
+                  - As a secondary-school student, you are eligible to apply to
+                  our SPRINT cohort, for free!
                 </p>
                 <p>
                   - Fill out
@@ -262,9 +255,7 @@ const SPRINT = () => {
 
                     <Carousel.Caption>
                       <h3>Shak Lakhani</h3>
-                      <p>
-                        Founder of Avro Lifesciences
-                      </p>
+                      <p>Founder of Avro Lifesciences</p>
                     </Carousel.Caption>
                   </Carousel.Item>
                 </Carousel>
