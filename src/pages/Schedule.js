@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import fetch from 'node-fetch';
 import ScheduleData from '../data/schedule';
+import Terms from '../components/Terms';
 
 const Entry = (props) => {
   const data = props;
@@ -40,6 +41,7 @@ const Schedule = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [url, setUrl] = useState('');
+  const [init, setInit] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleClose = () => {
@@ -73,11 +75,14 @@ const Schedule = () => {
         return res.json();
       })
       .then((data) => {
+        if (data.new) {
+          setInit(true);
+        }
         setError('');
         setUrl(data.href);
       })
       .catch((err) => {
-        setEmail('Access Denied.');
+        setError('Access Denied.');
       });
   };
 
@@ -158,12 +163,27 @@ const Schedule = () => {
           <Form>
             <Form.Group className="mb-3">
               {url ? (
-                <Form.Text as="p" className="mt-4">
-                  <p>Thank you for joining WAC 2022.</p>
-                  <a href={url} target="__blank">
-                    WAC 2022 Playlist
-                  </a>
-                </Form.Text>
+                <>
+                  {init ? (
+                    <>
+                      <Form.Text as="p" className="mt-4 terms">
+                        <Terms />
+                      </Form.Text>
+                      <Form.Check
+                        type="checkbox"
+                        id="testcheck"
+                        label="I agree"
+                      />
+                    </>
+                  ) : (
+                    <Form.Text as="p" className="mt-4">
+                      <h4>Thank you for joining WAC 2022.</h4>
+                      <a href={url} target="__blank">
+                        WAC 2022 Playlist
+                      </a>
+                    </Form.Text>
+                  )}
+                </>
               ) : (
                 <>
                   <Form.Label>Email address</Form.Label>
@@ -175,7 +195,7 @@ const Schedule = () => {
                   />
                 </>
               )}
-              {error && <p>{error}</p>}
+              {error && <p className="error">{error}</p>}
             </Form.Group>
           </Form>
         </Modal.Body>
@@ -183,9 +203,25 @@ const Schedule = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={getURL}>
-            Get URL
-          </Button>
+
+          {init ? (
+            <Button
+              variant="primary"
+              onClick={() => {
+                setInit(false);
+              }}
+            >
+              Get URL
+            </Button>
+          ) : (
+            <>
+              {!url && (
+                <Button variant="primary" onClick={getURL}>
+                  Get URL
+                </Button>
+              )}
+            </>
+          )}
         </Modal.Footer>
       </Modal>
     </Container>
