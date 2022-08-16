@@ -7,7 +7,7 @@ const Events = () => {
     <Container id="events" className="mt-4">
       <Card>
         <Card.Body className="text-center">
-          <h1>Events 2023 Soon...</h1>
+          <h1>Events: To be announced!</h1>
         </Card.Body>
       </Card>
       {/* <KeynoteAddresses

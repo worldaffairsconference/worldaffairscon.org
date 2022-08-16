@@ -119,7 +119,7 @@ const Schedule = () => {
       <Card>
         <Card.Body>
           <Card.Title as="h1" className="text-center">
-            WAC 2023 Schedule Soon...
+            Schedule: To be announced!
           </Card.Title>
           <Table responsive hover className="my-4">
             <thead className="thead-dark">
@@ -136,12 +136,20 @@ const Schedule = () => {
       <Card className="mt-4">
         <Card.Body>
           <Card.Title as="h1" className="text-center">
-            WAC 2021
+            Past Recordings
           </Card.Title>
           <p>
-            Please click the following link to retrieve all recordings for
-            WAC2021: Together Towards Tomorrow
+            Use the following buttons to access recordings of previous events.
           </p>
+          <a
+            className="btn btn-outline-danger"
+            href="https://www.youtube.com/playlist?list=PLrWZUIfx9kEKaYKQ7VtV8d-v46zGV0Q9H"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FontAwesomeIcon icon={faDotCircle} className="mr-1" />
+            2022: Affairs That Matter
+          </a>
           <a
             className="btn btn-outline-danger"
             href="https://www.youtube.com/playlist?list=PLrWZUIfx9kEL2K-nqZI9piqImQ7S1d46p"
@@ -149,7 +157,7 @@ const Schedule = () => {
             rel="noreferrer"
           >
             <FontAwesomeIcon icon={faDotCircle} className="mr-1" />
-            Recording
+            2021: Together Towards Tomorrow
           </a>
         </Card.Body>
       </Card>
