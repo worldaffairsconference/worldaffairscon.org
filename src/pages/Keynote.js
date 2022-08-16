@@ -1,8 +1,5 @@
 import React from 'react';
-import { Container, CardDeck, Card } from 'react-bootstrap';
-import Iframe from 'react-iframe';
-import SGalloway from '../img/speakers/current/sgalloway.jpg';
-import AHussen from '../img/speakers/current/ahussen1.jpeg';
+import { Container, CardDeck } from 'react-bootstrap';
 import MHasan from '../img/speakers/prev/mhasan.jpg';
 import ESnowden from '../img/speakers/prev/esnowden.jpg';
 import WAC from '../img/general/wac_logo.svg';
@@ -12,6 +9,11 @@ const Keynote = () => {
   return (
     <Container className="mt-4" id="keynote">
       <KeynoteAddresses
+        title="WAC 2023 Speakers are to be determined"
+        speaker=""
+        text={<p>Check back later to find out once they are announced.</p>}
+      />
+      {/* <KeynoteAddresses
         title="WAC 2022 Opening Keynote Speaker:"
         speaker="Professor Scott Galloway"
         image={SGalloway}
@@ -43,8 +45,8 @@ const Keynote = () => {
             <br />
           </>
         }
-      />
-      <KeynoteAddresses
+      /> */}
+      {/* <KeynoteAddresses
         title="WAC 2022 Closing Keynote Speaker:"
         speaker="The Honourable Ahmed Hussen, Minister of Housing and Diversity and Inclusion"
         image={AHussen}
@@ -64,20 +66,7 @@ const Keynote = () => {
 						<br />
           </>
         }
-      />
-      <Card className="mt-3">
-        <Card.Body>
-          <h2 className="text-center">Scott Galloway Teaser Video</h2>
-          <Iframe
-            width="100%"
-            height="465"
-            styles={{ border: '1px solid black', margin: 'auto' }}
-            src="https://www.youtube.com/embed/jXExarjqvW4"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          />
-        </Card.Body>
-      </Card>
+      /> */}
       <CardDeck className="mt-4 my-card-deck">
         <KeynoteAddresses
           deck

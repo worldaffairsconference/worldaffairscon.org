@@ -119,7 +119,7 @@ const Schedule = () => {
       <Card>
         <Card.Body>
           <Card.Title as="h1" className="text-center">
-            WAC 2022 Schedule
+            WAC 2023 Schedule Soon...
           </Card.Title>
           <Table responsive hover className="my-4">
             <thead className="thead-dark">
