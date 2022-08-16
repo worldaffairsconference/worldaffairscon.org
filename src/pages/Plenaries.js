@@ -24,7 +24,7 @@ const Plenaries = () => {
       <Container className="mt-4">
         <Card>
           <Card.Body className="text-center">
-            <h1>Plenaries 2023 Soon...</h1>
+            <h1>Plenaries: To be announced!</h1>
           </Card.Body>
         </Card>
         {/* <CardDeck className="mt-2">
