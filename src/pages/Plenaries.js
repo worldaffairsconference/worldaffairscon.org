@@ -24,10 +24,10 @@ const Plenaries = () => {
       <Container className="mt-4">
         <Card>
           <Card.Body className="text-center">
-            <h1>Plenaries 2022</h1>
+            <h1>Plenaries 2023 Soon...</h1>
           </Card.Body>
         </Card>
-        <CardDeck className="mt-2">
+        {/* <CardDeck className="mt-2">
           <PlenariesCard
             href="plenary/education"
             image={Education}
@@ -45,7 +45,7 @@ const Plenaries = () => {
             image={Tech}
             title="Re-Searching Into our Digital Future: A Token for Tomorrow"
           />
-        </CardDeck>
+        </CardDeck> */}
       </Container>
     </div>
   );

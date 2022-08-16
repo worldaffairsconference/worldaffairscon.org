@@ -148,7 +148,7 @@ const Home = () => {
       <div className="landing">
         <Container className="mt-4">
           <div className="text-center text-md-left">
-            <h2>Welcome to the 2022</h2>
+            <h2>Welcome to the 2023</h2>
             <h1>World Affairs Conference</h1>
             <h3 className="display-5">February 5th</h3>
           </div>

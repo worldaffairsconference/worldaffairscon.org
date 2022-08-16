@@ -1,14 +1,16 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import KeynoteAddresses from '../components/KeynoteAddresses';
-import EHennessey from '../img/speakers/current/ehennessey.png';
-import MMcCallum from '../img/speakers/current/mmccallum.png';
-import VWaboose from '../img/speakers/current/vwaboose.jpg';
 
 const Events = () => {
   return (
     <Container id="events" className="mt-4">
-      <KeynoteAddresses
+      <Card>
+        <Card.Body className="text-center">
+          <h1>Events 2023 Soon...</h1>
+        </Card.Body>
+      </Card>
+      {/* <KeynoteAddresses
         title="The Future of Diversity, Equity and Inclusion: STEM and Beyond"
         speaker="Roundtable Discussion"
         description="In today’s society, the importance of representation has become increasingly prevalent. Discussions on gender, racial, and ethnic prejudices are taking place on a global level, examining the importance and value of an inclusive and diverse environment. Students will learn more about societal biases, as well as the future of workplace environments taking on diversity, equity and inclusion (DEI) policies. This plenary will be a roundtable discussion offering an interactive environment for students to learn, and ask any questions for the plenary speaker."
@@ -33,7 +35,7 @@ const Events = () => {
           addressRole="Assistant Professor, Windsor Law"
           text="Valarie Waboose is an Assistant Professor at Windsor Law. Her areas of specialization include Indigenous legal traditions, the legacy of residential schools, and the ways in which First Nations within Canada reconcile with their past. Dr. Waboose is a member of the Three Fires Midewiwin Society and is interested in conducting research and expanding knowledge in the areas of Anishinabe Indigenous knowledge and Indigenous research methodologies. Her Indigenous knowledge is interwoven with the pedagogical methodologies she utilizes within the classroom setting. As an Anishinabe Kwe, she believes in sharing her knowledge with non-Indigenous students so that they can better serve their clients when they enter the legal profession."
         />
-      </div>
+      </div> */}
     </Container>
   );
 };
