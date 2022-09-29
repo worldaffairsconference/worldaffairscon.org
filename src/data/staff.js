@@ -9,7 +9,7 @@ const staff = {
           role: 'Conference Chair',
         },
         {
-          src: 'rnanda2.jpeg',
+          src: 'rnanda.jpeg',
           name: 'Rahul Nanda',
           role: 'Conference Chair',
         },
@@ -120,7 +120,7 @@ const staff = {
       group: 'Senior Team',
       members: [
         {
-          src: 'awoolsey2.jpg',
+          src: 'awoolsey.jpg',
           name: 'Alex Woolsey',
           role: 'Assistant Head of Programs',
         },
@@ -145,7 +145,7 @@ const staff = {
           role: 'Assistant Head of SPRINT',
         },
         {
-          src: 'amak2.jpg',
+          src: 'amak.jpg',
           name: 'Adrian Mak',
           role: 'Assistant Head of Marketing',
         },
