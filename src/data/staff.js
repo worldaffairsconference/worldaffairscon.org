@@ -4,12 +4,12 @@ const staff = {
       group: 'Chairs',
       members: [
         {
-          src: 'avatar.jpg',
+          src: 'jding.jpg',
           name: 'Jefferson Ding',
           role: 'Conference Chair',
         },
         {
-          src: 'avatar.jpg',
+          src: 'rnanda2.jpeg',
           name: 'Rahul Nanda',
           role: 'Conference Chair',
         },
@@ -145,7 +145,7 @@ const staff = {
           role: 'Assistant Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'amak2.jpg',
           name: 'Adrian Mak',
           role: 'Assistant Head of Marketing',
         },
