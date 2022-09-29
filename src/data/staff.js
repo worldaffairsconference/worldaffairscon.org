@@ -120,7 +120,7 @@ const staff = {
       group: 'Senior Team',
       members: [
         {
-          src: 'avatar.jpg',
+          src: 'awoolsey2.jpg',
           name: 'Alex Woolsey',
           role: 'Assistant Head of Programs',
         },
@@ -195,7 +195,7 @@ const staff = {
           role: 'Plenary Head',
         },
         {
-          src: 'avatar.jpg',
+          src: 'sfarahmand.png',
           name: 'Shaya Farahmand',
           role: 'Plenary Head',
         },
