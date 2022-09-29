@@ -15,7 +15,7 @@ const Tile = (props) => {
     return (
       <Col md className="text-center">
         <Row className="mt-4 mb-4">
-          <Col sm={5}>
+          <Col sm={5} className="team-img-container">
             <Image
               src={images[data.src].default}
               alt={data.name}
@@ -89,23 +89,25 @@ const Ambassadors = CreateGroup(StaffData.ambassadors);
 
 const Team = () => {
   return (
-    <Container className="mt-4">
-      <Card>
-        <Card.Body>
-          <Card.Title as="h1" className="text-center">
-            WAC 2023 Team
-          </Card.Title>
-          <Tabs id="uncontrolled-tab-example" defaultActiveKey="team">
-            <Tab eventKey="team" title="Staff">
-              {Staff}
-            </Tab>
-            <Tab eventKey="ambassadors" title="Global Ambassadors">
-              {Ambassadors}
-            </Tab>
-          </Tabs>
-        </Card.Body>
-      </Card>
-    </Container>
+    <div id="team">
+      <Container className="mt-4">
+        <Card>
+          <Card.Body>
+            <Card.Title as="h1" className="text-center">
+              WAC 2023 Team
+            </Card.Title>
+            <Tabs id="uncontrolled-tab-example" defaultActiveKey="team">
+              <Tab eventKey="team" title="Staff">
+                {Staff}
+              </Tab>
+              <Tab eventKey="ambassadors" title="Global Ambassadors">
+                {Ambassadors}
+              </Tab>
+            </Tabs>
+          </Card.Body>
+        </Card>
+      </Container>
+    </div>
   );
 };
 export default Team;
