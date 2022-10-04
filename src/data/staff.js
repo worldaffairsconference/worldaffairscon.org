@@ -4,22 +4,22 @@ const staff = {
       group: 'Chairs',
       members: [
         {
-          src: 'avatar.jpg',
+          src: 'jding.jpg',
           name: 'Jefferson Ding',
           role: 'Conference Chair',
         },
         {
-          src: 'avatar.jpg',
+          src: 'rnanda.jpeg',
           name: 'Rahul Nanda',
           role: 'Conference Chair',
         },
         {
-          src: 'avatar.jpg',
+          src: 'slee.jpg',
           name: 'Seungmyoung Lee',
           role: 'Conference Chair',
         },
         {
-          src: 'avatar.jpg',
+          src: 'aismail.jpg',
           name: 'Amyna Ismail',
           role: 'Assistant Chair',
         },
@@ -39,17 +39,17 @@ const staff = {
           role: 'Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'jvoudouris.jpg',
           name: 'John Voudouris',
           role: 'Head of Plenaries',
         },
         {
-          src: 'avatar.jpg',
+          src: 'cli.jpg',
           name: 'Crystal Li',
           role: 'Head of Plenaries',
         },
         {
-          src: 'avatar.jpg',
+          src: 'axu.jpg',
           name: 'Alan Xu',
           role: 'Head of Keynotes & Panels',
         },
@@ -120,7 +120,7 @@ const staff = {
       group: 'Senior Team',
       members: [
         {
-          src: 'avatar.jpg',
+          src: 'awoolsey.jpg',
           name: 'Alex Woolsey',
           role: 'Assistant Head of Programs',
         },
@@ -145,7 +145,7 @@ const staff = {
           role: 'Assistant Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'amak.jpg',
           name: 'Adrian Mak',
           role: 'Assistant Head of Marketing',
         },
@@ -170,12 +170,12 @@ const staff = {
           role: 'Assistant Head of Design',
         },
         {
-          src: 'avatar.jpg',
+          src: 'ybhaloo.jpg',
           name: 'Yara Bhaloo',
           role: 'Assistant Head of Marketing & Design',
         },
         {
-          src: 'avatar.jpg',
+          src: 'lmoore.jpg',
           name: 'Leah Moore',
           role: 'Assistant Head of Communications & Registration',
         },
@@ -195,17 +195,17 @@ const staff = {
           role: 'Plenary Head',
         },
         {
-          src: 'avatar.jpg',
+          src: 'sfarahmand.png',
           name: 'Shaya Farahmand',
           role: 'Plenary Head',
         },
         {
-          src: 'avatar.jpg',
+          src: 'kma.jpg',
           name: 'Katherine Ma',
           role: 'Plenary Head',
         },
         {
-          src: 'avatar.jpg',
+          src: 'jzaki.jpg',
           name: 'Julia Zaki',
           role: 'Plenary Head',
         },
@@ -219,12 +219,12 @@ const staff = {
           name: 'Natalie Su',
           role: 'Plenary Head',
         },
-
         {
           src: 'avatar.jpg',
           name: 'Riley Skurka',
           role: 'Opening Panel',
         },
+        {},
         {
           src: 'avatar.jpg',
           name: 'Olivia Melchior',
