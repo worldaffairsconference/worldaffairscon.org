@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.a5b7ebc9.chunk.css",
-    "main.js": "/static/js/main.fe0d1b7c.chunk.js",
-    "main.js.map": "/static/js/main.fe0d1b7c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.b9b00acb.js",
-    "runtime-main.js.map": "/static/js/runtime-main.b9b00acb.js.map",
+    "main.js": "/static/js/main.f1900518.chunk.js",
+    "main.js.map": "/static/js/main.f1900518.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.03e28c7f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.03e28c7f.js.map",
     "static/css/2.b4bef187.chunk.css": "/static/css/2.b4bef187.chunk.css",
-    "static/js/2.57878591.chunk.js": "/static/js/2.57878591.chunk.js",
-    "static/js/2.57878591.chunk.js.map": "/static/js/2.57878591.chunk.js.map",
-    "static/js/3.68ca69d6.chunk.js": "/static/js/3.68ca69d6.chunk.js",
-    "static/js/3.68ca69d6.chunk.js.map": "/static/js/3.68ca69d6.chunk.js.map",
+    "static/js/2.6f9a0c29.chunk.js": "/static/js/2.6f9a0c29.chunk.js",
+    "static/js/2.6f9a0c29.chunk.js.map": "/static/js/2.6f9a0c29.chunk.js.map",
+    "static/js/3.06192541.chunk.js": "/static/js/3.06192541.chunk.js",
+    "static/js/3.06192541.chunk.js.map": "/static/js/3.06192541.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.b4bef187.chunk.css.map": "/static/css/2.b4bef187.chunk.css.map",
     "static/css/main.a5b7ebc9.chunk.css.map": "/static/css/main.a5b7ebc9.chunk.css.map",
-    "static/js/2.57878591.chunk.js.LICENSE.txt": "/static/js/2.57878591.chunk.js.LICENSE.txt",
+    "static/js/2.6f9a0c29.chunk.js.LICENSE.txt": "/static/js/2.6f9a0c29.chunk.js.LICENSE.txt",
     "static/media/000056560003.jpg": "/static/media/000056560003.f60d02f1.jpg",
     "static/media/000056560006.jpg": "/static/media/000056560006.93270b1f.jpg",
     "static/media/2020sprint1.29569d34.jpg": "/static/media/2020sprint1.29569d34.jpg",
@@ -72,6 +72,7 @@
     "static/media/jding.jpg": "/static/media/jding.adb64da7.jpg",
     "static/media/jding2.png": "/static/media/jding2.93fa527d.png",
     "static/media/jding3.jpg": "/static/media/jding3.3e932ab7.jpg",
+    "static/media/jding4.jpg": "/static/media/jding4.7e7998a0.jpg",
     "static/media/jfejer.jpeg": "/static/media/jfejer.81b05184.jpeg",
     "static/media/jgao.jpg": "/static/media/jgao.bd65d897.jpg",
     "static/media/jhammond.170a74d1.jpg": "/static/media/jhammond.170a74d1.jpg",
@@ -145,10 +146,10 @@
     "static/media/ycheong.jpg": "/static/media/ycheong.02bd9ae4.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b9b00acb.js",
+    "static/js/runtime-main.03e28c7f.js",
     "static/css/2.b4bef187.chunk.css",
-    "static/js/2.57878591.chunk.js",
+    "static/js/2.6f9a0c29.chunk.js",
     "static/css/main.a5b7ebc9.chunk.css",
-    "static/js/main.fe0d1b7c.chunk.js"
+    "static/js/main.f1900518.chunk.js"
   ]
 }
