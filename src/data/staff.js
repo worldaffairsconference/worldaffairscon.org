@@ -4,7 +4,7 @@ const staff = {
       group: 'Chairs',
       members: [
         {
-          src: 'jding.jpg',
+          src: 'jding4.jpg',
           name: 'Jefferson Ding',
           role: 'Conference Chair',
         },
