@@ -34,7 +34,7 @@ const staff = {
           role: 'Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'sschachter.jpg',
           name: 'Samantha Chachter',
           role: 'Head of Programs',
         },
@@ -54,8 +54,13 @@ const staff = {
           role: 'Head of Keynotes & Panels',
         },
         {
-          src: 'avatar.jpg',
+          src: 'iye.jpg',
           name: 'Ian Ye',
+          role: 'Head of Marketing',
+        },
+        {
+          src: 'aluo.jpg',
+          name: 'Angela Luo',
           role: 'Head of Marketing',
         },
         {
@@ -64,12 +69,12 @@ const staff = {
           role: 'Head of Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'fgohar.jpeg',
           name: 'Fatima Gohar',
           role: 'Head of Communications & Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'cberall.jpeg',
           name: 'Carson Berall',
           role: 'Head of Finance',
         },
@@ -79,12 +84,12 @@ const staff = {
           role: 'Head of Technology',
         },
         {
-          src: 'avatar.jpg',
+          src: 'rwu.jpeg',
           name: 'Ray Wu',
           role: 'Head of Productions',
         },
         {
-          src: 'avatar.jpg',
+          src: 'nalbornoz.jpeg',
           name: 'Nicholas Albornoz',
           role: 'Head of Design',
         },
@@ -125,17 +130,17 @@ const staff = {
           role: 'Assistant Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'dyang.jpeg',
           name: 'Duo Yang',
           role: 'Assistant Head of Programs',
         },
         {
-          src: 'avatar.jpg',
+          src: 'kliu.jpg',
           name: 'Karen Liu',
           role: 'Assistant Head of Plenaries',
         },
         {
-          src: 'avatar.jpg',
+          src: 'erosenberg.jpeg',
           name: 'Evan Rosenberg',
           role: 'Assistant Head of SPRINT',
         },
@@ -160,12 +165,12 @@ const staff = {
           role: 'Assistant Head of Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'dli.jpeg',
           name: 'Darwin Li',
           role: 'Assistant Head of Technology',
         },
         {
-          src: 'avatar.jpg',
+          src: 'bwang.jpg',
           name: 'Benedict Wang',
           role: 'Assistant Head of Design',
         },
@@ -185,7 +190,7 @@ const staff = {
           role: 'Plenary Head',
         },
         {
-          src: 'avatar.jpg',
+          src: 'dmoniz.jpg',
           name: 'Devlin Moniz',
           role: 'Plenary Head',
         },
@@ -268,7 +273,7 @@ const staff = {
         //   { src: 'jsmith.jpg', name: 'Jade Smith', role: 'Havergal College' },
         //   { src: 'avatar.jpg', name: ' ', role: ' ' },
       ],
-    },
+    }, 
   ],
 };
 export default staff;
