@@ -4,7 +4,7 @@ const staff = {
       group: 'Chairs',
       members: [
         {
-          src: 'jding4.jpg',
+          src: 'jding.jpg',
           name: 'Jefferson Ding',
           role: 'Conference Chair',
         },
@@ -79,7 +79,7 @@ const staff = {
           role: 'Head of Finance',
         },
         {
-          src: 'avatar.jpg',
+          src: 'rarya.jpg',
           name: 'Rohin Arya',
           role: 'Head of Technology',
         },
@@ -99,12 +99,12 @@ const staff = {
           role: 'Head of Facilities',
         },
         {
-          src: 'avatar.jpg',
-          name: 'Will	Morgensten',
+          src: 'wmorgenstern.jpg',
+          name: 'Will	Morgenstern',
           role: 'Head of Security',
         },
         {
-          src: 'avatar.jpg',
+          src: 'imccreadie.png',
           name: 'Ian McCreadie',
           role: 'Head of SPRINT',
         },
@@ -140,7 +140,7 @@ const staff = {
           role: 'Assistant Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'jyang.png',
           name: 'Jennifer Yang',
           role: 'Assistant Head of SPRINT',
         },
@@ -268,7 +268,7 @@ const staff = {
         //   { src: 'jsmith.jpg', name: 'Jade Smith', role: 'Havergal College' },
         //   { src: 'avatar.jpg', name: ' ', role: ' ' },
       ],
-    }, 
+    },
   ],
 };
 export default staff;
