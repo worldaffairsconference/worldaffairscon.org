@@ -4,7 +4,7 @@ const staff = {
       group: 'Chairs',
       members: [
         {
-          src: 'jding4.jpg',
+          src: 'jding.jpg',
           name: 'Jefferson Ding',
           role: 'Conference Chair',
         },
@@ -29,7 +29,7 @@ const staff = {
       group: 'Executives',
       members: [
         {
-          src: 'avatar.jpg',
+          src: 'cherman.jpg',
           name: 'Cole Herman',
           role: 'Head of Programs',
         },
@@ -64,8 +64,8 @@ const staff = {
           role: 'Head of Marketing',
         },
         {
-          src: 'avatar.jpg',
-          name: 'Aaran Ratnavel',
+          src: 'aratnavel.jpg',
+          name: 'Aaron Ratnavel',
           role: 'Head of Registration',
         },
         {
@@ -79,7 +79,7 @@ const staff = {
           role: 'Head of Finance',
         },
         {
-          src: 'avatar.jpg',
+          src: 'rarya.jpg',
           name: 'Rohin Arya',
           role: 'Head of Technology',
         },
@@ -94,22 +94,17 @@ const staff = {
           role: 'Head of Design',
         },
         {
-          src: 'avatar.jpg',
-          name: 'Cole Herman',
-          role: 'Head of Marketing & Design',
-        },
-        {
-          src: 'avatar.jpg',
+          src: 'jguilfoyle.jpg',
           name: 'Jack Guilfoyle',
           role: 'Head of Facilities',
         },
         {
-          src: 'avatar.jpg',
-          name: 'Will	Morgensten',
+          src: 'wmorgenstern.jpg',
+          name: 'Will	Morgenstern',
           role: 'Head of Security',
         },
         {
-          src: 'avatar.jpg',
+          src: 'imccreadie.png',
           name: 'Ian McCreadie',
           role: 'Head of SPRINT',
         },
@@ -145,7 +140,7 @@ const staff = {
           role: 'Assistant Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'jyang.png',
           name: 'Jennifer Yang',
           role: 'Assistant Head of SPRINT',
         },
