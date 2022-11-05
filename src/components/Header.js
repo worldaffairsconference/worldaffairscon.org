@@ -54,17 +54,13 @@ const Header = () => {
           </Nav.Link>
         </Nav>
         <Nav className="float-lg-right">
+          <Nav.Link href="https://reg.worldaffairscon.org" onClick={() => setExpand(false)}>
+            <Button variant="outline-danger">Register</Button>
+          </Nav.Link>
+        </Nav>
+        <Nav className="float-lg-right">
           <Nav.Link as={Link} to="/sprint" onClick={() => setExpand(false)}>
             <Button variant="outline-danger">SPRINT</Button>
-          </Nav.Link>
-          <Nav.Link
-            as="a"
-            href="https://hopin.com/events/world-affairs-conference-2022?ref=4f11049a4875"
-            onClick={() => setExpand(false)}
-          >
-            {/*
-						<Button variant="outline-primary">Register</Button>
-						*/}
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
