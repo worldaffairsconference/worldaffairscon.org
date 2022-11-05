@@ -5,17 +5,17 @@ const FAQ = [
       {
         question: 'What is WAC?',
         response:
-          'The World Affairs Conference (WAC) is Canada’s oldest annual student-run current affairs conference. Annually held at Upper Canada College in Toronto, Canada, the World Affairs Conference connects over 1000 students, with a common interest in current affairs, from across North America. A dedicated team of about 100 high school students from Upper Canada College, in coordination with Branksome Hall, voluntarily contribute their time for many months leading up to the day of WAC to ensure the success and positive experience for each delegate that attends the conference. This year, however, WAC will be held virtually due to the coronavirus pandemic. ',
+          'The World Affairs Conference (WAC) is Canada’s oldest annual student-run current affairs conference. Annually held at Upper Canada College in Toronto, Canada, the World Affairs Conference connects over 1000 students, with a common interest in current affairs, from across North America. A dedicated team of about 100 high school students from Upper Canada College, in coordination with Branksome Hall, voluntarily contribute their time for many months leading up to the day of WAC to ensure the success and positive experience for each delegate that attends the conference. For the first time in history, WAC is going hybrid, with the option to attend both in-person and virtually! ',
       },
       {
         question: 'When is WAC?',
         response:
-          'WAC typically spans two days; the Keynote Address on the first day and the Conference day on the second. This year, WAC will take place all in one jam-packed day on February 6! ',
+          'WAC typically spans two days; the Keynote Address on the first day and the Conference day on the second. This year, WAC will take place all in one jam-packed day on February 9th! ',
       },
       {
         question: 'Who can attend WAC?',
         response:
-          'If you have registered using the link that can be found in the top-right corner of this webpage, you can attend for free! ',
+          'If you are interested in attending WAC in-person, please contact a school teacher and ask them reach out to the team. If you would like to attend virtually, registration is open to all using the link in the navigation bar! ',
       },
     ],
   },
@@ -53,12 +53,12 @@ const FAQ = [
       {
         question: 'How much does registration cost?',
         response:
-          'Registration is free this year due to the online nature of the conference. ',
+          'Registration is free this year for online attendees! If you are attending in-person, please contact a teacher from your school. ',
       },
       {
         question: 'Can I register as an individual student?',
         response:
-          'Absolutely. In the past, when WAC was held in-person, registering your school would have made the process simpler, but this year you can sign up using the button in the navbar. ',
+          'Absolutely. In the past, when WAC was held in-person, registering your school would have made the process simpler, but this year you can sign up using the button in the navbar if you are attending virtually. ',
       },
     ],
   },
@@ -72,8 +72,7 @@ const FAQ = [
       },
       {
         question: 'When does the Keynote Address start?',
-        response:
-          'The Keynote Address starts at 12:00pm, as seen in the "Schedule" subpage. ',
+        response: 'Please check the "Schedule" subpage. ',
       },
       {
         question: 'Who can attend the Keynote Address?',

@@ -228,15 +228,15 @@ const Home = () => {
             <p className="text-center">WAC has reached over:</p>
             <div className="stats-container text-center">
               <div className="stats-group">
-                <span className="text-accent"> 4,000 students </span>
+                <span className="text-accent"> 10,000 students </span>
                 <FontAwesomeIcon icon={faUserGraduate} />
               </div>
               <div className="stats-group">
-                <span className="text-accent"> 25 countries</span>
+                <span className="text-accent"> 35 countries</span>
                 <FontAwesomeIcon icon={faGlobeAmericas} />
               </div>
               <div className="stats-group">
-                <span className="text-accent"> 65 schools</span>
+                <span className="text-accent"> 80 schools</span>
                 <FontAwesomeIcon icon={faSchool} />
               </div>
             </div>
