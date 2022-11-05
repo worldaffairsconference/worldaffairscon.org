@@ -54,8 +54,11 @@ const Header = () => {
           </Nav.Link>
         </Nav>
         <Nav className="float-lg-right">
-          <Nav.Link href="https://reg.worldaffairscon.org" onClick={() => setExpand(false)}>
-            <Button variant="outline-danger">Register</Button>
+          <Nav.Link
+            href="https://reg.worldaffairscon.org"
+            onClick={() => setExpand(false)}
+          >
+            <Button variant="outline-primary">Register</Button>
           </Nav.Link>
         </Nav>
         <Nav className="float-lg-right">
