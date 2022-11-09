@@ -215,6 +215,11 @@ const staff = {
           role: 'Plenary Head',
         },
         {
+          src: 'ldugasnishisato.jpeg',
+          name: 'Lincoln Dugas-Nishisato',
+          role: 'Assistant Plenary Head',
+        },
+        {
           src: 'avatar.jpg',
           name: 'Natalie Su',
           role: 'Plenary Head',
