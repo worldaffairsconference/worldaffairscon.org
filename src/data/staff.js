@@ -21,7 +21,7 @@ const staff = {
         {
           src: 'aismail.jpg',
           name: 'Amyna Ismail',
-          role: 'Assistant Chair',
+          role: 'Conference Chair',
         },
       ],
     },
