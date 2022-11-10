@@ -29,6 +29,11 @@ const staff = {
       group: 'Executives',
       members: [
         {
+          src: 'rarya.jpg',
+          name: 'Rohin Arya',
+          role: 'Head of Technology',
+        },
+        {
           src: 'cherman.jpg',
           name: 'Cole Herman',
           role: 'Head of Programs',
@@ -77,11 +82,6 @@ const staff = {
           src: 'cberall.jpeg',
           name: 'Carson Berall',
           role: 'Head of Finance',
-        },
-        {
-          src: 'rarya.jpg',
-          name: 'Rohin Arya',
-          role: 'Head of Technology',
         },
         {
           src: 'rwu.jpeg',
