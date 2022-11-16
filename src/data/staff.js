@@ -210,7 +210,7 @@ const staff = {
           role: 'Plenary Head',
         },
         {
-          src: 'avatar.jpg',
+          src: 'adeng.jpeg',
           name: 'Annie Deng',
           role: 'Plenary Head',
         },
