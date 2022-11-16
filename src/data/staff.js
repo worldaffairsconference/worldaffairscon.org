@@ -21,13 +21,18 @@ const staff = {
         {
           src: 'aismail.jpg',
           name: 'Amyna Ismail',
-          role: 'Assistant Chair',
+          role: 'Conference Chair',
         },
       ],
     },
     {
       group: 'Executives',
       members: [
+        {
+          src: 'rarya.jpg',
+          name: 'Rohin Arya',
+          role: 'Head of Technology',
+        },
         {
           src: 'cherman.jpg',
           name: 'Cole Herman',
@@ -77,11 +82,6 @@ const staff = {
           src: 'cberall.jpeg',
           name: 'Carson Berall',
           role: 'Head of Finance',
-        },
-        {
-          src: 'rarya.jpg',
-          name: 'Rohin Arya',
-          role: 'Head of Technology',
         },
         {
           src: 'rwu.jpeg',
