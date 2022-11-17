@@ -99,19 +99,19 @@ const staff = {
           role: 'Head of Facilities',
         },
         {
-          src: 'wmorgenstern.jpg',
-          name: 'Will	Morgenstern',
-          role: 'Head of Security',
-        },
-        {
           src: 'imccreadie.png',
           name: 'Ian McCreadie',
           role: 'Head of SPRINT',
         },
         {
-          src: 'avatar.jpg',
+          src: 'adeng.jpeg',
           name: 'Annie Deng',
           role: 'Head of SPRINT',
+        },
+        {
+          src: 'wmorgenstern.jpg',
+          name: 'Will	Morgenstern',
+          role: 'Head of Security',
         },
         {},
       ],
@@ -210,11 +210,6 @@ const staff = {
           role: 'Plenary Head',
         },
         {
-          src: 'adeng.jpeg',
-          name: 'Annie Deng',
-          role: 'Plenary Head',
-        },
-        {
           src: 'ldugasnishisato.jpeg',
           name: 'Lincoln Dugas-Nishisato',
           role: 'Assistant Plenary Head',
@@ -273,7 +268,7 @@ const staff = {
         //   { src: 'jsmith.jpg', name: 'Jade Smith', role: 'Havergal College' },
         //   { src: 'avatar.jpg', name: ' ', role: ' ' },
       ],
-    }, 
+    },
   ],
 };
 export default staff;
