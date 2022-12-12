@@ -170,6 +170,11 @@ const staff = {
           role: 'Assistant Head of Design',
         },
         {
+          src: 'rfarahmand.jpg',
+          name: 'Rayka Farahmand',
+          role: 'Assistant Head of Marketing',
+        },
+        {
           src: 'ybhaloo.jpg',
           name: 'Yara Bhaloo',
           role: 'Assistant Head of Marketing & Design',
@@ -187,11 +192,6 @@ const staff = {
         {
           src: 'dmoniz.jpg',
           name: 'Devlin Moniz',
-          role: 'Plenary Head',
-        },
-        {
-          src: 'avatar.jpg',
-          name: 'Ryan Chen',
           role: 'Plenary Head',
         },
         {
