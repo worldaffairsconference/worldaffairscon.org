@@ -24,28 +24,33 @@ const Plenaries = () => {
       <Container className="mt-4">
         <Card>
           <Card.Body className="text-center">
-            <h1>Plenaries: To be announced!</h1>
+            <h1>Plenary Topics</h1>
           </Card.Body>
         </Card>
-        {/* <CardDeck className="mt-2">
+        <CardDeck className="mt-2">
           <PlenariesCard
-            href="plenary/education"
+            href="plenary/tech"
             image={Education}
             title="Advancing Education: New Opportunities, New Possibilities"
           />
           <PlenariesCard
-            href="/plenary/sustainability"
+            href="/plenary/medical"
             image={Sustainability}
             title="Rethinking Sustainability: Innovations for the Environment"
           />
         </CardDeck>
         <CardDeck className="mt-2">
           <PlenariesCard
-            href="/plenary/technology"
+            href="/plenary/politics"
             image={Tech}
             title="Re-Searching Into our Digital Future: A Token for Tomorrow"
           />
-        </CardDeck> */}
+          <PlenariesCard
+            href="/plenary/business"
+            image={Tech}
+            title="Re-Searching Into our Digital Future: A Token for Tomorrow"
+          />
+        </CardDeck>
       </Container>
     </div>
   );

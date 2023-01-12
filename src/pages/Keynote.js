@@ -5,68 +5,100 @@ import ESnowden from '../img/speakers/prev/esnowden.jpg';
 import WAC from '../img/general/wac_logo.svg';
 import KeynoteAddresses from '../components/KeynoteAddresses';
 
+import CKHoffler from '../img/speakers/curr/CKHoffler.jpg';
+import MLKing from '../img/speakers/curr/MLKing.jpeg';
+
 const Keynote = () => {
   return (
     <Container className="mt-4" id="keynote">
       <KeynoteAddresses
-        title="WAC 2023 Speakers are to be determined"
-        speaker=""
-        text={<p>Check back later to find out once they are announced.</p>}
-      />
-      {/* <KeynoteAddresses
-        title="WAC 2022 Opening Keynote Speaker:"
-        speaker="Professor Scott Galloway"
-        image={SGalloway}
-        text={
-          <>
-            <br />
-            Scott Galloway is Professor of Marketing at NYU&quot;s Stern School
-            of Business and a serial entrepreneur. In 2012, he was named one of
-            the world’s best business professors by Poets & Quants. He has
-            founded nine companies, including Prophet, Red Envelope, L2, and
-            Section4. He is the New York Times bestselling author of The Four,
-            The Algebra of Happiness, and most recently, Post Corona: From
-            Crisis to Opportunity. He has served on the boards of directors of
-            The New York Times Company, Urban Outfitters, and Berkeley&apos;s
-            Haas School of Business. His Prof G and Pivot podcasts, No Mercy /
-            No Malice blog, and Prof G YouTube channel reach millions. In 2020,
-            Adweek named Pivot Business &quot;Podcast of the Year.&quot;
-            <br />
-            <br />
-            Galloway attended the University of California, Los Angeles, where
-            he earned a Bachelor of Arts degree in Economics in 1987, and the UC
-            Berkeley Haas School of Business, graduating with an MBA in 1992. In
-            2018, Recode and the Vox Media Podcast Network launched Pivot, a
-            weekly news commentary podcast co-hosted by Kara Swisher and
-            Galloway. In February 2020, Galloway launched The Prof G Show, a
-            weekly podcast answering listener questions on business, money and
-            tech. In 2021, CNN announced that Galloway will be a host on its
-            CNN+ streaming platform.
-            <br />
-          </>
-        }
-      /> */}
-      {/* <KeynoteAddresses
         title="WAC 2022 Closing Keynote Speaker:"
-        speaker="The Honourable Ahmed Hussen, Minister of Housing and Diversity and Inclusion"
-        image={AHussen}
+        speaker="Martin Luther King III"
+        image={MLKing}
         text={
           <>
-						<br />
-						A passionate advocate for his community, the Honourable Ahmed Hussen has been proudly representing the residents of York South—Weston since 2015.
-						<br />
-						<br />
-						Before he started in politics, Minister Hussen worked at the grassroots with neighbours and allies to create “local solutions to local problems.” This would lead to the Minister helping to secure $500 million to revitalise Toronto’s, Regent Park in 2006.
-						<br />
-						<br />
-						Minister Hussen is a firm believer that diversity is a fact and inclusion is a choice. During his time as the National President for the Canadian Somali Congress, he worked with national and regional authorities to advocate on important issues to Canadians of Somali heritage, which helped foster better civic engagement and integration.     
-						<br />
-						<br />
-						Having lived in social housing himself, Canada’s first dedicated Housing minister understands the positive impact of having an affordable, reliable place to live. In his new role, Minister Hussen is focused on bringing home ownership back within reach while ensuring that everyone in Canada has a safe and affordable place to call home.
-						<br />
+            With the past two years’ astounding display of social injustice,
+            violence, and confusion around the pandemic, perhaps at no other
+            time in recent history has our world needed the clear thinking and
+            solutions-oriented voice of civil rights advocate and global
+            humanitarian Martin Luther King III.
+            <br />
+            <br />
+            From speaking to thousands at the August 2020 March On Washington to
+            his dozens of arrests during peaceful protests, Mr. King is
+            shepherding the healing of our nation and the world. He is
+            connecting the important lessons of the past with the critical needs
+            of our future and motivating a new generation of authentic leaders,
+            while empowering others to use their voices to bring about change as
+            well.
+            <br />
+            <br />
+            As the oldest son of the late Dr. Martin Luther King Jr. and Mrs.
+            Coretta Scott King, Martin Luther King III is a thought leader on
+            the world stage, a peace maker, and a negotiator on some of today’s
+            most critical national and international platforms for social
+            change. Amplifying the work of his father, Mr. King and his wife
+            Arndrea have devoted their lives to promoting global human rights
+            and eradicating racism, violence, and poverty, earning a reputation
+            as a respected international statesman and one of the world’s most
+            passionate advocates for the poor and oppressed.
+            <br />
+            <br />
+            Mr. King speaks on a variety of topics such as the importance of
+            continuing the struggle for civil rights and taking a stand against
+            adversity, emphasizing the importance of individual action in making
+            his father’s dream a reality and challenging us all to do better.
+            <br />
+            <br />
+            More recently, Martin and Arndrea launched an effort to fund Black
+            and Brown organizers across the country. The first round of funding
+            went to 40 organizations whose missions are to mobilize voters in
+            key states. By 2024, the Drum Major Coalition will invest $100
+            million in grassroots organizations from coast to coast.
+            <br />
+            <br />
+            Martin regularly appears on CNN, MSNBC, NBC News, and ABC News. His
+            writings have been published in The Washington Post, The New York
+            Times, on CNN.com, and other major news outlets.
           </>
         }
-      /> */}
+      />
+      <KeynoteAddresses
+        title="WAC 2022 Opening Keynote Speaker:"
+        speaker='Tricia "CK" Hoffler'
+        image={CKHoffler}
+        text={
+          <>
+            <br />
+            Tricia “CK” Hoffler is the CEO of The CK Hoffler Firm, an
+            Atlanta-based law firm that specializes in representing plaintiffs
+            in trucking accidents, medical malpractice, wrongful death,
+            catastrophic personal injury, civil rights litigation, commercial
+            litigation, employment discrimination, opioid litigation, global
+            commercial transactions, and “Name, Image, and Likeness (NIL)”
+            representation. She is licensed in Georgia, Florida, Virginia, the
+            District of Columbia, and Pennsylvania. To date, Ms. Hoffler has
+            tried and/or settled cases on behalf of her clients worth over $850
+            million. Ms. Hoffler has also lectured extensively nationally and
+            internationally on trial strategies and techniques, personal injury,
+            medical negligence, First Amendment matters, employment
+            discrimination, opioid litigation, and commercial matters. Ms.
+            Hoffler brings a diverse set of skills and talents to the practice
+            of law. She speaks French fluently and is proficient in Spanish and
+            Portuguese.
+            <br />
+            <br />
+            Ms. Hoffler was previously a partner at Edmond, Lindsay & Hoffler,
+            LLP, and at Gary, Williams et al., in Florida. While a partner at
+            Gary Williams, she led the commercial and international litigation
+            practice for 12 years. She is also counsel to civil rights icon The
+            Reverend Jesse Jackson and has represented him, and the Rainbow Push
+            and related organizations for the past 35 years
+            <br />
+          </>
+        }
+      />
+
       <CardDeck className="mt-4 my-card-deck">
         <KeynoteAddresses
           deck
