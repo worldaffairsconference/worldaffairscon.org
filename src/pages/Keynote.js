@@ -12,7 +12,7 @@ const Keynote = () => {
   return (
     <Container className="mt-4" id="keynote">
       <KeynoteAddresses
-        title="WAC 2022 Closing Keynote Speaker:"
+        title="WAC 2023 Closing Keynote Speaker:"
         speaker="Martin Luther King III"
         image={MLKing}
         text={
@@ -63,8 +63,9 @@ const Keynote = () => {
           </>
         }
       />
+      {/*
       <KeynoteAddresses
-        title="WAC 2022 Opening Keynote Speaker:"
+        title="WAC 2023 Opening Keynote Speaker:"
         speaker='Tricia "CK" Hoffler'
         image={CKHoffler}
         text={
@@ -98,7 +99,7 @@ const Keynote = () => {
           </>
         }
       />
-
+			*/}
       <CardDeck className="mt-4 my-card-deck">
         <KeynoteAddresses
           deck

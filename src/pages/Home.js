@@ -254,13 +254,13 @@ const Home = () => {
         </Card>
         <Card className="mt-3 mx-3">
           <Card.Body>
-            <h2 className="text-center">WAC 2022 Teaser</h2>
+            <h2 className="text-center">WAC 2023 Promotional Video</h2>
             <Container>
               <Iframe
                 width="100%"
                 height="465"
                 styles={{ border: '1px solid black', margin: 'auto' }}
-                src="https://www.youtube.com/embed/FmRyfd9fpVs"
+                src="https://www.youtube.com/embed/UfDBOA47oN4"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               />
