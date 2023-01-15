@@ -124,7 +124,7 @@ const Schedule = [
     events: [
       {
         event: 'Keynote Address',
-        speaker: '',
+        speaker: 'Martin Luther King III',
         timeOrRecording: '2:15 PM - 3:15 PM',
       },
       {
