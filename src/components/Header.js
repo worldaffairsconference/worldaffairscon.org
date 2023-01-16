@@ -55,7 +55,7 @@ const Header = () => {
         </Nav>
         <Nav className="float-lg-right">
           <Nav.Link
-            href="https://reg.worldaffairscon.org"
+            href="https://hopin.com/events/world-affairs-conference-2023-hybrid-thinking"
             onClick={() => setExpand(false)}
           >
             <Button variant="outline-primary">Register</Button>

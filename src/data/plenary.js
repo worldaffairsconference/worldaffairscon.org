@@ -1,6 +1,6 @@
 const PlenaryJSON = [
   {
-    path: '/plenary/education',
+    path: '/plenary/tech',
     component: 'Plenary',
     props: {
       title: 'Impact Through Education: New Opportunities, New Possibilities',
@@ -20,7 +20,7 @@ const PlenaryJSON = [
     },
   },
   {
-    path: '/plenary/technology',
+    path: '/plenary/medical',
     component: 'Plenary',
     props: {
       title: 'Re-Searching Into our Digital Future: A Token For Tomorrow',
@@ -40,7 +40,27 @@ const PlenaryJSON = [
     },
   },
   {
-    path: '/plenary/sustainability',
+    path: '/plenary/business',
+    component: 'Plenary',
+    props: {
+      title: 'Rethinking Sustainability: Innovations for the Environment',
+      text: 'Since the 20th century, increased human activity has created a noticeable problem for the environment, effectively demolishing the natural world and threatening ecosystems. Through industrialization, overpopulation, deforestation, and overconsumption, overt changes have affected the environment, triggering climate change. Throughout the world, water has become undrinkable, burning fossil fuels has diminished air quality, and greenhouse gasses have concealed our atmosphere. Although human activity created these problems, can it be used to solve them? From recycling and waste management to global emissions monitoring using satellites, this plenary investigates how technology and innovation have yielded creative solutions to help redefine our methods to sustainability.',
+      speakers: [
+        {
+          name: 'Tom Sazky',
+          text: 'Tom Szaky is the CEO and founder of TerraCycle, a private, US-based business headquartered in Trenton, New Jersey that turns non-recyclable pre-consumer and post-consumer waste into raw material to be used in new products. Szaky\'s parents are medical doctors, and Szaky is an only child. At age four, Szaky left his home in Hungary after the Chernobyl disaster. In 1987, Szaky immigrated to Canada, where he grew up in Toronto. His company TeraCycle has served over 200M recylers, recycled over 7B of waste and donated $45M to charity. TerraCycle is Eliminating the Idea of Waste by recycling the "non-recyclable."',
+          img: '', // Add image
+        },
+        {
+          name: 'Jean-Francois Gauthier',
+          text: 'GHGSat is the global leader in high-resolution remote-sensing of greenhouse gas from space – an approach they pioneered. They provide unique emissions data and intelligence to businesses, governments, regulators, and investors worldwide in order to optimize their performance and uphold environmental standards.\nGHGSat is a  cutting-edge space and data technology company accelerating the decarbonization of our planet. Through their emission monitoring solutions and analytics tools, they provide actionable metrics and insights that empower the economies of tomorrow.\nWith evolving climate dynamics, GHGSat shares their expertise, and their compelling perspective for the future of humanity with the global community.',
+          img: '', // Add image
+        },
+      ],
+    },
+  },
+  {
+    path: '/plenary/politics',
     component: 'Plenary',
     props: {
       title: 'Rethinking Sustainability: Innovations for the Environment',

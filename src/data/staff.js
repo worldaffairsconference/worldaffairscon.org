@@ -40,7 +40,7 @@ const staff = {
         },
         {
           src: 'sschachter.jpg',
-          name: 'Samantha Chachter',
+          name: 'Samantha Schachter',
           role: 'Head of Programs',
         },
         {
