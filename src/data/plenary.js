@@ -20,7 +20,7 @@ const PlenaryJSON = [
     },
   },
   {
-    path: '/plenary/medical',
+    path: '/plenary/health',
     component: 'Plenary',
     props: {
       title: 'Re-Searching Into our Digital Future: A Token For Tomorrow',
@@ -40,7 +40,7 @@ const PlenaryJSON = [
     },
   },
   {
-    path: '/plenary/business',
+    path: '/plenary/politics',
     component: 'Plenary',
     props: {
       title: 'Rethinking Sustainability: Innovations for the Environment',
@@ -60,7 +60,7 @@ const PlenaryJSON = [
     },
   },
   {
-    path: '/plenary/politics',
+    path: '/plenary/society',
     component: 'Plenary',
     props: {
       title: 'Rethinking Sustainability: Innovations for the Environment',
