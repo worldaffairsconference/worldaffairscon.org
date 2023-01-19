@@ -4,6 +4,7 @@ import { Container, Card } from 'react-bootstrap';
 
 import Tech from '../img/plen/tech.jpg';
 import Equality from '../img/plen/equality.jpg';
+import Sustainability from '../img/plen/sustainability.jpg';
 import Media from '../img/plen/media.png';
 import Refugee from '../img/plen/refugee.jpg';
 import Health from '../img/plen/health.jpg';
@@ -69,6 +70,19 @@ const Plenaries = () => {
                 </h3>
               </div>
             </Link>
+            <Link className="plenarycard" to="/plenary/sustainability">
+              <div
+                className="plenarycard__background"
+                style={{ backgroundImage: `url(${Sustainability})` }}
+              ></div>
+              <div className="plenarycard__content">
+                <p className="plenarycard__category">Society</p>
+                <h3 className="plenarycard__heading">
+                  The Future of Sustainability: Knowledge and Skills to Thrive
+                  and Survive
+                </h3>
+              </div>
+            </Link>
             <Link className="plenarycard" to="/plenary/society">
               <div
                 className="plenarycard__background"
@@ -77,8 +91,20 @@ const Plenaries = () => {
               <div className="plenarycard__content">
                 <p className="plenarycard__category">Society</p>
                 <h3 className="plenarycard__heading">
-                  Our Global Society: Service and Visibility, Challenges and
-                  Revelations
+                  Serving the Global Community: Forward-Thinking
+                </h3>
+              </div>
+            </Link>
+            <Link className="plenarycard" to="/plenary/dei">
+              <div
+                className="plenarycard__background"
+                style={{ backgroundImage: `url(${Equality})` }}
+              ></div>
+              <div className="plenarycard__content">
+                <p className="plenarycard__category">Society</p>
+                <h3 className="plenarycard__heading">
+                  Gender, Age, and Race Visibility in the Public Eye: Challenges
+                  and Revelations
                 </h3>
               </div>
             </Link>
