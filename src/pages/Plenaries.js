@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Card, CardDeck } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 
-import Education from '../img/plen/education.jpg';
 import Tech from '../img/plen/tech.jpg';
-import Sustainability from '../img/plen/sustainability.jpg';
 import Equality from '../img/plen/equality.jpg';
+import Sustainability from '../img/plen/sustainability.jpg';
 import Media from '../img/plen/media.png';
 import Refugee from '../img/plen/refugee.jpg';
 import Health from '../img/plen/health.jpg';
@@ -29,60 +28,88 @@ const Plenaries = () => {
       <Container className="mt-4">
         <Card>
           <Card.Body className="text-center">
-            <h1>Plenary Topics</h1>
-            <h3>To be announced soon!</h3>
+            <h1>Plenary Themes</h1>
           </Card.Body>
         </Card>
-        {/*}
         <Card className="mt-3 hero-section">
           <div className="plenarycard-grid">
-            <a className="plenarycard" href="#">
+            <Link className="plenarycard" to="/plenary/health">
               <div
                 className="plenarycard__background"
-                style={{ backgroundImage: `url(${Education})` }}
-                // style="background-image: url(https://images.unsplash.com/photo-1557177324-56c542165309?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80)"
+                style={{ backgroundImage: `url(${Health})` }}
               ></div>
               <div className="plenarycard__content">
-                <p className="plenarycard__category">Category</p>
-                <h3 className="plenarycard__heading">Example Card Heading</h3>
+                <p className="plenarycard__category">Global Health</p>
+                <h3 className="plenarycard__heading">
+                  From mRNA to Personalized Medicine: The Future of
+                  Biotechnology and Healthcare
+                </h3>
               </div>
-            </a>
-            <a className="plenarycard" href="#">
+            </Link>
+            <Link className="plenarycard" to="/plenary/politics">
+              <div
+                className="plenarycard__background"
+                style={{ backgroundImage: `url(${Media})` }}
+              ></div>
+              <div className="plenarycard__content">
+                <p className="plenarycard__category">Politics</p>
+                <h3 className="plenarycard__heading">
+                  Politics, Media and Society: A Love-Hate Relationship
+                </h3>
+              </div>
+            </Link>
+            <Link className="plenarycard" to="/plenary/tech">
               <div
                 className="plenarycard__background"
                 style={{ backgroundImage: `url(${Tech})` }}
-                // style="background-image: url(https://images.unsplash.com/photo-1557187666-4fd70cf76254?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"
               ></div>
               <div className="plenarycard__content">
-                <p className="plenarycard__category">Category</p>
-                <h3 className="plenarycard__heading">Example Card Heading</h3>
+                <p className="plenarycard__category">Tech</p>
+                <h3 className="plenarycard__heading">
+                  The Metaverse and Beyond: Insight Into the New Information Age
+                </h3>
               </div>
-            </a>
-            <a className="plenarycard" href="#">
+            </Link>
+            <Link className="plenarycard" to="/plenary/sustainability">
               <div
                 className="plenarycard__background"
                 style={{ backgroundImage: `url(${Sustainability})` }}
-                // style="background-image: url(https://images.unsplash.com/photo-1556680262-9990363a3e6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"
               ></div>
               <div className="plenarycard__content">
-                <p className="plenarycard__category">Category</p>
-                <h3 className="plenarycard__heading">Example Card Heading</h3>
+                <p className="plenarycard__category">Society</p>
+                <h3 className="plenarycard__heading">
+                  The Future of Sustainability: Knowledge and Skills to Thrive
+                  and Survive
+                </h3>
               </div>
-            </a>
-            <a className="plenarycard" href="#">
+            </Link>
+            <Link className="plenarycard" to="/plenary/society">
+              <div
+                className="plenarycard__background"
+                style={{ backgroundImage: `url(${Refugee})` }}
+              ></div>
+              <div className="plenarycard__content">
+                <p className="plenarycard__category">Society</p>
+                <h3 className="plenarycard__heading">
+                  Serving the Global Community: Forward-Thinking
+                </h3>
+              </div>
+            </Link>
+            <Link className="plenarycard" to="/plenary/dei">
               <div
                 className="plenarycard__background"
                 style={{ backgroundImage: `url(${Equality})` }}
-                // style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"
               ></div>
               <div className="plenarycard__content">
-                <p className="plenarycard__category">Category</p>
-                <h3 className="plenarycard__heading">Example Card Heading</h3>
+                <p className="plenarycard__category">Society</p>
+                <h3 className="plenarycard__heading">
+                  Gender, Age, and Race Visibility in the Public Eye: Challenges
+                  and Revelations
+                </h3>
               </div>
-            </a>
+            </Link>
           </div>
         </Card>
-        */}
       </Container>
     </div>
   );

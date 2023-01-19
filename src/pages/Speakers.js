@@ -29,35 +29,27 @@ const Speakers = () => {
           </Card.Title>
           <hr />
           <Container>
-            {
-              PastSpeakersData.map((data, index) => {
-                return (
-                  <Row key={index}>
-                    {
-                      data[0] && (
-                        <Col md={4}>
-                          <Speaker {...data[0]} />
-                        </Col>
-                      )
-                    }
-                    {
-                      data[1] && (
-                        <Col md={4}>
-                          <Speaker {...data[1]} />
-                        </Col>
-                      )
-                    }
-                    {
-                      data[2] && (
-                        <Col md={4}>
-                          <Speaker {...data[2]} />
-                        </Col>
-                      )
-                    }
-                  </Row>
-                )
-              })
-            }
+            {PastSpeakersData.map((data, index) => {
+              return (
+                <Row key={index}>
+                  {data[0] && (
+                    <Col md={4}>
+                      <Speaker {...data[0]} />
+                    </Col>
+                  )}
+                  {data[1] && (
+                    <Col md={4}>
+                      <Speaker {...data[1]} />
+                    </Col>
+                  )}
+                  {data[2] && (
+                    <Col md={4}>
+                      <Speaker {...data[2]} />
+                    </Col>
+                  )}
+                </Row>
+              );
+            })}
           </Container>
         </Card.Body>
       </Card>

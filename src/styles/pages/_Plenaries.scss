@@ -49,7 +49,7 @@
 
   @media (min-width: 960px) {
     .plenarycard-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -71,7 +71,7 @@
     background-position: center;
     border-radius: var(--spacing-l);
     bottom: 0;
-    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    filter: brightness(0.65) saturate(1.2) contrast(0.85);
     left: 0;
     position: absolute;
     right: 0;
@@ -105,9 +105,9 @@
 
   .plenarycard__heading {
     color: var(--text-lighter);
-    font-size: 1.9rem;
+    font-size: 1.3rem;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    line-height: 1.4;
-    word-spacing: 100vw;
+    line-height: 1.5;
+
   }
 }

@@ -215,7 +215,7 @@ const staff = {
           role: 'Assistant Plenary Head',
         },
         {
-          src: 'avatar.jpg',
+          src: 'nsu.jpeg',
           name: 'Natalie Su',
           role: 'Plenary Head',
         },
