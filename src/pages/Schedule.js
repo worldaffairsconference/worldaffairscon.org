@@ -80,7 +80,9 @@ const Schedule = () => {
       })
       .catch((err) => {
         setValid(false);
-        setError('Access Denied. Please contact us for further information.');
+        setError(
+          'Access Denied. Please contact us for further information.' + err
+        );
       });
   };
 

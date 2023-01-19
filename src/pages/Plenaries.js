@@ -9,19 +9,6 @@ import Media from '../img/plen/media.png';
 import Refugee from '../img/plen/refugee.jpg';
 import Health from '../img/plen/health.jpg';
 
-const PlenariesCard = (props) => {
-  const data = props;
-  return (
-    <Card>
-      <Link to={data.href}>
-        <Card.Img className="plen-image" src={data.image} alt="card image" />
-        <Card.ImgOverlay className="text-center text-white p-4">
-          <Card.Title as="h3">{data.title}</Card.Title>
-        </Card.ImgOverlay>
-      </Link>
-    </Card>
-  );
-};
 const Plenaries = () => {
   return (
     <div id="plenaries">

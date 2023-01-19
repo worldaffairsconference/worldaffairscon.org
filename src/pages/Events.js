@@ -1,9 +1,5 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
-import KeynoteAddresses from '../components/KeynoteAddresses';
-
-import FQuinn from '../img/speakers/curr/FQuinn.jpg';
-import GThunberg from '../img/speakers/curr/GThunberg.jpg';
 
 const Events = () => {
   return (

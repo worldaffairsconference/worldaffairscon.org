@@ -5,7 +5,7 @@ import ESnowden from '../img/speakers/prev/esnowden.jpg';
 import WAC from '../img/general/wac_logo.svg';
 import KeynoteAddresses from '../components/KeynoteAddresses';
 
-import CKHoffler from '../img/speakers/curr/CKHoffler.jpg';
+// import CKHoffler from '../img/speakers/curr/CKHoffler.jpg';
 import MLKing from '../img/speakers/curr/MLKing.jpeg';
 
 const Keynote = () => {

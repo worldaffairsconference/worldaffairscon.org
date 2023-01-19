@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import maintenanceMode from './config';
 import PlenaryJSON from './data/plenary';
 import Keynote from './pages/Keynote';
