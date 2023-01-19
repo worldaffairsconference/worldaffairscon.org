@@ -1,26 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.676334bc.chunk.css",
-    "main.js": "/static/js/main.b23fbffd.chunk.js",
+    "main.css": "/static/css/main.e1a88602.chunk.css",
+    "main.js": "/static/js/main.67569b6a.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.508d7d53.js",
     "static/css/2.e37b89c0.chunk.css": "/static/css/2.e37b89c0.chunk.css",
-    "static/js/2.9a63ee4f.chunk.js": "/static/js/2.9a63ee4f.chunk.js",
+    "static/js/2.c4aac640.chunk.js": "/static/js/2.c4aac640.chunk.js",
     "static/js/3.42f48863.chunk.js": "/static/js/3.42f48863.chunk.js",
     "index.html": "/index.html",
-    "static/js/2.9a63ee4f.chunk.js.LICENSE.txt": "/static/js/2.9a63ee4f.chunk.js.LICENSE.txt",
+    "static/js/2.c4aac640.chunk.js.LICENSE.txt": "/static/js/2.c4aac640.chunk.js.LICENSE.txt",
     "static/media/000056560003.jpg": "/static/media/000056560003.f60d02f1.jpg",
     "static/media/000056560006.jpg": "/static/media/000056560006.93270b1f.jpg",
     "static/media/2020sprint1.29569d34.jpg": "/static/media/2020sprint1.29569d34.jpg",
     "static/media/2020sprint2.cd8e359e.jpg": "/static/media/2020sprint2.cd8e359e.jpg",
     "static/media/main.scss": "/static/media/stars.a73d2dc9.png",
-    "static/media/CKHoffler.df2ac123.jpg": "/static/media/CKHoffler.df2ac123.jpg",
     "static/media/DSC09590.JPG": "/static/media/DSC09590.267f79c1.JPG",
     "static/media/DSC09639.JPG": "/static/media/DSC09639.6a8cb8ce.JPG",
     "static/media/DSC09671.JPG": "/static/media/DSC09671.10c201ad.JPG",
     "static/media/DSC09679.JPG": "/static/media/DSC09679.fb964dce.JPG",
     "static/media/DSC09693.JPG": "/static/media/DSC09693.70a3f2a2.JPG",
-    "static/media/FQuinn.f91f3647.jpg": "/static/media/FQuinn.f91f3647.jpg",
-    "static/media/GThunberg.821169c9.jpg": "/static/media/GThunberg.821169c9.jpg",
     "static/media/IMG_2503.JPG": "/static/media/IMG_2503.4f528ef6.JPG",
     "static/media/IMG_2514.JPG": "/static/media/IMG_2514.aca59492.JPG",
     "static/media/IMG_2780.JPG": "/static/media/IMG_2780.385acd2b.JPG",
@@ -63,7 +60,6 @@
     "static/media/dowen.a5c333d2.jpg": "/static/media/dowen.a5c333d2.jpg",
     "static/media/dsharma.jpg": "/static/media/dsharma.2fd31726.jpg",
     "static/media/dyang.jpeg": "/static/media/dyang.d9cce253.jpeg",
-    "static/media/education.977f9211.jpg": "/static/media/education.977f9211.jpg",
     "static/media/elau.9c980c04.jpg": "/static/media/elau.9c980c04.jpg",
     "static/media/equality.98c8fff7.jpg": "/static/media/equality.98c8fff7.jpg",
     "static/media/erosenberg.jpeg": "/static/media/erosenberg.a6392e86.jpeg",
@@ -129,6 +125,7 @@
     "static/media/nbardai.a8b415e4.jpg": "/static/media/nbardai.a8b415e4.jpg",
     "static/media/nfinney.png": "/static/media/nfinney.60a07144.png",
     "static/media/nknoth.jpg": "/static/media/nknoth.34159db5.jpg",
+    "static/media/nsu.jpeg": "/static/media/nsu.463fd676.jpeg",
     "static/media/omaxwell.jpg": "/static/media/omaxwell.78d750c8.jpg",
     "static/media/past_event_1.JPG": "/static/media/past_event_1.edceaba7.JPG",
     "static/media/past_event_2.JPG": "/static/media/past_event_2.d605e28f.JPG",
@@ -168,8 +165,8 @@
   "entrypoints": [
     "static/js/runtime-main.508d7d53.js",
     "static/css/2.e37b89c0.chunk.css",
-    "static/js/2.9a63ee4f.chunk.js",
-    "static/css/main.676334bc.chunk.css",
-    "static/js/main.b23fbffd.chunk.js"
+    "static/js/2.c4aac640.chunk.js",
+    "static/css/main.e1a88602.chunk.css",
+    "static/js/main.67569b6a.chunk.js"
   ]
 }
