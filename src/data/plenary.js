@@ -4,7 +4,7 @@ import ABatra from '../img/speakers/curr/ABatra.jpeg';
 import RSingh from '../img/speakers/curr/RSingh.jpeg';
 import BMcinerney from '../img/speakers/curr/BMcinerney.jpeg';
 import KTattum from '../img/speakers/curr/KTattum.jpeg';
-import FQuinn from '../img/speakers/curr/FQuinn.jpg';
+import FQuinn from '../img/speakers/curr/FQuinn.jpeg';
 import PHanda from '../img/speakers/curr/PHanda.jpg';
 import JToscano from '../img/speakers/curr/JToscano.jpeg';
 import TEMP from '../img/speakers/curr/TEMP.jpg';
@@ -102,7 +102,7 @@ const PlenaryJSON = [
         {
           name: 'Pooja Handa',
           img: PHanda,
-          text: 'Pooja Handa, a face you may recognize from torontos #1 morning show, CP24 breakfast. As a natural born storyteller and entertainer, she has spread her talents across various media platforms. As a new mom, she continues to share her personal experiences and never fails to engage her viewers',
+          text: "Pooja Handa, a face you may recognize from Toronto's #1 morning show, CP24 Breakfast. As a natural born storyteller and entertainer, she has spread her talents across various media platforms. As a new mom, she continues to share her personal experiences and never fails to engage her viewers.",
         },
       ],
     },
