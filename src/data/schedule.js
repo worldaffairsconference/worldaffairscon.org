@@ -24,13 +24,13 @@ const Schedule = [
       },
       {
         event: 'Opening Keynote & QnA Session',
-        speaker: '',
-        timeOrRecording: '9:40 AM - 10:20 AM',
+        speaker: 'C.K. Hoffler',
+        timeOrRecording: '9:40 AM - 10:30 AM',
       },
       {
         event: 'Programs Team Remarks',
-        speaker: '',
-        timeOrRecording: '10:20 AM - 10:25 AM',
+        speaker: 'C. Hermam & S. Schacter',
+        timeOrRecording: '10:30 AM - 10:35 AM',
       },
     ],
   },
@@ -39,18 +39,18 @@ const Schedule = [
     events: [
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '10:30 AM - 11:05 AM',
+        speaker: 'Matthew Ball',
+        timeOrRecording: '10:40 AM - 11:20 AM',
       },
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '10:30 AM - 11:05 AM',
+        speaker: 'Ismael Loutfi',
+        timeOrRecording: '10:40 AM - 11:20 AM',
       },
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '10:30 AM - 11:05 AM',
+        speaker: 'Leslie Madden',
+        timeOrRecording: '10:40 AM - 11:20 AM',
       },
     ],
   },
@@ -59,18 +59,18 @@ const Schedule = [
     events: [
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '11:10 AM - 11:45 PM',
+        speaker: 'Rahul Singh',
+        timeOrRecording: '11:35 AM - 12:15 PM',
       },
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '11:10 AM - 11:45 PM',
+        speaker: 'Barry McInerney',
+        timeOrRecording: '11:35 AM - 12:15 PM',
       },
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '11:10 AM - 11:45 PM',
+        speaker: 'Katherine Tattum',
+        timeOrRecording: '11:35 AM - 12:15 PM',
       },
     ],
   },
@@ -80,12 +80,12 @@ const Schedule = [
       {
         event: 'Lunch Break',
         speaker: '',
-        timeOrRecording: '11:45 AM - 12:45 PM',
+        timeOrRecording: '12:25 AM - 1:25 PM',
       },
       {
         event: 'Delegate Networking Booths',
         speaker: '',
-        timeOrRecording: '11:45 AM - 12:45 PM',
+        timeOrRecording: '12:25 AM - 1:25 PM',
       },
     ],
   },
@@ -94,28 +94,23 @@ const Schedule = [
     events: [
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '12:45 PM - 1:20 PM',
+        speaker: 'Jos Toscano, Tazin Khan',
+        timeOrRecording: '1:35 PM - 2:15 PM',
       },
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '12:45 PM - 1:20 PM',
+        speaker: 'Francesca Quinn',
+        timeOrRecording: '1:35 PM - 2:15 PM',
       },
       {
         event: 'Plenary Session',
-        speaker: '',
-        timeOrRecording: '12:45 PM - 1:20 PM',
+        speaker: 'Adrienne Batra',
+        timeOrRecording: '1:35 PM - 2:15 PM',
       },
-    ],
-  },
-  {
-    name: 'WAC Special Event',
-    events: [
       {
-        event: 'Special Event Panel',
-        speaker: '',
-        timeOrRecording: '1:25 PM - 2:10 PM',
+        event: 'Plenary Session',
+        speaker: 'Pooja Handa',
+        timeOrRecording: '1:35 PM - 2:15 PM',
       },
     ],
   },
@@ -125,12 +120,12 @@ const Schedule = [
       {
         event: 'Keynote Address',
         speaker: 'Martin Luther King III',
-        timeOrRecording: '2:15 PM - 3:15 PM',
+        timeOrRecording: '2:25 PM - 3:25 PM',
       },
       {
         event: 'Closing Remarks',
         speaker: '',
-        timeOrRecording: '3:15 PM - 3:30 PM',
+        timeOrRecording: '3:25 PM - 3:40 PM',
       },
     ],
   },

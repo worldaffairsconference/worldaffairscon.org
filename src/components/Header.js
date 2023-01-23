@@ -31,9 +31,9 @@ const Header = () => {
           <Nav.Link as={Link} to="/keynote" onClick={() => setExpand(false)}>
             Keynote
           </Nav.Link>
-          <Nav.Link as={Link} to="/events" onClick={() => setExpand(false)}>
+          {/* <Nav.Link as={Link} to="/events" onClick={() => setExpand(false)}>
             Events
-          </Nav.Link>
+          </Nav.Link> */}
           <Nav.Link as={Link} to="/plenaries" onClick={() => setExpand(false)}>
             Plenaries
           </Nav.Link>

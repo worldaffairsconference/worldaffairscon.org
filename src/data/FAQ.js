@@ -13,6 +13,12 @@ const FAQ = [
           'WAC typically spans two days; the Keynote Address on the first day and the Conference day on the second. This year, WAC will take place all in one jam-packed day on February 9th! ',
       },
       {
+        question: 'Where is WAC?',
+        response:
+          'WAC is held at Upper Canada College (200 Lonsdale Road) in Toronto, Canada. This year, WAC will be held virtually as well on Hopin, our virtual events platform. ',
+      },
+
+      {
         question: 'Who can attend WAC?',
         response:
           'If you are interested in attending WAC in-person, please contact a school teacher and ask them reach out to the team. If you would like to attend virtually, registration is open to all using the link in the navigation bar! ',

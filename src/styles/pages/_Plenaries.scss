@@ -12,22 +12,21 @@
     font-size: 1.6rem;
   }
 
-  .wraper{
-//center vertically
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 50vh;
-
+  .wraper {
+    //center vertically
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
   }
 
   .hero-section {
     align-items: flex-start;
-	background-color: transparent;
-	border:none;
+    background-color: transparent;
+    border: none;
     display: flex;
     min-height: 100%;
-	width: 100%;
+    width: 100%;
     justify-content: center;
     padding: var(--spacing-l) var(--spacing-l);
   }
@@ -66,7 +65,7 @@
   }
 
   .plenarycard__background {
-		border: white 5px solid;
+    border: white 5px solid;
     background-size: cover;
     background-position: center;
     border-radius: var(--spacing-l);
@@ -108,6 +107,5 @@
     font-size: 1.3rem;
     text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
     line-height: 1.5;
-
   }
 }
