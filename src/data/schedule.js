@@ -39,7 +39,7 @@ const Schedule = [
     events: [
       {
         event: 'Plenary Session',
-        speaker: 'Matthew Ball',
+        speaker: 'Joe Toscano & Tazin Khan',
         timeOrRecording: '10:40 AM - 11:20 AM',
       },
       {
@@ -94,7 +94,7 @@ const Schedule = [
     events: [
       {
         event: 'Plenary Session',
-        speaker: 'Jos Toscano, Tazin Khan',
+        speaker: 'Matthew Ball',
         timeOrRecording: '1:35 PM - 2:15 PM',
       },
       {
