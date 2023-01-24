@@ -29,7 +29,7 @@ const Schedule = [
       },
       {
         event: 'Programs Team Remarks',
-        speaker: 'C. Hermam & S. Schacter',
+        speaker: 'C. Herman & S. Schacter',
         timeOrRecording: '10:30 AM - 10:35 AM',
       },
     ],
@@ -59,12 +59,17 @@ const Schedule = [
     events: [
       {
         event: 'Plenary Session',
+        speaker: 'Megan Roach',
+        timeOrRecording: '11:35 AM - 12:15 PM',
+      },
+      {
+        event: 'Plenary Session',
         speaker: 'Rahul Singh',
         timeOrRecording: '11:35 AM - 12:15 PM',
       },
       {
         event: 'Plenary Session',
-        speaker: 'Barry McInerney',
+        speaker: 'Adrienne Batra',
         timeOrRecording: '11:35 AM - 12:15 PM',
       },
       {
@@ -83,7 +88,7 @@ const Schedule = [
         timeOrRecording: '12:25 AM - 1:25 PM',
       },
       {
-        event: 'Delegate Networking Booths',
+        event: 'Delegate Networking',
         speaker: '',
         timeOrRecording: '12:25 AM - 1:25 PM',
       },
@@ -104,7 +109,7 @@ const Schedule = [
       },
       {
         event: 'Plenary Session',
-        speaker: 'Adrienne Batra',
+        speaker: 'Barry McInerney',
         timeOrRecording: '1:35 PM - 2:15 PM',
       },
       {
