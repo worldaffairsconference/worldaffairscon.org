@@ -108,7 +108,7 @@ const PlenaryJSON = [
         {
           name: 'Pooja Handa',
           img: PHanda,
-          text: "Pooja Handa, a face you may recognize from Toronto's #1 morning show, CP24 Breakfast. As a natural born storyteller and entertainer, she has spread her talents across various media platforms. As a new mom, she continues to share her personal experiences and never fails to engage her viewers.",
+          text: "Pooja Handa, a face you may recognize as a morning radio host on CHFI. As a natural born storyteller and entertainer, she has spread her talents across various media platforms. As a new mom, she continues to share her personal experiences and never fails to engage her viewers.",
         },
       ],
     },
