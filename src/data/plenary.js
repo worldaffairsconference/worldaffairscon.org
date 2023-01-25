@@ -7,7 +7,6 @@ import KTattum from '../img/speakers/curr/KTattum.jpeg';
 import FQuinn from '../img/speakers/curr/FQuinn.jpeg';
 import PHanda from '../img/speakers/curr/PHanda.jpg';
 import JToscano from '../img/speakers/curr/JToscano.jpeg';
-import TEMP from '../img/speakers/curr/TEMP.jpg';
 import MRoach from '../img/speakers/curr/MRoach.jpeg';
 import ILoutfi from '../img/speakers/curr/ILoutfi.jpg';
 
