@@ -9,6 +9,7 @@ import PHanda from '../img/speakers/curr/PHanda.jpg';
 import JToscano from '../img/speakers/curr/JToscano.jpeg';
 import TEMP from '../img/speakers/curr/TEMP.jpg';
 import MRoach from '../img/speakers/curr/MRoach.jpeg';
+import ILoutfi from '../img/speakers/curr/ILoutfi.jpg';
 
 const PlenaryJSON = [
   {
@@ -41,8 +42,8 @@ const PlenaryJSON = [
       speakers: [
         {
           name: 'Ismael Loutfi',
-          text: '',
-          img: TEMP,
+          text: 'Ismael Loutfi is a comedian, writer, and actor who developed his deeply acerbic sense of humor growing up a Muslim in rural North Florida. Ismael was recently writing on the animated Ramy Youssef project. Before that, he wrote for the critically acclaimed Patriot Act with Hasan Minhaj on Netflix for the entirety of its run. Ismael’s Comedy Central Half Hour special, Sound It Out, debuted in early March. His stand up was previously featured on This Week at the Cellar, Jimmy Kimmel Live, and Comedy Central’s The Ringers. He has performed on the FOX Night of Comedy showcase and has been named a New Face of Comedy by the prestigious Just for Laughs comedy festival. Ismael can be seen in HBO’s High Maintenance, the Sarah Silverman-produced Please Understand Me, and multiple episodes of Comedy Central’s Ahamed’s Ramadan Diary.',
+          img: ILoutfi,
         },
         {
           name: 'Adrienne Batra',
