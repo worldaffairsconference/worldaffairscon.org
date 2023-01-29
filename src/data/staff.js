@@ -212,7 +212,7 @@ const staff = {
         {
           src: 'ldugasnishisato.jpeg',
           name: 'Lincoln Dugas-Nishisato',
-          role: 'Assistant Plenary Head',
+          role: 'Plenary Head',
         },
         {
           src: 'nsu.jpeg',
