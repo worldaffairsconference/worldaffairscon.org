@@ -185,7 +185,7 @@ const staff = {
           role: 'Assistant Head of Communications & Registration',
         },
         {
-          src: 'avatar.jpg',
+          src: 'lboyle.jpg',
           name: 'Lachlan Boyle',
           role: 'Plenary Head',
         },
@@ -212,7 +212,7 @@ const staff = {
         {
           src: 'ldugasnishisato.jpeg',
           name: 'Lincoln Dugas-Nishisato',
-          role: 'Assistant Plenary Head',
+          role: 'Plenary Head',
         },
         {
           src: 'nsu.jpeg',
