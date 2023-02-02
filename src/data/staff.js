@@ -210,6 +210,11 @@ const staff = {
           role: 'Plenary Head',
         },
         {
+          src: 'gwu.jpeg',
+          name: 'Gordon Wu',
+          role: 'Plenary Head',
+        },
+        {
           src: 'ldugasnishisato.jpeg',
           name: 'Lincoln Dugas-Nishisato',
           role: 'Plenary Head',
