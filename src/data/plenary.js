@@ -21,7 +21,7 @@ const PlenaryJSON = [
       speakers: [
         {
           name: 'Leslie Madden',
-          text: 'Leslie Madden is a Senior Director of Regulatory Science and Quality Assurance at Moderna. Madden graduated with a Master of Business Administration from the University of Toronto - Rotman School of Management and a Global Professionals Masters of Law from the University of Toronto. She has worked in numerous pharmaceutical and biotechnology companies, including Biogen and Eluvium Life Sciences. Join this panel to learn more about Leslie Madden’s role in Regulatory Science and contribution to Moderna’s mission to revolutionize medicine through mRNA.',
+          text: 'Leslie Madden joined Moderna as one of its first Canadian employees in early 2021. She is currently the Senior Director and Head of Regulatory Sciences & Quality Assurance (QA) for the Canadian business, where she is responsible for providing leadership and strategic oversight of the development and registration of Moderna’s mRNA-based medicines including the COVID-19 vaccine program. Leslie has more than 17 years of experience in the pharmaceutical sector in both Canada and the US. Prior to joining Moderna, she was the Director of Regulatory at Elvium Life Sciences, a Global Regulatory Lead at Biogen (US), and has held positions at Galderma and GSK in Canada. Leslie holds a BSc from York University, an MBA from Rotman School of Management, and a Global Professional LLM from the Faculty of Law at University of Toronto. She currently serves as a member of the Rotman Healthcare & Life Sciences Advisory Board (HLAB) and is a member of the adMare Academy Executive Institute (Cohort V).',
           img: LMadden,
         },
         {
