@@ -9,6 +9,8 @@ import SLakhani from '../img/hackathon/slakhani.jpeg';
 import MRomanow from '../img/hackathon/mromanow.jpg';
 import KDamen from '../img/hackathon/kdamen.jpg';
 import NBardai from '../img/hackathon/nbardai.jpg';
+import VTHUSOO from '../img/hackathon/vthusoo.png';
+import avatar from '../img/hackathon/avatar.jpg'
 
 const SPRINT = () => {
   const [countDown, setCountDown] = useState('');
@@ -27,8 +29,8 @@ const SPRINT = () => {
     }
     return 'In Progress!';
   };
-  const sprintStartDate = '1/29/2022';
-  const sprintEndDate = '2/5/2022';
+  const sprintStartDate = '2/6/2023';
+  const sprintEndDate = '2/9/2023';
   useEffect(() => {
     setCountDown(handleCountDown(sprintStartDate, sprintEndDate));
     const countDownInterval = setInterval(() => {
@@ -45,7 +47,7 @@ const SPRINT = () => {
           <div className="text-center text-md-left">
             <h2>Welcome to</h2>
             <h1 className="text-danger">SPRINT</h1>
-            <h3 className="display-5">January 29th to February 5th</h3>
+            <h3 className="display-5">February 6th to February 9th</h3>
           </div>
           {/* <div className="text-center">
             <h3>This Year&apos;s Theme:</h3>
@@ -54,7 +56,7 @@ const SPRINT = () => {
           <div className="text-center text-md-right">
             <h4>The challenge is:</h4>
             <h2>{countDown}</h2>
-            <h4>Application Due on Jan. 22nd</h4>
+            <h4>Application Due on Feb. 6th</h4>
           </div>
         </Container>
       </div>
@@ -110,7 +112,7 @@ const SPRINT = () => {
                 <p>
                   - Fill out
                   <a
-                    href="https://forms.gle/w6hfSbVBufnYKASWA"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfg3ho-HxVuI3oriTOZkv5HxDdWSVTITmQJnDSHaA7J8hRs8g/viewform"
                     className="mx-1"
                   >
                     our application
@@ -229,23 +231,6 @@ const SPRINT = () => {
                       <p>Head of the Upper School at UCC</p>
                     </Carousel.Caption>
                   </Carousel.Item>
-                </Carousel>
-              </Col>
-              <Col sm={6}>
-                <h4 className="text-center">Present:</h4>
-                <Carousel>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100 carousel-image"
-                      src={KBambawale}
-                      alt="Karam Bambawale"
-                    />
-
-                    <Carousel.Caption>
-                      <h3>Karam Bambawale</h3>
-                      <p>UCC Alum & Founding Member of Surf</p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
                   <Carousel.Item>
                     <img
                       className="d-block w-100 carousel-image"
@@ -258,6 +243,36 @@ const SPRINT = () => {
                       <p>Founder of Avro Lifesciences</p>
                     </Carousel.Caption>
                   </Carousel.Item>
+                </Carousel>
+              </Col>
+              <Col sm={6}>
+                <h4 className="text-center">Present:</h4>
+                <Carousel>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100 carousel-image"
+                      src={VTHUSOO}
+                      alt="Vikas Thusoo"
+                    />
+
+                    <Carousel.Caption>
+                      <h3>Vikas Thusoo</h3>
+                      <p>President of Rainfresh</p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <img
+                      className="d-block w-100 carousel-image"
+                      src={avatar}
+                      alt="Jeannice Tse"
+                    />
+
+                    <Carousel.Caption>
+                      <h3>Jeannice Tse</h3>
+                      <p>Instructor at Columbia University</p>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  
                 </Carousel>
               </Col>
             </Row>
