@@ -10,7 +10,7 @@ import MRomanow from '../img/hackathon/mromanow.jpg';
 import KDamen from '../img/hackathon/kdamen.jpg';
 import NBardai from '../img/hackathon/nbardai.jpg';
 import VTHUSOO from '../img/hackathon/vthusoo.png';
-import avatar from '../img/hackathon/avatar.jpg'
+import avatar from '../img/hackathon/avatar.jpg';
 
 const SPRINT = () => {
   const [countDown, setCountDown] = useState('');
@@ -272,7 +272,6 @@ const SPRINT = () => {
                       <p>Instructor at Columbia University</p>
                     </Carousel.Caption>
                   </Carousel.Item>
-                  
                 </Carousel>
               </Col>
             </Row>
