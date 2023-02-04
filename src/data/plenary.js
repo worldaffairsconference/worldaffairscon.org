@@ -101,7 +101,7 @@ const PlenaryJSON = [
       text: 'Intersecting media and society, this plenary highlights the importance of gender, age, and race visibility in the public eye and divulges the challenges of public perception amidst an ever-evolving media landscape. Join us for an intimate chat with award-winning broadcaster Pooja Handa as she shares lessons learned as a woman (and new mother) of colour from her 20 years of broadcasting experience from television to radio. After, engage in an interactive audience discussion on how emerging changes in the media paradigm can provide future generations with the power to transform the future of gender, age, and race perception in the media we consume every day.',
       speakers: [
         {
-          name: 'Megan Roach',
+          name: 'Meghan Roach',
           img: MRoach,
           text: "Meghan Roach joined Roots in 2019 as Interim CFO before becoming CEO in 2020. Before joining Roots, she spent eight years with Searchlight Capital Partners, a private equity firm with operations in North America and Europe. Prior to Searchlight, Meghan was a member of the private equity investment team at the Ontario Teachers' Pension Plan, after beginning her career with KPMG. Meghan served on the Roots Board of Directors from 2015 to 2017 and rejoined in 2020. She also currently sits on the Board of M&M Food Market as well as the Board and Investment Committee of the Holland Bloorview Kids Rehabilitation Hospital Foundation. Meghan holds an MBA with first class distinction from the University of Oxford, an Honours Bachelor of Commerce with first class distinction from Queen's University, and a CPA/CA designation.",
         },
