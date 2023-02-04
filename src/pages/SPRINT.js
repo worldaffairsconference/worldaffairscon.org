@@ -4,13 +4,12 @@ import { formatDistanceToNowStrict, isFuture, isPast } from 'date-fns';
 import sprint from '../img/sprint/2020sprint1.jpg';
 import sprint1 from '../img/sprint/SPRINTfulllogocolor.png';
 import sprint2 from '../img/sprint/2020sprint2.jpg';
-import KBambawale from '../img/hackathon/kbambawale.jpg';
 import SLakhani from '../img/hackathon/slakhani.jpeg';
 import MRomanow from '../img/hackathon/mromanow.jpg';
 import KDamen from '../img/hackathon/kdamen.jpg';
 import NBardai from '../img/hackathon/nbardai.jpg';
 import VTHUSOO from '../img/hackathon/vthusoo.png';
-import avatar from '../img/hackathon/avatar.jpg'
+import avatar from '../img/hackathon/avatar.jpg';
 
 const SPRINT = () => {
   const [countDown, setCountDown] = useState('');
@@ -272,7 +271,6 @@ const SPRINT = () => {
                       <p>Instructor at Columbia University</p>
                     </Carousel.Caption>
                   </Carousel.Item>
-                  
                 </Carousel>
               </Col>
             </Row>
