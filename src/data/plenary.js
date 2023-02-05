@@ -119,7 +119,7 @@ const PlenaryJSON = [
     props: {
       title:
         'The Future of Sustainability: Knowledge and Skills to Thrive and Survive',
-      text: 'Sustainability: a word that comes up quite often in a world trying to combat the effects of climate change. However, how do we know the knowledge and skills that are required to successfully implement this in our schools and places of work? Please join us for an insightful conversation with Ms. Francisca Quinn, the CEO and Board Director at Canada Nickel Company, a next-generation metals company delivering zero carbon nickel, on the topics of ensuring sustainability in the workforce of the future and educational avenues as well as careers in this field.',
+      text: 'Sustainability: a word that comes up quite often in a world trying to combat the effects of climate change. However, how do we know the knowledge and skills that are required to successfully implement this in our schools and places of work? Please join us for an insightful conversation with Ms. Francisca Quinn, the CEO of Quinn+Partners and Board Director at Canada Nickel Company, a next-generation metals company delivering zero carbon nickel, on the topics of ensuring sustainability in the workforce of the future and educational avenues as well as careers in this field.',
       speakers: [
         {
           name: 'Francisca Quinn',
