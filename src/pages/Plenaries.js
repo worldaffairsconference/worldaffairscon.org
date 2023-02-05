@@ -78,7 +78,7 @@ const Plenaries = () => {
               <div className="plenarycard__content">
                 <p className="plenarycard__category">Society</p>
                 <h3 className="plenarycard__heading">
-                  Serving the Global Community: Forward-Thinking
+                  Connecting the Global Community: Forward-Thinking
                 </h3>
               </div>
             </Link>
