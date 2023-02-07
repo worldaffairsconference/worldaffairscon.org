@@ -27,11 +27,6 @@ const Schedule = [
         speaker: 'C.K. Hoffler',
         timeOrRecording: '9:40 AM - 10:30 AM',
       },
-      {
-        event: 'Programs Team Remarks',
-        speaker: 'C. Herman & S. Schacter',
-        timeOrRecording: '10:30 AM - 10:35 AM',
-      },
     ],
   },
   {
@@ -85,12 +80,12 @@ const Schedule = [
       {
         event: 'Lunch Break',
         speaker: '',
-        timeOrRecording: '12:25 AM - 1:25 PM',
+        timeOrRecording: '12:25 PM - 1:25 PM',
       },
       {
         event: 'Delegate Networking',
         speaker: '',
-        timeOrRecording: '12:25 AM - 1:25 PM',
+        timeOrRecording: '12:25 PM - 1:25 PM',
       },
     ],
   },
