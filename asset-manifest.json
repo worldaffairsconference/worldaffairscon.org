@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e1a88602.chunk.css",
-    "main.js": "/static/js/main.a8da507d.chunk.js",
+    "main.js": "/static/js/main.10713216.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.ce8c658d.js",
     "static/css/2.e37b89c0.chunk.css": "/static/css/2.e37b89c0.chunk.css",
     "static/js/2.f05c19a1.chunk.js": "/static/js/2.f05c19a1.chunk.js",
@@ -34,7 +34,7 @@
     "static/media/LMadden.12f26b9e.jpeg": "/static/media/LMadden.12f26b9e.jpeg",
     "static/media/MBall.6f19a7e1.jpeg": "/static/media/MBall.6f19a7e1.jpeg",
     "static/media/MLKing.1d66b62c.jpeg": "/static/media/MLKing.1d66b62c.jpeg",
-    "static/media/MRoach.fd6773a8.jpeg": "/static/media/MRoach.fd6773a8.jpeg",
+    "static/media/MRoach.bfbadf80.jpeg": "/static/media/MRoach.bfbadf80.jpeg",
     "static/media/PHanda.7ce9309a.jpg": "/static/media/PHanda.7ce9309a.jpg",
     "static/media/RSingh.91d8917a.jpeg": "/static/media/RSingh.91d8917a.jpeg",
     "static/media/SPRINTfulllogocolor.54f0ae93.png": "/static/media/SPRINTfulllogocolor.54f0ae93.png",
@@ -181,6 +181,6 @@
     "static/css/2.e37b89c0.chunk.css",
     "static/js/2.f05c19a1.chunk.js",
     "static/css/main.e1a88602.chunk.css",
-    "static/js/main.a8da507d.chunk.js"
+    "static/js/main.10713216.chunk.js"
   ]
 }
