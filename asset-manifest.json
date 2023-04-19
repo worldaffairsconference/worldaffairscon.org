@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.e1a88602.chunk.css",
+    "main.css": "/static/css/main.a9369657.chunk.css",
     "main.js": "/static/js/main.94b63509.chunk.js",
     "runtime-main.js": "/static/js/runtime-main.ce8c658d.js",
     "static/css/2.e37b89c0.chunk.css": "/static/css/2.e37b89c0.chunk.css",
@@ -12,7 +12,6 @@
     "static/media/000056560006.jpg": "/static/media/000056560006.93270b1f.jpg",
     "static/media/2020sprint1.29569d34.jpg": "/static/media/2020sprint1.29569d34.jpg",
     "static/media/2020sprint2.cd8e359e.jpg": "/static/media/2020sprint2.cd8e359e.jpg",
-    "static/media/main.scss": "/static/media/stars.a73d2dc9.png",
     "static/media/ABatra.4a70e942.jpeg": "/static/media/ABatra.4a70e942.jpeg",
     "static/media/BMcinerney.8f165bc0.jpeg": "/static/media/BMcinerney.8f165bc0.jpeg",
     "static/media/CKHoffler.df2ac123.jpg": "/static/media/CKHoffler.df2ac123.jpg",
@@ -72,6 +71,7 @@
     "static/media/dowen.a5c333d2.jpg": "/static/media/dowen.a5c333d2.jpg",
     "static/media/dsharma.jpg": "/static/media/dsharma.2fd31726.jpg",
     "static/media/dyang.jpeg": "/static/media/dyang.d9cce253.jpeg",
+    "static/media/main.scss": "/static/media/stars.a73d2dc9.png",
     "static/media/elau.9c980c04.jpg": "/static/media/elau.9c980c04.jpg",
     "static/media/equality.98c8fff7.jpg": "/static/media/equality.98c8fff7.jpg",
     "static/media/erosenberg.jpeg": "/static/media/erosenberg.a6392e86.jpeg",
@@ -180,7 +180,7 @@
     "static/js/runtime-main.ce8c658d.js",
     "static/css/2.e37b89c0.chunk.css",
     "static/js/2.f05c19a1.chunk.js",
-    "static/css/main.e1a88602.chunk.css",
+    "static/css/main.a9369657.chunk.css",
     "static/js/main.94b63509.chunk.js"
   ]
 }
