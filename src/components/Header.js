@@ -53,12 +53,19 @@ const Header = () => {
             Team
           </Nav.Link>
         </Nav>
+
         <Nav className="float-lg-right">
-          <Nav.Link
+          {/*          <Nav.Link
             href="https://hopin.com/events/world-affairs-conference-2023-hybrid-thinking"
             onClick={() => setExpand(false)}
           >
             <Button variant="outline-primary">Register</Button>
+          </Nav.Link>
+*/}
+        </Nav>
+        <Nav className="float-lg-right">
+          <Nav.Link href="/program.pdf" onClick={() => setExpand(false)}>
+            <Button variant="outline-success">2023 Brochure</Button>
           </Nav.Link>
         </Nav>
         <Nav className="float-lg-right">

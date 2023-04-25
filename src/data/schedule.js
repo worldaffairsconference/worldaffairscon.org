@@ -54,7 +54,7 @@ const Schedule = [
     events: [
       {
         event: 'Plenary Session',
-        speaker: 'Megan Roach',
+        speaker: 'Meghan Roach',
         timeOrRecording: '11:35 AM - 12:15 PM',
       },
       {
