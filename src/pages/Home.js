@@ -269,7 +269,7 @@ const Home = () => {
         </Card>
         <Card className="mt-3 mx-3">
           <Card.Body>
-            <h2 className="text-center">WAC 2022 Gallery</h2>
+            <h2 className="text-center">WAC Gallery</h2>
             <Carousel fade>{galleryGenerator()}</Carousel>
           </Card.Body>
         </Card>
