@@ -242,7 +242,7 @@ const Home = () => {
             </div>
           </Card.Body>
         </Card>
-      
+
         {/* <Card className="mt-3 mx-3 letters">
           <Row xl={2} lg={2} md={1} sm={1} xs={1}>
             <Col>
