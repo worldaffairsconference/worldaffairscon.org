@@ -65,7 +65,7 @@ const PastSpeakers = [
     name: 'Edward Snowden',
     img: ESnowden,
     subtitle:
-      'Former National Security Agency Computer Intelligence Consultant & Wistleblower',
+      'Former National Security Agency Computer Intelligence Consultant & Whistleblower',
   },
   {
     name: 'Andrew Chisholm',
