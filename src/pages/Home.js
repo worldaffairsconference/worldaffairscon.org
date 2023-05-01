@@ -242,8 +242,8 @@ const Home = () => {
             </div>
           </Card.Body>
         </Card>
-/*
-        <Card className="mt-3 mx-3 letters">
+      
+        {/* <Card className="mt-3 mx-3 letters">
           <Row xl={2} lg={2} md={1} sm={1} xs={1}>
             <Col>
               <Image src={JTory} />
@@ -252,8 +252,8 @@ const Home = () => {
               <Image src={JTrudeau} />
             </Col>
           </Row>
-        </Card>
-*/
+        </Card> */}
+
         <Card className="mt-3 mx-3">
           <Card.Body>
             <h2 className="text-center">WAC 2023 Promotional Video</h2>
