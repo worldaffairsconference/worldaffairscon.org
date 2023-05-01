@@ -17,9 +17,6 @@ import Logo from '../img/general/wac_logo.png';
 import UCC from '../img/home/ucc-logo.png';
 import BH from '../img/home/bh-logo.png';
 
-import JTory from '../img/home/letters/JTory.png';
-import JTrudeau from '../img/home/letters/JTrudeau.png';
-
 // import Quotes from '../data/quotes';
 const Home = () => {
   //const { executeRecaptcha } = useGoogleReCaptcha();
