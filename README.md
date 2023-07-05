@@ -1,54 +1,55 @@
-# worldaffairs.ucc.on.ca
-🌎Brand new React project for the worldaffairs.ucc.on.ca website!!  
-**Any push or merge to the `master` branch will trigger the `Github Actions` script to automatically build and deloy to `GitHub Pages`**
-## ⌛ It's time to move forward: Embracing Client Side Rendering
-Some limitations to the old WAC website:
-* non component-based design make it difficult to refactor code
-* requiring re-render on every interaction
-* non-dynamic content managing
-* hard to manage dependancies and versions
-* mistakes and bugs are hard to spot
-* inconsistant code formatting  
-The list goes on. Overall, it's been a hassle to maintain and update.  
-Due to COVID-19, `WAC 2021: Together Towards Tomorrow` was the first ever virtual WAC and many technological inconviniences prompted @JeffersonDing to re-create the WAC website, effectively moving `Towards Tomorrow`
-### Major Changes and Benifits
-- Enforced formating and code consistancy
-- A smoother UX
-- More delicate and modular components
-- High future expandability
-- Easy integration with backend framworks and cloud computation
-## Stack
-### Tech
-- The react project is based on `Node.js` which is mainly `Javascript` using the `React` frontend framework.  
-- To ensure code consistancy, included in the repository are `.eslintrc.js` and `.prettierrc.js` which uses `eslint` and `prettier`.    
-- Following the footsteps of the original WAC website, this project uses `Bootstrap v5.0.0` and `Fontawesome v4.7.0` as frontend components.  
-- Due to the transitoin to `Node.js` and `React` we are able to interact with the `DOM` much easier thus removing the use of `jQuery`. 
-### Other Details
-- An updated version of the custom `style.css` is located in `/public/assets/style/style.css` and handles all the custom styling, removing all inline `CSS`  
-- Continue to use the `Nexa` font located in `/pubic/assets/style/webfonts/`  
-- `yarn` or `npm` as package manager
+![Codecov](https://img.shields.io/codecov/c/github/worldaffairsconference/worldaffairscon.org) ![Netlify](https://img.shields.io/netlify/4e98066d-e3af-45bd-8af5-e22bba156e34) ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/worldaffairsconference/worldaffairscon.org/deploy-prod.yaml) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-## Usage
-### Installation and Launch
-1. Clone the repository
-2. Make sure that you have `Node.js` and `npm` or `yarn` installed
-3. Run `npm install` or `yarn intsall` on the directory
-4. Run `npm start` or `yarn start` on the directory
-### Modifications
-1. All pages of the website are located `/src/pages/` directory as individual `.js` files. Files may contain multiple `React Components` but only one is exported.
-2. `Header` and `Footer` and other reusable components are located in `/src/components/`
-3. All user images are uploaded to `/src/img/`
-4. Dynamic data could be managed under `/src/data/`. 
-5. Primary `Router` is located at `/src/index.js`
-6. Primary `Router Switch` is located at `/src/app.js`
-#### Dynamic Data
-One of the major benifits of React is its dynamic aspect.  
-- To modify the home page quotes, change `quotes.json`
-- To modify routes to plenaries and specific plenary informations, modify `plenary.js` 
-- To modify FAQ, edit `FAQ.js`
-- To modify Schedule or Recording of the conference, modify `schedule.js`
-- To modify staff/ambassadors list and roles, modify `staff.js`
-### Commit and Deploy
-Any push or merge to the `master` branch will trigger the `Github Actions` script to automatically build and deloy to `GitHub Pages`
+```
+ __      __  ______  ____
+/\ \  __/\ \/\  _  \/\  _`\
+\ \ \/\ \ \ \ \ \L\ \ \ \/\_\
+ \ \ \ \ \ \ \ \  __ \ \ \/_/_
+  \ \ \_/ \_\ \ \ \/\ \ \ \L\ \
+   \ `\___x___/\ \_\ \_\ \____/
+    '\/__//__/  \/_/\/_/\/___/
+```
 
-# 💻Happy Hacking!🎉
+# WAC-Pasiphae
+
+> A new era of World Affairs Conference information technology infrastructure
+
+## Local Development
+
+### Setup
+
+1. Install [Node.js 20.x.x](https://nodejs.org/en), [GitHub CLI](https://cli.github.com/), [PNPM](https://pnpm.io/installation), and [Firebase CLI](https://firebase.google.com/docs/cli).
+2. Clone the repository locally.
+   ```shell
+   gh repo clone worldaffairsconference/worldaffairs.ucc.on.ca
+   ```
+3. Install dependencies.
+   ```shell
+   pnpm i
+   ```
+4. Copy `.env.example` into `.env` and fill in the environment variable values.
+
+### Usage
+
+- To start the Firebase (Firestore + Auth) emulator, run
+  ```shell
+  firebase emulators:start --import ./firebase/emulator-data --export-on-exit
+  ```
+- To start the development server, run
+  ```shell
+  pnpm dev
+  ```
+- To run the unit tests, use
+  ```shell
+  pnpm test:unit       # To run once
+  pnpm test:unit:watch # To watch for file changes
+  ```
+- To run end-to-end tests, run
+  ```
+  pnpm test:e2e
+  ```
+
+### Source control
+
+- All commit messages should be formatted according to [AngularJS's commit message convention](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines). This repository is [Commitizen-friendly](https://github.com/commitizen/cz-cli), so running `git commit` should automatically open a prompt to ensure conformity.
+- Commits should **never** be pushed directly to the `main` branch, as this would bypass the testing phase. Instead, every code modification should be made as a pull request.

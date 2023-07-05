@@ -1,0 +1,6 @@
+{
+	"vitest.commandLine": "pnpm test:unit:watch",
+	"testing.openTesting": "neverOpen",
+	"eslint.validate": ["svelte", "typescript", "javascript"],
+	"typescript.tsdk": "node_modules/typescript/lib"
+}

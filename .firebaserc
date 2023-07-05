@@ -1,0 +1,6 @@
+{
+	"projects": {
+		"prod": "wac-website-pasiphae",
+		"test": "wac-website-pasiphae-test"
+	}
+}

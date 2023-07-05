@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2020",
-    "allowJs": true
-  },
-  "include": ["src/**/*"]
-}
