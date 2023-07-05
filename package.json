@@ -25,7 +25,7 @@
     "react-google-recaptcha-v3": "^1.9.5",
     "react-iframe": "^1.8.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.1",
     "react-spinners": "^0.11.0",
     "react-transition-group": "^4.4.1",
     "sass": "^1.44.0",
@@ -65,7 +65,7 @@
   "devDependencies": {
     "eslint": "^7.20.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1",
     "react-error-overlay": "6.0.9"
