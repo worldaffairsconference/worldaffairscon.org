@@ -27,7 +27,11 @@
    ```shell
    pnpm i
    ```
-4. Copy `.env.example` into `.env` and fill in the environment variable values.
+4. Set the Firebase project.
+   ```
+   firebase use test
+   ```
+5. Copy `.env.example` into `.env` and fill in the environment variable values from the Vault.
 
 ### Usage
 
@@ -41,8 +45,8 @@
   ```
 - To run the unit tests, use
   ```shell
-  pnpm test:unit       # To run once
-  pnpm test:unit:watch # To watch for file changes
+  pnpm test:unit         # To run once
+  pnpm test:unit:watch   # To watch for file changes
   ```
 - To run end-to-end tests, run
   ```
