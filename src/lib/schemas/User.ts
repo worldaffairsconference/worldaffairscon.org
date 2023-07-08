@@ -1,7 +1,7 @@
-import { assert } from 'tsafe';
-import { z } from 'zod';
+import { assert } from "tsafe";
+import { z } from "zod";
 
-import type { IsValidSchemaPair } from '$lib/schemas/types';
+import type { IsValidSchemaPair } from "$lib/schemas/types";
 
 export const User = z
 	.object({
@@ -12,8 +12,8 @@ export const User = z
 	.strict();
 
 export const UserParse = z.object({
-	username: z.string().catch('Invalid Username'),
-	email: z.string().catch('invalid@email.invalid'), // Should be guaranteed not to exist by https://www.rfc-editor.org/rfc/rfc6761
+	username: z.string().catch("Invalid Username"),
+	email: z.string().catch("invalid@email.invalid"), // Should be guaranteed not to exist by https://www.rfc-editor.org/rfc/rfc6761
 	favoriteNumber: z.number().catch(NaN)
 });
 

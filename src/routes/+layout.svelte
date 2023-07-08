@@ -1,10 +1,10 @@
 <script lang="ts">
-	import './global.css';
+	import "./global.css";
 
-	import { user, userData } from '$lib/firebase';
+	import { user, userData } from "$lib/firebase";
 
-	import Footer from './Footer.svelte';
-	import Header from './Header.svelte';
+	import Footer from "./Footer.svelte";
+	import Header from "./Header.svelte";
 
 	$user;
 	$userData;

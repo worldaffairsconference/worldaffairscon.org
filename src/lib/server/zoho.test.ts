@@ -1,10 +1,13 @@
-import { faker } from '@faker-js/faker';
-import { rest } from 'msw';
-import { setupServer } from 'msw/node';
+import { faker } from "@faker-js/faker";
+import { rest } from "msw";
+import { setupServer } from "msw/node";
 
-import { ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID, ZOHO_ORGANIZATION_ID } from '$env/static/private';
+import {
+	ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID,
+	ZOHO_ORGANIZATION_ID
+} from "$env/static/private";
 
-import { addEmailToDistributionList } from './zoho';
+import { addEmailToDistributionList } from "./zoho";
 
 const server = setupServer();
 // rest.post('https://accounts.zoho.com/oauth/v2/token', (_, res, ctx) => {
@@ -14,12 +17,12 @@ const server = setupServer();
 // 	return res(ctx.status(400), ctx.json(true));
 // })
 
-beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
 afterAll(() => server.close());
 afterEach(() => server.resetHandlers());
 
-describe('mail distribution lists api', () => {
-	it('should return success with new email', async () => {
+describe("mail distribution lists api", () => {
+	it("should return success with new email", async () => {
 		server.use(
 			rest.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
@@ -29,19 +32,21 @@ describe('mail distribution lists api', () => {
 						ctx.json({
 							status: {
 								code: 200,
-								description: 'success'
+								description: "success"
 							}
 						})
 					)
 			)
 		);
-		expect(await addEmailToDistributionList('uccwac@gmail.com', 'newsletter')).toStrictEqual({
+		expect(
+			await addEmailToDistributionList("uccwac@gmail.com", "newsletter")
+		).toStrictEqual({
 			success: true,
-			message: 'added'
+			message: "added"
 		});
 	});
 
-	it('should return success with existing email', async () => {
+	it("should return success with existing email", async () => {
 		server.use(
 			rest.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
@@ -51,24 +56,26 @@ describe('mail distribution lists api', () => {
 						ctx.json({
 							status: {
 								code: 200,
-								description: 'success'
+								description: "success"
 							},
 							data: [
 								{
-									'uccwac@gmail.com': 'Already Exist'
+									"uccwac@gmail.com": "Already Exist"
 								}
 							]
 						})
 					)
 			)
 		);
-		expect(await addEmailToDistributionList('uccwac@gmail.com', 'newsletter')).toStrictEqual({
+		expect(
+			await addEmailToDistributionList("uccwac@gmail.com", "newsletter")
+		).toStrictEqual({
 			success: true,
-			message: 'alreadyAdded'
+			message: "alreadyAdded"
 		});
 	});
 
-	it('should return error with invalid email', async () => {
+	it("should return error with invalid email", async () => {
 		server.use(
 			rest.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
@@ -77,25 +84,27 @@ describe('mail distribution lists api', () => {
 						ctx.status(400),
 						ctx.json({
 							data: {
-								errorCode: 'PATTERN_NOT_MATCHED',
+								errorCode: "PATTERN_NOT_MATCHED",
 								moreInfo:
-									'zoho\\x2Dinputstream\\x20Input\\x20does\\x20not\\x20match\\x20the\\x20given\\x20pattern'
+									"zoho\\x2Dinputstream\\x20Input\\x20does\\x20not\\x20match\\x20the\\x20given\\x20pattern"
 							},
 							status: {
 								code: 400,
-								description: 'Invalid Input'
+								description: "Invalid Input"
 							}
 						})
 					)
 			)
 		);
-		expect(await addEmailToDistributionList('uccwac', 'newsletter')).toStrictEqual({
+		expect(
+			await addEmailToDistributionList("uccwac", "newsletter")
+		).toStrictEqual({
 			success: false,
-			message: 'invalidEmail'
+			message: "invalidEmail"
 		});
 	});
 
-	it('should not throw on unknown api response', async () => {
+	it("should not throw on unknown api response", async () => {
 		server.use(
 			rest.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
@@ -104,26 +113,31 @@ describe('mail distribution lists api', () => {
 		);
 		const error = console.error;
 		console.error = () => {};
-		expect(await addEmailToDistributionList('uccwac@gmail.com', 'newsletter')).toStrictEqual({
+		expect(
+			await addEmailToDistributionList("uccwac@gmail.com", "newsletter")
+		).toStrictEqual({
 			success: false,
-			message: 'unknownError'
+			message: "unknownError"
 		});
 		console.error = error;
 	});
 
-	it('should be able to refresh the access token', async () => {
+	it("should be able to refresh the access token", async () => {
 		const accessToken = faker.internet.password();
 		server.use(
 			rest.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
 				(req, res, ctx) => {
-					if (req.headers.get('Authorization') === `Zoho-oauthtoken ${accessToken}`)
+					if (
+						req.headers.get("Authorization") ===
+						`Zoho-oauthtoken ${accessToken}`
+					)
 						return res(
 							ctx.status(200),
 							ctx.json({
 								status: {
 									code: 200,
-									description: 'success'
+									description: "success"
 								}
 							})
 						);
@@ -132,35 +146,39 @@ describe('mail distribution lists api', () => {
 							ctx.status(400),
 							ctx.json({
 								data: {
-									errorCode: 'INVALID_OAUTHTOKEN'
+									errorCode: "INVALID_OAUTHTOKEN"
 								},
 								status: {
 									code: 404,
-									description: 'Invalid Input'
+									description: "Invalid Input"
 								}
 							})
 						);
 				}
 			),
-			rest.post('https://accounts.zoho.com/oauth/v2/token', (_, res, ctx) =>
-				res(
-					ctx.status(200),
-					ctx.json({
-						access_token: accessToken,
-						api_domain: 'https://www.zohoapis.com',
-						token_type: 'Bearer',
-						expires_in: 3600
-					})
-				)
+			rest.post(
+				"https://accounts.zoho.com/oauth/v2/token",
+				(_, res, ctx) =>
+					res(
+						ctx.status(200),
+						ctx.json({
+							access_token: accessToken,
+							api_domain: "https://www.zohoapis.com",
+							token_type: "Bearer",
+							expires_in: 3600
+						})
+					)
 			)
 		);
-		expect(await addEmailToDistributionList('uccwac@gmail.com', 'newsletter')).toStrictEqual({
+		expect(
+			await addEmailToDistributionList("uccwac@gmail.com", "newsletter")
+		).toStrictEqual({
 			success: true,
-			message: 'added'
+			message: "added"
 		});
 	});
 
-	it('should not throw if the access token cannot be refreshed', async () => {
+	it("should not throw if the access token cannot be refreshed", async () => {
 		server.use(
 			rest.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
@@ -169,24 +187,27 @@ describe('mail distribution lists api', () => {
 						ctx.status(400),
 						ctx.json({
 							data: {
-								errorCode: 'INVALID_OAUTHTOKEN'
+								errorCode: "INVALID_OAUTHTOKEN"
 							},
 							status: {
 								code: 404,
-								description: 'Invalid Input'
+								description: "Invalid Input"
 							}
 						})
 					)
 			),
-			rest.post('https://accounts.zoho.com/oauth/v2/token', (_, res, ctx) =>
-				res(ctx.status(200), ctx.json({}))
+			rest.post(
+				"https://accounts.zoho.com/oauth/v2/token",
+				(_, res, ctx) => res(ctx.status(200), ctx.json({}))
 			)
 		);
 		const error = console.error;
 		console.error = () => {};
-		expect(await addEmailToDistributionList('uccwac@gmail.com', 'newsletter')).toStrictEqual({
+		expect(
+			await addEmailToDistributionList("uccwac@gmail.com", "newsletter")
+		).toStrictEqual({
 			success: false,
-			message: 'unknownError'
+			message: "unknownError"
 		});
 		console.error = error;
 	});

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import gsap, { Expo } from 'gsap';
-	import { onMount } from 'svelte';
+	import gsap, { Expo } from "gsap";
+	import { onMount } from "svelte";
 
-	import { page } from '$app/stores';
-	import logo from '$lib/images/logos/wac_medium.webp';
+	import { page } from "$app/stores";
+	import logo from "$lib/images/logos/wac_medium.webp";
 
 	interface Route {
 		name: string;
@@ -17,43 +17,44 @@
 	let lastScrollTop: number;
 
 	onMount(() => {
-		window.addEventListener('scroll', function () {
+		window.addEventListener("scroll", function () {
 			if (headerElement === null) return;
 
-			var scrollTop = window.scrollY || document.documentElement.scrollTop;
+			var scrollTop =
+				window.scrollY || document.documentElement.scrollTop;
 
 			if (scrollTop < 350) {
-				headerElement.style.position = 'absolute';
-				headerElement.style.backgroundColor = 'transparent';
-				headerElement.classList.remove('backdrop-blur-xl');
+				headerElement.style.position = "absolute";
+				headerElement.style.backgroundColor = "transparent";
+				headerElement.classList.remove("backdrop-blur-xl");
 			} else {
-				headerElement.style.position = 'fixed';
-				headerElement.style.backgroundColor = 'rgb(0 0 0 / 0.3)';
-				headerElement.classList.add('backdrop-blur-xl');
+				headerElement.style.position = "fixed";
+				headerElement.style.backgroundColor = "rgb(0 0 0 / 0.3)";
+				headerElement.classList.add("backdrop-blur-xl");
 			}
 
 			if (scrollTop >= lastScrollTop) {
-				headerElement.style.top = '-200px';
+				headerElement.style.top = "-200px";
 			} else {
-				headerElement.style.top = '0';
+				headerElement.style.top = "0";
 			}
 
 			lastScrollTop = scrollTop;
 		});
 
-		barTl.set('#navbar', {
+		barTl.set("#navbar", {
 			className:
-				'fixed right-0 bottom-0 z-50 bg-zinc-900 w-[68%] h-full bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-xl gap-14 text-zinc-300'
+				"fixed right-0 bottom-0 z-50 bg-zinc-900 w-[68%] h-full bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-xl gap-14 text-zinc-300"
 		});
-		barTl.set('#open', {
-			display: 'none',
+		barTl.set("#open", {
+			display: "none",
 			duration: 0
 		});
-		barTl.to('#close', {
-			display: 'block',
+		barTl.to("#close", {
+			display: "block",
 			duration: 0
 		});
-		barTl.to('#navbar', {
+		barTl.to("#navbar", {
 			duration: 0.3,
 			ease: Expo.easeInOut
 		});
@@ -61,7 +62,11 @@
 
 	const toggleNav = () => {
 		// Checking if the hamburger nav is visible
-		if (window.getComputedStyle(toggle).getPropertyValue('display') === 'none') return;
+		if (
+			window.getComputedStyle(toggle).getPropertyValue("display") ===
+			"none"
+		)
+			return;
 
 		if (barTl.reversed()) {
 			barTl.timeScale(1).reversed(false);
@@ -71,10 +76,10 @@
 	};
 
 	const routes: Route[] = [
-		{ name: 'Schedule', path: '/schedule' },
-		{ name: 'Team', path: '/team' },
-		{ name: 'Past Speakers', path: '/past-speakers' },
-		{ name: 'FAQ', path: '/faq' }
+		{ name: "Schedule", path: "/schedule" },
+		{ name: "Team", path: "/team" },
+		{ name: "Past Speakers", path: "/past-speakers" },
+		{ name: "FAQ", path: "/faq" }
 	];
 </script>
 
