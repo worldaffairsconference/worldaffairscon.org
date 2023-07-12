@@ -76,10 +76,10 @@
 	};
 
 	const routes: Route[] = [
-		{ name: "Schedule", path: "/schedule" },
-		{ name: "Team", path: "/team" },
-		{ name: "Past Speakers", path: "/past-speakers" },
-		{ name: "FAQ", path: "/faq" }
+		// { name: "Schedule", path: "/schedule" },
+		// { name: "Team", path: "/team" },
+		// { name: "Past Speakers", path: "/past-speakers" },
+		// { name: "FAQ", path: "/faq" }
 	];
 </script>
 
@@ -107,11 +107,11 @@
 				</li>
 			{/each}
 		</ul>
-		<button
+		<!-- <button
 			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base"
 		>
 			Login
-		</button>
+		</button> -->
 		<button
 			class="block lg:hidden z-50"
 			aria-label="Toggle navigation"

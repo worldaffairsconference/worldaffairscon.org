@@ -27,6 +27,7 @@
 
 	import gsap from "gsap";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 	import { onMount } from "svelte";
 
 	import IoIosPlayCircle from "svelte-icons/io/IoIosPlayCircle.svelte";
@@ -51,8 +52,26 @@
 	import trailerThumbnail from "$lib/images/thumbnails/trailer_thumbnail.png";
 
 	// Constants
-	const SPREAD = 700; // How spread out the stars are
-	const TOTAL_STARS = 1500; // How many stars there are
+	const TOTAL_STARS = 600; // How many stars there are
+	const ATMOSPHERE_RADIUS = 0.26; // How thick the atmosphere is
+	const ATMOSPHERE_INTENSITY = 0.8; // How intense the atmosphere is
+
+	const fragmentShader = `
+uniform vec3 color;
+uniform float coefficient;
+uniform float power;
+varying vec3 vVertexNormal;
+varying vec3 vVertexWorldPosition;
+void main() {
+  vec3 worldCameraToVertex = vVertexWorldPosition - cameraPosition;
+  vec3 viewCameraToVertex	= (viewMatrix * vec4(worldCameraToVertex, 500.0)).xyz;
+  viewCameraToVertex = normalize(viewCameraToVertex) * 6.0;
+  float intensity	= pow(
+    coefficient + dot(vVertexNormal, viewCameraToVertex),
+    power
+  );
+  gl_FragColor = vec4(color, intensity);
+}`;
 
 	interface Speaker {
 		name: string;
@@ -75,7 +94,7 @@
 			specialRole: "Famous Speaker"
 		},
 		{
-			name: "Ck Hoffler",
+			name: "CK Hoffler",
 			title: "CEO of The CK Hoffler Firm",
 			image: ckHoffler
 		},
@@ -115,7 +134,7 @@
 	let gsapScope: Element;
 
 	if (browser) {
-		gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 	}
 
 	onMount(() => {
@@ -123,8 +142,8 @@
 		const Globe = new ThreeGlobe({ animateIn: false })
 			.globeImageUrl("./map.webp")
 			.bumpImageUrl("./earth-topology.webp")
-			.atmosphereColor("rgba(82, 167, 220, 1)")
-			.atmosphereAltitude(0.12);
+			.atmosphereAltitude(ATMOSPHERE_RADIUS)
+			.atmosphereColor("#bcd2e3");
 
 		// Rotate the globe on the diagonal axis
 		Globe.rotateY(Math.PI / 2);
@@ -132,6 +151,8 @@
 		// Custom globe material
 		const globeMaterial = Globe.globeMaterial() as THREE.MeshPhongMaterial;
 		globeMaterial.bumpScale = 10;
+		globeMaterial.toneMapped = false;
+		globeMaterial.emissiveIntensity = -100;
 
 		new THREE.TextureLoader().load("./earth-water.webp", (texture) => {
 			globeMaterial.specularMap = texture;
@@ -168,9 +189,9 @@
 		const starVertices: number[] = [];
 
 		for (let i = 0; i < TOTAL_STARS; i++) {
-			const x = THREE.MathUtils.randFloatSpread(SPREAD);
-			const y = THREE.MathUtils.randFloatSpread(SPREAD);
-			const z = THREE.MathUtils.randFloatSpread(SPREAD);
+			const x = THREE.MathUtils.randFloatSpread(500);
+			const y = THREE.MathUtils.randFloatSpread(500);
+			const z = THREE.MathUtils.randFloatSpread(600);
 
 			starVertices.push(x, y, z);
 		}
@@ -184,12 +205,34 @@
 		scene.add(stars);
 
 		let renderer: THREE.WebGLRenderer;
+		let atmosphereMaterial: THREE.ShaderMaterial;
 
 		// Render loop
 		const animate = () => {
 			renderer.render(scene, camera);
 			Globe.rotateY(-0.00035);
 			requestAnimationFrame(animate);
+
+			// TODO: Find a better way to do this
+
+			if (!atmosphereMaterial) {
+				const atmosphere = scene.getObjectByProperty(
+					"__globeObjType",
+					"atmosphere"
+				) as THREE.Mesh;
+
+				if (!atmosphere?.material) return;
+
+				(atmosphere.material as THREE.ShaderMaterial).fragmentShader =
+					fragmentShader;
+
+				// @ts-ignore
+				atmosphere.material.uniforms["coefficient"].value =
+					ATMOSPHERE_INTENSITY;
+
+				atmosphereMaterial =
+					atmosphere.material as THREE.ShaderMaterial;
+			}
 		};
 
 		// Handles resizing the window
@@ -205,8 +248,12 @@
 				canvas: canvasElement,
 				alpha: true
 			});
-			renderer.setPixelRatio(window.devicePixelRatio);
+
+			renderer.setPixelRatio(
+				window.devicePixelRatio ? window.devicePixelRatio : 1
+			);
 			renderer.setSize(window.innerWidth, window.innerHeight);
+
 			animate();
 		};
 
@@ -222,15 +269,18 @@
 					end: "bottom+=6700 center",
 					pin: "#home",
 					scrub: true
-					// markers: true,
 				}
 			})
-				.to(camera.position, {
-					duration: 1,
-					y: 110,
-					z: 60,
-					ease: "power2.out"
-				})
+				.to(
+					camera.position,
+					{
+						duration: 1,
+						y: 110,
+						z: 60,
+						ease: "power2.out"
+					},
+					0
+				)
 				// Make the globe zoom in and position to the left side of the screen
 				.to(camera.position, {
 					duration: 0.75,
@@ -257,7 +307,6 @@
 					start: "top+=900 center",
 					end: "top+=2100 center",
 					scrub: true
-					// markers: true,
 				}
 			});
 
@@ -283,7 +332,6 @@
 					start: "top+=3300 center",
 					end: "top+=5400 center",
 					scrub: true
-					// markers: true,
 				}
 			});
 
@@ -305,13 +353,12 @@
 
 			gsap.to(starVertices, {
 				scrollTrigger: {
-					trigger: "#video",
+					trigger: "#videoSection",
 					start: "top-=200% bottom",
 					end: "top bottom",
 					scrub: true,
-					// markers: true,
 					onUpdate: (self) => {
-						// Removing last 10 items from starVertices array on scrolltrigger on each update
+						// Removing last 10 items from starVertices array on ScrollTrigger on each update
 						const starsRendered =
 							starVertices.length -
 							Math.floor(starVertices.length * self.progress);
@@ -337,6 +384,77 @@
 			return () => ctx.revert();
 		}, gsapScope);
 	});
+
+	let showVideoPreview: boolean = true;
+
+	const onClickVideo = (e: Event) => {
+		const elementRect = (
+			e.target as HTMLButtonElement
+		).getBoundingClientRect();
+
+		const scrollTop = window.scrollY || document.documentElement.scrollTop;
+		const centerY =
+			elementRect.top +
+			scrollTop -
+			(window.innerHeight - elementRect.height) / 2;
+
+		const videoTimeline = gsap.timeline();
+
+		videoTimeline
+			.to(
+				"#video",
+				{
+					onComplete: () => {
+						ScrollTrigger.refresh();
+						gsap.to(window, {
+							scrollTo: {
+								y: centerY,
+								autoKill: false
+							},
+							onComplete: () => {
+								showVideoPreview = false;
+								gsap.to(["#videoSection", "#home", gsapScope], {
+									scrollTrigger: {
+										trigger: "#videoSection",
+										start: "top top",
+										end: "top+=100px top"
+									},
+									onStart: () => {
+										showVideoPreview = true;
+									},
+									backgroundColor: "#18181b",
+									ease: "sine.out",
+									delay: 0.5
+								});
+							},
+							duration: 0.6
+						});
+					}
+				},
+				0
+			)
+			.to(
+				["#home", "#videoSection", gsapScope],
+				{
+					backgroundColor: "#000",
+					duration: 0.4,
+					ease: "sine.out",
+					delay: 0.6
+				},
+				0
+			)
+			.to(
+				"#videoTitle",
+				{
+					opacity: 0,
+					display: "hidden",
+					duration: 0.4,
+					ease: "sine.out",
+					delay: 0.6
+				},
+				0
+			);
+	};
 
 	let swiperInstance: Swiper;
 
@@ -558,25 +676,52 @@
 		</div>
 	</section>
 
-	<section class="h-screen w-screen mt-5" id="video">
+	<section class="h-screen w-screen relative flex flex-col" id="videoSection">
 		<h2
-			class="text-center text-4xl sm:text-5xl text-white tracking-tighter mb-9 sm:mb-12"
+			class="top-0 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter"
+			id="videoTitle"
 		>
 			WAC 2023
 		</h2>
-		<button class="relative w-full sm:w-5/6 h-4/5 m-auto block">
-			<img
-				src={trailerThumbnail}
-				alt="Trailer video thumbnail"
-				class="w-full h-full object-cover object-center sm:rounded-2xl"
-			/>
+		<button
+			class="w-full sm:w-5/6 h-4/5 m-auto block relative"
+			on:click={onClickVideo}
+			id="video"
+		>
+			<div
+				class="transition-opacity duration-1000 {!showVideoPreview &&
+					'opacity-0'} h-full w-full absolute inset-0"
+			>
+				<div class="relative h-full w-full">
+					<img
+						src={trailerThumbnail}
+						alt="Trailer video thumbnail"
+						class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
+					/>
+					<div
+						class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+					>
+						<div class="h-24 w-24 text-white">
+							<IoIosPlayCircle />
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div
-				class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+				class="transition-opacity duration-1000 {showVideoPreview &&
+					'opacity-0'} absolute inset-0"
 			>
-				<div class="h-24 w-24 text-white">
-					<IoIosPlayCircle />
-				</div>
+				{#if !showVideoPreview}
+					<iframe
+						src="https://www.youtube.com/embed/UfDBOA47oN4?autoplay=1"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+						class="w-full h-full sm:rounded-2xl sm:shadow-md"
+					/>
+				{/if}
 			</div>
 		</button>
 	</section>
