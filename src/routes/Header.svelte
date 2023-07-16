@@ -86,6 +86,7 @@
 <header
 	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-300 absolute"
 	bind:this={headerElement}
+	id="header"
 >
 	<a href="/" class="hover:brightness-110 transition-all">
 		<img src={logo} alt="logo" class="h-11 sm:h-14" height={44} />
