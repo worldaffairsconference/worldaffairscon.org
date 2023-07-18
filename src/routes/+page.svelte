@@ -677,7 +677,7 @@
 		>
 			<div
 				class="transition-opacity duration-500 {!showVideoPreview &&
-					'opacity-0'} absolute inset-0"
+					'opacity-0'} absolute inset-0 z-50"
 			>
 				<div class="relative h-full w-full">
 					<img
@@ -697,17 +697,22 @@
 
 			<div
 				class="transition-opacity duration-500 {showVideoPreview &&
-					'opacity-0'} absolute inset-0"
+					'opacity-0'} absolute inset-0 overflow-hidden"
 			>
 				{#if !showVideoPreview}
-					<iframe
-						src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
-						title="YouTube video player"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen
-						class="w-full h-full sm:rounded-2xl sm:shadow-md"
-					/>
+					<!-- https://stackoverflow.com/questions/18342536/how-to-hide-the-bar-at-the-top-of-youtube-even-when-mouse-hovers-over-it -->
+					<div
+						class="relative pb-[56.25%] pt-[25px] w-[300%] -left-[100%]"
+					>
+						<iframe
+							src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="w-full h-full sm:rounded-2xl sm:shadow-md absolute inset-0 outline-none"
+						/>
+					</div>
 				{/if}
 			</div>
 		</button>
