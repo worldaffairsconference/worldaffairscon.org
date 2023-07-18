@@ -369,8 +369,6 @@
 			);
 	};
 
-	// TODO: prevent the scroll from pausing after onClickVideo is called
-
 	const onClickVideo = (e: Event) => {
 		const elementRect = (
 			e.target as HTMLButtonElement
@@ -595,7 +593,7 @@
 									slidesPerView: 5
 								},
 								"@1.00": {
-									slidesPerView: 6 // TODO: use pixel breakpoints
+									slidesPerView: 6
 								}
 							}}
 						>
