@@ -565,11 +565,11 @@
 				</dl>
 			</div>
 			<div
-				class="absolute w-full h-screen text-left py-16 flex flex-col"
+				class="absolute w-full h-screen text-left py-12 sm:py-16 flex flex-col"
 				id="speakers"
 			>
 				<h2
-					class="text-center text-[2.75rem] sm:text-7xl font-bold text-white tracking-tight mb-12"
+					class="text-center text-[2.75rem] sm:text-7xl font-bold text-white tracking-tight mb-8 sm:mb-12"
 				>
 					Past Speakers
 				</h2>
@@ -639,14 +639,14 @@
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
-						class="h-10 w-10 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-11 w-11 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
 						<TiArrowLeft />
 					</button>
 					<button
 						on:click={nextSlide}
-						class="h-10 w-10 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-11 w-11 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
 						<TiArrowRight />
@@ -700,19 +700,14 @@
 					'opacity-0'} absolute inset-0 overflow-hidden"
 			>
 				{#if !showVideoPreview}
-					<!-- https://stackoverflow.com/questions/18342536/how-to-hide-the-bar-at-the-top-of-youtube-even-when-mouse-hovers-over-it -->
-					<div
-						class="relative pb-[56.25%] pt-[25px] w-[300%] -left-[100%]"
-					>
-						<iframe
-							src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-							class="w-full h-full sm:rounded-2xl sm:shadow-md absolute inset-0 outline-none"
-						/>
-					</div>
+					<iframe
+						src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
+						title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+						class="w-full h-full sm:rounded-2xl sm:shadow-md outline-none"
+					/>
 				{/if}
 			</div>
 		</button>
