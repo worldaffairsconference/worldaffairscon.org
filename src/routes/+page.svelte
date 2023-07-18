@@ -714,7 +714,7 @@
 	</section>
 
 	<section
-		class="w-screen px-12 md:px-28 py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7"
+		class="w-screen px-12 md:px-28 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7"
 		id="action"
 	>
 		<h3 class="uppercase">
