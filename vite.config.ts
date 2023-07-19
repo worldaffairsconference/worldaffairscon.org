@@ -1,8 +1,9 @@
 import { sveltekit } from "@sveltejs/kit/vite";
+import { isoImport } from "vite-plugin-iso-import";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
-	plugins: [sveltekit()],
+	plugins: [isoImport(), sveltekit()],
 	test: {
 		globals: true,
 		include: ["src/**/*.test.ts", "firebase/**/*.test.ts"],

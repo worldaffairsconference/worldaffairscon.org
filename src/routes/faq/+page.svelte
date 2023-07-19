@@ -1,10 +1,12 @@
 <script lang="ts">
+	import type { TupleOfLength } from "$lib/types";
+
 	interface FAQ {
 		question: string;
 		answer: string;
 	}
 
-	const faqs: { [key: string]: FAQ[] } = {
+	const faqs = {
 		General: [
 			{
 				question: "What is the WAC?",
@@ -37,12 +39,21 @@
 				answer: 'Click the red "SPRINT" button in the navbar!'
 			}
 		]
+	} as const satisfies Readonly<Record<string, Readonly<FAQ[]>>>;
+
+	const faqStates = Object.fromEntries(
+		Object.keys(faqs).map((key) => [
+			key,
+			Array(faqs[key as keyof typeof faqs].length).fill(false)
+		])
+	) as {
+		[P in keyof typeof faqs]: TupleOfLength<
+			boolean,
+			(typeof faqs)[P]["length"]
+		>;
 	};
 
-	const faqStates = Object.keys(faqs).reduce((acc, key) => {
-		acc[key] = Array(faqs[key].length).fill(false);
-		return acc;
-	}, {} as { [key: string]: boolean[] });
+	const faqSectionNames = Object.keys(faqs) as (keyof typeof faqs)[];
 </script>
 
 <svelte:head>
@@ -73,7 +84,7 @@
 				</div>
 			</div>
 		</div>
-		{#each Object.keys(faqs) as faqSectionName}
+		{#each faqSectionNames as faqSectionName}
 			<h3
 				class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-8 text-center"
 			>
@@ -88,10 +99,9 @@
 							<div class="flex w-full text-left items-center">
 								<button
 									class="mr-5 flex h-10 w-full max-w-[2.5rem] items-center justify-center rounded-lg bg-secondary bg-opacity-5"
-									on:click={() => {
-										faqStates[faqSectionName][i] =
-											!faqStates[faqSectionName][i];
-									}}
+									on:click={() =>
+										(faqStates[faqSectionName][i] =
+											!faqStates[faqSectionName][i])}
 									aria-label="Toggle FAQ"
 								>
 									<svg

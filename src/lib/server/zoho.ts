@@ -35,10 +35,15 @@ async function refreshAccessToken() {
 export async function addEmailToDistributionList(
 	email: string,
 	list: keyof typeof distributionLists
-): Promise<{
-	success: boolean;
-	message: "added" | "alreadyAdded" | "invalidEmail" | "unknownError";
-}> {
+): Promise<
+	| {
+			success: true;
+			message: "added" | "alreadyAdded";
+	  }
+	| { success: false; message: "invalidEmail" | "unknownError" }
+> {
+	if (!email.trim()) return { success: false, message: "invalidEmail" };
+
 	try {
 		const res = await fetch(
 			`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${distributionLists[list]}`,

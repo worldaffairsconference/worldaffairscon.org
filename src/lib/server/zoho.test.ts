@@ -10,12 +10,6 @@ import {
 import { addEmailToDistributionList } from "./zoho";
 
 const server = setupServer();
-// rest.post('https://accounts.zoho.com/oauth/v2/token', (_, res, ctx) => {
-// 	return res(ctx.status(200), ctx.json(true));
-// }),
-// rest.get('https://accounts.zoho.com/oauth/v2/token', (_, res, ctx) => {
-// 	return res(ctx.status(400), ctx.json(true));
-// })
 
 beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
 afterAll(() => server.close());
@@ -98,6 +92,28 @@ describe("mail distribution lists api", () => {
 		);
 		expect(
 			await addEmailToDistributionList("uccwac", "newsletter")
+		).toStrictEqual({
+			success: false,
+			message: "invalidEmail"
+		});
+	});
+
+	it("should return error with empty email", async () => {
+		server.use(
+			rest.put(
+				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
+				(_, res, ctx) =>
+					res(
+						ctx.status(200),
+						ctx.json({
+							status: { code: 200, description: "success" },
+							data: [{ "": "Invalid member" }]
+						})
+					)
+			)
+		);
+		expect(
+			await addEmailToDistributionList("", "newsletter")
 		).toStrictEqual({
 			success: false,
 			message: "invalidEmail"

@@ -1,44 +1,21 @@
-<!-- <script lang="ts">
-	import { z } from 'zod';
-
-	import Component from '$lib/Component.svelte';
-	import { docStore } from '$lib/firebase';
-
-	const test = docStore(
-		'test/hi',
-		z.object({ test: z.boolean() }).strict(),
-		z.object({ test: z.boolean().catch(true) })
-	);
-</script>
-
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-<pre><code>{JSON.stringify($test, null, 2)}</code></pre>
-
-<Component />
-<Component />
-<Component />
-<Component /> -->
-
 <script lang="ts">
 	import "swiper/css";
 	import "swiper/css/navigation";
 
-	import gsap from "gsap";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
+	import { ScrollTrigger } from "gsap/ScrollTrigger?client";
+	import { gsap } from "gsap?client";
 	import { onMount } from "svelte";
-
 	import IoIosPlayCircle from "svelte-icons/io/IoIosPlayCircle.svelte";
 	import TiArrowLeft from "svelte-icons/ti/TiArrowLeft.svelte";
 	import TiArrowRight from "svelte-icons/ti/TiArrowRight.svelte";
 	import type { Swiper } from "swiper";
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
-	import * as THREE from "three";
-	import ThreeGlobe from "three-globe";
+	import * as THREE from "three?client";
+	import ThreeGlobe from "three-globe?client";
 
 	import { browser } from "$app/environment";
+	import { enhance } from "$app/forms";
 
 	import ckHoffler from "$lib/images/speakers/ck_hoffler.webp";
 	import davidOwen from "$lib/images/speakers/david_owen.webp";
@@ -50,6 +27,11 @@
 	import mlk from "$lib/images/speakers/mlk.webp";
 	import scottGalloway from "$lib/images/speakers/scott_galloway.webp";
 	import trailerThumbnail from "$lib/images/thumbnails/trailer_thumbnail.png";
+
+	import type { ActionData } from "./$types";
+
+	export let form: ActionData;
+	$: if (form) console.log(form);
 
 	// Constants
 	const TOTAL_STARS = 600; // How many stars there are
@@ -137,7 +119,7 @@ void main() {
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 	}
 
-	onMount(() => {
+	onMount(async () => {
 		// Initializing the globe
 		const Globe = new ThreeGlobe({ animateIn: false })
 			.globeImageUrl("./map.webp")
@@ -226,6 +208,7 @@ void main() {
 				(atmosphere.material as THREE.ShaderMaterial).fragmentShader =
 					fragmentShader;
 
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-ignore
 				atmosphere.material.uniforms["coefficient"].value =
 					ATMOSPHERE_INTENSITY;
@@ -385,7 +368,7 @@ void main() {
 		}, gsapScope);
 	});
 
-	let showVideoPreview: boolean = true;
+	let showVideoPreview = true;
 
 	const onClickVideo = (e: Event) => {
 		const elementRect = (
@@ -499,7 +482,12 @@ void main() {
 			<span class="text-secondary">#RollWAC</span>
 		</div>
 
-		<div class="flex gap-1.5 flex-col sm:flex-row">
+		<form
+			class="flex gap-1.5 flex-col sm:flex-row"
+			method="post"
+			action="?/getNotified"
+			use:enhance
+		>
 			<div class="relative">
 				<div
 					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
@@ -520,7 +508,8 @@ void main() {
 					</svg>
 				</div>
 				<input
-					type="text"
+					type="email"
+					name="email"
 					class="border text-sm rounded-lg block w-56 md:w-80 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
 					placeholder="name@school.com"
 				/>
@@ -530,7 +519,7 @@ void main() {
 			>
 				Get Notified
 			</button>
-		</div>
+		</form>
 	</section>
 
 	<section
@@ -746,7 +735,12 @@ void main() {
 			<h3 class="text-white font-semibold mb-4 sm:mb-5 sm:text-2xl">
 				Sign up for WAC updates
 			</h3>
-			<div class="flex gap-1.5 flex-col sm:flex-row">
+			<form
+				class="flex gap-1.5 flex-col sm:flex-row"
+				method="post"
+				action="?/getNotified"
+				use:enhance
+			>
 				<div class="relative">
 					<div
 						class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
@@ -767,7 +761,8 @@ void main() {
 						</svg>
 					</div>
 					<input
-						type="text"
+						type="email"
+						name="email"
 						class="border text-sm rounded-lg block w-full sm:w-64 md:w-96 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
 						placeholder="name@school.com"
 					/>
@@ -777,7 +772,7 @@ void main() {
 				>
 					Get Notified
 				</button>
-			</div>
+			</form>
 		</div>
 	</section>
 </div>

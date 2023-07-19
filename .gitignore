@@ -12,6 +12,7 @@ vite.config.ts.timestamp-*
 .netlify
 /test-results
 /firebase/emulator-data/
+tsconfig.vitest-temp.json
 
 # General
 .DS_Store

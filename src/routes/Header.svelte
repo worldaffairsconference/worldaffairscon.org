@@ -1,7 +1,8 @@
 <script lang="ts">
-	import gsap, { Expo } from "gsap";
+	import gsap, { Expo } from "gsap?client";
 	import { onMount } from "svelte";
 
+	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
 	import logo from "$lib/images/logos/wac_medium.webp";
 
@@ -10,13 +11,15 @@
 		path: string;
 	}
 
-	const barTl = gsap.timeline({ reversed: true });
+	const barTl = browser
+		? gsap.timeline({ reversed: true })
+		: (undefined as unknown as gsap.core.Timeline);
 
 	let toggle: HTMLButtonElement;
 	let headerElement: HTMLElement;
 	let lastScrollTop: number;
 
-	onMount(() => {
+	onMount(async () => {
 		window.addEventListener("scroll", function () {
 			if (headerElement === null) return;
 
