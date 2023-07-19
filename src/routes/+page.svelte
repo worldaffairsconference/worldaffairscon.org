@@ -495,7 +495,7 @@
 				/>
 			</div>
 			<button
-				class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm"
+				class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm hover:brightness-[1.08] transition-all"
 			>
 				Get Notified
 			</button>
@@ -647,7 +647,7 @@
 
 	<section class="h-screen w-screen relative flex flex-col" id="videoSection">
 		<h2
-			class="-top-3 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter"
+			class="-top-3 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 			id="videoTitle"
 		>
 			WAC 2023
@@ -688,14 +688,16 @@
 					'opacity-0'} absolute inset-0 overflow-hidden"
 			>
 				{#if !showVideoPreview}
-					<iframe
-						src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
-						title="YouTube video player"
-						frameborder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-						allowfullscreen
-						class="w-full h-full sm:rounded-2xl sm:shadow-md outline-none"
-					/>
+					<div class="relative h-full w-full">
+						<iframe
+							src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen
+							class="w-full h-full sm:rounded-2xl sm:shadow-md z-50 absolute inset-0"
+						/>
+					</div>
 				{/if}
 			</div>
 		</button>
