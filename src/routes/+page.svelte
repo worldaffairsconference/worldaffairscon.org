@@ -35,25 +35,7 @@
 
 	// Constants
 	const TOTAL_STARS = 600; // How many stars there are
-	const ATMOSPHERE_RADIUS = 0.26; // How thick the atmosphere is
-	const ATMOSPHERE_INTENSITY = 0.8; // How intense the atmosphere is
-
-	const fragmentShader = `
-uniform vec3 color;
-uniform float coefficient;
-uniform float power;
-varying vec3 vVertexNormal;
-varying vec3 vVertexWorldPosition;
-void main() {
-  vec3 worldCameraToVertex = vVertexWorldPosition - cameraPosition;
-  vec3 viewCameraToVertex	= (viewMatrix * vec4(worldCameraToVertex, 500.0)).xyz;
-  viewCameraToVertex = normalize(viewCameraToVertex) * 6.0;
-  float intensity	= pow(
-    coefficient + dot(vVertexNormal, viewCameraToVertex),
-    power
-  );
-  gl_FragColor = vec4(color, intensity);
-}`;
+	const ATMOSPHERE_RADIUS = 0.1; // How thick the atmosphere is
 
 	interface Speaker {
 		name: string;
@@ -187,35 +169,12 @@ void main() {
 		scene.add(stars);
 
 		let renderer: THREE.WebGLRenderer;
-		let atmosphereMaterial: THREE.ShaderMaterial;
 
 		// Render loop
 		const animate = () => {
 			renderer.render(scene, camera);
 			Globe.rotateY(-0.00035);
 			requestAnimationFrame(animate);
-
-			// TODO: Find a better way to do this
-
-			if (!atmosphereMaterial) {
-				const atmosphere = scene.getObjectByProperty(
-					"__globeObjType",
-					"atmosphere"
-				) as THREE.Mesh;
-
-				if (!atmosphere?.material) return;
-
-				(atmosphere.material as THREE.ShaderMaterial).fragmentShader =
-					fragmentShader;
-
-				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-				// @ts-ignore
-				atmosphere.material.uniforms["coefficient"].value =
-					ATMOSPHERE_INTENSITY;
-
-				atmosphereMaterial =
-					atmosphere.material as THREE.ShaderMaterial;
-			}
 		};
 
 		// Handles resizing the window
@@ -370,6 +329,30 @@ void main() {
 
 	let showVideoPreview = true;
 
+	const stopVideo = () => {
+		showVideoPreview = true;
+
+		const stopVideoTimeline = gsap.timeline();
+
+		stopVideoTimeline
+			.set(
+				"#header",
+				{
+					display: "flex"
+				},
+				0
+			)
+			.to(
+				["#videoSection", "#home", gsapScope],
+				{
+					backgroundColor: "#18181b", // bg-zinc-900
+					ease: "sine.out",
+					duration: 1
+				},
+				0
+			);
+	};
+
 	const onClickVideo = (e: Event) => {
 		const elementRect = (
 			e.target as HTMLButtonElement
@@ -384,6 +367,9 @@ void main() {
 		const videoTimeline = gsap.timeline();
 
 		videoTimeline
+			.set("#header", {
+				display: "none"
+			})
 			.to(
 				"#video",
 				{
@@ -396,18 +382,12 @@ void main() {
 							},
 							onComplete: () => {
 								showVideoPreview = false;
-								gsap.to(["#videoSection", "#home", gsapScope], {
-									scrollTrigger: {
-										trigger: "#videoSection",
-										start: "top top",
-										end: "top+=100px top"
-									},
-									onStart: () => {
-										showVideoPreview = true;
-									},
-									backgroundColor: "#18181b",
-									ease: "sine.out",
-									delay: 0.5
+								ScrollTrigger.create({
+									trigger: "#videoSection",
+									start: "top top+=40px",
+									end: "top+=80px top+=40px",
+									onLeaveBack: stopVideo,
+									onLeave: stopVideo
 								});
 							},
 							duration: 0.6
@@ -573,11 +553,11 @@ void main() {
 				</dl>
 			</div>
 			<div
-				class="absolute w-full h-screen text-left py-16 flex flex-col"
+				class="absolute w-full h-screen text-left py-12 sm:py-16 flex flex-col"
 				id="speakers"
 			>
 				<h2
-					class="text-center text-[2.75rem] sm:text-7xl font-bold text-white tracking-tight mb-12"
+					class="text-center text-[2.75rem] sm:text-7xl font-bold text-white tracking-tight mb-8 sm:mb-12"
 				>
 					Past Speakers
 				</h2>
@@ -603,7 +583,7 @@ void main() {
 									slidesPerView: 5
 								},
 								"@1.00": {
-									slidesPerView: 6 // TODO: use pixel breakpoints
+									slidesPerView: 6
 								}
 							}}
 						>
@@ -647,14 +627,14 @@ void main() {
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
-						class="h-10 w-10 sm:h-[3.15rem] sm:w-[3.15rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-11 w-11 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
 						<TiArrowLeft />
 					</button>
 					<button
 						on:click={nextSlide}
-						class="h-10 w-10 sm:h-[3.15rem] sm:w-[3.15rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-11 w-11 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
 						<TiArrowRight />
@@ -667,19 +647,25 @@ void main() {
 
 	<section class="h-screen w-screen relative flex flex-col" id="videoSection">
 		<h2
-			class="top-0 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter"
+			class="-top-3 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter"
 			id="videoTitle"
 		>
 			WAC 2023
 		</h2>
+		{#if !showVideoPreview}
+			<button
+				class="h-full w-full absolute inset-0 z-10 cursor-default"
+				on:click={stopVideo}
+			/>
+		{/if}
 		<button
-			class="w-full sm:w-5/6 h-4/5 m-auto block relative"
+			class="w-full sm:w-5/6 h-4/5 m-auto block relative z-30"
 			on:click={onClickVideo}
 			id="video"
 		>
 			<div
-				class="transition-opacity duration-1000 {!showVideoPreview &&
-					'opacity-0'} h-full w-full absolute inset-0"
+				class="transition-opacity duration-500 {!showVideoPreview &&
+					'opacity-0'} absolute inset-0 z-50"
 			>
 				<div class="relative h-full w-full">
 					<img
@@ -698,17 +684,17 @@ void main() {
 			</div>
 
 			<div
-				class="transition-opacity duration-1000 {showVideoPreview &&
-					'opacity-0'} absolute inset-0"
+				class="transition-opacity duration-500 {showVideoPreview &&
+					'opacity-0'} absolute inset-0 overflow-hidden"
 			>
 				{#if !showVideoPreview}
 					<iframe
-						src="https://www.youtube.com/embed/UfDBOA47oN4?autoplay=1"
+						src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
 						title="YouTube video player"
 						frameborder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
-						class="w-full h-full sm:rounded-2xl sm:shadow-md"
+						class="w-full h-full sm:rounded-2xl sm:shadow-md outline-none"
 					/>
 				{/if}
 			</div>
@@ -716,7 +702,7 @@ void main() {
 	</section>
 
 	<section
-		class="w-screen px-12 md:px-28 py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7"
+		class="w-screen px-12 md:px-28 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7"
 		id="action"
 	>
 		<h3 class="uppercase">
@@ -776,14 +762,3 @@ void main() {
 		</div>
 	</section>
 </div>
-
-<style>
-	:global(.swiper-button-next),
-	:global(.swiper-button-prev) {
-		right: 10px;
-		padding: 30px;
-		color: #ffffff !important;
-		fill: black !important;
-		stroke: black !important;
-	}
-</style>
