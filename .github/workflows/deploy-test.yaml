@@ -23,7 +23,7 @@ jobs:
                           issue_number: context.issue.number,
                           owner: context.repo.owner,
                           repo: context.repo.repo,
-                          body: "Due to Firebase's lack of support for *deploy previews*, only one codebase can be loaded at a time in the testing environment. To bring this commit back into the testing environment, please run ```gh workflow run deploy-test --ref " + process.env.GITHUB_HEAD_REF + "```",
+                          body: "Due to Firebase's lack of support for *deploy previews*, only one codebase can be loaded at a time in the testing environment. To bring this commit back into the testing environment, please run ```gh workflow run deploy-test.yaml --ref " + process.env.GITHUB_HEAD_REF + "```",
                         });
             - name: Checkout
               uses: actions/checkout@v3
