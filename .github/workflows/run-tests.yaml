@@ -98,6 +98,6 @@ jobs:
             - name: Export environment variables to file
               run: echo "${{ secrets.ENV }}" > .env
             - name: Install playwright
-              run: pnpm dlx playwright install
+              run: npx playwright install
             - name: Run e2e tests
               run: firebase emulators:exec "pnpm run test:e2e" --token "${{ secrets.FIREBASE_TOKEN }}"
