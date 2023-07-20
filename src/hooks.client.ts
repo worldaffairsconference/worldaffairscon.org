@@ -7,5 +7,5 @@ console.log(
    \\ \`\\___x___/\\ \\_\\ \\_\\ \\____/
     '\\/__//__/  \\/_/\\/_/\\/___/ 
 Come visit our GitHub: https://github.com/worldaffairsconference/!`,
-	'color: blue'
+	"color: blue"
 );

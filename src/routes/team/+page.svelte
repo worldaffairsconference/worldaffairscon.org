@@ -7,66 +7,66 @@
 
 	const executives: TeamMember[] = [
 		{
-			name: 'Ray Woo',
-			position: 'President',
-			image: 'https://i.imgur.com/oPyoVMy.jpg'
+			name: "Ray Woo",
+			position: "President",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
-			name: 'Shaya Woo',
-			position: 'Other President',
-			image: 'https://i.imgur.com/oPyoVMy.jpg'
+			name: "Shaya Woo",
+			position: "Other President",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
-			name: 'Sam Woo',
-			position: 'Tech Person',
-			image: 'https://i.imgur.com/oPyoVMy.jpg'
+			name: "Sam Woo",
+			position: "Tech Person",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
-			name: 'Jungly Chen',
-			position: 'Something',
-			image: 'https://i.imgur.com/oPyoVMy.jpg'
+			name: "Jungly Chen",
+			position: "Something",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
-			name: 'Jefferson Ding',
-			position: 'Conference Chair',
-			image: 'https://i.imgur.com/oPyoVMy.jpg'
+			name: "Jefferson Ding",
+			position: "Conference Chair",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
-			name: 'Rahul Nanda',
-			position: 'Conference Chair',
-			image: 'https://i.imgur.com/oPyoVMy.jpg'
+			name: "Rahul Nanda",
+			position: "Conference Chair",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
 		}
 	];
 	const seniorTeam: TeamMember[] = [
 		{
-			name: 'Alex Woolsey',
-			position: 'Assistant Head of Programs',
-			image: 'https://i.imgur.com/nsm5SnU.jpg'
+			name: "Alex Woolsey",
+			position: "Assistant Head of Programs",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: 'Duo Yang',
-			position: 'Assistant Head of Programs',
-			image: 'https://i.imgur.com/nsm5SnU.jpg'
+			name: "Duo Yang",
+			position: "Assistant Head of Programs",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: 'Karen Liu',
-			position: 'Assistant Head of Plenaries',
-			image: 'https://i.imgur.com/nsm5SnU.jpg'
+			name: "Karen Liu",
+			position: "Assistant Head of Plenaries",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: 'Evan Rosenberg',
-			position: 'Assistant Head of SPRINT',
-			image: 'https://i.imgur.com/nsm5SnU.jpg'
+			name: "Evan Rosenberg",
+			position: "Assistant Head of SPRINT",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: 'Jennifer Yang',
-			position: 'Assistant Head of SPRINT',
-			image: 'https://i.imgur.com/nsm5SnU.jpg'
+			name: "Jennifer Yang",
+			position: "Assistant Head of SPRINT",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: 'Adrian Mak',
-			position: 'Assistant Head of Marketing',
-			image: 'https://i.imgur.com/nsm5SnU.jpg'
+			name: "Adrian Mak",
+			position: "Assistant Head of Marketing",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
 		}
 	];
 </script>
@@ -82,7 +82,9 @@
 <section class="pt-[8.5rem]">
 	<!-- TODO: add a title or something say "Wac 2023 Team" -->
 	<div class="px-4 pt-4 sm:pt-10 md:pt-16 mx-auto md:px-24 lg:px-8">
-		<div class="max-w-xl mb-10 sm:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+		<div
+			class="max-w-xl mb-10 sm:mx-auto sm:text-center lg:max-w-2xl md:mb-12"
+		>
 			<h2
 				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
 			>
@@ -94,7 +96,9 @@
 		>
 			{#each executives as member}
 				<div>
-					<div class="relative pb-56 mb-4 rounded-md overflow-hidden shadow lg:pb-64">
+					<div
+						class="relative pb-56 mb-4 rounded-md overflow-hidden shadow lg:pb-64"
+					>
 						<img
 							class="absolute object-cover w-full h-full"
 							src={member.image}
@@ -114,8 +118,12 @@
 		</div>
 	</div>
 
-	<div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-		<div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+	<div
+		class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+	>
+		<div
+			class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12"
+		>
 			<h2
 				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
 			>

@@ -1,5 +1,5 @@
-import { inc } from '../lib/library';
+import { inc } from "../lib/library";
 
-describe('it should work', () => {
-	it('increments the input', () => expect(inc(3)).toStrictEqual(4));
+describe("it should work", () => {
+	it("increments the input", () => expect(inc(3)).toStrictEqual(4));
 });

@@ -1,5 +1,5 @@
 <script>
-	import { inc } from './library';
+	import { inc } from "./library";
 	let count = 0;
 </script>
 

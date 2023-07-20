@@ -1,59 +1,63 @@
 <script lang="ts">
-	import gsap, { Expo } from 'gsap';
-	import { onMount } from 'svelte';
+	import gsap, { Expo } from "gsap?client";
+	import { onMount } from "svelte";
 
-	import { page } from '$app/stores';
-	import logo from '$lib/images/logos/wac_medium.webp';
+	import { browser } from "$app/environment";
+	import { page } from "$app/stores";
+	import logo from "$lib/images/logos/wac_medium.webp";
 
 	interface Route {
 		name: string;
 		path: string;
 	}
 
-	const barTl = gsap.timeline({ reversed: true });
+	const barTl = browser
+		? gsap.timeline({ reversed: true })
+		: (undefined as unknown as gsap.core.Timeline);
 
 	let toggle: HTMLButtonElement;
 	let headerElement: HTMLElement;
 	let lastScrollTop: number;
 
-	onMount(() => {
-		window.addEventListener('scroll', function () {
+	onMount(async () => {
+		window.addEventListener("scroll", function () {
 			if (headerElement === null) return;
 
-			var scrollTop = window.scrollY || document.documentElement.scrollTop;
+			var scrollTop =
+				window.scrollY || document.documentElement.scrollTop;
 
 			if (scrollTop < 350) {
-				headerElement.style.position = 'absolute';
-				headerElement.style.backgroundColor = 'transparent';
-				headerElement.classList.remove('backdrop-blur-xl');
+				headerElement.style.position = "absolute";
+				headerElement.style.backgroundColor = "transparent";
+				headerElement.classList.remove("backdrop-blur-xl");
 			} else {
-				headerElement.style.position = 'fixed';
-				headerElement.style.backgroundColor = 'rgb(0 0 0 / 0.3)';
-				headerElement.classList.add('backdrop-blur-xl');
+				headerElement.style.position = "fixed";
+				headerElement.style.backgroundColor = "rgb(0 0 0 / 0.3)";
+				headerElement.classList.add("backdrop-blur-xl");
 			}
 
 			if (scrollTop >= lastScrollTop) {
-				headerElement.style.top = '-200px';
+				headerElement.style.top = "-200px";
 			} else {
-				headerElement.style.top = '0';
+				headerElement.style.top = "0";
 			}
 
 			lastScrollTop = scrollTop;
 		});
 
-		barTl.set('#navbar', {
+		barTl.set("#navbar", {
 			className:
-				'fixed right-0 bottom-0 z-50 bg-zinc-900 w-[68%] h-full bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-xl gap-14 text-zinc-300'
+				"fixed right-0 bottom-0 z-50 bg-zinc-900 w-[68%] h-full bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-xl gap-14 text-zinc-300"
 		});
-		barTl.set('#open', {
-			display: 'none',
+		barTl.set("#open", {
+			display: "none",
 			duration: 0
 		});
-		barTl.to('#close', {
-			display: 'block',
+		barTl.to("#close", {
+			display: "block",
 			duration: 0
 		});
-		barTl.to('#navbar', {
+		barTl.to("#navbar", {
 			duration: 0.3,
 			ease: Expo.easeInOut
 		});
@@ -61,7 +65,11 @@
 
 	const toggleNav = () => {
 		// Checking if the hamburger nav is visible
-		if (window.getComputedStyle(toggle).getPropertyValue('display') === 'none') return;
+		if (
+			window.getComputedStyle(toggle).getPropertyValue("display") ===
+			"none"
+		)
+			return;
 
 		if (barTl.reversed()) {
 			barTl.timeScale(1).reversed(false);
@@ -71,16 +79,17 @@
 	};
 
 	const routes: Route[] = [
-		{ name: 'Schedule', path: '/schedule' },
-		{ name: 'Team', path: '/team' },
-		{ name: 'Past Speakers', path: '/past-speakers' },
-		{ name: 'FAQ', path: '/faq' }
+		// { name: "Schedule", path: "/schedule" },
+		// { name: "Team", path: "/team" },
+		// { name: "Past Speakers", path: "/past-speakers" },
+		// { name: "FAQ", path: "/faq" }
 	];
 </script>
 
 <header
 	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-300 absolute"
 	bind:this={headerElement}
+	id="header"
 >
 	<a href="/" class="hover:brightness-110 transition-all">
 		<img src={logo} alt="logo" class="h-11 sm:h-14" height={44} />
@@ -102,11 +111,11 @@
 				</li>
 			{/each}
 		</ul>
-		<button
+		<!-- <button
 			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base"
 		>
 			Login
-		</button>
+		</button> -->
 		<button
 			class="block lg:hidden z-50"
 			aria-label="Toggle navigation"
