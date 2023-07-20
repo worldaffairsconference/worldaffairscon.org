@@ -723,6 +723,7 @@
 				<div class="relative h-full w-full">
 					{#if !showVideoPreview}
 						<!-- TODO: <video> elements must have a <track kind="captions"> -->
+						<!-- svelte-ignore a11y-media-has-caption -->
 						<video
 							class="w-full h-full sm:rounded-2xl sm:shadow-md absolute inset-0 z-50"
 							autoplay
