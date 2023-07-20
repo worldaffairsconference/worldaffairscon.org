@@ -28,7 +28,7 @@
 	import scottGalloway from "$lib/images/speakers/scott_galloway.webp";
 	import jamesHansen from "$lib/images/speakers/james_hansen.webp";
 	import sarahGallagher from "$lib/images/speakers/sarah_gallagher.webp";
-	import trailerThumbnail from "$lib/images/thumbnails/trailer_thumbnail.png";
+	import trailerThumbnail from "$lib/images/thumbnails/trailer_thumbnail.webp";
 	import trailerVideo from "$lib/video/wac_trailer.mp4";
 	import toast from "svelte-french-toast";
 
@@ -63,8 +63,6 @@
 		tag?: string;
 	}
 
-	// TODO: put the correct tags
-
 	const speakers: Speaker[] = [
 		{
 			name: "Martin Luther King III",
@@ -76,17 +74,19 @@
 			name: "Edward Snowden",
 			title: "Former NSA Consultant & Whistleblower",
 			image: edwardSnowden,
-			tag: "Famous Speaker"
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "CK Hoffler",
 			title: "CEO of The CK Hoffler Firm",
-			image: ckHoffler
+			image: ckHoffler,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Scott Galloway",
 			title: "Professor of Marketing at NYU Stern School of Business",
-			image: scottGalloway
+			image: scottGalloway,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Marc Garneau",
@@ -96,7 +96,8 @@
 		{
 			name: "Mehdi Hasan",
 			title: "British-American Political Journalist, Broadcaster and Author",
-			image: mehdiHasan
+			image: mehdiHasan,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "John Stackhouse",
@@ -111,12 +112,14 @@
 		{
 			name: "Dr. Geoffrey Hinton",
 			title: "2018 recipient of the Turing Award for Computer Science",
-			image: geoffreyHinton
+			image: geoffreyHinton,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Dr. James Hansen",
 			title: '"Father of climate change awareness"',
-			image: jamesHansen
+			image: jamesHansen,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Dr. Sarah Gallagher",
@@ -740,12 +743,12 @@
 	>
 		<h3 class="uppercase">
 			<div
-				class="text-2xl sm:text-4xl text-zinc-300 font-semibold tracking-tighter"
+				class="text-3xl sm:text-4xl text-zinc-300 font-semibold tracking-tighter"
 			>
 				Stay
 			</div>
 			<div
-				class="text-3xl sm:text-7xl text-secondary font-bold tracking-tighter"
+				class="text-5xl sm:text-7xl text-secondary font-bold tracking-tighter"
 			>
 				Updated
 			</div>

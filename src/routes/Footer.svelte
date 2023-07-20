@@ -35,7 +35,9 @@
 
 <footer class="bg-zinc-950">
 	<div class="w-full mx-auto max-w-screen-xl p-12">
-		<div class="md:flex md:items-center md:justify-between gap-3">
+		<div
+			class="md:flex md:items-center md:justify-between gap-3 mb-4 sm:mb-0"
+		>
 			<div class="flex gap-7 items-center mb-4">
 				<img src={ucc} alt="UCC Logo" class="h-12 sm:h-14" />
 				<img
@@ -46,9 +48,9 @@
 			</div>
 
 			<div>
-				<span class="uppercase text-zinc-300">Social</span>
+				<span class="uppercase text-zinc-300">Socials</span>
 				<div
-					class="flex flex-wrap gap-2.5 items-center mt-3 text-sm font-medium text-zinc-200 sm:mt-0"
+					class="flex flex-wrap gap-2.5 items-center text-sm font-medium text-zinc-200"
 				>
 					{#each socials as social}
 						<a
