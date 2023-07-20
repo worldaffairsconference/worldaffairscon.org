@@ -65,6 +65,12 @@
 
 	const speakers: Speaker[] = [
 		{
+			name: "CK Hoffler",
+			title: "CEO of The CK Hoffler Firm",
+			image: ckHoffler,
+			tag: "Keynote Speaker"
+		},
+		{
 			name: "Martin Luther King III",
 			title: "American Human Rights Activist",
 			image: mlk,
@@ -77,21 +83,21 @@
 			tag: "Keynote Speaker"
 		},
 		{
-			name: "CK Hoffler",
-			title: "CEO of The CK Hoffler Firm",
-			image: ckHoffler,
-			tag: "Keynote Speaker"
-		},
-		{
-			name: "Scott Galloway",
-			title: "Professor of Marketing at NYU Stern School of Business",
-			image: scottGalloway,
+			name: "Dr. Geoffrey Hinton",
+			title: "2018 recipient of the Turing Award for Computer Science",
+			image: geoffreyHinton,
 			tag: "Keynote Speaker"
 		},
 		{
 			name: "Marc Garneau",
 			title: "Former Canadian Astronaut",
 			image: marcGarneau
+		},
+		{
+			name: "Scott Galloway",
+			title: "Professor of Marketing at NYU Stern School of Business",
+			image: scottGalloway,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Mehdi Hasan",
@@ -108,12 +114,6 @@
 			name: "David Owen",
 			title: "Former British Foreign Secretary",
 			image: davidOwen
-		},
-		{
-			name: "Dr. Geoffrey Hinton",
-			title: "2018 recipient of the Turing Award for Computer Science",
-			image: geoffreyHinton,
-			tag: "Keynote Speaker"
 		},
 		{
 			name: "Dr. James Hansen",
@@ -498,7 +498,7 @@
 		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
 			<!-- <span class="text-primary">#BeThere</span> -->
 			<span class="text-primary">#RollWac</span>
-			<span class="text-secondary">・ June 11th 2023</span>
+			<span class="text-secondary">・ March 6th 2024</span>
 		</div>
 
 		<form
