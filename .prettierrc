@@ -3,6 +3,6 @@
 	"useTabs": true,
 	"trailingComma": "none",
 	"plugins": ["prettier-plugin-svelte"],
-	"pluginSearchDirs": ["."],
-	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }],
+	"singleQuote": false
 }
