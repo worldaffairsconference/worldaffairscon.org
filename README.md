@@ -54,16 +54,10 @@
     pnpm dev
     ```
 -   To run the unit tests, use
-    ````shell
-    <<<<<<< Updated upstream
+    ```shell
     pnpm test:unit # To run once
     pnpm test:unit:watch # To watch for file changes
-    =======
-    pnpm test:unit # To run once
-    pnpm test:unit:watch # To watch for file changes
-    > > > > > > > Stashed changes
-        ```
-    ````
+    ```
 -   To run end-to-end tests, run
     ```
     pnpm test:e2e
