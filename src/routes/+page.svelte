@@ -26,12 +26,31 @@
 	import mehdiHasan from "$lib/images/speakers/mehdi_hasan.webp";
 	import mlk from "$lib/images/speakers/mlk.webp";
 	import scottGalloway from "$lib/images/speakers/scott_galloway.webp";
+	import jamesHansen from "$lib/images/speakers/james_hansen.webp";
+	import sarahGallagher from "$lib/images/speakers/sarah_gallagher.webp";
 	import trailerThumbnail from "$lib/images/thumbnails/trailer_thumbnail.png";
+	import trailerVideo from "$lib/video/wac_trailer.mp4";
+	import toast from "svelte-french-toast";
 
 	import type { ActionData } from "./$types";
 
+	let formMessages = {
+		added: "You have been added to the mailing list!",
+		alreadyAdded: "You are already on the mailing list!",
+		invalidEmail: "Please enter a valid email address!",
+		unknownError: "An unknown error occurred. Please try again later."
+	};
+
 	export let form: ActionData;
-	$: if (form) console.log(form);
+
+	// TODO: style the toast a bit more
+	$: if (form) {
+		if (form.success) {
+			toast.success(formMessages[form.message]);
+		} else {
+			toast.error(formMessages[form.message]);
+		}
+	}
 
 	// Constants
 	const TOTAL_STARS = 600; // How many stars there are
@@ -41,21 +60,23 @@
 		name: string;
 		title: string;
 		image: string;
-		specialRole?: string;
+		tag?: string;
 	}
+
+	// TODO: put the correct tags
 
 	const speakers: Speaker[] = [
 		{
 			name: "Martin Luther King III",
 			title: "American Human Rights Activist",
 			image: mlk,
-			specialRole: "Keynote Speaker"
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Edward Snowden",
 			title: "Former NSA Consultant & Whistleblower",
 			image: edwardSnowden,
-			specialRole: "Famous Speaker"
+			tag: "Famous Speaker"
 		},
 		{
 			name: "CK Hoffler",
@@ -88,9 +109,19 @@
 			image: davidOwen
 		},
 		{
-			name: "Dr Geoffrey Hinton",
+			name: "Dr. Geoffrey Hinton",
 			title: "2018 recipient of the Turing Award for Computer Science",
 			image: geoffreyHinton
+		},
+		{
+			name: "Dr. James Hansen",
+			title: '"Father of climate change awareness"',
+			image: jamesHansen
+		},
+		{
+			name: "Dr. Sarah Gallagher",
+			title: "Science Advisor to the Canadian Space Agency",
+			image: sarahGallagher
 		}
 	];
 
@@ -335,19 +366,31 @@
 		const stopVideoTimeline = gsap.timeline();
 
 		stopVideoTimeline
-			.set(
-				"#header",
-				{
-					display: "flex"
-				},
-				0
-			)
 			.to(
 				["#videoSection", "#home", gsapScope],
 				{
 					backgroundColor: "#18181b", // bg-zinc-900
 					ease: "sine.out",
 					duration: 1
+				},
+				0
+			)
+			.to(
+				"#videoTitle",
+				{
+					opacity: 1,
+					display: "block",
+					duration: 0.4,
+					ease: "sine.out",
+					delay: 0.2
+				},
+				0
+			)
+			.set(
+				"#header",
+				{
+					y: 0,
+					delay: 0.25
 				},
 				0
 			);
@@ -368,41 +411,33 @@
 
 		videoTimeline
 			.set("#header", {
-				display: "none"
+				y: -200
 			})
-			.to(
-				"#video",
-				{
-					onComplete: () => {
-						ScrollTrigger.refresh();
-						gsap.to(window, {
-							scrollTo: {
-								y: centerY,
-								autoKill: false
-							},
-							onComplete: () => {
-								showVideoPreview = false;
-								ScrollTrigger.create({
-									trigger: "#videoSection",
-									start: "top top+=40px",
-									end: "top+=80px top+=40px",
-									onLeaveBack: stopVideo,
-									onLeave: stopVideo
-								});
-							},
-							duration: 0.6
-						});
-					}
+			.to(window, {
+				scrollTo: {
+					y: centerY,
+					autoKill: false
 				},
-				0
-			)
+				onComplete: () => {
+					ScrollTrigger.create({
+						trigger: "#videoSection",
+						start: "top top+=40px",
+						end: "top+=80px top+=40px",
+						onLeaveBack: stopVideo,
+						onLeave: stopVideo
+					});
+					showVideoPreview = false;
+				},
+				duration: 0.6
+			})
+
 			.to(
 				["#home", "#videoSection", gsapScope],
 				{
 					backgroundColor: "#000",
 					duration: 0.4,
 					ease: "sine.out",
-					delay: 0.6
+					delay: 0.3
 				},
 				0
 			)
@@ -411,9 +446,9 @@
 				{
 					opacity: 0,
 					display: "hidden",
-					duration: 0.4,
+					duration: 0.3,
 					ease: "sine.out",
-					delay: 0.6
+					delay: 0.2
 				},
 				0
 			);
@@ -457,9 +492,10 @@
 			</p>
 		</div>
 
-		<div class="flex gap-4 mb-6 text-xl lg:text-2xl">
-			<span class="text-primary">#BeThere</span>
-			<span class="text-secondary">#RollWAC</span>
+		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
+			<!-- <span class="text-primary">#BeThere</span> -->
+			<span class="text-primary">#RollWac</span>
+			<span class="text-secondary">・ June 11th 2023</span>
 		</div>
 
 		<form
@@ -616,8 +652,7 @@
 									<div
 										class="absolute top-3 left-3 p-2 bg-zinc-900/50 rounded-md text-xs text-white"
 									>
-										{speaker.specialRole ||
-											"Plenary Speaker"}
+										{speaker.tag || "Plenary Speaker"}
 									</div>
 								</SwiperSlide>
 							{/each}
@@ -658,53 +693,49 @@
 				on:click={stopVideo}
 			/>
 		{/if}
-		<button
-			class="w-full sm:w-5/6 h-4/5 m-auto block relative z-30"
-			on:click={onClickVideo}
-			id="video"
-		>
-			<div
+		<div class="w-full sm:w-5/6 h-4/5 m-auto relative">
+			<button
 				class="transition-opacity duration-500 {!showVideoPreview &&
-					'opacity-0'} absolute inset-0 z-50"
+					'opacity-0'} absolute inset-0 z-30"
+				on:click={onClickVideo}
+				id="video"
 			>
-				<div class="relative h-full w-full">
-					<img
-						src={trailerThumbnail}
-						alt="Trailer video thumbnail"
-						class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
-					/>
-					<div
-						class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-					>
-						<div class="h-24 w-24 text-white">
-							<IoIosPlayCircle />
-						</div>
+				<img
+					src={trailerThumbnail}
+					alt="Trailer video thumbnail"
+					class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
+				/>
+				<div
+					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+				>
+					<div class="h-24 w-24 text-white">
+						<IoIosPlayCircle />
 					</div>
 				</div>
-			</div>
-
+			</button>
 			<div
 				class="transition-opacity duration-500 {showVideoPreview &&
-					'opacity-0'} absolute inset-0 overflow-hidden"
+					'opacity-0'} absolute inset-0"
 			>
-				{#if !showVideoPreview}
-					<div class="relative h-full w-full">
-						<iframe
-							src="https://www.youtube.com/embed/UfDBOA47oN4?rel=0&autoplay=1"
-							title="YouTube video player"
-							frameborder="0"
-							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-							allowfullscreen
-							class="w-full h-full sm:rounded-2xl sm:shadow-md z-50 absolute inset-0"
-						/>
-					</div>
-				{/if}
+				<div class="relative h-full w-full">
+					{#if !showVideoPreview}
+						<!-- TODO: <video> elements must have a <track kind="captions"> -->
+						<video
+							class="w-full h-full sm:rounded-2xl sm:shadow-md absolute inset-0 z-50"
+							autoplay
+							controls
+						>
+							<source src={trailerVideo} type="video/mp4" />
+							Your browser does not support the video tag.
+						</video>
+					{/if}
+				</div>
 			</div>
-		</button>
+		</div>
 	</section>
 
 	<section
-		class="w-screen px-12 md:px-28 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7"
+		class="w-screen px-12 md:px-28 pb-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7"
 		id="action"
 	>
 		<h3 class="uppercase">

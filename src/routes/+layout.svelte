@@ -1,6 +1,8 @@
 <script lang="ts">
 	import "./global.css";
 
+	import { Toaster } from 'svelte-french-toast';
+
 	import { user, userData } from "$lib/firebase";
 
 	import Footer from "./Footer.svelte";
@@ -17,3 +19,5 @@
 </main>
 
 <Footer />
+
+<Toaster />
