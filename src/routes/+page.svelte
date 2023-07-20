@@ -13,6 +13,7 @@
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 	import * as THREE from "three?client";
 	import ThreeGlobe from "three-globe?client";
+	import { DateTime } from "luxon";
 
 	import { browser } from "$app/environment";
 	import { enhance } from "$app/forms";
@@ -33,6 +34,7 @@
 	import toast from "svelte-french-toast";
 
 	import type { ActionData } from "./$types";
+	import Tooltip from "$lib/components/Tooltip.svelte";
 
 	let formMessages = {
 		added: "You have been added to the mailing list!",
@@ -42,6 +44,10 @@
 	};
 
 	export let form: ActionData;
+
+	const timeUntilConference = DateTime.local(2024, 3, 6)
+		.diff(DateTime.now())
+		.toFormat("d");
 
 	// TODO: style the toast a bit more
 	$: if (form) {
@@ -498,7 +504,12 @@
 		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
 			<!-- <span class="text-primary">#BeThere</span> -->
 			<span class="text-primary">#RollWac</span>
-			<span class="text-secondary">・ March 6th 2024</span>
+			<span class="text-secondary"
+				>・ <Tooltip
+					text="{timeUntilConference} days left"
+					placement="right">March 6th 2024</Tooltip
+				></span
+			>
 		</div>
 
 		<form
