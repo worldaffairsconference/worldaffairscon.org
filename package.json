@@ -75,5 +75,10 @@
 		"tsafe": "^1.6.4",
 		"uuid": "^9.0.0",
 		"zod": "^3.21.4"
+	},
+	"pnpm": {
+		"patchedDependencies": {
+			"@sveltejs/kit@1.22.3": "patches/@sveltejs__kit@1.22.3.patch"
+		}
 	}
 }
