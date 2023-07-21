@@ -13,6 +13,7 @@ vite.config.ts.timestamp-*
 /test-results
 /firebase/emulator-data/
 tsconfig.vitest-temp.json
+# /static/page-previews/
 
 # General
 .DS_Store

@@ -1,0 +1,19 @@
+diff --git a/package.json b/package.json
+index fc4ee055511cbfb9dc5abe495ae4792801121ffe..e4da83441667b59974895e4d283ff0da873a7d40 100644
+--- a/package.json
++++ b/package.json
+@@ -78,6 +78,14 @@
+     "./vite": {
+       "types": "./types/index.d.ts",
+       "import": "./src/exports/vite/index.js"
++    },
++    "./create_manifest_data": {
++      "types": "./src/core/sync/create_manifest_data/types.d.ts",
++      "import": "./src/core/sync/create_manifest_data/index.js"
++    },
++    "./config": {
++      "types": "./src/core/config/types.d.ts",
++      "import": "./src/core/config/index.js"
+     }
+   },
+   "types": "types/index.d.ts",

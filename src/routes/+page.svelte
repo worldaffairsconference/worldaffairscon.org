@@ -35,6 +35,7 @@
 
 	import type { ActionData } from "./$types";
 	import Tooltip from "$lib/components/Tooltip.svelte";
+	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
 
 	let formMessages = {
 		added: "You have been added to the mailing list!",
@@ -479,6 +480,10 @@
 	<meta
 		name="description"
 		content="North America's largest and Canada's oldest annual student-run current events conference."
+	/>
+	<meta
+		property="og:image"
+		content="{PUBLIC_DEPLOY_PRIME_URL}/page-previews/page-preview-.png"
 	/>
 </svelte:head>
 
