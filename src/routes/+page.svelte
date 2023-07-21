@@ -2,38 +2,42 @@
 	import "swiper/css";
 	import "swiper/css/navigation";
 
+	import { onMount } from "svelte";
+	import * as THREE from "three?client";
+	import { DateTime } from "luxon";
+	import toast from "svelte-french-toast";
+	import { browser } from "$app/environment";
+	import { enhance } from "$app/forms";
+	import type { ActionData } from "./$types";
+
+	import { gsap } from "gsap?client";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
 	import { ScrollTrigger } from "gsap/ScrollTrigger?client";
-	import { gsap } from "gsap?client";
-	import { onMount } from "svelte";
+
+	import type { Swiper } from "swiper";
+	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
+
+	// Icons
 	import IoIosPlayCircle from "svelte-icons/io/IoIosPlayCircle.svelte";
 	import TiArrowLeft from "svelte-icons/ti/TiArrowLeft.svelte";
 	import TiArrowRight from "svelte-icons/ti/TiArrowRight.svelte";
-	import type { Swiper } from "swiper";
-	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
-	import * as THREE from "three?client";
-	import ThreeGlobe from "three-globe?client";
-	import { DateTime } from "luxon";
 
-	import { browser } from "$app/environment";
-	import { enhance } from "$app/forms";
+	// Images
+	import ckHoffler from "$lib/assets/images/speakers/ck_hoffler.webp";
+	import davidOwen from "$lib/assets/images/speakers/david_owen.webp";
+	import edwardSnowden from "$lib/assets/images/speakers/edward_snowden.webp";
+	import geoffreyHinton from "$lib/assets/images/speakers/geoffrey_hinton.webp";
+	import johnStackhouse from "$lib/assets/images/speakers/john_stackhouse.webp";
+	import marcGarneau from "$lib/assets/images/speakers/marc_garneau.webp";
+	import mehdiHasan from "$lib/assets/images/speakers/mehdi_hasan.webp";
+	import mlk from "$lib/assets/images/speakers/mlk.webp";
+	import scottGalloway from "$lib/assets/images/speakers/scott_galloway.webp";
+	import jamesHansen from "$lib/assets/images/speakers/james_hansen.webp";
+	import sarahGallagher from "$lib/assets/images/speakers/sarah_gallagher.webp";
+	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.webp";
+	import trailerVideo from "$lib/assets/video/wac_trailer.mp4";
 
-	import ckHoffler from "$lib/images/speakers/ck_hoffler.webp";
-	import davidOwen from "$lib/images/speakers/david_owen.webp";
-	import edwardSnowden from "$lib/images/speakers/edward_snowden.webp";
-	import geoffreyHinton from "$lib/images/speakers/geoffrey_hinton.webp";
-	import johnStackhouse from "$lib/images/speakers/john_stackhouse.webp";
-	import marcGarneau from "$lib/images/speakers/marc_garneau.webp";
-	import mehdiHasan from "$lib/images/speakers/mehdi_hasan.webp";
-	import mlk from "$lib/images/speakers/mlk.webp";
-	import scottGalloway from "$lib/images/speakers/scott_galloway.webp";
-	import jamesHansen from "$lib/images/speakers/james_hansen.webp";
-	import sarahGallagher from "$lib/images/speakers/sarah_gallagher.webp";
-	import trailerThumbnail from "$lib/images/thumbnails/trailer_thumbnail.webp";
-	import trailerVideo from "$lib/video/wac_trailer.mp4";
-	import toast from "svelte-french-toast";
-
-	import type { ActionData } from "./$types";
+	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
 	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
 
@@ -61,7 +65,6 @@
 
 	// Constants
 	const TOTAL_STARS = 600; // How many stars there are
-	const ATMOSPHERE_RADIUS = 0.1; // How thick the atmosphere is
 
 	interface Speaker {
 		name: string;
@@ -143,32 +146,8 @@
 	}
 
 	onMount(async () => {
-		// Initializing the globe
-		const Globe = new ThreeGlobe({ animateIn: false })
-			.globeImageUrl("./map.webp")
-			.bumpImageUrl("./earth-topology.webp")
-			.atmosphereAltitude(ATMOSPHERE_RADIUS)
-			.atmosphereColor("#bcd2e3");
-
-		// Rotate the globe on the diagonal axis
-		Globe.rotateY(Math.PI / 2);
-
-		// Custom globe material
-		const globeMaterial = Globe.globeMaterial() as THREE.MeshPhongMaterial;
-		globeMaterial.bumpScale = 10;
-		globeMaterial.toneMapped = false;
-		globeMaterial.emissiveIntensity = -100;
-
-		new THREE.TextureLoader().load("./earth-water.webp", (texture) => {
-			globeMaterial.specularMap = texture;
-			globeMaterial.specular = new THREE.Color("#020263");
-			globeMaterial.shininess = 0;
-		});
-
 		// Setup scene
 		const scene = new THREE.Scene();
-
-		scene.add(Globe);
 
 		// Setup camera
 		const camera = new THREE.PerspectiveCamera();
@@ -182,10 +161,50 @@
 		scene.add(camera);
 
 		// Lighting
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-		directionalLight.position.set(1, 1, 1);
-		scene.add(new THREE.AmbientLight(0xcccccc));
-		scene.add(directionalLight);
+		const ambientLight = new THREE.AmbientLight(0xcccccc, 0.01);
+		scene.add(ambientLight);
+
+		const pointLight = new THREE.PointLight(0xffffff, 1);
+		pointLight.position.set(700, 270, 500);
+		scene.add(pointLight);
+
+		// Clouds
+		const cloudGeometry = new THREE.SphereGeometry(100.6, 32, 32);
+		const cloudMaterial = new THREE.MeshPhongMaterial({
+			map: new THREE.TextureLoader().load("./textures/clouds.webp"),
+			transparent: true
+		});
+
+		const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
+		scene.add(cloudMesh);
+
+		// Earth
+		const earthGeometry = new THREE.SphereGeometry(100, 128, 128);
+
+		const earthTexture = new THREE.TextureLoader().load(
+			"./textures/map.webp"
+		);
+		earthTexture.colorSpace = THREE.SRGBColorSpace;
+
+		const earthMaterial = new THREE.MeshPhongMaterial({
+			map: earthTexture,
+			bumpMap: new THREE.TextureLoader().load(
+				"./textures/earth-topology.webp"
+			),
+			bumpScale: 0.5
+		});
+
+		new THREE.TextureLoader().load(
+			"./textures/earth-water.webp",
+			(texture) => {
+				earthMaterial.specularMap = texture;
+				earthMaterial.specular = new THREE.Color("#021563");
+				earthMaterial.shininess = 0;
+			}
+		);
+
+		const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
+		scene.add(earthMesh);
 
 		// Stars
 		const starsGeometry = new THREE.BufferGeometry();
@@ -214,8 +233,9 @@
 		// Render loop
 		const animate = () => {
 			renderer.render(scene, camera);
-			Globe.rotateY(-0.00035);
 			requestAnimationFrame(animate);
+			earthMesh.rotation.y += 0.0003;
+			cloudMesh.rotation.y += 0.0005;
 		};
 
 		// Handles resizing the window
@@ -370,6 +390,7 @@
 
 	let showVideoPreview = true;
 
+	// Animates out of the video showcase
 	const stopVideo = () => {
 		showVideoPreview = true;
 
@@ -406,6 +427,7 @@
 			);
 	};
 
+	// Animates into the video showcase
 	const onClickVideo = (e: Event) => {
 		const elementRect = (
 			e.target as HTMLButtonElement
@@ -429,6 +451,7 @@
 					autoKill: false
 				},
 				onComplete: () => {
+					// Stops the video when the user scrolls away
 					ScrollTrigger.create({
 						trigger: "#videoSection",
 						start: "top top+=40px",
@@ -509,12 +532,14 @@
 		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
 			<!-- <span class="text-primary">#BeThere</span> -->
 			<span class="text-primary">#RollWac</span>
-			<span class="text-secondary"
+			<span class="text-secondary cursor-pointer"
 				>・ <Tooltip
 					text="{timeUntilConference} days left"
-					placement="right">March 6th 2024</Tooltip
-				></span
-			>
+					placement="right"
+				>
+					March 6th 2024
+				</Tooltip>
+			</span>
 		</div>
 
 		<form
@@ -807,7 +832,7 @@
 					/>
 				</div>
 				<button
-					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm"
+					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm hover:brightness-[1.08] transition-all"
 				>
 					Get Notified
 				</button>

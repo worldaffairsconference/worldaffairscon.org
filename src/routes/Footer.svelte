@@ -5,8 +5,8 @@
 	import FaInstagram from "svelte-icons/fa/FaInstagram.svelte";
 	import FaLinkedin from "svelte-icons/fa/FaLinkedin.svelte";
 
-	import branksome from "$lib/images/logos/branksome.webp";
-	import ucc from "$lib/images/logos/ucc.webp";
+	import branksome from "$lib/assets/images/logos/branksome.webp";
+	import ucc from "$lib/assets/images/logos/ucc.webp";
 
 	interface Social {
 		name: string;
