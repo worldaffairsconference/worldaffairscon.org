@@ -4,7 +4,7 @@
 
 	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
-	import logo from "$lib/images/logos/wac_medium.webp";
+	import logo from "$lib/assets/images/logos/wac_medium.webp";
 
 	interface Route {
 		name: string;
@@ -94,6 +94,7 @@
 	<a href="/" class="hover:brightness-110 transition-all">
 		<img src={logo} alt="logo" class="h-11 sm:h-14" height={44} />
 	</a>
+
 	<nav class="flex items-center gap-4 lg:gap-20">
 		<ul class="hidden lg:flex gap-16 text-zinc-300" id="navbar">
 			{#each routes as route}
@@ -111,11 +112,13 @@
 				</li>
 			{/each}
 		</ul>
+
 		<!-- <button
 			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
 		>
 			Login
 		</button> -->
+
 		<button
 			class="block lg:hidden z-50"
 			aria-label="Toggle navigation"
@@ -123,7 +126,6 @@
 			on:click={toggleNav}
 		>
 			<!-- Hamburger menu icon -->
-
 			<svg
 				height="32px"
 				id="open"

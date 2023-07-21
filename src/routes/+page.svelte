@@ -2,37 +2,42 @@
 	import "swiper/css";
 	import "swiper/css/navigation";
 
+	import { onMount } from "svelte";
+	import * as THREE from "three?client";
+	import { DateTime } from "luxon";
+	import toast from "svelte-french-toast";
+	import { browser } from "$app/environment";
+	import { enhance } from "$app/forms";
+	import type { ActionData } from "./$types";
+
+	import { gsap } from "gsap?client";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
 	import { ScrollTrigger } from "gsap/ScrollTrigger?client";
-	import { gsap } from "gsap?client";
-	import { onMount } from "svelte";
+
+	import type { Swiper } from "swiper";
+	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
+
+	// Icons
 	import IoIosPlayCircle from "svelte-icons/io/IoIosPlayCircle.svelte";
 	import TiArrowLeft from "svelte-icons/ti/TiArrowLeft.svelte";
 	import TiArrowRight from "svelte-icons/ti/TiArrowRight.svelte";
-	import type { Swiper } from "swiper";
-	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
-	import * as THREE from "three?client";
-	import { DateTime } from "luxon";
 
-	import { browser } from "$app/environment";
-	import { enhance } from "$app/forms";
+	// Images
+	import ckHoffler from "$lib/assets/images/speakers/ck_hoffler.webp";
+	import davidOwen from "$lib/assets/images/speakers/david_owen.webp";
+	import edwardSnowden from "$lib/assets/images/speakers/edward_snowden.webp";
+	import geoffreyHinton from "$lib/assets/images/speakers/geoffrey_hinton.webp";
+	import johnStackhouse from "$lib/assets/images/speakers/john_stackhouse.webp";
+	import marcGarneau from "$lib/assets/images/speakers/marc_garneau.webp";
+	import mehdiHasan from "$lib/assets/images/speakers/mehdi_hasan.webp";
+	import mlk from "$lib/assets/images/speakers/mlk.webp";
+	import scottGalloway from "$lib/assets/images/speakers/scott_galloway.webp";
+	import jamesHansen from "$lib/assets/images/speakers/james_hansen.webp";
+	import sarahGallagher from "$lib/assets/images/speakers/sarah_gallagher.webp";
+	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.webp";
+	import trailerVideo from "$lib/assets/video/wac_trailer.mp4";
 
-	import ckHoffler from "$lib/images/speakers/ck_hoffler.webp";
-	import davidOwen from "$lib/images/speakers/david_owen.webp";
-	import edwardSnowden from "$lib/images/speakers/edward_snowden.webp";
-	import geoffreyHinton from "$lib/images/speakers/geoffrey_hinton.webp";
-	import johnStackhouse from "$lib/images/speakers/john_stackhouse.webp";
-	import marcGarneau from "$lib/images/speakers/marc_garneau.webp";
-	import mehdiHasan from "$lib/images/speakers/mehdi_hasan.webp";
-	import mlk from "$lib/images/speakers/mlk.webp";
-	import scottGalloway from "$lib/images/speakers/scott_galloway.webp";
-	import jamesHansen from "$lib/images/speakers/james_hansen.webp";
-	import sarahGallagher from "$lib/images/speakers/sarah_gallagher.webp";
-	import trailerThumbnail from "$lib/images/thumbnails/trailer_thumbnail.webp";
-	import trailerVideo from "$lib/video/wac_trailer.mp4";
-	import toast from "svelte-french-toast";
-
-	import type { ActionData } from "./$types";
+	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
 
 	let formMessages = {
@@ -155,10 +160,6 @@
 		scene.add(camera);
 
 		// Lighting
-		// const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-		// directionalLight.position.set(1, 1, 1);
-		// scene.add(directionalLight);
-
 		const ambientLight = new THREE.AmbientLight(0xcccccc, 0.01);
 		scene.add(ambientLight);
 
@@ -169,7 +170,7 @@
 		// Clouds
 		const cloudGeometry = new THREE.SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new THREE.MeshPhongMaterial({
-			map: new THREE.TextureLoader().load("./clouds.webp"),
+			map: new THREE.TextureLoader().load("./textures/clouds.webp"),
 			transparent: true
 		});
 
@@ -177,29 +178,32 @@
 		scene.add(cloudMesh);
 
 		// Earth
-
 		const earthGeometry = new THREE.SphereGeometry(100, 128, 128);
 
-		const earthTexture = new THREE.TextureLoader().load("./map.webp");
+		const earthTexture = new THREE.TextureLoader().load(
+			"./textures/map.webp"
+		);
 		earthTexture.colorSpace = THREE.SRGBColorSpace;
 
 		const earthMaterial = new THREE.MeshPhongMaterial({
 			map: earthTexture,
-			bumpMap: new THREE.TextureLoader().load("./earth-topology.webp"),
+			bumpMap: new THREE.TextureLoader().load(
+				"./textures/earth-topology.webp"
+			),
 			bumpScale: 0.5
 		});
 
-		new THREE.TextureLoader().load("./earth-water.webp", (texture) => {
-			earthMaterial.specularMap = texture;
-			earthMaterial.specular = new THREE.Color("#021563");
-			earthMaterial.shininess = 0;
-		});
+		new THREE.TextureLoader().load(
+			"./textures/earth-water.webp",
+			(texture) => {
+				earthMaterial.specularMap = texture;
+				earthMaterial.specular = new THREE.Color("#021563");
+				earthMaterial.shininess = 0;
+			}
+		);
 
 		const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
 		scene.add(earthMesh);
-
-		// earthMesh.rotateX(THREE.MathUtils.degToRad(90));
-		// cloudMesh.rotateX(THREE.MathUtils.degToRad(90));
 
 		// Stars
 		const starsGeometry = new THREE.BufferGeometry();
@@ -385,6 +389,7 @@
 
 	let showVideoPreview = true;
 
+	// Animates out of the video showcase
 	const stopVideo = () => {
 		showVideoPreview = true;
 
@@ -421,6 +426,7 @@
 			);
 	};
 
+	// Animates into the video showcase
 	const onClickVideo = (e: Event) => {
 		const elementRect = (
 			e.target as HTMLButtonElement
@@ -444,6 +450,7 @@
 					autoKill: false
 				},
 				onComplete: () => {
+					// Stops the video when the user scrolls away
 					ScrollTrigger.create({
 						trigger: "#videoSection",
 						start: "top top+=40px",
