@@ -483,7 +483,7 @@
 	/>
 	<meta
 		property="og:image"
-		content="{PUBLIC_DEPLOY_PRIME_URL}/page-previews/page-preview-"
+		content="{PUBLIC_DEPLOY_PRIME_URL}/page-previews/page-preview-.png"
 	/>
 </svelte:head>
 
