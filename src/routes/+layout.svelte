@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "./global.css";
 
-	import { Toaster } from 'svelte-french-toast';
+	import { Toaster } from "svelte-french-toast";
 
 	import { user, userData } from "$lib/firebase";
 
