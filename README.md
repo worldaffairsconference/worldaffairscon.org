@@ -15,7 +15,7 @@
             <img src="https://img.shields.io/github/actions/workflow/status/worldaffairsconference/worldaffairscon.org/deploy-prod.yaml" alt="GitHub Workflow Status (deploy-prod.yaml)">
         </a>
         <a href="https://img.shields.io/github/actions/workflow/status/worldaffairsconference/worldaffairscon.org/run-tests.yaml">
-            <img src="https://img.shields.io/github/actions/workflow/status/worldaffairsconference/worldaffairscon.org/run-tests.yaml" alt="GitHub Workflow Status (run-tests.yaml)">
+            <img src="https://img.shields.io/github/actions/workflow/status/worldaffairsconference/worldaffairscon.org/run-tests.yaml?label=tests" alt="GitHub Workflow Status (run-tests.yaml)">
         </a>
         <a href="http://commitizen.github.io/cz-cli/">
             <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly">
