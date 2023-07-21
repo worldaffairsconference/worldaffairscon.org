@@ -12,7 +12,6 @@
 	import type { Swiper } from "swiper";
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 	import * as THREE from "three?client";
-	import ThreeGlobe from "three-globe?client";
 	import { DateTime } from "luxon";
 
 	import { browser } from "$app/environment";
@@ -60,7 +59,6 @@
 
 	// Constants
 	const TOTAL_STARS = 600; // How many stars there are
-	const ATMOSPHERE_RADIUS = 0.1; // How thick the atmosphere is
 
 	interface Speaker {
 		name: string;
@@ -142,32 +140,8 @@
 	}
 
 	onMount(async () => {
-		// Initializing the globe
-		const Globe = new ThreeGlobe({ animateIn: false })
-			.globeImageUrl("./map.webp")
-			.bumpImageUrl("./earth-topology.webp")
-			.atmosphereAltitude(ATMOSPHERE_RADIUS)
-			.atmosphereColor("#bcd2e3");
-
-		// Rotate the globe on the diagonal axis
-		Globe.rotateY(Math.PI / 2);
-
-		// Custom globe material
-		const globeMaterial = Globe.globeMaterial() as THREE.MeshPhongMaterial;
-		globeMaterial.bumpScale = 10;
-		globeMaterial.toneMapped = false;
-		globeMaterial.emissiveIntensity = -100;
-
-		new THREE.TextureLoader().load("./earth-water.webp", (texture) => {
-			globeMaterial.specularMap = texture;
-			globeMaterial.specular = new THREE.Color("#020263");
-			globeMaterial.shininess = 0;
-		});
-
 		// Setup scene
 		const scene = new THREE.Scene();
-
-		scene.add(Globe);
 
 		// Setup camera
 		const camera = new THREE.PerspectiveCamera();
@@ -181,10 +155,51 @@
 		scene.add(camera);
 
 		// Lighting
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
-		directionalLight.position.set(1, 1, 1);
-		scene.add(new THREE.AmbientLight(0xcccccc));
-		scene.add(directionalLight);
+		// const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
+		// directionalLight.position.set(1, 1, 1);
+		// scene.add(directionalLight);
+
+		const ambientLight = new THREE.AmbientLight(0xcccccc, 0.01);
+		scene.add(ambientLight);
+
+		const pointLight = new THREE.PointLight(0xffffff, 1);
+		pointLight.position.set(700, 270, 500);
+		scene.add(pointLight);
+
+		// Clouds
+		const cloudGeometry = new THREE.SphereGeometry(100.6, 32, 32);
+		const cloudMaterial = new THREE.MeshPhongMaterial({
+			map: new THREE.TextureLoader().load("./clouds.webp"),
+			transparent: true
+		});
+
+		const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
+		scene.add(cloudMesh);
+
+		// Earth
+
+		const earthGeometry = new THREE.SphereGeometry(100, 128, 128);
+
+		const earthTexture = new THREE.TextureLoader().load("./map.webp");
+		earthTexture.colorSpace = THREE.SRGBColorSpace;
+
+		const earthMaterial = new THREE.MeshPhongMaterial({
+			map: earthTexture,
+			bumpMap: new THREE.TextureLoader().load("./earth-topology.webp"),
+			bumpScale: 0.5
+		});
+
+		new THREE.TextureLoader().load("./earth-water.webp", (texture) => {
+			earthMaterial.specularMap = texture;
+			earthMaterial.specular = new THREE.Color("#021563");
+			earthMaterial.shininess = 0;
+		});
+
+		const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
+		scene.add(earthMesh);
+
+		// earthMesh.rotateX(THREE.MathUtils.degToRad(90));
+		// cloudMesh.rotateX(THREE.MathUtils.degToRad(90));
 
 		// Stars
 		const starsGeometry = new THREE.BufferGeometry();
@@ -213,8 +228,9 @@
 		// Render loop
 		const animate = () => {
 			renderer.render(scene, camera);
-			Globe.rotateY(-0.00035);
 			requestAnimationFrame(animate);
+			earthMesh.rotation.y += 0.0003;
+			cloudMesh.rotation.y += 0.0005;
 		};
 
 		// Handles resizing the window
@@ -504,12 +520,14 @@
 		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
 			<!-- <span class="text-primary">#BeThere</span> -->
 			<span class="text-primary">#RollWac</span>
-			<span class="text-secondary"
+			<span class="text-secondary cursor-pointer"
 				>・ <Tooltip
 					text="{timeUntilConference} days left"
-					placement="right">March 6th 2024</Tooltip
-				></span
-			>
+					placement="right"
+				>
+					March 6th 2024
+				</Tooltip>
+			</span>
 		</div>
 
 		<form
@@ -802,7 +820,7 @@
 					/>
 				</div>
 				<button
-					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm"
+					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm hover:brightness-[1.08] transition-all"
 				>
 					Get Notified
 				</button>

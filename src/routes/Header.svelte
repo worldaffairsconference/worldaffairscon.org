@@ -112,7 +112,7 @@
 			{/each}
 		</ul>
 		<!-- <button
-			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base"
+			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
 		>
 			Login
 		</button> -->
