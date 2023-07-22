@@ -206,6 +206,9 @@
 		const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
 		scene.add(earthMesh);
 
+		// earthMesh.rotateX(THREE.MathUtils.degToRad(90));
+		// cloudMesh.rotateX(THREE.MathUtils.degToRad(90));
+
 		// Stars
 		const starsGeometry = new THREE.BufferGeometry();
 		const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
@@ -531,10 +534,10 @@
 
 		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
 			<!-- <span class="text-primary">#BeThere</span> -->
-			<span class="text-primary">#RollWac</span>
+			<span class="text-primary">#RollWAC</span>
 			<span class="text-secondary cursor-pointer"
 				>・ <Tooltip
-					text="{timeUntilConference} days left"
+					text="{timeUntilConference} days away"
 					placement="right"
 				>
 					March 6th 2024

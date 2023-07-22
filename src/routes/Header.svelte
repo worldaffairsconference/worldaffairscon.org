@@ -119,13 +119,12 @@
 			Login
 		</button> -->
 
-		<button
+		<!-- <button
 			class="block lg:hidden z-50"
 			aria-label="Toggle navigation"
 			bind:this={toggle}
 			on:click={toggleNav}
 		>
-			<!-- Hamburger menu icon -->
 			<svg
 				height="32px"
 				id="open"
@@ -159,6 +158,6 @@
 					/>
 				</g>
 			</svg>
-		</button>
+		</button> -->
 	</nav>
 </header>
