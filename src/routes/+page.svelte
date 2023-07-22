@@ -194,14 +194,8 @@
 			bumpScale: 0.5
 		});
 
-		new THREE.TextureLoader().load(
-			"./textures/earth-water.webp",
-			(texture) => {
-				earthMaterial.specularMap = texture;
-				earthMaterial.specular = new THREE.Color("#021563");
-				earthMaterial.shininess = 0;
-			}
-		);
+		earthMaterial.specular = new THREE.Color("#021563");
+		earthMaterial.shininess = 0;
 
 		const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
 		scene.add(earthMesh);
