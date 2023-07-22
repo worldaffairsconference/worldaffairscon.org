@@ -1,20 +1,21 @@
 <script lang="ts">
-	// import gsap from "gsap?client";
+	import gsap, { Expo } from "gsap?client";
 	import { onMount } from "svelte";
 
-	// import { browser } from "$app/environment";
-	// import { page } from "$app/stores";
+	import { browser } from "$app/environment";
+	import { page } from "$app/stores";
 	import logo from "$lib/assets/images/logos/wac_medium.webp";
 
-	// interface Route {
-	// 	name: string;
-	// 	path: string;
-	// }
+	interface Route {
+		name: string;
+		path: string;
+	}
 
-	// const barTl = browser
-	// 	? gsap.timeline({ reversed: true })
-	// 	: (undefined as unknown as gsap.core.Timeline);
+	const barTl = browser
+		? gsap.timeline({ reversed: true })
+		: (undefined as unknown as gsap.core.Timeline);
 
+	let toggle: HTMLButtonElement;
 	let headerElement: HTMLElement;
 	let lastScrollTop: number;
 
@@ -25,7 +26,6 @@
 			var scrollTop =
 				window.scrollY || document.documentElement.scrollTop;
 
-			// Puts the header in a fixed position when past 350px down on the page
 			if (scrollTop < 350) {
 				headerElement.style.position = "absolute";
 				headerElement.style.backgroundColor = "transparent";
@@ -36,7 +36,6 @@
 				headerElement.classList.add("backdrop-blur-xl");
 			}
 
-			// Shows the header when scrolling up
 			if (scrollTop >= lastScrollTop) {
 				headerElement.style.top = "-200px";
 			} else {
@@ -46,59 +45,45 @@
 			lastScrollTop = scrollTop;
 		});
 
-		// barTl
-		// 	.to(
-		// 		"#navbar",
-		// 		{
-		// 			duration: 0.7,
-		// 			ease: "expo.out",
-		// 			right: 0
-		// 		},
-		// 		0
-		// 	)
-		// 	.set(
-		// 		"#open",
-		// 		{
-		// 			display: "none",
-		// 			duration: 0
-		// 		},
-		// 		0
-		// 	)
-		// 	.to(
-		// 		"#close",
-		// 		{
-		// 			display: "block",
-		// 			duration: 0
-		// 		},
-		// 		0
-		// 	)
-		// 	.from(
-		// 		"#navbar > li",
-		// 		{
-		// 			duration: 0.6,
-		// 			ease: "expo.easeOut",
-		// 			opacity: 0,
-		// 			y: 75,
-		// 			stagger: 0.15
-		// 		},
-		// 		0.4
-		// 	);
+		barTl.set("#navbar", {
+			className:
+				"fixed right-0 bottom-0 z-50 bg-zinc-900 w-[68%] h-full bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-xl gap-14 text-zinc-300"
+		});
+		barTl.set("#open", {
+			display: "none",
+			duration: 0
+		});
+		barTl.to("#close", {
+			display: "block",
+			duration: 0
+		});
+		barTl.to("#navbar", {
+			duration: 0.3,
+			ease: Expo.easeInOut
+		});
 	});
 
-	// const openNav = () => {
-	// 	barTl.reversed(!barTl.reversed()).timeScale(1);
-	// };
+	const toggleNav = () => {
+		// Checking if the hamburger nav is visible
+		if (
+			window.getComputedStyle(toggle).getPropertyValue("display") ===
+			"none"
+		)
+			return;
 
-	// const closeNav = () => {
-	// 	barTl.timeScale(2).reversed(!barTl.reversed());
-	// };
+		if (barTl.reversed()) {
+			barTl.timeScale(1).reversed(false);
+		} else {
+			barTl.reversed(true).time(0);
+		}
+	};
 
-	// const routes: Route[] = [
-	// 	{ name: "Schedule", path: "/schedule" },
-	// 	{ name: "Team", path: "/team" },
-	// 	{ name: "Past Speakers", path: "/past-speakers" },
-	// 	{ name: "FAQ", path: "/faq" }
-	// ];
+	const routes: Route[] = [
+		// { name: "Schedule", path: "/schedule" },
+		// { name: "Team", path: "/team" },
+		// { name: "Past Speakers", path: "/past-speakers" },
+		// { name: "FAQ", path: "/faq" }
+	];
 </script>
 
 <header
@@ -110,11 +95,8 @@
 		<img src={logo} alt="logo" class="h-11 sm:h-14" height={44} />
 	</a>
 
-	<!-- <nav class="flex items-center gap-4 lg:gap-20">
-		<ul
-			class="fixed -right-[100%] bottom-0 z-50 bg-zinc-900 w-2/3 h-full bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-2xl gap-12 text-zinc-300 lg:flex lg:gap-16 lg:static lg:bg-transparent lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:justify-end lg:text-base lg:backdrop-blur-none"
-			id="navbar"
-		>
+	<nav class="flex items-center gap-4 lg:gap-20">
+		<ul class="hidden lg:flex gap-16 text-zinc-300" id="navbar">
 			{#each routes as route}
 				<li>
 					<a
@@ -123,7 +105,7 @@
                         {$page.url.pathname === route.path &&
 							'underline decoration-primary underline-offset-8'}
                         "
-						on:click={closeNav}
+						on:click={toggleNav}
 					>
 						{route.name}
 					</a>
@@ -131,20 +113,21 @@
 			{/each}
 		</ul>
 
-		<button
+		<!-- <button
 			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
 		>
 			Login
-		</button>
+		</button> -->
 
-		<button
+		<!-- <button
 			class="block lg:hidden z-50"
-			aria-label="Open navigation"
-			id="open"
-			on:click={openNav}
+			aria-label="Toggle navigation"
+			bind:this={toggle}
+			on:click={toggleNav}
 		>
 			<svg
 				height="32px"
+				id="open"
 				style="enable-background:new 0 0 32 32;"
 				version="1.1"
 				viewBox="0 0 32 32"
@@ -158,14 +141,7 @@
 					d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
 				/>
 			</svg>
-		</button>
 
-		<button
-			class="hidden z-50 w-7 h-7"
-			aria-label="Close navigation"
-			id="close"
-			on:click={closeNav}
-		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -173,7 +149,8 @@
 				height="32px"
 				viewBox="0 0 32 32"
 				version="1.1"
-				class="h-5 w-5 fill-zinc-300"
+				class="h-5 w-5 fill-zinc-300 hidden"
+				id="close"
 			>
 				<g id="surface1">
 					<path
@@ -181,6 +158,6 @@
 					/>
 				</g>
 			</svg>
-		</button>
-	</nav> -->
+		</button> -->
+	</nav>
 </header>
