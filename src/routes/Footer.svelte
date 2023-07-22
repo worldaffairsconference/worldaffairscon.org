@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { SvelteComponent } from "svelte";
+
 	// Icons
 	import FaEnvelope from "svelte-icons/fa/FaEnvelope.svelte";
 	import FaInstagram from "svelte-icons/fa/FaInstagram.svelte";
@@ -48,7 +49,7 @@
 			</div>
 
 			<div>
-				<span class="uppercase text-zinc-300">Socials</span>
+				<div class="uppercase text-zinc-400 mb-2.5">Socials</div>
 				<div
 					class="flex flex-wrap gap-2.5 items-center text-sm font-medium text-zinc-200"
 				>
