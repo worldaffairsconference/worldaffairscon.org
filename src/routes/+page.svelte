@@ -8,6 +8,8 @@
 	import toast from "svelte-french-toast";
 	import { browser } from "$app/environment";
 	import { enhance } from "$app/forms";
+	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
+
 	import type { ActionData } from "./$types";
 
 	import { gsap } from "gsap?client";
@@ -39,7 +41,6 @@
 
 	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
-	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
 
 	let formMessages = {
 		added: "You have been added to the mailing list!",
@@ -641,7 +642,7 @@
 
 				<div class="grow overflow-hidden relative mb-6">
 					<div
-						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[160vw] sm:w-[130vw]"
+						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[190vw] md:w-[160vw] lg:w-[130vw]"
 					>
 						<SwiperContainer
 							spaceBetween={18}
@@ -675,17 +676,15 @@
 									/>
 
 									<div
-										class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-24 sm:h-20 px-3 sm:px-5 flex"
+										class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-20 px-3 sm:px-5 flex"
 									>
 										<div class="my-auto">
 											<h3
-												class="font-semibold text-white sm:text-lg md:text-xl tracking-tight mb-[0.075rem]"
+												class="font-semibold text-white text-lg mdtext-xl tracking-tight mb-[0.075rem]"
 											>
 												{speaker.name}
 											</h3>
-											<p
-												class="text-zinc-200 text-[0.7rem] sm:text-xs"
-											>
+											<p class="text-zinc-200 text-xs">
 												{speaker.title}
 											</p>
 										</div>
@@ -703,14 +702,14 @@
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
-						class="h-11 w-11 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-12 w-12 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
 						<TiArrowLeft />
 					</button>
 					<button
 						on:click={nextSlide}
-						class="h-11 w-11 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-12 w-12 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
 						<TiArrowRight />
