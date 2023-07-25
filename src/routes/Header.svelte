@@ -17,8 +17,8 @@
 
 	let headerElement: HTMLElement;
 	let lastScrollTop: number;
-	let navBarFixed: boolean = false;
-	let navBarShowing: boolean = true;
+	let navBarFixed = false;
+	let navBarShowing = true;
 
 	onMount(async () => {
 		window.addEventListener("scroll", () => {
