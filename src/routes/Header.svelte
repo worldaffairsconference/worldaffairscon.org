@@ -88,11 +88,11 @@
 </script>
 
 <header
-	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-300
+	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
 	{navBarFixed
 		? 'fixed bg-black/30 backdrop-blur-xl'
 		: 'absolute bg-transparent'} 
-	{navBarShowing ? 'top-0' : '-top-[200px]'}"
+	{navBarShowing ? 'top-0' : '-top-[150px]'}"
 	bind:this={headerElement}
 	id="header"
 >
