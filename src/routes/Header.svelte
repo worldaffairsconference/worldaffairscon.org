@@ -58,13 +58,13 @@
 		// 		},
 		// 		0
 		// 	)
-		// 	.from(
+		// 	.to(
 		// 		"#navbar > li",
 		// 		{
 		// 			duration: 0.6,
 		// 			ease: "expo.easeOut",
-		// 			opacity: 0,
-		// 			y: 75,
+		// 			opacity: 1,
+		// 			y: 0,
 		// 			stagger: 0.15
 		// 		},
 		// 		0.4
@@ -90,14 +90,14 @@
 <header
 	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
 	{navBarFixed
-		? 'fixed bg-black/30 backdrop-blur-xl'
+		? 'fixed bg-zinc-950/30 backdrop-blur-xl shadow-md shadow-zinc-950/5'
 		: 'absolute bg-transparent'} 
 	{navBarShowing ? 'top-0' : '-top-[150px]'}"
 	bind:this={headerElement}
 	id="header"
 >
 	<a href="/" class="hover:brightness-110 transition-all">
-		<img src={logo} alt="logo" class="h-11 sm:h-14" height={44} />
+		<img src={logo} alt="logo" class="h-11 sm:h-14" />
 	</a>
 
 	<!-- <nav class="flex items-center gap-4 lg:gap-20">
@@ -106,7 +106,9 @@
 			id="navbar"
 		>
 			{#each routes as route}
-				<li>
+				<li
+					class="transform translate-y-[75px] opacity-0 lg:translate-y-0 lg:opacity-100"
+				>
 					<a
 						href={route.path}
 						class="text-zinc-300 hover:text-white transition-colors duration-100 hover:shadow-glow

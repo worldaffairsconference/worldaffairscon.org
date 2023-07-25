@@ -375,13 +375,6 @@
 				}
 			});
 
-			gsap.from("#title", {
-				duration: 0.9,
-				opacity: 0,
-				y: 100,
-				ease: "sine.out"
-			});
-
 			return () => ctx.revert();
 		}, gsapScope);
 	});
@@ -511,7 +504,6 @@
 <div bind:this={gsapScope}>
 	<section
 		class="pt-[10rem] md:pt-44 lg:pt-[13.5rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30"
-		id="title"
 	>
 		<div class="w-5/6 mx-auto">
 			<h1
@@ -528,7 +520,6 @@
 		</div>
 
 		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
-			<!-- <span class="text-primary">#BeThere</span> -->
 			<span class="text-primary">#RollWAC</span>
 			<span class="text-secondary cursor-pointer"
 				>・ <Tooltip
@@ -631,18 +622,18 @@
 				</dl>
 			</div>
 			<div
-				class="absolute w-full h-screen text-left py-12 sm:py-14 flex flex-col"
+				class="absolute w-full h-screen text-left py-12 flex flex-col"
 				id="speakers"
 			>
 				<h2
-					class="text-center text-[2.75rem] sm:text-[4.25rem] font-bold text-white tracking-tight mb-8"
+					class="text-center text-[2.75rem] sm:text-[4.3rem] font-bold text-white tracking-tight mb-8"
 				>
 					Past Speakers
 				</h2>
 
 				<div class="grow overflow-hidden relative mb-6">
 					<div
-						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[190vw] md:w-[160vw] lg:w-[130vw]"
+						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw]"
 					>
 						<SwiperContainer
 							spaceBetween={18}
@@ -702,14 +693,14 @@
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
-						class="h-12 w-12 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
 						<TiArrowLeft />
 					</button>
 					<button
 						on:click={nextSlide}
-						class="h-12 w-12 sm:h-[3.25rem] sm:w-[3.25rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
 						<TiArrowRight />
