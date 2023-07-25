@@ -17,7 +17,7 @@
 				>
 					It looks like you're lost...
 				</p>
-				<p class="mb-4 text-lg font-light text-gray-400">
+				<p class="mb-4 text-lg font-light text-zinc-400">
 					the page you are looking for does not exist.
 				</p>
 				<a

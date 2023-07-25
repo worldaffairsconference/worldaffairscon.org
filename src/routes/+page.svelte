@@ -567,12 +567,12 @@
 				<input
 					type="email"
 					name="email"
-					class="border text-sm rounded-lg block w-56 md:w-80 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
+					class="border text-sm rounded-lg block w-60 md:w-80 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
 					placeholder="name@school.com"
 				/>
 			</div>
 			<button
-				class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm hover:brightness-[1.08] transition-all"
+				class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white text-sm hover:brightness-[1.08] transition-all"
 			>
 				Get Notified
 			</button>
@@ -630,11 +630,11 @@
 				</dl>
 			</div>
 			<div
-				class="absolute w-full h-screen text-left py-12 sm:py-16 flex flex-col"
+				class="absolute w-full h-screen text-left py-12 sm:py-14 flex flex-col"
 				id="speakers"
 			>
 				<h2
-					class="text-center text-[2.75rem] sm:text-7xl font-bold text-white tracking-tight mb-8 sm:mb-12"
+					class="text-center text-[2.75rem] sm:text-[4.25rem] font-bold text-white tracking-tight mb-8"
 				>
 					Past Speakers
 				</h2>
@@ -644,9 +644,9 @@
 						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[160vw] sm:w-[130vw]"
 					>
 						<SwiperContainer
-							spaceBetween={20}
+							spaceBetween={18}
 							slidesPerView={3}
-							class="flex gap-6 w-full h-full"
+							class="w-full h-full"
 							loop={true}
 							navigation
 							on:init={(swiper) => {
@@ -675,16 +675,16 @@
 									/>
 
 									<div
-										class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-20 px-3 flex"
+										class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-24 sm:h-20 px-3 sm:px-5 flex"
 									>
 										<div class="my-auto">
 											<h3
-												class="font-semibold text-white sm:text-lg md:text-xl"
+												class="font-semibold text-white sm:text-lg md:text-xl tracking-tight mb-[0.075rem]"
 											>
 												{speaker.name}
 											</h3>
 											<p
-												class="text-zinc-300 text-[0.6rem] md:text-xs"
+												class="text-zinc-200 text-[0.7rem] sm:text-xs"
 											>
 												{speaker.title}
 											</p>
@@ -829,7 +829,7 @@
 					/>
 				</div>
 				<button
-					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2 text-white text-sm hover:brightness-[1.08] transition-all"
+					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white text-sm hover:brightness-[1.08] transition-all"
 				>
 					Get Notified
 				</button>
