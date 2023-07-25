@@ -17,32 +17,18 @@
 
 	let headerElement: HTMLElement;
 	let lastScrollTop: number;
+	let navBarFixed = false;
+	let navBarShowing = true;
 
 	onMount(async () => {
-		window.addEventListener("scroll", function () {
+		window.addEventListener("scroll", () => {
 			if (headerElement === null) return;
 
 			var scrollTop =
 				window.scrollY || document.documentElement.scrollTop;
 
-			// Puts the header in a fixed position when past 350px down on the page
-			if (scrollTop < 350) {
-				headerElement.style.position = "absolute";
-				headerElement.style.backgroundColor = "transparent";
-				headerElement.classList.remove("backdrop-blur-xl");
-			} else {
-				headerElement.style.position = "fixed";
-				headerElement.style.backgroundColor = "rgb(0 0 0 / 0.3)";
-				headerElement.classList.add("backdrop-blur-xl");
-			}
-
-			// Shows the header when scrolling up
-			if (scrollTop >= lastScrollTop) {
-				headerElement.style.top = "-200px";
-			} else {
-				headerElement.style.top = "0";
-			}
-
+			navBarFixed = scrollTop >= 350;
+			navBarShowing = scrollTop < lastScrollTop;
 			lastScrollTop = scrollTop;
 		});
 
@@ -102,7 +88,11 @@
 </script>
 
 <header
-	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-300 absolute"
+	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-300
+	{navBarFixed
+		? 'fixed bg-black/30 backdrop-blur-xl'
+		: 'absolute bg-transparent'} 
+	{navBarShowing ? 'top-0' : '-top-[200px]'}"
 	bind:this={headerElement}
 	id="header"
 >
