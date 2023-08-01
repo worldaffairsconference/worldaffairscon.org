@@ -32,4 +32,5 @@ try {
 	if (!(error instanceof Error) || !/already exists/u.test(error.message))
 		throw error;
 }
+
 export const adminDb = getFirestore();
