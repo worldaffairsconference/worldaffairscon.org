@@ -633,7 +633,7 @@
 
 				<div class="grow overflow-hidden relative mb-6">
 					<div
-						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw]"
+						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
 					>
 						<SwiperContainer
 							spaceBetween={18}
@@ -658,7 +658,7 @@
 						>
 							{#each speakers as speaker}
 								<SwiperSlide
-									class="rounded-md relative overflow-hidden"
+									class="rounded-md relative overflow-hidden select-none"
 								>
 									<img
 										src={speaker.image}
