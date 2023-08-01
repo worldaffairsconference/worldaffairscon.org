@@ -89,3 +89,36 @@ export async function addEmailToDistributionList(
 		return { success: false, message: "unknownError" };
 	}
 }
+
+// export async function getEmailStatusForDistributionList(
+// 	email: string,
+// 	list: keyof typeof distributionLists
+// ): Promise<
+// 	| { success: true; status: "active" | "unconfirmed" | "unkown" }
+// 	| { success: false; message: "invalidEmail" | "unknownError" }
+// > {
+// 	if (!email.trim()) return { success: false, message: "invalidEmail" };
+
+// 	try {
+// 		const res = await fetch(
+// 			`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${distributionLists[list]}`,
+// 			{
+// 				method: "GET",
+// 				headers: {
+// 					Authorization: `Zoho-oauthtoken ${accessToken}`
+// 				}
+// 			}
+// 		);
+
+//         const data = await res.json()
+//         if (res.status === 200) return {
+//             success: true,
+//             status: data.data.mailGroupMemberList.find(m => m.memberEmailId === email)
+//         }
+// 	} catch (error) {
+// 		if (error instanceof Error)
+// 			error.message = `Unkown Zoho API Error: ${error.message}`;
+// 		console.error(error);
+// 		return { success: false, message: "unknownError" };
+// 	}
+// }
