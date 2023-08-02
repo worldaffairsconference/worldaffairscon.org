@@ -5,16 +5,16 @@ import type { IsValidSchemaPair } from "$lib/schemas/types";
 
 export const User = z
 	.object({
-		username: z.string().min(3).max(20),
 		email: z.string().email(),
-		favoriteNumber: z.number().int().positive()
+		name: z.string(),
+		registeredToMailingList: z.boolean()
 	})
 	.strict();
 
 export const UserParse = z.object({
-	username: z.string().catch("Invalid Username"),
 	email: z.string().catch("invalid@email.invalid"), // Should be guaranteed not to exist by https://www.rfc-editor.org/rfc/rfc6761
-	favoriteNumber: z.number().catch(NaN)
+	name: z.string().catch("John Doe"),
+	registeredToMailingList: z.boolean().catch(false)
 });
 
 assert<IsValidSchemaPair<typeof User, typeof UserParse>>();
