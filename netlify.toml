@@ -4,3 +4,8 @@ publish = "build"
 
 [functions."sveltekit-cron-random"]
 schedule = "@hourly"
+
+[[redirects]]
+from = "/*"
+to = "/.netlify/functions/render"
+status = 200
