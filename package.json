@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --mode dev",
-		"build": "mkdir .netlify && echo \"* /.netlify/functions/render 200\" > .netlify/_redirects && vite build --mode prod",
+		"build": "mkdir -p .netlify && echo \"* /.netlify/functions/render 200\" > .netlify/_redirects && vite build --mode prod",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
