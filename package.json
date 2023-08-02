@@ -63,7 +63,6 @@
 		}
 	},
 	"dependencies": {
-		"@netlify/functions": "^1.6.0",
 		"@popperjs/core": "^2.11.8",
 		"firebase": "^9.23.0",
 		"firebase-admin": "^11.10.1",
