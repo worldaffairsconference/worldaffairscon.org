@@ -1,0 +1,3 @@
+[submodule "submodules/kit"]
+	path = submodules/kit
+	url = https://github.com/Samuel-Martineau/kit.git

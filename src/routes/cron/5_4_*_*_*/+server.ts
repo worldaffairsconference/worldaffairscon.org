@@ -1,7 +1,7 @@
 import { error } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
 
-export const GET = (({ url }) => {
+export const POST = (({ url }) => {
 	const min = Number(url.searchParams.get("min") ?? "0");
 	const max = Number(url.searchParams.get("max") ?? "1");
 
