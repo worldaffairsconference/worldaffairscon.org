@@ -14,13 +14,14 @@
 		"test:e2e": "playwright test",
 		"lint": "eslint . && prettier --check --plugin prettier-plugin-svelte .",
 		"lint:fix": "eslint --fix . && prettier --write .",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"postinstall": "cd ./submodules/kit/packages/adapter-netlify && pnpm i && pnpm build"
 	},
 	"devDependencies": {
 		"@faker-js/faker": "^8.0.2",
 		"@firebase/rules-unit-testing": "^2.0.7",
 		"@playwright/test": "^1.36.1",
-		"@sveltejs/adapter-netlify": "^2.0.8",
+		"@sveltejs/adapter-netlify": "link:./submodules/kit/packages/adapter-netlify",
 		"@sveltejs/kit": "^1.22.3",
 		"@testing-library/jest-dom": "^5.17.0",
 		"@testing-library/svelte": "^3.2.2",
@@ -63,6 +64,7 @@
 		}
 	},
 	"dependencies": {
+		"@netlify/functions": "^1.6.0",
 		"@popperjs/core": "^2.11.8",
 		"firebase": "^9.23.0",
 		"firebase-admin": "^11.10.1",
@@ -78,6 +80,9 @@
 	"pnpm": {
 		"patchedDependencies": {
 			"@sveltejs/kit@1.22.3": "patches/@sveltejs__kit@1.22.3.patch"
+		},
+		"overrides": {
+			"protobufjs@>=6.10.0 <7.2.4": ">=7.2.4"
 		}
 	}
 }

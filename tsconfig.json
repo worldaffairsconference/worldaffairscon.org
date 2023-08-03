@@ -31,8 +31,6 @@
 		"src/**/*.svelte",
 		"e2e/**/*.js",
 		"e2e/**/*.ts",
-		"netlify/functions/**/*.js",
-		"netlify/functions/**/*.ts",
 		"firebase/**/*.test.ts"
 	]
 }
