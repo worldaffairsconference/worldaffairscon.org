@@ -146,7 +146,7 @@
 	}
 
 	onMount(async () => {
-		const progressivelyLoad = (images: string[]) => {
+		const load = (images: string[]) => {
 			const texture = new THREE.Texture();
 			texture.colorSpace = THREE.SRGBColorSpace;
 
@@ -169,6 +169,8 @@
 					} else {
 						imageObj = null;
 					}
+
+					texture.needsUpdate = true;
 				}
 			};
 
@@ -202,10 +204,6 @@
 		const cloudGeometry = new THREE.SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new THREE.MeshPhongMaterial({
 			map: new THREE.TextureLoader().load("./textures/clouds-high.webp"),
-			// map: progressivelyLoad([
-			// 	"./textures/clouds-low.webp",
-			// 	"./textures/clouds-high.webp"
-			// ]),
 			transparent: true
 		});
 
@@ -215,11 +213,15 @@
 		// Earth
 		const earthGeometry = new THREE.SphereGeometry(100, 128, 128);
 
+		// const earthTexture = new THREE.TextureLoader().load(
+		// 	"./textures/map.webp"
+		// );
+		// earthTexture.colorSpace = THREE.SRGBColorSpace;
+
+		var imageUrls = ["./textures/red.webp", "./textures/map-high.webp"];
+
 		const earthMaterial = new THREE.MeshPhongMaterial({
-			map: progressivelyLoad([
-				"./textures/map-low.webp",
-				"./textures/map-high.webp"
-			]),
+			map: load(imageUrls),
 			bumpMap: new THREE.TextureLoader().load(
 				"./textures/earth-topology.webp"
 			),
