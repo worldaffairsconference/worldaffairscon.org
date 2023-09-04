@@ -169,8 +169,6 @@
 					} else {
 						imageObj = null;
 					}
-
-					texture.needsUpdate = true;
 				}
 			};
 
@@ -203,11 +201,11 @@
 		// Clouds
 		const cloudGeometry = new THREE.SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new THREE.MeshPhongMaterial({
-			// map: new THREE.TextureLoader().load("./textures/clouds3.webp"),
-			map: progressivelyLoad([
-				"./textures/clouds-low.webp",
-				"./textures/clouds-high.webp"
-			]),
+			map: new THREE.TextureLoader().load("./textures/clouds-high.webp"),
+			// map: progressivelyLoad([
+			// 	"./textures/clouds-low.webp",
+			// 	"./textures/clouds-high.webp"
+			// ]),
 			transparent: true
 		});
 
