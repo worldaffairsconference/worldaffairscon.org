@@ -1,6 +1,6 @@
 <script lang="ts">
 	import "swiper/css";
-	import "swiper/css/navigation";
+	import "swiper/css/mousewheel";
 
 	import { onMount } from "svelte";
 	import * as THREE from "three?client";
@@ -16,11 +16,10 @@
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
 	import { ScrollTrigger } from "gsap/ScrollTrigger?client";
 
-	import type { Swiper } from "swiper";
+	import { type Swiper, Mousewheel } from "swiper";
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
 	// Icons
-	import IoIosPlayCircle from "svelte-icons/io/IoIosPlayCircle.svelte";
 	import TiArrowLeft from "svelte-icons/ti/TiArrowLeft.svelte";
 	import TiArrowRight from "svelte-icons/ti/TiArrowRight.svelte";
 
@@ -519,7 +518,7 @@
 			</p>
 		</div>
 
-		<div class="flex gap-2 mb-6 text-xl lg:text-2xl">
+		<div class="flex gap-2 mb-6 text-lg sm:text-xl lg:text-2xl">
 			<span class="text-primary">#RollWAC</span>
 			<span class="text-secondary cursor-pointer"
 				>・ <Tooltip
@@ -559,12 +558,12 @@
 				<input
 					type="email"
 					name="email"
-					class="border text-sm rounded-lg block w-60 md:w-80 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
+					class="border text-sm md:text-[0.9rem] rounded-lg block w-60 md:w-80 pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
 					placeholder="name@school.com"
 				/>
 			</div>
 			<button
-				class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white text-sm hover:brightness-[1.08] transition-all"
+				class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
 			>
 				Get Notified
 			</button>
@@ -587,13 +586,13 @@
 					WAC has reached:
 				</h2>
 				<dl
-					class="max-w-screen-md gap-8 mx-auto text-white flex justify-between flex-wrap text-center [&>*]:mx-auto"
+					class="max-w-screen-md gap-8 md:gap-16 mx-auto text-white flex justify-between flex-wrap text-center [&>*]:mx-auto"
 				>
 					<div
 						class="flex flex-col items-center justify-center mx-auto"
 					>
 						<dt
-							class="mb-2 text-6xl md:text-[5.4rem] font-bold tracking-tight"
+							class="mb-2 text-6xl md:text-[6rem] font-bold tracking-tight"
 						>
 							10k+
 						</dt>
@@ -603,7 +602,7 @@
 						class="flex flex-col items-center justify-center mx-auto"
 					>
 						<dt
-							class="mb-2 text-6xl md:text-[5.4rem] font-bold tracking-tight"
+							class="mb-2 text-6xl md:text-[6rem] font-bold tracking-tight"
 						>
 							35+
 						</dt>
@@ -613,7 +612,7 @@
 						class="flex flex-col items-center justify-center mx-auto"
 					>
 						<dt
-							class="mb-2 text-6xl md:text-[5.4rem] font-bold tracking-tight"
+							class="mb-2 text-6xl md:text-[6rem] font-bold tracking-tight"
 						>
 							80+
 						</dt>
@@ -636,8 +635,15 @@
 						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
 					>
 						<SwiperContainer
+							modules={[Mousewheel]}
 							spaceBetween={18}
 							slidesPerView={3}
+							freeMode={true}
+							mousewheel={{
+								releaseOnEdges: true,
+								forceToAxis: true,
+								thresholdDelta: 10
+							}}
 							class="w-full h-full"
 							loop={true}
 							navigation
@@ -713,7 +719,7 @@
 
 	<section class="h-screen w-screen relative flex flex-col" id="videoSection">
 		<h2
-			class="-top-3 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
+			class="-top-5 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 			id="videoTitle"
 		>
 			WAC 2023
@@ -727,7 +733,7 @@
 		<div class="w-full sm:w-5/6 h-4/5 m-auto relative">
 			<button
 				class="transition-opacity duration-500 {!showVideoPreview &&
-					'opacity-0'} absolute inset-0 z-30"
+					'opacity-0'} absolute inset-0 z-30 group"
 				on:click={onClickVideo}
 				id="video"
 			>
@@ -737,10 +743,37 @@
 					class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
 				/>
 				<div
-					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[109px] w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
 				>
-					<div class="h-24 w-24 text-white">
-						<IoIosPlayCircle />
+					<div
+						class="w-[22px] text-white group-hover:scale-110 transition-all relative ease-linear duration-300 ml-1"
+					>
+						<svg
+							width="100%"
+							viewBox="0 0 20 23"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M19 9.76795C20.3333 10.5378 20.3333 12.4623 19 13.2321L3.25 22.3253C1.91667 23.0951 0.250001 22.1329 0.250001 20.5933L0.250002 2.40673C0.250002 0.867131 1.91667 -0.0951185 3.25 0.674682L19 9.76795Z"
+								fill="currentcolor"
+							></path>
+						</svg>
+						<div
+							class="opacity-0 group-hover:opacity-100 group-hover:blur-md text-white absolute inset-0 ease-linear duration-300"
+						>
+							<svg
+								width="100%"
+								viewBox="0 0 20 23"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M19 9.76795C20.3333 10.5378 20.3333 12.4623 19 13.2321L3.25 22.3253C1.91667 23.0951 0.250001 22.1329 0.250001 20.5933L0.250002 2.40673C0.250002 0.867131 1.91667 -0.0951185 3.25 0.674682L19 9.76795Z"
+									fill="currentcolor"
+								></path>
+							</svg>
+						</div>
 					</div>
 				</div>
 			</button>
@@ -756,6 +789,7 @@
 							class="w-full h-full sm:rounded-2xl sm:shadow-md absolute inset-0 z-50"
 							autoplay
 							controls
+							on:ended={stopVideo}
 						>
 							<source src={trailerVideo} type="video/mp4" />
 							Your browser does not support the video tag.
@@ -767,7 +801,7 @@
 	</section>
 
 	<section
-		class="w-screen px-12 md:px-28 pb-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7"
+		class="w-screen px-12 md:px-28 pb-16 py-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7 bg-zinc-950/50"
 		id="action"
 	>
 		<h3 class="uppercase">

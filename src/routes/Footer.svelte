@@ -35,11 +35,9 @@
 </script>
 
 <footer class="bg-zinc-950">
-	<div class="w-full mx-auto max-w-screen-xl p-11">
-		<div
-			class="md:flex md:items-center md:justify-between gap-3 mb-4 sm:mb-0"
-		>
-			<div class="flex gap-6 items-center mb-5 sm:mb-3.5">
+	<div class="w-full mx-auto max-w-screen-xl p-8 sm:p-11 flex flex-col">
+		<div class="sm:flex sm:items-center sm:justify-between gap-3 sm:mb-0">
+			<div class="sm:flex hidden gap-6 items-center mb-5 sm:mb-4">
 				<img
 					src={ucc}
 					alt="UCC Logo"
@@ -53,7 +51,9 @@
 			</div>
 
 			<div>
-				<div class="uppercase text-zinc-400 mb-1 sm:mb-2.5">
+				<div
+					class="uppercase text-zinc-400 mb-1 sm:mb-1.5 hidden sm:block"
+				>
 					Socials
 				</div>
 				<div
@@ -62,7 +62,7 @@
 					{#each socials as social}
 						<a
 							href={social.link}
-							class="h-6 w-6"
+							class="h-[1.4rem] w-[1.4rem] sm:h-6 sm:w-6"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="{social.name} page"
@@ -73,7 +73,9 @@
 				</div>
 			</div>
 		</div>
-		<span class="text-sm text-zinc-400">
+		<span
+			class="text-sm text-zinc-400 order-first sm:order-none mb-3 sm:mb-0"
+		>
 			© 2023 The World Affairs Conference. All Rights Reserved.
 		</span>
 	</div>

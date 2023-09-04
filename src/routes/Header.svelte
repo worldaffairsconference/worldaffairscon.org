@@ -32,43 +32,44 @@
 			lastScrollTop = scrollTop;
 		});
 
-		// barTl
-		// 	.to(
-		// 		"#navbar",
-		// 		{
-		// 			duration: 0.7,
-		// 			ease: "expo.out",
-		// 			right: 0
-		// 		},
-		// 		0
-		// 	)
-		// 	.set(
-		// 		"#open",
-		// 		{
-		// 			display: "none",
-		// 			duration: 0
-		// 		},
-		// 		0
-		// 	)
-		// 	.to(
-		// 		"#close",
-		// 		{
-		// 			display: "block",
-		// 			duration: 0
-		// 		},
-		// 		0
-		// 	)
-		// 	.to(
-		// 		"#navbar > li",
-		// 		{
-		// 			duration: 0.6,
-		// 			ease: "expo.easeOut",
-		// 			opacity: 1,
-		// 			y: 0,
-		// 			stagger: 0.15
-		// 		},
-		// 		0.4
-		// 	);
+		// 	barTl
+		// 		.to(
+		// 			"#navbar",
+		// 			{
+		// 				duration: 0.4,
+		// 				ease: "expo.out",
+		// 				opacity: 1,
+		// 				display: "flex"
+		// 			},
+		// 			0
+		// 		)
+		// 		.set(
+		// 			"#open",
+		// 			{
+		// 				display: "none",
+		// 				duration: 0
+		// 			},
+		// 			0
+		// 		)
+		// 		.to(
+		// 			"#close",
+		// 			{
+		// 				display: "block",
+		// 				duration: 0
+		// 			},
+		// 			0
+		// 		)
+		// 		.to(
+		// 			"#navbar > li",
+		// 			{
+		// 				duration: 0.4,
+		// 				ease: "expo.easeOut",
+		// 				opacity: 1,
+		// 				y: 0,
+		// 				stagger: 0.12
+		// 			},
+		// 			0.4
+		// 		);
 	});
 
 	// const openNav = () => {
@@ -76,7 +77,7 @@
 	// };
 
 	// const closeNav = () => {
-	// 	barTl.timeScale(2).reversed(!barTl.reversed());
+	// 	barTl.timeScale(2.25).reversed(!barTl.reversed());
 	// };
 
 	// const routes: Route[] = [
@@ -90,9 +91,9 @@
 <header
 	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
 	{navBarFixed
-		? 'fixed bg-zinc-950/30 backdrop-blur-xl shadow-md shadow-zinc-950/5'
+		? 'fixed bg-zinc-950/50 backdrop-blur-3xl shadow-md shadow-zinc-950/5'
 		: 'absolute bg-transparent'} 
-	{navBarShowing ? 'top-0' : '-top-[150px]'}"
+	{navBarFixed ? (navBarShowing ? 'top-0' : '-top-[150px]') : ''}"
 	bind:this={headerElement}
 	id="header"
 >
@@ -102,7 +103,7 @@
 
 	<!-- <nav class="flex items-center gap-4 lg:gap-20">
 		<ul
-			class="fixed -right-[100%] bottom-0 z-50 bg-zinc-900 w-2/3 h-full bg-opacity-80 flex backdrop-blur-lg flex-col justify-center items-center text-2xl gap-12 text-zinc-300 lg:flex lg:gap-16 lg:static lg:bg-transparent lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:justify-end lg:text-base lg:backdrop-blur-none"
+			class="fixed inset-0 z-50 bg-zinc-950/90 w-full h-full opacity-0 hidden flex-col justify-center items-center text-3xl gap-12 text-zinc-300 lg:flex lg:opacity-100 lg:gap-16 lg:static lg:bg-transparent lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:justify-end lg:text-base lg:backdrop-blur-none"
 			id="navbar"
 		>
 			{#each routes as route}
@@ -113,7 +114,7 @@
 						href={route.path}
 						class="text-zinc-300 hover:text-white transition-colors duration-100 hover:shadow-glow
                         {$page.url.pathname === route.path &&
-							'underline decoration-primary underline-offset-8'}
+							'underline decoration-primary decoration-[1.5px] underline-offset-8'}
                         "
 						on:click={closeNav}
 					>
