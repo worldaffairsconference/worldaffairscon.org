@@ -146,6 +146,38 @@
 	}
 
 	onMount(async () => {
+		const progressivelyLoad = (images: string[]) => {
+			const texture = new THREE.Texture();
+			texture.colorSpace = THREE.SRGBColorSpace;
+
+			// Create an image object
+			let imageObj: HTMLImageElement | null = new Image();
+			let loadingIx = 0;
+
+			// Set crossorigin to avoid WebGL error
+			imageObj.crossOrigin = "anonymous";
+
+			imageObj.onload = () => {
+				if (imageObj !== null) {
+					texture.image = imageObj;
+					texture.needsUpdate = true;
+
+					if (loadingIx < images.length) {
+						(imageObj as HTMLImageElement).src = images[
+							loadingIx++
+						] as string;
+					} else {
+						imageObj = null;
+					}
+
+					texture.needsUpdate = true;
+				}
+			};
+
+			imageObj.src = images[loadingIx++] as string;
+
+			return texture;
+		};
 		// Setup scene
 		const scene = new THREE.Scene();
 
@@ -171,7 +203,11 @@
 		// Clouds
 		const cloudGeometry = new THREE.SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new THREE.MeshPhongMaterial({
-			map: new THREE.TextureLoader().load("./textures/clouds.webp"),
+			// map: new THREE.TextureLoader().load("./textures/clouds3.webp"),
+			map: progressivelyLoad([
+				"./textures/clouds-low.webp",
+				"./textures/clouds-high.webp"
+			]),
 			transparent: true
 		});
 
@@ -181,13 +217,11 @@
 		// Earth
 		const earthGeometry = new THREE.SphereGeometry(100, 128, 128);
 
-		const earthTexture = new THREE.TextureLoader().load(
-			"./textures/map.webp"
-		);
-		earthTexture.colorSpace = THREE.SRGBColorSpace;
-
 		const earthMaterial = new THREE.MeshPhongMaterial({
-			map: earthTexture,
+			map: progressivelyLoad([
+				"./textures/map-low.webp",
+				"./textures/map-high.webp"
+			]),
 			bumpMap: new THREE.TextureLoader().load(
 				"./textures/earth-topology.webp"
 			),
@@ -237,9 +271,9 @@
 
 		// Handles resizing the window
 		const handleWindowResize = () => {
-			renderer.setSize(window.innerWidth, window.innerHeight);
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
+			renderer.setSize(window.innerWidth, window.innerHeight);
 		};
 
 		const createScene = () => {
@@ -257,7 +291,7 @@
 			animate();
 		};
 
-		window.addEventListener("resize", handleWindowResize);
+		window.addEventListener("resize", handleWindowResize, false);
 		createScene();
 
 		const ctx = gsap.context(() => {
@@ -670,6 +704,7 @@
 										src={speaker.image}
 										alt="{speaker.name}'s Headshot"
 										class="w-full h-full object-cover transition-all"
+										loading="lazy"
 									/>
 
 									<div
@@ -741,6 +776,7 @@
 					src={trailerThumbnail}
 					alt="Trailer video thumbnail"
 					class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
+					loading="lazy"
 				/>
 				<div
 					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[109px] w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
