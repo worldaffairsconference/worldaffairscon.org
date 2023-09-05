@@ -176,7 +176,7 @@
 			const texture = new Texture();
 			texture.colorSpace = SRGBColorSpace;
 
-			let currentUpdatedImageIndex: number = 0;
+			let currentUpdatedImageIndex = 0;
 
 			images.every((image, i) => {
 				const imageObj = createProgressivelyLoadedImage(image);
