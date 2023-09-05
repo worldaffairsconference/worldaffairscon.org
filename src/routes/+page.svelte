@@ -176,12 +176,17 @@
 			const texture = new Texture();
 			texture.colorSpace = SRGBColorSpace;
 
+			let currentUpdatedImageIndex = 0;
+
 			images.every((image, i) => {
 				const imageObj = createProgressivelyLoadedImage(image);
 
 				imageObj.onload = () => {
-					texture.image = imageObj;
-					texture.needsUpdate = true;
+					if (currentUpdatedImageIndex <= i) {
+						texture.image = imageObj;
+						texture.needsUpdate = true;
+						currentUpdatedImageIndex = i;
+					}
 				};
 
 				const isSmallScreen = window.outerWidth < 600;
@@ -220,7 +225,6 @@
 		// Clouds
 		const cloudGeometry = new SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new MeshPhongMaterial({
-			// map: new TextureLoader().load("./textures/clouds-low.webp"),
 			map: load(
 				["./textures/clouds-low.webp", "./textures/clouds-high.webp"],
 				0
