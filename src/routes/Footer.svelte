@@ -52,7 +52,7 @@
 
 			<div>
 				<div
-					class="uppercase text-zinc-400 mb-1 sm:mb-1.5 hidden sm:block"
+					class="uppercase text-zinc-400 mb-1 sm:mb-1.5 hidden sm:block text-[0.97rem]"
 				>
 					Socials
 				</div>
