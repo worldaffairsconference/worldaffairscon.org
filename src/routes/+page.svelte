@@ -650,7 +650,7 @@
 						class="flex flex-col items-center justify-center mx-auto"
 					>
 						<dt
-							class="mb-2 text-6xl md:text-[6rem] font-bold tracking-tight"
+							class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
 						>
 							10k+
 						</dt>
@@ -660,7 +660,7 @@
 						class="flex flex-col items-center justify-center mx-auto"
 					>
 						<dt
-							class="mb-2 text-6xl md:text-[6rem] font-bold tracking-tight"
+							class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
 						>
 							35+
 						</dt>
@@ -670,7 +670,7 @@
 						class="flex flex-col items-center justify-center mx-auto"
 					>
 						<dt
-							class="mb-2 text-6xl md:text-[6rem] font-bold tracking-tight"
+							class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
 						>
 							80+
 						</dt>
