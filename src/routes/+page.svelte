@@ -3,7 +3,25 @@
 	import "swiper/css/mousewheel";
 
 	import { onMount } from "svelte";
-	import * as THREE from "three?client";
+
+	import { Texture } from "three/src/textures/Texture";
+	import { SRGBColorSpace } from "three/src/constants";
+	import { Scene } from "three/src/scenes/Scene";
+	import { PerspectiveCamera } from "three/src/cameras/PerspectiveCamera";
+	import { AmbientLight } from "three/src/lights/AmbientLight";
+	import { PointLight } from "three/src/lights/PointLight";
+	import { SphereGeometry } from "three/src/geometries/SphereGeometry";
+	import { MeshPhongMaterial } from "three/src/materials/MeshPhongMaterial";
+	import { TextureLoader } from "three/src/loaders/TextureLoader";
+	import { Mesh } from "three/src/objects/Mesh";
+	import { Color } from "three/src/math/Color";
+	import { BufferGeometry } from "three/src/core/BufferGeometry";
+	import { PointsMaterial } from "three/src/materials/PointsMaterial";
+	import { Float32BufferAttribute } from "three/src/core/BufferAttribute";
+	import { Points } from "three/src/objects/Points";
+	import { WebGLRenderer } from "three/src/renderers/WebGLRenderer";
+	import { randFloatSpread } from "three/src/math/MathUtils";
+
 	import { DateTime } from "luxon";
 	import toast from "svelte-french-toast";
 	import { browser } from "$app/environment";
@@ -146,11 +164,34 @@
 	}
 
 	onMount(async () => {
+		const createProgressivelyLoadedImage = (src: string) => {
+			const image = new Image();
+			image.crossOrigin = "anonymous";
+			image.src = src;
+
+			return image;
+		};
+
+		const load = (images: string[]) => {
+			const texture = new Texture();
+			texture.colorSpace = SRGBColorSpace;
+
+			images.forEach((image) => {
+				const imageObj = createProgressivelyLoadedImage(image);
+
+				imageObj.onload = () => {
+					texture.image = imageObj;
+					texture.needsUpdate = true;
+				};
+			});
+
+			return texture;
+		};
 		// Setup scene
-		const scene = new THREE.Scene();
+		const scene = new Scene();
 
 		// Setup camera
-		const camera = new THREE.PerspectiveCamera();
+		const camera = new PerspectiveCamera();
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
 
@@ -161,71 +202,73 @@
 		scene.add(camera);
 
 		// Lighting
-		const ambientLight = new THREE.AmbientLight(0xcccccc, 0.01);
+		const ambientLight = new AmbientLight(0xcccccc, 0.01);
 		scene.add(ambientLight);
 
-		const pointLight = new THREE.PointLight(0xffffff, 1);
+		const pointLight = new PointLight(0xffffff, 1);
 		pointLight.position.set(700, 270, 500);
 		scene.add(pointLight);
 
 		// Clouds
-		const cloudGeometry = new THREE.SphereGeometry(100.6, 32, 32);
-		const cloudMaterial = new THREE.MeshPhongMaterial({
-			map: new THREE.TextureLoader().load("./textures/clouds.webp"),
+		const cloudGeometry = new SphereGeometry(100.6, 32, 32);
+		const cloudMaterial = new MeshPhongMaterial({
+			// map: new TextureLoader().load("./textures/clouds-low.webp"),
+			map: load([
+				"./textures/clouds-low.webp",
+				"./textures/clouds-high.webp"
+			]),
 			transparent: true
 		});
 
-		const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
+		const cloudMesh = new Mesh(cloudGeometry, cloudMaterial);
 		scene.add(cloudMesh);
 
 		// Earth
-		const earthGeometry = new THREE.SphereGeometry(100, 128, 128);
+		const earthGeometry = new SphereGeometry(100, 128, 128);
 
-		const earthTexture = new THREE.TextureLoader().load(
-			"./textures/map.webp"
-		);
-		earthTexture.colorSpace = THREE.SRGBColorSpace;
+		// const earthTexture = new THREE.TextureLoader().load(
+		// 	"./textures/map.webp"
+		// );
+		// earthTexture.colorSpace = THREE.SRGBColorSpace;
 
-		const earthMaterial = new THREE.MeshPhongMaterial({
-			map: earthTexture,
-			bumpMap: new THREE.TextureLoader().load(
-				"./textures/earth-topology.webp"
-			),
+		const earthMaterial = new MeshPhongMaterial({
+			map: load(["./textures/map-low.webp", "./textures/map-high.webp"]),
+			bumpMap: new TextureLoader().load("./textures/earth-topology.webp"),
 			bumpScale: 0.5
 		});
 
-		earthMaterial.specular = new THREE.Color("#021563");
+		earthMaterial.specular = new Color("#021563");
 		earthMaterial.shininess = 0;
 
-		const earthMesh = new THREE.Mesh(earthGeometry, earthMaterial);
+		const earthMesh = new Mesh(earthGeometry, earthMaterial);
 		scene.add(earthMesh);
 
 		// earthMesh.rotateX(THREE.MathUtils.degToRad(90));
 		// cloudMesh.rotateX(THREE.MathUtils.degToRad(90));
 
 		// Stars
-		const starsGeometry = new THREE.BufferGeometry();
-		const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+		const starsGeometry = new BufferGeometry();
+		const starMaterial = new PointsMaterial({ color: 0xffffff });
 
 		const starVertices: number[] = [];
 
 		for (let i = 0; i < TOTAL_STARS; i++) {
-			const x = THREE.MathUtils.randFloatSpread(500);
-			const y = THREE.MathUtils.randFloatSpread(500);
-			const z = THREE.MathUtils.randFloatSpread(600);
+			const x = randFloatSpread(500);
+			const y = randFloatSpread(500);
+			const z = randFloatSpread(600);
 
 			starVertices.push(x, y, z);
 		}
 
 		starsGeometry.setAttribute(
 			"position",
-			new THREE.Float32BufferAttribute(starVertices, 3)
+			new Float32BufferAttribute(starVertices, 3)
 		);
 
-		const stars = new THREE.Points(starsGeometry, starMaterial);
+		const stars = new Points(starsGeometry, starMaterial);
 		scene.add(stars);
 
-		let renderer: THREE.WebGLRenderer;
+		let renderer: WebGLRenderer;
 
 		// Render loop
 		const animate = () => {
@@ -237,13 +280,13 @@
 
 		// Handles resizing the window
 		const handleWindowResize = () => {
-			renderer.setSize(window.innerWidth, window.innerHeight);
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
+			renderer.setSize(window.innerWidth, window.innerHeight);
 		};
 
 		const createScene = () => {
-			renderer = new THREE.WebGLRenderer({
+			renderer = new WebGLRenderer({
 				antialias: true,
 				canvas: canvasElement,
 				alpha: true
@@ -257,7 +300,7 @@
 			animate();
 		};
 
-		window.addEventListener("resize", handleWindowResize);
+		window.addEventListener("resize", handleWindowResize, false);
 		createScene();
 
 		const ctx = gsap.context(() => {
@@ -365,7 +408,7 @@
 
 						starsGeometry.setAttribute(
 							"position",
-							new THREE.Float32BufferAttribute(
+							new Float32BufferAttribute(
 								starVertices.slice(0, starsRendered),
 								3
 							)
@@ -670,6 +713,7 @@
 										src={speaker.image}
 										alt="{speaker.name}'s Headshot"
 										class="w-full h-full object-cover transition-all"
+										loading="lazy"
 									/>
 
 									<div
@@ -741,6 +785,7 @@
 					src={trailerThumbnail}
 					alt="Trailer video thumbnail"
 					class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
+					loading="lazy"
 				/>
 				<div
 					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[109px] w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
