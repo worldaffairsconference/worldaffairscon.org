@@ -172,17 +172,25 @@
 			return image;
 		};
 
-		const load = (images: string[]) => {
+		const load = (images: string[], smallScreenStop: number): Texture => {
 			const texture = new Texture();
 			texture.colorSpace = SRGBColorSpace;
 
-			images.forEach((image) => {
+			images.every((image, i) => {
 				const imageObj = createProgressivelyLoadedImage(image);
 
 				imageObj.onload = () => {
 					texture.image = imageObj;
 					texture.needsUpdate = true;
 				};
+
+				const isSmallScreen = window.outerWidth < 600;
+
+				if (isSmallScreen && i === smallScreenStop) {
+					return false;
+				}
+
+				return true;
 			});
 
 			return texture;
@@ -213,10 +221,10 @@
 		const cloudGeometry = new SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new MeshPhongMaterial({
 			// map: new TextureLoader().load("./textures/clouds-low.webp"),
-			map: load([
-				"./textures/clouds-low.webp",
-				"./textures/clouds-high.webp"
-			]),
+			map: load(
+				["./textures/clouds-low.webp", "./textures/clouds-high.webp"],
+				0
+			),
 			transparent: true
 		});
 
@@ -232,7 +240,10 @@
 		// earthTexture.colorSpace = THREE.SRGBColorSpace;
 
 		const earthMaterial = new MeshPhongMaterial({
-			map: load(["./textures/map-low.webp", "./textures/map-high.webp"]),
+			map: load(
+				["./textures/map-low.webp", "./textures/map-high.webp"],
+				0
+			),
 			bumpMap: new TextureLoader().load("./textures/earth-topology.webp"),
 			bumpScale: 0.5
 		});
