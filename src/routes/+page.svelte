@@ -209,7 +209,7 @@
 		camera.updateProjectionMatrix();
 
 		camera.position.x = 0;
-		camera.position.y = 121;
+		camera.position.y = 123;
 		camera.position.z = 125;
 
 		scene.add(camera);
@@ -333,7 +333,7 @@
 					camera.position,
 					{
 						duration: 1,
-						y: 110,
+						y: 109.5,
 						z: 60,
 						ease: "power2.out"
 					},
@@ -560,7 +560,7 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[10rem] md:pt-44 lg:pt-[13.5rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30"
+		class="pt-[10rem] md:pt-44 lg:pt-[13.15rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30"
 	>
 		<div class="w-5/6 mx-auto">
 			<h1
