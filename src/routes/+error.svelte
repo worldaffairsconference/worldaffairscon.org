@@ -4,19 +4,16 @@
 
 	import { Scene } from "three/src/scenes/Scene";
 	import { PerspectiveCamera } from "three/src/cameras/PerspectiveCamera";
-	import { AmbientLight } from "three/src/lights/AmbientLight";
-	import { PointLight } from "three/src/lights/PointLight";
 	import { BufferGeometry } from "three/src/core/BufferGeometry";
 	import { PointsMaterial } from "three/src/materials/PointsMaterial";
 	import { Float32BufferAttribute } from "three/src/core/BufferAttribute";
 	import { Points } from "three/src/objects/Points";
 	import { WebGLRenderer } from "three/src/renderers/WebGLRenderer";
-	import { randFloatSpread } from "three/src/math/MathUtils";
 
 	let canvasElement: HTMLCanvasElement;
 
 	// Constants
-	const TOTAL_STARS = 600; // How many stars there are
+	const TOTAL_STARS = 1500; // How many stars there are
 
 	onMount(() => {
 		// Setup scene
@@ -27,32 +24,23 @@
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
 
-		camera.position.x = 0;
-		camera.position.y = 121;
-		camera.position.z = 125;
+		camera.rotation.x = Math.PI / 2;
+		camera.position.z = 1;
 
 		scene.add(camera);
 
-		// Lighting
-		const ambientLight = new AmbientLight(0xcccccc, 0.01);
-		scene.add(ambientLight);
-
-		const pointLight = new PointLight(0xffffff, 1);
-		pointLight.position.set(700, 270, 500);
-		scene.add(pointLight);
-
 		// Stars
 		const starsGeometry = new BufferGeometry();
-		const starMaterial = new PointsMaterial({ color: 0xffffff });
+		const starMaterial = new PointsMaterial({ color: 0xffffff, size: 6 });
 
 		const starVertices: number[] = [];
 
 		for (let i = 0; i < TOTAL_STARS; i++) {
-			const x = randFloatSpread(500);
-			const y = randFloatSpread(500);
-			const z = randFloatSpread(600);
-
-			starVertices.push(x, y, z);
+			starVertices.push(
+				Math.random() * 3000 - 1500,
+				Math.random() * 10000 - 3000,
+				Math.random() * 3000 - 1500
+			);
 		}
 
 		starsGeometry.setAttribute(
@@ -65,16 +53,36 @@
 
 		let renderer: WebGLRenderer;
 
+		const rotationAmount = 0.0012;
+		let currentSpeed = 0.8;
+
 		// Render loop
 		const animate = () => {
 			renderer.render(scene, camera);
 			requestAnimationFrame(animate);
+
+			const position = stars.geometry.attributes["position"];
+
+			if (!position) return;
+
+			for (let i = 0; i < TOTAL_STARS; i++) {
+				let y = position.getY(i) - currentSpeed;
+
+				if (y < 0) y = Math.random() * 10000 - 300;
+
+				position.setY(i, y);
+			}
+
+			stars.rotation.y += rotationAmount;
+
+			position.needsUpdate = true;
 		};
 
 		// Handles resizing the window
 		const handleWindowResize = () => {
 			camera.aspect = window.innerWidth / window.innerHeight;
 			camera.updateProjectionMatrix();
+
 			renderer.setSize(window.innerWidth, window.innerHeight);
 		};
 
@@ -104,21 +112,19 @@
 		<div class="relative flex flex-col h-full w-full">
 			<div class="py-8 px-4 m-auto lg:px-6 text-center z-50">
 				<h1
-					class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-secondary"
+					class="mb-2 text-7xl font-bold lg:text-[12rem] text-secondary pr-2.5"
 				>
 					404
 				</h1>
-				<p
-					class="mb-4 text-3xl tracking-tight font-bold md:text-4xl text-white"
-				>
+				<p class="mb-2 text-2xl font-bold md:text-4xl text-white">
 					It looks like you're lost...
 				</p>
-				<p class="mb-4 text-lg font-light text-zinc-400">
+				<p class="mb-4 font-light text-zinc-400">
 					the page you are looking for does not exist.
 				</p>
 				<a
 					href="/"
-					class="inline-flex text-white bg-gradient-to-r from-primary to-secondary rounded-lg text-sm px-5 py-2.5 text-center my-4"
+					class="inline-flex text-white bg-gradient-to-r from-primary to-secondary rounded-lg text-sm px-5 py-3 text-center my-4 hover:brightness-[1.08] transition-all"
 				>
 					Go Back Home
 				</a>
