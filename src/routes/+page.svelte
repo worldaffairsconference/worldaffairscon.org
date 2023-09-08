@@ -158,12 +158,15 @@
 
 	let canvasElement: HTMLCanvasElement;
 	let gsapScope: Element;
+	let pageMounted = false;
 
 	if (browser) {
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 	}
 
 	onMount(async () => {
+		pageMounted = true;
+
 		const createProgressivelyLoadedImage = (src: string) => {
 			const image = new Image();
 			image.crossOrigin = "anonymous";
@@ -560,11 +563,14 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[10rem] md:pt-44 lg:pt-[13.15rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30"
+		class="pt-[10rem] md:pt-44 lg:pt-[13.3rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+			? 'opacity-100'
+			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
 	>
 		<div class="w-5/6 mx-auto">
 			<h1
 				class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-5 lg:mb-6 tracking-[-0.03em]"
+				id="text"
 			>
 				World Affairs Conference
 			</h1>
@@ -776,7 +782,10 @@
 		</div>
 	</section>
 
-	<section class="h-screen w-screen relative flex flex-col" id="videoSection">
+	<section
+		class="h-screen w-screen relative flex flex-col mt-16"
+		id="videoSection"
+	>
 		<h2
 			class="-top-5 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 			id="videoTitle"
