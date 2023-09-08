@@ -53,8 +53,8 @@
 
 		let renderer: WebGLRenderer;
 
-		const rotationAmount = 0.0012;
-		let currentSpeed = 0.8;
+		const rotationAmount = 0.003;
+		let currentSpeed = 5.0;
 
 		// Render loop
 		const animate = () => {
@@ -123,7 +123,7 @@
 				>
 					It looks like you're lost...
 				</p>
-				<p class="mb-4 font-light text-zinc-400 text-sm md:text-base">
+				<p class="mb-4 text-zinc-400 text-sm md:text-base">
 					the page you are looking for does not exist.
 				</p>
 				<a
