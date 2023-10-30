@@ -6,7 +6,7 @@ export default defineConfig({
 	plugins: [isoImport(), sveltekit()],
 	test: {
 		globals: true,
-		include: ["src/**/*.test.ts", "firebase/**/*.test.ts"],
+		include: ["src/**/*.test.ts"],
 		reporters: ["default", "json"],
 		outputFile: {
 			json: "./reports/unit.json"

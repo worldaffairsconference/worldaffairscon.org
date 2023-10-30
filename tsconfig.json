@@ -30,7 +30,6 @@
 		"src/**/*.ts",
 		"src/**/*.svelte",
 		"e2e/**/*.js",
-		"e2e/**/*.ts",
-		"firebase/**/*.test.ts"
+		"e2e/**/*.ts"
 	]
 }

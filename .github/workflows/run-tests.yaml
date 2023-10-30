@@ -38,14 +38,10 @@ jobs:
                       ${{ runner.os }}-pnpm-store-
             - name: Install dependencies
               run: pnpm install
-            - name: Install firebase-tools
-              run: pnpm i -g firebase-tools
-            - name: Switch firebase project to test
-              run: firebase use test --token "${{ secrets.FIREBASE_TOKEN }}"
             - name: Export environment variables to file
               run: echo "${{ secrets.ENV }}" > .env
             - name: Run unit tests
-              run: firebase emulators:exec "pnpm run test:unit" --token "${{ secrets.FIREBASE_TOKEN }}"
+              run: pnpm run test:unit
             - name: Report test results
               uses: actions/github-script@v6
               with:
@@ -97,13 +93,9 @@ jobs:
                       ${{ runner.os }}-pnpm-store-
             - name: Install dependencies
               run: pnpm install
-            - name: Install firebase-tools
-              run: pnpm i -g firebase-tools
-            - name: Switch firebase project to test
-              run: firebase use test --token "${{ secrets.FIREBASE_TOKEN }}"
             - name: Export environment variables to file
               run: echo "${{ secrets.ENV }}" > .env
             - name: Install playwright
               run: npx playwright install
             - name: Run e2e tests
-              run: firebase emulators:exec "pnpm run test:e2e" --token "${{ secrets.FIREBASE_TOKEN }}"
+              run: pnpm run test:e2e
