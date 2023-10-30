@@ -42,7 +42,7 @@
 		"husky": "^8.0.3",
 		"jsdom": "^22.1.0",
 		"msw": "2.0.1",
-		"postcss": "^8.4.26",
+		"postcss": "^8.4.31",
 		"prettier": "^3.0.0",
 		"prettier-plugin-svelte": "^3.0.0",
 		"puppeteer": "^20.9.0",
