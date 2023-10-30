@@ -14,13 +14,12 @@
 		"test:e2e": "playwright test",
 		"lint": "eslint . && prettier --check --plugin prettier-plugin-svelte .",
 		"lint:fix": "eslint --fix . && prettier --write .",
-		"prepare": "husky install",
-		"postinstall": "cd ./submodules/kit/packages/adapter-netlify && pnpm i && pnpm build"
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@faker-js/faker": "^8.0.2",
 		"@playwright/test": "^1.36.1",
-		"@sveltejs/adapter-netlify": "link:./submodules/kit/packages/adapter-netlify",
+		"@sveltejs/adapter-netlify": "^2.0.8",
 		"@sveltejs/kit": "^1.22.3",
 		"@testing-library/jest-dom": "^5.17.0",
 		"@testing-library/svelte": "^3.2.2",
@@ -32,6 +31,7 @@
 		"@typescript-eslint/parser": "^5.62.0",
 		"@vitest/coverage-v8": "^0.32.4",
 		"@vitest/ui": "^0.32.4",
+		"@xata.io/netlify": "^0.1.15",
 		"autoprefixer": "^10.4.14",
 		"commitizen": "^4.3.0",
 		"cz-conventional-changelog": "^3.3.0",
@@ -65,6 +65,7 @@
 	"dependencies": {
 		"@netlify/functions": "^1.6.0",
 		"@popperjs/core": "^2.11.8",
+		"@xata.io/client": "^0.26.5",
 		"gsap": "^3.12.2",
 		"luxon": "^3.3.0",
 		"svelte-icons": "^2.1.0",

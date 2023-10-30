@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://World-Affairs-Conference-4ipo7i.us-east-1.xata.sh/db/wac",
+  "codegen": {
+    "output": "src/lib/server/xata.ts"
+  }
+}
