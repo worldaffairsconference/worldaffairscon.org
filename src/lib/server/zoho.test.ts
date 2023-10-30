@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { rest } from "msw";
+import { HttpResponse, http } from "msw";
 import { setupServer } from "msw/node";
 
 import {
@@ -18,17 +18,17 @@ afterEach(() => server.resetHandlers());
 describe("mail distribution lists api", () => {
 	it("should return success with new email", async () => {
 		server.use(
-			rest.put(
+			http.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
-				(_, res, ctx) =>
-					res(
-						ctx.status(200),
-						ctx.json({
+				() =>
+					HttpResponse.json(
+						{
 							status: {
 								code: 200,
 								description: "success"
 							}
-						})
+						},
+						{ status: 200 }
 					)
 			)
 		);
@@ -42,12 +42,11 @@ describe("mail distribution lists api", () => {
 
 	it("should return success with existing email", async () => {
 		server.use(
-			rest.put(
+			http.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
-				(_, res, ctx) =>
-					res(
-						ctx.status(200),
-						ctx.json({
+				() =>
+					HttpResponse.json(
+						{
 							status: {
 								code: 200,
 								description: "success"
@@ -57,7 +56,8 @@ describe("mail distribution lists api", () => {
 									"uccwac@gmail.com": "Already Exist"
 								}
 							]
-						})
+						},
+						{ status: 200 }
 					)
 			)
 		);
@@ -71,12 +71,11 @@ describe("mail distribution lists api", () => {
 
 	it("should return error with invalid email", async () => {
 		server.use(
-			rest.put(
+			http.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
-				(_, res, ctx) =>
-					res(
-						ctx.status(400),
-						ctx.json({
+				() =>
+					HttpResponse.json(
+						{
 							data: {
 								errorCode: "PATTERN_NOT_MATCHED",
 								moreInfo:
@@ -86,7 +85,8 @@ describe("mail distribution lists api", () => {
 								code: 400,
 								description: "Invalid Input"
 							}
-						})
+						},
+						{ status: 400 }
 					)
 			)
 		);
@@ -100,15 +100,15 @@ describe("mail distribution lists api", () => {
 
 	it("should return error with empty email", async () => {
 		server.use(
-			rest.put(
+			http.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
-				(_, res, ctx) =>
-					res(
-						ctx.status(200),
-						ctx.json({
+				() =>
+					HttpResponse.json(
+						{
 							status: { code: 200, description: "success" },
 							data: [{ "": "Invalid member" }]
-						})
+						},
+						{ status: 200 }
 					)
 			)
 		);
@@ -122,9 +122,9 @@ describe("mail distribution lists api", () => {
 
 	it("should not throw on unknown api response", async () => {
 		server.use(
-			rest.put(
+			http.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
-				(_, res, ctx) => res(ctx.status(400), ctx.json({}))
+				() => HttpResponse.json({}, { status: 400 })
 			)
 		);
 		const error = console.error;
@@ -141,26 +141,25 @@ describe("mail distribution lists api", () => {
 	it("should be able to refresh the access token", async () => {
 		const accessToken = faker.internet.password();
 		server.use(
-			rest.put(
+			http.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
-				(req, res, ctx) => {
+				({ request }) => {
 					if (
-						req.headers.get("Authorization") ===
+						request.headers.get("Authorization") ===
 						`Zoho-oauthtoken ${accessToken}`
 					)
-						return res(
-							ctx.status(200),
-							ctx.json({
+						return HttpResponse.json(
+							{
 								status: {
 									code: 200,
 									description: "success"
 								}
-							})
+							},
+							{ status: 200 }
 						);
 					else
-						return res(
-							ctx.status(400),
-							ctx.json({
+						return HttpResponse.json(
+							{
 								data: {
 									errorCode: "INVALID_OAUTHTOKEN"
 								},
@@ -168,22 +167,21 @@ describe("mail distribution lists api", () => {
 									code: 404,
 									description: "Invalid Input"
 								}
-							})
+							},
+							{ status: 400 }
 						);
 				}
 			),
-			rest.post(
-				"https://accounts.zoho.com/oauth/v2/token",
-				(_, res, ctx) =>
-					res(
-						ctx.status(200),
-						ctx.json({
-							access_token: accessToken,
-							api_domain: "https://www.zohoapis.com",
-							token_type: "Bearer",
-							expires_in: 3600
-						})
-					)
+			http.post("https://accounts.zoho.com/oauth/v2/token", () =>
+				HttpResponse.json(
+					{
+						access_token: accessToken,
+						api_domain: "https://www.zohoapis.com",
+						token_type: "Bearer",
+						expires_in: 3600
+					},
+					{ status: 200 }
+				)
 			)
 		);
 		expect(
@@ -196,12 +194,11 @@ describe("mail distribution lists api", () => {
 
 	it("should not throw if the access token cannot be refreshed", async () => {
 		server.use(
-			rest.put(
+			http.put(
 				`https://mail.zoho.com/api/organization/${ZOHO_ORGANIZATION_ID}/groups/${ZOHO_NEWSLETTER_DISTRIBUTION_LIST_ID}`,
-				(_, res, ctx) =>
-					res(
-						ctx.status(400),
-						ctx.json({
+				() =>
+					HttpResponse.json(
+						{
 							data: {
 								errorCode: "INVALID_OAUTHTOKEN"
 							},
@@ -209,12 +206,12 @@ describe("mail distribution lists api", () => {
 								code: 404,
 								description: "Invalid Input"
 							}
-						})
+						},
+						{ status: 400 }
 					)
 			),
-			rest.post(
-				"https://accounts.zoho.com/oauth/v2/token",
-				(_, res, ctx) => res(ctx.status(200), ctx.json({}))
+			http.post("https://accounts.zoho.com/oauth/v2/token", () =>
+				HttpResponse.json({}, { status: 200 })
 			)
 		);
 		const error = console.error;
