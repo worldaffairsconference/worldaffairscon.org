@@ -31,7 +31,7 @@
 
 ### Setup
 
-1. Install [Node.js 20.x.x](https://nodejs.org/en), [GitHub CLI](https://cli.github.com/), [PNPM](https://pnpm.io/installation), and [Firebase CLI](https://firebase.google.com/docs/cli).
+1. Install [Node.js 20.x.x](https://nodejs.org/en), [GitHub CLI](https://cli.github.com/), [PNPM](https://pnpm.io/installation), and [Xata CLI](https://xata.io/docs/getting-started/cli).
 2. Clone the repository locally.
     ```shell
     gh repo clone worldaffairsconference/worldaffairs.ucc.on.ca
@@ -40,18 +40,10 @@
     ```shell
     pnpm i
     ```
-4. Set the Firebase project.
-    ```
-    firebase use test
-    ```
-5. Copy `.env.example` into `.env` and fill in the environment variable values from the Vault.
+4. Copy `.env.example` into `.env` and fill in the environment variable values from the Vault.
 
 ### Usage
 
--   To start the Firebase (Firestore + Auth) emulator, run
-    ```shell
-    firebase emulators:start --import ./firebase/emulator-data --export-on-exit
-    ```
 -   To start the development server, run
     ```shell
     pnpm dev

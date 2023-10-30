@@ -3,13 +3,8 @@
 
 	import { Toaster } from "svelte-french-toast";
 
-	import { user, userData } from "$lib/firebase";
-
 	import Footer from "./Footer.svelte";
 	import Header from "./Header.svelte";
-
-	$user;
-	$userData;
 </script>
 
 <Header />

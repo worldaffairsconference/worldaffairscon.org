@@ -34,7 +34,8 @@ async function refreshAccessToken() {
 
 export async function addEmailToDistributionList(
 	email: string,
-	list: keyof typeof distributionLists
+	list: keyof typeof distributionLists,
+	retryCount = 0
 ): Promise<
 	| {
 			success: true;
@@ -42,6 +43,8 @@ export async function addEmailToDistributionList(
 	  }
 	| { success: false; message: "invalidEmail" | "unknownError" }
 > {
+	if (retryCount > 3) return { success: false, message: "unknownError" };
+
 	if (!email.trim()) return { success: false, message: "invalidEmail" };
 
 	try {
@@ -78,7 +81,11 @@ export async function addEmailToDistributionList(
 
 		if (data.data?.errorCode === "INVALID_OAUTHTOKEN") {
 			await refreshAccessToken();
-			return await addEmailToDistributionList(email, list);
+			return await addEmailToDistributionList(
+				email,
+				list,
+				retryCount + 1
+			);
 		} else if (data.data?.errorCode === "PATTERN_NOT_MATCHED")
 			return { success: false, message: "invalidEmail" };
 		else throw new Error(JSON.stringify(data, null, 2));
