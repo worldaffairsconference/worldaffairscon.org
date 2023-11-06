@@ -1,0 +1,13 @@
+{
+  "id": "mig_cl2jalmdvgils4nqdmrg",
+  "parentID": "mig_cl2jak75ndlbrb9ui1ng",
+  "checksum": "1:6b0940d009b707d13d4d8b1dd081ebb21c0ebae098656c93bfa3d7df5b3deddc",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "auth_users_accounts",
+        "oldName": "nextauth_users_accounts"
+      }
+    }
+  ]
+}
