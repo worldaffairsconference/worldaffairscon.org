@@ -29,7 +29,8 @@ module.exports = {
 	],
 	rules: {
 		"no-empty-function": "off",
-		"@typescript-eslint/no-empty-function": "off"
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/no-unnecessary-condition": ["error"]
 		// "simple-import-sort/imports": "error",
 		// "simple-import-sort/exports": "error"
 	}
