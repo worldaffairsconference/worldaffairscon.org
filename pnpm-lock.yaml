@@ -1022,7 +1022,7 @@ packages:
       '@opentelemetry/sdk-metrics': 1.17.0(@opentelemetry/api@1.6.0)
       '@opentelemetry/sdk-node': 0.36.1(@opentelemetry/api@1.6.0)(supports-color@9.4.0)
       '@opentelemetry/sdk-trace-base': 1.17.0(@opentelemetry/api@1.6.0)
-      axios: 1.5.0
+      axios: 1.6.1
     transitivePeerDependencies:
       - debug
       - supports-color
@@ -3069,8 +3069,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axios@1.5.0:
-    resolution: {integrity: sha512-D4DdjDo5CY50Qms0qGQTTw6Q44jl7zRwY7bthds06pUGfChBCTcQs+N743eFWGEd6pRTMd6A+I87aWyFV5wiZQ==}
+  /axios@1.6.1:
+    resolution: {integrity: sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==}
     dependencies:
       follow-redirects: 1.15.3
       form-data: 4.0.0
