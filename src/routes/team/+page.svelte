@@ -1,4 +1,29 @@
 <script lang="ts">
+	// Team Members
+	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpeg";
+	import katherineMa from "$lib/assets/images/team/katherine_ma.jpg";
+	import shayaFarahmand from "$lib/assets/images/team/shaya_farahmand.jpeg";
+	import karenLiu from "$lib/assets/images/team/karen_liu.jpeg";
+	import darwinLi from "$lib/assets/images/team/darwin_li.png";
+	import annieDeng from "$lib/assets/images/team/annie_deng.jpeg";
+	import yaraBhaloo from "$lib/assets/images/team/yara_bhaloo.png";
+	import emersonMcQueen from "$lib/assets/images/team/emerson_mcqueen.jpg";
+	import jaiSandhu from "$lib/assets/images/team/jai_sandhu.jpeg";
+	import anyaDua from "$lib/assets/images/team/anya_dua.jpeg";
+	import alexaStewart from "$lib/assets/images/team/alexa_stewart.jpg";
+	import alexChen from "$lib/assets/images/team/alex_chen.png";
+	import lincolnDugasNishisato from "$lib/assets/images/team/lincoln_dugas_nishisato.jpg";
+	import gordonWu from "$lib/assets/images/team/gordon_wu.jpg";
+	import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpeg";
+	import stellaPakGuenette from "$lib/assets/images/team/stella_pak_guenette.jpg";
+	import nikaGoldberg from "$lib/assets/images/team/nika_goldberg.jpg";
+	import avaScott from "$lib/assets/images/team/ava_scott.jpeg";
+	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpeg";
+	import tonyZhang from "$lib/assets/images/team/tony_zhang.jpg";
+	import ericaKim from "$lib/assets/images/team/erica_kim.jpg";
+	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
+	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
+
 	interface TeamMember {
 		name: string;
 		position: string;
@@ -7,66 +32,212 @@
 
 	const executives: TeamMember[] = [
 		{
-			name: "Ray Woo",
-			position: "President",
+			name: "Jennifer Yang",
+			position: "Executive Chair",
+			image: jenniferYang
+		},
+		{
+			name: "Katherine Ma",
+			position: "Executive Chair",
+			image: katherineMa
+		},
+		{
+			name: "Ray Wu",
+			position: "Executive Chair",
 			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
-			name: "Shaya Woo",
-			position: "Other President",
+			name: "Shaya Farahmand",
+			position: "Executive Chair",
+			image: shayaFarahmand
+		},
+		{
+			name: "Leah Moore",
+			position: "Director of Programs",
 			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
-			name: "Sam Woo",
-			position: "Tech Person",
+			name: "Alex Woosley",
+			position: "Assistant Chair & Director of Programs and Events",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
+		},
+		{
+			name: "Karen Liu",
+			position: "Director of Communications/Secretary",
+			image: karenLiu
+		},
+		{
+			name: "Darwin Li",
+			position: "Director of Communications/Secretary",
+			image: darwinLi
+		},
+		{
+			name: "Aarav Dogra",
+			position: "Treasurer",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
+		},
+		{
+			name: "Annie Deng",
+			position: "Annie Deng",
+			image: annieDeng
+		},
+		{
+			name: "Devlin Moniz",
+			position: "Director of Plenaries",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
+		},
+		{
+			name: "Gigi Ciarlandini",
+			position: "Director of Keynotes",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
+		},
+		{
+			name: "Caleb Chong",
+			position: "Director of Registration",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
+		},
+		{
+			name: "Adrian Chi Hong Mak",
+			position: "Director of Marketing",
+			image: "https://i.imgur.com/oPyoVMy.jpg"
+		},
+		{
+			name: "Yara Bhaloo",
+			position: "Director of Marketing",
+			image: yaraBhaloo
+		},
+		{
+			name: "Emerson McQueen",
+			position: "Director of Volunteering",
+			image: emersonMcQueen
+		},
+		{
+			name: "Jai Sandhu",
+			position: "Director of Facilities",
+			image: jaiSandhu
+		},
+		{
+			name: "Samuel Martineau",
+			position: "Director of Productions and Technology",
 			image: "https://i.imgur.com/oPyoVMy.jpg"
 		},
 		{
 			name: "Jungly Chen",
-			position: "Something",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
-		},
-		{
-			name: "Jefferson Ding",
-			position: "Conference Chair",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
-		},
-		{
-			name: "Rahul Nanda",
-			position: "Conference Chair",
+			position: "Director of Design",
 			image: "https://i.imgur.com/oPyoVMy.jpg"
 		}
 	];
+
 	const seniorTeam: TeamMember[] = [
 		{
-			name: "Alex Woolsey",
-			position: "Assistant Head of Programs",
+			name: "Lina Boehmer",
+			position: "Plenary Head",
 			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: "Duo Yang",
-			position: "Assistant Head of Programs",
+			name: "Anya Dua",
+			position: "Plenary Head",
+			image: anyaDua
+		},
+		{
+			name: "Alexa Stewart",
+			position: "Plenary Head",
+			image: alexaStewart
+		},
+		{
+			name: "Mimi Salman",
+			position: "Plenary Head",
 			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: "Karen Liu",
-			position: "Assistant Head of Plenaries",
+			name: "Arya Patil",
+			position: "Plenary Head",
 			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: "Evan Rosenberg",
-			position: "Assistant Head of SPRINT",
+			name: "Alex Chen",
+			position: "Plenary Head",
+			image: alexChen
+		},
+		{
+			name: "Lincoln Dugas Nishisato",
+			position: "Plenary Head",
+			image: lincolnDugasNishisato
+		},
+		{
+			name: "Gordon Wu",
+			position: "Plenary Head",
+			image: gordonWu
+		},
+		{
+			name: "Malek Elhaddad",
+			position: "Plenary Head",
+			image: malekElhaddad
+		},
+		{
+			name: "Gabe D'Souza",
+			position: "Technology and Production Head",
 			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: "Jennifer Yang",
-			position: "Assistant Head of SPRINT",
+			name: "Stella Pak-Guenette",
+			position: "Communications Head",
+			image: stellaPakGuenette
+		},
+		{
+			name: "Nika Goldberg",
+			position: "Marketing Head",
+			image: nikaGoldberg
+		},
+		{
+			name: "Ava Scott",
+			position: "Marketing Head",
+			image: avaScott
+		},
+		{
+			name: "Ibby Ilyas",
+			position: "Marketing Head",
 			image: "https://i.imgur.com/nsm5SnU.jpg"
 		},
 		{
-			name: "Adrian Mak",
-			position: "Assistant Head of Marketing",
+			name: "Rayka Farahmand",
+			position: "Marketing Head",
+			image: raykaFarahmand
+		},
+		{
+			name: "Jack Myers",
+			position: "Design Head",
 			image: "https://i.imgur.com/nsm5SnU.jpg"
+		},
+		{
+			name: "Tony Zhang",
+			position: "Design Head",
+			image: tonyZhang
+		},
+		{
+			name: "Benedict Wang",
+			position: "Design Head",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
+		},
+		{
+			name: "Edward Rogers",
+			position: "Keynotes Head",
+			image: "https://i.imgur.com/nsm5SnU.jpg"
+		},
+		{
+			name: "Erica Kim",
+			position: "Keynotes Head",
+			image: ericaKim
+		},
+		{
+			name: "Ruhani Mainra",
+			position: "Keynotes Head",
+			image: uhaniMainra
+		},
+		{
+			name: "Jordin James",
+			position: "Program Head",
+			image: jordinJames
 		}
 	];
 </script>
