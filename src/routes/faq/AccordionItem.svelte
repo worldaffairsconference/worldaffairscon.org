@@ -6,7 +6,7 @@
 </script>
 
 <div
-	class="mb-8 w-full rounded-lg border border-zinc-600 bg-zinc-800 p-4 sm:p-8 lg:px-6 xl:px-8"
+	class="mb-8 w-full rounded-lg border border-zinc-600 bg-zinc-800 p-4 sm:p-5 lg:px-6 xl:px-8"
 >
 	<button
 		class="flex items-center w-full text-left"

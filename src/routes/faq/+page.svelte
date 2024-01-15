@@ -44,16 +44,16 @@
 	const faqSectionNames = Object.keys(faqs) as (keyof typeof faqs)[];
 </script>
 
-<section class="pt-[8.5rem] md:pt-[10rem]">
+<section class="pt-[9rem] md:pt-[10.5rem]">
 	<div class="container mx-auto">
-		<div class="-mx-4 flex flex-wrap">
+		<div class="flex flex-wrap">
 			<div class="w-full px-4">
 				<div class="mx-auto mb-10 lg:mb-16 text-center">
 					<span class="mb-2 block text-lg font-semibold text-primary">
 						FAQ
 					</span>
 					<h2
-						class="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[2.5rem]"
+						class="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[2.7rem]"
 					>
 						Any Questions?
 					</h2>
@@ -71,7 +71,7 @@
 			>
 				{faqSectionName}
 			</h3>
-			<div class="-mx-4 flex flex-wrap mb-10">
+			<div class="mx-4 flex flex-wrap mb-10">
 				<div class="w-full px-4 lg:w-1/2">
 					{#each faqs[faqSectionName] as faq, i}
 						{#if i % 2 === 0}

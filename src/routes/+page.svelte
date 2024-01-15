@@ -563,10 +563,13 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[10rem] md:pt-44 lg:pt-[13.3rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+		class="pt-[10rem] md:pt-44 text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
 			? 'opacity-100'
 			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
 	>
+		<h2 class="text-primary text-[1.6rem] uppercase mb-3.5">
+			Minds in Motion
+		</h2>
 		<div class="w-5/6 mx-auto">
 			<h1
 				class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-5 lg:mb-6 tracking-[-0.03em]"
@@ -583,15 +586,20 @@
 		</div>
 
 		<div class="flex gap-2 mb-6 text-lg sm:text-xl lg:text-2xl">
-			<span class="text-primary">#RollWAC</span>
-			<span class="text-secondary cursor-pointer"
-				>・ <Tooltip
+			<a
+				class="text-primary"
+				href="https://www.instagram.com/WorldAffairsCon"
+				target="_blank"
+				rel="noopener noreferrer">#RollWAC</a
+			>
+			<div class="text-secondary cursor-pointer">
+				・ <Tooltip
 					text="{timeUntilConference} days away"
 					placement="right"
 				>
 					March 6th 2024
 				</Tooltip>
-			</span>
+			</div>
 		</div>
 
 		<form
@@ -660,7 +668,7 @@
 						>
 							10k+
 						</dt>
-						<dd class="text-zinc-400">students</dd>
+						<dd class="text-zinc-400 text-lg">students</dd>
 					</div>
 					<div
 						class="flex flex-col items-center justify-center mx-auto"
@@ -670,7 +678,7 @@
 						>
 							35+
 						</dt>
-						<dd class="text-zinc-400">countries</dd>
+						<dd class="text-zinc-400 text-lg">countries</dd>
 					</div>
 					<div
 						class="flex flex-col items-center justify-center mx-auto"
@@ -680,7 +688,7 @@
 						>
 							80+
 						</dt>
-						<dd class="text-zinc-400">schools</dd>
+						<dd class="text-zinc-400 text-lg">schools</dd>
 					</div>
 				</dl>
 			</div>
@@ -870,7 +878,7 @@
 	</section>
 
 	<section
-		class="w-screen px-12 md:px-28 pb-16 py-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7 bg-zinc-950/50"
+		class="w-screen px-12 md:px-28 pb-16 py-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7 bg-zinc-950/60"
 		id="action"
 	>
 		<h3 class="uppercase">
