@@ -30,7 +30,7 @@
 		image: string;
 	}
 
-	const chairs: TeamMember[] = [
+	const executives: TeamMember[] = [
 		{
 			name: "Jennifer Yang",
 			position: "Executive Chair",
@@ -50,10 +50,7 @@
 			name: "Shaya Farahmand",
 			position: "Executive Chair",
 			image: shayaFarahmand
-		}
-	];
-
-	const executives: TeamMember[] = [
+		},
 		{
 			name: "Leah Moore",
 			position: "Director of Programs",
@@ -253,60 +250,11 @@
 	/>
 </svelte:head>
 
-<section class="pt-[9rem] pb-[5rem] lg:pb-[8rem]">
-	<div class="mx-auto mb-10 lg:mb-16 text-center mt-6">
-		<span class="mb-2 block text-lg font-semibold text-primary">Team</span>
-		<h2
-			class="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[2.7rem]"
-		>
-			WAC 2024 Team
-		</h2>
-		<p class="text-zinc-400">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, non
-			quo!
-		</p>
-	</div>
-
-	<div class="px-6 mx-auto md:px-24 lg:px-8">
+<section class="pt-[8.5rem]">
+	<!-- TODO: add a title or something say "Wac 2023 Team" -->
+	<div class="px-4 pt-4 sm:pt-10 md:pt-16 mx-auto md:px-24 lg:px-8">
 		<div
-			class="max-w-xl mb-7 lg:mb-10 mx-auto text-center lg:max-w-2xl md:mb-12"
-		>
-			<h2
-				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
-			>
-				Chairs
-			</h2>
-		</div>
-		<div
-			class="grid gap-5 sm:gap-7 lg:gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg"
-		>
-			{#each chairs as member}
-				<div>
-					<div
-						class="relative pb-56 mb-4 rounded-md overflow-hidden shadow lg:pb-64"
-					>
-						<img
-							class="absolute object-cover w-full h-full"
-							src={member.image}
-							alt="{member.name} Headshot"
-						/>
-					</div>
-					<div class="flex flex-col sm:text-center">
-						<p class="text-xl font-bold text-white">
-							{member.name}
-						</p>
-						<p class="mb-5 text-sm text-zinc-400">
-							{member.position}
-						</p>
-					</div>
-				</div>
-			{/each}
-		</div>
-	</div>
-
-	<div class="mt-16 px-6 mx-auto md:px-24 lg:px-8">
-		<div
-			class="max-w-xl mb-7 lg:mb-10 mx-auto text-center lg:max-w-2xl md:mb-12"
+			class="max-w-xl mb-10 sm:mx-auto sm:text-center lg:max-w-2xl md:mb-12"
 		>
 			<h2
 				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
@@ -315,7 +263,7 @@
 			</h2>
 		</div>
 		<div
-			class="grid gap-5 sm:gap-7 lg:gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg"
+			class="grid gap-5 sm:gap-7 lg:gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-3 lg:max-w-screen-lg"
 		>
 			{#each executives as member}
 				<div>
@@ -329,10 +277,10 @@
 						/>
 					</div>
 					<div class="flex flex-col sm:text-center">
-						<p class="text-xl font-bold text-white">
+						<p class="text-lg font-bold text-white">
 							{member.name}
 						</p>
-						<p class="mb-5 text-sm text-zinc-400">
+						<p class="mb-5 text-xs text-zinc-300">
 							{member.position}
 						</p>
 					</div>
@@ -342,10 +290,10 @@
 	</div>
 
 	<div
-		class="px-6 mt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+		class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
 	>
 		<div
-			class="max-w-xl mb-7 lg:mb-10 mx-auto text-center lg:max-w-2xl md:mb-12"
+			class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12"
 		>
 			<h2
 				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
@@ -367,7 +315,7 @@
 						<p class="text-lg font-bold text-white">
 							{member.name}
 						</p>
-						<p class="text-sm text-zinc-400">{member.position}</p>
+						<p class="text-sm text-zinc-300">{member.position}</p>
 					</div>
 				</div>
 			{/each}
