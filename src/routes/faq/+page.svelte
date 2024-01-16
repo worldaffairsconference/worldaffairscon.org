@@ -24,36 +24,22 @@
 				question: "Who can attend WAC?",
 				answer: "If you are interested in attending WAC in-person, please contact a school teacher and ask them reach out to the team. If you would like to attend virtually, registration is open to all using the link in the navigation bar!"
 			}
-		],
-		SPRINT: [
-			{
-				question: "Is there a cost associated with SPRINT?",
-				answer: "No, it is absolutely free!"
-			},
-			{
-				question: "How will I know if I am accepted?",
-				answer: "After completing the form associated with the application process, acceptances will be sent out on a later date. !"
-			},
-			{
-				question: "Where can I find more information on this?",
-				answer: 'Click the red "SPRINT" button in the navbar!'
-			}
 		]
 	} as const satisfies Readonly<Record<string, Readonly<FAQ[]>>>;
 
 	const faqSectionNames = Object.keys(faqs) as (keyof typeof faqs)[];
 </script>
 
-<section class="pt-[8.5rem] md:pt-[10rem]">
+<section class="pt-[9rem] md:pt-[10.5rem]">
 	<div class="container mx-auto">
-		<div class="-mx-4 flex flex-wrap">
+		<div class="flex flex-wrap">
 			<div class="w-full px-4">
 				<div class="mx-auto mb-10 lg:mb-16 text-center">
 					<span class="mb-2 block text-lg font-semibold text-primary">
 						FAQ
 					</span>
 					<h2
-						class="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[2.5rem]"
+						class="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[2.7rem]"
 					>
 						Any Questions?
 					</h2>
@@ -71,7 +57,7 @@
 			>
 				{faqSectionName}
 			</h3>
-			<div class="-mx-4 flex flex-wrap mb-10">
+			<div class="mx-4 flex flex-wrap mb-10">
 				<div class="w-full px-4 lg:w-1/2">
 					{#each faqs[faqSectionName] as faq, i}
 						{#if i % 2 === 0}

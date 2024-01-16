@@ -1,19 +1,19 @@
 <script lang="ts">
-	// import gsap from "gsap?client";
+	import gsap from "gsap?client";
 	import { onMount } from "svelte";
 
-	// import { browser } from "$app/environment";
-	// import { page } from "$app/stores";
+	import { browser } from "$app/environment";
+	import { page } from "$app/stores";
 	import logo from "$lib/assets/images/logos/wac_medium.webp";
 
-	// interface Route {
-	// 	name: string;
-	// 	path: string;
-	// }
+	interface Route {
+		name: string;
+		path: string;
+	}
 
-	// const barTl = browser
-	// 	? gsap.timeline({ reversed: true })
-	// 	: (undefined as unknown as gsap.core.Timeline);
+	const barTl = browser
+		? gsap.timeline({ reversed: true })
+		: (undefined as unknown as gsap.core.Timeline);
 
 	let headerElement: HTMLElement;
 	let lastScrollTop: number;
@@ -32,60 +32,60 @@
 			lastScrollTop = scrollTop;
 		});
 
-		// 	barTl
-		// 		.to(
-		// 			"#navbar",
-		// 			{
-		// 				duration: 0.4,
-		// 				ease: "expo.out",
-		// 				opacity: 1,
-		// 				display: "flex"
-		// 			},
-		// 			0
-		// 		)
-		// 		.set(
-		// 			"#open",
-		// 			{
-		// 				display: "none",
-		// 				duration: 0
-		// 			},
-		// 			0
-		// 		)
-		// 		.to(
-		// 			"#close",
-		// 			{
-		// 				display: "block",
-		// 				duration: 0
-		// 			},
-		// 			0
-		// 		)
-		// 		.to(
-		// 			"#navbar > li",
-		// 			{
-		// 				duration: 0.4,
-		// 				ease: "expo.easeOut",
-		// 				opacity: 1,
-		// 				y: 0,
-		// 				stagger: 0.12
-		// 			},
-		// 			0.4
-		// 		);
+		barTl
+			.to(
+				"#navbar",
+				{
+					duration: 0.4,
+					ease: "expo.out",
+					opacity: 1,
+					display: "flex"
+				},
+				0
+			)
+			.set(
+				"#open",
+				{
+					display: "none",
+					duration: 0
+				},
+				0
+			)
+			.to(
+				"#close",
+				{
+					display: "block",
+					duration: 0
+				},
+				0
+			)
+			.to(
+				"#navbar > li",
+				{
+					duration: 0.4,
+					ease: "expo.easeOut",
+					opacity: 1,
+					y: 0,
+					stagger: 0.12
+				},
+				0.4
+			);
 	});
 
-	// const openNav = () => {
-	// 	barTl.reversed(!barTl.reversed()).timeScale(1);
-	// };
+	const openNav = () => {
+		barTl.reversed(!barTl.reversed()).timeScale(1);
+	};
 
-	// const closeNav = () => {
-	// 	barTl.timeScale(2.25).reversed(!barTl.reversed());
-	// };
+	const closeNav = () => {
+		barTl.timeScale(2.25).reversed(!barTl.reversed());
+	};
 
-	// const routes: Route[] = [
-	// 	{ name: "Schedule", path: "/schedule" },
-	// 	{ name: "Team", path: "/team" },
-	// 	{ name: "Past Speakers", path: "/past-speakers" },
-	// 	{ name: "FAQ", path: "/faq" }
-	// ];
+	const routes: Route[] = [
+		// { name: "Schedule", path: "/schedule" },
+		{ name: "Team", path: "/team" },
+		// { name: "Past Speakers", path: "/past-speakers" },
+		{ name: "FAQ", path: "/faq" }
+	];
 </script>
 
 <header
@@ -101,9 +101,9 @@
 		<img src={logo} alt="logo" class="h-11 sm:h-14" />
 	</a>
 
-	<!-- <nav class="flex items-center gap-4 lg:gap-20">
+	<nav class="flex items-center gap-4 lg:gap-20">
 		<ul
-			class="fixed inset-0 z-50 bg-zinc-950/90 w-full h-full opacity-0 hidden flex-col justify-center items-center text-3xl gap-12 text-zinc-300 lg:flex lg:opacity-100 lg:gap-16 lg:static lg:bg-transparent lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:justify-end lg:text-base lg:backdrop-blur-none"
+			class="fixed inset-0 z-50 bg-zinc-950/90 w-full h-full opacity-0 hidden flex-col justify-center items-center text-3xl gap-12 text-zinc-300 lg:flex lg:opacity-100 lg:gap-16 lg:static lg:bg-transparent lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:justify-end lg:text-base"
 			id="navbar"
 		>
 			{#each routes as route}
@@ -175,5 +175,5 @@
 				</g>
 			</svg>
 		</button>
-	</nav> -->
+	</nav>
 </header>
