@@ -18,10 +18,10 @@ export type ZodCatchObject<T extends z.AnyZodObject> = z.ZodObject<
 export type ZodCatch<T> = T extends z.AnyZodObject
 	? z.ZodCatch<ZodCatchObject<T>>
 	: T extends z.ZodArray<infer U, infer V>
-	? z.ZodCatch<z.ZodArray<ZodCatch<U>, V>>
-	: T extends z.ZodTypeAny
-	? z.ZodCatch<T>
-	: never;
+		? z.ZodCatch<z.ZodArray<ZodCatch<U>, V>>
+		: T extends z.ZodTypeAny
+			? z.ZodCatch<T>
+			: never;
 
 export type DeepZodCatch<T> = {
 	[P in keyof T]: ZodCatch<T[P]>;
