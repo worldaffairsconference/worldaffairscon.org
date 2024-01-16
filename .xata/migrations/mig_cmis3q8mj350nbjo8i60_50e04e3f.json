@@ -1,0 +1,481 @@
+{
+  "id": "mig_cmis3q8mj350nbjo8i60",
+  "parentID": "mig_ckvsmes14vo1op3siihg",
+  "checksum": "1:50e04e3ffa7ef9d45bc123d332eed5a355c7b3b4b3fc35aa7b73a058fe149b6d",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "Posts"
+      }
+    },
+    {
+      "removeTable": {
+        "table": "Users"
+      }
+    },
+    {
+      "addTable": {
+        "table": "attendees"
+      }
+    },
+    {
+      "addTable": {
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addTable": {
+        "table": "auth_verification_tokens"
+      }
+    },
+    {
+      "addTable": {
+        "table": "auth_users_accounts"
+      }
+    },
+    {
+      "addTable": {
+        "table": "auth_users_sessions"
+      }
+    },
+    {
+      "addTable": {
+        "table": "auth_sessions"
+      }
+    },
+    {
+      "addTable": {
+        "table": "partner_schools"
+      }
+    },
+    {
+      "addTable": {
+        "table": "plenaries"
+      }
+    },
+    {
+      "addTable": {
+        "table": "attendees_plenaries"
+      }
+    },
+    {
+      "addTable": {
+        "table": "schedule_slots"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "email",
+          "type": "email"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "emailVerified",
+          "type": "datetime"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "firstName",
+          "type": "string"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "lastName",
+          "type": "string"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "gradeLevel",
+          "type": "string"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "inPerson",
+          "type": "bool"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "needsLunch",
+          "type": "bool"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "paid",
+          "type": "bool"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "dietaryRestrictions",
+          "type": "text"
+        },
+        "table": "attendees"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "attendees"
+          }
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "type",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "provider",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "providerAccountId",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "refresh_token",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "access_token",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "expires_at",
+          "type": "int"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "token_type",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "scope",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "id_token",
+          "type": "text"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "session_state",
+          "type": "string"
+        },
+        "table": "auth_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "identifier",
+          "type": "string"
+        },
+        "table": "auth_verification_tokens"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "token",
+          "type": "string"
+        },
+        "table": "auth_verification_tokens"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "expires",
+          "type": "datetime"
+        },
+        "table": "auth_verification_tokens"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "attendees"
+          }
+        },
+        "table": "auth_users_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "account",
+          "type": "link",
+          "link": {
+            "table": "auth_accounts"
+          }
+        },
+        "table": "auth_users_accounts"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "attendees"
+          }
+        },
+        "table": "auth_users_sessions"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "session",
+          "type": "link",
+          "link": {
+            "table": "auth_sessions"
+          }
+        },
+        "table": "auth_users_sessions"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "sessionToken",
+          "type": "string"
+        },
+        "table": "auth_sessions"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "expires",
+          "type": "datetime"
+        },
+        "table": "auth_sessions"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "attendees"
+          }
+        },
+        "table": "auth_sessions"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "partner_schools"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "domain",
+          "type": "string"
+        },
+        "table": "partner_schools"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "allowsSelfRegistration",
+          "type": "bool"
+        },
+        "table": "partner_schools"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "title",
+          "type": "string"
+        },
+        "table": "plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "speaker",
+          "type": "string"
+        },
+        "table": "plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "timeSlot",
+          "type": "link",
+          "link": {
+            "table": "schedule_slots"
+          }
+        },
+        "table": "plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "location",
+          "type": "string"
+        },
+        "table": "plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "attendee",
+          "type": "link",
+          "link": {
+            "table": "attendees"
+          }
+        },
+        "table": "attendees_plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "plenary",
+          "type": "link",
+          "link": {
+            "table": "plenaries"
+          }
+        },
+        "table": "attendees_plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "preferenceRank",
+          "type": "int"
+        },
+        "table": "attendees_plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "assigned",
+          "type": "bool"
+        },
+        "table": "attendees_plenaries"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "startTime",
+          "type": "datetime"
+        },
+        "table": "schedule_slots"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "endTime",
+          "type": "datetime"
+        },
+        "table": "schedule_slots"
+      }
+    }
+  ]
+}
