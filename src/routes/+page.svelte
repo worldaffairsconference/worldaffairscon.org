@@ -567,8 +567,11 @@
 			? 'opacity-100'
 			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
 	>
-		<h2 class="text-primary text-[1.95rem] uppercase mb-3.5">
-			Minds in Motion
+		<h2
+			class="text-[1.9rem] uppercase mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
+		>
+			<span>Minds in</span>
+			<span class="italic">Motion</span>
 		</h2>
 		<div class="w-5/6 mx-auto">
 			<h1

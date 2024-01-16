@@ -24,20 +24,6 @@
 				question: "Who can attend WAC?",
 				answer: "If you are interested in attending WAC in-person, please contact a school teacher and ask them reach out to the team. If you would like to attend virtually, registration is open to all using the link in the navigation bar!"
 			}
-		],
-		SPRINT: [
-			{
-				question: "Is there a cost associated with SPRINT?",
-				answer: "No, it is absolutely free!"
-			},
-			{
-				question: "How will I know if I am accepted?",
-				answer: "After completing the form associated with the application process, acceptances will be sent out on a later date. !"
-			},
-			{
-				question: "Where can I find more information on this?",
-				answer: 'Click the red "SPRINT" button in the navbar!'
-			}
 		]
 	} as const satisfies Readonly<Record<string, Readonly<FAQ[]>>>;
 
