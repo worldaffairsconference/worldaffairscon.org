@@ -1,23 +1,34 @@
 <script lang="ts">
-	export let header: string;
-	export let text: string;
+	import SvelteMarkdown from "svelte-markdown";
 
-	let active = false;
+	export let header: string;
+	export let content: string;
+	export let activeQuestionID: string;
+	export let sectionIndex: number;
+	export let questionIndex: number;
+
+	let contentElement: HTMLElement;
+
+	$: active = activeQuestionID === `${sectionIndex}.${questionIndex}`;
 </script>
 
-<div
-	class="mb-8 w-full rounded-lg border border-zinc-600 bg-zinc-800 p-4 sm:p-5 lg:px-6 xl:px-8"
->
+<div class="rounded-lg border border-zinc-600 bg-zinc-800 py-3 px-4 sm:p-5">
 	<button
 		class="flex items-center w-full text-left"
-		on:click={() => (active = !active)}
+		on:click={() => {
+			if (active) {
+				activeQuestionID = "";
+			} else {
+				activeQuestionID = `${sectionIndex}.${questionIndex}`;
+			}
+		}}
 		aria-label="Toggle FAQ"
 	>
 		<div
 			class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-secondary bg-opacity-5 text-secondary"
 		>
 			<svg
-				class="duration-200 ease-in-out fill-secondary stroke-secondary {active &&
+				class="duration-300 ease-in-out fill-secondary stroke-secondary {active &&
 					'rotate-180'}"
 				width="17"
 				height="10"
@@ -40,9 +51,25 @@
 	</button>
 
 	<div
-		class="pl-[62px] duration-1000 ease-in-out {!active &&
-			'max-h-[0]'} transition-all overflow-hidden"
+		class="px-1 w-full overflow-hidden transition-[height] duration-300 text-zinc-300"
+		style="height: {contentElement && active
+			? `${contentElement.scrollHeight}px`
+			: '0'}"
 	>
-		<p class="py-3 text-base leading-relaxed text-zinc-300">{text}</p>
+		<div class="pt-3 pb-1" id="markdown" bind:this={contentElement}>
+			<SvelteMarkdown source={content} />
+		</div>
 	</div>
 </div>
+
+<style>
+	:global(#markdown a) {
+		@apply text-blue-400;
+		@apply underline;
+	}
+
+	:global(#markdown ul) {
+		@apply ml-[15px];
+		@apply list-disc;
+	}
+</style>
