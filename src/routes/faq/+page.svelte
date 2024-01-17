@@ -77,7 +77,7 @@
 
 	const faqSectionNames = Object.keys(faqs) as (keyof typeof faqs)[];
 
-	let activeQuestionID: string = "";
+	let activeQuestionID = "";
 </script>
 
 <section class="pt-[6rem] lg:pt-[9.5rem] pb-[5rem] lg:pb-[7rem]">
