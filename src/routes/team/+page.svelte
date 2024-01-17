@@ -1,8 +1,11 @@
 <script lang="ts">
+	// TODO: resize all of these images, different size for senior and other roles
+
 	// Team Members
 	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpeg";
 	import katherineMa from "$lib/assets/images/team/katherine_ma.jpg";
 	import shayaFarahmand from "$lib/assets/images/team/shaya_farahmand.jpeg";
+	import rayWu from "$lib/assets/images/team/ray_wu.jpg";
 	import karenLiu from "$lib/assets/images/team/karen_liu.jpeg";
 	import darwinLi from "$lib/assets/images/team/darwin_li.png";
 	import annieDeng from "$lib/assets/images/team/annie_deng.jpeg";
@@ -45,7 +48,7 @@
 		{
 			name: "Ray Wu",
 			position: "Executive Chair",
-			image: wacW
+			image: rayWu
 		},
 		{
 			name: "Shaya Farahmand",
@@ -254,124 +257,112 @@
 	/>
 </svelte:head>
 
-<section class="pt-[9rem] pb-[5rem] lg:pb-[8rem]">
-	<div class="mx-auto mb-10 lg:mb-16 text-center mt-6">
-		<span class="mb-2 block text-lg font-semibold text-primary">Team</span>
-		<h2
-			class="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[2.7rem]"
-		>
+<section class="pt-[6rem] lg:pt-[9.5rem] pb-[5rem] lg:pb-[7rem]">
+	<div class="mb-10 lg:mb-20 mt-6 text-center">
+		<h3 class="mb-2 block md:text-lg font-semibold text-primary">Team</h3>
+		<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
 			WAC 2024 Team
-		</h2>
-		<p class="text-zinc-400">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, non
-			quo!
-		</p>
+		</h1>
 	</div>
 
-	<div class="px-6 mx-auto md:px-24 lg:px-8">
-		<div
-			class="max-w-xl mb-7 lg:mb-10 mx-auto text-center lg:max-w-2xl md:mb-12"
-		>
+	<div class="px-6 mx-auto max-w-screen-lg flex flex-col gap-16">
+		<div>
 			<h2
-				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
+				class="mb-7 md:mb-10 text-center text-3xl sm:text-4xl font-bold tracking-tight text-white"
 			>
 				Chairs
 			</h2>
-		</div>
-		<div
-			class="grid gap-5 sm:gap-7 lg:gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg"
-		>
-			{#each chairs as member}
-				<div>
-					<div
-						class="relative pb-56 mb-4 rounded-md overflow-hidden shadow lg:pb-64"
-					>
-						<img
-							class="absolute object-cover w-full h-full"
-							src={member.image}
-							alt="{member.name} Headshot"
-						/>
-					</div>
-					<div class="flex flex-col sm:text-center">
-						<p class="text-xl font-bold text-white">
-							{member.name}
-						</p>
-						<p class="mb-5 text-sm text-zinc-400">
-							{member.position}
-						</p>
-					</div>
-				</div>
-			{/each}
-		</div>
-	</div>
 
-	<div class="mt-16 px-6 mx-auto md:px-24 lg:px-8">
-		<div
-			class="max-w-xl mb-7 lg:mb-10 mx-auto text-center lg:max-w-2xl md:mb-12"
-		>
+			<div
+				class="grid gap-5 sm:gap-7 lg:gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4"
+			>
+				{#each chairs as member}
+					<div>
+						<div
+							class="relative pb-56 mb-4 rounded-md overflow-hidden shadow lg:pb-64"
+						>
+							<img
+								class="absolute object-cover w-full h-full"
+								src={member.image}
+								alt="{member.name} Headshot"
+							/>
+						</div>
+						<div class="flex flex-col sm:text-center">
+							<p class="text-xl font-bold text-white">
+								{member.name}
+							</p>
+							<p class="mb-5 text-sm text-zinc-400">
+								{member.position}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
+		<div>
 			<h2
-				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
+				class="mb-7 md:mb-10 text-center text-3xl sm:text-4xl font-bold tracking-tight text-white"
 			>
 				Executives
 			</h2>
-		</div>
-		<div
-			class="grid gap-5 sm:gap-7 lg:gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4 lg:max-w-screen-lg"
-		>
-			{#each executives as member}
-				<div>
-					<div
-						class="relative pb-56 mb-4 rounded-md overflow-hidden shadow lg:pb-64"
-					>
-						<img
-							class="absolute object-cover w-full h-full"
-							src={member.image}
-							alt="{member.name} Headshot"
-						/>
-					</div>
-					<div class="flex flex-col sm:text-center">
-						<p class="text-xl font-bold text-white">
-							{member.name}
-						</p>
-						<p class="mb-5 text-sm text-zinc-400">
-							{member.position}
-						</p>
-					</div>
-				</div>
-			{/each}
-		</div>
-	</div>
 
-	<div
-		class="px-6 mt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
-	>
+			<div
+				class="grid gap-5 sm:gap-7 lg:gap-10 mx-auto sm:grid-cols-2 lg:grid-cols-4"
+			>
+				{#each executives as member}
+					<div>
+						<div
+							class="relative pb-56 mb-4 rounded-md overflow-hidden shadow lg:pb-64"
+						>
+							<img
+								class="absolute object-cover w-full h-full"
+								src={member.image}
+								alt="{member.name} Headshot"
+							/>
+						</div>
+						<div class="flex flex-col sm:text-center">
+							<p class="text-xl font-bold text-white">
+								{member.name}
+							</p>
+							<p class="mb-5 text-sm text-zinc-400">
+								{member.position}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+
 		<div
-			class="max-w-xl mb-7 lg:mb-10 mx-auto text-center lg:max-w-2xl md:mb-12"
+			class="px-6 mt-16 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
 		>
 			<h2
-				class="max-w-lg mb-6 text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto"
+				class="mb-7 md:mb-10 text-center text-3xl sm:text-4xl font-bold tracking-tight text-white"
 			>
 				Senior Team
 			</h2>
-		</div>
-		<div
-			class="grid gap-5 sm:gap-7 lg:gap-10 row-gap-8 mx-auto sm:row-gap-10 lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-3"
-		>
-			{#each seniorTeam as member}
-				<div class="flex">
-					<img
-						class="object-cover w-20 h-20 mr-4 rounded-full shadow"
-						src={member.image}
-						alt="Person"
-					/>
-					<div class="flex flex-col justify-center">
-						<p class="text-lg font-bold text-white">
-							{member.name}
-						</p>
-						<p class="text-sm text-zinc-400">{member.position}</p>
+			<div
+				class="grid gap-5 sm:gap-7 lg:gap-10 row-gap-8 mx-auto sm:row-gap-10 sm:grid-cols-2 lg:grid-cols-3"
+			>
+				{#each seniorTeam as member}
+					<div class="flex">
+						<img
+							class="object-cover w-20 h-20 mr-4 rounded-full shadow"
+							src={member.image}
+							alt="Person"
+						/>
+						<div class="flex flex-col justify-center">
+							<p class="text-lg font-bold text-white">
+								{member.name}
+							</p>
+							<p class="text-sm text-zinc-400">
+								{member.position}
+							</p>
+						</div>
 					</div>
-				</div>
-			{/each}
+				{/each}
+			</div>
 		</div>
 	</div>
 </section>
