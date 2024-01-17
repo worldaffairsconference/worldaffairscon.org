@@ -567,7 +567,7 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[10rem] md:pt-44 text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+		class="pt-[8.25rem] md:pt-44 text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
 			? 'opacity-100'
 			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
 	>
@@ -805,7 +805,7 @@
 			class="-top-5 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 			id="videoTitle"
 		>
-			WAC 2024
+			WAC 2023
 		</h2>
 		{#if !showVideoPreview}
 			<button
