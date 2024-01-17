@@ -805,7 +805,7 @@
 			class="-top-5 absolute w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 			id="videoTitle"
 		>
-			WAC 2023
+			WAC 2024
 		</h2>
 		{#if !showVideoPreview}
 			<button
@@ -827,10 +827,10 @@
 					loading="lazy"
 				/>
 				<div
-					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[109px] w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
+					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[90px] w-[90px] lg:h-[109px] lg:w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
 				>
 					<div
-						class="w-[22px] text-white group-hover:scale-110 transition-all relative ease-linear duration-300 ml-1"
+						class="w-[18px] lg:w-[22px] text-white group-hover:scale-110 transition-all relative ease-linear duration-300 ml-1"
 					>
 						<svg
 							width="100%"

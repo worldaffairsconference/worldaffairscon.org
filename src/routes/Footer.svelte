@@ -76,7 +76,7 @@
 		<span
 			class="text-sm text-zinc-400 order-first sm:order-none mb-3 sm:mb-0"
 		>
-			© 2023 The World Affairs Conference. All Rights Reserved.
+			© 2024 The World Affairs Conference. All Rights Reserved.
 		</span>
 	</div>
 </footer>
