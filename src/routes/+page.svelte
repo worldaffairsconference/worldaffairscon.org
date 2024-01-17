@@ -175,13 +175,19 @@
 			return image;
 		};
 
-		const load = (images: string[], smallScreenStop: number): Texture => {
+		const load = (
+			desktopImages: string[],
+			mobileImages: string[]
+		): Texture => {
 			const texture = new Texture();
 			texture.colorSpace = SRGBColorSpace;
 
 			let currentUpdatedImageIndex = 0;
 
-			images.every((image, i) => {
+			const images =
+				window.outerWidth < 600 ? mobileImages : desktopImages;
+
+			images.forEach((image, i) => {
 				const imageObj = createProgressivelyLoadedImage(image);
 
 				imageObj.onload = () => {
@@ -191,14 +197,6 @@
 						currentUpdatedImageIndex = i;
 					}
 				};
-
-				const isSmallScreen = window.outerWidth < 600;
-
-				if (isSmallScreen && i === smallScreenStop) {
-					return false;
-				}
-
-				return true;
 			});
 
 			return texture;
@@ -229,8 +227,11 @@
 		const cloudGeometry = new SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new MeshPhongMaterial({
 			map: load(
-				["./textures/clouds-low.webp", "./textures/clouds-high.webp"],
-				0
+				[
+					"./textures/clouds-desktop-low.webp",
+					"./textures/clouds-desktop-high.webp"
+				],
+				[]
 			),
 			transparent: true
 		});
@@ -248,8 +249,11 @@
 
 		const earthMaterial = new MeshPhongMaterial({
 			map: load(
-				["./textures/map-low.webp", "./textures/map-high.webp"],
-				0
+				[
+					"./textures/map-desktop-low.webp",
+					"./textures/map-desktop-high.webp"
+				],
+				["./textures/map-mobile-high.webp"]
 			),
 			bumpMap: new TextureLoader().load("./textures/earth-topology.webp"),
 			bumpScale: 0.5
@@ -261,8 +265,8 @@
 		const earthMesh = new Mesh(earthGeometry, earthMaterial);
 		scene.add(earthMesh);
 
-		// earthMesh.rotateX(THREE.MathUtils.degToRad(90));
-		// cloudMesh.rotateX(THREE.MathUtils.degToRad(90));
+		// earthMesh.rotateX(degToRad(90));
+		// cloudMesh.rotateX(degToRad(90));
 
 		// Stars
 		const starsGeometry = new BufferGeometry();
