@@ -87,7 +87,7 @@
 		},
 		{
 			name: "Annie Deng",
-			position: "Annie Deng",
+			position: "Director of Plenaries",
 			image: annieDeng
 		},
 		{
