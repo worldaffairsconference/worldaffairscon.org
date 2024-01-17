@@ -23,6 +23,7 @@
 	import ericaKim from "$lib/assets/images/team/erica_kim.jpg";
 	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
+	import wacW from "$lib/assets/images/logos/wac_w.jpg";
 
 	interface TeamMember {
 		name: string;
@@ -44,7 +45,7 @@
 		{
 			name: "Ray Wu",
 			position: "Executive Chair",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Shaya Farahmand",
@@ -57,12 +58,12 @@
 		{
 			name: "Leah Moore",
 			position: "Director of Programs",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Alex Woosley",
 			position: "Assistant Chair & Director of Programs and Events",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Karen Liu",
@@ -77,7 +78,7 @@
 		{
 			name: "Aarav Dogra",
 			position: "Treasurer",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Annie Deng",
@@ -87,22 +88,22 @@
 		{
 			name: "Devlin Moniz",
 			position: "Director of Plenaries",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Gigi Ciarlandini",
 			position: "Director of Keynotes",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Caleb Chong",
 			position: "Director of Registration",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Adrian Chi Hong Mak",
 			position: "Director of Marketing",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Yara Bhaloo",
@@ -122,12 +123,12 @@
 		{
 			name: "Samuel Martineau",
 			position: "Director of Productions and Technology",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		},
 		{
 			name: "Jungly Chen",
 			position: "Director of Design",
-			image: "https://i.imgur.com/oPyoVMy.jpg"
+			image: wacW
 		}
 	];
 
@@ -135,7 +136,7 @@
 		{
 			name: "Lina Boehmer",
 			position: "Plenary Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Anya Dua",
@@ -150,12 +151,12 @@
 		{
 			name: "Mimi Salman",
 			position: "Plenary Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Arya Patil",
 			position: "Plenary Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Alex Chen",
@@ -180,7 +181,7 @@
 		{
 			name: "Gabe D'Souza",
 			position: "Technology and Production Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Stella Pak-Guenette",
@@ -200,7 +201,7 @@
 		{
 			name: "Ibby Ilyas",
 			position: "Marketing Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Rayka Farahmand",
@@ -210,7 +211,7 @@
 		{
 			name: "Jack Myers",
 			position: "Design Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Tony Zhang",
@@ -220,12 +221,12 @@
 		{
 			name: "Benedict Wang",
 			position: "Design Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Edward Rogers",
 			position: "Keynotes Head",
-			image: "https://i.imgur.com/nsm5SnU.jpg"
+			image: wacW
 		},
 		{
 			name: "Erica Kim",
