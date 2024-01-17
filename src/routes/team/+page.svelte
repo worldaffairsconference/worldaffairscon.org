@@ -2,31 +2,33 @@
 	// TODO: resize all of these images, different size for senior and other roles
 
 	// Team Members
-	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpeg";
+	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpg";
 	import katherineMa from "$lib/assets/images/team/katherine_ma.jpg";
-	import shayaFarahmand from "$lib/assets/images/team/shaya_farahmand.jpeg";
+	import shayaFarahmand from "$lib/assets/images/team/shaya_farahmand.jpg";
 	import rayWu from "$lib/assets/images/team/ray_wu.jpg";
-	import karenLiu from "$lib/assets/images/team/karen_liu.jpeg";
-	import darwinLi from "$lib/assets/images/team/darwin_li.png";
-	import annieDeng from "$lib/assets/images/team/annie_deng.jpeg";
-	import yaraBhaloo from "$lib/assets/images/team/yara_bhaloo.png";
+	import karenLiu from "$lib/assets/images/team/karen_liu.jpg";
+	import darwinLi from "$lib/assets/images/team/darwin_li.jpg";
+	import annieDeng from "$lib/assets/images/team/annie_deng.jpg";
+	import yaraBhaloo from "$lib/assets/images/team/yara_bhaloo.jpg";
 	import emersonMcQueen from "$lib/assets/images/team/emerson_mcqueen.jpg";
-	import jaiSandhu from "$lib/assets/images/team/jai_sandhu.jpeg";
-	import anyaDua from "$lib/assets/images/team/anya_dua.jpeg";
+	import jaiSandhu from "$lib/assets/images/team/jai_sandhu.jpg";
+	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
 	import alexaStewart from "$lib/assets/images/team/alexa_stewart.jpg";
-	import alexChen from "$lib/assets/images/team/alex_chen.png";
+	import alexChen from "$lib/assets/images/team/alex_chen.jpg";
 	import lincolnDugasNishisato from "$lib/assets/images/team/lincoln_dugas_nishisato.jpg";
 	import gordonWu from "$lib/assets/images/team/gordon_wu.jpg";
-	import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpeg";
+	import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpg";
 	import stellaPakGuenette from "$lib/assets/images/team/stella_pak_guenette.jpg";
 	import nikaGoldberg from "$lib/assets/images/team/nika_goldberg.jpg";
-	import avaScott from "$lib/assets/images/team/ava_scott.jpeg";
-	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpeg";
+	import avaScott from "$lib/assets/images/team/ava_scott.jpg";
+	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpg";
 	import tonyZhang from "$lib/assets/images/team/tony_zhang.jpg";
 	import ericaKim from "$lib/assets/images/team/erica_kim.jpg";
 	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
-	import wacW from "$lib/assets/images/logos/wac_w.jpg";
+
+	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
+	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
 
 	interface TeamMember {
 		name: string;
@@ -61,12 +63,12 @@
 		{
 			name: "Leah Moore",
 			position: "Director of Programs",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Alex Woosley",
 			position: "Assistant Chair & Director of Programs and Events",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Karen Liu",
@@ -81,7 +83,7 @@
 		{
 			name: "Aarav Dogra",
 			position: "Treasurer",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Annie Deng",
@@ -91,22 +93,22 @@
 		{
 			name: "Devlin Moniz",
 			position: "Director of Plenaries",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Gigi Ciarlandini",
 			position: "Director of Keynotes",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Caleb Chong",
 			position: "Director of Registration",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Adrian Chi Hong Mak",
 			position: "Director of Marketing",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Yara Bhaloo",
@@ -126,12 +128,12 @@
 		{
 			name: "Samuel Martineau",
 			position: "Director of Productions and Technology",
-			image: wacW
+			image: wacWLarge
 		},
 		{
 			name: "Jungly Chen",
 			position: "Director of Design",
-			image: wacW
+			image: wacWLarge
 		}
 	];
 
@@ -139,7 +141,7 @@
 		{
 			name: "Lina Boehmer",
 			position: "Plenary Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Anya Dua",
@@ -154,12 +156,12 @@
 		{
 			name: "Mimi Salman",
 			position: "Plenary Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Arya Patil",
 			position: "Plenary Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Alex Chen",
@@ -184,7 +186,7 @@
 		{
 			name: "Gabe D'Souza",
 			position: "Technology and Production Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Stella Pak-Guenette",
@@ -204,7 +206,7 @@
 		{
 			name: "Ibby Ilyas",
 			position: "Marketing Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Rayka Farahmand",
@@ -214,7 +216,7 @@
 		{
 			name: "Jack Myers",
 			position: "Design Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Tony Zhang",
@@ -224,12 +226,12 @@
 		{
 			name: "Benedict Wang",
 			position: "Design Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Edward Rogers",
 			position: "Keynotes Head",
-			image: wacW
+			image: wacWSmall
 		},
 		{
 			name: "Erica Kim",
