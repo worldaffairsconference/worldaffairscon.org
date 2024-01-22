@@ -187,13 +187,19 @@
 			return image;
 		};
 
-		const load = (images: string[], smallScreenStop: number): Texture => {
+		const load = (
+			desktopImages: string[],
+			mobileImages: string[]
+		): Texture => {
 			const texture = new Texture();
 			texture.colorSpace = SRGBColorSpace;
 
 			let currentUpdatedImageIndex = 0;
 
-			images.every((image, i) => {
+			const images =
+				window.outerWidth < 600 ? mobileImages : desktopImages;
+
+			images.forEach((image, i) => {
 				const imageObj = createProgressivelyLoadedImage(image);
 
 				imageObj.onload = () => {
@@ -203,14 +209,6 @@
 						currentUpdatedImageIndex = i;
 					}
 				};
-
-				const isSmallScreen = window.outerWidth < 600;
-
-				if (isSmallScreen && i === smallScreenStop) {
-					return false;
-				}
-
-				return true;
 			});
 
 			return texture;
@@ -241,8 +239,11 @@
 		const cloudGeometry = new SphereGeometry(100.6, 32, 32);
 		const cloudMaterial = new MeshPhongMaterial({
 			map: load(
-				["./textures/clouds-low.webp", "./textures/clouds-high.webp"],
-				0
+				[
+					"./textures/clouds-desktop-low.webp",
+					"./textures/clouds-desktop-high.webp"
+				],
+				[]
 			),
 			transparent: true
 		});
@@ -260,8 +261,11 @@
 
 		const earthMaterial = new MeshPhongMaterial({
 			map: load(
-				["./textures/map-low.webp", "./textures/map-high.webp"],
-				0
+				[
+					"./textures/map-desktop-low.webp",
+					"./textures/map-desktop-high.webp"
+				],
+				["./textures/map-mobile-high.webp"]
 			),
 			bumpMap: new TextureLoader().load("./textures/earth-topology.webp"),
 			bumpScale: 0.5
@@ -273,8 +277,8 @@
 		const earthMesh = new Mesh(earthGeometry, earthMaterial);
 		scene.add(earthMesh);
 
-		// earthMesh.rotateX(THREE.MathUtils.degToRad(90));
-		// cloudMesh.rotateX(THREE.MathUtils.degToRad(90));
+		// earthMesh.rotateX(degToRad(90));
+		// cloudMesh.rotateX(degToRad(90));
 
 		// Stars
 		const starsGeometry = new BufferGeometry();
@@ -575,10 +579,16 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[10rem] md:pt-44 lg:pt-[13.3rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+		class="pt-[8.25rem] md:pt-44 text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
 			? 'opacity-100'
 			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
 	>
+		<h2
+			class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
+		>
+			<span>Minds in</span>
+			<span class="italic">Motion</span>
+		</h2>
 		<div class="w-5/6 mx-auto">
 			<h1
 				class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-5 lg:mb-6 tracking-[-0.03em]"
@@ -595,15 +605,20 @@
 		</div>
 
 		<div class="flex gap-2 mb-6 text-lg sm:text-xl lg:text-2xl">
-			<span class="text-primary">#RollWAC</span>
-			<span class="text-secondary cursor-pointer"
-				>・ <Tooltip
+			<a
+				class="text-primary"
+				href="https://www.instagram.com/WorldAffairsCon"
+				target="_blank"
+				rel="noopener noreferrer">#RollWAC</a
+			>
+			<div class="text-secondary cursor-pointer">
+				・ <Tooltip
 					text="{timeUntilConference} days away"
 					placement="right"
 				>
 					March 6th 2024
 				</Tooltip>
-			</span>
+			</div>
 		</div>
 
 		{#if $page.data.session?.user}
@@ -688,7 +703,7 @@
 						>
 							10k+
 						</dt>
-						<dd class="text-zinc-400">students</dd>
+						<dd class="text-zinc-400 text-lg">students</dd>
 					</div>
 					<div
 						class="flex flex-col items-center justify-center mx-auto"
@@ -698,7 +713,7 @@
 						>
 							35+
 						</dt>
-						<dd class="text-zinc-400">countries</dd>
+						<dd class="text-zinc-400 text-lg">countries</dd>
 					</div>
 					<div
 						class="flex flex-col items-center justify-center mx-auto"
@@ -708,7 +723,7 @@
 						>
 							80+
 						</dt>
-						<dd class="text-zinc-400">schools</dd>
+						<dd class="text-zinc-400 text-lg">schools</dd>
 					</div>
 				</dl>
 			</div>
@@ -840,10 +855,10 @@
 					loading="lazy"
 				/>
 				<div
-					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[109px] w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
+					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[90px] w-[90px] lg:h-[109px] lg:w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
 				>
 					<div
-						class="w-[22px] text-white group-hover:scale-110 transition-all relative ease-linear duration-300 ml-1"
+						class="w-[18px] lg:w-[22px] text-white group-hover:scale-110 transition-all relative ease-linear duration-300 ml-1"
 					>
 						<svg
 							width="100%"
@@ -897,8 +912,8 @@
 		</div>
 	</section>
 
-	<!-- <section
-		class="w-screen px-12 md:px-28 pb-16 py-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7 bg-zinc-950/50"
+	<section
+		class="w-screen px-12 md:px-28 pb-16 py-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7 bg-zinc-950/60"
 		id="action"
 	>
 		<h3 class="uppercase">
@@ -956,5 +971,6 @@
 				</button>
 			</form>
 		</div>
-	</section> -->
+	</section>
+	 -->
 </div>

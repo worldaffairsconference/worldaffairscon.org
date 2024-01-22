@@ -81,7 +81,18 @@
 		"typescript": "^5.1.6",
 		"vite": "^4.4.5",
 		"vite-plugin-iso-import": "^1.0.0",
-		"vitest": "^0.32.4"
+		"vitest": "^0.32.4",
+		"@netlify/functions": "^1.6.0",
+		"@popperjs/core": "^2.11.8",
+		"gsap": "^3.12.2",
+		"luxon": "^3.3.0",
+		"svelte-icons": "^2.1.0",
+		"svelte-markdown": "^0.2.3",
+		"swiper": "^8.4.7",
+		"three": "^0.154.0",
+		"tsafe": "^1.6.4",
+		"uuid": "^9.0.0",
+		"zod": "^3.21.4"
 	},
 	"config": {
 		"commitizen": {
