@@ -3,6 +3,7 @@
 	import "swiper/css/mousewheel";
 
 	import { onMount } from "svelte";
+	import type { DOMAttributes } from "svelte/elements";
 
 	import { Texture } from "three/src/textures/Texture";
 	import { SRGBColorSpace } from "three/src/constants";
@@ -25,10 +26,7 @@
 	import { DateTime } from "luxon";
 	import toast from "svelte-french-toast";
 	import { browser } from "$app/environment";
-	import { enhance } from "$app/forms";
 	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
-
-	import type { ActionData } from "./$types";
 
 	import { gsap } from "gsap?client";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
@@ -38,7 +36,9 @@
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
 	// Icons
+	// @ts-expect-error `svelte-icons` does not contain type definitions
 	import TiArrowLeft from "svelte-icons/ti/TiArrowLeft.svelte";
+	// @ts-expect-error `svelte-icons` does not contain type definitions
 	import TiArrowRight from "svelte-icons/ti/TiArrowRight.svelte";
 
 	// Images
@@ -69,6 +69,16 @@
 	// };
 
 	// export let form: ActionData;
+
+	const onSubmitSignInForm: DOMAttributes<HTMLFormElement>["on:submit"] = (
+		event
+	) => {
+		toast.loading("Verifying email…");
+		signIn("email", {
+			...Object.fromEntries(new FormData(event.currentTarget)),
+			callbackUrl: "/dashboard"
+		});
+	};
 
 	const timeUntilConference = DateTime.local(2024, 3, 6)
 		.diff(DateTime.now())
@@ -596,21 +606,26 @@
 			</span>
 		</div>
 
-		<!-- <form
-			class="flex gap-1.5 flex-col sm:flex-row"
-			method="post"
-			action="?/getNotified"
-			use:enhance
-		> -->
-		<div class="flex gap-1.5 flex-col sm:flex-row">
-			{#if $page.data.session?.user}
-				<button
+		{#if $page.data.session?.user}
+			<div class="flex gap-1.5 flex-col sm:flex-row">
+				<a
 					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
+					href="/dashboard"
+				>
+					Access your dashboard
+				</a>
+				<button
+					class="bg-gradient-to-r from-secondary to-primary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
 					on:click={() => signOut()}
 				>
 					Sign out from {$page.data.session.user.email}
 				</button>
-			{:else}
+			</div>
+		{:else}
+			<form
+				on:submit|preventDefault={onSubmitSignInForm}
+				class="flex gap-1.5 flex-col sm:flex-row"
+			>
 				<div class="relative">
 					<div
 						class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
@@ -633,20 +648,18 @@
 					<input
 						type="email"
 						name="email"
+						required
 						class="border text-sm md:text-[0.9rem] rounded-lg block w-60 md:w-80 pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
 						placeholder="name@school.com"
 					/>
 				</div>
 				<button
 					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
-					on:click={() =>
-						signIn("email", { email: "smart24@ucc.on.ca" })}
 				>
 					Sign up / in
 				</button>
-			{/if}
-		</div>
-		<!-- </form> -->
+			</form>
+		{/if}
 	</section>
 
 	<section

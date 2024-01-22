@@ -1,0 +1,16 @@
+{
+  "id": "mig_cmirsd3vv9jpetvg3dd0",
+  "parentID": "mig_cmirsabvv9jpetvg3dc0",
+  "checksum": "1:3e4f1602b4d16f5981485ac056ca258e7d078bdcd7e7e1aca7d30d557e7ebe31",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "title",
+          "type": "string"
+        },
+        "table": "plenaries"
+      }
+    }
+  ]
+}

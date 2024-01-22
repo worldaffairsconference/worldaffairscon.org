@@ -1,0 +1,19 @@
+{
+  "id": "mig_cmirt3bqchh4jeq4ubig",
+  "parentID": "mig_cmirsurqchh4jeq4ubhg",
+  "checksum": "1:9ab7b4012550057871415ce804aa19912877bdc06cc9a84d66b66df4b6b2be6e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "timeSlot",
+          "type": "link",
+          "link": {
+            "table": "schedule_slots"
+          }
+        },
+        "table": "plenaries"
+      }
+    }
+  ]
+}

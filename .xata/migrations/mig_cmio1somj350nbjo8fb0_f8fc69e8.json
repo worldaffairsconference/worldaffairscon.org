@@ -1,0 +1,19 @@
+{
+  "id": "mig_cmio1somj350nbjo8fb0",
+  "parentID": "mig_cmio1oomj350nbjo8fa0",
+  "checksum": "1:f8fc69e81161cee870506722bac4a01e04c0a81a09f58e8015b3581841a2cbf0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "avatar",
+          "type": "file",
+          "file": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "attendees"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "mig_clrm1lf04fbo9q98ks8g",
+  "parentID": "mig_clrm1jn04fbo9q98ks7g",
+  "checksum": "1:d0a2bf55cde6196e6a1ff59e79592f02c1f64612d5acc242ce6a76ba0ea2086f",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "avatar",
+        "oldName": "image",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

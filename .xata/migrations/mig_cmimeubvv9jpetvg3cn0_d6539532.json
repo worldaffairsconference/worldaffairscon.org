@@ -1,0 +1,13 @@
+{
+  "id": "mig_cmimeubvv9jpetvg3cn0",
+  "parentID": "mig_cmimc2bqchh4jeq4u980",
+  "checksum": "1:d6539532a665f323bf19f190dbe65d4344b29dd08701d9e173848200a7adcb8e",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "avatar",
+        "table": "attendees"
+      }
+    }
+  ]
+}

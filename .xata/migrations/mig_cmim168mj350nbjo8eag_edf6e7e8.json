@@ -1,0 +1,13 @@
+{
+  "id": "mig_cmim168mj350nbjo8eag",
+  "parentID": "mig_cmim12gmj350nbjo8e9g",
+  "checksum": "1:edf6e7e86281239e95f8af7e46299dc52b05fa2f21455b3fec0971b79bcecc06",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "auth_attendees_accounts",
+        "oldName": "nextauth_users_accounts"
+      }
+    }
+  ]
+}

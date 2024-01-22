@@ -1,0 +1,14 @@
+{
+  "id": "mig_cminclomj350nbjo8f40",
+  "parentID": "mig_cmimforqchh4jeq4u9b0",
+  "checksum": "1:0750d1dc79853560c51c34ad4349490b9db43a1e18e6816254a28f29b65e4b79",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "allowsSelfRegistration",
+        "oldName": "allows_self_registration",
+        "table": "partner_schools"
+      }
+    }
+  ]
+}

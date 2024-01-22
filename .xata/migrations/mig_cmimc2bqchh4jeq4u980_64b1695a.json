@@ -1,0 +1,19 @@
+{
+  "id": "mig_cmimc2bqchh4jeq4u980",
+  "parentID": "mig_cmimbq0mj350nbjo8ei0",
+  "checksum": "1:64b1695a65b38c2385333358060949bfcd161d9b5dfec4c10d29897025670e39",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "avatar",
+          "type": "file[]",
+          "file[]": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "attendees"
+      }
+    }
+  ]
+}
