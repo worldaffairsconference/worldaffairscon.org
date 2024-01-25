@@ -72,7 +72,7 @@
 		event
 	) => {
 		toast.loading("Verifying email…");
-		signIn("email", {
+		signIn("magic-link", {
 			...Object.fromEntries(new FormData(event.currentTarget)),
 			callbackUrl: "/dashboard"
 		});
