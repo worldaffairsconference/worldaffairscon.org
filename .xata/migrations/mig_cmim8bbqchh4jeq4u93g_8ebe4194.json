@@ -1,16 +1,16 @@
 {
-  "id": "mig_cmim8bbqchh4jeq4u93g",
-  "parentID": "mig_cmim1g3vv9jpetvg3ck0",
-  "checksum": "1:8ebe41945e2d2b2117d1b3e08289880ffcee8608afa9b80bbbb8366011019e61",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "name",
-          "type": "string"
-        },
-        "table": "partner_schools"
-      }
-    }
-  ]
+	"id": "mig_cmim8bbqchh4jeq4u93g",
+	"parentID": "mig_cmim1g3vv9jpetvg3ck0",
+	"checksum": "1:8ebe41945e2d2b2117d1b3e08289880ffcee8608afa9b80bbbb8366011019e61",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "name",
+					"type": "string"
+				},
+				"table": "partner_schools"
+			}
+		}
+	]
 }

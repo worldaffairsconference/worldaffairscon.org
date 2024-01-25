@@ -1,16 +1,16 @@
 {
-  "id": "mig_cmirsejvv9jpetvg3de0",
-  "parentID": "mig_cmirsd3vv9jpetvg3dd0",
-  "checksum": "1:28802c52482fe40b4048549477031ce06df6038d16271ac435e50d5fe5acbd0a",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "speaker",
-          "type": "string"
-        },
-        "table": "plenaries"
-      }
-    }
-  ]
+	"id": "mig_cmirsejvv9jpetvg3de0",
+	"parentID": "mig_cmirsd3vv9jpetvg3dd0",
+	"checksum": "1:28802c52482fe40b4048549477031ce06df6038d16271ac435e50d5fe5acbd0a",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "speaker",
+					"type": "string"
+				},
+				"table": "plenaries"
+			}
+		}
+	]
 }

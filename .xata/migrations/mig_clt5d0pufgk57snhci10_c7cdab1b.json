@@ -1,12 +1,12 @@
 {
-  "id": "mig_clt5d0pufgk57snhci10",
-  "parentID": "mig_clrncqevqfdn33h6ijgg",
-  "checksum": "1:c7cdab1b7878e6ddd29c44e1d048c90e49dd87075d8846bcfafccf65766b4c3a",
-  "operations": [
-    {
-      "removeTable": {
-        "table": "school_directories"
-      }
-    }
-  ]
+	"id": "mig_clt5d0pufgk57snhci10",
+	"parentID": "mig_clrncqevqfdn33h6ijgg",
+	"checksum": "1:c7cdab1b7878e6ddd29c44e1d048c90e49dd87075d8846bcfafccf65766b4c3a",
+	"operations": [
+		{
+			"removeTable": {
+				"table": "school_directories"
+			}
+		}
+	]
 }

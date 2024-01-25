@@ -1,16 +1,16 @@
 {
-  "id": "mig_cmiruk3vv9jpetvg3dig",
-  "parentID": "mig_cmiruh0mj350nbjo8hp0",
-  "checksum": "1:77553fe118824316be294da3138a2ac1868e12d90457fa9e0ebb4d87b466fabd",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "paid",
-          "type": "bool"
-        },
-        "table": "attendees"
-      }
-    }
-  ]
+	"id": "mig_cmiruk3vv9jpetvg3dig",
+	"parentID": "mig_cmiruh0mj350nbjo8hp0",
+	"checksum": "1:77553fe118824316be294da3138a2ac1868e12d90457fa9e0ebb4d87b466fabd",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "paid",
+					"type": "bool"
+				},
+				"table": "attendees"
+			}
+		}
+	]
 }

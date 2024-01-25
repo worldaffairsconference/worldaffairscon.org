@@ -1,13 +1,13 @@
 {
-  "id": "mig_cmirsljvv9jpetvg3dg0",
-  "parentID": "mig_cmirsj3vv9jpetvg3df0",
-  "checksum": "1:369f0ab650ee81e9cfc52e3871a9d012fbf04588dbb1548ea98ed552935ceb5a",
-  "operations": [
-    {
-      "removeColumn": {
-        "column": "startTime",
-        "table": "plenaries"
-      }
-    }
-  ]
+	"id": "mig_cmirsljvv9jpetvg3dg0",
+	"parentID": "mig_cmirsj3vv9jpetvg3df0",
+	"checksum": "1:369f0ab650ee81e9cfc52e3871a9d012fbf04588dbb1548ea98ed552935ceb5a",
+	"operations": [
+		{
+			"removeColumn": {
+				"column": "startTime",
+				"table": "plenaries"
+			}
+		}
+	]
 }

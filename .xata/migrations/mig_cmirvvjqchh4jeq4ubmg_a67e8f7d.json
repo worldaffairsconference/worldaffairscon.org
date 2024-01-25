@@ -1,17 +1,17 @@
 {
-  "id": "mig_cmirvvjqchh4jeq4ubmg",
-  "parentID": "mig_cmiruk3vv9jpetvg3dig",
-  "checksum": "1:a67e8f7d4e9258aab934fa23ae463ba2fc82f242eaab53cfb28afd600f08b449",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "dietaryRestrictions",
-          "type": "string",
-          "defaultValue": ""
-        },
-        "table": "attendees"
-      }
-    }
-  ]
+	"id": "mig_cmirvvjqchh4jeq4ubmg",
+	"parentID": "mig_cmiruk3vv9jpetvg3dig",
+	"checksum": "1:a67e8f7d4e9258aab934fa23ae463ba2fc82f242eaab53cfb28afd600f08b449",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "dietaryRestrictions",
+					"type": "string",
+					"defaultValue": ""
+				},
+				"table": "attendees"
+			}
+		}
+	]
 }

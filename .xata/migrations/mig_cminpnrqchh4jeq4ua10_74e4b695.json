@@ -1,13 +1,13 @@
 {
-  "id": "mig_cminpnrqchh4jeq4ua10",
-  "parentID": "mig_cminclomj350nbjo8f40",
-  "checksum": "1:74e4b695c08a309132ee1b69bc331ae29e874839bfd703ededf4f0a8ed877563",
-  "operations": [
-    {
-      "removeColumn": {
-        "column": "school",
-        "table": "attendees"
-      }
-    }
-  ]
+	"id": "mig_cminpnrqchh4jeq4ua10",
+	"parentID": "mig_cminclomj350nbjo8f40",
+	"checksum": "1:74e4b695c08a309132ee1b69bc331ae29e874839bfd703ededf4f0a8ed877563",
+	"operations": [
+		{
+			"removeColumn": {
+				"column": "school",
+				"table": "attendees"
+			}
+		}
+	]
 }

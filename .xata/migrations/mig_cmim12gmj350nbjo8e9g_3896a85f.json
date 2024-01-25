@@ -1,13 +1,13 @@
 {
-  "id": "mig_cmim12gmj350nbjo8e9g",
-  "parentID": "mig_cmim0trqchh4jeq4u8t0",
-  "checksum": "1:3896a85f32afead1d4f64975d85aa439b0b36ec3a2536d06fd321ec68cfab06e",
-  "operations": [
-    {
-      "renameTable": {
-        "newName": "auth_verification_tokens",
-        "oldName": "nextauth_verificationTokens"
-      }
-    }
-  ]
+	"id": "mig_cmim12gmj350nbjo8e9g",
+	"parentID": "mig_cmim0trqchh4jeq4u8t0",
+	"checksum": "1:3896a85f32afead1d4f64975d85aa439b0b36ec3a2536d06fd321ec68cfab06e",
+	"operations": [
+		{
+			"renameTable": {
+				"newName": "auth_verification_tokens",
+				"oldName": "nextauth_verificationTokens"
+			}
+		}
+	]
 }

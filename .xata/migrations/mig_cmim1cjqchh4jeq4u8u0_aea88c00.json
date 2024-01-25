@@ -1,13 +1,13 @@
 {
-  "id": "mig_cmim1cjqchh4jeq4u8u0",
-  "parentID": "mig_cmim1a0mj350nbjo8ebg",
-  "checksum": "1:aea88c008194b6909d112cf4e712aa1654e4427c795da16974dac9815d932977",
-  "operations": [
-    {
-      "renameTable": {
-        "newName": "auth_users_accounts",
-        "oldName": "auth_attendees_accounts"
-      }
-    }
-  ]
+	"id": "mig_cmim1cjqchh4jeq4u8u0",
+	"parentID": "mig_cmim1a0mj350nbjo8ebg",
+	"checksum": "1:aea88c008194b6909d112cf4e712aa1654e4427c795da16974dac9815d932977",
+	"operations": [
+		{
+			"renameTable": {
+				"newName": "auth_users_accounts",
+				"oldName": "auth_attendees_accounts"
+			}
+		}
+	]
 }

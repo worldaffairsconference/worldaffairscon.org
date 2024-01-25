@@ -1,16 +1,16 @@
 {
-  "id": "mig_cmirssrqchh4jeq4ubgg",
-  "parentID": "mig_cmirspjvv9jpetvg3dhg",
-  "checksum": "1:bbf0163d6d289ff7f435706c6d3e4bba4b026fda1436ff12c5f5501938894c77",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "startTime",
-          "type": "datetime"
-        },
-        "table": "schedule_slots"
-      }
-    }
-  ]
+	"id": "mig_cmirssrqchh4jeq4ubgg",
+	"parentID": "mig_cmirspjvv9jpetvg3dhg",
+	"checksum": "1:bbf0163d6d289ff7f435706c6d3e4bba4b026fda1436ff12c5f5501938894c77",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "startTime",
+					"type": "datetime"
+				},
+				"table": "schedule_slots"
+			}
+		}
+	]
 }

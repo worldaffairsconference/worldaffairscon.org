@@ -54,7 +54,7 @@ export async function addEmailToDistributionList(
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
-					Authorization: `Zoho-oauthtoken ${accessToken}`
+					"Authorization": `Zoho-oauthtoken ${accessToken}`
 				},
 				body: JSON.stringify({
 					mailGroupMemberList: [

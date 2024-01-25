@@ -1,0 +1,13 @@
+{
+	"id": "mig_cmnesnv8g00b13pjn210",
+	"parentID": "mig_cmneskv8g00b13pjn200",
+	"checksum": "1:7bf24f8f512faedf2f0738e1e6bf6ebf5428a8c616d72a00c8b53e173ee11fc5",
+	"operations": [
+		{
+			"removeColumn": {
+				"column": "xatacreatedAt",
+				"table": "frequently_asked_questions"
+			}
+		}
+	]
+}

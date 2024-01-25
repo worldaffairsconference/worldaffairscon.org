@@ -1,16 +1,16 @@
 {
-  "id": "mig_cmiru0rqchh4jeq4ublg",
-  "parentID": "mig_cmirtngmj350nbjo8hn0",
-  "checksum": "1:81b7ab51a9bf66c77c8243e2ac7911c5120e4d8786c6bf5ed9cdba0d32ab96f5",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "needsLunch",
-          "type": "bool"
-        },
-        "table": "attendees"
-      }
-    }
-  ]
+	"id": "mig_cmiru0rqchh4jeq4ublg",
+	"parentID": "mig_cmirtngmj350nbjo8hn0",
+	"checksum": "1:81b7ab51a9bf66c77c8243e2ac7911c5120e4d8786c6bf5ed9cdba0d32ab96f5",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "needsLunch",
+					"type": "bool"
+				},
+				"table": "attendees"
+			}
+		}
+	]
 }

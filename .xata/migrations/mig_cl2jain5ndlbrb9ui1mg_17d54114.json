@@ -1,13 +1,13 @@
 {
-  "id": "mig_cl2jain5ndlbrb9ui1mg",
-  "parentID": "mig_cl2jah75ndlbrb9ui1lg",
-  "checksum": "1:17d54114d08de3ee8e95bf96a8130a93f884468002036675030c5b2e2d0d4cfe",
-  "operations": [
-    {
-      "renameTable": {
-        "newName": "auth_accounts",
-        "oldName": "nextauth_accounts"
-      }
-    }
-  ]
+	"id": "mig_cl2jain5ndlbrb9ui1mg",
+	"parentID": "mig_cl2jah75ndlbrb9ui1lg",
+	"checksum": "1:17d54114d08de3ee8e95bf96a8130a93f884468002036675030c5b2e2d0d4cfe",
+	"operations": [
+		{
+			"renameTable": {
+				"newName": "auth_accounts",
+				"oldName": "nextauth_accounts"
+			}
+		}
+	]
 }

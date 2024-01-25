@@ -36,9 +36,7 @@
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
 	// Icons
-	// @ts-expect-error `svelte-icons` does not contain type definitions
 	import TiArrowLeft from "svelte-icons/ti/TiArrowLeft.svelte";
-	// @ts-expect-error `svelte-icons` does not contain type definitions
 	import TiArrowRight from "svelte-icons/ti/TiArrowRight.svelte";
 
 	// Images
@@ -912,6 +910,7 @@
 		</div>
 	</section>
 
+	<!--
 	<section
 		class="w-screen px-12 md:px-28 pb-16 py-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7 bg-zinc-950/60"
 		id="action"

@@ -1,19 +1,19 @@
 {
-  "id": "mig_cmimforqchh4jeq4u9b0",
-  "parentID": "mig_cmimeubvv9jpetvg3cn0",
-  "checksum": "1:a6d0b6a0bdd2f50137f31a1afbc0a92b6016d2e881b53f5227a6c8c1c231f657",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "avatar",
-          "type": "file",
-          "file": {
-            "defaultPublicAccess": true
-          }
-        },
-        "table": "attendees"
-      }
-    }
-  ]
+	"id": "mig_cmimforqchh4jeq4u9b0",
+	"parentID": "mig_cmimeubvv9jpetvg3cn0",
+	"checksum": "1:a6d0b6a0bdd2f50137f31a1afbc0a92b6016d2e881b53f5227a6c8c1c231f657",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "avatar",
+					"type": "file",
+					"file": {
+						"defaultPublicAccess": true
+					}
+				},
+				"table": "attendees"
+			}
+		}
+	]
 }

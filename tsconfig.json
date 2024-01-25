@@ -20,6 +20,8 @@
 		"noUnusedParameters": true,
 		"types": ["@testing-library/jest-dom", "vitest/globals"],
 		"jsx": "react",
+		"lib": ["ESNext", "es2019", "dom", "dom.iterable"],
+		"target": "ESNext"
 	},
 	"include": [
 		".svelte-kit/ambient.d.ts",

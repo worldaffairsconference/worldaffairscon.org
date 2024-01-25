@@ -1,16 +1,16 @@
 {
-  "id": "mig_cmirtd3qchh4jeq4ubkg",
-  "parentID": "mig_cmirt90mj350nbjo8hl0",
-  "checksum": "1:f85d1c67c74341e3218a0dab5a79ba706d5311069ca706ffcaeb9b50ce9edc28",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "preferenceRank",
-          "type": "int"
-        },
-        "table": "attendees_plenaries"
-      }
-    }
-  ]
+	"id": "mig_cmirtd3qchh4jeq4ubkg",
+	"parentID": "mig_cmirt90mj350nbjo8hl0",
+	"checksum": "1:f85d1c67c74341e3218a0dab5a79ba706d5311069ca706ffcaeb9b50ce9edc28",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "preferenceRank",
+					"type": "int"
+				},
+				"table": "attendees_plenaries"
+			}
+		}
+	]
 }

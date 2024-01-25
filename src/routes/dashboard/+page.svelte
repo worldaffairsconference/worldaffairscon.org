@@ -1,16 +1,21 @@
 <script lang="ts">
 	import AccordionItem from "$lib/components/AccordionItem.svelte";
+	import Input from "./Input.svelte";
+	import Select from "./Select.svelte";
 	import { createAvatar } from "@dicebear/core";
 	import { shapes } from "@dicebear/collection";
+	// import { enhance } from "$app/forms";
 
-	import type { PageData } from "./$types";
+	import type { ActionData, PageData } from "./$types";
 
 	export let data: PageData;
 	const { user } = data;
 	const avatar = createAvatar(shapes, { seed: user.email ?? "" });
+
+	export let form: ActionData;
 </script>
 
-<section class="pt-[8.5rem] md:pt-[10rem] flex flex-col items-center">
+<section class="pt-[8.5rem] md:pt-[10rem] flex flex-col items-center mb-10">
 	<div class="container mx-auto">
 		<div class="-mx-4 flex flex-wrap">
 			<div class="w-full px-4">
@@ -32,36 +37,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- {#each faqSectionNames as faqSectionName}
-			<h3
-				class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-8 text-center"
-			>
-				{faqSectionName}
-			</h3>
-			<div class="-mx-4 flex flex-wrap mb-10">
-				<div class="w-full px-4 lg:w-1/2">
-					{#each faqs[faqSectionName] as faq, i}
-						{#if i % 2 === 0}
-							<AccordionItem
-								header={faq.question}
-								text={faq.answer}
-							/>
-						{/if}
-					{/each}
-				</div>
-				<div class="w-full px-4 lg:w-1/2">
-					{#each faqs[faqSectionName] as faq, i}
-						{#if i % 2 === 1}
-							<AccordionItem
-								header={faq.question}
-								text={faq.answer}
-							/>
-						{/if}
-					{/each}
-				</div>
-			</div>
-		{/each} -->
 	</div>
 
 	<div class="flex gap-5 w-3/4 mb-10">
@@ -78,7 +53,7 @@
 				Excited for the official list of plenaries? We are working on
 				it! We will email you once we are ready for your selection, so
 				stay tuned! In the near future, we will also need some
-				information about diatery restrictions, and financial
+				information about dietary restrictions, and financial
 				information if you are coming outside of a school context.
 			</p>
 		</div>
@@ -88,15 +63,88 @@
 		<h3
 			class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-8 text-center"
 		>
-			General
+			What we need from you
 		</h3>
-		<div class="-mx-4 flex flex-wrap mb-10">
-			<div class="w-full">
-				<AccordionItem header="Personal Information" text="" />
-				<AccordionItem header="Plenary Selection" text="" />
-				<AccordionItem header="Dietary Information" text="" />
-				<AccordionItem header="Payment Information" text="" />
-			</div>
+		<div class="-mx-4 flex gap-10 flex-col">
+			<AccordionItem header="Personal Information" open>
+				<!-- TODO: Fix use:enhance -->
+				<form
+					method="post"
+					action="?/savePersonalInformation"
+					class="flex flex-col gap-3"
+				>
+					<div class="grid md:grid-cols-2 gap-4">
+						<Input
+							label="First Name"
+							name="firstName"
+							type="text"
+							required
+							value={form?.firstName || user.firstName}
+						/>
+						<Input
+							label="Last Name"
+							name="lastName"
+							type="text"
+							required
+							value={form?.lastName || user.lastName}
+						/>
+					</div>
+					<Input
+						label="Email"
+						type="email"
+						disabled
+						value={user.email}
+					/>
+					<div class="grid md:grid-cols-2 gap-4">
+						<Select label="Grade Level" name="gradeLevel">
+							{@const grades = ["7", "8", "9", "10", "11", "12"]}
+							{@const gradeLevel =
+								form?.gradeLevel ?? user.gradeLevel ?? ""}
+							<option
+								hidden
+								disabled
+								selected={gradeLevel === ""}
+							>
+								Please choose an option
+							</option>
+							{#each grades as grade}
+								<option
+									value={grade}
+									selected={grade === gradeLevel}
+								>
+									Grade {grade}
+								</option>
+							{/each}
+							<option
+								value="other"
+								selected={!grades.includes(gradeLevel)}
+							>
+								Other
+							</option>
+						</Select>
+						<Select
+							label="Attendance"
+							name="inPerson"
+							value={(
+								form?.inPerson ??
+								user.inPerson ??
+								true
+							).toString()}
+						>
+							<option value="true">In Person</option>
+							<option value="false">Online</option>
+						</Select>
+					</div>
+					<button
+						type="submit"
+						class="mx-auto py-2 px-10 bg-primary text-white rounded-md"
+					>
+						Save
+					</button>
+				</form>
+			</AccordionItem>
 		</div>
 	</div>
 </section>
+
+<!-- <Test /> -->

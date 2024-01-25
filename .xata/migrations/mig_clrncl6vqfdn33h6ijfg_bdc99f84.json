@@ -1,13 +1,13 @@
 {
-  "id": "mig_clrncl6vqfdn33h6ijfg",
-  "parentID": "mig_clrm1vf04fbo9q98ksig",
-  "checksum": "1:bdc99f8476abbda8191c46efcf9bdf2c859baf4d3d86a2adba20f88a130d3769",
-  "operations": [
-    {
-      "removeColumn": {
-        "column": "avatar",
-        "table": "nextauth_users"
-      }
-    }
-  ]
+	"id": "mig_clrncl6vqfdn33h6ijfg",
+	"parentID": "mig_clrm1vf04fbo9q98ksig",
+	"checksum": "1:bdc99f8476abbda8191c46efcf9bdf2c859baf4d3d86a2adba20f88a130d3769",
+	"operations": [
+		{
+			"removeColumn": {
+				"column": "avatar",
+				"table": "nextauth_users"
+			}
+		}
+	]
 }

@@ -1,19 +1,19 @@
 {
-  "id": "mig_cmirt6rqchh4jeq4ubjg",
-  "parentID": "mig_cmirt3bqchh4jeq4ubig",
-  "checksum": "1:06aa076ca00c53989b0668c368a956a1d946ab3f601a2f7722da0f5e34c1d0b4",
-  "operations": [
-    {
-      "addColumn": {
-        "column": {
-          "name": "attendee",
-          "type": "link",
-          "link": {
-            "table": "attendees"
-          }
-        },
-        "table": "attendees_plenaries"
-      }
-    }
-  ]
+	"id": "mig_cmirt6rqchh4jeq4ubjg",
+	"parentID": "mig_cmirt3bqchh4jeq4ubig",
+	"checksum": "1:06aa076ca00c53989b0668c368a956a1d946ab3f601a2f7722da0f5e34c1d0b4",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "attendee",
+					"type": "link",
+					"link": {
+						"table": "attendees"
+					}
+				},
+				"table": "attendees_plenaries"
+			}
+		}
+	]
 }

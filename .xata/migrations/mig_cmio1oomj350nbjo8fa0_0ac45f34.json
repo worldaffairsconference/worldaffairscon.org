@@ -1,13 +1,13 @@
 {
-  "id": "mig_cmio1oomj350nbjo8fa0",
-  "parentID": "mig_cmins1gmj350nbjo8f90",
-  "checksum": "1:0ac45f344cb64f2ee1eba5340d8cedab77fe88fddc31ffdd02d6390cc61d4076",
-  "operations": [
-    {
-      "removeColumn": {
-        "column": "avatar",
-        "table": "attendees"
-      }
-    }
-  ]
+	"id": "mig_cmio1oomj350nbjo8fa0",
+	"parentID": "mig_cmins1gmj350nbjo8f90",
+	"checksum": "1:0ac45f344cb64f2ee1eba5340d8cedab77fe88fddc31ffdd02d6390cc61d4076",
+	"operations": [
+		{
+			"removeColumn": {
+				"column": "avatar",
+				"table": "attendees"
+			}
+		}
+	]
 }

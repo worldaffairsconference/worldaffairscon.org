@@ -1,35 +1,34 @@
 <script lang="ts">
-	import SvelteMarkdown from "svelte-markdown";
-
+	import { browser } from "$app/environment";
+	export let open = false;
 	export let header: string;
-	export let content: string;
-	export let activeQuestionID: string;
-	export let sectionIndex: number;
-	export let questionIndex: number;
 
-	let contentElement: HTMLElement;
+	let contentElement: HTMLDivElement | undefined;
 
-	$: active = activeQuestionID === `${sectionIndex}.${questionIndex}`;
+	$: contentHeight = open ? contentElement?.scrollHeight : 0;
 </script>
 
-<div class="rounded-lg border border-zinc-600 bg-zinc-800 py-3 px-4 sm:p-5">
-	<button
-		class="flex items-center w-full text-left"
-		on:click={() => {
-			if (active) {
-				activeQuestionID = "";
-			} else {
-				activeQuestionID = `${sectionIndex}.${questionIndex}`;
-			}
+<svelte:window
+	on:resize={() => (contentHeight &&= contentElement?.scrollHeight)}
+/>
+
+<details
+	open={open || browser}
+	class="rounded-lg border border-zinc-600 bg-zinc-800 py-3 px-4 sm:p-5"
+>
+	<summary
+		class="text-base sm:text-lg font-semibold text-white flex items-center cursor-pointer"
+		on:click={(e) => {
+			e.preventDefault();
+			open = !open;
 		}}
-		aria-label="Toggle FAQ"
 	>
 		<div
 			class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-secondary bg-opacity-5 text-secondary"
 		>
 			<svg
-				class="duration-300 ease-in-out fill-secondary stroke-secondary {active &&
-					'rotate-180'}"
+				class="duration-300 ease-in-out fill-secondary stroke-secondary"
+				class:-rotate-90={!open}
 				width="17"
 				height="10"
 				viewBox="0 0 17 10"
@@ -42,34 +41,21 @@
 				/>
 			</svg>
 		</div>
-
-		<div class="w-full">
-			<h4 class="text-base sm:text-lg font-semibold text-white">
-				{header}
-			</h4>
-		</div>
-	</button>
-
+		{header}
+	</summary>
 	<div
-		class="px-1 w-full overflow-hidden transition-[height] duration-300 text-zinc-300"
-		style="height: {contentElement && active
-			? `${contentElement.scrollHeight}px`
-			: '0'}"
+		class="px-1 w-full overflow-hidden transition-[height] duration-300"
+		style={browser ? `height: ${contentHeight}px` : ""}
 	>
-		<div class="pt-3 pb-1" id="markdown" bind:this={contentElement}>
-			<SvelteMarkdown source={content} />
-		</div>
+		<div class="pt-3 pb-1" bind:this={contentElement}><slot /></div>
 	</div>
-</div>
+</details>
 
 <style>
-	:global(#markdown a) {
-		@apply text-blue-400;
-		@apply underline;
-	}
-
-	:global(#markdown ul) {
-		@apply ml-[15px];
-		@apply list-disc;
+	details > summary {
+		list-style: none;
+		&::-webkit-details-marker {
+			display: none;
+		}
 	}
 </style>

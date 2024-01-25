@@ -1,12 +1,12 @@
 {
-  "id": "mig_cmirsabvv9jpetvg3dc0",
-  "parentID": "mig_cmirqs3vv9jpetvg3d9g",
-  "checksum": "1:9e31731b183d3dc6fa60fa9e1761d3fa49385ac643b8f7395aedde06ec356e96",
-  "operations": [
-    {
-      "addTable": {
-        "table": "attendees_plenaries"
-      }
-    }
-  ]
+	"id": "mig_cmirsabvv9jpetvg3dc0",
+	"parentID": "mig_cmirqs3vv9jpetvg3d9g",
+	"checksum": "1:9e31731b183d3dc6fa60fa9e1761d3fa49385ac643b8f7395aedde06ec356e96",
+	"operations": [
+		{
+			"addTable": {
+				"table": "attendees_plenaries"
+			}
+		}
+	]
 }
