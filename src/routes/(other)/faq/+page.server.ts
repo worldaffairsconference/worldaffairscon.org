@@ -17,6 +17,5 @@ export const load = (async () => {
 				: []
 	);
 	const faqByCategories = groupBy(questions, (q) => q.category);
-	console.log(faqByCategories);
 	return { faqByCategories };
 }) satisfies PageServerLoad;

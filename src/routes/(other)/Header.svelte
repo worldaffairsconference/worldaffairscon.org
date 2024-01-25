@@ -124,6 +124,13 @@
 			{/each}
 		</ul>
 
+		<a
+			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
+			href="/login"
+		>
+			Login
+		</a>
+
 		<button
 			class="block lg:hidden z-50"
 			aria-label="Open navigation"
