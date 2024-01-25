@@ -3,6 +3,7 @@
 	import "swiper/css/mousewheel";
 
 	import { onMount } from "svelte";
+	import type { DOMAttributes } from "svelte/elements";
 
 	import { Texture } from "three/src/textures/Texture";
 	import { SRGBColorSpace } from "three/src/constants";
@@ -25,10 +26,7 @@
 	import { DateTime } from "luxon";
 	import toast from "svelte-french-toast";
 	import { browser } from "$app/environment";
-	import { enhance } from "$app/forms";
 	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
-
-	import type { ActionData } from "./$types";
 
 	import { gsap } from "gsap?client";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
@@ -58,28 +56,40 @@
 
 	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
+	import { signIn, signOut } from "@auth/sveltekit/client";
+	import { page } from "$app/stores";
 
-	let formMessages = {
-		added: "You have been added to the mailing list!",
-		alreadyAdded: "You are already on the mailing list!",
-		invalidEmail: "Please enter a valid email address!",
-		unknownError: "An unknown error occurred. Please try again later."
+	// let formMessages = {
+	// 	added: "You have been added to the mailing list!",
+	// 	alreadyAdded: "You are already on the mailing list!",
+	// 	invalidEmail: "Please enter a valid email address!",
+	// 	unknownError: "An unknown error occurred. Please try again later."
+	// };
+
+	// export let form: ActionData;
+
+	const onSubmitSignInForm: DOMAttributes<HTMLFormElement>["on:submit"] = (
+		event
+	) => {
+		toast.loading("Verifying email…");
+		signIn("email", {
+			...Object.fromEntries(new FormData(event.currentTarget)),
+			callbackUrl: "/dashboard"
+		});
 	};
-
-	export let form: ActionData;
 
 	const timeUntilConference = DateTime.local(2024, 3, 6)
 		.diff(DateTime.now())
 		.toFormat("d");
 
-	// TODO: style the toast a bit more
-	$: if (form) {
-		if (form.success) {
-			toast.success(formMessages[form.message]);
-		} else {
-			toast.error(formMessages[form.message]);
-		}
-	}
+	// // TODO: style the toast a bit more
+	// $: if (form) {
+	// 	if (form.success) {
+	// 		toast.success(formMessages[form.message]);
+	// 	} else {
+	// 		toast.error(formMessages[form.message]);
+	// 	}
+	// }
 
 	// Constants
 	const TOTAL_STARS = 600; // How many stars there are
@@ -609,44 +619,60 @@
 			</div>
 		</div>
 
-		<form
-			class="flex gap-1.5 flex-col sm:flex-row"
-			method="post"
-			action="?/getNotified"
-			use:enhance
-		>
-			<div class="relative">
-				<div
-					class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+		{#if $page.data.session?.user}
+			<div class="flex gap-1.5 flex-col sm:flex-row">
+				<a
+					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
+					href="/dashboard"
 				>
-					<svg
-						aria-hidden="true"
-						class="w-5 h-5 text-zinc-400"
-						fill="currentColor"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-						/>
-						<path
-							d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
-						/>
-					</svg>
-				</div>
-				<input
-					type="email"
-					name="email"
-					class="border text-sm md:text-[0.9rem] rounded-lg block w-60 md:w-80 pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
-					placeholder="name@school.com"
-				/>
+					Access your dashboard
+				</a>
+				<button
+					class="bg-gradient-to-r from-secondary to-primary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
+					on:click={() => signOut()}
+				>
+					Sign out from {$page.data.session.user.email}
+				</button>
 			</div>
-			<button
-				class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
+		{:else}
+			<form
+				on:submit|preventDefault={onSubmitSignInForm}
+				class="flex gap-1.5 flex-col sm:flex-row"
 			>
-				Get Notified
-			</button>
-		</form>
+				<div class="relative">
+					<div
+						class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+					>
+						<svg
+							aria-hidden="true"
+							class="w-5 h-5 text-zinc-400"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+							/>
+							<path
+								d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+							/>
+						</svg>
+					</div>
+					<input
+						type="email"
+						name="email"
+						required
+						class="border text-sm md:text-[0.9rem] rounded-lg block w-60 md:w-80 pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none"
+						placeholder="name@school.com"
+					/>
+				</div>
+				<button
+					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
+				>
+					Sign up / in
+				</button>
+			</form>
+		{/if}
 	</section>
 
 	<section
@@ -884,6 +910,7 @@
 		</div>
 	</section>
 
+	<!--
 	<section
 		class="w-screen px-12 md:px-28 pb-16 py-16 sm:py-20 flex justify-between lg:items-center flex-col lg:flex-row gap-7 bg-zinc-950/60"
 		id="action"
@@ -944,4 +971,5 @@
 			</form>
 		</div>
 	</section>
+	 -->
 </div>

@@ -15,14 +15,14 @@
 		? gsap.timeline({ reversed: true })
 		: (undefined as unknown as gsap.core.Timeline);
 
-	let headerElement: HTMLElement;
+	let headerElement: HTMLElement | undefined;
 	let lastScrollTop: number;
 	let navBarFixed = false;
 	let navBarShowing = true;
 
 	onMount(async () => {
 		window.addEventListener("scroll", () => {
-			if (headerElement === null) return;
+			if (headerElement === undefined) return;
 
 			var scrollTop =
 				window.scrollY || document.documentElement.scrollTop;
@@ -123,12 +123,6 @@
 				</li>
 			{/each}
 		</ul>
-
-		<button
-			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
-		>
-			Login
-		</button>
 
 		<button
 			class="block lg:hidden z-50"

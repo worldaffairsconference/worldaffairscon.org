@@ -9,6 +9,8 @@ node_modules
 /reports
 .netlify
 /submodules
+.eslintrc.cjs
+scripts/**
 
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml

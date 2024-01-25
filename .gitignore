@@ -266,4 +266,6 @@ node_modules/
 # dotenv environment variables file
 .env
 
-src/lib/server/xata.generated.ts
+.react-email
+
+.direnv/

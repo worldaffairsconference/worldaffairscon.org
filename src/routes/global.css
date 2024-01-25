@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.markdown a {
+	@apply text-blue-400;
+	@apply underline;
+}
+
+.markdown ul {
+	@apply ml-[15px];
+	@apply list-disc;
+}

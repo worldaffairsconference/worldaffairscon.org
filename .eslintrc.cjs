@@ -11,7 +11,8 @@ module.exports = {
 	parserOptions: {
 		sourceType: "module",
 		ecmaVersion: 2020,
-		extraFileExtensions: [".svelte"]
+		extraFileExtensions: [".svelte"],
+		project: ["./tsconfig.eslint.json"]
 	},
 	env: {
 		browser: true,
@@ -29,7 +30,9 @@ module.exports = {
 	],
 	rules: {
 		"no-empty-function": "off",
-		"@typescript-eslint/no-empty-function": "off"
+		"@typescript-eslint/no-empty-function": "off",
+		"@typescript-eslint/no-unnecessary-condition": "error",
+		"@typescript-eslint/no-empty-interface": "off"
 		// "simple-import-sort/imports": "error",
 		// "simple-import-sort/exports": "error"
 	}
