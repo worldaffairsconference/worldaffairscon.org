@@ -13,7 +13,7 @@
 		"test:unit": "vitest run",
 		"test:unit:watch": "vitest",
 		"test:e2e": "playwright test",
-		"lint": "eslint src",
+		"lint": "eslint src && prettier --plugin prettier-plugin-svelte --check .",
 		"lint:fix": "eslint --fix src && prettier --plugin prettier-plugin-svelte --write .",
 		"prepare": "husky install",
 		"email:dev": "email dev --dir src/lib/server/email/templates"
