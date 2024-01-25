@@ -1,7 +1,3 @@
-<script lang="ts">
-	import authVerifyScreenshot from "$lib/assets/images/auth-verify-screenshot.png";
-</script>
-
 <section class="pt-[8.5rem] md:pt-[10rem]">
 	<div class="container mx-auto">
 		<div class="-mx-4 flex flex-wrap">
@@ -20,15 +16,6 @@
 						seconds. Signing in is then as easy as clicking on the
 						link!
 					</p>
-					<div
-						class="border-8 mt-4 border-secondary rounded-lg mx-auto max-w-lg w-10/12"
-					>
-						<img
-							class="grayscale hover:grayscale-0 transition ease-in-out delay-150"
-							src={authVerifyScreenshot}
-							alt="Screenshot of an example magic link email"
-						/>
-					</div>
 				</div>
 			</div>
 		</div>
