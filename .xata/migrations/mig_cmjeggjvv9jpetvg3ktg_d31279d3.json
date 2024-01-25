@@ -1,0 +1,16 @@
+{
+  "id": "mig_cmjeggjvv9jpetvg3ktg",
+  "parentID": "mig_cmitg2gmj350nbjo8ie0",
+  "checksum": "1:d31279d3917dbbc59277470402d5169f8f9c09853db0451dc8b2c30aea6bb68b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "allowsSelfMealPurchase",
+          "type": "bool"
+        },
+        "table": "partner_schools"
+      }
+    }
+  ]
+}

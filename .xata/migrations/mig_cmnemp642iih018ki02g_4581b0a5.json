@@ -1,0 +1,12 @@
+{
+  "id": "mig_cmnemp642iih018ki02g",
+  "parentID": "mig_cmnem9oe8e7e5cc6lq8g",
+  "checksum": "1:4581b0a59ea4f0e215821f043c63b2f75929577da642bee5d8afab1debe9ba05",
+  "operations": [
+    {
+      "addTable": {
+        "table": "frequently_asked_questions_categories"
+      }
+    }
+  ]
+}

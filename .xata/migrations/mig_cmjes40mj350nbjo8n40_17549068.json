@@ -1,0 +1,13 @@
+{
+  "id": "mig_cmjes40mj350nbjo8n40",
+  "parentID": "mig_cmjes1gmj350nbjo8n30",
+  "checksum": "1:175490685e2a5332117b15895a41c3e698a4fc89baef34150a7c45deaa6c8c50",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "email",
+        "table": "attendees"
+      }
+    }
+  ]
+}

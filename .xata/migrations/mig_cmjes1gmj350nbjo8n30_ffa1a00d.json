@@ -1,0 +1,19 @@
+{
+  "id": "mig_cmjes1gmj350nbjo8n30",
+  "parentID": "mig_cmjeggjvv9jpetvg3ktg",
+  "checksum": "1:ffa1a00d83f27d623ce5935eacbc22e52f88daf55f1d88b9daa1c9907e70d82a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "plenary",
+          "type": "link",
+          "link": {
+            "table": "plenaries"
+          }
+        },
+        "table": "attendees_plenaries"
+      }
+    }
+  ]
+}

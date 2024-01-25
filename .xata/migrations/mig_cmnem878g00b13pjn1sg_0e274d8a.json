@@ -1,0 +1,16 @@
+{
+  "id": "mig_cmnem878g00b13pjn1sg",
+  "parentID": "mig_cmnem1v8g00b13pjn1rg",
+  "checksum": "1:0e274d8a8f1bf080a85ac41ab781891f0c0bf6762ad9df19c1a7c55e6a452d39",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "question",
+          "type": "string"
+        },
+        "table": "frequently_asked_questions"
+      }
+    }
+  ]
+}
