@@ -259,7 +259,7 @@
 	/>
 </svelte:head>
 
-<section class="pt-[6rem] lg:pt-[9.5rem] pb-[5rem] lg:pb-[7rem]">
+<section class="pt-[6rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="mb-10 lg:mb-20 mt-6 text-center">
 		<h3 class="mb-2 block md:text-lg font-semibold text-primary">Team</h3>
 		<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
