@@ -15,10 +15,10 @@ patchedDependencies:
 dependencies:
   '@auth/core':
     specifier: ^0.18.5
-    version: 0.18.5(nodemailer@6.9.7)
+    version: 0.18.5
   '@auth/sveltekit':
     specifier: ^0.3.16
-    version: 0.3.16(@sveltejs/kit@1.22.3)(nodemailer@6.9.7)(svelte@3.59.2)
+    version: 0.3.16(@sveltejs/kit@1.22.3)(svelte@3.59.2)
   '@dicebear/collection':
     specifier: ^7.0.1
     version: 7.0.1(@dicebear/core@7.0.1)
@@ -46,9 +46,6 @@ dependencies:
   luxon:
     specifier: ^3.3.0
     version: 3.3.0
-  nodemailer:
-    specifier: ^6.9.7
-    version: 6.9.7
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -117,9 +114,6 @@ devDependencies:
   '@types/luxon':
     specifier: ^3.3.1
     version: 3.3.1
-  '@types/nodemailer':
-    specifier: ^6.4.13
-    version: 6.4.13
   '@types/react':
     specifier: ^18.2.36
     version: 18.2.36
@@ -249,7 +243,7 @@ packages:
       '@jridgewell/trace-mapping': 0.3.18
     dev: true
 
-  /@auth/core@0.18.5(nodemailer@6.9.7):
+  /@auth/core@0.18.5:
     resolution: {integrity: sha512-Ql8YobXp57mbXqHNaaroIAgBopKaxWI+3Tlu1rGcXW5KPzXdfTqijZ4HOuZvWKqmhbMWQ9xS9r8uG4fMonZYwg==}
     peerDependencies:
       nodemailer: ^6.8.0
@@ -261,19 +255,18 @@ packages:
       '@types/cookie': 0.6.0
       cookie: 0.6.0
       jose: 5.1.1
-      nodemailer: 6.9.7
       oauth4webapi: 2.3.0
       preact: 10.11.3
       preact-render-to-string: 5.2.3(preact@10.11.3)
     dev: false
 
-  /@auth/sveltekit@0.3.16(@sveltejs/kit@1.22.3)(nodemailer@6.9.7)(svelte@3.59.2):
+  /@auth/sveltekit@0.3.16(@sveltejs/kit@1.22.3)(svelte@3.59.2):
     resolution: {integrity: sha512-p0GpzNfdQeWjn87HuWLNhQ/gq6w0JOm/e3Qp5bQ73sMfkyIVtaCmkRmXWqbTZ8tFaZdr5IGveHy3FtEIPrrMEQ==}
     peerDependencies:
       '@sveltejs/kit': ^1.0.0
       svelte: ^3.54.0 || ^4.0.0
     dependencies:
-      '@auth/core': 0.18.5(nodemailer@6.9.7)
+      '@auth/core': 0.18.5
       '@sveltejs/kit': 1.22.3(patch_hash=urhoyrxmon7nvxhonkoeb6ijqq)(svelte@3.59.2)(vite@4.4.6)
       svelte: 3.59.2
     transitivePeerDependencies:
@@ -3522,12 +3515,6 @@ packages:
 
   /@types/node@20.4.2:
     resolution: {integrity: sha512-Dd0BYtWgnWJKwO1jkmTrzofjK2QXXcai0dmtzvIBhcA+RsG5h8R3xlyta0kGOZRNfL9GuRtb1knmPEhQrePCEw==}
-
-  /@types/nodemailer@6.4.13:
-    resolution: {integrity: sha512-889Vq/77eEpidCwh52sVWpbnqQmIwL8yVBekNbrztVEaWKOCRH3Eq6hjIJh1jwsGDEAJEH0RR+YhpH9mfELLKA==}
-    dependencies:
-      '@types/node': 20.4.2
-    dev: true
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -8523,11 +8510,6 @@ packages:
     resolution: {integrity: sha512-LN4fydt9TqhZhThkZIVQnF9cwjU3qmUH9h78Mx/K7d3VvfRqqwthLwJEUOEL0QPZ0XQmNN7be5Ggit5+4dq3Bw==}
     engines: {node: '>=0.12.0'}
     dev: true
-
-  /nodemailer@6.9.7:
-    resolution: {integrity: sha512-rUtR77ksqex/eZRLmQ21LKVH5nAAsVicAtAYudK7JgwenEDZ0UIQ1adUGqErz7sMkWYxWTTU1aeP2Jga6WQyJw==}
-    engines: {node: '>=6.0.0'}
-    dev: false
 
   /nopt@5.0.0:
     resolution: {integrity: sha512-Tbj67rffqceeLpcRXrT7vKAN8CwfPeIBgM7E6iBkmKLV7bEMwpGgYLGv0jACUsECaa/vuxP0IjEont6umdMgtQ==}

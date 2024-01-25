@@ -1,45 +1,45 @@
-import {
-	AUTH_SECRET,
-	EMAIL_FROM,
-	EMAIL_SERVER_HOST,
-	EMAIL_SERVER_PASSWORD,
-	EMAIL_SERVER_PORT,
-	EMAIL_SERVER_USER
-} from "$env/static/private";
+import { AUTH_SECRET, EMAIL_FROM } from "$env/static/private";
 import { SvelteKitAuth } from "@auth/sveltekit";
-import EmailProvider from "@auth/core/providers/email";
-import nodemailer from "nodemailer";
 import { renderEmail } from "$lib/server/email";
 import { XataAdapter } from "$lib/server/auth/adapter";
 import { xata } from "$lib/server/xata";
+import { MAILGUN_DOMAIN, MAILGUN_API_KEY } from "$env/static/private";
+import type { SendVerificationRequestParams } from "@auth/core/providers";
 
 export const handle = SvelteKitAuth({
 	adapter: XataAdapter(),
 	providers: [
-		EmailProvider({
-			server: {
-				host: EMAIL_SERVER_HOST,
-				port: +EMAIL_SERVER_PORT,
-				auth: {
-					user: EMAIL_SERVER_USER,
-					pass: EMAIL_SERVER_PASSWORD
-				}
-			},
-			from: EMAIL_FROM,
+		{
+			id: "magic-link",
+			// @ts-expect-error This seems to be a bug in the @auth/core types as this is exactly what is recommended by the documentation — https://authjs.dev/guides/providers/email-http
+			type: "email",
+			name: "Email",
 			async sendVerificationRequest({
 				identifier: email,
-				url,
-				provider: { server, from }
-			}) {
-				const transport = nodemailer.createTransport(server);
-				await transport.sendMail({
-					to: email,
-					from,
-					subject: `Sign in to your WAC account`,
-					...renderEmail("magic-link", { url })
-				});
+				url
+			}: SendVerificationRequestParams): Promise<void> {
+				const body = new FormData();
+				body.append("from", EMAIL_FROM);
+				body.append("to", email);
+				body.append("subject", "Sign in to your WAC account");
+				const { html, text } = renderEmail("magic-link", { url });
+				body.append("html", html);
+				body.append("text", text);
+				const headers = new Headers();
+				headers.set(
+					"Authorization",
+					"Basic " + btoa(`api:${MAILGUN_API_KEY}`)
+				);
+				await fetch(
+					`https://api.mailgun.net/v3/${MAILGUN_DOMAIN}/messages`,
+					{
+						method: "post",
+						body,
+						headers
+					}
+				);
 			}
-		})
+		}
 	],
 	trustHost: true,
 	secret: AUTH_SECRET,
