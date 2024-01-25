@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.markdown {
+	@apply text-white;
+}
+
 .markdown a {
 	@apply text-blue-400;
 	@apply underline;
