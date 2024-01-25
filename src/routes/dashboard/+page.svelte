@@ -143,6 +143,48 @@
 					</button>
 				</form>
 			</AccordionItem>
+			<AccordionItem header="Lunch Options" open>
+				<form
+					method="post"
+					action="?/saveLunchOptions"
+					class="flex flex-col gap-3"
+				>
+					<Select
+						label="Lunch Option"
+						name="needsLunch"
+						value={(
+							form?.needsLunch ??
+							user.needsLunch ??
+							true
+						).toString()}
+					>
+						<option value="true">
+							Purchase lunch at UCC for $15
+						</option>
+						<option value="false">I will bring my own lunch</option>
+					</Select>
+					<Input
+						label="Dietary Restrictions and Allergies"
+						list="dietary-restrictions-suggestions"
+						placeholder="Vegan, Vegetarian, Gluten-free, Nuts, etc."
+						name="dietaryRestrictions"
+						value={form?.dietaryRestrictions ||
+							user.dietaryRestrictions}
+					/>
+					<datalist id="dietary-restrictions-suggestions">
+						<option value="Vegan"></option>
+						<option value="Vegetarian"></option>
+						<option value="Gluten-free"></option>
+						<option value="Nuts"></option>
+					</datalist>
+					<button
+						type="submit"
+						class="mx-auto py-2 px-10 bg-primary text-white rounded-md"
+					>
+						Save
+					</button>
+				</form>
+			</AccordionItem>
 		</div>
 	</div>
 </section>
