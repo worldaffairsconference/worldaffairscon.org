@@ -11,7 +11,7 @@
 <label>
 	<span class="text-white font-medium">{label}</span>
 	<div
-		class="bg-zinc-700 rounded-md focus:border-primary focus:ring-0 pl-2 pr-1 py-1 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed"
+		class="bg-zinc-700 rounded-md focus:border-primary focus:ring-0 pl-2 pr-1 py-1 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed appearance-none"
 	>
 		<select class="w-full bg-transparent border-none" {...$$restProps}>
 			<slot />
