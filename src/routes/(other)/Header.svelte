@@ -130,14 +130,14 @@
 
 		{#if !isLoggedIn}
 			<a
-				class="bg-gradient-to-r px-7 from-primary to-secondary rounded-full lg:px-11 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
+				class="bg-gradient-to-r px-7 py-3 from-primary to-secondary rounded-full lg:px-12 lg:py-[0.825rem] text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
 				href="/signin"
 			>
 				Sign In
 			</a>
 		{:else}
 			<button
-				class="bg-gradient-to-r px-7 from-primary to-secondary rounded-full lg:px-11 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
+				class="bg-gradient-to-r px-7 py-3 from-primary to-secondary rounded-full lg:px-11 lg:py-[0.825rem] text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
 				on:click={() => signOut()}
 			>
 				Sign Out
