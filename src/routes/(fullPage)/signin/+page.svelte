@@ -19,6 +19,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Sign In - World Affairs Conference</title>
+</svelte:head>
+
 <section class="absolute inset-0 flex justify-center items-center">
 	<div
 		class="border rounded-xl shadow-sm bg-zinc-800 border-zinc-700 max-w-md w-full mx-4 p-6 sm:px-8 sm:py-12"
