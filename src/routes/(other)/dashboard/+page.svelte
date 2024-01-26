@@ -29,92 +29,112 @@
 		placeholder?: string;
 	}
 
-	const categorizedSettings: { [key: string]: Option[] } = {
-		"Personal Information": [
-			{
-				label: "First Name",
-				name: "firstName",
-				type: "text",
-				required: true,
-				value: form?.firstName || user.firstName || "",
-				fullWidth: false
-			},
-			{
-				label: "Last Name",
-				name: "lastName",
-				type: "text",
-				required: true,
-				value: form?.lastName || user.lastName || "",
-				fullWidth: false
-			},
-			{
-				label: "Email",
-				type: "email",
-				disabled: true,
-				value: user.email || ""
-			},
-			{
-				label: "Grade Level",
-				name: "gradeLevel",
-				type: "select",
-				required: true,
-				options: ["7", "8", "9", "10", "11", "12"].map((grade) => ({
-					value: grade,
-					label: `Grade ${grade}`
-				})),
-				value: form?.gradeLevel ?? user.gradeLevel ?? ""
-			},
-			{
-				label: "Attendance",
-				name: "inPerson",
-				type: "select",
-				required: true,
-				options: [
-					{
-						value: "true",
-						label: "In Person"
-					},
-					{
-						value: "false",
-						label: "Online"
-					}
-				],
-				value: (form?.inPerson ?? user.inPerson ?? true).toString()
-			}
-		],
-		"Lunch Options": [
-			{
-				label: "Lunch Option",
-				name: "needsLunch",
-				type: "select",
-				required: true,
-				options: [
-					{
-						value: "true",
-						label: "Purchase lunch at UCC for $15"
-					},
-					{
-						value: "false",
-						label: "I will bring my own lunch"
-					}
-				],
-				value: (form?.needsLunch ?? user.needsLunch ?? true).toString()
-			},
-			{
-				label: "Dietary Restrictions and Allergies",
-				list: "dietary-restrictions-suggestions",
-				type: "text",
-				placeholder: "Vegan, Vegetarian, Gluten-free, Nuts, etc.",
-				name: "dietaryRestrictions",
-				value:
-					form?.dietaryRestrictions || user.dietaryRestrictions || ""
-			}
-		]
-	};
+	interface CategorizedSettings {
+		category: string;
+		updateRoute: string;
+		settings: Option[];
+	}
+
+	const categorizedSettings: CategorizedSettings[] = [
+		{
+			category: "Personal Information",
+			updateRoute: "?/savePersonalInformation",
+			settings: [
+				{
+					label: "First Name",
+					name: "firstName",
+					type: "text",
+					required: true,
+					value: form?.firstName || user.firstName || "",
+					fullWidth: false
+				},
+				{
+					label: "Last Name",
+					name: "lastName",
+					type: "text",
+					required: true,
+					value: form?.lastName || user.lastName || "",
+					fullWidth: false
+				},
+				{
+					label: "Email",
+					type: "email",
+					disabled: true,
+					value: user.email || ""
+				},
+				{
+					label: "Grade Level",
+					name: "gradeLevel",
+					type: "select",
+					required: true,
+					options: ["7", "8", "9", "10", "11", "12"].map((grade) => ({
+						value: grade,
+						label: `Grade ${grade}`
+					})),
+					value: form?.gradeLevel ?? user.gradeLevel ?? ""
+				},
+				{
+					label: "Attendance",
+					name: "inPerson",
+					type: "select",
+					required: true,
+					options: [
+						{
+							value: "true",
+							label: "In Person"
+						},
+						{
+							value: "false",
+							label: "Online"
+						}
+					],
+					value: (form?.inPerson ?? user.inPerson ?? "").toString()
+				}
+			]
+		},
+		{
+			category: "Lunch Options",
+			updateRoute: "?/saveLunchOptions",
+			settings: [
+				{
+					label: "Lunch Option",
+					name: "needsLunch",
+					type: "select",
+					required: true,
+					options: [
+						{
+							value: "true",
+							label: "Purchase lunch at UCC for $15"
+						},
+						{
+							value: "false",
+							label: "I will bring my own lunch"
+						}
+					],
+					value: (
+						form?.needsLunch ??
+						user.needsLunch ??
+						""
+					).toString()
+				},
+				{
+					label: "Dietary Restrictions and Allergies",
+					list: "dietary-restrictions-suggestions",
+					type: "text",
+					placeholder: "Vegan, Vegetarian, Gluten-free, Nuts, etc.",
+					name: "dietaryRestrictions",
+					value:
+						form?.dietaryRestrictions ||
+						user.dietaryRestrictions ||
+						""
+				}
+			]
+		}
+	];
 
 	const checkIfCompleted = (options: Option[]) => {
 		for (const option of options) {
-			if (option.required && !option.value) {
+			if (option.required && option.value === "") {
 				return false;
 			}
 		}
@@ -163,14 +183,14 @@
 				Your Info
 			</h3>
 			<div class="flex gap-10 flex-col">
-				{#each Object.entries(categorizedSettings) as [category, settings]}
+				{#each categorizedSettings as { category, settings, updateRoute }}
 					<AccordionItem
 						header={category}
 						isCompleted={checkIfCompleted(settings)}
 					>
 						<form
 							method="post"
-							action="?/savePersonalInformation"
+							action={updateRoute}
 							class="grid sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-2"
 							on:input={() => {
 								dataChanged = true;
