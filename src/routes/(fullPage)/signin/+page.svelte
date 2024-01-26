@@ -2,7 +2,6 @@
 	import type { DOMAttributes } from "svelte/elements";
 	import { signIn } from "@auth/sveltekit/client";
 	import FaSpinner from "svelte-icons/fa/FaSpinner.svelte";
-	import StarField from "$lib/components/StarField.svelte";
 	import { fade } from "svelte/transition";
 
 	import toast from "svelte-french-toast";
@@ -20,7 +19,6 @@
 	};
 </script>
 
-<StarField />
 <section class="absolute inset-0 flex justify-center items-center">
 	<div
 		class="border rounded-xl shadow-sm bg-zinc-800 border-zinc-700 max-w-md w-full mx-4 p-4 sm:px-8 sm:py-16"

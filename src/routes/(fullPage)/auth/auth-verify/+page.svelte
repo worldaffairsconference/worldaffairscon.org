@@ -1,10 +1,7 @@
 <script lang="ts">
-	import StarField from "$lib/components/StarField.svelte";
-
 	import FaCheckCircle from "svelte-icons/fa/FaCheckCircle.svelte";
 </script>
 
-<StarField />
 <section class="absolute inset-0 flex justify-center items-center">
 	<div
 		class="py-16 px-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
