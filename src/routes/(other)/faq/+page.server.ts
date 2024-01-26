@@ -13,7 +13,7 @@ export const load = (async () => {
 						question,
 						answer: markdownToHtml(answer),
 						category: category.name
-				  }
+					}
 				: []
 	);
 	const faqByCategories = groupBy(questions, (q) => q.category);
