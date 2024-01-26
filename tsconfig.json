@@ -21,7 +21,8 @@
 		"types": ["@testing-library/jest-dom", "vitest/globals"],
 		"jsx": "react",
 		"lib": ["ESNext", "es2019", "dom", "dom.iterable"],
-		"target": "ESNext"
+		"target": "ESNext",
+		"allowJs": true
 	},
 	"include": [
 		".svelte-kit/ambient.d.ts",

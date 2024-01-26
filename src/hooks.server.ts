@@ -21,7 +21,13 @@ export const handle = SvelteKitAuth({
 				const body = new FormData();
 				body.append("from", EMAIL_FROM);
 				body.append("to", email);
-				body.append("subject", "Sign in to your WAC account");
+				const formattedDate = new Date()
+					.toLocaleString("en-ca", { hourCycle: "h23" })
+					.replace(", ", " — ");
+				body.append(
+					"subject",
+					`Sign in to your WAC account (${formattedDate})`
+				);
 				const { html, text } = renderEmail("magic-link", { url });
 				body.append("html", html);
 				body.append("text", text);
