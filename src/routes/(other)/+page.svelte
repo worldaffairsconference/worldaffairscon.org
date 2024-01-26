@@ -24,7 +24,6 @@
 
 	import { DateTime } from "luxon";
 	import { browser } from "$app/environment";
-	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
 
 	import { gsap } from "gsap?client";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
@@ -552,10 +551,6 @@
 
 <svelte:head>
 	<title>World Affairs Conference</title>
-	<meta
-		property="og:image"
-		content="{PUBLIC_DEPLOY_PRIME_URL}/page-previews/page-preview-.png"
-	/>
 </svelte:head>
 
 <div bind:this={gsapScope}>
