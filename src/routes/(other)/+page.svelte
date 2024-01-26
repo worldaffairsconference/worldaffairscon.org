@@ -604,25 +604,6 @@
 				</Tooltip>
 			</div>
 		</div>
-
-		<!-- {#if $page.data.session?.user}
-			<div class="flex gap-1.5 flex-col sm:flex-row">
-				<a
-					class="bg-gradient-to-r from-primary to-secondary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
-					href="/dashboard"
-				>
-					Access your dashboard
-				</a>
-				<button
-					class="bg-gradient-to-r from-secondary to-primary rounded-lg px-6 py-2.5 sm:py-2 text-white hover:brightness-[1.08] transition-all text-sm md:text-[0.9rem]"
-					on:click={() => signOut()}
-				>
-					Sign out from {$page.data.session.user.email}
-				</button>
-			</div>
-		{:else}
-			
-		{/if} -->
 	</section>
 
 	<section

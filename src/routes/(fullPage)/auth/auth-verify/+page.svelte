@@ -1,27 +1,28 @@
 <script lang="ts">
-	// import authVerifyScreenshot from "$lib/assets/images/auth-verify-screenshot.png";
 	import StarField from "$lib/components/StarField.svelte";
+
+	import FaCheckCircle from "svelte-icons/fa/FaCheckCircle.svelte";
 </script>
 
-<section class="m-auto max-w-md w-full h-full">
-	<div class="border rounded-xl shadow-sm bg-zinc-800 border-zinc-700">
-		<div class="py-8 px-10 m-auto lg:px-6 text-center">
-			<h1
-				class="mb-2 text-4xl font-bold md:text-4xl text-secondary lg:pr-2.5"
+<StarField>
+	<section class="absolute inset-0 flex justify-center items-center">
+		<div
+			class="py-16 px-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
+		>
+			<div
+				class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-green-400 mx-auto mb-3"
 			>
-				Email Verification
-			</h1>
-
-			<!-- TODO: Remove additional style when `text-balance` is added to Tailwind -->
-			<p
-				class="mb-2 text-xl md:text-xl text-white max-w-[1000px]"
-				style="text-wrap: balance;"
+				<FaCheckCircle />
+			</div>
+			<h2
+				class="mb-4 text-2xl font-bold text-white sm:text-3xl md:text-4xl"
 			>
-				You should receive an email in the next few seconds. Signing in
-				is then as easy as clicking on the link!
+				Check your email
+			</h2>
+			<p class="text-sm sm:text-base text-zinc-400">
+				You should receive an email in the next few seconds. Sign in by
+				clicking the button in the email.
 			</p>
 		</div>
-	</div>
-</section>
-
-<StarField />
+	</section>
+</StarField>

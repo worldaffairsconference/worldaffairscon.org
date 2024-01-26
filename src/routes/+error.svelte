@@ -1,12 +1,14 @@
 <script lang="ts">
 	import { page } from "$app/stores";
+
 	import StarField from "$lib/components/StarField.svelte";
 </script>
 
-<!-- TODO: refine this page and add other error handling -->
-<section class="h-screen w-screen overflow-hidden">
-	<div class="relative flex flex-col h-full w-full">
-		<div class="py-8 px-10 m-auto lg:px-6 text-center z-50">
+<StarField>
+	<div
+		class="py-8 px-10 lg:px-6 text-center z-50 h-screen flex justify-center items-center"
+	>
+		<div>
 			<h1
 				class="mb-2 text-8xl font-bold md:text-9xl lg:text-[12rem] text-secondary lg:pr-2.5"
 			>
@@ -46,6 +48,4 @@
 			</a>
 		</div>
 	</div>
-</section>
-
-<StarField />
+</StarField>

@@ -94,7 +94,7 @@
 </script>
 
 <header
-	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
+	class="flex items-center justify-between px-6 lg:px-16 h-[5.5rem] sm:h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
 	{navBarFixed
 		? 'fixed bg-zinc-950/50 backdrop-blur-3xl shadow-md shadow-zinc-950/5'
 		: 'absolute bg-transparent'} 
@@ -103,7 +103,7 @@
 	id="header"
 >
 	<a href="/" class="hover:brightness-110 transition-all">
-		<img src={logo} alt="logo" class="h-11 sm:h-14" />
+		<img src={logo} alt="logo" class="h-9 sm:h-14" />
 	</a>
 
 	<nav class="flex items-center gap-4 lg:gap-10">

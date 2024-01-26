@@ -64,7 +64,7 @@
 									name="email"
 									required
 									placeholder="Please use your school email"
-									class="border text-sm md:text-[0.9rem] rounded-lg block pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-zinc-400 focus:border-zinc-400 outline-none w-full"
+									class="border text-sm md:text-[0.9rem] rounded-lg block pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none w-full"
 								/>
 							</div>
 
