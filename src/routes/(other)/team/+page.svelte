@@ -5,12 +5,10 @@
 	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpg";
 	import katherineMa from "$lib/assets/images/team/katherine_ma.jpg";
 	import shayaFarahmand from "$lib/assets/images/team/shaya_farahmand.jpg";
-	import rayWu from "$lib/assets/images/team/ray_wu.jpg";
 	import karenLiu from "$lib/assets/images/team/karen_liu.jpg";
 	import darwinLi from "$lib/assets/images/team/darwin_li.jpg";
 	import annieDeng from "$lib/assets/images/team/annie_deng.jpg";
 	import yaraBhaloo from "$lib/assets/images/team/yara_bhaloo.jpg";
-	import emersonMcQueen from "$lib/assets/images/team/emerson_mcqueen.jpg";
 	import jaiSandhu from "$lib/assets/images/team/jai_sandhu.jpg";
 	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
 	import alexaStewart from "$lib/assets/images/team/alexa_stewart.jpg";
@@ -51,7 +49,7 @@
 		{
 			name: "Ray Wu",
 			position: "Executive Chair",
-			image: rayWu
+			image: wacWLarge
 		},
 		{
 			name: "Shaya Farahmand",
@@ -119,7 +117,7 @@
 		{
 			name: "Emerson McQueen",
 			position: "Director of Volunteering",
-			image: emersonMcQueen
+			image: wacWLarge
 		},
 		{
 			name: "Jai Sandhu",
