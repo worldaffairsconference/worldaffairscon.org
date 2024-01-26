@@ -435,7 +435,10 @@
 				}
 			});
 
-			return () => ctx.revert();
+			return () => {
+				ctx.revert();
+				renderer.dispose();
+			};
 		}, gsapScope);
 	});
 
