@@ -88,7 +88,7 @@
 							label: "Online"
 						}
 					],
-					value: form?.inPerson ?? user.inPerson ?? ""
+					value: (form?.inPerson ?? user.inPerson ?? "").toString()
 				}
 			]
 		},
@@ -111,7 +111,11 @@
 							label: "I will bring my own lunch"
 						}
 					],
-					value: form?.needsLunch ?? user.needsLunch ?? ""
+					value: (
+						form?.needsLunch ??
+						user.needsLunch ??
+						""
+					).toString()
 				},
 				{
 					label: "Dietary Restrictions and Allergies",
@@ -190,9 +194,6 @@
 							class="grid sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-2"
 							on:input={() => {
 								dataChanged = true;
-								console.log(
-									settings[settings.length - 1]?.value
-								);
 							}}
 						>
 							{#each settings as setting}
