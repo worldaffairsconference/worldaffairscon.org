@@ -27,6 +27,7 @@ export const actions = {
 		const userId = (await getSession())?.user?.id;
 		if (!userId) throw redirect(303, "/");
 		const formData = Object.fromEntries(await request.formData());
+		console.log(formData);
 		const parsedFormData = personalInformationSchema.safeParse(formData);
 		if (!parsedFormData.success) return fail(400);
 		const { firstName, lastName, gradeLevel, inPerson } =
