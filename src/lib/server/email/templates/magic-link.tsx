@@ -13,7 +13,7 @@ import tailwindConfig from "../../../../../tailwind.config.js";
 
 export function MagicLinkEmail({ url }: { url: string }) {
 	return (
-    {/* @ts-expect-error There seems to be a typing bug in @react-email/components */}
+        /* @ts-expect-error There seems to be a typing bug in @react-email/components */
 		<Tailwind config={tailwindConfig}>
 			<Html>
 				<Head />

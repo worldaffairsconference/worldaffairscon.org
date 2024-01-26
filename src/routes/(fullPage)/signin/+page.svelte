@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { DOMAttributes } from "svelte/elements";
 	import { signIn } from "@auth/sveltekit/client";
-	import FaSpinner from "svelte-icons/fa/FaSpinner.svelte";
 	import { fade } from "svelte/transition";
 
 	import toast from "svelte-french-toast";
@@ -79,7 +78,7 @@
 								class="inline-flex justify-center items-center gap-x-2 absolute -translate-x-1/2 -translate-y-1/2"
 							>
 								<div class="animate-spin w-5">
-									<FaSpinner />
+									<i class="fa-solid fa-spinner"></i>
 								</div>
 								Processing...
 							</div>

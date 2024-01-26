@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
-	import FaTimesCircle from "svelte-icons/fa/FaTimesCircle.svelte";
-	import FaCheckCircle from "svelte-icons/fa/FaCheckCircle.svelte";
 
 	export let isCompleted: boolean | null = null;
 	export let header: string;
@@ -57,11 +55,11 @@
 			<div>
 				{#if isCompleted === true}
 					<div class="w-[1.5rem] h-[1.5rem] text-green-400">
-						<FaCheckCircle />
+						<i class="fa-solid fa-circle-check"></i>
 					</div>
 				{:else}
 					<div class="w-[1.5rem] h-[1.5rem] text-red-400">
-						<FaTimesCircle />
+						<i class="fa-solid fa-circle-xmark"></i>
 					</div>
 				{/if}
 			</div>

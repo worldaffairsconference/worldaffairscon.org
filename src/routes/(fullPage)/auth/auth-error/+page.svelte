@@ -1,7 +1,6 @@
 <script lang="ts">
 	import StarField from "$lib/components/StarField.svelte";
 	import AccordionItem from "$lib/components/AccordionItem.svelte";
-	import FaRegTimesCircle from "svelte-icons/fa/FaRegTimesCircle.svelte";
 	import flowchart1 from "$lib/assets/images/registration/flowcharts/1.png";
 	import flowchart2 from "$lib/assets/images/registration/flowcharts/2.png";
 	import flowchart3 from "$lib/assets/images/registration/flowcharts/3.png";
@@ -20,7 +19,7 @@
 			<div
 				class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-red-500 mx-auto mb-3"
 			>
-				<FaRegTimesCircle />
+				<i class="fa-regular fa-circle-xmark"></i>
 			</div>
 			<h2
 				class="mb-4 text-2xl font-bold text-white sm:text-3xl md:text-4xl"
