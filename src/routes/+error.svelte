@@ -23,16 +23,6 @@
 				<p class="mb-4 text-zinc-400 text-sm md:text-base">
 					The page you are looking for does not exist
 				</p>
-			{:else if $page.status === 401}
-				<p
-					class="mb-2 text-xl font-bold md:text-3xl lg:text-4xl text-white"
-				>
-					{$page.error?.message}…
-				</p>
-				<p class="mb-4 text-zinc-400 text-sm md:text-base">
-					This is probably because your school does not allow
-					self-registration
-				</p>
 			{:else}
 				<p
 					class="mb-2 text-xl font-bold md:text-3xl lg:text-4xl text-white"
