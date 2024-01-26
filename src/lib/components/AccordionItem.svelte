@@ -3,10 +3,9 @@
 
 	export let isCompleted: boolean | null = null;
 	export let header: string;
+	export let open = false;
 
 	let contentElement: HTMLDivElement | undefined;
-
-	let open = false;
 
 	$: contentHeight = open ? contentElement?.scrollHeight : 0;
 </script>
