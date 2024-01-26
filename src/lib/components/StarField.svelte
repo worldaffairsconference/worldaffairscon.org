@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, onMount } from "svelte";
+	import { onMount } from "svelte";
 
 	import { Scene } from "three/src/scenes/Scene";
 	import { PerspectiveCamera } from "three/src/cameras/PerspectiveCamera";
