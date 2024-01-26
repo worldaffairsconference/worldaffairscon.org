@@ -82,14 +82,18 @@
 		barTl.timeScale(2.25).reversed(!barTl.reversed());
 	};
 
-	$: routes = (
-		isLoggedIn ? [{ name: "Dashboard", path: "/dashboard" }] : []
-	).concat([
+	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
 		{ name: "Team", path: "/team" },
 		// { name: "Past Speakers", path: "/past-speakers" },
-		{ name: "FAQ", path: "/faq" }
-	]) satisfies Route[];
+		{ name: "FAQ", path: "/faq" },
+		...(isLoggedIn
+			? [
+					{ name: "Dashboard", path: "/dashboard" },
+					{ name: "Sign Out", action: () => signOut() }
+			  ]
+			: [{ name: "Sign In", path: "/signin" }])
+	] satisfies Route[];
 </script>
 
 <header
@@ -120,7 +124,10 @@
                         {$page.url.pathname === route.path &&
 							'underline decoration-primary decoration-[1.5px] underline-offset-8'}
                         "
-						on:click={closeNav}
+						on:click={() => {
+							closeNav();
+							route.action?.();
+						}}
 					>
 						{route.name}
 					</a>
@@ -130,18 +137,11 @@
 
 		{#if !isLoggedIn}
 			<a
-				class="bg-gradient-to-r px-7 from-primary to-secondary rounded-full lg:px-11 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
+				class="bg-gradient-to-r px-7 py-3 from-primary to-secondary rounded-full lg:px-12 lg:py-[0.825rem] text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
 				href="/signin"
 			>
-				Sign In
+				Register
 			</a>
-		{:else}
-			<button
-				class="bg-gradient-to-r px-7 from-primary to-secondary rounded-full lg:px-11 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
-				on:click={() => signOut()}
-			>
-				Sign Out
-			</button>
 		{/if}
 
 		<button

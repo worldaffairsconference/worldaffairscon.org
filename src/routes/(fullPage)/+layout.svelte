@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 
 	import logo from "$lib/assets/images/logos/wac_medium.webp";
+	import StarField from "$lib/components/StarField.svelte";
 
 	let headerElement: HTMLElement | undefined;
 	let lastScrollTop: number;
@@ -35,3 +36,5 @@
 </header>
 
 <slot />
+
+<StarField />
