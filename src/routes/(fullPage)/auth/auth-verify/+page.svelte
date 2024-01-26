@@ -2,6 +2,10 @@
 	import FaCheckCircle from "svelte-icons/fa/FaCheckCircle.svelte";
 </script>
 
+<svelte:head>
+	<title>Check Your Email - World Affairs Conference</title>
+</svelte:head>
+
 <section class="absolute inset-0 flex justify-center items-center">
 	<div
 		class="py-16 px-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
