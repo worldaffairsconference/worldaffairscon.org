@@ -16,6 +16,7 @@ export function MagicLinkEmail({ url }: { url: string }) {
 		<Html>
 			<Head />
 			<Preview>Your magic sign in link for WAC!</Preview>
+            {/* @ts-expect-error There seems to be a typing bug in @react-email/components */}
 			<Tailwind config={tailwindConfig}>
 				<Body className="bg-zinc-900 p-8 text-center">
 					<Img
