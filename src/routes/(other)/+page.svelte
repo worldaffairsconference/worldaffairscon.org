@@ -33,10 +33,6 @@
 	import { type Swiper, Mousewheel } from "swiper";
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
-	// Icons
-	import TiArrowLeft from "svelte-icons/ti/TiArrowLeft.svelte";
-	import TiArrowRight from "svelte-icons/ti/TiArrowRight.svelte";
-
 	// Images
 	import ckHoffler from "$lib/assets/images/speakers/ck_hoffler.webp";
 	import davidOwen from "$lib/assets/images/speakers/david_owen.webp";
@@ -740,14 +736,14 @@
 						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
-						<TiArrowLeft />
+						<i class="fa-solid fa-arrow-left"></i>
 					</button>
 					<button
 						on:click={nextSlide}
 						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
-						<TiArrowRight />
+						<i class="fa-solid fa-arrow-right"></i>
 					</button>
 				</div>
 			</div>

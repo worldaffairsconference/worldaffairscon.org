@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { HTMLSelectAttributes } from "svelte/elements";
 
-	import FaAngleDown from "svelte-icons/fa/FaAngleDown.svelte";
-
 	interface $$Props extends Omit<HTMLSelectAttributes, "class"> {
 		label: string;
 	}
@@ -27,7 +25,7 @@
 			<slot />
 		</select>
 		<div class="h-5 w-5">
-			<FaAngleDown />
+			<i class="fa-solid fa-angle-down"></i>
 		</div>
 	</div>
 </label>

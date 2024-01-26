@@ -1,11 +1,4 @@
 <script lang="ts">
-	import type { SvelteComponent } from "svelte";
-
-	// Icons
-	import FaEnvelope from "svelte-icons/fa/FaEnvelope.svelte";
-	import FaInstagram from "svelte-icons/fa/FaInstagram.svelte";
-	import FaLinkedin from "svelte-icons/fa/FaLinkedin.svelte";
-
 	import branksomeLogo from "$lib/assets/images/logos/branksome.webp";
 	import uccLogo from "$lib/assets/images/logos/ucc.webp";
 	import xataLogo from "$lib/assets/images/logos/xata.webp";
@@ -13,7 +6,7 @@
 
 	interface Social {
 		name: string;
-		icon: typeof SvelteComponent;
+		icon: string;
 		link: string;
 	}
 
@@ -25,17 +18,17 @@
 	const socials: Social[] = [
 		{
 			name: "Email",
-			icon: FaEnvelope,
+			icon: "fa fa-envelope",
 			link: "mailto:support@worldaffairscon.org"
 		},
 		{
 			name: "Instagram",
-			icon: FaInstagram,
+			icon: "fa-brands fa-instagram",
 			link: "https://instagram.com/WorldAffairsCon"
 		},
 		{
 			name: "LinkedIn",
-			icon: FaLinkedin,
+			icon: "fa-brands fa-linkedin",
 			link: "https://ca.linkedin.com/company/world-affairs-conference"
 		}
 	];
@@ -126,7 +119,8 @@
 							rel="noopener noreferrer"
 							aria-label="{social.name} page"
 						>
-							<svelte:component this={social.icon} />
+							<!-- <svelte:component this={social.icon} /> -->
+							<i class={social.icon}></i>
 						</a>
 					{/each}
 				</div>
