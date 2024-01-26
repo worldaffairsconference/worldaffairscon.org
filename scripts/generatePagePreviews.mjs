@@ -27,12 +27,10 @@ const pagesToRender = createManifestData({
 	config: await load_config({ cwd: path.join(__dirname, "..") })
 })
 	.routes.filter((r) =>
-		r.leaf.universal ? shouldPreviewPage(r.leaf.universal) : false
+		r.leaf?.universal ? shouldPreviewPage(r.leaf.universal) : false
 	)
-	.map((r) => ({
-		name: `page-preview${r.id.replaceAll("/", "-")}`,
-		url: r.id
-	}));
+	.map((r) => r.id.replace(/\(.*?\)\/?/g, ""))
+	.map((r) => ({ name: `page-preview${r.replaceAll("/", "-")}`, url: r }));
 
 const browser = await puppeteer.launch({
 	headless: "new",
@@ -42,7 +40,8 @@ const browser = await puppeteer.launch({
 for (const { name, url } of pagesToRender) {
 	const page = await browser.newPage();
 	await page.goto(`http://localhost:5173${url}`);
-	await page.waitForNavigation({ waitUntil: "networkidle0" });
+	await page.addStyleTag({ content: "* { overflow: hidden; }" });
+	await page.waitForNetworkIdle();
 	await page.screenshot({
 		path: path.join(
 			__dirname,
