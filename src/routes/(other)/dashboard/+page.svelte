@@ -217,7 +217,7 @@
 							{#if dataChanged}
 								<button
 									type="submit"
-									class="w-min py-2 px-10 bg-primary text-white rounded-md border border-transparent bg-gradient-to-r from-primary to-secondary"
+									class="w-min py-2 px-10 text-white rounded-md bg-gradient-to-r from-primary to-secondary"
 								>
 									Save
 								</button>

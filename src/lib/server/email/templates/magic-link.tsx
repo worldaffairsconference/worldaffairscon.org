@@ -13,30 +13,39 @@ import tailwindConfig from "../../../../../tailwind.config.js";
 
 export function MagicLinkEmail({ url }: { url: string }) {
 	return (
-		<Html>
-			<Head />
-			<Preview>Your magic sign in link for WAC!</Preview>
-			<Tailwind config={tailwindConfig}>
-				<Body className="bg-zinc-900 p-8 text-center">
+		<Tailwind config={tailwindConfig}>
+			<Html>
+				<Head />
+
+				<Preview>Your magic sign in link for WAC!</Preview>
+
+				<Body className="bg-zinc-900 py-14 px-10 text-center">
 					<Img
-						src="https://deploy-preview-179--worldaffairscon.netlify.app/emails/logo.png"
+						src="https://i.imgur.com/mPTzcmz.png"
 						alt="WAC Logo"
 						className="mx-auto"
-						height={50}
+						height={60}
 					/>
-					<Text className="text-white text-balance">
+					<Text className="text-3xl font-bold text-white">
+						Complete your sign in to WAC!
+					</Text>
+					<Text className="text-zinc-400">
 						Here is the sign in link you requested. Open it in a web
 						browser to access your World Affairs Conference account.
 					</Text>
 					<Button
 						href={url}
-						className="bg-primary rounded-lg px-6 py-2.5 text-white mx-auto"
+						style={{
+							backgroundImage:
+								"linear-gradient(to right, #4ea59c, #52a7dc)"
+						}}
+						className="rounded-full px-9 py-3 mx-auto text-white"
 					>
 						Sign In
 					</Button>
 				</Body>
-			</Tailwind>
-		</Html>
+			</Html>
+		</Tailwind>
 	);
 }
 
