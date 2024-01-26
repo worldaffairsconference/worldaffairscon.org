@@ -555,7 +555,7 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[8.25rem] md:pt-44 text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+		class="pt-[8.25rem] md:pt-[11.25rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
 			? 'opacity-100'
 			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
 	>
@@ -728,14 +728,14 @@
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
-						class="text-[3rem] sm:text-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="text-[1.15rem] sm:text-[1.45rem] w-16 h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
 						<i class="fa-solid fa-arrow-left"></i>
 					</button>
 					<button
 						on:click={nextSlide}
-						class="text-[3rem] sm:text-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="text-[1.15rem] sm:text-[1.45rem] w-16 h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
 						<i class="fa-solid fa-arrow-right"></i>
