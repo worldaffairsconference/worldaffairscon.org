@@ -105,6 +105,7 @@
 
 		return () => {
 			renderer.dispose();
+			window.removeEventListener("resize", handleWindowResize, false);
 		};
 	});
 </script>
