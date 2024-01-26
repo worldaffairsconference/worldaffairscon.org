@@ -143,18 +143,15 @@
 			<img
 				src={avatar.toDataUriSync()}
 				alt="Avatar"
-				class="rounded-lg h-10 md:h-36 lg:h-40"
+				class="rounded-lg h-36 hidden md:block"
 			/>
-			<div class="flex flex-col items-start justify-center">
-				<h3 class="text-white text-xl sm:text-2xl md:text-3xl mb-3">
-					Hey {user.firstName ?? user.email}
+			<div class="flex flex-col justify-center">
+				<h3 class="text-white text-2xl md:text-3xl mb-2 md:mb-3">
+					Hey {user.firstName ?? user.email}!
 				</h3>
 				<p class="text-sm md:text-base text-left text-zinc-400">
-					Excited for the official list of plenaries? We are working
-					on it! We will email you once we are ready for your
-					selection, so stay tuned! In the near future, we will also
-					need some information about financial information if you are
-					coming outside of a school context.
+					We're excited to have you at WAC! Please fill out the
+					following information to complete your registration.
 				</p>
 			</div>
 		</div>
@@ -163,7 +160,7 @@
 			<h3
 				class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-8 text-center"
 			>
-				What we need from you
+				Your Info
 			</h3>
 			<div class="flex gap-10 flex-col">
 				{#each Object.entries(categorizedSettings) as [category, settings]}

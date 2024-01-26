@@ -23,12 +23,12 @@
 <StarField>
 	<section class="absolute inset-0 flex justify-center items-center">
 		<div
-			class="border rounded-xl shadow-sm bg-zinc-800 border-zinc-700 max-w-md w-full"
+			class="border rounded-xl shadow-sm bg-zinc-800 border-zinc-700 max-w-md w-full mx-4"
 		>
 			<div class="p-4 sm:p-7">
 				<div class="text-center">
-					<h1 class="block text-2xl font-bold text-white">
-						Login / Register
+					<h1 class="block text-2xl md:text-3xl font-bold text-white">
+						Sign In
 					</h1>
 				</div>
 
@@ -38,7 +38,7 @@
 							<div>
 								<label
 									for="email"
-									class="block text-sm mb-2 text-white"
+									class="block mb-2 text-white text-sm md:text-base"
 								>
 									Email address
 								</label>
@@ -67,20 +67,15 @@
 										name="email"
 										required
 										placeholder="Please use your school email"
-										class="border text-sm md:text-[0.9rem] rounded-lg block pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none w-full"
+										class="text-[0.8rem] md:text-[0.95rem] border rounded-lg block pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none w-full"
 									/>
 								</div>
-
-								<p class="hidden text-xs text-red-600 mt-2">
-									Please include a valid email address so we
-									can get back to you
-								</p>
 							</div>
 
 							<button
 								type="submit"
 								disabled={!!signInTokenPromise}
-								class="w-full h-10 text-sm rounded-lg border border-transparent bg-gradient-to-r from-primary to-secondary text-white hover:brightness-[1.08] transition-all relative"
+								class="text-[0.8rem] md:text-[0.95rem] w-full h-10 py-5 rounded-lg border border-transparent bg-gradient-to-r from-primary to-secondary text-white hover:brightness-[1.08] transition-all relative"
 							>
 								{#if signInTokenPromise}
 									<div

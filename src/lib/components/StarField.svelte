@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { onDestroy, onMount } from "svelte";
 
 	import { Scene } from "three/src/scenes/Scene";
 	import { PerspectiveCamera } from "three/src/cameras/PerspectiveCamera";
@@ -105,6 +105,7 @@
 
 		return () => {
 			renderer.dispose();
+			window.removeEventListener("resize", handleWindowResize, false);
 		};
 	});
 </script>

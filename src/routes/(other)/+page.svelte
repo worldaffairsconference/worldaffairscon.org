@@ -438,6 +438,8 @@
 			return () => {
 				ctx.revert();
 				renderer.dispose();
+
+				window.removeEventListener("resize", handleWindowResize, false);
 			};
 		}, gsapScope);
 	});

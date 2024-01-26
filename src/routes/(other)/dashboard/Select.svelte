@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { HTMLSelectAttributes } from "svelte/elements";
 
+	import FaAngleDown from "svelte-icons/fa/FaAngleDown.svelte";
+
 	interface $$Props extends Omit<HTMLSelectAttributes, "class"> {
 		label: string;
 	}
@@ -16,7 +18,7 @@
 		{label}
 	</span>
 	<div
-		class="mt-1.5 bg-zinc-700 rounded-md px-3 py-2.5 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed appearance-none"
+		class="flex justify-between items-center mt-1.5 bg-zinc-700 rounded-md px-3 py-2.5 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed appearance-none"
 	>
 		<select
 			class="w-full bg-transparent border-none outline-none"
@@ -24,5 +26,16 @@
 		>
 			<slot />
 		</select>
+		<div class="h-5 w-5">
+			<FaAngleDown />
+		</div>
 	</div>
 </label>
+
+<style>
+	select {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+	}
+</style>
