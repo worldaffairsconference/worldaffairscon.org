@@ -12,17 +12,19 @@
 </svelte:head>
 
 <StarField>
-	<section class="absolute inset-0 flex justify-center items-center">
+	<section
+		class="absolute inset-0 flex justify-center items-center overflow-scroll"
+	>
 		<div
-			class="py-16 px-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
+			class="p-3 sm:p-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
 		>
 			<div
-				class="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] text-red-500 mx-auto mb-3"
+				class="text-[2.5rem] sm:text-[3rem] md:text-[3.25rem] text-red-500 mx-auto mb-2"
 			>
 				<i class="fa-regular fa-circle-xmark"></i>
 			</div>
 			<h2
-				class="mb-4 text-2xl font-bold text-white sm:text-3xl md:text-4xl"
+				class="mb-4 text-2xl font-bold text-white sm:text-3xl md:text-[2rem]"
 			>
 				Your school does not seem to be registered with us
 			</h2>
@@ -40,18 +42,18 @@
 					<a
 						href="mailto:registration@worldaffairscon.org"
 						class="text-blue-400 underline"
-						>registration@worldaffairscon.org</a
 					>
+						registration@worldaffairscon.org
+					</a>
 				</p>
-				<hr class="border-dashed border-zinc-400" />
+				<hr class="border-zinc-400 my-3" />
+
 				<AccordionItem header="Want more information on the process?">
-					<p class="text-sm sm:text-base text-zinc-400 pb-2">
+					<p class="text-sm sm:text-base text-zinc-400 mb-2">
 						We have <a
 							href="https://imgs.xkcd.com/comics/flow_charts.png"
-						>
-							flowcharts
-						</a>
-						for you!
+							>flowcharts</a
+						> for you!
 					</p>
 					<div class="grid grid-cols-2">
 						<img src={flowchart1} alt="Flowchart 1" />

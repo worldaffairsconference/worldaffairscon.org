@@ -47,7 +47,7 @@
 					/>
 				</svg>
 			</div>
-			<span>
+			<span class="text-left">
 				{header}
 			</span>
 		</div>
