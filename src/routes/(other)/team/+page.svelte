@@ -26,6 +26,7 @@
 	import ericaKim from "$lib/assets/images/team/erica_kim.jpg";
 	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
+	import eugenioCiarlandini from "$lib/assets/images/team/eugenio-ciarlandini.jpg";
 
 	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
@@ -96,9 +97,9 @@
 			image: wacWLarge
 		},
 		{
-			name: "Gigi Ciarlandini",
+			name: "Eugenio Ciarlandini",
 			position: "Director of Keynotes",
-			image: wacWLarge
+			image: eugenioCiarlandini
 		},
 		{
 			name: "Caleb Chong",

@@ -8,12 +8,20 @@
 	export let label: $$Props["label"];
 </script>
 
-<label>
-	<span class="text-white font-medium">{label}</span>
-	<div
-		class="bg-zinc-700 rounded-md focus:border-primary focus:ring-0 pl-2 pr-1 py-1 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed appearance-none"
+<label class="sm:text-base text-sm">
+	<span
+		class="text-white font-medium {$$restProps['required'] &&
+			"after:content-['*'] after:pl-2 after:text-[110%] after:text-red-500"}"
 	>
-		<select class="w-full bg-transparent border-none" {...$$restProps}>
+		{label}
+	</span>
+	<div
+		class="mt-1.5 bg-zinc-700 rounded-md px-3 py-2.5 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed appearance-none"
+	>
+		<select
+			class="w-full bg-transparent border-none outline-none"
+			{...$$restProps}
+		>
 			<slot />
 		</select>
 	</div>

@@ -5,6 +5,7 @@
 	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
 	import logo from "$lib/assets/images/logos/wac_medium.webp";
+	import { signOut } from "@auth/sveltekit/client";
 
 	interface Route {
 		name: string;
@@ -89,7 +90,7 @@
 </script>
 
 <header
-	class="flex items-center justify-between px-6 lg:px-16 h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
+	class="flex items-center justify-between px-6 lg:px-16 h-[5.5rem] sm:h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
 	{navBarFixed
 		? 'fixed bg-zinc-950/50 backdrop-blur-3xl shadow-md shadow-zinc-950/5'
 		: 'absolute bg-transparent'} 
@@ -98,7 +99,7 @@
 	id="header"
 >
 	<a href="/" class="hover:brightness-110 transition-all">
-		<img src={logo} alt="logo" class="h-11 sm:h-14" />
+		<img src={logo} alt="logo" class="h-9 sm:h-14" />
 	</a>
 
 	<nav class="flex items-center gap-4 lg:gap-20">
@@ -124,12 +125,21 @@
 			{/each}
 		</ul>
 
-		<a
-			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
-			href="/login"
-		>
-			Login
-		</a>
+		{#if $page.data.session?.user}
+			<button
+				class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
+				on:click={() => signOut()}
+			>
+				Logout
+			</button>
+		{:else}
+			<a
+				class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
+				href="/login"
+			>
+				Login
+			</a>
+		{/if}
 
 		<button
 			class="block lg:hidden z-50"
