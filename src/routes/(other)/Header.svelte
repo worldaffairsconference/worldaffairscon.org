@@ -5,11 +5,13 @@
 	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
 	import logo from "$lib/assets/images/logos/wac_medium.webp";
+	import { signOut } from "@auth/sveltekit/client";
 
-	interface Route {
+	$: isLoggedIn = !!$page.data.session?.user;
+
+	type Route = {
 		name: string;
-		path: string;
-	}
+	} & ({ path: string } | { action: () => void });
 
 	const barTl = browser
 		? gsap.timeline({ reversed: true })
@@ -80,12 +82,15 @@
 		barTl.timeScale(2.25).reversed(!barTl.reversed());
 	};
 
-	const routes: Route[] = [
+	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
 		{ name: "Team", path: "/team" },
 		// { name: "Past Speakers", path: "/past-speakers" },
-		{ name: "FAQ", path: "/faq" }
-	];
+		{ name: "FAQ", path: "/faq" },
+		isLoggedIn
+			? { name: "Logout", action: () => signOut() }
+			: { name: "Login", path: "/login" }
+	] satisfies Route[];
 </script>
 
 <header
@@ -101,7 +106,7 @@
 		<img src={logo} alt="logo" class="h-11 sm:h-14" />
 	</a>
 
-	<nav class="flex items-center gap-4 lg:gap-20">
+	<nav class="flex items-center gap-4 lg:gap-10">
 		<ul
 			class="fixed inset-0 z-50 bg-zinc-950/90 w-full h-full opacity-0 hidden flex-col justify-center items-center text-3xl gap-12 text-zinc-300 lg:flex lg:opacity-100 lg:gap-16 lg:static lg:bg-transparent lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:justify-end lg:text-base"
 			id="navbar"
@@ -112,7 +117,8 @@
 				>
 					<a
 						href={route.path}
-						class="text-zinc-300 hover:text-white transition-colors duration-100 hover:shadow-glow
+						on:click={route.action}
+						class="text-zinc-300 hover:text-white transition-colors duration-100 hover:shadow-glow cursor-pointer
                         {$page.url.pathname === route.path &&
 							'underline decoration-primary decoration-[1.5px] underline-offset-8'}
                         "
@@ -124,12 +130,14 @@
 			{/each}
 		</ul>
 
-		<a
-			class="bg-gradient-to-r from-primary to-secondary rounded-full px-10 lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
-			href="/login"
-		>
-			Login
-		</a>
+		{#if !isLoggedIn}
+			<a
+				class="bg-gradient-to-r px-5 from-primary to-secondary rounded-full lg:px-12 py-3 text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
+				href="/login"
+			>
+				Register
+			</a>
+		{/if}
 
 		<button
 			class="block lg:hidden z-50"

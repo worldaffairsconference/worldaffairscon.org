@@ -16,7 +16,9 @@
 </script>
 
 <section class="pt-[6rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
-	<div class="max-w-screen-xl mx-auto px-6 lg:px-16">
+	<div
+		class="max-w-screen-xl mx-auto px-6 lg:px-16 flex flex-col items-center"
+	>
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
 			<h3 class="mb-2 block md:text-lg font-semibold text-primary">
 				Dashboard

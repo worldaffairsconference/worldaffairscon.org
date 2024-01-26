@@ -1,14 +1,19 @@
 <script lang="ts">
 	import type { DOMAttributes } from "svelte/elements";
 	import { signIn } from "@auth/sveltekit/client";
+	import FaSpinner from "svelte-icons/fa/FaSpinner.svelte";
+	import StarField from "$lib/components/StarField.svelte";
+	import { fade } from "svelte/transition";
 
 	import toast from "svelte-french-toast";
+
+	let signInTokenPromise: Promise<Response | undefined> | undefined;
 
 	const onSubmitSignInForm: DOMAttributes<HTMLFormElement>["on:submit"] = (
 		event
 	) => {
 		toast.loading("Verifying email…");
-		signIn("email", {
+		signInTokenPromise = signIn("magic-link", {
 			...Object.fromEntries(new FormData(event.currentTarget)),
 			callbackUrl: "/dashboard"
 		});
@@ -19,7 +24,9 @@
 	<div class="border rounded-xl shadow-sm bg-zinc-800 border-zinc-700">
 		<div class="p-4 sm:p-7">
 			<div class="text-center">
-				<h1 class="block text-2xl font-bold text-white">Login</h1>
+				<h1 class="block text-2xl font-bold text-white">
+					Login / Register
+				</h1>
 			</div>
 
 			<div class="mt-5">
@@ -69,9 +76,27 @@
 
 						<button
 							type="submit"
-							class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg border border-transparent bg-gradient-to-r from-primary to-secondary text-white hover:brightness-[1.08] transition-all"
+							disabled={!!signInTokenPromise}
+							class="w-full h-10 text-sm rounded-lg border border-transparent bg-gradient-to-r from-primary to-secondary text-white hover:brightness-[1.08] transition-all relative"
 						>
-							Continue
+							{#if signInTokenPromise}
+								<div
+									transition:fade
+									class="inline-flex justify-center items-center gap-x-2 absolute -translate-x-1/2 -translate-y-1/2"
+								>
+									<div class="animate-spin w-5">
+										<FaSpinner />
+									</div>
+									Processing...
+								</div>
+							{:else}
+								<div
+									transition:fade
+									class="inline-flex justify-center items-center absolute -translate-x-1/2 -translate-y-1/2"
+								>
+									Continue
+								</div>
+							{/if}
 						</button>
 					</div>
 				</form>
@@ -79,3 +104,5 @@
 		</div>
 	</div>
 </section>
+
+<StarField />
