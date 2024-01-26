@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores";
+<<<<<<< HEAD
 
 	import FullPageStars from "$lib/components/FullPageStars.svelte";
 </script>
@@ -8,6 +9,13 @@
 <section
 	class="absolute inset-0 z-10 bg-zinc-900 h-screen w-screen overflow-hidden"
 >
+=======
+	import StarField from "$lib/components/StarField.svelte";
+</script>
+
+<!-- TODO: refine this page and add other error handling -->
+<section class="h-screen w-screen overflow-hidden">
+>>>>>>> main
 	<div class="relative flex flex-col h-full w-full">
 		
 		<div class="absolute inset-0 -z-50">
@@ -60,4 +68,10 @@
 			</a>
 		</div>
 	</div>
+<<<<<<< HEAD
 </FullPageStars>
+=======
+</section>
+
+<StarField />
+>>>>>>> main
