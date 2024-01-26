@@ -102,6 +102,10 @@
 
 		window.addEventListener("resize", handleWindowResize, false);
 		createScene();
+
+		return () => {
+			renderer.dispose();
+		};
 	});
 </script>
 
