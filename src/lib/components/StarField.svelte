@@ -102,8 +102,14 @@
 
 		window.addEventListener("resize", handleWindowResize, false);
 		createScene();
+
+		return () => {
+			renderer.dispose();
+		};
 	});
 </script>
+
+StarField
 
 <div
 	class="absolute inset-0 z-10 bg-zinc-900 h-screen w-screen overflow-hidden"

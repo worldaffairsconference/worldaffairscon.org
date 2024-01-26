@@ -435,7 +435,10 @@
 				}
 			});
 
-			return () => ctx.revert();
+			return () => {
+				ctx.revert();
+				renderer.dispose();
+			};
 		}, gsapScope);
 	});
 
@@ -901,6 +904,5 @@
 				</button>
 			</form>
 		</div>
-	</section>
-	 -->
+	</section> -->
 </div>
