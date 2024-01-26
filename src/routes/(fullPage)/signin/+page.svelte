@@ -14,7 +14,7 @@
 	) => {
 		toast.loading("Verifying email…");
 		signInTokenPromise = signIn("magic-link", {
-			...Object.fromEntries(new FormData(event.currentTarget)),
+			email: new FormData(event.currentTarget).get("email"),
 			callbackUrl: "/dashboard"
 		});
 	};
