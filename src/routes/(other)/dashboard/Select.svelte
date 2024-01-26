@@ -24,7 +24,7 @@
 		>
 			<slot />
 		</select>
-		<div class="h-5 w-5">
+		<div class="text-[1.25rem]">
 			<i class="fa-solid fa-angle-down"></i>
 		</div>
 	</div>

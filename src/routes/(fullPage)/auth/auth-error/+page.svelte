@@ -17,7 +17,7 @@
 			class="py-16 px-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
 		>
 			<div
-				class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-red-500 mx-auto mb-3"
+				class="text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] text-red-500 mx-auto mb-3"
 			>
 				<i class="fa-regular fa-circle-xmark"></i>
 			</div>
