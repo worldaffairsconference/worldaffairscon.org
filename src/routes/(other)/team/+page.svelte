@@ -251,11 +251,7 @@
 </script>
 
 <svelte:head>
-	<title>World Affairs Conference | Team</title>
-	<meta
-		name="description"
-		content="North America's largest and Canada's oldest annual student-run current events conference."
-	/>
+	<title>Team - World Affairs Conference</title>
 </svelte:head>
 
 <section class="pt-[6rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">

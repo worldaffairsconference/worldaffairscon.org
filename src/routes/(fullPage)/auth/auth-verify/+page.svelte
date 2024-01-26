@@ -1,5 +1,5 @@
 <svelte:head>
-	<title>Email Verification</title>
+	<title>Check Your Email - World Affairs Conference</title>
 </svelte:head>
 
 <section class="absolute inset-0 flex justify-center items-center">

@@ -35,6 +35,6 @@
 	</a>
 </header>
 
-<slot />
-
-<StarField />
+<StarField>
+	<slot />
+</StarField>

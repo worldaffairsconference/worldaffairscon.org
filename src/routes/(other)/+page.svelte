@@ -553,10 +553,6 @@
 <svelte:head>
 	<title>World Affairs Conference</title>
 	<meta
-		name="description"
-		content="North America's largest and Canada's oldest annual student-run current events conference."
-	/>
-	<meta
 		property="og:image"
 		content="{PUBLIC_DEPLOY_PRIME_URL}/page-previews/page-preview-.png"
 	/>

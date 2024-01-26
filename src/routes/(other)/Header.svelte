@@ -91,7 +91,7 @@
 			? [
 					{ name: "Dashboard", path: "/dashboard" },
 					{ name: "Sign Out", action: () => signOut() }
-			  ]
+				]
 			: [{ name: "Sign In", path: "/signin" }])
 	] satisfies Route[];
 </script>

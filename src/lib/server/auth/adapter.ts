@@ -21,7 +21,7 @@ import { xata as client } from "../xata";
 import type { Attendees } from "../xata.generated";
 
 declare module "@auth/core/types" {
-    interface User extends Attendees { }
+	interface User extends Attendees {}
 }
 
 export function XataAdapter(): Adapter {
