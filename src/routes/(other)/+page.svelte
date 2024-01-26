@@ -728,14 +728,14 @@
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
-						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="text-[3rem] sm:text-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
 						<i class="fa-solid fa-arrow-left"></i>
 					</button>
 					<button
 						on:click={nextSlide}
-						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="text-[3rem] sm:text-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
 						<i class="fa-solid fa-arrow-right"></i>
