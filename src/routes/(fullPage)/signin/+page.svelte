@@ -81,7 +81,7 @@
 								transition:fade
 								class="inline-flex justify-center items-center gap-x-2 absolute -translate-x-1/2 -translate-y-1/2"
 							>
-								<div class="animate-spin w-5">
+								<div class="animate-spin">
 									<i class="fa-solid fa-spinner"></i>
 								</div>
 								Processing...

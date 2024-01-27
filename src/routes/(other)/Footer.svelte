@@ -114,7 +114,7 @@
 					{#each socials as social}
 						<a
 							href={social.link}
-							class="h-[1.4rem] w-[1.4rem] sm:h-6 sm:w-6"
+							class="text-[1.4rem] sm:text-[1.5rem]"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="{social.name} page"

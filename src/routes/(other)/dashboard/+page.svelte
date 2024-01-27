@@ -140,9 +140,13 @@
 		}
 		return true;
 	};
+
+	$: allCompleted = categorizedSettings.every(({ settings }) =>
+		checkIfCompleted(settings)
+	);
 </script>
 
-<section class="pt-[6rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+<section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="max-w-screen-lg mx-auto px-6 lg:px-16">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
 			<h3 class="mb-2 block md:text-lg font-semibold text-primary">
@@ -163,15 +167,41 @@
 			<img
 				src={avatar.toDataUriSync()}
 				alt="Avatar"
-				class="rounded-lg h-36 hidden md:block"
+				class="rounded-lg h-40 hidden md:block"
 			/>
 			<div class="flex flex-col justify-center">
-				<h3 class="text-white text-2xl md:text-3xl mb-2 md:mb-3">
+				<h3
+					class="text-white text-2xl md:text-3xl mb-2 md:mb-3 font-semibold"
+				>
 					Hey {user.firstName ?? user.email}!
 				</h3>
 				<p class="text-sm md:text-base text-left text-zinc-400">
-					We're excited to have you at WAC! Please fill out the
-					following information to complete your registration.
+					{#if allCompleted}
+						<div class="mb-3">
+							You're all set! The plenary selection will open
+							soon. You will receive an email when we are ready to
+							announce our amazing line up.
+						</div>
+						<div>
+							In the meantime, please contact
+							<a
+								href="mailto:registration@worldaffairscon.org"
+								class="text-blue-400 underline"
+							>
+								registration@worldaffairscon.org
+							</a> for payment if you are an independent non-public
+							school student.
+						</div>
+					{:else}
+						<div class="mb-3">
+							We're excited to have you at WAC!
+						</div>
+						<div>
+							Please fill out the information below to complete
+							your registration.
+						</div>
+						<!-- Once you have completed your registration, you will be able to select your plenaries. -->
+					{/if}
 				</p>
 			</div>
 		</div>
