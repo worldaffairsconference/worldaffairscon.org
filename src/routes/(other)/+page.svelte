@@ -77,7 +77,7 @@
 	// }
 
 	// Constants
-	const TOTAL_STARS = 600; // How many stars there are
+	const TOTAL_STARS = 500; // How many stars there are
 
 	interface Speaker {
 		name: string;
@@ -154,6 +154,7 @@
 	let canvasElement: HTMLCanvasElement;
 	let gsapScope: Element;
 	let pageMounted = false;
+	let mountSpeakers = false;
 
 	if (browser) {
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -400,7 +401,10 @@
 				opacity: 0,
 				y: 10,
 				duration: 1,
-				ease: "sine.out"
+				ease: "sine.out",
+				onStart: () => {
+					mountSpeakers = true;
+				}
 			});
 
 			speakerTimeline.to("#speakers", {
@@ -674,73 +678,76 @@
 					Past Speakers
 				</h2>
 
-				<div class="grow overflow-hidden relative mb-6">
-					<div
-						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
-					>
-						<SwiperContainer
-							modules={[Mousewheel]}
-							spaceBetween={18}
-							slidesPerView={3}
-							freeMode={true}
-							mousewheel={{
-								releaseOnEdges: true,
-								forceToAxis: true,
-								thresholdDelta: 10
-							}}
-							class="w-full h-full"
-							loop={true}
-							navigation
-							on:init={(swiper) => {
-								swiperInstance = swiper.detail[0];
-							}}
-							breakpoints={{
-								"@0.7": {
-									slidesPerView: 4
-								},
-								"@0.9": {
-									slidesPerView: 5
-								},
-								"@1.00": {
-									slidesPerView: 6
-								}
-							}}
+				{#if mountSpeakers}
+					<div class="grow overflow-hidden relative mb-6">
+						<div
+							class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
 						>
-							{#each speakers as speaker}
-								<SwiperSlide
-									class="rounded-md relative overflow-hidden select-none"
-								>
-									<img
-										src={speaker.image}
-										alt="{speaker.name}'s Headshot"
-										class="w-full h-full object-cover transition-all"
-										loading="lazy"
-									/>
+							<SwiperContainer
+								modules={[Mousewheel]}
+								spaceBetween={18}
+								slidesPerView={3}
+								freeMode={true}
+								mousewheel={{
+									releaseOnEdges: true,
+									forceToAxis: true,
+									thresholdDelta: 10
+								}}
+								class="w-full h-full"
+								loop={true}
+								navigation
+								on:init={(swiper) => {
+									swiperInstance = swiper.detail[0];
+								}}
+								breakpoints={{
+									"@0.7": {
+										slidesPerView: 4
+									},
+									"@0.9": {
+										slidesPerView: 5
+									},
+									"@1.00": {
+										slidesPerView: 6
+									}
+								}}
+							>
+								{#each speakers as speaker}
+									<SwiperSlide
+										class="rounded-md relative overflow-hidden select-none"
+									>
+										<img
+											src={speaker.image}
+											alt="{speaker.name}'s Headshot"
+											class="w-full h-full object-cover transition-all"
+										/>
 
-									<div
-										class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-20 px-3 sm:px-5 flex"
-									>
-										<div class="my-auto">
-											<h3
-												class="font-semibold text-white text-lg mdtext-xl tracking-tight mb-[0.075rem]"
-											>
-												{speaker.name}
-											</h3>
-											<p class="text-zinc-200 text-xs">
-												{speaker.title}
-											</p>
+										<div
+											class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-20 px-3 sm:px-5 flex"
+										>
+											<div class="my-auto">
+												<h3
+													class="font-semibold text-white text-lg mdtext-xl tracking-tight mb-[0.075rem]"
+												>
+													{speaker.name}
+												</h3>
+												<p
+													class="text-zinc-200 text-xs"
+												>
+													{speaker.title}
+												</p>
+											</div>
 										</div>
-									</div>
-									<div
-										class="absolute top-3 left-3 p-2 bg-zinc-900/50 rounded-md text-xs text-white"
-									>
-										{speaker.tag || "Plenary Speaker"}
-									</div>
-								</SwiperSlide>
-							{/each}
-						</SwiperContainer>
+										<div
+											class="absolute top-3 left-3 p-2 bg-zinc-900/50 rounded-md text-xs text-white"
+										>
+											{speaker.tag || "Plenary Speaker"}
+										</div>
+									</SwiperSlide>
+								{/each}
+							</SwiperContainer>
+						</div>
 					</div>
-				</div>
+				{/if}
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
@@ -783,14 +790,16 @@
 				class="transition-opacity duration-500 {!showVideoPreview &&
 					'opacity-0'} absolute inset-0 z-30 group"
 				on:click={onClickVideo}
+				aria-label="Play WAC 2023 Trailer"
 				id="video"
 			>
-				<img
-					src={trailerThumbnail}
-					alt="Trailer video thumbnail"
-					class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
-					loading="lazy"
-				/>
+				{#if mountSpeakers}
+					<img
+						src={trailerThumbnail}
+						alt="Trailer video thumbnail"
+						class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
+					/>
+				{/if}
 				<div
 					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[90px] w-[90px] lg:h-[109px] lg:w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
 				>

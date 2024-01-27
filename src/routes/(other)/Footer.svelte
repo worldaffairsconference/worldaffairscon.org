@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { lazyLoad } from "$lib/lazyLoad";
+
 	import branksomeLogo from "$lib/assets/images/logos/branksome.webp";
 	import uccLogo from "$lib/assets/images/logos/ucc.webp";
 	import xataLogo from "$lib/assets/images/logos/xata.webp";
@@ -29,7 +31,7 @@
 		{
 			name: "LinkedIn",
 			icon: "fa-brands fa-linkedin",
-			link: "https://ca.linkedin.com/company/world-affairs-conference"
+			link: "https://ca.linkedin.com/company/world-affairs-conferenjce"
 		}
 	];
 
@@ -67,11 +69,11 @@
 						Organizers
 					</div>
 					<div
-						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 w-fit"
+						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 items-start"
 					>
 						{#each organizers as organizer}
 							<img
-								src={organizer.logo}
+								use:lazyLoad={organizer.logo}
 								alt="{organizer.name} Logo"
 								class="h-[2rem] lg:h-[2.25rem]"
 							/>
@@ -89,11 +91,11 @@
 						Supporters
 					</div>
 					<div
-						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 w-fit"
+						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 items-start"
 					>
 						{#each supporters as supporter}
 							<img
-								src={supporter.logo}
+								use:lazyLoad={supporter.logo}
 								alt="{supporter.name} Logo"
 								class="h-[2rem] lg:h-[2.25rem]"
 							/>
