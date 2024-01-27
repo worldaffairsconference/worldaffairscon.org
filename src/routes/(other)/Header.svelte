@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { fly } from "svelte/transition";
+	import type { User } from "@auth/core/types";
 
 	import { page } from "$app/stores";
 	import logo from "$lib/assets/images/logos/wac_medium.webp";
@@ -9,7 +10,7 @@
 	import { createAvatar } from "@dicebear/core";
 	import { shapes } from "@dicebear/collection";
 
-	$: isLoggedIn = !!$page.data.session?.user;
+	const user = $page.data.session?.user as User | undefined;
 
 	type Route = {
 		name: string;
@@ -167,7 +168,7 @@
 			<i class="fa-solid fa-xmark"></i>
 		</button>
 
-		{#if isLoggedIn}
+		{#if !!user}
 			{@const avatar = createAvatar(shapes, {
 				seed: $page.data.session?.user?.email ?? ""
 			})}
@@ -183,10 +184,10 @@
 							class="w-10 h-10 sm:w-11 sm:h-11 rounded-full"
 						/>
 						<span class="text-white hidden sm:block">
-							{#if $page.data.session?.user?.firstName}
-								{$page.data.session?.user?.firstName}
+							{#if user.firstName}
+								{user.firstName}
 							{:else}
-								{$page.data.session?.user?.email}
+								{user.email}
 							{/if}
 						</span>
 					</div>
