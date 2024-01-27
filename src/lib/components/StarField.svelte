@@ -11,7 +11,7 @@
 
 	let canvasElement: HTMLCanvasElement;
 
-	export let speed: number = 5.0;
+	export let speed = 5.0;
 
 	// Constants
 	const TOTAL_STARS = 1500; // How many stars there are
