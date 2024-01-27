@@ -28,7 +28,7 @@
 	>
 		<div class="text-center">
 			<h1 class="block text-2xl md:text-3xl font-bold text-white">
-				Sign In
+				Register / Sign In
 			</h1>
 		</div>
 
@@ -66,7 +66,7 @@
 								name="email"
 								required
 								placeholder="Please use your school email"
-								class="text-[0.8rem] md:text-[0.95rem] border rounded-lg block pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none w-full focus:ring-secondary focus:ring-1 focus:border-secondary"
+								class="text-[0.8rem] md:text-[0.95rem] border rounded-lg block pl-10 pr-2.5 py-2.5 md:py-[0.655rem] md:pr-[0.655rem] bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none w-full"
 							/>
 						</div>
 					</div>

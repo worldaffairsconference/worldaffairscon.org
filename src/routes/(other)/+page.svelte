@@ -555,7 +555,7 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[8.25rem] md:pt-[11.25rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+		class="pt-[7rem] md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
 			? 'opacity-100'
 			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
 	>
@@ -596,6 +596,15 @@
 				</Tooltip>
 			</div>
 		</div>
+
+		<a
+			class="text-sm lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.75rem] text-white hover:brightness-[1.08] transition-all"
+			href="/signin"
+		>
+			<span>Register</span>
+			<span>|</span>
+			<span>Login</span>
+		</a>
 	</section>
 
 	<section
@@ -882,7 +891,7 @@
 					<input
 						type="email"
 						name="email"
-						class="border text-sm rounded-lg block w-full sm:w-64 md:w-96 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-secondary focus:ring-1 focus:border-secondary outline-none"
+						class="border text-sm rounded-lg block w-full sm:w-64 md:w-96 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none"
 						placeholder="name@school.com"
 					/>
 				</div>

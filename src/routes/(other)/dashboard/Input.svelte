@@ -16,7 +16,7 @@
 		{label}
 	</span>
 	<input
-		class="mt-1.5 block w-full rounded-md bg-zinc-700 border-transparent px-3 py-2.5 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed outline-none focus:ring-secondary focus:ring-2 focus:border-secondary"
+		class="mt-1.5 block w-full rounded-md bg-zinc-700 border-transparent px-3 py-2.5 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed outline-none"
 		{...$$restProps}
 	/>
 </label>

@@ -67,13 +67,13 @@
 						Organizers
 					</div>
 					<div
-						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4"
+						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 w-fit"
 					>
 						{#each organizers as organizer}
 							<img
 								src={organizer.logo}
 								alt="{organizer.name} Logo"
-								class="h-[2rem] lg:h-[2.25rem] w-fit"
+								class="h-[2rem] lg:h-[2.25rem]"
 							/>
 						{/each}
 					</div>
@@ -89,13 +89,13 @@
 						Supporters
 					</div>
 					<div
-						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4"
+						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 w-fit"
 					>
 						{#each supporters as supporter}
 							<img
 								src={supporter.logo}
 								alt="{supporter.name} Logo"
-								class="h-[2rem] lg:h-[2.25rem] w-fit"
+								class="h-[2rem] lg:h-[2.25rem]"
 							/>
 						{/each}
 					</div>
