@@ -275,6 +275,12 @@
 						</form>
 					</AccordionItem>
 				{/each}
+				<AccordionItem header="Plenary Selection" open>
+					<p class="text-zinc-400">
+						The final plenary list has not yet been announced. We
+						will email you once it is available.
+					</p>
+				</AccordionItem>
 			</div>
 		</div>
 	</div>
