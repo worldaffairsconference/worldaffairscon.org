@@ -1,0 +1,18 @@
+{
+  "id": "mig_cmqj4k47vdj5k5o4r0c0",
+  "parentID": "mig_cmqj4hk7vdj5k5o4r0b0",
+  "checksum": "1:22018e5543a8b667f80ac371625a5053180dbc2272765782a5764e565deba859",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "paid",
+          "type": "bool",
+          "notNull": true,
+          "defaultValue": "false"
+        },
+        "table": "attendees"
+      }
+    }
+  ]
+}
