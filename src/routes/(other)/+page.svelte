@@ -882,7 +882,7 @@
 					<input
 						type="email"
 						name="email"
-						class="border text-sm rounded-lg block w-full sm:w-64 md:w-96 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-secondary focus:ring-1 focus:border-secondary outline-none"
+						class="border text-sm rounded-lg block w-full sm:w-64 md:w-96 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none"
 						placeholder="name@school.com"
 					/>
 				</div>
