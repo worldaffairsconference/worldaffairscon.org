@@ -3,6 +3,7 @@
 	import "swiper/css/mousewheel";
 
 	import { onMount } from "svelte";
+	import { page } from "$app/stores";
 
 	import { Texture } from "three/src/textures/Texture";
 	import { SRGBColorSpace } from "three/src/constants";
@@ -24,6 +25,7 @@
 
 	import { DateTime } from "luxon";
 	import { browser } from "$app/environment";
+	import type { User } from "@auth/core/types";
 
 	import { gsap } from "gsap?client";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
@@ -49,6 +51,8 @@
 
 	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
+
+	const user = $page.data.session?.user as User | undefined;
 
 	// let formMessages = {
 	// 	added: "You have been added to the mailing list!",
@@ -555,9 +559,11 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[7rem] md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+		class="md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
 			? 'opacity-100'
-			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
+			: 'opacity-0 translate-y-7'} {user
+			? 'pt-[8rem]'
+			: 'pt-[7rem]'} transition-all duration-[1400ms] ease-out-expo"
 	>
 		<h2
 			class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
@@ -597,14 +603,16 @@
 			</div>
 		</div>
 
-		<a
-			class="text-sm lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.75rem] text-white hover:brightness-[1.08] transition-all"
-			href="/signin"
-		>
-			<span>Register</span>
-			<span>|</span>
-			<span>Login</span>
-		</a>
+		{#if !user}
+			<a
+				class="text-sm lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.75rem] text-white hover:brightness-[1.08] transition-all"
+				href="/signin"
+			>
+				<span>Register</span>
+				<span>|</span>
+				<span>Login</span>
+			</a>
+		{/if}
 	</section>
 
 	<section

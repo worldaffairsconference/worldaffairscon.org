@@ -60,7 +60,7 @@
 	<div class="w-full mx-auto max-w-screen-xl pb-1 p-8 sm:p-10 flex flex-col">
 		<div class="sm:flex sm:items-center sm:justify-between gap-3 mb-4">
 			<div class="flex gap-6">
-				<div class="w-[calc(50%-0.0625rem)]">
+				<div class="grow">
 					<div
 						class="text-zinc-400 mb-3 text-[0.7rem] lg:text-[0.8rem] uppercase"
 					>
@@ -82,7 +82,7 @@
 				<!-- Vertical divider -->
 				<div class="w-0.5 bg-zinc-600 my-6 md:my-3"></div>
 
-				<div class="w-[calc(50%-0.0625rem)]">
+				<div class="grow">
 					<div
 						class="text-zinc-400 mb-3 text-[0.7rem] lg:text-[0.8rem] uppercase"
 					>
