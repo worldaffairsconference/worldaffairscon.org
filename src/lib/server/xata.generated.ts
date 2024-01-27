@@ -16,9 +16,9 @@ const tables = [
 			{ name: "gradeLevel", type: "string" },
 			{ name: "inPerson", type: "bool" },
 			{ name: "needsLunch", type: "bool" },
-			{ name: "paid", type: "bool" },
 			{ name: "dietaryRestrictions", type: "text" },
-			{ name: "email", type: "email", unique: true }
+			{ name: "email", type: "email", unique: true },
+			{ name: "paid", type: "bool", notNull: true, defaultValue: "false" }
 		],
 		revLinks: [
 			{ column: "user", table: "auth_accounts" },

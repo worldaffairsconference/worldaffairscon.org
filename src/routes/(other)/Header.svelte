@@ -4,7 +4,7 @@
 	import type { User } from "@auth/core/types";
 
 	import { page } from "$app/stores";
-	import logo from "$lib/assets/images/logos/wac_medium.webp";
+	import wacLogo from "$lib/assets/images/logos/wac_medium.webp";
 	import { signOut } from "@auth/sveltekit/client";
 
 	import { createAvatar } from "@dicebear/core";
@@ -90,7 +90,11 @@
 		class="hover:brightness-110 transition-all z-50"
 		on:click={closeNavBar}
 	>
-		<img src={logo} alt="logo" class="h-9 sm:h-14" />
+		<img
+			src={wacLogo}
+			alt="World Affairs Conference Logo"
+			class="h-9 sm:h-14"
+		/>
 	</a>
 
 	<nav class="flex items-center gap-4 lg:gap-10">

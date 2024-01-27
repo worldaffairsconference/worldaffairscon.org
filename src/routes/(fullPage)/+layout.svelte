@@ -35,6 +35,6 @@
 	</a>
 </header>
 
-<StarField>
+<StarField speed={2.0}>
 	<slot />
 </StarField>

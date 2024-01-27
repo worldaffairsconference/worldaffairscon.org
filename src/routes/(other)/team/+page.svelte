@@ -1,5 +1,5 @@
 <script lang="ts">
-	// TODO: resize all of these images, different size for senior and other roles
+	import { lazyLoad } from "$lib/lazyLoad";
 
 	// Team Members
 	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpg";
@@ -280,7 +280,7 @@
 						>
 							<img
 								class="absolute object-cover w-full h-full"
-								src={member.image}
+								use:lazyLoad={member.image}
 								alt="{member.name} Headshot"
 							/>
 						</div>
@@ -314,7 +314,7 @@
 						>
 							<img
 								class="absolute object-cover w-full h-full"
-								src={member.image}
+								use:lazyLoad={member.image}
 								alt="{member.name} Headshot"
 							/>
 						</div>
@@ -346,7 +346,7 @@
 					<div class="flex">
 						<img
 							class="object-cover w-20 h-20 mr-4 rounded-full shadow"
-							src={member.image}
+							use:lazyLoad={member.image}
 							alt="Person"
 						/>
 						<div class="flex flex-col justify-center">
