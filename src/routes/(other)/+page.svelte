@@ -574,7 +574,6 @@
 		<div class="w-5/6 mx-auto">
 			<h1
 				class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-5 lg:mb-6 tracking-[-0.03em]"
-				id="text"
 			>
 				World Affairs Conference
 			</h1>

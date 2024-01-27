@@ -11,6 +11,8 @@
 
 	let canvasElement: HTMLCanvasElement;
 
+	export let speed: number = 5.0;
+
 	// Constants
 	const TOTAL_STARS = 1500; // How many stars there are
 
@@ -52,8 +54,7 @@
 
 		let renderer: WebGLRenderer;
 
-		const rotationAmount = 0.003;
-		let currentSpeed = 5.0;
+		const rotationAmount = speed * 0.0006;
 
 		// Render loop
 		const animate = () => {
@@ -65,7 +66,7 @@
 			if (!position) return;
 
 			for (let i = 0; i < TOTAL_STARS; i++) {
-				let y = position.getY(i) - currentSpeed;
+				let y = position.getY(i) - speed;
 
 				if (y < 0) y = Math.random() * 10000 - 300;
 
