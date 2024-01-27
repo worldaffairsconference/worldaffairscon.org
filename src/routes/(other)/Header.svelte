@@ -1,11 +1,13 @@
 <script lang="ts">
-	import gsap from "gsap?client";
 	import { onMount } from "svelte";
+	import { fly } from "svelte/transition";
 
-	import { browser } from "$app/environment";
 	import { page } from "$app/stores";
 	import logo from "$lib/assets/images/logos/wac_medium.webp";
 	import { signOut } from "@auth/sveltekit/client";
+
+	import { createAvatar } from "@dicebear/core";
+	import { shapes } from "@dicebear/collection";
 
 	$: isLoggedIn = !!$page.data.session?.user;
 
@@ -13,14 +15,14 @@
 		name: string;
 	} & ({ path: string } | { action: () => void });
 
-	const barTl = browser
-		? gsap.timeline({ reversed: true })
-		: (undefined as unknown as gsap.core.Timeline);
-
 	let headerElement: HTMLElement | undefined;
 	let lastScrollTop: number;
+
 	let navBarFixed = false;
 	let navBarShowing = true;
+
+	let showDropdown = false;
+	let navBarOpen = false;
 
 	onMount(async () => {
 		window.addEventListener("scroll", () => {
@@ -34,67 +36,44 @@
 			lastScrollTop = scrollTop;
 		});
 
-		barTl
-			.to(
-				"#navbar",
-				{
-					duration: 0.4,
-					ease: "expo.out",
-					opacity: 1,
-					display: "flex"
-				},
-				0
-			)
-			.set(
-				"#open",
-				{
-					display: "none",
-					duration: 0
-				},
-				0
-			)
-			.to(
-				"#close",
-				{
-					display: "block",
-					duration: 0
-				},
-				0
-			)
-			.to(
-				"#navbar > li",
-				{
-					duration: 0.4,
-					ease: "expo.easeOut",
-					opacity: 1,
-					y: 0,
-					stagger: 0.12
-				},
-				0.4
-			);
+		return () => {
+			window.removeEventListener("scroll", () => {});
+		};
 	});
 
-	const openNav = () => {
-		barTl.reversed(!barTl.reversed()).timeScale(1);
+	const toggleDropdown = () => {
+		showDropdown = !showDropdown;
 	};
 
-	const closeNav = () => {
-		barTl.timeScale(2.25).reversed(!barTl.reversed());
+	const closeDropdown = () => {
+		showDropdown = false;
+	};
+
+	const openNavBar = () => {
+		navBarOpen = true;
+
+		setTimeout(() => {
+			document.body.style.overflow = "hidden";
+		}, 200);
+	};
+
+	const closeNavBar = () => {
+		navBarOpen = false;
+
+		setTimeout(() => {
+			document.body.style.overflow = "auto";
+		}, 200);
 	};
 
 	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
 		{ name: "Team", path: "/team" },
 		// { name: "Past Speakers", path: "/past-speakers" },
-		{ name: "FAQ", path: "/faq" },
-		...(isLoggedIn
-			? [
-					{ name: "Dashboard", path: "/dashboard" },
-					{ name: "Sign Out", action: () => signOut() }
-				]
-			: [{ name: "Sign In", path: "/signin" }])
+		{ name: "FAQ", path: "/faq" }
 	] satisfies Route[];
 </script>
+
+<svelte:window on:click={closeDropdown} />
 
 <header
 	class="flex items-center justify-between px-6 lg:px-16 h-[5.5rem] sm:h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
@@ -105,29 +84,25 @@
 	bind:this={headerElement}
 	id="header"
 >
-	<a href="/" class="hover:brightness-110 transition-all">
+	<a
+		href="/"
+		class="hover:brightness-110 transition-all z-50"
+		on:click={closeNavBar}
+	>
 		<img src={logo} alt="logo" class="h-9 sm:h-14" />
 	</a>
 
 	<nav class="flex items-center gap-4 lg:gap-10">
-		<ul
-			class="fixed inset-0 z-50 bg-zinc-950/90 w-full h-full opacity-0 hidden flex-col justify-center items-center text-3xl gap-12 text-zinc-300 lg:flex lg:opacity-100 lg:gap-16 lg:static lg:bg-transparent lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:justify-end lg:text-base"
-			id="navbar"
-		>
+		<ul class="text-zinc-300 hidden lg:flex gap-16 items-center">
 			{#each routes as route}
-				<li
-					class="transform translate-y-[75px] opacity-0 lg:translate-y-0 lg:opacity-100"
-				>
+				<li class="transform translate-y-0 opacity-100">
 					<a
 						href={route.path}
-						class="text-zinc-300 hover:text-white transition-colors duration-100 hover:shadow-glow cursor-pointer
+						class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
                         {$page.url.pathname === route.path &&
 							'underline decoration-primary decoration-[1.5px] underline-offset-8'}
                         "
-						on:click={() => {
-							closeNav();
-							route.action?.();
-						}}
+						on:click={closeNavBar}
 					>
 						{route.name}
 					</a>
@@ -135,59 +110,134 @@
 			{/each}
 		</ul>
 
-		{#if !isLoggedIn}
-			<a
-				class="bg-gradient-to-r px-7 py-3 from-primary to-secondary rounded-full lg:px-12 lg:py-[0.825rem] text-white text-xs lg:text-base hover:brightness-[1.08] transition-all"
-				href="/signin"
+		{#if navBarOpen}
+			<div
+				class="absolute inset-0 h-screen w-screen z-30 bg-zinc-900/90 backdrop-blur-3xl flex flex-col p-8"
+				transition:fly={{ x: "-100%", duration: 600 }}
 			>
-				Register
-			</a>
+				<ul class="flex flex-col gap-10 h-full mt-20 text-xl">
+					{#each routes as route}
+						<li>
+							<a
+								href={route.path}
+								class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
+                        {$page.url.pathname === route.path &&
+									'underline decoration-primary decoration-[1.5px] underline-offset-8'}
+                        "
+								on:click={closeNavBar}
+							>
+								{route.name}
+							</a>
+						</li>
+					{/each}
+				</ul>
+				<div>
+					<hr class="border-zinc-700 mb-8" />
+
+					<a
+						class="block text-base text-center lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.825rem] text-white hover:brightness-[1.08] transition-all"
+						href="/signin"
+						on:click={closeNavBar}
+					>
+						<span>Register</span>
+						<span>|</span>
+						<span>Login</span>
+					</a>
+				</div>
+			</div>
 		{/if}
 
 		<button
-			class="block lg:hidden z-50"
+			class="z-50 text-[1.7rem] text-zinc-300 {!navBarOpen
+				? 'block lg:hidden'
+				: 'hidden'}"
 			aria-label="Open navigation"
-			id="open"
-			on:click={openNav}
+			on:click={openNavBar}
 		>
-			<svg
-				height="32px"
-				style="enable-background:new 0 0 32 32;"
-				version="1.1"
-				viewBox="0 0 32 32"
-				width="32px"
-				xml:space="preserve"
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				class="h-7 w-7 fill-zinc-300"
-			>
-				<path
-					d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
-				/>
-			</svg>
+			<i class="fa-solid fa-bars-staggered"></i>
 		</button>
 
 		<button
-			class="hidden z-50 w-7 h-7"
+			class="z-50 text-[1.9rem] px-0.5 text-zinc-300 {navBarOpen
+				? 'block lg:hidden'
+				: 'hidden'}"
 			aria-label="Close navigation"
-			id="close"
-			on:click={closeNav}
+			on:click={closeNavBar}
 		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				xmlns:xlink="http://www.w3.org/1999/xlink"
-				width="32px"
-				height="32px"
-				viewBox="0 0 32 32"
-				version="1.1"
-				class="h-5 w-5 fill-zinc-300"
-			>
-				<g id="surface1">
-					<path
-						d="M 19.796875 16 L 31.683594 4.117188 C 32.105469 3.695312 32.105469 3.011719 31.683594 2.589844 L 29.410156 0.316406 C 29.210938 0.113281 28.933594 0 28.648438 0 C 28.363281 0 28.085938 0.113281 27.886719 0.316406 L 16 12.203125 L 4.113281 0.316406 C 3.914062 0.113281 3.636719 0 3.351562 0 C 3.066406 0 2.789062 0.113281 2.589844 0.316406 L 0.316406 2.589844 C -0.105469 3.011719 -0.105469 3.695312 0.316406 4.117188 L 12.203125 16 L 0.316406 27.882812 C -0.105469 28.304688 -0.105469 28.988281 0.316406 29.410156 L 2.589844 31.683594 C 2.792969 31.886719 3.066406 32 3.351562 32 C 3.640625 32 3.914062 31.886719 4.117188 31.683594 L 16 19.800781 L 27.882812 31.683594 C 28.085938 31.886719 28.359375 32 28.648438 32 C 28.933594 32 29.207031 31.886719 29.410156 31.683594 L 31.683594 29.410156 C 32.105469 28.988281 32.105469 28.304688 31.683594 27.882812 Z M 19.796875 16 "
-					/>
-				</g>
-			</svg>
+			<i class="fa-solid fa-xmark"></i>
 		</button>
+
+		{#if isLoggedIn}
+			{@const avatar = createAvatar(shapes, {
+				seed: $page.data.session?.user?.email ?? ""
+			})}
+			<div class="relative lg:ml-5 mr-2 lg:mr-0 z-50">
+				<button
+					class="flex items-center gap-3 sm:gap-4"
+					on:click|stopPropagation={toggleDropdown}
+				>
+					<div class="flex items-center gap-3">
+						<img
+							src={avatar.toDataUriSync()}
+							alt="Avatar"
+							class="w-10 h-10 sm:w-11 sm:h-11 rounded-full"
+						/>
+						<span class="text-white hidden sm:block">
+							{#if $page.data.session?.user?.firstName}
+								{$page.data.session?.user?.firstName}
+							{:else}
+								{$page.data.session?.user?.email}
+							{/if}
+						</span>
+					</div>
+					<div
+						class="relative text-zinc-300 text-[1rem] sm:text-[1.15rem] mt-0.5"
+					>
+						<div
+							class="duration-200 transition-opacity {showDropdown &&
+								'opacity-0'}"
+						>
+							<i class="fa-solid fa-angle-down"></i>
+						</div>
+						<div
+							class="absolute inset-0 duration-200 transition-opacity {!showDropdown &&
+								'opacity-0'}"
+						>
+							<i class="fa-solid fa-angle-up"></i>
+						</div>
+					</div>
+				</button>
+
+				{#if showDropdown}
+					<div
+						class="block absolute right-0 mt-3.5 p-4 w-56 z-10 border rounded-lg shadow-sm bg-zinc-800 border-zinc-700 text-zinc-400"
+						transition:fly={{ y: 8, duration: 200 }}
+					>
+						<a
+							href="/dashboard"
+							class="block px-4 py-3 hover:bg-zinc-700 hover:text-white rounded-lg transition-colors"
+							on:click|stopPropagation={toggleDropdown}
+						>
+							Dashboard
+						</a>
+						<button
+							class="w-full text-left px-4 py-3 hover:bg-zinc-700 hover:text-white rounded-lg transition-colors"
+							on:click|stopPropagation={() => signOut()}
+						>
+							Sign Out
+						</button>
+					</div>
+				{/if}
+			</div>
+		{:else}
+			<a
+				class="hidden lg:flex gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.825rem] text-white hover:brightness-[1.08] transition-all"
+				href="/signin"
+			>
+				<span>Register</span>
+				<span>|</span>
+				<span>Login</span>
+			</a>
+		{/if}
 	</nav>
 </header>

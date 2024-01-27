@@ -28,7 +28,7 @@
 	>
 		<div class="text-center">
 			<h1 class="block text-2xl md:text-3xl font-bold text-white">
-				Sign In
+				Register / Sign In
 			</h1>
 		</div>
 
