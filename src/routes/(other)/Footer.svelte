@@ -31,7 +31,7 @@
 		{
 			name: "LinkedIn",
 			icon: "fa-brands fa-linkedin",
-			link: "https://ca.linkedin.com/company/world-affairs-conferenjce"
+			link: "https://ca.linkedin.com/company/world-affairs-conference"
 		}
 	];
 
