@@ -1,0 +1,17 @@
+{
+  "id": "mig_cmr8aq64j9mkeigp8am0",
+  "parentID": "mig_cmr88ck7vdj5k5o4r7sg",
+  "checksum": "1:afac99c4b8103926b2a03a8d3dc1a956750d3d2587b634719677596339585c98",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name2",
+          "type": "string",
+          "unique": true
+        },
+        "table": "partner_schools"
+      }
+    }
+  ]
+}

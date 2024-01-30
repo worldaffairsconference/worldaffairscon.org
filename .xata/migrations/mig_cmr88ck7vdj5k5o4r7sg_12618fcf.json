@@ -1,0 +1,19 @@
+{
+  "id": "mig_cmr88ck7vdj5k5o4r7sg",
+  "parentID": "mig_cmqo1664j9mkeigp87ng",
+  "checksum": "1:12618fcf5dabe2ce506c323f2549b0ea3d6ca802aec00c425cfea4b5397d1e19",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "school",
+          "type": "link",
+          "link": {
+            "table": "partner_schools"
+          }
+        },
+        "table": "attendees"
+      }
+    }
+  ]
+}

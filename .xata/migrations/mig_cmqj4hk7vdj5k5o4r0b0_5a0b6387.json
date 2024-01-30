@@ -1,0 +1,13 @@
+{
+  "id": "mig_cmqj4hk7vdj5k5o4r0b0",
+  "parentID": "mig_cmnen08e8e7e5cc6lq9g",
+  "checksum": "1:5a0b63875a92db341a9c7c3a97d0998d7a91169008795ccd5ebc4fa4c5950e1c",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "paid",
+        "table": "attendees"
+      }
+    }
+  ]
+}

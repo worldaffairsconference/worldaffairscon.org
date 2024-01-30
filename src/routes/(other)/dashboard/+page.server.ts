@@ -2,21 +2,28 @@ import { redirect, fail, error } from "@sveltejs/kit";
 import type { PageServerLoad, Actions } from "./$types";
 import { z } from "zod";
 import { xata } from "$lib/server/xata";
+import { getEmailDomain } from "$lib/utils";
+
+const getSchoolsForEmail = async (email: string) => {
+	const domain = getEmailDomain(email);
+	const records = await xata.db.partner_schools
+		.filter({ domain })
+		.select(["name"])
+		.getAll();
+	return records.map(({ id, name }) => ({ id, name }));
+};
 
 export const load: PageServerLoad = async ({ parent }) => {
 	const { session } = await parent();
-	if (!session?.user) throw redirect(303, "/");
-	return { user: session.user };
+	if (!session?.user?.email) throw redirect(303, "/");
+	return {
+		user: session.user,
+		possibleSchools: await getSchoolsForEmail(session.user.email)
+	};
 };
 
 const booleanStringSchema = z.enum(["true", "false"]);
 
-const personalInformationSchema = z.object({
-	firstName: z.string(),
-	lastName: z.string(),
-	gradeLevel: z.string(),
-	inPerson: booleanStringSchema
-});
 const lunchOptionsSchema = z.object({
 	needsLunch: booleanStringSchema,
 	dietaryRestrictions: z.string()
@@ -24,24 +31,41 @@ const lunchOptionsSchema = z.object({
 
 export const actions = {
 	savePersonalInformation: async ({ request, locals: { getSession } }) => {
-		const userId = (await getSession())?.user?.id;
-		if (!userId) throw redirect(303, "/");
+		const { id: userId, email: userEmail } =
+			(await getSession())?.user ?? {};
+		if (!userId || !userEmail) throw redirect(303, "/");
+
+		const schema = z.object({
+			firstName: z.string(),
+			lastName: z.string(),
+			school: z
+				.string()
+				.refine(async (school) =>
+					(await getSchoolsForEmail(userEmail))
+						.map(({ id }) => id)
+						.includes(school)
+				),
+			gradeLevel: z.string(),
+			inPerson: booleanStringSchema
+		});
+
 		const formData = Object.fromEntries(await request.formData());
-		const parsedFormData = personalInformationSchema.safeParse(formData);
+		const parsedFormData = await schema.safeParseAsync(formData);
 		if (!parsedFormData.success) return fail(400);
-		const { firstName, lastName, gradeLevel, inPerson } =
+		const { firstName, lastName, gradeLevel, inPerson, school } =
 			parsedFormData.data;
 		try {
 			await xata.db.attendees.update(userId, {
 				firstName,
 				lastName,
 				gradeLevel,
+				school,
 				inPerson: inPerson === "true"
 			});
 		} catch {
 			throw error(500);
 		}
-		return { firstName, lastName, gradeLevel, inPerson };
+		return { firstName, lastName, gradeLevel, inPerson, school };
 	},
 	saveLunchOptions: async ({ request, locals: { getSession } }) => {
 		const userId = (await getSession())?.user?.id;
