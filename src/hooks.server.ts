@@ -67,10 +67,15 @@ export const handle = SvelteKitAuth({
 				const domain = getEmailDomain(user.email);
 				console.log(domain);
 				if (!domain) return false;
-				const school = await xata.db.partner_schools
-					.filter({ domain })
-					.getFirst();
-				if (!school || !school.allowsSelfRegistration) return false;
+				const schools = await xata.db.partner_schools
+					.filter({ domain, allowsSelfRegistration: true })
+					.getAll();
+				if (schools.length > 0) return false;
+				else if (schools.length === 1 && schools[0]) {
+					await xata.db.attendees.update(user.id, {
+						school: schools[0].id
+					});
+				}
 			}
 
 			return true;
