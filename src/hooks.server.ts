@@ -5,6 +5,7 @@ import { XataAdapter } from "$lib/server/auth/adapter";
 import { xata } from "$lib/server/xata";
 import { MAILGUN_DOMAIN, MAILGUN_API_KEY } from "$env/static/private";
 import type { SendVerificationRequestParams } from "@auth/core/providers";
+import { getEmailDomain } from "$lib/utils";
 
 export const handle = SvelteKitAuth({
 	adapter: XataAdapter(),
@@ -63,12 +64,18 @@ export const handle = SvelteKitAuth({
 			if (!user.email) return false;
 
 			if (isNewUser) {
-				const [, domain] = user.email.split("@");
+				const domain = getEmailDomain(user.email);
+				console.log(domain);
 				if (!domain) return false;
-				const school = await xata.db.partner_schools
-					.filter({ domain })
-					.getFirst();
-				if (!school || !school.allowsSelfRegistration) return false;
+				const schools = await xata.db.partner_schools
+					.filter({ domain, allowsSelfRegistration: true })
+					.getAll();
+				if (schools.length > 0) return false;
+				else if (schools.length === 1 && schools[0]) {
+					await xata.db.attendees.update(user.id, {
+						school: schools[0].id
+					});
+				}
 			}
 
 			return true;

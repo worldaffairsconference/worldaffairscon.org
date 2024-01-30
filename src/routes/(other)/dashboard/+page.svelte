@@ -4,7 +4,7 @@
 	import Select from "./Select.svelte";
 	import { createAvatar } from "@dicebear/core";
 	import { shapes } from "@dicebear/collection";
-	// import { enhance } from "$app/forms";
+	import { v4 as uuid } from "uuid";
 
 	import type { ActionData, PageData } from "./$types";
 
@@ -16,18 +16,23 @@
 
 	let dataChanged = false;
 
-	interface Option {
+	type Option = {
 		label: string;
 		name?: string;
-		type: "text" | "select" | "email";
 		fullWidth?: boolean;
 		required?: boolean;
 		disabled?: boolean;
 		value?: string;
-		options?: { value: string; label: string }[];
-		list?: string;
-		placeholder?: string;
-	}
+	} & (
+		| { type: "text"; placeholder?: string }
+		| { type: "email"; placeholder?: string }
+		| {
+				type: "select";
+				options?: { value: string; label: string }[];
+				hasOther?: boolean;
+		  }
+		| { type: "list"; items: string[]; placeholder?: string }
+	);
 
 	interface CategorizedSettings {
 		category: string;
@@ -60,18 +65,37 @@
 					label: "Email",
 					type: "email",
 					disabled: true,
-					value: user.email || ""
+					value: user.email || "",
+					fullWidth: false
+				},
+				{
+					label: "School",
+					name: "school",
+					type: "select",
+					required: true,
+					options: data.possibleSchools.map((school) => ({
+						value: school.id,
+						label: school.name ?? ""
+					})),
+					disabled: data.possibleSchools.length < 2,
+					value: form?.school ?? user.school?.id ?? "",
+					hasOther: true,
+					fullWidth: false
 				},
 				{
 					label: "Grade Level",
 					name: "gradeLevel",
 					type: "select",
 					required: true,
-					options: ["7", "8", "9", "10", "11", "12"].map((grade) => ({
-						value: grade,
-						label: `Grade ${grade}`
-					})),
-					value: form?.gradeLevel ?? user.gradeLevel ?? ""
+					options: ["7", "8", "9", "10", "11", "12"]
+						.map((grade) => ({
+							value: grade,
+							label: `Grade ${grade}`
+						}))
+						.concat([{ value: "Teacher", label: "Teacher" }]),
+					value: form?.gradeLevel ?? user.gradeLevel ?? "",
+					fullWidth: false,
+					hasOther: true
 				},
 				{
 					label: "Attendance",
@@ -88,7 +112,8 @@
 							label: "Online"
 						}
 					],
-					value: (form?.inPerson ?? user.inPerson ?? "").toString()
+					value: (form?.inPerson ?? user.inPerson ?? "").toString(),
+					fullWidth: false
 				}
 			]
 		},
@@ -119,13 +144,22 @@
 				},
 				{
 					label: "Dietary Restrictions and Allergies",
-					list: "dietary-restrictions-suggestions",
-					type: "text",
+					type: "list",
 					placeholder: "Vegan, Vegetarian, Gluten-free, Nuts, etc.",
+					items: [
+						"Vegan",
+						"Vegetarian",
+						"Gluten-free",
+						"Nuts",
+						"Dairy",
+						"Eggs",
+						"Shellfish",
+						"Soy"
+					],
 					name: "dietaryRestrictions",
 					value:
-						form?.dietaryRestrictions ||
-						user.dietaryRestrictions ||
+						form?.dietaryRestrictions ??
+						user.dietaryRestrictions ??
 						""
 				}
 			]
@@ -258,9 +292,32 @@
 													</option>
 												{/each}
 											{/if}
+											{#if setting.hasOther}
+												<option
+													value="Other"
+													selected={setting.options?.every(
+														({ value }) =>
+															value !==
+															setting.value
+													)}
+												>
+													Other
+												</option>
+											{/if}
 										</Select>
 									{:else if setting.type === "email"}
 										<Input {...setting} />
+									{:else if setting.type === "list"}
+										{@const listId = uuid()}
+										<Input
+											placeholder={setting.placeholder}
+											{...setting}
+										/>
+										<datalist id={listId}>
+											{#each setting.items as item}
+												<option value={item} />
+											{/each}
+										</datalist>
 									{/if}
 								</div>
 							{/each}

@@ -38,3 +38,7 @@ export const markdownToHtml = (string: string) =>
 		.use(rehypeStringify)
 		.processSync(string)
 		.toString();
+
+// TODO: Refactor to use a more robust solution
+export const getEmailDomain = (email: string) =>
+	email.split("@").pop() as string;

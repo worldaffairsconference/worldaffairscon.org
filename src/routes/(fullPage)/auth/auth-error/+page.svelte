@@ -3,7 +3,6 @@
 	import flowchart1 from "$lib/assets/images/registration/flowcharts/1.png";
 	import flowchart2 from "$lib/assets/images/registration/flowcharts/2.png";
 	import flowchart3 from "$lib/assets/images/registration/flowcharts/3.png";
-	import flowchart4 from "$lib/assets/images/registration/flowcharts/4.png";
 </script>
 
 <svelte:head>
@@ -53,11 +52,10 @@
 						>flowcharts</a
 					> for you!
 				</p>
-				<div class="grid grid-cols-2">
+				<div class="grid grid-cols-3">
 					<img src={flowchart1} alt="Flowchart 1" />
 					<img src={flowchart2} alt="Flowchart 2" />
 					<img src={flowchart3} alt="Flowchart 3" />
-					<img src={flowchart4} alt="Flowchart 4" />
 				</div>
 			</AccordionItem>
 		</div>
