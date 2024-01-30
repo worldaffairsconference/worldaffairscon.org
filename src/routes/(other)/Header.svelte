@@ -136,19 +136,21 @@
 						</li>
 					{/each}
 				</ul>
-				<div>
-					<hr class="border-zinc-700 mb-8" />
+				{#if !user}
+					<div>
+						<hr class="border-zinc-700 mb-8" />
 
-					<a
-						class="block text-base text-center lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.825rem] text-white hover:brightness-[1.08] transition-all"
-						href="/signin"
-						on:click={closeNavBar}
-					>
-						<span>Register</span>
-						<span>|</span>
-						<span>Login</span>
-					</a>
-				</div>
+						<a
+							class="block text-base text-center lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.825rem] text-white hover:brightness-[1.08] transition-all"
+							href="/signin"
+							on:click={closeNavBar}
+						>
+							<span>Register</span>
+							<span>|</span>
+							<span>Login</span>
+						</a>
+					</div>
+				{/if}
 			</div>
 		{/if}
 
@@ -172,7 +174,7 @@
 			<i class="fa-solid fa-xmark"></i>
 		</button>
 
-		{#if !!user}
+		{#if user}
 			{@const avatar = createAvatar(shapes, {
 				seed: $page.data.session?.user?.email ?? ""
 			})}
@@ -215,7 +217,7 @@
 
 				{#if showDropdown}
 					<div
-						class="block absolute right-0 mt-3.5 p-4 w-56 z-10 border rounded-lg shadow-sm bg-zinc-800 border-zinc-700 text-zinc-400"
+						class="block absolute right-0 mt-3.5 p-3.5 w-56 z-10 border rounded-lg shadow-sm bg-zinc-800 border-zinc-700 text-zinc-400"
 						transition:fly={{ y: 8, duration: 200 }}
 					>
 						<a
