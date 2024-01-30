@@ -1,5 +1,5 @@
 <script lang="ts">
-	// TODO: resize all of these images, different size for senior and other roles
+	import { lazyLoad } from "$lib/lazyLoad";
 
 	// Team Members
 	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpg";
@@ -254,7 +254,7 @@
 	<title>Team - World Affairs Conference</title>
 </svelte:head>
 
-<section class="pt-[6rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+<section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="mb-10 lg:mb-20 mt-6 text-center">
 		<h3 class="mb-2 block md:text-lg font-semibold text-primary">Team</h3>
 		<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
@@ -280,7 +280,7 @@
 						>
 							<img
 								class="absolute object-cover w-full h-full"
-								src={member.image}
+								use:lazyLoad={member.image}
 								alt="{member.name} Headshot"
 							/>
 						</div>
@@ -314,7 +314,7 @@
 						>
 							<img
 								class="absolute object-cover w-full h-full"
-								src={member.image}
+								use:lazyLoad={member.image}
 								alt="{member.name} Headshot"
 							/>
 						</div>
@@ -346,7 +346,7 @@
 					<div class="flex">
 						<img
 							class="object-cover w-20 h-20 mr-4 rounded-full shadow"
-							src={member.image}
+							use:lazyLoad={member.image}
 							alt="Person"
 						/>
 						<div class="flex flex-col justify-center">

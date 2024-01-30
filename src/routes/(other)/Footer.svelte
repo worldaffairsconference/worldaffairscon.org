@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { lazyLoad } from "$lib/lazyLoad";
+
 	import branksomeLogo from "$lib/assets/images/logos/branksome.webp";
 	import uccLogo from "$lib/assets/images/logos/ucc.webp";
 	import xataLogo from "$lib/assets/images/logos/xata.webp";
@@ -29,7 +31,7 @@
 		{
 			name: "LinkedIn",
 			icon: "fa-brands fa-linkedin",
-			link: "https://ca.linkedin.com/company/world-affairs-conference"
+			link: "https://ca.linkedin.com/company/world-affairs-conferenjce"
 		}
 	];
 
@@ -60,20 +62,20 @@
 	<div class="w-full mx-auto max-w-screen-xl pb-1 p-8 sm:p-10 flex flex-col">
 		<div class="sm:flex sm:items-center sm:justify-between gap-3 mb-4">
 			<div class="flex gap-6">
-				<div class="w-[calc(50%-0.0625rem)]">
+				<div class="grow">
 					<div
 						class="text-zinc-400 mb-3 text-[0.7rem] lg:text-[0.8rem] uppercase"
 					>
 						Organizers
 					</div>
 					<div
-						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4"
+						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 items-start"
 					>
 						{#each organizers as organizer}
 							<img
-								src={organizer.logo}
+								use:lazyLoad={organizer.logo}
 								alt="{organizer.name} Logo"
-								class="h-[2rem] lg:h-[2.25rem] w-fit"
+								class="h-[2rem] lg:h-[2.25rem]"
 							/>
 						{/each}
 					</div>
@@ -82,20 +84,20 @@
 				<!-- Vertical divider -->
 				<div class="w-0.5 bg-zinc-600 my-6 md:my-3"></div>
 
-				<div class="w-[calc(50%-0.0625rem)]">
+				<div class="grow">
 					<div
 						class="text-zinc-400 mb-3 text-[0.7rem] lg:text-[0.8rem] uppercase"
 					>
 						Supporters
 					</div>
 					<div
-						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4"
+						class="flex flex-col md:flex-row gap-3 md:gap-6 md:items-center mb-5 sm:mb-4 items-start"
 					>
 						{#each supporters as supporter}
 							<img
-								src={supporter.logo}
+								use:lazyLoad={supporter.logo}
 								alt="{supporter.name} Logo"
-								class="h-[2rem] lg:h-[2.25rem] w-fit"
+								class="h-[2rem] lg:h-[2.25rem]"
 							/>
 						{/each}
 					</div>
@@ -114,7 +116,7 @@
 					{#each socials as social}
 						<a
 							href={social.link}
-							class="h-[1.4rem] w-[1.4rem] sm:h-6 sm:w-6"
+							class="text-[1.4rem] sm:text-[1.5rem]"
 							target="_blank"
 							rel="noopener noreferrer"
 							aria-label="{social.name} page"

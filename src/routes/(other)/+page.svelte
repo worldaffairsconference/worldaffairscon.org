@@ -3,6 +3,7 @@
 	import "swiper/css/mousewheel";
 
 	import { onMount } from "svelte";
+	import { page } from "$app/stores";
 
 	import { Texture } from "three/src/textures/Texture";
 	import { SRGBColorSpace } from "three/src/constants";
@@ -24,6 +25,7 @@
 
 	import { DateTime } from "luxon";
 	import { browser } from "$app/environment";
+	import type { User } from "@auth/core/types";
 
 	import { gsap } from "gsap?client";
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
@@ -50,6 +52,8 @@
 	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
 
+	const user = $page.data.session?.user as User | undefined;
+
 	// let formMessages = {
 	// 	added: "You have been added to the mailing list!",
 	// 	alreadyAdded: "You are already on the mailing list!",
@@ -73,7 +77,7 @@
 	// }
 
 	// Constants
-	const TOTAL_STARS = 600; // How many stars there are
+	const TOTAL_STARS = 500; // How many stars there are
 
 	interface Speaker {
 		name: string;
@@ -150,6 +154,7 @@
 	let canvasElement: HTMLCanvasElement;
 	let gsapScope: Element;
 	let pageMounted = false;
+	let mountSpeakers = false;
 
 	if (browser) {
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
@@ -396,7 +401,10 @@
 				opacity: 0,
 				y: 10,
 				duration: 1,
-				ease: "sine.out"
+				ease: "sine.out",
+				onStart: () => {
+					mountSpeakers = true;
+				}
 			});
 
 			speakerTimeline.to("#speakers", {
@@ -555,9 +563,11 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="pt-[8.25rem] md:pt-44 text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
+		class="md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen absolute top-0 left-0 z-30 {pageMounted
 			? 'opacity-100'
-			: 'opacity-0 translate-y-7'} transition-all duration-[1400ms] ease-out-expo"
+			: 'opacity-0 translate-y-7'} {user
+			? 'pt-[8rem]'
+			: 'pt-[7rem]'} transition-all duration-[1400ms] ease-out-expo"
 	>
 		<h2
 			class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
@@ -568,7 +578,6 @@
 		<div class="w-5/6 mx-auto">
 			<h1
 				class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-5 lg:mb-6 tracking-[-0.03em]"
-				id="text"
 			>
 				World Affairs Conference
 			</h1>
@@ -596,6 +605,17 @@
 				</Tooltip>
 			</div>
 		</div>
+
+		{#if !user}
+			<a
+				class="text-sm lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.75rem] text-white hover:brightness-[1.08] transition-all"
+				href="/signin"
+			>
+				<span>Register</span>
+				<span>|</span>
+				<span>Login</span>
+			</a>
+		{/if}
 	</section>
 
 	<section
@@ -658,84 +678,87 @@
 					Past Speakers
 				</h2>
 
-				<div class="grow overflow-hidden relative mb-6">
-					<div
-						class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
-					>
-						<SwiperContainer
-							modules={[Mousewheel]}
-							spaceBetween={18}
-							slidesPerView={3}
-							freeMode={true}
-							mousewheel={{
-								releaseOnEdges: true,
-								forceToAxis: true,
-								thresholdDelta: 10
-							}}
-							class="w-full h-full"
-							loop={true}
-							navigation
-							on:init={(swiper) => {
-								swiperInstance = swiper.detail[0];
-							}}
-							breakpoints={{
-								"@0.7": {
-									slidesPerView: 4
-								},
-								"@0.9": {
-									slidesPerView: 5
-								},
-								"@1.00": {
-									slidesPerView: 6
-								}
-							}}
+				{#if mountSpeakers}
+					<div class="grow overflow-hidden relative mb-6">
+						<div
+							class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
 						>
-							{#each speakers as speaker}
-								<SwiperSlide
-									class="rounded-md relative overflow-hidden select-none"
-								>
-									<img
-										src={speaker.image}
-										alt="{speaker.name}'s Headshot"
-										class="w-full h-full object-cover transition-all"
-										loading="lazy"
-									/>
+							<SwiperContainer
+								modules={[Mousewheel]}
+								spaceBetween={18}
+								slidesPerView={3}
+								freeMode={true}
+								mousewheel={{
+									releaseOnEdges: true,
+									forceToAxis: true,
+									thresholdDelta: 10
+								}}
+								class="w-full h-full"
+								loop={true}
+								navigation
+								on:init={(swiper) => {
+									swiperInstance = swiper.detail[0];
+								}}
+								breakpoints={{
+									"@0.7": {
+										slidesPerView: 4
+									},
+									"@0.9": {
+										slidesPerView: 5
+									},
+									"@1.00": {
+										slidesPerView: 6
+									}
+								}}
+							>
+								{#each speakers as speaker}
+									<SwiperSlide
+										class="rounded-md relative overflow-hidden select-none"
+									>
+										<img
+											src={speaker.image}
+											alt="{speaker.name}'s Headshot"
+											class="w-full h-full object-cover transition-all"
+										/>
 
-									<div
-										class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-20 px-3 sm:px-5 flex"
-									>
-										<div class="my-auto">
-											<h3
-												class="font-semibold text-white text-lg mdtext-xl tracking-tight mb-[0.075rem]"
-											>
-												{speaker.name}
-											</h3>
-											<p class="text-zinc-200 text-xs">
-												{speaker.title}
-											</p>
+										<div
+											class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-20 px-3 sm:px-5 flex"
+										>
+											<div class="my-auto">
+												<h3
+													class="font-semibold text-white text-lg mdtext-xl tracking-tight mb-[0.075rem]"
+												>
+													{speaker.name}
+												</h3>
+												<p
+													class="text-zinc-200 text-xs"
+												>
+													{speaker.title}
+												</p>
+											</div>
 										</div>
-									</div>
-									<div
-										class="absolute top-3 left-3 p-2 bg-zinc-900/50 rounded-md text-xs text-white"
-									>
-										{speaker.tag || "Plenary Speaker"}
-									</div>
-								</SwiperSlide>
-							{/each}
-						</SwiperContainer>
+										<div
+											class="absolute top-3 left-3 p-2 bg-zinc-900/50 rounded-md text-xs text-white"
+										>
+											{speaker.tag || "Plenary Speaker"}
+										</div>
+									</SwiperSlide>
+								{/each}
+							</SwiperContainer>
+						</div>
 					</div>
-				</div>
+				{/if}
 				<div class="self-center">
 					<button
 						on:click={prevSlide}
-						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="text-[1.15rem] sm:text-[1.45rem] w-12 h-12 sm:w-16 sm:h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Previous Speaker"
 					>
 						<i class="fa-solid fa-arrow-left"></i>
 					</button>
 					<button
 						on:click={nextSlide}
-						class="h-12 w-12 sm:h-[3.35rem] sm:w-[3.35rem] p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+						class="text-[1.15rem] sm:text-[1.45rem] w-12 h-12 sm:w-16 sm:h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
 						aria-label="Go to Next Speaker"
 					>
 						<i class="fa-solid fa-arrow-right"></i>
@@ -767,14 +790,16 @@
 				class="transition-opacity duration-500 {!showVideoPreview &&
 					'opacity-0'} absolute inset-0 z-30 group"
 				on:click={onClickVideo}
+				aria-label="Play WAC 2023 Trailer"
 				id="video"
 			>
-				<img
-					src={trailerThumbnail}
-					alt="Trailer video thumbnail"
-					class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
-					loading="lazy"
-				/>
+				{#if mountSpeakers}
+					<img
+						src={trailerThumbnail}
+						alt="Trailer video thumbnail"
+						class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
+					/>
+				{/if}
 				<div
 					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[90px] w-[90px] lg:h-[109px] lg:w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
 				>
@@ -882,7 +907,7 @@
 					<input
 						type="email"
 						name="email"
-						class="border text-sm rounded-lg block w-full sm:w-64 md:w-96 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white focus:ring-secondary focus:ring-1 focus:border-secondary outline-none"
+						class="border text-sm rounded-lg block w-full sm:w-64 md:w-96 pl-10 p-2.5 bg-zinc-700 border-zinc-600 placeholder-zinc-400 text-white outline-none"
 						placeholder="name@school.com"
 					/>
 				</div>

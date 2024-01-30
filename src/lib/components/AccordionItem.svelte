@@ -46,18 +46,18 @@
 					/>
 				</svg>
 			</div>
-			<span>
+			<span class="text-left">
 				{header}
 			</span>
 		</div>
 		{#if isCompleted !== null}
 			<div>
 				{#if isCompleted === true}
-					<div class="w-[1.5rem] h-[1.5rem] text-green-400">
+					<div class="text-[1.5rem] text-green-400">
 						<i class="fa-solid fa-circle-check"></i>
 					</div>
 				{:else}
-					<div class="w-[1.5rem] h-[1.5rem] text-red-400">
+					<div class="text-[1.5rem] text-red-400">
 						<i class="fa-solid fa-circle-xmark"></i>
 					</div>
 				{/if}
