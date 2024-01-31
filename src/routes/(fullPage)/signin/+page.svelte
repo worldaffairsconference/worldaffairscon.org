@@ -1,16 +1,13 @@
 <script lang="ts">
 	import type { DOMAttributes } from "svelte/elements";
-	import { signIn } from "@auth/sveltekit/client";
 	import { fade } from "svelte/transition";
-
-	import toast from "svelte-french-toast";
+	import { signIn } from "@auth/sveltekit/client";
 
 	let signInTokenPromise: Promise<Response | undefined> | undefined;
 
 	const onSubmitSignInForm: DOMAttributes<HTMLFormElement>["on:submit"] = (
 		event
 	) => {
-		toast.loading("Verifying email…");
 		signInTokenPromise = signIn("magic-link", {
 			email: new FormData(event.currentTarget).get("email"),
 			callbackUrl: "/dashboard"

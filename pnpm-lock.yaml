@@ -45,9 +45,6 @@ dependencies:
   gsap:
     specifier: ^3.12.5
     version: 3.12.5
-  luxon:
-    specifier: ^3.4.4
-    version: 3.4.4
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -188,9 +185,6 @@ devDependencies:
   svelte-check:
     specifier: ^3.6.3
     version: 3.6.3(@babel/core@7.23.9)(postcss@8.4.33)(svelte@3.59.2)
-  svelte-french-toast:
-    specifier: ^1.2.0
-    version: 1.2.0(svelte@3.59.2)
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -7904,6 +7898,7 @@ packages:
   /luxon@3.4.4:
     resolution: {integrity: sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA==}
     engines: {node: '>=12'}
+    dev: true
 
   /lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
@@ -10659,15 +10654,6 @@ packages:
       svelte: 3.59.2
     dev: true
 
-  /svelte-french-toast@1.2.0(svelte@3.59.2):
-    resolution: {integrity: sha512-5PW+6RFX3xQPbR44CngYAP1Sd9oCq9P2FOox4FZffzJuZI2mHOB7q5gJBVnOiLF5y3moVGZ7u2bYt7+yPAgcEQ==}
-    peerDependencies:
-      svelte: ^3.57.0 || ^4.0.0
-    dependencies:
-      svelte: 3.59.2
-      svelte-writable-derived: 3.1.0(svelte@3.59.2)
-    dev: true
-
   /svelte-hmr@0.15.3(svelte@3.59.2):
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -10723,14 +10709,6 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.59.2
       typescript: 5.1.6
-    dev: true
-
-  /svelte-writable-derived@3.1.0(svelte@3.59.2):
-    resolution: {integrity: sha512-cTvaVFNIJ036vSDIyPxJYivKC7ZLtcFOPm1Iq6qWBDo1fOHzfk6ZSbwaKrxhjgy52Rbl5IHzRcWgos6Zqn9/rg==}
-    peerDependencies:
-      svelte: ^3.2.1 || ^4.0.0-next.1
-    dependencies:
-      svelte: 3.59.2
     dev: true
 
   /svelte@3.59.2:
