@@ -309,8 +309,7 @@
 
 <canvas
 	bind:this={canvasElement}
-	class="absolute inset-0 -z-10 w-screen"
-	id="canvas"
+	class="absolute inset-0 -z-10 w-full h-screen overflow-hidden"
 />
 
 <div class="-mt-24 mb-24">

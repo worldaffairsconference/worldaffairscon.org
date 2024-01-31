@@ -183,8 +183,8 @@
 
 			ScrollTrigger.create({
 				trigger: "#stats",
-				start: "top+=3750 center",
-				end: "top+=4550 center",
+				start: "top+=3600 center",
+				end: "top+=4525 center",
 				onEnter: () => {
 					showSpeakers = true;
 					mountSpeakers = true;
@@ -221,40 +221,42 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="text-center fixed top-[15%] sm:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-[15%] sm:-translate-y-1/4 w-5/6 opacity-0 hidden transition-opacity"
+		class="text-center fixed transform top-[15%] sm:top-1/4 -translate-y-[15%] sm:-translate-y-1/4 left-1/2 -translate-x-1/2 opacity-0 hidden transition-opacity"
 		id="stats"
 	>
-		<h2 class="text-lg sm:text-xl md:text-2xl text-zinc-300 mb-10">
-			WAC has reached:
-		</h2>
-		<dl
-			class="max-w-screen-md gap-8 md:gap-16 mx-auto text-white flex justify-between flex-wrap text-center [&>*]:mx-auto"
-		>
-			<div class="flex flex-col items-center justify-center mx-auto">
-				<dt
-					class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
-				>
-					10k+
-				</dt>
-				<dd class="text-zinc-400 text-lg">students</dd>
-			</div>
-			<div class="flex flex-col items-center justify-center mx-auto">
-				<dt
-					class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
-				>
-					35+
-				</dt>
-				<dd class="text-zinc-400 text-lg">countries</dd>
-			</div>
-			<div class="flex flex-col items-center justify-center mx-auto">
-				<dt
-					class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
-				>
-					80+
-				</dt>
-				<dd class="text-zinc-400 text-lg">schools</dd>
-			</div>
-		</dl>
+		<div class="h-full w-full">
+			<h2 class="text-lg sm:text-xl md:text-2xl text-zinc-300 mb-10">
+				WAC has reached:
+			</h2>
+			<dl
+				class="max-w-screen-md gap-8 md:gap-16 mx-auto text-white flex justify-between flex-wrap text-center [&>*]:mx-auto"
+			>
+				<div class="flex flex-col items-center justify-center mx-auto">
+					<dt
+						class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
+					>
+						10k+
+					</dt>
+					<dd class="text-zinc-400 text-lg">students</dd>
+				</div>
+				<div class="flex flex-col items-center justify-center mx-auto">
+					<dt
+						class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
+					>
+						35+
+					</dt>
+					<dd class="text-zinc-400 text-lg">countries</dd>
+				</div>
+				<div class="flex flex-col items-center justify-center mx-auto">
+					<dt
+						class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
+					>
+						80+
+					</dt>
+					<dd class="text-zinc-400 text-lg">schools</dd>
+				</div>
+			</dl>
+		</div>
 	</section>
 
 	<!-- Adding this container around speakers makes the initial scroll smoother -->
