@@ -221,7 +221,7 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="text-center fixed top-[20%] sm:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-[20%] sm:-translate-y-1/4 w-5/6 opacity-0 hidden transition-opacity"
+		class="text-center fixed top-[15%] sm:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-[15%] sm:-translate-y-1/4 w-5/6 opacity-0 hidden transition-opacity"
 		id="stats"
 	>
 		<h2 class="text-lg sm:text-xl md:text-2xl text-zinc-300 mb-10">

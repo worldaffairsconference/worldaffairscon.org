@@ -307,7 +307,11 @@
 	{/await}
 {/if}
 
-<canvas bind:this={canvasElement} class="absolute inset-0 -z-10" id="canvas" />
+<canvas
+	bind:this={canvasElement}
+	class="absolute inset-0 -z-10 w-screen"
+	id="canvas"
+/>
 
 <div class="-mt-24 mb-24">
 	{#if video}
