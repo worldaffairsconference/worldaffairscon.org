@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { DOMAttributes } from "svelte/elements";
-	import { fade } from "svelte/transition";
 	import { signIn } from "@auth/sveltekit/client";
 
 	let signInTokenPromise: Promise<Response | undefined> | undefined;
@@ -71,26 +70,25 @@
 					<button
 						type="submit"
 						disabled={!!signInTokenPromise}
-						class="text-[0.8rem] md:text-[0.95rem] w-full h-10 py-6 rounded-full bg-gradient-to-r from-primary to-secondary text-white hover:brightness-[1.08] transition-all relative"
+						class="text-[0.8rem] md:text-[0.95rem] w-full h-10 py-6 rounded-full bg-gradient-to-r from-primary to-secondary text-white hover:brightness-[1.08] transition-all"
 					>
-						{#if signInTokenPromise}
-							<div
-								transition:fade
-								class="inline-flex justify-center items-center gap-x-2 absolute -translate-x-1/2 -translate-y-1/2"
-							>
-								<div class="animate-spin">
-									<i class="fa-solid fa-spinner"></i>
-								</div>
-								Processing...
+						<div
+							class="absolute -translate-x-1/2 -translate-y-1/2 inline-flex justify-center items-center gap-2 {signInTokenPromise
+								? 'opacity-100 visible'
+								: 'opacity-0 invisible'} transition-opacity duration-300 ease-in"
+						>
+							<div class="animate-spin">
+								<i class="fa-solid fa-spinner"></i>
 							</div>
-						{:else}
-							<div
-								transition:fade
-								class="inline-flex justify-center items-center absolute -translate-x-1/2 -translate-y-1/2"
-							>
-								Continue
-							</div>
-						{/if}
+							Processing...
+						</div>
+						<div
+							class="absolute -translate-x-1/2 -translate-y-1/2 inline-flex justify-center {!signInTokenPromise
+								? 'opacity-100 visible'
+								: 'opacity-0 invisible'} transition-opacity duration-300 ease-in"
+						>
+							<span>Continue</span>
+						</div>
 					</button>
 				</div>
 			</form>
