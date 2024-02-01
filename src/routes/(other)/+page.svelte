@@ -232,25 +232,21 @@
 	});
 
 	// Handles resizing the window
-	const handleWindowResize = () => {
-		camera.aspect = window.innerWidth / window.innerHeight;
-		camera.updateProjectionMatrix();
-		renderer.setSize(window.innerWidth, window.innerHeight);
-	};
+	// const handleWindowResize = () => {
+	// 	camera.aspect = window.innerWidth / window.innerHeight;
+	// 	camera.updateProjectionMatrix();
+	// 	renderer.setSize(window.innerWidth, window.innerHeight);
+	// };
 </script>
 
 <svelte:head>
 	<title>World Affairs Conference</title>
 </svelte:head>
 
-<svelte:window on:resize={handleWindowResize} />
+<!-- <svelte:window on:resize={handleWindowResize} /> -->
 
 <section
-	class="md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen z-20 {pageMounted
-		? 'opacity-100'
-		: 'opacity-0 translate-y-7'} {user
-		? 'pt-[8rem]'
-		: 'pt-[7rem]'} transition-all duration-[600ms] ease-out"
+	class="pt-[8rem] md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen z-20"
 >
 	<h2
 		class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
@@ -309,7 +305,7 @@
 
 <canvas
 	bind:this={canvasElement}
-	class="absolute inset-0 -z-10 w-full h-screen overflow-hidden"
+	class="absolute inset-0 -z-10 overflow-hidden h-screen w-full"
 />
 
 <div class="-mt-24 mb-24">

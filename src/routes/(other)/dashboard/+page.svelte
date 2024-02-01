@@ -5,6 +5,7 @@
 	import { createAvatar } from "@dicebear/core";
 	import { shapes } from "@dicebear/collection";
 	import { v4 as uuid } from "uuid";
+	// import PlenarySelection from "./PlenarySelection.svelte";
 
 	import type { ActionData, PageData } from "./$types";
 
@@ -203,13 +204,13 @@
 				alt="Avatar"
 				class="rounded-lg h-40 hidden md:block"
 			/>
-			<div class="flex flex-col justify-center">
+			<div class="flex flex-col justify-center text-zinc-400">
 				<h3
 					class="text-white text-2xl md:text-3xl mb-2 md:mb-3 font-semibold"
 				>
 					Hey {user.firstName ?? user.email}!
 				</h3>
-				<p class="text-sm md:text-base text-left text-zinc-400">
+				<p class="text-sm md:text-base text-left">
 					{#if allCompleted}
 						<div class="mb-3">
 							You're all set! The plenary selection will open
@@ -343,4 +344,4 @@
 	</div>
 </section>
 
-<!-- <Test /> -->
+<!-- <PlenarySelection /> -->

@@ -221,7 +221,7 @@
 
 <div bind:this={gsapScope}>
 	<section
-		class="text-center fixed transform top-[15%] sm:top-1/4 -translate-y-[15%] sm:-translate-y-1/4 left-1/2 -translate-x-1/2 opacity-0 hidden transition-opacity"
+		class="text-center fixed transform top-[15%] sm:top-1/4 -translate-y-[15%] sm:-translate-y-1/4 left-1/2 -translate-x-1/2 opacity-0 hidden transition-opacity w-5/6 mx-auto"
 		id="stats"
 	>
 		<div class="h-full w-full">
@@ -260,11 +260,11 @@
 	</section>
 
 	<!-- Adding this container around speakers makes the initial scroll smoother -->
-	<section class="relative h-screen z-50" id="home">
+	<section class="relative h-screen z-20" id="home">
 		<div
 			class="absolute w-full h-screen text-left py-12 flex flex-col {showSpeakers
 				? 'opacity-100 visibile'
-				: 'opacity-0 invisible translate-y-2'} transition-all duration-1000"
+				: 'opacity-0 invisible translate-y-2'} transition-all duration-[400ms] ease-in"
 		>
 			<h2
 				class="text-center text-[2.75rem] sm:text-[4.3rem] font-bold text-white tracking-tight mb-8"
