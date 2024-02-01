@@ -2,31 +2,12 @@
 	import "swiper/css";
 	import "swiper/css/mousewheel";
 
-	import { onMount } from "svelte";
 	import { page } from "$app/stores";
-
-	import { Texture } from "three/src/textures/Texture";
-	import { SRGBColorSpace } from "three/src/constants";
-	import { Scene } from "three/src/scenes/Scene";
-	import { PerspectiveCamera } from "three/src/cameras/PerspectiveCamera";
-	import { AmbientLight } from "three/src/lights/AmbientLight";
-	import { PointLight } from "three/src/lights/PointLight";
-	import { SphereGeometry } from "three/src/geometries/SphereGeometry";
-	import { MeshPhongMaterial } from "three/src/materials/MeshPhongMaterial";
-	import { TextureLoader } from "three/src/loaders/TextureLoader";
-	import { Mesh } from "three/src/objects/Mesh";
-	import { Color } from "three/src/math/Color";
-	import { BufferGeometry } from "three/src/core/BufferGeometry";
-	import { PointsMaterial } from "three/src/materials/PointsMaterial";
-	import { Float32BufferAttribute } from "three/src/core/BufferAttribute";
-	import { Points } from "three/src/objects/Points";
-	import { WebGLRenderer } from "three/src/renderers/WebGLRenderer";
-	import { randFloatSpread } from "three/src/math/MathUtils";
-
 	import type { User } from "@auth/core/types";
 
 	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
+	import ScrollAnimations from "./ScrollAnimations.svelte";
 
 	const user = $page.data.session?.user as User | undefined;
 
@@ -60,197 +41,14 @@
 	};
 
 	const timeUntilConference = calculateDaysUntilDate(new Date(2024, 2, 6));
-
-	// Constants
-	const TOTAL_STARS = 500; // How many stars there are
-
-	let canvasElement: HTMLCanvasElement;
-	let camera: PerspectiveCamera;
-	const starVertices: number[] = [];
-	let renderer: WebGLRenderer;
-	let starsGeometry: BufferGeometry;
-	let pageMounted = false;
-
-	let scrollAnimations: any = null;
-	let video: any = null;
-
-	onMount(async () => {
-		pageMounted = true;
-
-		const createProgressivelyLoadedImage = (src: string) => {
-			const image = new Image();
-			image.crossOrigin = "anonymous";
-			image.src = src;
-
-			return image;
-		};
-
-		const load = (
-			desktopImages: string[],
-			mobileImages: string[]
-		): Texture => {
-			const texture = new Texture();
-			texture.colorSpace = SRGBColorSpace;
-
-			let currentUpdatedImageIndex = 0;
-
-			const images =
-				window.outerWidth < 600 ? mobileImages : desktopImages;
-
-			images.forEach((image, i) => {
-				const imageObj = createProgressivelyLoadedImage(image);
-
-				imageObj.onload = () => {
-					if (currentUpdatedImageIndex <= i) {
-						texture.image = imageObj;
-						texture.needsUpdate = true;
-						currentUpdatedImageIndex = i;
-					}
-				};
-			});
-
-			return texture;
-		};
-		// Setup scene
-		const scene = new Scene();
-
-		// Setup camera
-		camera = new PerspectiveCamera();
-		camera.aspect = window.innerWidth / window.innerHeight;
-		camera.updateProjectionMatrix();
-
-		camera.position.x = 0;
-		camera.position.y = 123;
-		camera.position.z = 125;
-
-		scene.add(camera);
-
-		// Lighting
-		const ambientLight = new AmbientLight(0xcccccc, 0.01);
-		scene.add(ambientLight);
-
-		const pointLight = new PointLight(0xffffff, 1);
-		pointLight.position.set(700, 270, 500);
-		scene.add(pointLight);
-
-		// Clouds
-		const cloudGeometry = new SphereGeometry(100.6, 32, 32);
-		const cloudMaterial = new MeshPhongMaterial({
-			map: load(
-				[
-					"./textures/clouds-desktop-low.webp",
-					"./textures/clouds-desktop-high.webp"
-				],
-				[]
-			),
-			transparent: true
-		});
-
-		const cloudMesh = new Mesh(cloudGeometry, cloudMaterial);
-		scene.add(cloudMesh);
-
-		// Earth
-		const earthGeometry = new SphereGeometry(100, 128, 128);
-
-		// const earthTexture = new THREE.TextureLoader().load(
-		// 	"./textures/map.webp"
-		// );
-		// earthTexture.colorSpace = THREE.SRGBColorSpace;
-
-		const earthMaterial = new MeshPhongMaterial({
-			map: load(
-				[
-					"./textures/map-desktop-low.webp",
-					"./textures/map-desktop-high.webp"
-				],
-				["./textures/map-mobile-high.webp"]
-			),
-			bumpMap: new TextureLoader().load("./textures/earth-topology.webp"),
-			bumpScale: 0.5
-		});
-
-		earthMaterial.specular = new Color("#021563");
-		earthMaterial.shininess = 0;
-
-		const earthMesh = new Mesh(earthGeometry, earthMaterial);
-		scene.add(earthMesh);
-
-		// earthMesh.rotateX(degToRad(90));
-		// cloudMesh.rotateX(degToRad(90));
-
-		// Stars
-		starsGeometry = new BufferGeometry();
-		const starMaterial = new PointsMaterial({ color: 0xffffff });
-
-		for (let i = 0; i < TOTAL_STARS; i++) {
-			const x = randFloatSpread(500);
-			const y = randFloatSpread(500);
-			const z = randFloatSpread(600);
-
-			starVertices.push(x, y, z);
-		}
-
-		starsGeometry.setAttribute(
-			"position",
-			new Float32BufferAttribute(starVertices, 3)
-		);
-
-		const stars = new Points(starsGeometry, starMaterial);
-		scene.add(stars);
-
-		// Render loop
-		const animate = () => {
-			renderer.render(scene, camera);
-			requestAnimationFrame(animate);
-			earthMesh.rotation.y += 0.0003;
-			cloudMesh.rotation.y += 0.0005;
-		};
-
-		const createScene = () => {
-			renderer = new WebGLRenderer({
-				antialias: true,
-				canvas: canvasElement,
-				alpha: true
-			});
-
-			renderer.setPixelRatio(
-				window.devicePixelRatio ? window.devicePixelRatio : 1
-			);
-			renderer.setSize(window.innerWidth, window.innerHeight);
-
-			animate();
-		};
-
-		createScene();
-
-		scrollAnimations = await import("./ScrollAnimations.svelte");
-		video = await import("./Video.svelte");
-
-		return () => {
-			renderer.dispose();
-		};
-	});
-
-	// Handles resizing the window
-	const handleWindowResize = () => {
-		camera.aspect = window.innerWidth / window.innerHeight;
-		camera.updateProjectionMatrix();
-		renderer.setSize(window.innerWidth, window.innerHeight);
-	};
 </script>
 
 <svelte:head>
 	<title>World Affairs Conference</title>
 </svelte:head>
 
-<svelte:window on:resize={handleWindowResize} />
-
 <section
-	class="md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen z-20 {pageMounted
-		? 'opacity-100'
-		: 'opacity-0 translate-y-7'} {user
-		? 'pt-[8rem]'
-		: 'pt-[7rem]'} transition-all duration-[600ms] ease-out"
+	class="pt-[8rem] md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen absolute inset-0 z-20"
 >
 	<h2
 		class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
@@ -301,24 +99,7 @@
 	{/if}
 </section>
 
-{#if scrollAnimations}
-	{#await scrollAnimations then { default: ScrollAnimations }}
-		<ScrollAnimations {camera} {canvasElement} />
-	{/await}
-{/if}
-
-<canvas
-	bind:this={canvasElement}
-	class="absolute inset-0 -z-10 w-full h-screen overflow-hidden"
-/>
-
-<div class="-mt-24 mb-24">
-	{#if video}
-		{#await video then { default: Video }}
-			<Video {starVertices} {starsGeometry} />
-		{/await}
-	{/if}
-</div>
+<ScrollAnimations />
 
 <!--
 <section

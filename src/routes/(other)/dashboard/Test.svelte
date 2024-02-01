@@ -2,38 +2,62 @@
 	import { onMount } from "svelte";
 	import { smoothDnD } from "smooth-dnd";
 
-	let container: HTMLDivElement | undefined;
+	export let speakers: string[] = [];
 
-	let elems = ["A", "B", "C", "D", "E"];
-	let orderedElems = [...elems];
+	const initialSpeakers = [...speakers];
+
+	let container: HTMLDivElement | undefined;
 
 	onMount(() => {
 		if (!container) return;
 
 		smoothDnD(container, {
-			dropPlaceholder: true,
+			dropPlaceholder: {
+				animationDuration: 200,
+				showOnTop: true,
+				className: "cards-drop-preview"
+			},
 			lockAxis: "y",
+			dragClass: "card-ghost",
+			dropClass: "card-ghost-drop",
 			onDrop({ removedIndex, addedIndex }) {
 				if (removedIndex === null || addedIndex === null) return;
-				const [moved] = orderedElems.splice(removedIndex, 1);
+				const [moved] = speakers.splice(removedIndex, 1);
 				if (!moved) throw new Error("Moved element is undefined");
-				orderedElems.splice(addedIndex, 0, moved);
-				orderedElems = orderedElems;
+				speakers.splice(addedIndex, 0, moved);
+				speakers = speakers;
 			}
 		});
 	});
 </script>
 
-<div id="container" class="bg-orange-300 w-32" bind:this={container}>
-	{#each elems as label (label)}
-		<div class="cursor-pointer bg-purple-300 h-12 w-full">
-			{label} — {orderedElems.indexOf(label)}
-		</div>
-	{/each}
+<div class="p-4 rounded-lg border border-zinc-600 bg-zinc-800">
+	<div bind:this={container}>
+		{#each initialSpeakers as label}
+			<div
+				class="cursor-pointer bg-zinc-700 border border-zinc-500 m-2 p-5 rounded-md"
+			>
+				<span class="font-bold text-white mr-1"
+					>{speakers.indexOf(label) + 1}.</span
+				>
+				<span class="text-zinc-100">{label}</span>
+			</div>
+		{/each}
+	</div>
 </div>
 
-<!-- <style>
-	:global(.card-ghost-drop) {
-		@apply border-8;
+<style>
+	:global(.cards-drop-preview) {
+		@apply m-2 border-2 border-dashed border-zinc-600 bg-zinc-600/30 rounded-md;
 	}
-</style> -->
+
+	:global(.card-ghost) {
+		@apply transition-transform;
+		transform: rotateZ(4deg);
+	}
+
+	:global(.card-ghost-drop) {
+		@apply transition-transform ease-in-out;
+		transform: rotateZ(0deg);
+	}
+</style>
