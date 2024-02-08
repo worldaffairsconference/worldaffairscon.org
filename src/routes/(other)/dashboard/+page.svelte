@@ -167,7 +167,7 @@
 		}
 	];
 
-	const checkIfCompleted = (options: Option[]) => {
+	const checkIfInputFieldAreComplete = (options: Option[]) => {
 		for (const option of options) {
 			if (option.required && option.value === "") {
 				return false;
@@ -177,12 +177,12 @@
 	};
 
 	$: allCompleted = categorizedSettings.every(({ settings }) =>
-		checkIfCompleted(settings)
+		checkIfInputFieldAreComplete(settings)
 	);
 </script>
 
 <section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
-	<div class="max-w-screen-xl mx-auto px-6 lg:px-20">
+	<div class="max-w-screen-xl mx-auto px-6 lg:px-24">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
 			<h3
 				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
@@ -244,7 +244,7 @@
 				{#each categorizedSettings as { category, settings, updateRoute }}
 					<LargeAccordion
 						header={category}
-						isCompleted={checkIfCompleted(settings)}
+						isCompleted={checkIfInputFieldAreComplete(settings)}
 					>
 						<form
 							method="post"
@@ -326,9 +326,9 @@
 						</form>
 					</LargeAccordion>
 				{/each}
-				<LargeAccordion header="Plenary Selection" open>
+				<LargeAccordion header="Plenary Selection">
 					<p
-						class="text-zinc-400 mb-6 md:mb-10 mt-1.5 sm:mt-3 text-[0.925rem] sm:text-base"
+						class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base"
 					>
 						Drag and drop to order the plenary speakers for each
 						time slot according to your preference.

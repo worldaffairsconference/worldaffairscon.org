@@ -51,7 +51,7 @@
 		{/if}
 	</div>
 
-	<div class="pt-3 pb-1 px-1" slot="content">
+	<div class="pt-4 pb-1 px-1" slot="content">
 		<slot />
 	</div>
 </BaseAccordion>

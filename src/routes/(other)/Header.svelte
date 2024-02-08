@@ -217,7 +217,7 @@
 
 				{#if showDropdown}
 					<div
-						class="block absolute right-0 mt-3.5 p-3.5 w-56 z-10 border rounded-lg shadow-sm bg-zinc-800 border-zinc-700 text-zinc-400"
+						class="block absolute right-0 mt-3.5 p-3.5 w-56 z-10 border rounded-lg shadow-sm bg-zinc-800 border-zinc-700 text-zinc-300"
 						transition:fly={{ y: 8, duration: 200 }}
 					>
 						<a
