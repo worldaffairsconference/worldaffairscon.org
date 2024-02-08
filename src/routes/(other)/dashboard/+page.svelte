@@ -184,7 +184,9 @@
 <section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="max-w-screen-xl mx-auto px-6 lg:px-20">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
-			<h3 class="mb-2 block md:text-lg font-semibold text-primary">
+			<h3
+				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
+			>
 				Dashboard
 			</h3>
 			<h1
@@ -192,10 +194,6 @@
 			>
 				Welcome to WAC!
 			</h1>
-			<p class="text-zinc-400 mt-3">
-				Before you are fully registered, we just need a few more details
-				about you.
-			</p>
 		</div>
 
 		<div class="flex gap-6 mb-10">
@@ -205,17 +203,13 @@
 				class="rounded-lg h-40 hidden md:block"
 			/>
 			<div class="flex flex-col justify-center text-zinc-400">
-				<h3
-					class="text-white text-2xl md:text-3xl mb-2 md:mb-3 font-semibold"
-				>
+				<h3 class="text-white text-2xl md:text-3xl mb-3 font-semibold">
 					Hey {user.firstName ?? user.email}!
 				</h3>
-				<p class="text-sm md:text-base text-left">
+				<p class="text-[0.925rem] md:text-base text-left">
 					{#if allCompleted}
 						<div class="mb-3">
-							You're all set! The plenary selection will open
-							soon. You will receive an email when we are ready to
-							announce our amazing line up.
+							You're all set! We can't wait to see you at WAC!
 						</div>
 						<div>
 							In the meantime, please contact
@@ -235,7 +229,6 @@
 							Please fill out the information below to complete
 							your registration.
 						</div>
-						<!-- Once you have completed your registration, you will be able to select your plenaries. -->
 					{/if}
 				</p>
 			</div>
@@ -247,7 +240,7 @@
 			>
 				Your Info
 			</h3>
-			<div class="flex gap-10 flex-col">
+			<div class="flex gap-4 md:gap-10 flex-col">
 				{#each categorizedSettings as { category, settings, updateRoute }}
 					<LargeAccordion
 						header={category}
