@@ -20,7 +20,7 @@
 		const nextInput = event.currentTarget
 			.nextElementSibling as HTMLInputElement;
 
-		if (nextInput && !nextInput.value) {
+		if (!nextInput.value) {
 			nextInput.disabled = false;
 			nextInput.focus();
 		}
