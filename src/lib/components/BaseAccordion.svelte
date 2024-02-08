@@ -3,7 +3,7 @@
 
 	export let open = false;
 
-	let className: string = "";
+	let className = "";
 	export { className as class };
 
 	let contentElement: HTMLDivElement | undefined;
