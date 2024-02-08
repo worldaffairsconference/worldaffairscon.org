@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AccordionItem from "$lib/components/AccordionItem.svelte";
+	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
 	import flowchart1 from "$lib/assets/images/registration/flowcharts/1.png";
 	import flowchart2 from "$lib/assets/images/registration/flowcharts/2.png";
 	import flowchart3 from "$lib/assets/images/registration/flowcharts/3.png";
@@ -45,7 +45,7 @@
 			</p>
 			<hr class="border-zinc-400 my-3" />
 
-			<AccordionItem header="Want more information on the process?">
+			<LargeAccordion header="Want more information on the process?">
 				<p class="text-sm sm:text-base text-zinc-400 mb-2">
 					We have <a
 						href="https://imgs.xkcd.com/comics/flow_charts.png"
@@ -57,7 +57,7 @@
 					<img src={flowchart2} alt="Flowchart 2" />
 					<img src={flowchart3} alt="Flowchart 3" />
 				</div>
-			</AccordionItem>
+			</LargeAccordion>
 		</div>
 	</div>
 </section>

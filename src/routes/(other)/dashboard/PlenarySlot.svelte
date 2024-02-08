@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { smoothDnD } from "smooth-dnd";
+	import PlenarySpeaker from "./PlenarySpeaker.svelte";
 
 	export let speakers: string[] = [];
 
@@ -31,17 +32,10 @@
 	});
 </script>
 
-<div class="p-4 rounded-lg border border-zinc-600 bg-zinc-800">
+<div class="p-2 sm:p-4 rounded-lg border border-zinc-600 bg-zinc-800">
 	<div bind:this={container}>
 		{#each initialSpeakers as label}
-			<div
-				class="cursor-pointer bg-zinc-700 border border-zinc-500 m-2 p-5 rounded-md"
-			>
-				<span class="font-bold text-white mr-1"
-					>{speakers.indexOf(label) + 1}.</span
-				>
-				<span class="text-zinc-100">{label}</span>
-			</div>
+			<PlenarySpeaker {label} index={speakers.indexOf(label) + 1} />
 		{/each}
 	</div>
 </div>

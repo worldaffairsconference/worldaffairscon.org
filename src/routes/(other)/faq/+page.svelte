@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AccordionItem from "$lib/components/AccordionItem.svelte";
+	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
 	import type { PageData } from "./$types";
 	export let data: PageData;
 	const { faqByCategories } = data;
@@ -31,24 +31,24 @@
 						<div class="flex flex-col gap-4 w-full lg:w-1/2">
 							{#each records as { question, answer }, i}
 								{#if i % 2 === 0}
-									<AccordionItem header={question}>
+									<LargeAccordion header={question}>
 										<div class="markdown">
 											<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 											{@html answer}
 										</div>
-									</AccordionItem>
+									</LargeAccordion>
 								{/if}
 							{/each}
 						</div>
 						<div class="flex flex-col gap-4 w-full lg:w-1/2">
 							{#each records as { question, answer }, i}
 								{#if i % 2 === 1}
-									<AccordionItem header={question}>
+									<LargeAccordion header={question}>
 										<div class="text-zinc-300 markdown">
 											<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 											{@html answer}
 										</div>
-									</AccordionItem>
+									</LargeAccordion>
 								{/if}
 							{/each}
 						</div>

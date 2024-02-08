@@ -1,33 +1,19 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
+	import BaseAccordion from "./BaseAccordion.svelte";
 
 	export let isCompleted: boolean | null = null;
 	export let header: string;
 	export let open = false;
-
-	let contentElement: HTMLDivElement | undefined;
-
-	$: contentHeight = open ? contentElement?.scrollHeight : 0;
 </script>
 
-<svelte:window
-	on:resize={() => (contentHeight &&= contentElement?.scrollHeight)}
-/>
-
-<!-- TODO: add a better fix instead of on:input -->
-<details
-	open={open || browser}
+<BaseAccordion
+	bind:open
 	class="rounded-lg border border-zinc-600 bg-zinc-800 py-3 px-4 sm:p-5"
-	on:input={() => (contentHeight &&= contentElement?.scrollHeight)}
 >
-	<summary
-		class="text-base sm:text-lg font-semibold text-white flex items-center justify-between cursor-pointer gap-3"
-		on:click={(e) => {
-			e.preventDefault();
-			open = !open;
-		}}
-	>
-		<div class="flex items-center grow">
+	<div slot="header" class="flex items-center">
+		<div
+			class="flex items-center grow text-base sm:text-lg font-semibold text-white"
+		>
 			<div
 				class="mr-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg bg-secondary bg-opacity-5 text-secondary"
 			>
@@ -63,20 +49,9 @@
 				{/if}
 			</div>
 		{/if}
-	</summary>
-	<div
-		class="px-1 w-full overflow-hidden transition-[height] duration-300"
-		style={browser ? `height: ${contentHeight}px` : ""}
-	>
-		<div class="pt-3 pb-1" bind:this={contentElement}><slot /></div>
 	</div>
-</details>
 
-<style>
-	details > summary {
-		list-style: none;
-		&::-webkit-details-marker {
-			display: none;
-		}
-	}
-</style>
+	<div class="pt-3 pb-1 px-1" slot="content">
+		<slot />
+	</div>
+</BaseAccordion>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Test from "./Test.svelte";
+	import PlenarySelector from "./PlenarySlot.svelte";
 
 	interface Plenary {
 		title: string;
@@ -10,7 +10,7 @@
 	let plenaries: Plenary[] = [
 		{
 			title: "Plenary 1",
-			time: "9:00AM to 10:00AM",
+			time: "9:00AM - 10:00AM",
 			speakers: [
 				"Elon Musk",
 				"Sam Altman",
@@ -21,7 +21,7 @@
 		},
 		{
 			title: "Plenary 2",
-			time: "10:00AM to 11:00AM",
+			time: "10:00AM - 11:00AM",
 			speakers: [
 				"Barack Obama",
 				"Malala Yousafzai",
@@ -32,7 +32,7 @@
 		},
 		{
 			title: "Plenary 3",
-			time: "11:00AM to 12:00PM",
+			time: "11:00AM - 12:00PM",
 			speakers: [
 				"Oprah Winfrey",
 				"Neil deGrasse Tyson",
@@ -44,18 +44,15 @@
 	];
 </script>
 
-<section class="max-w-screen-lg mx-auto">
-	<div class="flex justify-center gap-6 mb-4">
-		{#each plenaries as plenary}
-			<div class="w-full">
-				<div class="mb-4 ml-1">
-					<h3 class="text-white text-3xl font-semibold mb-0.5">
-						{plenary.title}
-					</h3>
-					<p class="text-zinc-400">9:00AM to 10:00AM</p>
-				</div>
-				<Test bind:speakers={plenary.speakers} />
+<section class="flex justify-center gap-6 flex-wrap lg:flex-nowrap">
+	{#each plenaries as plenary}
+		<div class="w-full">
+			<div class="mb-4 ml-1">
+				<h3 class="text-white text-2xl font-semibold text-center">
+					{plenary.time}
+				</h3>
 			</div>
-		{/each}
-	</div>
+			<PlenarySelector bind:speakers={plenary.speakers} />
+		</div>
+	{/each}
 </section>

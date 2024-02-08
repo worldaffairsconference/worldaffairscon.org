@@ -1,11 +1,11 @@
 <script lang="ts">
-	import AccordionItem from "$lib/components/AccordionItem.svelte";
+	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
 	import Input from "./Input.svelte";
 	import Select from "./Select.svelte";
 	import { createAvatar } from "@dicebear/core";
 	import { shapes } from "@dicebear/collection";
 	import { v4 as uuid } from "uuid";
-	// import PlenarySelection from "./PlenarySelection.svelte";
+	import PlenarySelection from "./PlenarySelection.svelte";
 
 	import type { ActionData, PageData } from "./$types";
 
@@ -182,7 +182,7 @@
 </script>
 
 <section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
-	<div class="max-w-screen-lg mx-auto px-6 lg:px-16">
+	<div class="max-w-screen-xl mx-auto px-6 lg:px-20">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
 			<h3 class="mb-2 block md:text-lg font-semibold text-primary">
 				Dashboard
@@ -249,7 +249,7 @@
 			</h3>
 			<div class="flex gap-10 flex-col">
 				{#each categorizedSettings as { category, settings, updateRoute }}
-					<AccordionItem
+					<LargeAccordion
 						header={category}
 						isCompleted={checkIfCompleted(settings)}
 					>
@@ -331,17 +331,18 @@
 								</button>
 							{/if}
 						</form>
-					</AccordionItem>
+					</LargeAccordion>
 				{/each}
-				<AccordionItem header="Plenary Selection" open>
-					<p class="text-zinc-400">
-						The final plenary list has not yet been announced. We
-						will email you once it is available.
+				<LargeAccordion header="Plenary Selection" open>
+					<p
+						class="text-zinc-400 mb-6 md:mb-10 mt-1.5 sm:mt-3 text-[0.925rem] sm:text-base"
+					>
+						Drag and drop to order the plenary speakers for each
+						time slot according to your preference.
 					</p>
-				</AccordionItem>
+					<PlenarySelection />
+				</LargeAccordion>
 			</div>
 		</div>
 	</div>
 </section>
-
-<!-- <PlenarySelection /> -->
