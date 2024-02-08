@@ -4,10 +4,12 @@
 	export let isCompleted: boolean | null = null;
 	export let header: string;
 	export let open = false;
+	export let update = false;
 </script>
 
 <BaseAccordion
 	bind:open
+	bind:update
 	class="rounded-lg border border-zinc-600 bg-zinc-800 py-3 px-4 sm:p-5"
 >
 	<div slot="header" class="flex items-center">

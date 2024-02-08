@@ -2,13 +2,22 @@
 	import { browser } from "$app/environment";
 
 	export let open = false;
+	export let update = false;
 
 	let className = "";
 	export { className as class };
 
 	let contentElement: HTMLDivElement | undefined;
 
+	$: update, checkForUpdate();
 	$: contentHeight = open ? contentElement?.scrollHeight : 0;
+
+	const checkForUpdate = () => {
+		if (update) {
+			contentHeight = contentElement?.scrollHeight;
+			update = false;
+		}
+	};
 </script>
 
 <svelte:window
@@ -16,11 +25,7 @@
 />
 
 <!-- TODO: add a better fix instead of on:input -->
-<details
-	open={open || browser}
-	on:input={() => (contentHeight &&= contentElement?.scrollHeight)}
-	class={className}
->
+<details open={open || browser} class={className}>
 	<summary
 		class="cursor-pointer"
 		on:click={(e) => {

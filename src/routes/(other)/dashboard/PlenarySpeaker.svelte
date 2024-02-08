@@ -11,35 +11,30 @@
 	bind:open
 	class="bg-zinc-700 border border-zinc-500 m-2 p-3.5 sm:p-4 rounded-md flex gap-1.5"
 >
-	<div class="flex justify-between items-center text-zinc-100" slot="header">
+	<div class="flex justify-between items-center" slot="header">
 		<div>
-			<span class="font-bold text-white mr-1">
+			<span class="font-bold text-white mr-1.5">
 				{index}.
 			</span>
-			<span>
+			<span class="text-zinc-100">
 				{label}
 			</span>
 		</div>
 
-		<div>
-			<svg
-				class="duration-300 ease-in-out text-zinc-400 transition-all"
-				fill="none"
-				height="20"
-				width="20"
-				stroke="currentColor"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				viewBox="0 0 24 24"
-				class:-rotate-180={open}
+		<div class="relative text-zinc-400 text-[1rem]">
+			<div class="duration-200 transition-opacity {open && 'opacity-0'}">
+				<i class="fa-solid fa-angle-down"></i>
+			</div>
+			<div
+				class="absolute inset-0 duration-200 transition-opacity {!open &&
+					'opacity-0'}"
 			>
-				<polyline points="6 9 12 15 18 9"></polyline>
-			</svg>
+				<i class="fa-solid fa-angle-up"></i>
+			</div>
 		</div>
 	</div>
 
-	<p class="text-zinc-400 pt-2 text-sm" slot="content">
+	<p class="text-zinc-400 pt-2 text-[0.925rem]" slot="content">
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam,
 		inventore reiciendis, laudantium, non enim magnam necessitatibus tenetur
 		debitis nisi cupiditate vel repellendus eum doloremque beatae ratione

@@ -181,6 +181,10 @@
 	);
 </script>
 
+<svelte:head>
+	<title>Dashboard - World Affairs Conference</title>
+</svelte:head>
+
 <section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="max-w-screen-xl mx-auto px-6 lg:px-24">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
@@ -245,6 +249,7 @@
 					<LargeAccordion
 						header={category}
 						isCompleted={checkIfInputFieldAreComplete(settings)}
+						update={dataChanged}
 					>
 						<form
 							method="post"
@@ -327,13 +332,15 @@
 					</LargeAccordion>
 				{/each}
 				<LargeAccordion header="Plenary Selection">
-					<p
-						class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base"
-					>
-						Drag and drop to order the plenary speakers for each
-						time slot according to your preference.
-					</p>
-					<PlenarySelection />
+					<div>
+						<p
+							class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base"
+						>
+							Drag and drop to order the plenary speakers for each
+							time slot according to your preference.
+						</p>
+						<PlenarySelection />
+					</div>
 				</LargeAccordion>
 			</div>
 		</div>
