@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn1ogidon15dn831b600",
+  "parentID": "mig_cn1ogevn3u9q1cak3dt0",
+  "checksum": "1:0c0175684edf9274072c0ee937341b17bbf332acfa47cc3fbab8e95421d40358",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "token",
+          "type": "string"
+        },
+        "table": "administration_verification_tokens"
+      }
+    }
+  ]
+}

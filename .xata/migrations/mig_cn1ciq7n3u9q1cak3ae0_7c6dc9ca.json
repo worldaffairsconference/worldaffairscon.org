@@ -1,0 +1,18 @@
+{
+  "id": "mig_cn1ciq7n3u9q1cak3ae0",
+  "parentID": "mig_cn1ci89a7f2mpileaoj0",
+  "checksum": "1:7c6dc9ca79db3371101a1599bd8159edd00e2f855f9bd4efe23444161ff57ece",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "expiresAt",
+          "type": "datetime",
+          "notNull": true,
+          "defaultValue": "1970-01-01T00:00:00.000Z"
+        },
+        "table": "administration_sessions"
+      }
+    }
+  ]
+}

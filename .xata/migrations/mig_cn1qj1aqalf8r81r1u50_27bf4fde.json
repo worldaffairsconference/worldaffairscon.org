@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn1qj1aqalf8r81r1u50",
+  "parentID": "mig_cn1ogidon15dn831b600",
+  "checksum": "1:27bf4fde1cb9b9562167f6efff6e0368ad9b29f13d0375b9a6c888de1a2d6aa4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canViewSummaryStatistics",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

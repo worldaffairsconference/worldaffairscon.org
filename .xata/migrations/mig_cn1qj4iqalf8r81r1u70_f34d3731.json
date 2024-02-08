@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn1qj4iqalf8r81r1u70",
+  "parentID": "mig_cn1qj1aqalf8r81r1u50",
+  "checksum": "1:f34d373179a461570951dc2b61536ea264afd9e498eb7938e74b22f77e46fa19",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canViewAttendees",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

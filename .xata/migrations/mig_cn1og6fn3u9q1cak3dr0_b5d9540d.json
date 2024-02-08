@@ -1,0 +1,12 @@
+{
+  "id": "mig_cn1og6fn3u9q1cak3dr0",
+  "parentID": "mig_cn1nqllon15dn831b4c0",
+  "checksum": "1:b5d9540d829c8f2bb72367b97ab1e60b29823b39b31063fc4feb8a11caa272ef",
+  "operations": [
+    {
+      "addTable": {
+        "table": "administration_verification_tokens"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn1qjg2qalf8r81r1uag",
+  "parentID": "mig_cn1qje2qalf8r81r1u90",
+  "checksum": "1:5e8f3ac8f51849c0b09c39c3e90955b843aa9a6bc6775435671aa57242ec29a7",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canViewTeam",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

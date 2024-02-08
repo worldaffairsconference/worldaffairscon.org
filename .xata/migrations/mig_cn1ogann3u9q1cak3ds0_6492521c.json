@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn1ogann3u9q1cak3ds0",
+  "parentID": "mig_cn1og6fn3u9q1cak3dr0",
+  "checksum": "1:6492521c2a6e876c98f2eef773f2df40aac045781f37ab2f60013ed2451b792b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "user",
+          "type": "link",
+          "link": {
+            "table": "administration_users"
+          }
+        },
+        "table": "administration_verification_tokens"
+      }
+    }
+  ]
+}

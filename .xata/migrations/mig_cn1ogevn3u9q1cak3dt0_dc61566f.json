@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn1ogevn3u9q1cak3dt0",
+  "parentID": "mig_cn1ogann3u9q1cak3ds0",
+  "checksum": "1:dc61566f0784178aafe2314f0d818747c370774696e409f30a686a8ddbaecc89",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "expiresAt",
+          "type": "datetime"
+        },
+        "table": "administration_verification_tokens"
+      }
+    }
+  ]
+}

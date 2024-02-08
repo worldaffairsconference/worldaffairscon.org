@@ -1,0 +1,12 @@
+{
+  "id": "mig_cn1ci89a7f2mpileaoj0",
+  "parentID": "mig_cn1ci5ha7f2mpileaog0",
+  "checksum": "1:441d0128a3e251a04422411d181a55d32e8ccc85bb15ba4f0d296285f6c536b5",
+  "operations": [
+    {
+      "addTable": {
+        "table": "administration_sessions"
+      }
+    }
+  ]
+}

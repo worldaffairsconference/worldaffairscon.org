@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn1qje2qalf8r81r1u90",
+  "parentID": "mig_cn1qjb7qqd6hle35rgfg",
+  "checksum": "1:11f07f9744e50971d636bf257efa958e9b8b937730d19bc724c0c0a665de6100",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canViewPlenaries",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

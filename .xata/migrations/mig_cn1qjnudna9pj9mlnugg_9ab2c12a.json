@@ -1,0 +1,19 @@
+{
+  "id": "mig_cn1qjnudna9pj9mlnugg",
+  "parentID": "mig_cn1qjg2qalf8r81r1uag",
+  "checksum": "1:9ab2c12a054d1b82b84af75a2600cb01ca0185a69c7fa53290c82e01602fa09b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canAdministerSchool",
+          "type": "link",
+          "link": {
+            "table": "partner_schools"
+          }
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}
