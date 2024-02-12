@@ -1,9 +1,9 @@
 <script lang="ts">
 	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
-	import flowchart1 from "$lib/assets/images/registration/flowcharts/1.png";
-	import flowchart2 from "$lib/assets/images/registration/flowcharts/2.png";
-	import flowchart3 from "$lib/assets/images/registration/flowcharts/3.png";
 	import FlowChartCarousel from "./FlowChartCarousel.svelte";
+
+	import flowchart1 from "$lib/assets/images/registration/flowcharts/1-small.jpg";
+	import flowchart2 from "$lib/assets/images/registration/flowcharts/2-small.jpg";
 
 	let showCarousel = false;
 
@@ -60,8 +60,8 @@
 							>flowcharts</a
 						> for you! Click to view them.
 					</p>
-					<div class="grid grid-cols-3">
-						{#each [flowchart1, flowchart2, flowchart3] as image, i}
+					<div class="grid grid-cols-2">
+						{#each [flowchart1, flowchart2] as image, i}
 							<img src={image} alt="Flowchart Image {i}" />
 						{/each}
 					</div>
@@ -71,7 +71,4 @@
 	</div>
 </section>
 
-<FlowChartCarousel
-	images={[flowchart1, flowchart2, flowchart3]}
-	bind:showCarousel
-/>
+<FlowChartCarousel bind:showCarousel />

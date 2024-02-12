@@ -2,10 +2,12 @@
 	import "swiper/css";
 	import "swiper/css/mousewheel";
 
+	import flowchart1 from "$lib/assets/images/registration/flowcharts/1-large.jpg";
+	import flowchart2 from "$lib/assets/images/registration/flowcharts/2-large.jpg";
+
 	import { type Swiper, Mousewheel } from "swiper";
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
-	export let images: string[] = [];
 	export let showCarousel = false;
 
 	let swiperInstance: Swiper;
@@ -51,7 +53,7 @@
 				swiperInstance = swiper.detail[0];
 			}}
 		>
-			{#each images as image, i}
+			{#each [flowchart1, flowchart2] as image, i}
 				<SwiperSlide class="rounded-md select-none">
 					<img
 						src={image}
