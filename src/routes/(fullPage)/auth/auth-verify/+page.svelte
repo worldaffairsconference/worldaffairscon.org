@@ -22,7 +22,7 @@
 			verificationCode.slice(index + 1);
 
 		const nextInput = event.currentTarget
-			.nextElementSibling as HTMLInputElement;
+			.nextElementSibling as HTMLInputElement | null;
 		3;
 
 		if (nextInput && !nextInput.value) {
@@ -47,7 +47,8 @@
 			verificationCode.slice(index);
 
 		const prevInput = event.currentTarget
-			.previousElementSibling as HTMLInputElement;
+			.previousElementSibling as HTMLInputElement | null;
+
 		if (prevInput) {
 			prevInput.disabled = false;
 			prevInput.focus();
