@@ -1,5 +1,9 @@
 <script lang="ts">
+	const verificationCodeLength = 6;
+
 	let verificationCode = "";
+
+	const handleSubmit = () => {};
 
 	const handleInput = (
 		event: Event & {
@@ -19,15 +23,62 @@
 
 		const nextInput = event.currentTarget
 			.nextElementSibling as HTMLInputElement;
+		3;
 
-		if (!nextInput.value) {
-			nextInput.disabled = false;
+		if (nextInput && !nextInput.value) {
 			nextInput.focus();
+		}
+
+		if (verificationCode.length === verificationCodeLength) {
+			handleSubmit();
 		}
 	};
 
-	const isInputDisabled = (index: number, verificationCode: string) => {
-		return index !== verificationCode.length;
+	const handleDelete = (
+		event: Event & {
+			currentTarget: EventTarget & HTMLInputElement;
+		},
+		index: number
+	) => {
+		event.currentTarget.value = "";
+
+		verificationCode =
+			verificationCode.slice(0, index - 1) +
+			verificationCode.slice(index);
+
+		const prevInput = event.currentTarget
+			.previousElementSibling as HTMLInputElement;
+		if (prevInput) {
+			prevInput.disabled = false;
+			prevInput.focus();
+		}
+	};
+
+	const handlePaste = (event: ClipboardEvent) => {
+		event.preventDefault();
+
+		const pastedText = event.clipboardData?.getData("text/plain");
+		const digits = pastedText?.match(/\d/g);
+
+		if (!digits) return;
+
+		verificationCode = "";
+
+		for (let i = 0; i < digits.length && i < verificationCodeLength; i++) {
+			const input = document.getElementById(
+				`digit-${i}`
+			) as HTMLInputElement | null;
+
+			if (input) {
+				input.value = digits[i]!;
+				handleInput(
+					{
+						currentTarget: input
+					} as any,
+					i
+				);
+			}
+		}
 	};
 </script>
 
@@ -37,7 +88,7 @@
 
 <section class="absolute inset-0 flex justify-center items-center">
 	<div
-		class="py-16 px-6 sm:px-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
+		class="py-16 px-6 sm:px-16 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
 	>
 		<div class="text-5xl md:text-6xl text-green-400 mx-auto mb-3">
 			<i class="fa-regular fa-circle-check"></i>
@@ -51,7 +102,7 @@
 			Enter the 6-digit code we've sent to your email.
 		</p>
 		<div class="flex justify-center mt-6 gap-2">
-			{#each Array.from({ length: 6 }) as _, index}
+			{#each Array.from({ length: verificationCodeLength }) as _, index}
 				{@const isDigitEntered = verificationCode[index]}
 				<input
 					type="text"
@@ -60,15 +111,17 @@
 						: 'border-zinc-400'} outline-none"
 					maxlength="1"
 					id={`digit-${index}`}
-					disabled={isInputDisabled(index, verificationCode)}
+					disabled={!!isDigitEntered &&
+						index !== verificationCode.length}
 					on:input={(event) => handleInput(event, index)}
+					on:keydown={(event) => {
+						if (event.key === "Backspace") {
+							handleDelete(event, index);
+						}
+					}}
+					on:paste={handlePaste}
 				/>
 			{/each}
 		</div>
-		<button
-			class="w-min py-2.5 px-10 text-white rounded-md bg-gradient-to-r from-primary to-secondary mt-6 text-sm sm:text-base"
-		>
-			Verify
-		</button>
 	</div>
 </section>
