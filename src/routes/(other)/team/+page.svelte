@@ -25,6 +25,7 @@
 	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
 	import eugenioCiarlandini from "$lib/assets/images/team/eugenio-ciarlandini.jpg";
+	import calebChong from "$lib/assets/images/team/caleb-chong.jpg";
 
 	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
@@ -102,7 +103,7 @@
 		{
 			name: "Caleb Chong",
 			position: "Director of Registration",
-			image: wacWLarge
+			image: calebChong
 		},
 		{
 			name: "Adrian Chi Hong Mak",
