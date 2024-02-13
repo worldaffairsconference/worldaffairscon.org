@@ -26,7 +26,7 @@
 		class="z-50 fixed inset-0 h-screen w-screen flex items-center bg-zinc-900 px-4 md:px-7"
 	>
 		<button
-			class="z-50 text-[1.9rem] md:text-[2.1rem] px-0.5 text-zinc-300 absolute top-6 left-6 md:top-9 md:left-9"
+			class="z-50 text-[1.9rem] md:text-[2rem] px-0.5 text-zinc-300 absolute top-6 left-6 md:top-8 md:left-8"
 			aria-label="Close navigation"
 			on:click={() => (showCarousel = false)}
 		>
