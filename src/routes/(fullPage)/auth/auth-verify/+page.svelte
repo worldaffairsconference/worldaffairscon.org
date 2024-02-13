@@ -1,12 +1,25 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
+	import type { PageData } from "./$types";
+
+	export let data: PageData;
+
 	const verificationCodeLength = 6;
 
 	let verificationCode = "";
 
-	const handleSubmit = () => {};
+	const handleSubmit = async () => {
+		goto(
+			`/auth/callback/magic-link?/${new URLSearchParams({
+				callbackUrl: data.callbackUrl,
+				token: verificationCode,
+				email: sessionStorage.getItem("email") ?? ""
+			})}`
+		);
+	};
 
 	const handleInput = (
-		event: Event & {
+		event: {
 			currentTarget: EventTarget & HTMLInputElement;
 		},
 		index: number
@@ -71,11 +84,11 @@
 			) as HTMLInputElement | null;
 
 			if (input) {
-				input.value = digits[i]!;
+				input.value = digits[i] ?? "";
 				handleInput(
 					{
 						currentTarget: input
-					} as any,
+					},
 					i
 				);
 			}
@@ -103,7 +116,7 @@
 			Enter the 6-digit code we've sent to your email.
 		</p>
 		<div class="flex justify-center mt-6 gap-2">
-			{#each Array.from({ length: verificationCodeLength }) as _, index}
+			{#each Array.from( { length: verificationCodeLength } ).map((_, i) => i) as index}
 				{@const isDigitEntered = verificationCode[index]}
 				<input
 					type="text"
