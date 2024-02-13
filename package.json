@@ -30,6 +30,7 @@
 		"@tailwindcss/nesting": "0.0.0-insiders.565cd3e",
 		"@xata.io/client": "^0.28.4",
 		"gsap": "^3.12.5",
+		"oslo": "^1.1.0",
 		"react": "^18.2.0",
 		"react-email": "1.9.5",
 		"rehype-preset-minify": "^7.0.0",

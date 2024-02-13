@@ -11,7 +11,7 @@ import {
 import * as React from "react";
 import tailwindConfig from "../../../../../tailwind.config.js";
 
-export function MagicLinkEmail({ url }: { url: string }) {
+export function MagicLinkEmail({ url, token }: { url: string; token: string }) {
 	return (
 		/* @ts-expect-error There seems to be a typing bug in @react-email/components */
 		<Tailwind config={tailwindConfig}>
@@ -44,6 +44,10 @@ export function MagicLinkEmail({ url }: { url: string }) {
 					>
 						Sign In
 					</Button>
+					<Text className="text-zinc-400 italic">
+						Unable to open the link? Copy and paste the following
+						token: {token}
+					</Text>
 				</Body>
 			</Html>
 		</Tailwind>
