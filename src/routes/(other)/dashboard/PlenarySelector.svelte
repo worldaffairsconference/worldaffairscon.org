@@ -1,11 +1,19 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { smoothDnD } from "smooth-dnd";
+	import { onMount, createEventDispatcher } from "svelte";
+	import { smoothDnD, type DropResult } from "smooth-dnd";
 	import PlenarySpeaker from "./PlenarySpeaker.svelte";
+	import type { PageData } from "./$types";
 
-	export let speakers: string[] = [];
+	export let plenaries: Exclude<
+		PageData["plenarySchedule"],
+		undefined
+	>[number]["plenaries"];
 
-	const initialSpeakers = [...speakers];
+	const dispatch = createEventDispatcher<{
+		drop: DropResult;
+	}>();
+
+	const initialPlenaries = [...plenaries];
 
 	let container: HTMLDivElement | undefined;
 
@@ -21,12 +29,14 @@
 			lockAxis: "y",
 			dragClass: "card-ghost",
 			dropClass: "card-ghost-drop",
-			onDrop({ removedIndex, addedIndex }) {
+			onDrop(data) {
+				const { removedIndex, addedIndex } = data;
 				if (removedIndex === null || addedIndex === null) return;
-				const [moved] = speakers.splice(removedIndex, 1);
+				const [moved] = plenaries.splice(removedIndex, 1);
 				if (!moved) throw new Error("Moved element is undefined");
-				speakers.splice(addedIndex, 0, moved);
-				speakers = speakers;
+				plenaries.splice(addedIndex, 0, moved);
+				plenaries = plenaries;
+				dispatch("drop", data);
 			}
 		});
 	});
@@ -34,8 +44,12 @@
 
 <div class="p-2 sm:p-4 rounded-lg border border-zinc-600 bg-zinc-800">
 	<div bind:this={container}>
-		{#each initialSpeakers as label}
-			<PlenarySpeaker {label} index={speakers.indexOf(label) + 1} />
+		{#each initialPlenaries as info}
+			<PlenarySpeaker
+				speaker={info.speaker ?? ""}
+				description={info.description ?? ""}
+				index={plenaries.indexOf(info) + 1}
+			/>
 		{/each}
 	</div>
 </div>

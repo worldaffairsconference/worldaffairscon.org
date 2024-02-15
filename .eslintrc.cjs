@@ -32,7 +32,15 @@ module.exports = {
 		"no-empty-function": "off",
 		"@typescript-eslint/no-empty-function": "off",
 		"@typescript-eslint/no-unnecessary-condition": "error",
-		"@typescript-eslint/no-empty-interface": "off"
+		"@typescript-eslint/no-empty-interface": "off",
+		"@typescript-eslint/no-unused-vars": [
+			"warn", // or "error"
+			{
+				argsIgnorePattern: "^_",
+				varsIgnorePattern: "^_",
+				caughtErrorsIgnorePattern: "^_"
+			}
+		]
 		// "simple-import-sort/imports": "error",
 		// "simple-import-sort/exports": "error"
 	}

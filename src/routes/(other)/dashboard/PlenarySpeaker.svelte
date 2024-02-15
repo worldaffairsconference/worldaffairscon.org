@@ -1,7 +1,8 @@
 <script lang="ts">
 	import BaseAccordion from "$lib/components/BaseAccordion.svelte";
 
-	export let label: string;
+	export let speaker: string;
+	export let description: string;
 	export let index: number;
 
 	let open = false;
@@ -17,7 +18,7 @@
 				{index}.
 			</span>
 			<span class="text-zinc-100">
-				{label}
+				{speaker}
 			</span>
 		</div>
 
@@ -35,9 +36,6 @@
 	</div>
 
 	<p class="text-zinc-400 pt-2 text-[0.925rem]" slot="content">
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam,
-		inventore reiciendis, laudantium, non enim magnam necessitatibus tenetur
-		debitis nisi cupiditate vel repellendus eum doloremque beatae ratione
-		magni. Tenetur, voluptates!
+		{description}
 	</p>
 </BaseAccordion>

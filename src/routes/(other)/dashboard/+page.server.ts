@@ -3,6 +3,7 @@ import type { PageServerLoad, Actions } from "./$types";
 import { z } from "zod";
 import { xata } from "$lib/server/xata";
 import { getEmailDomain } from "$lib/utils";
+import type { PlenariesRecord } from "$lib/server/xata.generated";
 
 const getSchoolsForEmail = async (email: string) => {
 	const domain = getEmailDomain(email);
@@ -13,12 +14,77 @@ const getSchoolsForEmail = async (email: string) => {
 	return records.map(({ id, name }) => ({ id, name }));
 };
 
+const getPlenarySchedule = async (attendeeId: string) => {
+	const [scheduleSlots, plenaryPreferences] = await Promise.all([
+		xata.db.schedule_slots
+			.select([
+				"startTime",
+				"endTime",
+				{
+					name: "<-plenaries.scheduleSlot",
+					columns: ["id", "speaker", "description"],
+					as: "plenaries"
+				}
+			])
+			.getAll(),
+		xata.db.attendees_plenaries
+			.filter({ attendee: attendeeId })
+			.select(["plenary.id", "preferenceRank"])
+			.getAll()
+	]);
+
+	const preferenceRankByPlenary = Object.fromEntries(
+		plenaryPreferences.flatMap(({ plenary, preferenceRank }) =>
+			plenary
+				? [
+						[plenary.id, preferenceRank] as [
+							string,
+							number | null | undefined
+						]
+					]
+				: []
+		)
+	);
+
+	return scheduleSlots.map(({ startTime, endTime, plenaries }) => ({
+		startTime,
+		endTime,
+		plenaries: ((plenaries?.records ?? []) as PlenariesRecord[]).map(
+			({ id, speaker, description }) => ({
+				id,
+				speaker,
+				description,
+				preferenceRank: preferenceRankByPlenary[id] ?? Infinity
+			})
+		)
+	}));
+};
+
 export const load: PageServerLoad = async ({ parent }) => {
 	const { session } = await parent();
 	if (!session?.user?.email) throw redirect(303, "/");
+	const { isPlenarySelectionOpen } = await xata.db.general_settings
+		.filter("active", true)
+		.getFirstOrThrow();
+	const [plenarySchedule, possibleSchools] = await Promise.all([
+		isPlenarySelectionOpen
+			? getPlenarySchedule(session.user.id)
+			: undefined,
+		getSchoolsForEmail(session.user.email)
+	]);
 	return {
 		user: session.user,
-		possibleSchools: await getSchoolsForEmail(session.user.email)
+		possibleSchools,
+		plenarySchedule: plenarySchedule?.map(({ plenaries, ...schedule }) => ({
+			...schedule,
+			plenaries: plenaries.sort(
+				(a, b) =>
+					a.preferenceRank - b.preferenceRank ||
+					(a.speaker && b.speaker
+						? a.speaker.localeCompare(b.speaker)
+						: 0)
+			)
+		}))
 	};
 };
 
@@ -45,7 +111,7 @@ export const actions = {
 						.map(({ id }) => id)
 						.includes(school)
 				),
-			gradeLevel: z.string(),
+			gradeLevel: z.enum(["other", "7", "8", "9", "10", "11", "12"]),
 			inPerson: booleanStringSchema
 		});
 

@@ -1,31 +1,41 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
+	import { onMount } from "svelte";
+	import type { HTMLDetailsAttributes } from "svelte/elements";
 
-	export let open = false;
-	export let update = false;
+	interface $$Props extends HTMLDetailsAttributes {
+		open: boolean;
+	}
 
-	let className = "";
-	export { className as class };
+	export let open: $$Props["open"] = false;
 
 	let contentElement: HTMLDivElement | undefined;
+	let contentHeight = contentElement?.scrollHeight ?? 0;
 
-	$: update, checkForUpdate();
-	$: contentHeight = open ? contentElement?.scrollHeight : 0;
-
-	const checkForUpdate = () => {
-		if (update) {
-			contentHeight = contentElement?.scrollHeight;
-			update = false;
-		}
-	};
+	onMount(() => {
+		if (!contentElement) return;
+		const observer = new ResizeObserver(() => {
+			// The animation needs to be removed to prevent a
+			// delay when an accordion is placed within an accordion
+			contentElement?.parentElement?.classList.add("duration-0");
+			contentHeight = contentElement?.scrollHeight ?? 0;
+			setTimeout(
+				// The duration needs to be reset, but this needs to
+				// happen in the next macrotask to allow the browser to
+				// update the height before the animation is restored
+				() =>
+					contentElement?.parentElement?.classList.remove(
+						"duration-0"
+					),
+				0
+			);
+		});
+		observer.observe(contentElement);
+		return () => observer.disconnect();
+	});
 </script>
 
-<svelte:window
-	on:resize={() => (contentHeight &&= contentElement?.scrollHeight)}
-/>
-
-<!-- TODO: add a better fix instead of on:input -->
-<details open={open || browser} class={className}>
+<details open={open || browser} {...$$restProps}>
 	<summary
 		class="cursor-pointer"
 		on:click={(e) => {
@@ -37,7 +47,7 @@
 	</summary>
 	<div
 		class="w-full overflow-hidden transition-[height] duration-300"
-		style={browser ? `height: ${contentHeight}px` : ""}
+		style={browser ? `height: ${open ? contentHeight : 0}px` : ""}
 	>
 		<div bind:this={contentElement}>
 			<slot name="content" />
