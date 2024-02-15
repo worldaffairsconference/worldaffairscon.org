@@ -2,8 +2,9 @@
 	import { onMount } from "svelte";
 	import { browser } from "$app/environment";
 	import waterBottleImage from "$lib/assets/images/merch/water-bottles.png";
+	import pinImage from "$lib/assets/images/merch/pins.png";
 
-	export let isOpen = false;
+	export let isOpen = true;
 
 	$: isOpen, updateBodyOverflow();
 
@@ -64,15 +65,13 @@
 			conference. You can also buy other merchandise like pins and
 			stickers on conference day with cash or credit card.
 		</p>
-		<figure class="flex items-center flex-col">
+		<div class="flex justify-center gap-10 items-center">
 			<img
 				src={waterBottleImage}
 				alt="WAC Water Bottles"
 				class="h-32 sm:h-36"
 			/>
-			<figcaption class="text-zinc-400 text-center mt-4 text-sm">
-				WAC Water Bottles
-			</figcaption>
-		</figure>
+			<img src={pinImage} alt="WAC Water Bottles" class="h-20 sm:h-24" />
+		</div>
 	</div>
 </div>
