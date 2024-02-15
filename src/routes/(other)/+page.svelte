@@ -43,10 +43,6 @@
 	const timeUntilConference = calculateDaysUntilDate(new Date(2024, 2, 6));
 </script>
 
-<svelte:head>
-	<title>World Affairs Conference</title>
-</svelte:head>
-
 <section
 	class="pt-[8rem] md:pt-[11.5rem] text-center flex flex-col items-center h-screen w-screen absolute inset-0 z-20"
 >

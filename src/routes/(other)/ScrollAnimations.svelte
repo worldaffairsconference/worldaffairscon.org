@@ -417,10 +417,6 @@
 	};
 </script>
 
-<svelte:head>
-	<title>World Affairs Conference</title>
-</svelte:head>
-
 <svelte:window on:resize={handleWindowResize} />
 <div bind:this={gsapScope}>
 	<section
