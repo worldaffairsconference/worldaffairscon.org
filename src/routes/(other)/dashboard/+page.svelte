@@ -10,12 +10,10 @@
 	import type { ActionData, PageData } from "./$types";
 
 	export let data: PageData;
-	const { user } = data;
+	const { user, plenarySchedule, possibleSchools } = data;
 	const avatar = createAvatar(shapes, { seed: user.email ?? "" });
 
 	export let form: ActionData;
-
-	let dataChanged = false;
 
 	type Option = {
 		label: string;
@@ -74,11 +72,11 @@
 					name: "school",
 					type: "select",
 					required: true,
-					options: data.possibleSchools.map((school) => ({
+					options: possibleSchools.map((school) => ({
 						value: school.id,
 						label: school.name ?? ""
 					})),
-					disabled: data.possibleSchools.length < 2,
+					disabled: possibleSchools.length < 2,
 					value: form?.school ?? user.school?.id ?? "",
 					hasOther: true,
 					fullWidth: false
@@ -249,15 +247,11 @@
 					<LargeAccordion
 						header={category}
 						isCompleted={checkIfInputFieldAreComplete(settings)}
-						update={dataChanged}
 					>
 						<form
 							method="post"
 							action={updateRoute}
 							class="grid sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-2"
-							on:input={() => {
-								dataChanged = true;
-							}}
 						>
 							{#each settings as setting}
 								<div
@@ -293,7 +287,7 @@
 											{/if}
 											{#if setting.hasOther}
 												<option
-													value="Other"
+													value="other"
 													selected={setting.options?.every(
 														({ value }) =>
 															value !==
@@ -308,10 +302,7 @@
 										<Input {...setting} />
 									{:else if setting.type === "list"}
 										{@const listId = uuid()}
-										<Input
-											placeholder={setting.placeholder}
-											{...setting}
-										/>
+										<Input list={listId} {...setting} />
 										<datalist id={listId}>
 											{#each setting.items as item}
 												<option value={item} />
@@ -320,28 +311,37 @@
 									{/if}
 								</div>
 							{/each}
-							{#if dataChanged}
-								<button
-									type="submit"
-									class="w-min py-2 px-10 text-white rounded-md bg-gradient-to-r from-primary to-secondary"
-								>
-									Save
-								</button>
-							{/if}
 						</form>
 					</LargeAccordion>
 				{/each}
-				<LargeAccordion header="Plenary Selection">
+				<LargeAccordion
+					header="Plenary Selection"
+					open={!!plenarySchedule}
+				>
 					<div>
-						<p
-							class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base"
-						>
-							Drag and drop to order the plenary speakers for each
-							time slot according to your preference.
-						</p>
-						<PlenarySelection />
+						{#if plenarySchedule}
+							<p
+								class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base"
+							>
+								Drag and drop to order the plenary speakers for
+								each time slot according to your preference.
+							</p>
+							<PlenarySelection schedule={plenarySchedule} />
+						{:else}
+							<p class="text-zinc-400">
+								The final plenary list has not yet been
+								announced. We will email you once it is
+								available.
+							</p>
+						{/if}
 					</div>
 				</LargeAccordion>
+				<button
+					type="submit"
+					class="mx-auto w-min py-2 px-10 text-white rounded-md bg-gradient-to-r from-primary to-secondary sticky bottom-4"
+				>
+					Save
+				</button>
 			</div>
 		</div>
 	</div>

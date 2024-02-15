@@ -1,0 +1,17 @@
+{
+  "id": "mig_cn5c657kb0okvo54mcq0",
+  "parentID": "mig_cn5c2bvkb0okvo54mcp0",
+  "checksum": "1:296b8df7b8f8f25cc722db9cddc008cfdef787b6a9f93431b1b2e69c89f637e2",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "active",
+          "type": "bool",
+          "unique": true
+        },
+        "table": "general_settings"
+      }
+    }
+  ]
+}

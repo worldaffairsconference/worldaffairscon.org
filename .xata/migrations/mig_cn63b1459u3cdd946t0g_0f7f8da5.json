@@ -1,0 +1,14 @@
+{
+  "id": "mig_cn63b1459u3cdd946t0g",
+  "parentID": "mig_cn5c7fjlgne4b0hsln1g",
+  "checksum": "1:0f7f8da5e6c2e755709d1803a7bcd41f5daf3d2cf2da0e413df3997431ae40d5",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "preferenceScore",
+        "oldName": "preferenceRank",
+        "table": "attendees_plenaries"
+      }
+    }
+  ]
+}

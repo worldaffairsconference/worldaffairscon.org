@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn5c1knkb0okvo54mco0",
+  "parentID": "mig_cn5c1gblgne4b0hslmr0",
+  "checksum": "1:8366388753fbd79e02c6f81d80764a2f41db08e38be80d5e1e8e73b5f8d76647",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "isPlenarySelectionOpen",
+          "type": "bool"
+        },
+        "table": "general_settings"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "mig_cn5c7fjlgne4b0hsln1g",
+  "parentID": "mig_cn5c657kb0okvo54mcq0",
+  "checksum": "1:7474206f9baa6a1f0abd479a5b0a3308f236abb07994d833739b7cc5658a6d08",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "scheduleSlot",
+        "oldName": "timeSlot",
+        "table": "plenaries"
+      }
+    }
+  ]
+}
