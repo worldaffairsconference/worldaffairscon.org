@@ -1,8 +1,22 @@
 <script>
 	import { onMount } from "svelte";
+	import { browser } from "$app/environment";
 	import waterBottleImage from "$lib/assets/images/merch/water-bottles.png";
 
 	export let isOpen = false;
+
+	$: isOpen, updateBodyOverflow();
+
+	// Prevents the body from scrolling when the modal is open
+	const updateBodyOverflow = () => {
+		if (!browser) return;
+
+		if (isOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "auto";
+		}
+	};
 
 	onMount(() => {
 		const wasAnnouncementShownAlready = localStorage.getItem(
