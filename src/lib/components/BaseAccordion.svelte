@@ -24,10 +24,14 @@
 				// The duration needs to be reset, but this needs to
 				// happen in the next macrotask to allow the browser to
 				// update the height before the animation is restored
-				() =>
+				() => {
 					contentElement?.parentElement?.classList.remove(
 						"duration-0"
-					),
+					);
+					contentElement?.parentElement?.classList.add(
+						"duration-300"
+					);
+				},
 				0
 			);
 		});
