@@ -4,7 +4,7 @@
 	import waterBottleImage from "$lib/assets/images/merch/water-bottles.png";
 	import pinImage from "$lib/assets/images/merch/pins.png";
 
-	export let isOpen = true;
+	export let isOpen = false;
 
 	$: isOpen, updateBodyOverflow();
 
