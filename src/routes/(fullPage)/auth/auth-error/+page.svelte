@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Authentication Error</title>
+	<title>Authentication Error - World Affairs Conference</title>
 </svelte:head>
 
 <section

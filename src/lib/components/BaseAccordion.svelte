@@ -17,6 +17,7 @@
 		const observer = new ResizeObserver(() => {
 			// The animation needs to be removed to prevent a
 			// delay when an accordion is placed within an accordion
+			contentElement?.parentElement?.classList.remove("duration-300");
 			contentElement?.parentElement?.classList.add("duration-0");
 			contentHeight = contentElement?.scrollHeight ?? 0;
 			setTimeout(
