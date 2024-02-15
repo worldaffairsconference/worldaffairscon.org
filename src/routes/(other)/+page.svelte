@@ -8,6 +8,7 @@
 	// Components
 	import Tooltip from "$lib/components/Tooltip.svelte";
 	import ScrollAnimations from "./ScrollAnimations.svelte";
+	import AnnouncementBanner from "$lib/components/AnnouncementBanner.svelte";
 
 	const user = $page.data.session?.user as User | undefined;
 
@@ -100,6 +101,8 @@
 </section>
 
 <ScrollAnimations />
+
+<AnnouncementBanner />
 
 <!--
 <section
