@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount } from "svelte";
 	import { browser } from "$app/environment";
 	import waterBottleImage from "$lib/assets/images/merch/water-bottles.png";
@@ -35,9 +35,8 @@
 </script>
 
 <div
-	class="fixed inset-0 flex items-center justify-center z-50 bg-zinc-950/20 backdrop-blur-md {isOpen
-		? 'visible opacity-100'
-		: 'invisible opacity-0'} transition-all duration-300 ease-in"
+	class="fixed inset-0 flex items-center justify-center z-50 bg-zinc-950/20 backdrop-blur-md {!isOpen &&
+		'invisible opacity-0'} transition-all duration-300 ease-in"
 >
 	<div
 		class="bg-zinc-700 border-2 border-zinc-500 rounded-2xl py-9 px-6 sm:px-16 max-w-screen-sm m-4 relative"

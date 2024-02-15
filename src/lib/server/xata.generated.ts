@@ -98,14 +98,14 @@ const tables = [
 	{
 		name: "plenaries",
 		columns: [
-			{ name: "title", type: "string" },
 			{ name: "speaker", type: "string" },
 			{
-				name: "timeSlot",
+				name: "scheduleSlot",
 				type: "link",
 				link: { table: "schedule_slots" }
 			},
-			{ name: "location", type: "string" }
+			{ name: "location", type: "string" },
+			{ name: "description", type: "text" }
 		],
 		revLinks: [{ column: "plenary", table: "attendees_plenaries" }]
 	},
@@ -124,7 +124,7 @@ const tables = [
 			{ name: "startTime", type: "datetime" },
 			{ name: "endTime", type: "datetime" }
 		],
-		revLinks: [{ column: "timeSlot", table: "plenaries" }]
+		revLinks: [{ column: "scheduleSlot", table: "plenaries" }]
 	},
 	{
 		name: "frequently_asked_questions",
@@ -188,6 +188,13 @@ const tables = [
 			{ name: "expiresAt", type: "datetime" },
 			{ name: "token", type: "string" }
 		]
+	},
+	{
+		name: "general_settings",
+		columns: [
+			{ name: "isPlenarySelectionOpen", type: "bool" },
+			{ name: "active", type: "bool", unique: true }
+		]
 	}
 ] as const;
 
@@ -245,6 +252,9 @@ export type AdministrationVerificationTokens =
 export type AdministrationVerificationTokensRecord =
 	AdministrationVerificationTokens & XataRecord;
 
+export type GeneralSettings = InferredTypes["general_settings"];
+export type GeneralSettingsRecord = GeneralSettings & XataRecord;
+
 export type DatabaseSchema = {
 	attendees: AttendeesRecord;
 	auth_accounts: AuthAccountsRecord;
@@ -261,6 +271,7 @@ export type DatabaseSchema = {
 	administration_users: AdministrationUsersRecord;
 	administration_sessions: AdministrationSessionsRecord;
 	administration_verification_tokens: AdministrationVerificationTokensRecord;
+	general_settings: GeneralSettingsRecord;
 };
 
 const DatabaseClient = buildClient();
