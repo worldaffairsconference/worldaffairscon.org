@@ -1,182 +1,20 @@
 <script lang="ts">
-	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
-	import Input from "./Input.svelte";
-	import Select from "./Select.svelte";
 	import { createAvatar } from "@dicebear/core";
 	import { shapes } from "@dicebear/collection";
-	import { v4 as uuid } from "uuid";
+	import PersonalInformation from "./PersonalInformation.svelte";
+	import LunchOptions from "./LunchOptions.svelte";
 	import PlenarySelection from "./PlenarySelection.svelte";
 
-	import type { ActionData, PageData } from "./$types";
+	import type { PageData } from "./$types";
 
 	export let data: PageData;
-	const { user, plenarySchedule, possibleSchools } = data;
-	const avatar = createAvatar(shapes, { seed: user.email ?? "" });
+	const avatar = createAvatar(shapes, { seed: data.user.email ?? "" });
 
-	export let form: ActionData;
+	// export let form: ActionData;
 
-	type Option = {
-		label: string;
-		name?: string;
-		fullWidth?: boolean;
-		required?: boolean;
-		disabled?: boolean;
-		value?: string;
-	} & (
-		| { type: "text"; placeholder?: string }
-		| { type: "email"; placeholder?: string }
-		| {
-				type: "select";
-				options?: { value: string; label: string }[];
-				hasOther?: boolean;
-		  }
-		| { type: "list"; items: string[]; placeholder?: string }
-	);
-
-	interface CategorizedSettings {
-		category: string;
-		updateRoute: string;
-		settings: Option[];
-	}
-
-	const categorizedSettings: CategorizedSettings[] = [
-		{
-			category: "Personal Information",
-			updateRoute: "?/savePersonalInformation",
-			settings: [
-				{
-					label: "First Name",
-					name: "firstName",
-					type: "text",
-					required: true,
-					value: form?.firstName || user.firstName || "",
-					fullWidth: false
-				},
-				{
-					label: "Last Name",
-					name: "lastName",
-					type: "text",
-					required: true,
-					value: form?.lastName || user.lastName || "",
-					fullWidth: false
-				},
-				{
-					label: "Email",
-					type: "email",
-					disabled: true,
-					value: user.email || "",
-					fullWidth: false
-				},
-				{
-					label: "School",
-					name: "school",
-					type: "select",
-					required: true,
-					options: possibleSchools.map((school) => ({
-						value: school.id,
-						label: school.name ?? ""
-					})),
-					disabled: possibleSchools.length < 2,
-					value: form?.school ?? user.school?.id ?? "",
-					hasOther: true,
-					fullWidth: false
-				},
-				{
-					label: "Grade Level",
-					name: "gradeLevel",
-					type: "select",
-					required: true,
-					options: ["7", "8", "9", "10", "11", "12"]
-						.map((grade) => ({
-							value: grade,
-							label: `Grade ${grade}`
-						}))
-						.concat([{ value: "Teacher", label: "Teacher" }]),
-					value: form?.gradeLevel ?? user.gradeLevel ?? "",
-					fullWidth: false,
-					hasOther: true
-				},
-				{
-					label: "Attendance",
-					name: "inPerson",
-					type: "select",
-					required: true,
-					options: [
-						{
-							value: "true",
-							label: "In Person"
-						},
-						{
-							value: "false",
-							label: "Online"
-						}
-					],
-					value: (form?.inPerson ?? user.inPerson ?? "").toString(),
-					fullWidth: false
-				}
-			]
-		},
-		{
-			category: "Lunch Options",
-			updateRoute: "?/saveLunchOptions",
-			settings: [
-				{
-					label: "Lunch Option",
-					name: "needsLunch",
-					type: "select",
-					required: true,
-					options: [
-						{
-							value: "true",
-							label: "Purchase lunch at UCC for $15"
-						},
-						{
-							value: "false",
-							label: "I will bring my own lunch"
-						}
-					],
-					value: (
-						form?.needsLunch ??
-						user.needsLunch ??
-						""
-					).toString()
-				},
-				{
-					label: "Dietary Restrictions and Allergies",
-					type: "list",
-					placeholder: "Vegan, Vegetarian, Gluten-free, Nuts, etc.",
-					items: [
-						"Vegan",
-						"Vegetarian",
-						"Gluten-free",
-						"Nuts",
-						"Dairy",
-						"Eggs",
-						"Shellfish",
-						"Soy"
-					],
-					name: "dietaryRestrictions",
-					value:
-						form?.dietaryRestrictions ??
-						user.dietaryRestrictions ??
-						""
-				}
-			]
-		}
-	];
-
-	const checkIfInputFieldAreComplete = (options: Option[]) => {
-		for (const option of options) {
-			if (option.required && option.value === "") {
-				return false;
-			}
-		}
-		return true;
-	};
-
-	$: allCompleted = categorizedSettings.every(({ settings }) =>
-		checkIfInputFieldAreComplete(settings)
-	);
+	let isPersonalInformationValid: boolean | undefined = undefined;
+	let isLunchOptionsValid: boolean | undefined = undefined;
+	$: allCompleted = isPersonalInformationValid && isLunchOptionsValid;
 </script>
 
 <svelte:head>
@@ -206,7 +44,7 @@
 			/>
 			<div class="flex flex-col justify-center text-zinc-400">
 				<h3 class="text-white text-2xl md:text-3xl mb-3 font-semibold">
-					Hey {user.firstName ?? user.email}!
+					Hey {data.user.firstName ?? data.user.email}!
 				</h3>
 				<p class="text-[0.925rem] md:text-base text-left">
 					{#if allCompleted}
@@ -242,107 +80,24 @@
 			>
 				Your Info
 			</h3>
-			<div class="flex gap-4 md:gap-10 flex-col">
-				{#each categorizedSettings as { category, settings, updateRoute }}
-					<LargeAccordion
-						header={category}
-						isCompleted={checkIfInputFieldAreComplete(settings)}
-					>
-						<form
-							method="post"
-							action={updateRoute}
-							class="grid sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-2"
-						>
-							{#each settings as setting}
-								<div
-									class={setting.fullWidth !== false
-										? "col-span-full"
-										: "col-span-1"}
-								>
-									{#if setting.type === "text"}
-										<Input {...setting} />
-									{:else if setting.type === "select"}
-										<Select
-											label={setting.label}
-											name={setting.name}
-											required={setting.required || false}
-										>
-											<option
-												hidden
-												disabled
-												selected={setting.value === ""}
-											>
-												Please choose an option
-											</option>
-											{#if setting.options}
-												{#each setting.options as option}
-													<option
-														value={option.value}
-														selected={option.value ===
-															setting.value}
-													>
-														{option.label}
-													</option>
-												{/each}
-											{/if}
-											{#if setting.hasOther}
-												<option
-													value="other"
-													selected={setting.options?.every(
-														({ value }) =>
-															value !==
-															setting.value
-													)}
-												>
-													Other
-												</option>
-											{/if}
-										</Select>
-									{:else if setting.type === "email"}
-										<Input {...setting} />
-									{:else if setting.type === "list"}
-										{@const listId = uuid()}
-										<Input list={listId} {...setting} />
-										<datalist id={listId}>
-											{#each setting.items as item}
-												<option value={item} />
-											{/each}
-										</datalist>
-									{/if}
-								</div>
-							{/each}
-						</form>
-					</LargeAccordion>
-				{/each}
-				<LargeAccordion
-					header="Plenary Selection"
-					open={!!plenarySchedule}
-				>
-					<div>
-						{#if plenarySchedule}
-							<p
-								class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base"
-							>
-								Drag and drop to order the plenary speakers for
-								each time slot according to your preference.
-							</p>
-							<PlenarySelection schedule={plenarySchedule} />
-						{:else}
-							<p class="text-zinc-400">
-								The final plenary list has not yet been
-								announced. We will email you once it is
-								available.
-							</p>
-						{/if}
-					</div>
-				</LargeAccordion>
+			<form method="post" class="flex gap-4 md:gap-10 flex-col">
+				<PersonalInformation
+					user={data.user}
+					possibleSchools={data.possibleSchools}
+					bind:isValid={isPersonalInformationValid}
+				/>
+				<LunchOptions
+					user={data.user}
+					bind:isValid={isLunchOptionsValid}
+				/>
+				<PlenarySelection schedule={data.plenarySchedule} />
 				<button
 					type="submit"
 					class="mx-auto w-min py-2 px-10 text-white rounded-md bg-gradient-to-r from-primary to-secondary sticky bottom-4"
 				>
 					Save
 				</button>
-			</div>
+			</form>
 		</div>
 	</div>
 </section>

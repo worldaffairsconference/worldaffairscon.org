@@ -74,7 +74,7 @@ export const load: PageServerLoad = async ({ parent }) => {
 	]);
 	return {
 		user: session.user,
-		possibleSchools,
+		possibleSchools: [...possibleSchools],
 		plenarySchedule: plenarySchedule?.map(({ plenaries, ...schedule }) => ({
 			...schedule,
 			plenaries: plenaries.sort(
@@ -88,22 +88,17 @@ export const load: PageServerLoad = async ({ parent }) => {
 	};
 };
 
-const booleanStringSchema = z.enum(["true", "false"]);
-
-const lunchOptionsSchema = z.object({
-	needsLunch: booleanStringSchema,
-	dietaryRestrictions: z.string()
-});
-
 export const actions = {
-	savePersonalInformation: async ({ request, locals: { getSession } }) => {
+	default: async ({ request, locals: { getSession } }) => {
 		const { id: userId, email: userEmail } =
 			(await getSession())?.user ?? {};
 		if (!userId || !userEmail) throw redirect(303, "/");
 
 		const schema = z.object({
-			firstName: z.string(),
-			lastName: z.string(),
+			needsLunch: z.coerce.boolean(),
+			dietaryRestrictions: z.string().trim(),
+			firstName: z.string().trim(),
+			lastName: z.string().trim(),
 			school: z
 				.string()
 				.refine(async (school) =>
@@ -112,42 +107,88 @@ export const actions = {
 						.includes(school)
 				),
 			gradeLevel: z.enum(["other", "7", "8", "9", "10", "11", "12"]),
-			inPerson: booleanStringSchema
+			inPerson: z.coerce.boolean(),
+			rankedPlenaries: z
+				.string()
+				.transform((val, ctx) => {
+					try {
+						return JSON.parse(val);
+					} catch {
+						ctx.addIssue({
+							code: z.ZodIssueCode.custom,
+							message: "Invalid JSON"
+						});
+					}
+				})
+				.pipe(z.array(z.string()))
 		});
 
-		const formData = Object.fromEntries(await request.formData());
-		const parsedFormData = await schema.safeParseAsync(formData);
-		if (!parsedFormData.success) return fail(400);
-		const { firstName, lastName, gradeLevel, inPerson, school } =
-			parsedFormData.data;
-		try {
-			await xata.db.attendees.update(userId, {
-				firstName,
-				lastName,
-				gradeLevel,
-				school,
-				inPerson: inPerson === "true"
-			});
-		} catch {
-			throw error(500);
-		}
-		return { firstName, lastName, gradeLevel, inPerson, school };
-	},
-	saveLunchOptions: async ({ request, locals: { getSession } }) => {
-		const userId = (await getSession())?.user?.id;
-		if (!userId) throw redirect(303, "/");
-		const formData = Object.fromEntries(await request.formData());
-		const parsedFormData = lunchOptionsSchema.safeParse(formData);
-		if (!parsedFormData.success) return fail(400);
-		const { needsLunch, dietaryRestrictions } = parsedFormData.data;
-		try {
-			await xata.db.attendees.update(userId, {
-				needsLunch: needsLunch === "true",
-				dietaryRestrictions
-			});
-		} catch {
-			throw error(500);
-		}
-		return { needsLunch, dietaryRestrictions };
+		console.log(
+			await schema.parseAsync(
+				Object.fromEntries(await request.formData())
+			)
+		);
 	}
 } satisfies Actions;
+
+// const lunchOptionsSchema = z.object({
+// 	needsLunch: booleanStringSchema,
+// 	dietaryRestrictions: z.string()
+// });
+
+// export const actions = {
+// 	savePersonalInformation: async ({ request, locals: { getSession } }) => {
+// 		const { id: userId, email: userEmail } =
+// 			(await getSession())?.user ?? {};
+// 		if (!userId || !userEmail) throw redirect(303, "/");
+
+// 		const schema = z.object({
+// 			firstName: z.string(),
+// 			lastName: z.string(),
+// 			school: z
+// 				.string()
+// 				.refine(async (school) =>
+// 					(await getSchoolsForEmail(userEmail))
+// 						.map(({ id }) => id)
+// 						.includes(school)
+// 				),
+// 			gradeLevel: z.enum(["other", "7", "8", "9", "10", "11", "12"]),
+// 			inPerson: booleanStringSchema
+// 		});
+
+// 		const formData = Object.fromEntries(await request.formData());
+// 		const parsedFormData = await schema.safeParseAsync(formData);
+// 		if (!parsedFormData.success) return fail(400);
+// 		const { firstName, lastName, gradeLevel, inPerson, school } =
+// 			parsedFormData.data;
+// 		try {
+// 			await xata.db.attendees.update(userId, {
+// 				firstName,
+// 				lastName,
+// 				gradeLevel,
+// 				school,
+// 				inPerson: inPerson === "true"
+// 			});
+// 		} catch {
+// 			throw error(500);
+// 		}
+// 		return { firstName, lastName, gradeLevel, inPerson, school };
+// 	},
+// 	saveLunchOptions: async ({ request, locals: { getSession } }) => {
+// 		const userId = (await getSession())?.user?.id;
+// 		if (!userId) throw redirect(303, "/");
+// 		const formData = Object.fromEntries(await request.formData());
+// 		const parsedFormData = lunchOptionsSchema.safeParse(formData);
+// 		if (!parsedFormData.success) return fail(400);
+// 		const { needsLunch, dietaryRestrictions } = parsedFormData.data;
+// 		try {
+// 			await xata.db.attendees.update(userId, {
+// 				needsLunch: needsLunch === "true",
+// 				dietaryRestrictions
+// 			});
+// 		} catch {
+// 			throw error(500);
+// 		}
+// 		return { needsLunch, dietaryRestrictions };
+// 	}
+// } satisfies Actions;
