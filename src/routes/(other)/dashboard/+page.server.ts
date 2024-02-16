@@ -94,6 +94,26 @@ export const actions = {
 			(await getSession())?.user ?? {};
 		if (!userId || !userEmail) throw redirect(303, "/");
 
+		const { isPlenarySelectionOpen } = await xata.db.general_settings
+			.filter("active", true)
+			.getFirstOrThrow();
+		const plenarySchedule = isPlenarySelectionOpen
+			? await xata.db.schedule_slots
+					.select([
+						"startTime",
+						"endTime",
+						{
+							name: "<-plenaries.scheduleSlot",
+							columns: ["id", "speaker", "description"],
+							as: "plenaries"
+						}
+					])
+					.getAll()
+			: [];
+		const plenaryIds = plenarySchedule
+			.flatMap(({ plenaries }) => plenaries?.records ?? [])
+			.map(({ id }) => id);
+
 		const schema = z.object({
 			needsLunch: z.coerce.boolean(),
 			dietaryRestrictions: z.string().trim(),
@@ -120,75 +140,50 @@ export const actions = {
 						});
 					}
 				})
-				.pipe(z.array(z.string()))
+				.pipe(
+					z
+						.array(z.string())
+						.refine(
+							(arr) =>
+								arr.every((id) => plenaryIds.includes(id)) &&
+								plenaryIds.every((id) => arr.includes(id))
+						)
+				)
 		});
 
-		console.log(
-			await schema.parseAsync(
-				Object.fromEntries(await request.formData())
-			)
+		const parsedFormData = await schema.safeParseAsync(
+			Object.fromEntries(await request.formData())
 		);
+		if (!parsedFormData.success) return fail(400);
+		const { rankedPlenaries, ...attendeeAttributes } = parsedFormData.data;
+
+		try {
+			await xata.db.attendees.update(userId, attendeeAttributes);
+			if (isPlenarySelectionOpen) {
+				await xata.db.attendees_plenaries.delete(
+					await xata.db.attendees_plenaries
+						.filter({ attendee: userId })
+						.getAll()
+				);
+				await xata.db.attendees_plenaries.create(
+					plenarySchedule.flatMap(
+						({ plenaries }) =>
+							plenaries?.records
+								.sort(
+									(a, b) =>
+										rankedPlenaries.indexOf(a.id) -
+										rankedPlenaries.indexOf(b.id)
+								)
+								.map(({ id }, preferenceRank) => ({
+									plenary: id,
+									attendee: userId,
+									preferenceRank
+								})) ?? []
+					)
+				);
+			}
+		} catch {
+			throw error(500);
+		}
 	}
 } satisfies Actions;
-
-// const lunchOptionsSchema = z.object({
-// 	needsLunch: booleanStringSchema,
-// 	dietaryRestrictions: z.string()
-// });
-
-// export const actions = {
-// 	savePersonalInformation: async ({ request, locals: { getSession } }) => {
-// 		const { id: userId, email: userEmail } =
-// 			(await getSession())?.user ?? {};
-// 		if (!userId || !userEmail) throw redirect(303, "/");
-
-// 		const schema = z.object({
-// 			firstName: z.string(),
-// 			lastName: z.string(),
-// 			school: z
-// 				.string()
-// 				.refine(async (school) =>
-// 					(await getSchoolsForEmail(userEmail))
-// 						.map(({ id }) => id)
-// 						.includes(school)
-// 				),
-// 			gradeLevel: z.enum(["other", "7", "8", "9", "10", "11", "12"]),
-// 			inPerson: booleanStringSchema
-// 		});
-
-// 		const formData = Object.fromEntries(await request.formData());
-// 		const parsedFormData = await schema.safeParseAsync(formData);
-// 		if (!parsedFormData.success) return fail(400);
-// 		const { firstName, lastName, gradeLevel, inPerson, school } =
-// 			parsedFormData.data;
-// 		try {
-// 			await xata.db.attendees.update(userId, {
-// 				firstName,
-// 				lastName,
-// 				gradeLevel,
-// 				school,
-// 				inPerson: inPerson === "true"
-// 			});
-// 		} catch {
-// 			throw error(500);
-// 		}
-// 		return { firstName, lastName, gradeLevel, inPerson, school };
-// 	},
-// 	saveLunchOptions: async ({ request, locals: { getSession } }) => {
-// 		const userId = (await getSession())?.user?.id;
-// 		if (!userId) throw redirect(303, "/");
-// 		const formData = Object.fromEntries(await request.formData());
-// 		const parsedFormData = lunchOptionsSchema.safeParse(formData);
-// 		if (!parsedFormData.success) return fail(400);
-// 		const { needsLunch, dietaryRestrictions } = parsedFormData.data;
-// 		try {
-// 			await xata.db.attendees.update(userId, {
-// 				needsLunch: needsLunch === "true",
-// 				dietaryRestrictions
-// 			});
-// 		} catch {
-// 			throw error(500);
-// 		}
-// 		return { needsLunch, dietaryRestrictions };
-// 	}
-// } satisfies Actions;

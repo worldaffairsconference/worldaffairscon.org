@@ -11,6 +11,7 @@
 </script>
 
 <LargeAccordion header="Plenary Selection" open={!!schedule}>
+	<input hidden name="rankedPlenaries" value={encodedPreferences} />
 	{#if schedule}
 		<p class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base">
 			Drag and drop to order the plenary speakers for each time slot
@@ -46,7 +47,6 @@
 				</div>
 			{/each}
 		</section>
-		<input hidden name="rankedPlenaries" value={encodedPreferences} />
 	{:else}
 		<p class="text-zinc-400">
 			The final plenary list has not yet been announced. We will email you
