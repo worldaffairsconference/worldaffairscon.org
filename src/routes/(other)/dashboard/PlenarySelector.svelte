@@ -10,7 +10,7 @@
 	>[number]["plenaries"];
 
 	const dispatch = createEventDispatcher<{
-		drop: {};
+		drop: boolean;
 	}>();
 
 	const initialPlenaries = [...plenaries];
@@ -37,12 +37,13 @@
 				plenaries.splice(addedIndex, 0, moved);
 				plenaries = plenaries;
 
-				plenaries.some((plenary, index) => {
+				const isEdited = plenaries.some((plenary, index) => {
 					if (plenary !== initialPlenaries[index]) {
-						dispatch("drop", {});
 						return true;
 					}
 				});
+
+				dispatch("drop", isEdited);
 			}
 		});
 	});
