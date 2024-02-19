@@ -22,7 +22,13 @@ const getPlenarySchedule = async (attendeeId: string) => {
 				"endTime",
 				{
 					name: "<-plenaries.scheduleSlot",
-					columns: ["id", "speaker", "description"],
+					columns: [
+						"id",
+						"speakerName",
+						"speakerTitle",
+						"theme",
+						"description"
+					],
 					as: "plenaries"
 				}
 			])
@@ -46,18 +52,22 @@ const getPlenarySchedule = async (attendeeId: string) => {
 		)
 	);
 
-	return scheduleSlots.map(({ startTime, endTime, plenaries }) => ({
+	const a = scheduleSlots.map(({ startTime, endTime, plenaries }) => ({
 		startTime,
 		endTime,
 		plenaries: ((plenaries?.records ?? []) as PlenariesRecord[]).map(
-			({ id, speaker, description }) => ({
+			({ id, speakerName, description, theme, speakerTitle }) => ({
 				id,
-				speaker,
+				speakerName,
 				description,
+				theme,
+				speakerTitle,
 				preferenceRank: preferenceRankByPlenary[id] ?? Infinity
 			})
 		)
 	}));
+
+	return a;
 };
 
 export const load: PageServerLoad = async ({ parent }) => {
@@ -80,8 +90,8 @@ export const load: PageServerLoad = async ({ parent }) => {
 			plenaries: plenaries.sort(
 				(a, b) =>
 					a.preferenceRank - b.preferenceRank ||
-					(a.speaker && b.speaker
-						? a.speaker.localeCompare(b.speaker)
+					(a.speakerName && b.speakerName
+						? a.speakerName.localeCompare(b.speakerName)
 						: 0)
 			)
 		}))
@@ -104,7 +114,13 @@ export const actions = {
 						"endTime",
 						{
 							name: "<-plenaries.scheduleSlot",
-							columns: ["id", "speaker", "description"],
+							columns: [
+								"id",
+								"speakerName",
+								"speakerTitle",
+								"description",
+								"theme"
+							],
 							as: "plenaries"
 						}
 					])
@@ -157,7 +173,6 @@ export const actions = {
 		const parsedFormData = await schema.safeParseAsync(
 			Object.fromEntries(await request.formData())
 		);
-		console.log(parsedFormData);
 		if (!parsedFormData.success) return fail(400);
 		const { rankedPlenaries, ...attendeeAttributes } = parsedFormData.data;
 
