@@ -10,7 +10,7 @@
 
 	const handleSubmit = async () => {
 		goto(
-			`/auth/callback/magic-link?/${new URLSearchParams({
+			`/auth/callback/magic-link?${new URLSearchParams({
 				callbackUrl: data.callbackUrl,
 				token: verificationCode,
 				email: sessionStorage.getItem("email") ?? ""

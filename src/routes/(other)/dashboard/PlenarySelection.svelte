@@ -42,7 +42,7 @@
 					<div class="grow">
 						<PlenarySelector
 							on:drop={(e) => {
-								areUnsavedChanges = e.detail;
+								areUnsavedChanges = !!e.detail;
 							}}
 							bind:plenaries={scheduleSlot.plenaries}
 						/>

@@ -114,8 +114,11 @@ export const actions = {
 			.flatMap(({ plenaries }) => plenaries?.records ?? [])
 			.map(({ id }) => id);
 
+		const booleanStringSchema = z
+			.enum(["true", "false"])
+			.transform((v) => v === "true");
 		const schema = z.object({
-			needsLunch: z.coerce.boolean(),
+			needsLunch: booleanStringSchema,
 			dietaryRestrictions: z.string().trim(),
 			firstName: z.string().trim(),
 			lastName: z.string().trim(),
@@ -127,7 +130,7 @@ export const actions = {
 						.includes(school)
 				),
 			gradeLevel: z.enum(["other", "7", "8", "9", "10", "11", "12"]),
-			inPerson: z.coerce.boolean(),
+			inPerson: booleanStringSchema,
 			rankedPlenaries: z
 				.string()
 				.transform((val, ctx) => {
