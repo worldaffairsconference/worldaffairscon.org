@@ -9,7 +9,7 @@
 	<title>FAQ - World Affairs Conference</title>
 </svelte:head>
 
-<section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+<section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="max-w-screen-xl mx-auto px-6 lg:px-16">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
 			<h3

@@ -8,7 +8,7 @@
 
 	let fieldset: HTMLFieldSetElement | undefined;
 
-	function checkValidity() {
+	const checkValidity = () => {
 		if (!fieldset) return (isValid = undefined);
 
 		const inputs = Array.from(
@@ -16,7 +16,7 @@
 		) as (HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement)[];
 
 		isValid = inputs.every((input) => input.validity.valid);
-	}
+	};
 
 	onMount(checkValidity);
 </script>
@@ -35,7 +35,6 @@
 			{/if}
 		{/if}
 	</svelte:fragment>
-
 	<fieldset
 		class="grid sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-2"
 		bind:this={fieldset}

@@ -7,6 +7,18 @@
 	export let user: PageData["user"];
 	export let possibleSchools: PageData["possibleSchools"];
 	export let isValid: boolean | undefined = undefined;
+
+	const defaultValues = {
+		firstName: user.firstName,
+		lastName: user.lastName,
+		email: user.email,
+		school:
+			possibleSchools.length < 2
+				? possibleSchools[0]?.id
+				: user.school?.id,
+		gradeLevel: user.gradeLevel,
+		inPerson: user.inPerson
+	};
 </script>
 
 <FieldSet header="Personal Information" bind:isValid>
@@ -14,19 +26,17 @@
 		label="First Name"
 		name="firstName"
 		required
-		value={user.firstName}
+		value={defaultValues.firstName}
 	/>
-	<Input label="Last Name" name="lastName" required value={user.lastName} />
-
-	<Input label="Email" type="email" disabled value={user.email} />
-	<Select
-		label="School"
-		name="school"
+	<Input
+		label="Last Name"
+		name="lastName"
 		required
-		value={possibleSchools.length < 2
-			? possibleSchools[0]?.id
-			: user.school?.id}
-	>
+		value={defaultValues.lastName}
+	/>
+
+	<Input label="Email" type="email" disabled value={defaultValues.email} />
+	<Select label="School" name="school" required value={defaultValues.school}>
 		{#each possibleSchools as school}
 			<option value={school.id}>{school.name}</option>
 		{/each}
@@ -36,7 +46,7 @@
 		label="Grade Level"
 		name="gradeLevel"
 		required
-		value={user.gradeLevel}
+		value={defaultValues.gradeLevel}
 	>
 		{#each ["7", "8", "9", "10", "11", "12"] as grade}
 			<option value={grade}>Grade {grade}</option>
@@ -44,7 +54,12 @@
 
 		<option value="other">Other</option>
 	</Select>
-	<Select label="Attendance" name="inPerson" required value={user.inPerson}>
+	<Select
+		label="Attendance"
+		name="inPerson"
+		required
+		value={defaultValues.inPerson}
+	>
 		<option value={true}>In Person</option>
 		<option value={false}>Online</option>
 	</Select>

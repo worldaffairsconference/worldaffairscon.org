@@ -4,6 +4,7 @@
 	import PlenarySelector from "./PlenarySelector.svelte";
 
 	export let schedule: PageData["plenarySchedule"];
+	export let areUnsavedChanges: boolean;
 
 	$: encodedPreferences = JSON.stringify(
 		(schedule ?? []).flatMap((s) => s.plenaries.map(({ id }) => id))
@@ -40,7 +41,9 @@
 					</div>
 					<div class="grow">
 						<PlenarySelector
-							on:drop
+							on:drop={() => {
+								areUnsavedChanges = true;
+							}}
 							bind:plenaries={scheduleSlot.plenaries}
 						/>
 					</div>

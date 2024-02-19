@@ -6,6 +6,7 @@
 	import PlenarySelection from "./PlenarySelection.svelte";
 
 	import type { PageData } from "./$types";
+	import { onMount } from "svelte";
 
 	export let data: PageData;
 	const avatar = createAvatar(shapes, { seed: data.user.email ?? "" });
@@ -15,13 +16,36 @@
 	let isPersonalInformationValid: boolean | undefined = undefined;
 	let isLunchOptionsValid: boolean | undefined = undefined;
 	$: allCompleted = isPersonalInformationValid && isLunchOptionsValid;
+
+	let formElement: HTMLFormElement;
+	let originalFormData: ReturnType<typeof getDataFromForm>;
+	let areUnsavedChanges = false;
+
+	onMount(() => {
+		originalFormData = getDataFromForm();
+	});
+
+	const getDataFromForm = () => {
+		const formData = new FormData(formElement);
+		return Object.fromEntries(formData.entries());
+	};
+
+	const checkIfFormDataIsEdited = () => {
+		const currentFormData = getDataFromForm();
+
+		const isEdited = Object.keys(currentFormData).some(
+			(key) => originalFormData[key] !== currentFormData[key]
+		);
+
+		areUnsavedChanges = formElement.checkValidity() && isEdited;
+	};
 </script>
 
 <svelte:head>
 	<title>Dashboard - World Affairs Conference</title>
 </svelte:head>
 
-<section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+<section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="max-w-screen-xl mx-auto px-6 lg:px-24">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
 			<h3
@@ -80,7 +104,12 @@
 			>
 				Your Info
 			</h3>
-			<form method="post" class="flex gap-4 md:gap-10 flex-col">
+			<form
+				method="post"
+				class="flex gap-4 md:gap-10 flex-col"
+				on:input={checkIfFormDataIsEdited}
+				bind:this={formElement}
+			>
 				<PersonalInformation
 					user={data.user}
 					possibleSchools={data.possibleSchools}
@@ -90,13 +119,38 @@
 					user={data.user}
 					bind:isValid={isLunchOptionsValid}
 				/>
-				<PlenarySelection schedule={data.plenarySchedule} />
-				<button
-					type="submit"
-					class="mx-auto w-min py-2 px-10 text-white rounded-md bg-gradient-to-r from-primary to-secondary sticky bottom-4"
-				>
-					Save
-				</button>
+				<PlenarySelection
+					schedule={data.plenarySchedule}
+					bind:areUnsavedChanges
+				/>
+				{#if areUnsavedChanges}
+					<div
+						class="fixed bottom-4 bg-zinc-700 p-3 left-1/2 -translate-x-1/2 flex gap-12 items-center rounded-xl border-2 border-zinc-600 text-sm"
+					>
+						<span class="ml-2 text-white">
+							You have unsaved changes
+						</span>
+						<div class="flex gap-1">
+							<button
+								class="mx-auto w-min py-2 px-5 text-white rounded-lg hover:bg-zinc-800/50 transition-colors"
+								on:click={(e) => {
+									e.preventDefault();
+
+									// TODO: Implement undo functionality without refreshing the page
+									window.location.reload();
+								}}
+							>
+								Undo
+							</button>
+							<button
+								type="submit"
+								class="mx-auto w-min py-2 px-5 text-white rounded-lg bg-gradient-to-r from-primary to-secondary"
+							>
+								Save
+							</button>
+						</div>
+					</div>
+				{/if}
 			</form>
 		</div>
 	</div>

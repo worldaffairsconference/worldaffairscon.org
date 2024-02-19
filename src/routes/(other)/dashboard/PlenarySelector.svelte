@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount, createEventDispatcher } from "svelte";
-	import { smoothDnD, type DropResult } from "smooth-dnd";
+	import { smoothDnD } from "smooth-dnd";
 	import PlenarySpeaker from "./PlenarySpeaker.svelte";
 	import type { PageData } from "./$types";
 
@@ -10,7 +10,7 @@
 	>[number]["plenaries"];
 
 	const dispatch = createEventDispatcher<{
-		drop: DropResult;
+		drop: {};
 	}>();
 
 	const initialPlenaries = [...plenaries];
@@ -36,7 +36,13 @@
 				if (!moved) throw new Error("Moved element is undefined");
 				plenaries.splice(addedIndex, 0, moved);
 				plenaries = plenaries;
-				dispatch("drop", data);
+
+				plenaries.some((plenary, index) => {
+					if (plenary !== initialPlenaries[index]) {
+						dispatch("drop", {});
+						return true;
+					}
+				});
 			}
 		});
 	});

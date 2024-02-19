@@ -154,6 +154,7 @@ export const actions = {
 		const parsedFormData = await schema.safeParseAsync(
 			Object.fromEntries(await request.formData())
 		);
+		console.log(parsedFormData);
 		if (!parsedFormData.success) return fail(400);
 		const { rankedPlenaries, ...attendeeAttributes } = parsedFormData.data;
 
