@@ -56,7 +56,7 @@
 <Toaster />
 
 <section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
-	<div class="max-w-screen-lg mx-auto px-6 lg:px-20">
+	<div class="max-w-screen-lg mx-auto px-5 lg:px-20">
 		<div class="mb-8 lg:mb-20 mt-6 text-center">
 			<h3
 				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
