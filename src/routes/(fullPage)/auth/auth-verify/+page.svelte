@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
+	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
@@ -9,13 +9,13 @@
 	let verificationCode = "";
 
 	const handleSubmit = async () => {
-		goto(
-			`/auth/callback/magic-link?${new URLSearchParams({
+		window.location.href = `${PUBLIC_DEPLOY_PRIME_URL}/auth/callback/magic-link?${new URLSearchParams(
+			{
 				callbackUrl: data.callbackUrl,
 				token: verificationCode,
 				email: sessionStorage.getItem("email") ?? ""
-			})}`
-		);
+			}
+		)}`;
 	};
 
 	const handleInput = (

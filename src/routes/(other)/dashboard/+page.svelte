@@ -6,13 +6,13 @@
 	import PlenarySelection from "./PlenarySelection.svelte";
 	import toast, { Toaster } from "svelte-french-toast";
 
+	import { page } from "$app/stores";
+
 	import type { PageData } from "./$types";
 	import { onMount } from "svelte";
 
 	export let data: PageData;
 	const avatar = createAvatar(shapes, { seed: data.user.email ?? "" });
-
-	// export let form: ActionData;
 
 	let isPersonalInformationValid: boolean | undefined = undefined;
 	let isLunchOptionsValid: boolean | undefined = undefined;
@@ -41,31 +41,12 @@
 		areUnsavedChanges = isEdited;
 	};
 
-	const handleSubmit = (
-		e: MouseEvent & {
-			currentTarget: EventTarget & HTMLButtonElement;
-		}
-	) => {
-		e.preventDefault();
-
-		if (formElement.checkValidity() === false) {
-			toast.error("Please fill out all required fields!", {
-				position: "top-center",
-				duration: 1000
-			});
-			return;
-		}
-
-		toast.success("Changes saved!", {
-			position: "top-center",
-			duration: 1000
+	$: if ($page.form) {
+		toast.success("Your changes have been saved!", {
+			duration: 3000,
+			position: "top-right"
 		});
-
-		// Do the default form submission
-		setTimeout(() => {
-			formElement.submit();
-		}, 300);
-	};
+	}
 </script>
 
 <svelte:head>
@@ -173,7 +154,6 @@
 							</button>
 							<button
 								type="submit"
-								on:click={handleSubmit}
 								class="mx-auto w-min py-2 px-5 text-white rounded-lg bg-gradient-to-r from-primary to-secondary"
 							>
 								Save

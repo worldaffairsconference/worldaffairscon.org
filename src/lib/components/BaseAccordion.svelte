@@ -4,7 +4,7 @@
 	import type { HTMLDetailsAttributes } from "svelte/elements";
 
 	interface $$Props extends HTMLDetailsAttributes {
-		open: boolean;
+		open?: boolean;
 	}
 
 	export let open: $$Props["open"] = false;

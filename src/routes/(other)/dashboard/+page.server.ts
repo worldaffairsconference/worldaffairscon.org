@@ -24,6 +24,7 @@ const getPlenarySchedule = async (attendeeId: string) => {
 			.select([
 				"id",
 				"theme",
+				"confirmed",
 				"scheduleSlot.*",
 				{
 					name: "<-speakers.plenary",
@@ -66,27 +67,30 @@ const getPlenarySchedule = async (attendeeId: string) => {
 
 	return Array.from(
 		mapGroupBy(
-			plenaries.flatMap(({ id, theme, scheduleSlot, speakers }) =>
-				scheduleSlot
-					? [
-							{
-								id,
-								theme,
-								scheduleSlot: getScheduleSlotById(scheduleSlot),
-								speakers: (
-									(speakers?.records ??
-										[]) as SpeakersRecord[]
-								).map(({ id, name, title, shortBio }) => ({
+			plenaries.flatMap(
+				({ id, theme, confirmed, scheduleSlot, speakers }) =>
+					confirmed && scheduleSlot
+						? [
+								{
 									id,
-									name,
-									title,
-									shortBio
-								})),
-								preferenceRank:
-									preferenceRankByPlenary[id] ?? Infinity
-							}
-						]
-					: []
+									theme,
+									scheduleSlot:
+										getScheduleSlotById(scheduleSlot),
+									speakers: (
+										(speakers?.records ??
+											[]) as SpeakersRecord[]
+									).map(({ id, name, title, shortBio }) => ({
+										id,
+										name,
+										title,
+										shortBio
+									})),
+
+									preferenceRank:
+										preferenceRankByPlenary[id] ?? Infinity
+								}
+							]
+						: []
 			),
 			({ scheduleSlot }) => scheduleSlot
 		).entries()
@@ -140,13 +144,7 @@ export const actions = {
 						"endTime",
 						{
 							name: "<-plenaries.scheduleSlot",
-							columns: [
-								"id",
-								"speakerName",
-								"speakerTitle",
-								"description",
-								"theme"
-							],
+							columns: ["id", "confirmed"],
 							as: "plenaries"
 						}
 					])
@@ -154,6 +152,7 @@ export const actions = {
 			: [];
 		const plenaryIds = plenarySchedule
 			.flatMap(({ plenaries }) => plenaries?.records ?? [])
+			.filter(({ confirmed }) => confirmed)
 			.map(({ id }) => id);
 
 		const booleanStringSchema = z
@@ -227,6 +226,7 @@ export const actions = {
 					)
 				);
 			}
+			return {};
 		} catch {
 			throw error(500);
 		}

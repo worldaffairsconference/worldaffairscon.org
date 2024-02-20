@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, createEventDispatcher } from "svelte";
 	import { smoothDnD } from "smooth-dnd";
-	import PlenarySpeaker from "./PlenarySpeaker.svelte";
+	import PlenaryCard from "./PlenaryCard.svelte";
 	import type { PageData } from "./$types";
 
 	export let plenaries: Exclude<
@@ -51,13 +51,11 @@
 
 <div class="p-2 rounded-lg border border-zinc-600 bg-zinc-800 h-full">
 	<div bind:this={container}>
-		{#each initialPlenaries as info}
-			<PlenarySpeaker
-				speakerTitle={info.speakerTitle ?? ""}
-				theme={info.theme ?? ""}
-				speakerName={info.speakerName ?? ""}
-				description={info.description ?? ""}
-				index={plenaries.indexOf(info) + 1}
+		{#each initialPlenaries as plenary}
+			<PlenaryCard
+				index={plenaries.indexOf(plenary)}
+				speakers={plenary.speakers}
+				theme={plenary.theme}
 			/>
 		{/each}
 	</div>
