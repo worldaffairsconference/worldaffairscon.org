@@ -1,16 +1,12 @@
 <script lang="ts">
-	import type { PageData } from "./$types";
-
-	export let data: PageData;
-
 	const verificationCodeLength = 6;
 
 	let verificationCode = "";
 
 	const handleSubmit = async () => {
-		window.location.href = `/auth/callback/magic-link?${new URLSearchParams(
+		window.location.href = `${window.location.protocol}//${window.location.host}/auth/callback/magic-link?${new URLSearchParams(
 			{
-				callbackUrl: data.callbackUrl,
+				callbackUrl: `${window.location.protocol}//${window.location.host}/dashboard`,
 				token: verificationCode,
 				email: sessionStorage.getItem("email") ?? ""
 			}
