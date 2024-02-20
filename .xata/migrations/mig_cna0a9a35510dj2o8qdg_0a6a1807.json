@@ -1,0 +1,16 @@
+{
+  "id": "mig_cna0a9a35510dj2o8qdg",
+  "parentID": "mig_cna0a5q35510dj2o8qcg",
+  "checksum": "1:0a6a1807fbd4c77cd2c72ad93c4e712beb6e7bd68d0fd937b8a128e8ba928ec4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "title",
+          "type": "string"
+        },
+        "table": "speakers"
+      }
+    }
+  ]
+}

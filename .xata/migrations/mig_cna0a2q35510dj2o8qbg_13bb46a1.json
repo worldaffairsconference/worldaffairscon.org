@@ -1,0 +1,16 @@
+{
+  "id": "mig_cna0a2q35510dj2o8qbg",
+  "parentID": "mig_cna09pa35510dj2o8qag",
+  "checksum": "1:13bb46a135d5915b4abf3668d5acc9e206d46cf1a3efdaacb3449d5300f59435",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "shortBio",
+          "type": "text"
+        },
+        "table": "speakers"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "mig_cn9qpfq35510dj2o8mpg",
+  "parentID": "mig_cn9qpba35510dj2o8mog",
+  "checksum": "1:59c4fb4b582534ad9e437d61287805e182a6106a73ae1bae844d0bfcd1f12082",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "speakerName",
+        "oldName": "speaker",
+        "table": "plenaries"
+      }
+    }
+  ]
+}

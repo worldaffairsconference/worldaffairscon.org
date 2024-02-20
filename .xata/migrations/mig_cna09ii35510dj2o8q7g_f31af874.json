@@ -1,0 +1,12 @@
+{
+  "id": "mig_cna09ii35510dj2o8q7g",
+  "parentID": "mig_cn9qpfq35510dj2o8mpg",
+  "checksum": "1:f31af87444c4cd8df43272f79518c615c93f4898281f4ec30502a8fcc07d056a",
+  "operations": [
+    {
+      "addTable": {
+        "table": "speakers"
+      }
+    }
+  ]
+}

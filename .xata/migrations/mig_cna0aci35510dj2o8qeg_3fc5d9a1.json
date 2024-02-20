@@ -1,0 +1,16 @@
+{
+  "id": "mig_cna0aci35510dj2o8qeg",
+  "parentID": "mig_cna0a9a35510dj2o8qdg",
+  "checksum": "1:3fc5d9a1ac5ce74992534476fe65708fbd93e603a7296f70e6080666f20df488",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "picture",
+          "type": "file"
+        },
+        "table": "speakers"
+      }
+    }
+  ]
+}

@@ -29,6 +29,19 @@ export function groupBy<T, U extends keyof any>( // eslint-disable-line @typescr
 	return obj;
 }
 
+// TODO: Replace this basic polyfill by `Map.groupBy` when it is in Node LTS.
+export function mapGroupBy<T, U>(arr: T[], fn: (x: T) => U): Map<U, T[]> {
+	const obj = new Map<U, T[]>();
+	for (const x of arr) {
+		const key = fn(x);
+		if (!obj.has(key)) {
+			obj.set(key, []);
+		}
+		obj.get(key)?.push(x);
+	}
+	return obj;
+}
+
 export const markdownToHtml = (string: string) =>
 	unified()
 		.use(remarkParse)

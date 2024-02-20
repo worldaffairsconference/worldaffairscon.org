@@ -1,0 +1,19 @@
+{
+  "id": "mig_cna0b7a35510dj2o8qfg",
+  "parentID": "mig_cna0aci35510dj2o8qeg",
+  "checksum": "1:78778891518778f6e218e9e9bb6353cf2f11aa919bb8259ba4281dbc3c9c2478",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "plenary",
+          "type": "link",
+          "link": {
+            "table": "plenaries"
+          }
+        },
+        "table": "speakers"
+      }
+    }
+  ]
+}

@@ -2,8 +2,12 @@ import { redirect, fail, error } from "@sveltejs/kit";
 import type { PageServerLoad, Actions } from "./$types";
 import { z } from "zod";
 import { xata } from "$lib/server/xata";
-import { getEmailDomain } from "$lib/utils";
-import type { PlenariesRecord } from "$lib/server/xata.generated";
+import { getEmailDomain, mapGroupBy } from "$lib/utils";
+import type {
+	PlenariesRecord,
+	SpeakersRecord
+} from "$lib/server/xata.generated";
+import type { SelectedPick } from "@xata.io/client";
 
 const getSchoolsForEmail = async (email: string) => {
 	const domain = getEmailDomain(email);
@@ -15,15 +19,16 @@ const getSchoolsForEmail = async (email: string) => {
 };
 
 const getPlenarySchedule = async (attendeeId: string) => {
-	const [scheduleSlots, plenaryPreferences] = await Promise.all([
-		xata.db.schedule_slots
+	const [plenaries, plenaryPreferences] = await Promise.all([
+		xata.db.plenaries
 			.select([
-				"startTime",
-				"endTime",
+				"id",
+				"theme",
+				"scheduleSlot.*",
 				{
-					name: "<-plenaries.scheduleSlot",
-					columns: ["id", "speaker", "description"],
-					as: "plenaries"
+					name: "<-speakers.plenary",
+					columns: ["id", "name", "title", "shortBio"],
+					as: "speakers"
 				}
 			])
 			.getAll(),
@@ -35,27 +40,60 @@ const getPlenarySchedule = async (attendeeId: string) => {
 
 	const preferenceRankByPlenary = Object.fromEntries(
 		plenaryPreferences.flatMap(({ plenary, preferenceRank }) =>
-			plenary
-				? [
-						[plenary.id, preferenceRank] as [
-							string,
-							number | null | undefined
-						]
-					]
-				: []
+			plenary ? [[plenary.id, preferenceRank]] : []
 		)
 	);
 
-	return scheduleSlots.map(({ startTime, endTime, plenaries }) => ({
-		startTime,
-		endTime,
-		plenaries: ((plenaries?.records ?? []) as PlenariesRecord[]).map(
-			({ id, speaker, description }) => ({
-				id,
-				speaker,
-				description,
-				preferenceRank: preferenceRankByPlenary[id] ?? Infinity
-			})
+	// TODO: Remove this if Record and Tuple value types proposal is accepted and implemented in Node LTS.
+	type ScheduleSlot = NonNullable<
+		SelectedPick<PlenariesRecord, ["scheduleSlot.*"]>["scheduleSlot"]
+	>;
+	const scheduleSlots: Record<
+		string,
+		{
+			id: string;
+			startTime: Date | null | undefined;
+			endTime: Date | null | undefined;
+		}
+	> = {};
+	const getScheduleSlotById = (scheduleSlot: ScheduleSlot) =>
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+		(scheduleSlots[scheduleSlot.id] ??= {
+			id: scheduleSlot.id,
+			startTime: scheduleSlot.startTime,
+			endTime: scheduleSlot.endTime
+		});
+
+	return Array.from(
+		mapGroupBy(
+			plenaries.flatMap(({ id, theme, scheduleSlot, speakers }) =>
+				scheduleSlot
+					? [
+							{
+								id,
+								theme,
+								scheduleSlot: getScheduleSlotById(scheduleSlot),
+								speakers: (
+									(speakers?.records ??
+										[]) as SpeakersRecord[]
+								).map(({ id, name, title, shortBio }) => ({
+									id,
+									name,
+									title,
+									shortBio
+								})),
+								preferenceRank:
+									preferenceRankByPlenary[id] ?? Infinity
+							}
+						]
+					: []
+			),
+			({ scheduleSlot }) => scheduleSlot
+		).entries()
+	).map(([scheduleSlot, plenaries]) => ({
+		...scheduleSlot,
+		plenaries: plenaries.map(
+			({ scheduleSlot: _scheduleSlot, ...plenary }) => plenary
 		)
 	}));
 };
@@ -80,9 +118,7 @@ export const load: PageServerLoad = async ({ parent }) => {
 			plenaries: plenaries.sort(
 				(a, b) =>
 					a.preferenceRank - b.preferenceRank ||
-					(a.speaker && b.speaker
-						? a.speaker.localeCompare(b.speaker)
-						: 0)
+					(a.theme && b.theme ? a.theme.localeCompare(b.theme) : 0)
 			)
 		}))
 	};
