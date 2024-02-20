@@ -57,7 +57,7 @@
 
 <section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="max-w-screen-lg mx-auto px-6 lg:px-20">
-		<div class="mb-10 lg:mb-20 mt-6 text-center">
+		<div class="mb-8 lg:mb-20 mt-6 text-center">
 			<h3
 				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
 			>
@@ -77,10 +77,10 @@
 				class="rounded-lg h-40 hidden md:block"
 			/>
 			<div class="flex flex-col justify-center text-zinc-400">
-				<h3 class="text-white text-2xl md:text-3xl mb-3 font-semibold">
+				<h3 class="text-white text-xl md:text-3xl mb-3 font-semibold">
 					Hey {data.user.firstName ?? data.user.email}!
 				</h3>
-				<p class="text-[0.925rem] md:text-base text-left">
+				<p class="text-[0.9rem] md:text-base text-left">
 					{#if allCompleted}
 						<div class="mb-3">
 							You're all set! We can't wait to see you at WAC!

@@ -25,11 +25,11 @@
 	<svelte:fragment slot="header-status">
 		{#if isValid !== undefined}
 			{#if isValid === true}
-				<div class="text-[1.5rem] text-green-400">
+				<div class="text-[1.25rem] sm:text-[1.5rem] text-green-400">
 					<i class="fa-solid fa-circle-check"></i>
 				</div>
 			{:else}
-				<div class="text-[1.5rem] text-red-400">
+				<div class="text-[1.25rem] sm:text-[1.5rem] text-red-400">
 					<i class="fa-solid fa-circle-xmark"></i>
 				</div>
 			{/if}

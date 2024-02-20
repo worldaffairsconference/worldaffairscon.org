@@ -30,7 +30,7 @@
 				</option>
 				<slot />
 			</select>
-			<div class="text-[1.25rem]">
+			<div class="text-[0.9rem] sm:text-[1.25rem]">
 				<i class="fa-solid fa-angle-down"></i>
 			</div>
 		</div>
