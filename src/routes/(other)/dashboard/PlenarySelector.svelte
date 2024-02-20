@@ -49,11 +49,13 @@
 	});
 </script>
 
-<div class="p-2 sm:p-4 rounded-lg border border-zinc-600 bg-zinc-800 h-full">
+<div class="p-2 rounded-lg border border-zinc-600 bg-zinc-800 h-full">
 	<div bind:this={container}>
 		{#each initialPlenaries as info}
 			<PlenarySpeaker
-				speaker={info.speaker ?? ""}
+				speakerTitle={info.speakerTitle ?? ""}
+				theme={info.theme ?? ""}
+				speakerName={info.speakerName ?? ""}
 				description={info.description ?? ""}
 				index={plenaries.indexOf(info) + 1}
 			/>

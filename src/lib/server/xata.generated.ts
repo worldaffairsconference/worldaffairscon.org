@@ -95,7 +95,6 @@ const tables = [
     columns: [
       { name: "scheduleSlot", type: "link", link: { table: "schedule_slots" } },
       { name: "location", type: "string" },
-      { name: "description", type: "text" },
       { name: "theme", type: "string" },
     ],
     revLinks: [

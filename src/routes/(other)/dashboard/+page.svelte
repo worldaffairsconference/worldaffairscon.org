@@ -4,6 +4,7 @@
 	import PersonalInformation from "./PersonalInformation.svelte";
 	import LunchOptions from "./LunchOptions.svelte";
 	import PlenarySelection from "./PlenarySelection.svelte";
+	import toast, { Toaster } from "svelte-french-toast";
 
 	import type { PageData } from "./$types";
 	import { onMount } from "svelte";
@@ -37,7 +38,33 @@
 			(key) => originalFormData[key] !== currentFormData[key]
 		);
 
-		areUnsavedChanges = formElement.checkValidity() && isEdited;
+		areUnsavedChanges = isEdited;
+	};
+
+	const handleSubmit = (
+		e: MouseEvent & {
+			currentTarget: EventTarget & HTMLButtonElement;
+		}
+	) => {
+		e.preventDefault();
+
+		if (formElement.checkValidity() === false) {
+			toast.error("Please fill out all required fields!", {
+				position: "top-center",
+				duration: 1000
+			});
+			return;
+		}
+
+		toast.success("Changes saved!", {
+			position: "top-center",
+			duration: 1000
+		});
+
+		// Do the default form submission
+		setTimeout(() => {
+			formElement.submit();
+		}, 300);
 	};
 </script>
 
@@ -45,8 +72,10 @@
 	<title>Dashboard - World Affairs Conference</title>
 </svelte:head>
 
+<Toaster />
+
 <section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
-	<div class="max-w-screen-xl mx-auto px-6 lg:px-24">
+	<div class="max-w-screen-lg mx-auto px-6 lg:px-20">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
 			<h3
 				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
@@ -144,6 +173,7 @@
 							</button>
 							<button
 								type="submit"
+								on:click={handleSubmit}
 								class="mx-auto w-min py-2 px-5 text-white rounded-lg bg-gradient-to-r from-primary to-secondary"
 							>
 								Save

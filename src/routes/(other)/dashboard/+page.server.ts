@@ -140,7 +140,13 @@ export const actions = {
 						"endTime",
 						{
 							name: "<-plenaries.scheduleSlot",
-							columns: ["id", "speaker", "description"],
+							columns: [
+								"id",
+								"speakerName",
+								"speakerTitle",
+								"description",
+								"theme"
+							],
 							as: "plenaries"
 						}
 					])
@@ -193,7 +199,6 @@ export const actions = {
 		const parsedFormData = await schema.safeParseAsync(
 			Object.fromEntries(await request.formData())
 		);
-		console.log(parsedFormData);
 		if (!parsedFormData.success) return fail(400);
 		const { rankedPlenaries, ...attendeeAttributes } = parsedFormData.data;
 

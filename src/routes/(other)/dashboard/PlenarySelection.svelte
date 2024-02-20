@@ -15,26 +15,25 @@
 	<input hidden name="rankedPlenaries" value={encodedPreferences} />
 	{#if schedule}
 		<p class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base">
-			Drag and drop to order the plenary speakers for each time slot
-			according to your preference.
+			You can choose one plenary to attend for each time slot. Drag and
+			drop to order the plenary speakers for each time slot according to
+			your preference. We will try to accommodate everybody's top choice.
 		</p>
-		<section class="grid lg:grid-cols-3 gap-6">
+		<section class="flex flex-col gap-8">
 			{#each schedule as scheduleSlot}
 				<div class="w-full flex flex-col">
-					<div class="mb-4 ml-1">
+					<div class="mb-4">
 						<h3
 							class="text-white text-2xl font-semibold text-center"
 						>
 							{scheduleSlot.startTime?.toLocaleTimeString([], {
 								hour: "numeric",
-								minute: "numeric",
-								hour12: false
+								minute: "numeric"
 							})} - {scheduleSlot.endTime?.toLocaleTimeString(
 								[],
 								{
 									hour: "numeric",
-									minute: "numeric",
-									hour12: false
+									minute: "numeric"
 								}
 							)}
 						</h3>
