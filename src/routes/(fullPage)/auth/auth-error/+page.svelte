@@ -1,16 +1,23 @@
 <script lang="ts">
-	import AccordionItem from "$lib/components/AccordionItem.svelte";
-	import flowchart1 from "$lib/assets/images/registration/flowcharts/1.png";
-	import flowchart2 from "$lib/assets/images/registration/flowcharts/2.png";
-	import flowchart3 from "$lib/assets/images/registration/flowcharts/3.png";
+	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
+	import FlowChartCarousel from "./FlowChartCarousel.svelte";
+
+	import flowchart1 from "$lib/assets/images/registration/flowcharts/1-small.jpg";
+	import flowchart2 from "$lib/assets/images/registration/flowcharts/2-small.jpg";
+
+	let showCarousel = false;
+
+	const openCarousel = () => {
+		showCarousel = true;
+	};
 </script>
 
 <svelte:head>
-	<title>Authentication Error</title>
+	<title>Authentication Error - World Affairs Conference</title>
 </svelte:head>
 
 <section
-	class="absolute inset-0 flex justify-center items-center overflow-scroll"
+	class="absolute inset-0 flex justify-center items-center overflow-scroll z-50"
 >
 	<div
 		class="p-3 sm:p-10 mx-4 rounded-xl bg-zinc-800 border-zinc-700 border text-center max-w-screen-sm"
@@ -45,19 +52,23 @@
 			</p>
 			<hr class="border-zinc-400 my-3" />
 
-			<AccordionItem header="Want more information on the process?">
-				<p class="text-sm sm:text-base text-zinc-400 mb-2">
-					We have <a
-						href="https://imgs.xkcd.com/comics/flow_charts.png"
-						>flowcharts</a
-					> for you!
-				</p>
-				<div class="grid grid-cols-3">
-					<img src={flowchart1} alt="Flowchart 1" />
-					<img src={flowchart2} alt="Flowchart 2" />
-					<img src={flowchart3} alt="Flowchart 3" />
-				</div>
-			</AccordionItem>
+			<LargeAccordion header="Want more information on the process?">
+				<button on:click={openCarousel} class="cursor-zoom-in">
+					<p class="text-sm sm:text-base text-zinc-400 mb-2">
+						We have <a
+							href="https://imgs.xkcd.com/comics/flow_charts.png"
+							>flowcharts</a
+						> for you! Click to view them.
+					</p>
+					<div class="grid grid-cols-2">
+						{#each [flowchart1, flowchart2] as image, i}
+							<img src={image} alt="Flowchart Image {i}" />
+						{/each}
+					</div>
+				</button>
+			</LargeAccordion>
 		</div>
 	</div>
 </section>
+
+<FlowChartCarousel bind:showCarousel />

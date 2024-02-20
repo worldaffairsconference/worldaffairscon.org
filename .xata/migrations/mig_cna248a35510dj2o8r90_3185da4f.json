@@ -1,0 +1,16 @@
+{
+	"id": "mig_cna248a35510dj2o8r90",
+	"parentID": "mig_cna240464phgajfbioh0",
+	"checksum": "1:3185da4fba7b42d076f0f064cf8c558777be0a66030e4201701a09cc4addfc9b",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "confirmed",
+					"type": "bool"
+				},
+				"table": "plenaries"
+			}
+		}
+	]
+}

@@ -1,190 +1,66 @@
 <script lang="ts">
-	import AccordionItem from "$lib/components/AccordionItem.svelte";
-	import Input from "./Input.svelte";
-	import Select from "./Select.svelte";
 	import { createAvatar } from "@dicebear/core";
 	import { shapes } from "@dicebear/collection";
-	import { v4 as uuid } from "uuid";
-	// import PlenarySelection from "./PlenarySelection.svelte";
+	import PersonalInformation from "./PersonalInformation.svelte";
+	import LunchOptions from "./LunchOptions.svelte";
+	import PlenarySelection from "./PlenarySelection.svelte";
+	import toast, { Toaster } from "svelte-french-toast";
 
-	import type { ActionData, PageData } from "./$types";
+	import { page } from "$app/stores";
+
+	import type { PageData } from "./$types";
+	import { onMount } from "svelte";
 
 	export let data: PageData;
-	const { user } = data;
-	const avatar = createAvatar(shapes, { seed: user.email ?? "" });
+	const avatar = createAvatar(shapes, { seed: data.user.email ?? "" });
 
-	export let form: ActionData;
+	let isPersonalInformationValid: boolean | undefined = undefined;
+	let isLunchOptionsValid: boolean | undefined = undefined;
+	$: allCompleted = isPersonalInformationValid && isLunchOptionsValid;
 
-	let dataChanged = false;
+	let formElement: HTMLFormElement;
+	let originalFormData: ReturnType<typeof getDataFromForm>;
+	let areUnsavedChanges = false;
 
-	type Option = {
-		label: string;
-		name?: string;
-		fullWidth?: boolean;
-		required?: boolean;
-		disabled?: boolean;
-		value?: string;
-	} & (
-		| { type: "text"; placeholder?: string }
-		| { type: "email"; placeholder?: string }
-		| {
-				type: "select";
-				options?: { value: string; label: string }[];
-				hasOther?: boolean;
-		  }
-		| { type: "list"; items: string[]; placeholder?: string }
-	);
+	onMount(() => {
+		originalFormData = getDataFromForm();
+	});
 
-	interface CategorizedSettings {
-		category: string;
-		updateRoute: string;
-		settings: Option[];
-	}
-
-	const categorizedSettings: CategorizedSettings[] = [
-		{
-			category: "Personal Information",
-			updateRoute: "?/savePersonalInformation",
-			settings: [
-				{
-					label: "First Name",
-					name: "firstName",
-					type: "text",
-					required: true,
-					value: form?.firstName || user.firstName || "",
-					fullWidth: false
-				},
-				{
-					label: "Last Name",
-					name: "lastName",
-					type: "text",
-					required: true,
-					value: form?.lastName || user.lastName || "",
-					fullWidth: false
-				},
-				{
-					label: "Email",
-					type: "email",
-					disabled: true,
-					value: user.email || "",
-					fullWidth: false
-				},
-				{
-					label: "School",
-					name: "school",
-					type: "select",
-					required: true,
-					options: data.possibleSchools.map((school) => ({
-						value: school.id,
-						label: school.name ?? ""
-					})),
-					disabled: data.possibleSchools.length < 2,
-					value: form?.school ?? user.school?.id ?? "",
-					hasOther: true,
-					fullWidth: false
-				},
-				{
-					label: "Grade Level",
-					name: "gradeLevel",
-					type: "select",
-					required: true,
-					options: ["7", "8", "9", "10", "11", "12"]
-						.map((grade) => ({
-							value: grade,
-							label: `Grade ${grade}`
-						}))
-						.concat([{ value: "Teacher", label: "Teacher" }]),
-					value: form?.gradeLevel ?? user.gradeLevel ?? "",
-					fullWidth: false,
-					hasOther: true
-				},
-				{
-					label: "Attendance",
-					name: "inPerson",
-					type: "select",
-					required: true,
-					options: [
-						{
-							value: "true",
-							label: "In Person"
-						},
-						{
-							value: "false",
-							label: "Online"
-						}
-					],
-					value: (form?.inPerson ?? user.inPerson ?? "").toString(),
-					fullWidth: false
-				}
-			]
-		},
-		{
-			category: "Lunch Options",
-			updateRoute: "?/saveLunchOptions",
-			settings: [
-				{
-					label: "Lunch Option",
-					name: "needsLunch",
-					type: "select",
-					required: true,
-					options: [
-						{
-							value: "true",
-							label: "Purchase lunch at UCC for $15"
-						},
-						{
-							value: "false",
-							label: "I will bring my own lunch"
-						}
-					],
-					value: (
-						form?.needsLunch ??
-						user.needsLunch ??
-						""
-					).toString()
-				},
-				{
-					label: "Dietary Restrictions and Allergies",
-					type: "list",
-					placeholder: "Vegan, Vegetarian, Gluten-free, Nuts, etc.",
-					items: [
-						"Vegan",
-						"Vegetarian",
-						"Gluten-free",
-						"Nuts",
-						"Dairy",
-						"Eggs",
-						"Shellfish",
-						"Soy"
-					],
-					name: "dietaryRestrictions",
-					value:
-						form?.dietaryRestrictions ??
-						user.dietaryRestrictions ??
-						""
-				}
-			]
-		}
-	];
-
-	const checkIfCompleted = (options: Option[]) => {
-		for (const option of options) {
-			if (option.required && option.value === "") {
-				return false;
-			}
-		}
-		return true;
+	const getDataFromForm = () => {
+		const formData = new FormData(formElement);
+		return Object.fromEntries(formData.entries());
 	};
 
-	$: allCompleted = categorizedSettings.every(({ settings }) =>
-		checkIfCompleted(settings)
-	);
+	const checkIfFormDataIsEdited = () => {
+		const currentFormData = getDataFromForm();
+
+		const isEdited = Object.keys(currentFormData).some(
+			(key) => originalFormData[key] !== currentFormData[key]
+		);
+
+		areUnsavedChanges = isEdited;
+	};
+
+	$: if ($page.form) {
+		toast.success("Your changes have been saved!", {
+			duration: 3000,
+			position: "top-right"
+		});
+	}
 </script>
 
-<section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
-	<div class="max-w-screen-lg mx-auto px-6 lg:px-16">
+<svelte:head>
+	<title>Dashboard - World Affairs Conference</title>
+</svelte:head>
+
+<Toaster />
+
+<section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+	<div class="max-w-screen-lg mx-auto px-6 lg:px-20">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
-			<h3 class="mb-2 block md:text-lg font-semibold text-primary">
+			<h3
+				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
+			>
 				Dashboard
 			</h3>
 			<h1
@@ -192,10 +68,6 @@
 			>
 				Welcome to WAC!
 			</h1>
-			<p class="text-zinc-400 mt-3">
-				Before you are fully registered, we just need a few more details
-				about you.
-			</p>
 		</div>
 
 		<div class="flex gap-6 mb-10">
@@ -205,17 +77,13 @@
 				class="rounded-lg h-40 hidden md:block"
 			/>
 			<div class="flex flex-col justify-center text-zinc-400">
-				<h3
-					class="text-white text-2xl md:text-3xl mb-2 md:mb-3 font-semibold"
-				>
-					Hey {user.firstName ?? user.email}!
+				<h3 class="text-white text-2xl md:text-3xl mb-3 font-semibold">
+					Hey {data.user.firstName ?? data.user.email}!
 				</h3>
-				<p class="text-sm md:text-base text-left">
+				<p class="text-[0.925rem] md:text-base text-left">
 					{#if allCompleted}
 						<div class="mb-3">
-							You're all set! The plenary selection will open
-							soon. You will receive an email when we are ready to
-							announce our amazing line up.
+							You're all set! We can't wait to see you at WAC!
 						</div>
 						<div>
 							In the meantime, please contact
@@ -235,7 +103,6 @@
 							Please fill out the information below to complete
 							your registration.
 						</div>
-						<!-- Once you have completed your registration, you will be able to select your plenaries. -->
 					{/if}
 				</p>
 			</div>
@@ -247,101 +114,54 @@
 			>
 				Your Info
 			</h3>
-			<div class="flex gap-10 flex-col">
-				{#each categorizedSettings as { category, settings, updateRoute }}
-					<AccordionItem
-						header={category}
-						isCompleted={checkIfCompleted(settings)}
+			<form
+				method="post"
+				class="flex gap-4 md:gap-10 flex-col"
+				on:input={checkIfFormDataIsEdited}
+				bind:this={formElement}
+			>
+				<PersonalInformation
+					user={data.user}
+					possibleSchools={data.possibleSchools}
+					bind:isValid={isPersonalInformationValid}
+				/>
+				<LunchOptions
+					user={data.user}
+					bind:isValid={isLunchOptionsValid}
+				/>
+				<PlenarySelection
+					schedule={data.plenarySchedule}
+					bind:areUnsavedChanges
+				/>
+				{#if areUnsavedChanges}
+					<div
+						class="fixed bottom-4 bg-zinc-700 p-3 left-1/2 -translate-x-1/2 flex gap-12 items-center rounded-xl border-2 border-zinc-600 text-sm"
 					>
-						<form
-							method="post"
-							action={updateRoute}
-							class="grid sm:grid-cols-2 gap-y-3 sm:gap-y-5 gap-x-2"
-							on:input={() => {
-								dataChanged = true;
-							}}
-						>
-							{#each settings as setting}
-								<div
-									class={setting.fullWidth !== false
-										? "col-span-full"
-										: "col-span-1"}
-								>
-									{#if setting.type === "text"}
-										<Input {...setting} />
-									{:else if setting.type === "select"}
-										<Select
-											label={setting.label}
-											name={setting.name}
-											required={setting.required || false}
-										>
-											<option
-												hidden
-												disabled
-												selected={setting.value === ""}
-											>
-												Please choose an option
-											</option>
-											{#if setting.options}
-												{#each setting.options as option}
-													<option
-														value={option.value}
-														selected={option.value ===
-															setting.value}
-													>
-														{option.label}
-													</option>
-												{/each}
-											{/if}
-											{#if setting.hasOther}
-												<option
-													value="Other"
-													selected={setting.options?.every(
-														({ value }) =>
-															value !==
-															setting.value
-													)}
-												>
-													Other
-												</option>
-											{/if}
-										</Select>
-									{:else if setting.type === "email"}
-										<Input {...setting} />
-									{:else if setting.type === "list"}
-										{@const listId = uuid()}
-										<Input
-											placeholder={setting.placeholder}
-											{...setting}
-										/>
-										<datalist id={listId}>
-											{#each setting.items as item}
-												<option value={item} />
-											{/each}
-										</datalist>
-									{/if}
-								</div>
-							{/each}
-							{#if dataChanged}
-								<button
-									type="submit"
-									class="w-min py-2 px-10 text-white rounded-md bg-gradient-to-r from-primary to-secondary"
-								>
-									Save
-								</button>
-							{/if}
-						</form>
-					</AccordionItem>
-				{/each}
-				<AccordionItem header="Plenary Selection" open>
-					<p class="text-zinc-400">
-						The final plenary list has not yet been announced. We
-						will email you once it is available.
-					</p>
-				</AccordionItem>
-			</div>
+						<span class="ml-2 text-white">
+							You have unsaved changes
+						</span>
+						<div class="flex gap-1">
+							<button
+								class="mx-auto w-min py-2 px-5 text-white rounded-lg hover:bg-zinc-800/50 transition-colors"
+								on:click={(e) => {
+									e.preventDefault();
+
+									// TODO: Implement undo functionality without refreshing the page
+									window.location.reload();
+								}}
+							>
+								Undo
+							</button>
+							<button
+								type="submit"
+								class="mx-auto w-min py-2 px-5 text-white rounded-lg bg-gradient-to-r from-primary to-secondary"
+							>
+								Save
+							</button>
+						</div>
+					</div>
+				{/if}
+			</form>
 		</div>
 	</div>
 </section>
-
-<!-- <PlenarySelection /> -->

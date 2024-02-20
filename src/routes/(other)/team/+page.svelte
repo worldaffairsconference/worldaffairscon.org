@@ -25,6 +25,7 @@
 	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
 	import eugenioCiarlandini from "$lib/assets/images/team/eugenio-ciarlandini.jpg";
+	import calebChong from "$lib/assets/images/team/caleb-chong.jpg";
 
 	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
@@ -102,7 +103,7 @@
 		{
 			name: "Caleb Chong",
 			position: "Director of Registration",
-			image: wacWLarge
+			image: calebChong
 		},
 		{
 			name: "Adrian Chi Hong Mak",
@@ -254,9 +255,11 @@
 	<title>Team - World Affairs Conference</title>
 </svelte:head>
 
-<section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+<section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="mb-10 lg:mb-20 mt-6 text-center">
-		<h3 class="mb-2 block md:text-lg font-semibold text-primary">Team</h3>
+		<h3 class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary">
+			Team
+		</h3>
 		<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
 			WAC 2024 Team
 		</h1>

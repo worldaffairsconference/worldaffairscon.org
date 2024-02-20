@@ -7,8 +7,12 @@
 	const onSubmitSignInForm: DOMAttributes<HTMLFormElement>["on:submit"] = (
 		event
 	) => {
+		const email = new FormData(event.currentTarget).get("email") as
+			| string
+			| null;
+		sessionStorage.setItem("email", email ?? "");
 		signInTokenPromise = signIn("magic-link", {
-			email: new FormData(event.currentTarget).get("email"),
+			email,
 			callbackUrl: "/dashboard"
 		});
 	};

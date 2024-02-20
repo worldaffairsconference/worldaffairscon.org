@@ -1,14 +1,20 @@
 <script lang="ts">
-	import AccordionItem from "$lib/components/AccordionItem.svelte";
+	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
 	import type { PageData } from "./$types";
 	export let data: PageData;
 	const { faqByCategories } = data;
 </script>
 
-<section class="pt-[5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+<svelte:head>
+	<title>FAQ - World Affairs Conference</title>
+</svelte:head>
+
+<section class="pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
 	<div class="max-w-screen-xl mx-auto px-6 lg:px-16">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
-			<h3 class="mb-2 block md:text-lg font-semibold text-primary">
+			<h3
+				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
+			>
 				FAQ
 			</h3>
 			<h1
@@ -31,24 +37,24 @@
 						<div class="flex flex-col gap-4 w-full lg:w-1/2">
 							{#each records as { question, answer }, i}
 								{#if i % 2 === 0}
-									<AccordionItem header={question}>
+									<LargeAccordion header={question}>
 										<div class="markdown">
 											<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 											{@html answer}
 										</div>
-									</AccordionItem>
+									</LargeAccordion>
 								{/if}
 							{/each}
 						</div>
 						<div class="flex flex-col gap-4 w-full lg:w-1/2">
 							{#each records as { question, answer }, i}
 								{#if i % 2 === 1}
-									<AccordionItem header={question}>
+									<LargeAccordion header={question}>
 										<div class="text-zinc-300 markdown">
 											<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 											{@html answer}
 										</div>
-									</AccordionItem>
+									</LargeAccordion>
 								{/if}
 							{/each}
 						</div>

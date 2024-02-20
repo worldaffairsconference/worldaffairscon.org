@@ -1,61 +1,58 @@
 <script lang="ts">
-	import Test from "./Test.svelte";
+	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
+	import type { PageData } from "./$types";
+	import PlenarySelector from "./PlenarySelector.svelte";
 
-	interface Plenary {
-		title: string;
-		time: string;
-		speakers: string[];
-	}
+	export let schedule: PageData["plenarySchedule"];
+	export let areUnsavedChanges: boolean;
 
-	let plenaries: Plenary[] = [
-		{
-			title: "Plenary 1",
-			time: "9:00AM to 10:00AM",
-			speakers: [
-				"Elon Musk",
-				"Sam Altman",
-				"Greta Thunberg",
-				"Bill Gates",
-				"Gabe D'Souza"
-			]
-		},
-		{
-			title: "Plenary 2",
-			time: "10:00AM to 11:00AM",
-			speakers: [
-				"Barack Obama",
-				"Malala Yousafzai",
-				"Stephen Hawking",
-				"Albert Einstein",
-				"Marie Curie"
-			]
-		},
-		{
-			title: "Plenary 3",
-			time: "11:00AM to 12:00PM",
-			speakers: [
-				"Oprah Winfrey",
-				"Neil deGrasse Tyson",
-				"Angela Merkel",
-				"Nelson Mandela",
-				"Ada Lovelace"
-			]
-		}
-	];
+	$: encodedPreferences = JSON.stringify(
+		(schedule ?? []).flatMap((s) => s.plenaries.map(({ id }) => id))
+	);
 </script>
 
-<section class="max-w-screen-lg mx-auto">
-	<div class="flex justify-center gap-6 mb-4">
-		{#each plenaries as plenary}
-			<div class="w-full">
-				<div class="mb-4 ml-1">
-					<h3 class="text-white text-3xl font-semibold mb-0.5">
-						{plenary.title}
-					</h3>
-					<p class="text-zinc-400">9:00AM to 10:00AM</p>
+<LargeAccordion header="Plenary Selection" open={!!schedule}>
+	<input hidden name="rankedPlenaries" value={encodedPreferences} />
+	{#if schedule}
+		<p class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base">
+			You can choose one plenary to attend for each time slot. Drag and
+			drop to order the plenary speakers for each time slot according to
+			your preference. We will try to accommodate everybody's top choice.
+		</p>
+		<section class="flex flex-col gap-8">
+			{#each schedule as scheduleSlot}
+				<div class="w-full flex flex-col">
+					<div class="mb-4">
+						<h3
+							class="text-white text-2xl font-semibold text-center"
+						>
+							{scheduleSlot.startTime?.toLocaleTimeString([], {
+								hour: "numeric",
+								minute: "numeric"
+							})} - {scheduleSlot.endTime?.toLocaleTimeString(
+								[],
+								{
+									hour: "numeric",
+									minute: "numeric"
+								}
+							)}
+						</h3>
+					</div>
+					<div class="grow">
+						<PlenarySelector
+							on:drop={(e) => {
+								areUnsavedChanges = !!e.detail;
+							}}
+							bind:plenaries={scheduleSlot.plenaries}
+						/>
+					</div>
 				</div>
-				<Test bind:speakers={plenary.speakers} />
-			</div>
-		{/each}
-	</div>
-</section>
+			{/each}
+		</section>
+	{:else}
+		<p class="text-zinc-400">
+			The final plenary list has not yet been announced. We will email you
+			once it is available.
+		</p>
+	{/if}
+</LargeAccordion>

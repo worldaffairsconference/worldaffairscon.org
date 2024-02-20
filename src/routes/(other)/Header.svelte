@@ -227,6 +227,13 @@
 						>
 							Dashboard
 						</a>
+						<!-- <a
+							href="/schedule"
+							class="block px-4 py-3 hover:bg-zinc-700 hover:text-white rounded-lg transition-colors"
+							on:click|stopPropagation={toggleDropdown}
+						>
+							Schedule
+						</a> -->
 						<button
 							class="w-full text-left px-4 py-3 hover:bg-zinc-700 hover:text-white rounded-lg transition-colors"
 							on:click|stopPropagation={() => signOut()}
