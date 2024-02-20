@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { PUBLIC_DEPLOY_PRIME_URL } from "$env/static/public";
 	import type { PageData } from "./$types";
 
 	export let data: PageData;
@@ -9,7 +8,7 @@
 	let verificationCode = "";
 
 	const handleSubmit = async () => {
-		window.location.href = `${PUBLIC_DEPLOY_PRIME_URL}/auth/callback/magic-link?${new URLSearchParams(
+		window.location.href = `/auth/callback/magic-link?${new URLSearchParams(
 			{
 				callbackUrl: data.callbackUrl,
 				token: verificationCode,
