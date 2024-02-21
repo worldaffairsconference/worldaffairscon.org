@@ -17,15 +17,17 @@
 
 <BaseAccordion
 	bind:open
-	class="bg-zinc-700 border border-zinc-500 m-2 p-3.5 sm:p-4 rounded-md flex gap-1.5"
+	class="bg-zinc-700 border border-zinc-500 m-1.5 sm:m-2 p-3 sm:p-4 rounded-md"
 >
-	<div class="flex items-center gap-6" slot="header">
-		<span class="ml-1 font-semibold text-white text-2xl">
+	<div class="flex items-center gap-3" slot="header">
+		<span class="ml-1 font-semibold text-white text-xl w-4">
 			{index + 1}
 		</span>
 		<div class="flex gap-4 w-full justify-between">
 			<div class="flex flex-col gap-1.5">
-				<h4 class="text-white line-clamp-2 font-semibold">
+				<h4
+					class="text-white font-semibold leading-snug text-sm sm:text-base"
+				>
 					{theme}
 				</h4>
 			</div>
@@ -47,11 +49,10 @@
 		</div>
 	</div>
 
-	<div class="ml-8 pt-2.5 text-[0.95rem]" slot="content">
-		<!-- TODO: Collapse the columns into a single one when the screen width is too small -->
-		<div class="flex gap-4">
+	<div class="ml-1 sm:ml-8 pt-3 text-[0.95rem]" slot="content">
+		<div class="flex gap-4 flex-col sm:flex-row">
 			{#each speakers as speaker}
-				<div class="text-[0.9rem]" style="flex: 1 1 0px;">
+				<div class="text-[0.9rem] grow min-w-[20%]">
 					<div class="mb-1">
 						<div class="text-zinc-200 font-semibold -m-px">
 							{speaker.name}

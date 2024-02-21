@@ -49,7 +49,7 @@
 	});
 </script>
 
-<div class="p-2 rounded-lg border border-zinc-600 bg-zinc-800 h-full">
+<div class="p-1 sm:p-2 rounded-lg border border-zinc-600 bg-zinc-800 h-full">
 	<div bind:this={container}>
 		{#each initialPlenaries as plenary}
 			<PlenaryCard

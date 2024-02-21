@@ -14,7 +14,7 @@
 <LargeAccordion header="Plenary Selection" open={!!schedule}>
 	<input hidden name="rankedPlenaries" value={encodedPreferences} />
 	{#if schedule}
-		<p class="text-zinc-400 mb-6 md:mb-10 text-[0.925rem] sm:text-base">
+		<p class="text-zinc-400 mb-6 md:mb-10 text-[0.9rem] sm:text-base">
 			You can choose one plenary to attend for each time slot. Drag and
 			drop to order the plenary speakers for each time slot according to
 			your preference. We will try to accommodate everybody's top choice.
@@ -50,7 +50,7 @@
 			{/each}
 		</section>
 	{:else}
-		<p class="text-zinc-400">
+		<p class="text-zinc-400 text-[0.9rem] sm:text-base">
 			The final plenary list has not yet been announced. We will email you
 			once it is available.
 		</p>
