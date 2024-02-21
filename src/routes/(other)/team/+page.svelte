@@ -24,8 +24,9 @@
 	import ericaKim from "$lib/assets/images/team/erica_kim.jpg";
 	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
-	import eugenioCiarlandini from "$lib/assets/images/team/eugenio-ciarlandini.jpg";
-	import calebChong from "$lib/assets/images/team/caleb-chong.jpg";
+	import eugenioCiarlandini from "$lib/assets/images/team/eugenio_ciarlandini.jpg";
+	import calebChong from "$lib/assets/images/team/caleb_chong.jpg";
+	import aaravDogra from "$lib/assets/images/team/aarav_dogra.jpg";
 
 	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
@@ -83,7 +84,7 @@
 		{
 			name: "Aarav Dogra",
 			position: "Treasurer",
-			image: wacWLarge
+			image: aaravDogra
 		},
 		{
 			name: "Annie Deng",
