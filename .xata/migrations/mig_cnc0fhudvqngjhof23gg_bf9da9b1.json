@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnc0fhudvqngjhof23gg",
+  "parentID": "mig_cnbvbotvema2e5dopl3g",
+  "checksum": "1:bf9da9b176c66158918d0bfdd436ad62dca6f246d612e86910ff6cfdbf0918a4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canEditPermissions",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

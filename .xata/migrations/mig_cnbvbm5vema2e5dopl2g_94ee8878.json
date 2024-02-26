@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnbvbm5vema2e5dopl2g",
+  "parentID": "mig_cnbvbkdvema2e5dopl1g",
+  "checksum": "1:94ee887840057e721e516065d164f1b353027b6727c15d30f45d5d14945c91e1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canDeletePlenaries",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}
