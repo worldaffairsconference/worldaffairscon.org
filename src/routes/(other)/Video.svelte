@@ -8,8 +8,6 @@
 	import trailerVideo from "$lib/assets/video/wac_trailer.mp4";
 	import { onMount } from "svelte";
 
-	export let mountSpeakers: boolean;
-
 	let showVideoPreview = true;
 	let gsapScope: Element;
 
@@ -151,13 +149,12 @@
 				aria-label="Play WAC 2023 Trailer"
 				id="video"
 			>
-				{#if mountSpeakers}
-					<img
-						src={trailerThumbnail}
-						alt="Trailer video thumbnail"
-						class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
-					/>
-				{/if}
+				<img
+					src={trailerThumbnail}
+					alt="Trailer video thumbnail"
+					class="w-full h-full object-cover object-center sm:rounded-2xl sm:shadow-md"
+				/>
+
 				<div
 					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[90px] w-[90px] lg:h-[109px] lg:w-[109px] bg-zinc-950/40 backdrop-blur-md rounded-full flex justify-center items-center"
 				>
