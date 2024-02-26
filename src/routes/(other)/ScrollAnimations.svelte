@@ -31,17 +31,22 @@
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
 	// Images
-	import ckHoffler from "$lib/assets/images/speakers/ck_hoffler.webp";
-	import davidOwen from "$lib/assets/images/speakers/david_owen.webp";
-	import edwardSnowden from "$lib/assets/images/speakers/edward_snowden.webp";
-	import geoffreyHinton from "$lib/assets/images/speakers/geoffrey_hinton.webp";
-	import johnStackhouse from "$lib/assets/images/speakers/john_stackhouse.webp";
-	import marcGarneau from "$lib/assets/images/speakers/marc_garneau.webp";
-	import mehdiHasan from "$lib/assets/images/speakers/mehdi_hasan.webp";
-	import mlk from "$lib/assets/images/speakers/mlk.webp";
-	import scottGalloway from "$lib/assets/images/speakers/scott_galloway.webp";
-	import jamesHansen from "$lib/assets/images/speakers/james_hansen.webp";
-	import sarahGallagher from "$lib/assets/images/speakers/sarah_gallagher.webp";
+	import alexCui from "$lib/assets/images/speakers/alex-cui.webp";
+	import bobDameron from "$lib/assets/images/speakers/bob-dameron.webp";
+	import carolineCodsi from "$lib/assets/images/speakers/caroline-codsi.webp";
+	import chrisOShaughnessy from "$lib/assets/images/speakers/chris-o-shaughnessy.webp";
+	import cosmianMorariu from "$lib/assets/images/speakers/cosmian-morariu.webp";
+	import eskoAho from "$lib/assets/images/speakers/esko-aho.webp";
+	import franciscoSagasti from "$lib/assets/images/speakers/francisco-sagasti.webp";
+	import kathrynHume from "$lib/assets/images/speakers/kathryn-hume.webp";
+	import bruceKuwabara from "$lib/assets/images/speakers/bruce-kuwabara.webp";
+	import nikolasBadminton from "$lib/assets/images/speakers/nikolas-badminton.webp";
+	import robertaBondar from "$lib/assets/images/speakers/roberta-bondar.webp";
+	import sandraHawken from "$lib/assets/images/speakers/sandra-hawken.webp";
+	import tomHeintzman from "$lib/assets/images/speakers/tom-heintzman.webp";
+	import odedGalor from "$lib/assets/images/speakers/oded-galor.webp";
+	import bobRae from "$lib/assets/images/speakers/bob-rae.webp";
+	import faresKady from "$lib/assets/images/speakers/fares-kady.webp";
 
 	// Constants
 	const TOTAL_STARS = 500; // How many stars there are
@@ -55,74 +60,90 @@
 
 	const speakers: Speaker[] = [
 		{
-			name: "CK Hoffler",
-			title: "CEO of The CK Hoffler Firm",
-			image: ckHoffler,
+			name: "Bob Rae",
+			title: "Canadian Ambassador to UN",
+			image: bobRae
+		},
+		{
+			name: "Roberta Bondar",
+			title: "Roberta L Bondar, C.C. O.Ont. MD PhD FRSC ICD.D, Canada’s First Female Astronaut in Space",
+			image: robertaBondar
+		},
+		{
+			name: "Francisco Sagasti",
+			title: "Former President of Peru (2020-2021)",
+			image: franciscoSagasti
+		},
+		{
+			name: "Esko Aho",
+			title: "Former PM of Finland",
+			image: eskoAho
+		},
+		{
+			name: "Bruce Kuwabara, O. C.",
+			title: "Architect",
+			image: bruceKuwabara
+		},
+		{
+			name: "Alex Cui",
+			title: "CTO @ GPTZero",
+			image: alexCui
+		},
+		{
+			name: "Oded Galor",
+			title: "Founder of Unified Growth Theory, Herbert Goldberger Professor of Economics at Brown University",
+			image: odedGalor
+		},
+		{
+			name: "Cosmina Morariu",
+			title: "Global Partner of Fragomen LPP",
+			image: cosmianMorariu
+		},
+		{
+			name: "Caroline Codsi",
+			title: "President of Women in Governance",
+			image: carolineCodsi
+		},
+		{
+			name: "Chris O'Shaugnessy",
+			title: "Author",
+			image: chrisOShaughnessy
+		},
+		{
+			name: "Fares Kady",
+			title: "Head of Aleppo Office, World Health Organization",
+			image: faresKady
+		},
+		{
+			name: "Bob Dameron '75",
+			title: "Head of Business Development of Multiverse Computing",
+			image: bobDameron
+		},
+		{
+			name: "Tom Heintzman '82",
+			title: "Managing Director and Vice-Chair, Energy Transition & Sustainability CIBC Capital Markets",
+			image: tomHeintzman
+		},
+		{
+			name: "Kathryn Hume",
+			title: "VP of Digital Channels Technology at Royal Bank of Canada",
+			image: kathrynHume
+		},
+		{
+			name: "Nikolas Badminton",
+			title: "Futurist",
+			image: nikolasBadminton
+		},
+		{
+			name: "Sandra Hawken",
+			title: "President and CEO of Holland Bloorview Kids Rehabilitation Hospital Foundation",
+			image: sandraHawken,
 			tag: "Keynote Speaker"
-		},
-		{
-			name: "Martin Luther King III",
-			title: "American Human Rights Activist",
-			image: mlk,
-			tag: "Keynote Speaker"
-		},
-		{
-			name: "Edward Snowden",
-			title: "Former NSA Consultant & Whistleblower",
-			image: edwardSnowden,
-			tag: "Keynote Speaker"
-		},
-		{
-			name: "Dr. Geoffrey Hinton",
-			title: "2018 recipient of the Turing Award for Computer Science",
-			image: geoffreyHinton,
-			tag: "Keynote Speaker"
-		},
-		{
-			name: "Marc Garneau",
-			title: "Former Canadian Astronaut",
-			image: marcGarneau
-		},
-		{
-			name: "Scott Galloway",
-			title: "Professor of Marketing at NYU Stern School of Business",
-			image: scottGalloway,
-			tag: "Keynote Speaker"
-		},
-		{
-			name: "Mehdi Hasan",
-			title: "British-American Political Journalist, Broadcaster and Author",
-			image: mehdiHasan,
-			tag: "Keynote Speaker"
-		},
-		{
-			name: "John Stackhouse",
-			title: "Former Editor-in-Chief of The Globe and Mail",
-			image: johnStackhouse
-		},
-		{
-			name: "David Owen",
-			title: "Former British Foreign Secretary",
-			image: davidOwen
-		},
-		{
-			name: "Dr. James Hansen",
-			title: '"Father of climate change awareness"',
-			image: jamesHansen,
-			tag: "Keynote Speaker"
-		},
-		{
-			name: "Dr. Sarah Gallagher",
-			title: "Science Advisor to the Canadian Space Agency",
-			image: sarahGallagher
 		}
 	];
 
 	let canvasElement: HTMLCanvasElement;
 	let gsapScope: Element;
-
-	let mountSpeakers = false;
-	let showSpeakers = false;
 
 	let camera: PerspectiveCamera;
 	let renderer: WebGLRenderer;
@@ -288,7 +309,7 @@
 				scrollTrigger: {
 					trigger: "#home",
 					start: "top top",
-					end: "bottom+=6700 center",
+					end: "bottom+=3000 center",
 					pin: "#home",
 					scrub: true
 				}
@@ -303,23 +324,12 @@
 					},
 					0
 				)
-				// Make the globe zoom in and position to the left side of the screen
 				.to(camera.position, {
-					duration: 0.75,
-					x: 125,
-					y: 10,
-					z: 150,
-					ease: "power2.out",
-					delay: 0.25
-				})
-				.to(camera.position, {
-					delay: 0.75
-				})
-				.to(camera.position, {
+					delay: 0.75,
 					duration: 1.25,
 					x: 0,
 					y: -65,
-					z: 175,
+					z: 240,
 					ease: "sine.out"
 				});
 
@@ -347,26 +357,6 @@
 					display: "hidden",
 					delay: 5
 				});
-
-			ScrollTrigger.create({
-				trigger: "#stats",
-				start: "top+=3400 center",
-				end: "top+=4700 center",
-
-				onEnter: () => {
-					showSpeakers = true;
-					mountSpeakers = true;
-				},
-				onLeave: () => {
-					showSpeakers = false;
-				},
-				onEnterBack: () => {
-					showSpeakers = true;
-				},
-				onLeaveBack: () => {
-					showSpeakers = false;
-				}
-			});
 
 			gsap.to(starVertices, {
 				scrollTrigger: {
@@ -428,59 +418,16 @@
 			id="container"
 		>
 			<div
-				class="absolute top-[20%] sm:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-[20%] sm:-translate-y-1/4 w-5/6 mx-auto opacity-0 hidden transition-opacity"
+				class="absolute inset-0 w-full h-screen text-left py-12 opacity-0 hidden transition-opacity"
 				id="stats"
 			>
-				<h2 class="text-lg sm:text-xl md:text-2xl text-zinc-300 mb-10">
-					WAC has reached:
-				</h2>
-				<dl
-					class="max-w-screen-md gap-8 md:gap-16 mx-auto text-white flex justify-between flex-wrap text-center [&>*]:mx-auto"
-				>
-					<div
-						class="flex flex-col items-center justify-center mx-auto"
+				<div class="flex flex-col h-full w-full">
+					<h2
+						class="text-center text-[2.75rem] sm:text-[4.3rem] font-bold text-white tracking-tight mb-8"
 					>
-						<dt
-							class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
-						>
-							10k+
-						</dt>
-						<dd class="text-zinc-400 text-lg">students</dd>
-					</div>
-					<div
-						class="flex flex-col items-center justify-center mx-auto"
-					>
-						<dt
-							class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
-						>
-							35+
-						</dt>
-						<dd class="text-zinc-400 text-lg">countries</dd>
-					</div>
-					<div
-						class="flex flex-col items-center justify-center mx-auto"
-					>
-						<dt
-							class="mb-2 text-6xl md:text-[5.92rem] font-bold tracking-tight"
-						>
-							80+
-						</dt>
-						<dd class="text-zinc-400 text-lg">schools</dd>
-					</div>
-				</dl>
-			</div>
-			<div
-				class="absolute inset-0 w-full h-screen text-left py-12 flex flex-col {showSpeakers
-					? 'opacity-100 visibile'
-					: 'opacity-0 invisible translate-y-1'} transition-all duration-[400ms] ease-in"
-			>
-				<h2
-					class="text-center text-[2.75rem] sm:text-[4.3rem] font-bold text-white tracking-tight mb-8"
-				>
-					Past Speakers
-				</h2>
+						2024 Speakers
+					</h2>
 
-				{#if mountSpeakers}
 					<div class="grow overflow-hidden relative mb-6">
 						<div
 							class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
@@ -524,11 +471,11 @@
 										/>
 
 										<div
-											class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-20 px-3 sm:px-5 flex"
+											class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-[6.25rem] px-3 sm:px-5 flex"
 										>
 											<div class="my-auto">
 												<h3
-													class="font-semibold text-white text-lg mdtext-xl tracking-tight mb-[0.075rem]"
+													class="font-semibold text-white tracking-tight mb-[0.075rem]"
 												>
 													{speaker.name}
 												</h3>
@@ -549,22 +496,23 @@
 							</SwiperContainer>
 						</div>
 					</div>
-				{/if}
-				<div class="self-center">
-					<button
-						on:click={prevSlide}
-						class="text-[1.15rem] sm:text-[1.45rem] w-12 h-12 sm:w-16 sm:h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
-						aria-label="Go to Previous Speaker"
-					>
-						<i class="fa-solid fa-arrow-left"></i>
-					</button>
-					<button
-						on:click={nextSlide}
-						class="text-[1.15rem] sm:text-[1.45rem] w-12 h-12 sm:w-16 sm:h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
-						aria-label="Go to Next Speaker"
-					>
-						<i class="fa-solid fa-arrow-right"></i>
-					</button>
+
+					<div class="self-center">
+						<button
+							on:click={prevSlide}
+							class="text-[1.15rem] sm:text-[1.45rem] w-12 h-12 sm:w-16 sm:h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+							aria-label="Go to Previous Speaker"
+						>
+							<i class="fa-solid fa-arrow-left"></i>
+						</button>
+						<button
+							on:click={nextSlide}
+							class="text-[1.15rem] sm:text-[1.45rem] w-12 h-12 sm:w-16 sm:h-16 p-1.5 rounded-full bg-black text-white hover:bg-white hover:text-black transition-colors duration-150 ease-in"
+							aria-label="Go to Next Speaker"
+						>
+							<i class="fa-solid fa-arrow-right"></i>
+						</button>
+					</div>
 				</div>
 			</div>
 			<canvas bind:this={canvasElement} />
@@ -574,7 +522,7 @@
 	<div id="videoSection" class="h-screen">
 		{#if videoSection}
 			{#await videoSection then { default: Video }}
-				<Video {mountSpeakers} />
+				<Video />
 			{/await}
 		{/if}
 	</div>
