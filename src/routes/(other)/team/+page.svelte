@@ -26,7 +26,6 @@
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
 	import eugenioCiarlandini from "$lib/assets/images/team/eugenio_ciarlandini.jpg";
 	import calebChong from "$lib/assets/images/team/caleb_chong.jpg";
-	import leahMoore from "$lib/assets/images/team/leah_moore.jpg";
 	import adrianChiHongMak from "$lib/assets/images/team/adrian_chi_hong_mak.jpg";
 	import rayWu from "$lib/assets/images/team/ray_wu.jpg";
 	import aaravDogra from "$lib/assets/images/team/aarav_dogra.jpg";
@@ -68,7 +67,7 @@
 		{
 			name: "Leah Moore",
 			position: "Director of Programs",
-			image: leahMoore
+			image: wacWLarge
 		},
 		{
 			name: "Alex Woosley",
