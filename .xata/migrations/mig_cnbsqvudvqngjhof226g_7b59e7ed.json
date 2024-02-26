@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnbsqvudvqngjhof226g",
+  "parentID": "mig_cna248a35510dj2o8r90",
+  "checksum": "1:7b59e7eddb3016192a873125002206bc177afe8227661195a5b89f3ac0978815",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canUpdateAttendees",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

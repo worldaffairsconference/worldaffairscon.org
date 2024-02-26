@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnbsr4n5luj6iq2bbivg",
+  "parentID": "mig_cnbsqvudvqngjhof226g",
+  "checksum": "1:6df33dde2ca4189a2ed70533788bf0f7f5ea5e0f91def37d0564b06205b4f56c",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canDeleteAttendees",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnbva0v5luj6iq2bbkig",
+  "parentID": "mig_cnbv93udvqngjhof22jg",
+  "checksum": "1:be4bc5cee670c64feab9b421174d98b9830da7b9ca31f3b67d7805c0d8262823",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canUpdateFrequentlyAskedQuestions",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

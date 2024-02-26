@@ -1,0 +1,13 @@
+{
+  "id": "mig_cnbvbkdvema2e5dopl1g",
+  "parentID": "mig_cnbvbj6dvqngjhof22lg",
+  "checksum": "1:4c5d07b605b8c99af3b58f689260a80a79d765b763babb65b249ca1e8dc9212e",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "canViewTeam",
+        "table": "administration_users"
+      }
+    }
+  ]
+}

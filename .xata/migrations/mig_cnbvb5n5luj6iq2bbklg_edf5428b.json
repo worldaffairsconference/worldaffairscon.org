@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnbvb5n5luj6iq2bbklg",
+  "parentID": "mig_cnbvb3edvqngjhof22kg",
+  "checksum": "1:edf5428bbf8630a007de335408a9762b13d5ec4c37371d596411946647a8e8a6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canAddSchools",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}

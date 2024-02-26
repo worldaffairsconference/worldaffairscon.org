@@ -1,0 +1,16 @@
+{
+  "id": "mig_cnbv93udvqngjhof22jg",
+  "parentID": "mig_cnbsraudvqngjhof227g",
+  "checksum": "1:27a6c6705c5984385a72191bb4c250ca4d1725af9a8b3b74da767371ffe4f362",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canUpdateFinancialData",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}
