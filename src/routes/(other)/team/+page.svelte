@@ -26,7 +26,10 @@
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
 	import eugenioCiarlandini from "$lib/assets/images/team/eugenio_ciarlandini.jpg";
 	import calebChong from "$lib/assets/images/team/caleb_chong.jpg";
+	import adrianChiHongMak from "$lib/assets/images/team/adrian_chi_hong_mak.jpg";
+	import rayWu from "$lib/assets/images/team/ray_wu.jpg";
 	import aaravDogra from "$lib/assets/images/team/aarav_dogra.jpg";
+	import mimiSalman from "$lib/assets/images/team/mimi_salman.jpg";
 
 	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
@@ -51,7 +54,7 @@
 		{
 			name: "Ray Wu",
 			position: "Executive Chair",
-			image: wacWLarge
+			image: rayWu
 		},
 		{
 			name: "Shaya Farahmand",
@@ -109,7 +112,7 @@
 		{
 			name: "Adrian Chi Hong Mak",
 			position: "Director of Marketing",
-			image: wacWLarge
+			image: adrianChiHongMak
 		},
 		{
 			name: "Yara Bhaloo",
@@ -157,7 +160,7 @@
 		{
 			name: "Mimi Salman",
 			position: "Plenary Head",
-			image: wacWSmall
+			image: mimiSalman
 		},
 		{
 			name: "Arya Patil",
