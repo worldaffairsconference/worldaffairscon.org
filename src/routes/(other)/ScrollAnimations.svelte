@@ -60,32 +60,6 @@
 
 	const speakers: Speaker[] = [
 		{
-			name: "Bob Dameron '75",
-			title: "Head of Business Development of Multiverse Computing",
-			image: bobDameron
-		},
-		{
-			name: "Tom Heintzman '82",
-			title: "Managing Director and Vice-Chair, Energy Transition & Sustainability CIBC Capital Markets",
-			image: tomHeintzman
-		},
-		{
-			name: "Kathryn Hume",
-			title: "VP of Digital Channels Technology at Royal Bank of Canada",
-			image: kathrynHume
-		},
-		{
-			name: "Nikolas Badminton",
-			title: "Futurist",
-			image: nikolasBadminton
-		},
-		{
-			name: "Sandra Hawken",
-			title: "President and CEO of Holland Bloorview Kids Rehabilitation Hospital Foundation",
-			image: sandraHawken,
-			tag: "Keynote Speaker"
-		},
-		{
 			name: "Bob Rae",
 			title: "Canadian Ambassador to UN",
 			image: bobRae
@@ -139,6 +113,32 @@
 			name: "Fares Kady",
 			title: "Head of Aleppo Office, World Health Organization",
 			image: faresKady
+		},
+		{
+			name: "Bob Dameron '75",
+			title: "Head of Business Development of Multiverse Computing",
+			image: bobDameron
+		},
+		{
+			name: "Tom Heintzman '82",
+			title: "Managing Director and Vice-Chair, Energy Transition & Sustainability CIBC Capital Markets",
+			image: tomHeintzman
+		},
+		{
+			name: "Kathryn Hume",
+			title: "VP of Digital Channels Technology at Royal Bank of Canada",
+			image: kathrynHume
+		},
+		{
+			name: "Nikolas Badminton",
+			title: "Futurist",
+			image: nikolasBadminton
+		},
+		{
+			name: "Sandra Hawken",
+			title: "President and CEO of Holland Bloorview Kids Rehabilitation Hospital Foundation",
+			image: sandraHawken,
+			tag: "Keynote Speaker"
 		}
 	];
 
