@@ -30,6 +30,9 @@
 	import rayWu from "$lib/assets/images/team/ray_wu.jpg";
 	import aaravDogra from "$lib/assets/images/team/aarav_dogra.jpg";
 	import mimiSalman from "$lib/assets/images/team/mimi_salman.jpg";
+	import linaBoehmer from "$lib/assets/images/team/lina_boehmer.jpg";
+	import devlinMoniz from "$lib/assets/images/team/devlin_moniz.jpg";
+	import leahMoore from "$lib/assets/images/team/leah_moore.jpg";
 
 	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
@@ -67,7 +70,7 @@
 		{
 			name: "Leah Moore",
 			position: "Director of Programs",
-			image: wacWLarge
+			image: leahMoore
 		},
 		{
 			name: "Alex Woosley",
@@ -97,7 +100,7 @@
 		{
 			name: "Devlin Moniz",
 			position: "Director of Plenaries",
-			image: wacWLarge
+			image: devlinMoniz
 		},
 		{
 			name: "Eugenio Ciarlandini",
@@ -145,7 +148,7 @@
 		{
 			name: "Lina Boehmer",
 			position: "Plenary Head",
-			image: wacWSmall
+			image: linaBoehmer
 		},
 		{
 			name: "Anya Dua",
