@@ -138,9 +138,9 @@
 			image: wacWLarge
 		},
 		{
-			name: "Jungly Chen",
+			name: "Tony Zhang",
 			position: "Director of Design",
-			image: wacWLarge
+			image: tonyZhang
 		}
 	];
 
@@ -224,11 +224,6 @@
 			name: "Jack Myers",
 			position: "Design Head",
 			image: wacWSmall
-		},
-		{
-			name: "Tony Zhang",
-			position: "Design Head",
-			image: tonyZhang
 		},
 		{
 			name: "Benedict Wang",
