@@ -12,6 +12,7 @@
 			'-'
 		)}.png"
 	/>
+	<title>World Affairs Conference</title>
 </svelte:head>
 
 <slot />

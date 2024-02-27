@@ -76,13 +76,7 @@ export const handle = SvelteKitAuth({
 				.filter({ domain, allowsSelfRegistration: true })
 				.getAll();
 
-			if (isNewUser) {
-				if (schools.length === 0) return false;
-			} else if (schools.length === 1 && schools[0]) {
-				await xata.db.attendees.update(user.id, {
-					school: schools[0].id
-				});
-			}
+			if (isNewUser && schools.length === 0) return false;
 
 			return true;
 		}
