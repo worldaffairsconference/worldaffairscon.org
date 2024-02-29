@@ -137,22 +137,28 @@ export const actions = {
 		const { isPlenarySelectionOpen } = await xata.db.general_settings
 			.filter("active", true)
 			.getFirstOrThrow();
-		const plenarySchedule = isPlenarySelectionOpen
-			? await xata.db.schedule_slots
-					.select([
-						"startTime",
-						"endTime",
-						{
-							name: "<-plenaries.scheduleSlot",
-							columns: ["id", "confirmed"],
-							as: "plenaries"
-						}
-					])
-					.getAll()
-			: [];
+		const plenarySchedule = (
+			isPlenarySelectionOpen
+				? await xata.db.schedule_slots
+						.select([
+							"startTime",
+							"endTime",
+							{
+								name: "<-plenaries.scheduleSlot",
+								columns: ["id", "confirmed"],
+								as: "plenaries"
+							}
+						])
+						.getAll()
+				: []
+		).map(({ plenaries, ...rest }) => ({
+			...rest,
+			plenaries: ((plenaries?.records ?? []) as PlenariesRecord[]).filter(
+				({ confirmed }) => confirmed
+			)
+		}));
 		const plenaryIds = plenarySchedule
-			.flatMap(({ plenaries }) => plenaries?.records ?? [])
-			.filter(({ confirmed }) => confirmed)
+			.flatMap(({ plenaries }) => plenaries)
 			.map(({ id }) => id);
 
 		const booleanStringSchema = z
@@ -210,19 +216,18 @@ export const actions = {
 						.getAll()
 				);
 				await xata.db.attendees_plenaries.create(
-					plenarySchedule.flatMap(
-						({ plenaries }) =>
-							plenaries?.records
-								.sort(
-									(a, b) =>
-										rankedPlenaries.indexOf(a.id) -
-										rankedPlenaries.indexOf(b.id)
-								)
-								.map(({ id }, preferenceRank) => ({
-									plenary: id,
-									attendee: userId,
-									preferenceRank
-								})) ?? []
+					plenarySchedule.flatMap(({ plenaries }) =>
+						plenaries
+							.sort(
+								(a, b) =>
+									rankedPlenaries.indexOf(a.id) -
+									rankedPlenaries.indexOf(b.id)
+							)
+							.map(({ id }, preferenceRank) => ({
+								plenary: id,
+								attendee: userId,
+								preferenceRank
+							}))
 					)
 				);
 			}
