@@ -67,7 +67,8 @@
 		{
 			name: "Roberta Bondar",
 			title: "Roberta L Bondar, C.C. O.Ont. MD PhD FRSC ICD.D, Canada’s First Female Astronaut in Space",
-			image: robertaBondar
+			image: robertaBondar,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Francisco Sagasti",
