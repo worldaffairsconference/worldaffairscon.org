@@ -66,8 +66,9 @@
 		},
 		{
 			name: "Roberta Bondar",
-			title: "Roberta L Bondar, C.C. O.Ont. MD PhD FRSC ICD.D, Canada’s First Female Astronaut in Space",
-			image: robertaBondar
+			title: "Roberta L Bondar, C.C. O.Ont. MD PhD FRSC ICD.D, Canada's First Female Astronaut in Space",
+			image: robertaBondar,
+			tag: "Keynote Speaker"
 		},
 		{
 			name: "Francisco Sagasti",
@@ -137,8 +138,7 @@
 		{
 			name: "Sandra Hawken",
 			title: "President and CEO of Holland Bloorview Kids Rehabilitation Hospital Foundation",
-			image: sandraHawken,
-			tag: "Keynote Speaker"
+			image: sandraHawken
 		}
 	];
 
