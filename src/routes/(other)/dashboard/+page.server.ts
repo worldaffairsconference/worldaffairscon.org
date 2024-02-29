@@ -105,16 +105,19 @@ const getPlenarySchedule = async (attendeeId: string) => {
 export const load: PageServerLoad = async ({ parent }) => {
 	const { session } = await parent();
 	if (!session?.user?.email) throw redirect(303, "/");
-	const { isPlenarySelectionOpen } = await xata.db.general_settings
-		.filter("active", true)
-		.getFirstOrThrow();
+
+	const { isPlenarySelectionOpen, isRegistrationOpen } =
+		await xata.db.general_settings.filter("active", true).getFirstOrThrow();
+
 	const [plenarySchedule, possibleSchools] = await Promise.all([
 		isPlenarySelectionOpen
 			? getPlenarySchedule(session.user.id)
 			: undefined,
 		getSchoolsForEmail(session.user.email)
 	]);
+
 	return {
+		isRegistrationOpen,
 		user: session.user,
 		possibleSchools: [...possibleSchools],
 		plenarySchedule: plenarySchedule?.map(({ plenaries, ...schedule }) => ({
@@ -134,9 +137,13 @@ export const actions = {
 			(await getSession())?.user ?? {};
 		if (!userId || !userEmail) throw redirect(303, "/");
 
-		const { isPlenarySelectionOpen } = await xata.db.general_settings
-			.filter("active", true)
-			.getFirstOrThrow();
+		const { isPlenarySelectionOpen, isRegistrationOpen } =
+			await xata.db.general_settings
+				.filter("active", true)
+				.getFirstOrThrow();
+
+		if (!isRegistrationOpen) throw error(401);
+
 		const plenarySchedule = (
 			isPlenarySelectionOpen
 				? await xata.db.schedule_slots
