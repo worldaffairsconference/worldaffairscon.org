@@ -3,6 +3,7 @@
 	import type { PageData } from "./$types";
 	import PlenarySelector from "./PlenarySelector.svelte";
 
+	export let disabled: boolean;
 	export let schedule: PageData["plenarySchedule"];
 	export let areUnsavedChanges: boolean;
 
@@ -11,7 +12,7 @@
 	);
 </script>
 
-<LargeAccordion header="Plenary Selection" open={!!schedule}>
+<LargeAccordion header="Plenary Selection" open={!!schedule && !disabled}>
 	<input hidden name="rankedPlenaries" value={encodedPreferences} />
 	{#if schedule}
 		<p class="text-zinc-400 mb-6 md:mb-10 text-[0.9rem] sm:text-base">
@@ -44,6 +45,7 @@
 								areUnsavedChanges = !!e.detail;
 							}}
 							bind:plenaries={scheduleSlot.plenaries}
+							{disabled}
 						/>
 					</div>
 				</div>

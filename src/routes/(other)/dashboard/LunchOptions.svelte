@@ -4,6 +4,7 @@
 	import Select from "$lib/components/form/Select.svelte";
 	import FieldSet from "$lib/components/form/FieldSet.svelte";
 
+	export let disabled: boolean;
 	export let user: PageData["user"];
 	export let isValid: boolean | undefined = undefined;
 </script>
@@ -15,6 +16,7 @@
 		required
 		value={user.needsLunch}
 		class="col-span-full"
+		{disabled}
 	>
 		<option value={true}>Purchase lunch from UCC for $15</option>
 		<option value={false}>I will bring my own lunch</option>
@@ -37,5 +39,6 @@
 		]}
 		value={user.dietaryRestrictions}
 		class="col-span-full"
+		{disabled}
 	/>
 </FieldSet>

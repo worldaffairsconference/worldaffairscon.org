@@ -80,31 +80,44 @@
 				<h3 class="text-white text-xl md:text-3xl mb-3 font-semibold">
 					Hey {data.user.firstName ?? data.user.email}!
 				</h3>
-				<p class="text-[0.9rem] md:text-base text-left">
-					{#if allCompleted}
-						<div class="mb-3">
-							You're all set! We can't wait to see you at WAC!
-						</div>
-						<div>
-							In the meantime, please contact
-							<a
-								href="mailto:registration@worldaffairscon.org"
-								class="text-blue-400 underline"
-							>
-								registration@worldaffairscon.org
-							</a> for payment if you are an independent non-public
-							school student.
-						</div>
-					{:else}
-						<div class="mb-3">
-							We're excited to have you at WAC!
-						</div>
-						<div>
-							Please fill out the information below to complete
-							your registration.
-						</div>
-					{/if}
-				</p>
+				{#if data.isRegistrationOpen}
+					<p class="text-[0.9rem] md:text-base text-left">
+						{#if allCompleted}
+							<div class="mb-3">
+								You're all set! We can't wait to see you at WAC!
+							</div>
+							<div>
+								In the meantime, please contact
+								<a
+									href="mailto:registration@worldaffairscon.org"
+									class="text-blue-400 underline"
+								>
+									registration@worldaffairscon.org
+								</a> for payment if you are an independent non-public
+								school student.
+							</div>
+						{:else}
+							<div class="mb-3">
+								We're excited to have you at WAC!
+							</div>
+							<div>
+								Please fill out the information below to
+								complete your registration.
+							</div>
+						{/if}
+					</p>
+				{:else}
+					<p class="text-[0.9rem] md:text-base text-left">
+						Registration is now closed. Below are the records on
+						file. If you need to make any changes, please contact
+						<a
+							href="mailto:registration@worldaffairscon.org"
+							class="text-blue-400 underline"
+						>
+							registration@worldaffairscon.org
+						</a>
+					</p>
+				{/if}
 			</div>
 		</div>
 
@@ -124,14 +137,17 @@
 					user={data.user}
 					possibleSchools={data.possibleSchools}
 					bind:isValid={isPersonalInformationValid}
+					disabled={!data.isRegistrationOpen}
 				/>
 				<LunchOptions
 					user={data.user}
 					bind:isValid={isLunchOptionsValid}
+					disabled={!data.isRegistrationOpen}
 				/>
 				<PlenarySelection
 					schedule={data.plenarySchedule}
 					bind:areUnsavedChanges
+					disabled={!data.isRegistrationOpen}
 				/>
 				{#if areUnsavedChanges}
 					<div

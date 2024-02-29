@@ -4,6 +4,7 @@
 	import PlenaryCard from "./PlenaryCard.svelte";
 	import type { PageData } from "./$types";
 
+	export let disabled: boolean;
 	export let plenaries: Exclude<
 		PageData["plenarySchedule"],
 		undefined
@@ -18,7 +19,7 @@
 	let container: HTMLDivElement | undefined;
 
 	onMount(() => {
-		if (!container) return;
+		if (!container || disabled) return;
 
 		smoothDnD(container, {
 			dropPlaceholder: {
@@ -52,11 +53,13 @@
 <div class="p-1 sm:p-2 rounded-lg border border-zinc-600 bg-zinc-800 h-full">
 	<div bind:this={container}>
 		{#each initialPlenaries as plenary}
-			<PlenaryCard
-				index={plenaries.indexOf(plenary)}
-				speakers={plenary.speakers}
-				theme={plenary.theme}
-			/>
+			<div class="overflow-hidden block">
+				<PlenaryCard
+					index={plenaries.indexOf(plenary)}
+					speakers={plenary.speakers}
+					theme={plenary.theme}
+				/>
+			</div>
 		{/each}
 	</div>
 </div>

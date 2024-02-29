@@ -4,6 +4,7 @@
 	import Select from "$lib/components/form/Select.svelte";
 	import FieldSet from "$lib/components/form/FieldSet.svelte";
 
+	export let disabled: boolean;
 	export let user: PageData["user"];
 	export let possibleSchools: PageData["possibleSchools"];
 	export let isValid: boolean | undefined = undefined;
@@ -27,16 +28,24 @@
 		name="firstName"
 		required
 		value={defaultValues.firstName}
+		{disabled}
 	/>
 	<Input
 		label="Last Name"
 		name="lastName"
 		required
 		value={defaultValues.lastName}
+		{disabled}
 	/>
 
 	<Input label="Email" type="email" disabled value={defaultValues.email} />
-	<Select label="School" name="school" required value={defaultValues.school}>
+	<Select
+		label="School"
+		name="school"
+		required
+		value={defaultValues.school}
+		{disabled}
+	>
 		{#each possibleSchools as school}
 			<option value={school.id}>{school.name}</option>
 		{/each}
@@ -47,6 +56,7 @@
 		name="gradeLevel"
 		required
 		value={defaultValues.gradeLevel}
+		{disabled}
 	>
 		{#each ["7", "8", "9", "10", "11", "12"] as grade}
 			<option value={grade}>Grade {grade}</option>
@@ -59,6 +69,7 @@
 		name="inPerson"
 		required
 		value={defaultValues.inPerson}
+		{disabled}
 	>
 		<option value={true}>In Person</option>
 		<option value={false}>Online</option>

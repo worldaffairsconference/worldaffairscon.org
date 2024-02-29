@@ -1,0 +1,16 @@
+{
+	"id": "mig_cngcrgvg95irrg3dqv40",
+	"parentID": "mig_cnc0fhudvqngjhof23gg",
+	"checksum": "1:b1c048c78a80d80b22102e7c2ad8ccab87eaf5c813b0876418038485622e036b",
+	"operations": [
+		{
+			"addColumn": {
+				"column": {
+					"name": "isRegistrationOpen",
+					"type": "bool"
+				},
+				"table": "general_settings"
+			}
+		}
+	]
+}

@@ -19,10 +19,10 @@
 			{label}
 		</span>
 		<div
-			class="flex justify-between items-center mt-1.5 bg-zinc-700 rounded-md px-3 py-2.5 text-white disabled:text-zinc-300 disabled:text disabled:cursor-not-allowed appearance-none"
+			class="flex justify-between items-center mt-1.5 bg-zinc-700 rounded-md px-3 py-2.5 text-white appearance-none"
 		>
 			<select
-				class="w-full bg-transparent border-none outline-none"
+				class="w-full bg-transparent border-none outline-none disabled:text-zinc-300 disabled:cursor-not-allowed"
 				{...$$restProps}
 			>
 				<option hidden disabled value={undefined}>
