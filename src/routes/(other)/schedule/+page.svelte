@@ -1,71 +1,42 @@
 <script lang="ts">
+	import type { PageData } from "./$types";
+
 	interface ScheduleItem {
 		title: string;
-		startTime: number;
-		endTime: number;
+		startTime: Date;
+		endTime: Date;
 		location: string;
 		description: string;
 	}
 
+	export let data: PageData;
+
 	const schedule: ScheduleItem[] = [
 		{
-			title: "Opening Ceremony",
-			startTime: 1648396800,
-			endTime: 1648400400,
-			location: "Main Stage",
+			title: "Opening Keynote",
+			startTime: new Date("March 6, 2024 9:30:00"),
+			endTime: new Date("March 6, 2024 10:30:00"),
+			location: "Laidlaw Hall",
 			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente atque repellat asperiores qui aliquam, libero pariatur ipsa ex maxime facilis?"
+				"Masai Ujiri (Giants of Africa, CEO of Toronto Raptors)"
 		},
 		{
-			title: "Keynote Speaker",
-			startTime: 1648400400,
-			endTime: 1648404000,
-			location: "Main Stage",
-			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente atque repellat asperiores qui aliquam, libero pariatur ipsa ex maxime facilis?"
+			title: "Lunch & Networking",
+			startTime: new Date("March 6, 2024 12:25:00"),
+			endTime: new Date("March 6, 2024 13:25:00"),
+			location: "Whole School",
+			description: ""
 		},
 		{
-			title: "Panel 1",
-			startTime: 1648407600,
-			endTime: 1648411200,
-			location: "Main Stage",
+			title: "Closing Keynote",
+			startTime: new Date("March 6, 2024 14:25:00"),
+			endTime: new Date("March 6, 2024 15:25:00"),
+			location: "Laidlaw Hall",
 			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente atque repellat asperiores qui aliquam, libero pariatur ipsa ex maxime facilis?"
+				"Roberta L. Bondar (C.C. O.Ont. MD PhD FRSC ICD.D, Astronaut | Physician | Scientist | Photographer)"
 		},
-		{
-			title: "Panel 2",
-			startTime: 1648411200,
-			endTime: 1648414800,
-			location: "Main Stage",
-			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente atque repellat asperiores qui aliquam, libero pariatur ipsa ex maxime facilis?"
-		},
-
-		{
-			title: "Panel 3",
-			startTime: 1648418400,
-			endTime: 1648422000,
-			location: "Main Stage",
-			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente atque repellat asperiores qui aliquam, libero pariatur ipsa ex maxime facilis?"
-		},
-		{
-			title: "Panel 4",
-			startTime: 1648422000,
-			endTime: 1648425600,
-			location: "Main Stage",
-			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente atque repellat asperiores qui aliquam, libero pariatur ipsa ex maxime facilis?"
-		},
-		{
-			title: "Closing Ceremony",
-			startTime: 1648425600,
-			endTime: 1648429200,
-			location: "Main Stage",
-			description:
-				"Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente atque repellat asperiores qui aliquam, libero pariatur ipsa ex maxime facilis?"
-		}
-	];
+		...data.schedule
+	].sort((a, b) => a.startTime.getTime() - b.startTime.getTime());
 </script>
 
 <svelte:head>
@@ -99,21 +70,19 @@
 		<div>
 			{#each schedule as item}
 				{@const startTimeDisplay = new Date(
-					item.startTime * 1000
-				).toLocaleTimeString("en-US", {
-					timeZone: "America/New_York",
+					item.startTime
+				).toLocaleTimeString([], {
 					hour: "numeric",
-					minute: "2-digit"
+					minute: "numeric"
 				})}
 				{@const endTimeDisplay = new Date(
-					item.endTime * 1000
-				).toLocaleTimeString("en-US", {
-					timeZone: "America/New_York",
+					item.endTime
+				).toLocaleTimeString([], {
 					hour: "numeric",
-					minute: "2-digit"
+					minute: "numeric"
 				})}
 				<div class="flex md:gap-8 gap-2 md:flex-row flex-col">
-					<div class="w-48 text-zinc-400">
+					<div class="w-36 text-zinc-400 flex-shrink-0">
 						{startTimeDisplay} - {endTimeDisplay}
 					</div>
 					<div class="flex-col md:flex hidden">
