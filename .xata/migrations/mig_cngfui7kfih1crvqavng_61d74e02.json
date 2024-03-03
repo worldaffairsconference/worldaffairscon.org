@@ -1,0 +1,19 @@
+{
+  "id": "mig_cngfui7kfih1crvqavng",
+  "parentID": "mig_cngfuevkfih1crvqavmg",
+  "checksum": "1:61d74e02c7b6a89fb85e6a9217719e73e4328c13420e39b41086afb5af866b8a",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "location",
+          "type": "link",
+          "link": {
+            "table": "locations"
+          }
+        },
+        "table": "plenaries"
+      }
+    }
+  ]
+}

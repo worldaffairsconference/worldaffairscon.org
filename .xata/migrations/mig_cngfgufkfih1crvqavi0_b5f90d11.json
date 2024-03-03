@@ -1,0 +1,13 @@
+{
+  "id": "mig_cngfgufkfih1crvqavi0",
+  "parentID": "mig_cngcrgvg95irrg3dqv40",
+  "checksum": "1:b5f90d11618e3f72e3b7de01602dc4826f31f514082aae213405cca48c1273cb",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "location",
+        "table": "plenaries"
+      }
+    }
+  ]
+}

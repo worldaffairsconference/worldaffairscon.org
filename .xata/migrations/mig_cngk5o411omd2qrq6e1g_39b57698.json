@@ -1,0 +1,16 @@
+{
+  "id": "mig_cngk5o411omd2qrq6e1g",
+  "parentID": "mig_cngfum411omd2qrq6c6g",
+  "checksum": "1:39b57698aedec34fd3b256a1ab04c4ce3b4e9e4cf6cfbd1b20bf46ea0a3e6b91",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "targetMinimum",
+          "type": "int"
+        },
+        "table": "locations"
+      }
+    }
+  ]
+}

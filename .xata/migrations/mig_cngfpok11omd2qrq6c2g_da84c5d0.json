@@ -1,0 +1,16 @@
+{
+  "id": "mig_cngfpok11omd2qrq6c2g",
+  "parentID": "mig_cngfog411omd2qrq6c1g",
+  "checksum": "1:da84c5d0643fbd4c925c7c16e7f2d7a7a5be6cbbdf759e02505d610840b110b3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "canViewPlenaryAssignments",
+          "type": "bool"
+        },
+        "table": "administration_users"
+      }
+    }
+  ]
+}
