@@ -82,7 +82,7 @@
 					minute: "numeric"
 				})}
 				<div class="flex md:gap-8 gap-2 md:flex-row flex-col">
-					<div class="w-36 text-zinc-400 flex-shrink-0">
+					<div class="w-40 text-zinc-400 flex-shrink-0">
 						{startTimeDisplay} - {endTimeDisplay}
 					</div>
 					<div class="flex-col md:flex hidden">
