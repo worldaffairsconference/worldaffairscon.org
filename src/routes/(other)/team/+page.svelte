@@ -103,6 +103,11 @@
 			image: devlinMoniz
 		},
 		{
+			name: "Mimi Salman",
+			position: "Assistant Director of Plenaries",
+			image: mimiSalman
+		},
+		{
 			name: "Eugenio Ciarlandini",
 			position: "Director of Keynotes",
 			image: eugenioCiarlandini
@@ -159,11 +164,6 @@
 			name: "Alexa Stewart",
 			position: "Plenary Head",
 			image: alexaStewart
-		},
-		{
-			name: "Mimi Salman",
-			position: "Plenary Head",
-			image: mimiSalman
 		},
 		{
 			name: "Arya Patil",
