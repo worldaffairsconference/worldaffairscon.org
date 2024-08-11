@@ -263,7 +263,7 @@
 			Team
 		</h3>
 		<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
-			WAC 2024 Team
+			WAC 2025 Team (Updating...)
 		</h1>
 	</div>
 

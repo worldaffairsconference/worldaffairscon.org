@@ -425,7 +425,7 @@
 					<h2
 						class="text-center text-[2.75rem] sm:text-[4.3rem] font-bold text-white tracking-tight mb-8"
 					>
-						2024 Speakers
+						Last Year's 2024 Speakers
 					</h2>
 
 					<div class="grow overflow-hidden relative mb-6">
