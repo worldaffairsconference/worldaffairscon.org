@@ -41,7 +41,7 @@
 		return Math.floor(adjustedDaysDifference);
 	};
 
-	const timeUntilConference = calculateDaysUntilDate(new Date(2025, 2, 6)); // Change when the date is confirmed
+	const timeUntilConference = calculateDaysUntilDate(new Date(2025, 3, 5)); // Change when the date is confirmed
 </script>
 
 <section
@@ -79,7 +79,7 @@
 				text={`${timeUntilConference} days away`}
 				placement="right"
 			>
-				Coming Soon - Feb 2025
+				March 5th, 2025
 			</Tooltip>
 		</div>
 	</div>
