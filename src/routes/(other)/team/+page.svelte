@@ -52,17 +52,17 @@
 		{
 			name: "Katherine Ma",
 			position: "Executive Chair",
-			image: katherineMa
+			image: wacWLarge
 		},
 		{
 			name: "Adrian Mak",
 			position: "Executive Chair",
-			image: adrianChiHongMak
+			image: wacWLarge
 		},
 		{
 			name: "Darwin Li",
 			position: "Executive Chair",
-			image: darwinLi
+			image: wacWLarge
 		}
 	];
 
@@ -80,33 +80,29 @@
 		{
 			name: "Karen Liu",
 			position: "Director of Registration",
-			image: karenLiu
+			image: wacWLarge
 		},
 		{
 			name: "Alex Chen",
 			position: "Director of Registration",
-			image: alexChen
+			image: wacWLarge
 		},
 		{
 			name: "----------",
 			position: "Treasurer",
-			image: wacWLarge
-		},
+			image: wacWLarge		},
 		{
 			name: "Lina Boehmer",
 			position: "Director of Plenaries & Keynotes",
-			image: linaBoehmer
-		},
+			image: wacWLarge		},
 		{
 			name: "Gordon Wu",
 			position: "Director of Plenaries & Keynotes",
-			image: gordonWu
-		},
+			image: wacWLarge		},
 		{
 			name: "Anya Dua",
 			position: "Assistant Director of Plenaries & Keynotes",
-			image: anyaDua
-		},
+			image: wacWLarge		},
 		/*{
 			name: "Eugenio Ciarlandini",
 			position: "Director of Keynotes",
@@ -120,8 +116,7 @@
 		{
 			name: "Rayka Farahmand",
 			position: "Director of Marketing",
-			image: raykaFarahmand
-		},
+			image: wacWLarge		},
 		{
 			name: "Hazel Tang",
 			position: "Director of Marketing",
@@ -135,8 +130,7 @@
 		{
 			name: "Malek Elhaddad",
 			position: "Director of Programs & Events",
-			image: malekElhaddad
-		},
+			image: wacWLarge		},
 		{
 			name: "Zeen Liu",
 			position: "Director of Technology",
@@ -150,8 +144,7 @@
 		{
 			name: "Tony Zhang",
 			position: "Director of Design & Production",
-			image: tonyZhang
-		},
+			image: wacWLarge		},
 		{
 			name: "Andrea Zeng",
 			position: "Director of Design & Production",
