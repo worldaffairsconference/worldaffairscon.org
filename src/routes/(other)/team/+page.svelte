@@ -88,10 +88,6 @@
 			image: wacWLarge
 		},
 		{
-			name: "----------",
-			position: "Treasurer",
-			image: wacWLarge		},
-		{
 			name: "Lina Boehmer",
 			position: "Director of Plenaries & Keynotes",
 			image: wacWLarge		},
@@ -103,16 +99,6 @@
 			name: "Anya Dua",
 			position: "Assistant Director of Plenaries & Keynotes",
 			image: wacWLarge		},
-		/*{
-			name: "Eugenio Ciarlandini",
-			position: "Director of Keynotes",
-			image: eugenioCiarlandini
-		},
-		{
-			name: "Alex Chen",
-			position: "Director of Registration",
-			image: alexChen
-		},*/
 		{
 			name: "Rayka Farahmand",
 			position: "Director of Marketing",
