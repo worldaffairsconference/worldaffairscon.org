@@ -2,7 +2,7 @@
 	import { lazyLoad } from "$lib/lazyLoad";
 
 	// Team Members
-	import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpg";
+	/*import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpg";
 	import katherineMa from "$lib/assets/images/team/katherine_ma.jpg";
 	import shayaFarahmand from "$lib/assets/images/team/shaya_farahmand.jpg";
 	import karenLiu from "$lib/assets/images/team/karen_liu.jpg";
@@ -32,7 +32,7 @@
 	import mimiSalman from "$lib/assets/images/team/mimi_salman.jpg";
 	import linaBoehmer from "$lib/assets/images/team/lina_boehmer.jpg";
 	import devlinMoniz from "$lib/assets/images/team/devlin_moniz.jpg";
-	import leahMoore from "$lib/assets/images/team/leah_moore.jpg";
+	import leahMoore from "$lib/assets/images/team/leah_moore.jpg";*/
 
 	import wacWLarge from "$lib/assets/images/logos/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
