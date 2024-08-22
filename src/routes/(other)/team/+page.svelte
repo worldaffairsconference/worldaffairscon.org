@@ -509,5 +509,5 @@
 			</div>
 		</div>
 	</div>
-<p class="text-sm text-zinc-400">Ordered by last name. </p>
+<p class="text-sm text-zinc-400" style="text-align:center">Ordered by last name. </p>
 </section>
