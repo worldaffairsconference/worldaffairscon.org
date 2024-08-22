@@ -34,8 +34,8 @@
 	import devlinMoniz from "$lib/assets/images/team/devlin_moniz.jpg";
 	import leahMoore from "$lib/assets/images/team/leah_moore.jpg";
 */
-	import wacWLarge from "$lib/assets/images/team/avatar.jpg";
-	import wacWSmall from "$lib/assets/images/logos/wac_w_small.jpg";
+	import wacWLarge from "$lib/assets/images/team/avatar_big.jpg";
+	import wacWSmall from "$lib/assets/images/team/avatar_small.jpg";
 
 	interface TeamMember {
 		name: string;
