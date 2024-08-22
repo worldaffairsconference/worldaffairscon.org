@@ -509,8 +509,8 @@
 			</div>
 		</div>
 	</div>
-
-<p class="text-sm text-zinc-400" style="text-align: center; width : 60%">Please note that the profiles of the World Affairs Conference (WAC) Organizing Committee members displayed on this page are listed in order of rank, followed by alphabetical order of last names within each rank category.
+<div style="text-align:center">
+<p class="text-sm text-zinc-400" style="width:60%">Please note that the profiles of the World Affairs Conference (WAC) Organizing Committee members displayed on this page are listed in order of rank, followed by alphabetical order of last names within each rank category.
  </p>
-
+</div>
 </section>
