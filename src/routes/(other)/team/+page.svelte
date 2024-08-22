@@ -55,12 +55,12 @@
 			image: wacWLarge
 		},
 		{
-			name: "Ruhani Mainira",
+			name: "Katherine Ma",
 			position: "Executive Chair",
 			image: wacWLarge
 		},
 		{
-			name: "Katherine Ma",
+			name: "Ruhani Mainra",
 			position: "Executive Chair",
 			image: wacWLarge
 		}
