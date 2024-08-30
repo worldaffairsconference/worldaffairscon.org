@@ -500,7 +500,7 @@
 		</div>
 	</div>
 
-<p class="text-sm text-zinc-400" style="width: 52%; text-align:center; margin: auto">Please note that all profile materials, images, and multimedia of the World Affairs Conference (WAC) are the property of the respective members and are used on this site with their permission, and the profiles of the Organizing Committee members displayed on this page are listed in order of rank, followed by alphabetical order of last names within each rank category. 
+<p class="text-sm text-zinc-400" style="width: 52%; text-align:center; margin: auto; margin-top: 50px;">Please note that all profile materials, images, and multimedia of the World Affairs Conference (WAC) are the property of the respective members and are used on this site with their permission, and the profiles of the Organizing Committee members displayed on this page are listed in order of rank, followed by alphabetical order of last names within each rank category. 
 </p>
 
 </section>
