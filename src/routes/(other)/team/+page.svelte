@@ -173,21 +173,11 @@
 			position: "Internal Affairs Head",
 			image: wacWSmall
 		},
-		{
-			name: "----------",
-			position: "Internal Affairs Head",
-			image: wacWSmall
-		},
 
 		/////////////////////////////////
 
 		{
 			name: "Morgan Hooyboer",
-			position: "Assistant Director of Registration",
-			image: wacWSmall
-		},
-		{
-			name: "----------",
 			position: "Assistant Director of Registration",
 			image: wacWSmall
 		},
@@ -405,7 +395,7 @@
 			Team
 		</h3>
 		<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
-			WAC 2025 Team (Updating...)
+			WAC 2025 Team
 		</h1>
 	</div>
 
