@@ -3,7 +3,6 @@
 
 	import branksomeLogo from "$lib/assets/images/logos/branksome.webp";
 	import uccLogo from "$lib/assets/images/logos/ucc.webp";
-	import xataLogo from "$lib/assets/images/logos/xata.webp";
 	import famersEdgeLogo from "$lib/assets/images/logos/farmers-edge.webp";
 
 	interface Social {
@@ -47,10 +46,6 @@
 	];
 
 	const supporters: Credit[] = [
-		{
-			name: "Xata",
-			logo: xataLogo
-		},
 		{
 			name: "Farmers Edge",
 			logo: famersEdgeLogo

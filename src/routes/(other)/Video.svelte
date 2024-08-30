@@ -116,7 +116,7 @@
 		class="w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 		id="videoTitle"
 	>
-		WAC 2026 (Video Coming Soon)
+		WAC 2025 (Video Coming Soon)
 	</h2>
 	{#if !showVideoPreview}
 		<button
