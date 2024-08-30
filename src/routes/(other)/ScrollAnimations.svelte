@@ -309,7 +309,7 @@
 				scrollTrigger: {
 					trigger: "#home",
 					start: "top top",
-					end: "bottom+=3000 center",
+					end: "bottom+=600 center",
 					pin: "#home",
 					scrub: true
 				}
@@ -326,7 +326,7 @@
 				)
 				.to(camera.position, {
 					delay: 0.75,
-					duration: 1.25,
+					duration: 2,
 					x: 0,
 					y: -65,
 					z: 240,
