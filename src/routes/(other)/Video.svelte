@@ -111,7 +111,7 @@
 	};
 </script>
 
-<section class="h-screen w-screen relative flex flex-col" id="videoSection">
+<section class="h-screen w-screen relative flex flex-col mt-12 md:mt-20" id="videoSection">
 	<h2
 		class="w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 		id="videoTitle"
