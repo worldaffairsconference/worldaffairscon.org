@@ -154,7 +154,7 @@
 
 	let videoSection: any;
 
-	onMount(async () => {
+	onMount(() => {
 		const createProgressivelyLoadedImage = (src: string) => {
 			const image = new Image();
 			image.crossOrigin = "anonymous";
@@ -325,7 +325,7 @@
 					0
 				)
 				.to(camera.position, {
-					delay: 0.25,
+					delay: 0.5,
 					duration: 2.5,
 					x: 0,
 					y: -65,
@@ -382,7 +382,7 @@
 			});
 		}, gsapScope);
 
-		videoSection = await import("./Video.svelte");
+		loadVideoSection();
 
 		return () => {
 			renderer.dispose();
@@ -390,6 +390,10 @@
 		};
 	});
 
+	async function loadVideoSection() {
+  		videoSection = await import("./Video.svelte");
+	}
+	
 	const handleWindowResize = () => {
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
