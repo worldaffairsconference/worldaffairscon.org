@@ -30,6 +30,7 @@ module.exports = {
 	],
 	rules: {
 		"no-empty-function": "off",
+		"svelte/no-at-html-tags": "off",
 		"@typescript-eslint/no-empty-function": "off",
 		"@typescript-eslint/no-unnecessary-condition": "error",
 		"@typescript-eslint/no-empty-interface": "off",

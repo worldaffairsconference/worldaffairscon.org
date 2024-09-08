@@ -3,7 +3,7 @@
 // import type { PageServerLoad } from "./$types";
 
 // export const load: PageServerLoad = async () => {
-//     const questions = Object.entries(faqData).flatMap(([categoryName, records]) => 
+//     const questions = Object.entries(faqData).flatMap(([categoryName, records]) =>
 //         records.map(({ question, answer }) => ({
 //             question,
 //             answer,

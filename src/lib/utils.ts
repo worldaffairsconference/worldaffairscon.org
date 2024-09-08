@@ -17,14 +17,17 @@ if (mode === "unknown") console.warn("Unknown runtime mode");
 
 // TODO: Replace this basic polyfill by `Object.groupBy` when it is in Node LTS.
 export function groupBy<T>(list: T[], keyGetter: (item: T) => string) {
-    return list.reduce((result, currentValue) => {
-        const key = keyGetter(currentValue);
-        if (!result[key]) {
-            result[key] = [];
-        }
-        result[key].push(currentValue);
-        return result;
-    }, {} as { [key: string]: T[] });
+	return list.reduce(
+		(result, currentValue) => {
+			const key = keyGetter(currentValue);
+			if (!result[key]) {
+				result[key] = [];
+			}
+			result[key].push(currentValue);
+			return result;
+		},
+		{} as { [key: string]: T[] }
+	);
 }
 
 // TODO: Replace this basic polyfill by `Map.groupBy` when it is in Node LTS.
