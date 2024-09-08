@@ -16,17 +16,15 @@ export const mode =
 if (mode === "unknown") console.warn("Unknown runtime mode");
 
 // TODO: Replace this basic polyfill by `Object.groupBy` when it is in Node LTS.
-export function groupBy<T, U extends keyof any>( // eslint-disable-line @typescript-eslint/no-explicit-any
-	arr: T[],
-	fn: (x: T) => U
-): Record<U, T[]> {
-	const obj = {} as Record<U, T[]>;
-	for (const x of arr) {
-		const key = fn(x);
-		obj[key] ??= []; // eslint-disable-line @typescript-eslint/no-unnecessary-condition
-		obj[key].push(x);
-	}
-	return obj;
+export function groupBy<T>(list: T[], keyGetter: (item: T) => string) {
+    return list.reduce((result, currentValue) => {
+        const key = keyGetter(currentValue);
+        if (!result[key]) {
+            result[key] = [];
+        }
+        result[key].push(currentValue);
+        return result;
+    }, {} as { [key: string]: T[] });
 }
 
 // TODO: Replace this basic polyfill by `Map.groupBy` when it is in Node LTS.
