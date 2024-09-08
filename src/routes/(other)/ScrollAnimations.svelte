@@ -325,8 +325,8 @@
 					0
 				)
 				.to(camera.position, {
-					delay: 0.75,
-					duration: 2,
+					delay: 0.25,
+					duration: 2.5,
 					x: 0,
 					y: -65,
 					z: 240,
