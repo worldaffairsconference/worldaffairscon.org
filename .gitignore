@@ -12,6 +12,7 @@ vite.config.ts.timestamp-*
 .netlify
 /test-results
 tsconfig.vitest-temp.json
+faqData.json
 # /static/page-previews/
 
 # General

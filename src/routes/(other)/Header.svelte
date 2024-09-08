@@ -244,14 +244,14 @@
 				{/if}
 			</div>
 		{:else}
-			<a
+			<!-- <a
 				class="hidden lg:flex gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.825rem] text-white hover:brightness-[1.08] transition-all"
 				href="/signin"
 			>
 				<span>Register</span>
 				<span>|</span>
 				<span>Login</span>
-			</a>
+			</a> -->
 		{/if}
 	</nav>
 </header>
