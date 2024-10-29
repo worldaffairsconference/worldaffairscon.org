@@ -2,40 +2,9 @@
 	import { lazyLoad } from "$lib/lazyLoad";
 
 	// Team Members
-	/*import jenniferYang from "$lib/assets/images/team/jennifer_yang.jpg";
-	import katherineMa from "$lib/assets/images/team/katherine_ma.jpg";
-	import shayaFarahmand from "$lib/assets/images/team/shaya_farahmand.jpg";
-	import karenLiu from "$lib/assets/images/team/karen_liu.jpg";
-	import darwinLi from "$lib/assets/images/team/darwin_li.jpg";
-	import annieDeng from "$lib/assets/images/team/annie_deng.jpg";
-	import yaraBhaloo from "$lib/assets/images/team/yara_bhaloo.jpg";
-	import jaiSandhu from "$lib/assets/images/team/jai_sandhu.jpg";
-	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
-	import alexaStewart from "$lib/assets/images/team/alexa_stewart.jpg";
 	import alexChen from "$lib/assets/images/team/alex_chen.jpg";
-	import lincolnDugasNishisato from "$lib/assets/images/team/lincoln_dugas_nishisato.jpg";
-	import gordonWu from "$lib/assets/images/team/gordon_wu.jpg";
-	import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpg";
-	import stellaPakGuenette from "$lib/assets/images/team/stella_pak_guenette.jpg";
-	import nikaGoldberg from "$lib/assets/images/team/nika_goldberg.jpg";
-	import avaScott from "$lib/assets/images/team/ava_scott.jpg";
-	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpg";
-	import tonyZhang from "$lib/assets/images/team/tony_zhang.jpg";
-	import ericaKim from "$lib/assets/images/team/erica_kim.jpg";
-	import uhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
-	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
-	import eugenioCiarlandini from "$lib/assets/images/team/eugenio_ciarlandini.jpg";
-	import calebChong from "$lib/assets/images/team/caleb_chong.jpg";
-	import adrianChiHongMak from "$lib/assets/images/team/adrian_chi_hong_mak.jpg";
-	import rayWu from "$lib/assets/images/team/ray_wu.jpg";
-	import aaravDogra from "$lib/assets/images/team/aarav_dogra.jpg";
-	import mimiSalman from "$lib/assets/images/team/mimi_salman.jpg";
-	import linaBoehmer from "$lib/assets/images/team/lina_boehmer.jpg";
-	import devlinMoniz from "$lib/assets/images/team/devlin_moniz.jpg";
-	import leahMoore from "$lib/assets/images/team/leah_moore.jpg";
-*/
-	import wacWLarge from "$lib/assets/images/team/avatar_big.jpg";
-	import wacWSmall from "$lib/assets/images/team/avatar_small.jpg";
+	import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg";
+	import wacWSmall from "$lib/assets/images/team/wac_w_small.jpg";
 
 	interface TeamMember {
 		name: string;
@@ -90,7 +59,7 @@
 		{
 			name: "Alex Chen",
 			position: "Director of Registration",
-			image: wacWLarge
+			image: alexChen
 		},
 		{
 			name: "Karen Liu",
