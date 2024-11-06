@@ -37,7 +37,7 @@
 	//import junoGoralski from "$lib/assets/images/team/juno_goralski.jpg";
 	import nikhilGupta from "$lib/assets/images/team/nikhil_gupta.jpg";
 	import rohanGupta from "$lib/assets/images/team/rohan_gupta.jpg";
-	//import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpg";
+	import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpg";
 	import michaelXu from "$lib/assets/images/team/michael_xu.jpg";
 	import alexWoosley from "$lib/assets/images/team/alex_woosley.jpg";
 	import liyangYin from "$lib/assets/images/team/liyang_yin.jpg";
@@ -65,6 +65,7 @@
 	import alyssaDhanji from "$lib/assets/images/team/alyssa_dhanji.jpg";
 	import karenLiu from "$lib/assets/images/team/karen_liu.jpg";
 	import morganHooyboer from "$lib/assets/images/team/morgan_hooyboer.jpg";
+	import suzanneMonir from "$lib/assets/images/team/suzanne_monir.jpg";
 	interface TeamMember {
 		name: string;
 		position: string;
@@ -148,7 +149,7 @@
 		{
 			name: "Malek Elhaddad",
 			position: "Director of Programs & Events",
-			image: wacWLarge
+			image: malekElhaddad
 		},
 		{
 			name: "Megan Kwan",
@@ -411,6 +412,24 @@
 			image: anitaYan
 		}
 	];
+
+	const facultyChairs: TeamMember[] = [
+		{
+			name: "Suzanne Monir",
+			position: "Faculty Chair",
+			image: suzanneMonir
+		},
+		{
+			name: "Alvin Jugoon",
+			position: "Faculty Chair",
+			image: wacWSmall
+		},
+		{
+			name: "Jarrod Baker",
+			position: "Faculty Chair",
+			image: wacWSmall
+		}
+	];
 </script>
 
 <svelte:head>
@@ -508,6 +527,36 @@
 				class="grid gap-5 sm:gap-7 lg:gap-10 row-gap-8 mx-auto sm:row-gap-10 sm:grid-cols-2 lg:grid-cols-3"
 			>
 				{#each seniorTeam as member}
+					<div class="flex">
+						<img
+							class="object-cover w-20 h-20 mr-4 rounded-full shadow"
+							use:lazyLoad={member.image}
+							alt="Person"
+						/>
+						<div class="flex flex-col justify-center">
+							<p class="text-lg font-bold text-white">
+								{member.name}
+							</p>
+							<p class="text-sm text-zinc-400">
+								{member.position}
+							</p>
+						</div>
+					</div>
+				{/each}
+			</div>
+		</div>
+		<div
+			class="px-6 mt-16 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8"
+		>
+			<h2
+				class="mb-7 md:mb-10 text-center text-3xl sm:text-4xl font-bold tracking-tight text-white"
+			>
+				Faculty Chairs
+			</h2>
+			<div
+				class="grid gap-5 sm:gap-7 lg:gap-10 row-gap-8 mx-auto sm:row-gap-10 sm:grid-cols-2 lg:grid-cols-3"
+			>
+				{#each facultyChairs as member}
 					<div class="flex">
 						<img
 							class="object-cover w-20 h-20 mr-4 rounded-full shadow"
