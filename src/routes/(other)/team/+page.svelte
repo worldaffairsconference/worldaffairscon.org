@@ -37,7 +37,7 @@
 	//import junoGoralski from "$lib/assets/images/team/juno_goralski.jpg";
 	import nikhilGupta from "$lib/assets/images/team/nikhil_gupta.jpg";
 	import rohanGupta from "$lib/assets/images/team/rohan_gupta.jpg";
-	//import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpg";
+	import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpg";
 	import michaelXu from "$lib/assets/images/team/michael_xu.jpg";
 	import alexWoosley from "$lib/assets/images/team/alex_woosley.jpg";
 	import liyangYin from "$lib/assets/images/team/liyang_yin.jpg";
@@ -148,7 +148,7 @@
 		{
 			name: "Malek Elhaddad",
 			position: "Director of Programs & Events",
-			image: wacWLarge
+			image: malekElhaddad
 		},
 		{
 			name: "Megan Kwan",
