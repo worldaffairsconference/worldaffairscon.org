@@ -64,7 +64,7 @@
 		class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
 	>
 		<span>Theme</span>
-		<span class="italic">TBD</span>
+		<span class="italic">WAC To The Future</span>
 	</h2>
 	<div class="w-5/6 mx-auto">
 		<h1
