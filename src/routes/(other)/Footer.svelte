@@ -3,7 +3,6 @@
 
 	import branksomeLogo from "$lib/assets/images/logos/branksome.webp";
 	import uccLogo from "$lib/assets/images/logos/ucc.webp";
-	import famersEdgeLogo from "$lib/assets/images/logos/farmers-edge.webp";
 
 	interface Social {
 		name: string;
