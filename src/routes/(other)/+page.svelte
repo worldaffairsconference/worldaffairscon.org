@@ -43,20 +43,7 @@
 
 	const timeUntilConference = calculateDaysUntilDate(new Date(2025, 3, 5)); // Change when the date is confirmed
 </script>
-<style>
-	.glow {
-		text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
-			0 0 20px rgba(255, 255, 255, 0.6), 
-			0 0 30px rgba(255, 255, 255, 0.4); 
-		transition: text-shadow 0.3s ease-in-out;
-	}
 
-	.glow:hover {
-		text-shadow: 0 0 15px rgba(255, 255, 255, 1), 
-			0 0 25px rgba(255, 255, 255, 0.8),
-			0 0 35px rgba(255, 255, 255, 0.6);
-	}
-</style>
 <section
 	class="pt-[4rem] md:pt-[6rem] text-center flex flex-col items-center h-screen w-screen absolute inset-0 z-20"
 >
@@ -108,13 +95,17 @@
 		</a>
 	{/if}
 	<div id="statsSection" class="w-full text-center">
-		<h2 class="text-transparent text-2xl sm:text-4xl font-bold mb-4 bg-clip-text bg-gradient-to-br from-white to-secondary">WAC has reached</h2>	
+		<h2
+			class="text-transparent text-2xl sm:text-4xl font-bold mb-4 bg-clip-text bg-gradient-to-br from-white to-secondary"
+		>
+			WAC has reached
+		</h2>
 		<span class="text-white text-lg md:text-2xl glow">10k+ students</span>
 		<span class="text-secondary mx-2">・</span>
 		<span class="text-white text-lg md:text-2xl glow">80+ schools</span>
 		<span class="text-secondary mx-2">・</span>
 		<span class="text-white text-lg md:text-2xl glow">35+ countries</span>
-
+	</div>
 </section>
 
 <ScrollAnimations />
@@ -182,3 +173,20 @@
 		</form>
 	</div>
 </section> -->
+
+<style>
+	.glow {
+		text-shadow:
+			0 0 10px rgba(255, 255, 255, 0.8),
+			0 0 20px rgba(255, 255, 255, 0.6),
+			0 0 30px rgba(255, 255, 255, 0.4);
+		transition: text-shadow 0.3s ease-in-out;
+	}
+
+	.glow:hover {
+		text-shadow:
+			0 0 15px rgba(255, 255, 255, 1),
+			0 0 25px rgba(255, 255, 255, 0.8),
+			0 0 35px rgba(255, 255, 255, 0.6);
+	}
+</style>
