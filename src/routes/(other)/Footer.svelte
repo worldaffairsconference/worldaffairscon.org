@@ -44,12 +44,12 @@
 		}
 	];
 
-	const supporters: Credit[] = [
-		{
-			name: "Farmers Edge",
-			logo: famersEdgeLogo
-		}
-	];
+	// const supporters: Credit[] = [
+	// 	{
+	// 		name: "Farmers Edge",
+	// 		logo: famersEdgeLogo
+	// 	}
+	// ];
 </script>
 
 <footer class="bg-zinc-950">
@@ -76,10 +76,10 @@
 				</div>
 
 				<!-- Vertical divider -->
-				<div class="w-0.5 bg-zinc-600 my-6 md:my-3"></div>
+				<!-- <div class="w-0.5 bg-zinc-600 my-6 md:my-3"></div> -->
 
 				<div class="grow">
-					<div
+					<!-- <div
 						class="text-zinc-400 mb-3 text-[0.7rem] lg:text-[0.8rem] uppercase"
 					>
 						Supporters
@@ -94,7 +94,7 @@
 								class="h-[2rem] lg:h-[2.25rem]"
 							/>
 						{/each}
-					</div>
+					</div> -->
 				</div>
 			</div>
 
