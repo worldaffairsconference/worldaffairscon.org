@@ -71,7 +71,7 @@
 		position: string;
 		image: string;
 	}
-	
+
 	const chairs: TeamMember[] = [
 		{
 			name: "Darwin Li",
