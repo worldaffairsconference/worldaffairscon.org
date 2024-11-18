@@ -391,9 +391,9 @@
 	});
 
 	async function loadVideoSection() {
-  		videoSection = await import("./Video.svelte");
+		videoSection = await import("./Video.svelte");
 	}
-	
+
 	const handleWindowResize = () => {
 		camera.aspect = window.innerWidth / window.innerHeight;
 		camera.updateProjectionMatrix();
