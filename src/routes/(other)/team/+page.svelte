@@ -66,6 +66,7 @@
 	import karenLiu from "$lib/assets/images/team/karen_liu.jpg";
 	import morganHooyboer from "$lib/assets/images/team/morgan_hooyboer.jpg";
 	import suzanneMonir from "$lib/assets/images/team/suzanne_monir.jpg";
+	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
 	interface TeamMember {
 		name: string;
 		position: string;
@@ -422,7 +423,7 @@
 		{
 			name: "Alvin Jugoon",
 			position: "Faculty Chair",
-			image: wacWSmall
+			image: alvinJugoon
 		},
 		{
 			name: "Jarrod Baker",
