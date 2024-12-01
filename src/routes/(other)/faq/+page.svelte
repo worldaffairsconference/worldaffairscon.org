@@ -18,7 +18,7 @@
 
 	onMount(async () => {
 		try {
-			const response = await fetch("/faqData.json");
+			const response = await fetch("./faqData.json");
 			if (!response.ok) {
 				throw new Error("Failed to load FAQ data");
 			}
