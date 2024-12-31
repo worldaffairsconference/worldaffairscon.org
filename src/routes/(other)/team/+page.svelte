@@ -429,6 +429,11 @@
 			name: "Jarrod Baker",
 			position: "Faculty Chair",
 			image: wacWSmall
+		},
+		{
+			name: "Tracy Dalgdish",
+			position: "Faculty Chair",
+			image: wacWSmall
 		}
 	];
 </script>
@@ -567,9 +572,6 @@
 						<div class="flex flex-col justify-center">
 							<p class="text-lg font-bold text-white">
 								{member.name}
-							</p>
-							<p class="text-sm text-zinc-400">
-								{member.position}
 							</p>
 						</div>
 					</div>
