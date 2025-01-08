@@ -3,5 +3,6 @@
 	"testing.openTesting": "neverOpen",
 	"eslint.validate": ["svelte", "typescript", "javascript"],
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"css.lint.unknownAtRules": "ignore"
+	"css.lint.unknownAtRules": "ignore",
+	"testing.automaticallyOpenTestResults": "neverOpen"
 }
