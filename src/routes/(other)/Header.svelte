@@ -140,7 +140,7 @@
 					<div>
 						<hr class="border-zinc-700 mb-8" />
 
-						<a
+						<!-- <a
 							class="block text-base text-center lg:hidden gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.825rem] text-white hover:brightness-[1.08] transition-all"
 							href="/signin"
 							on:click={closeNavBar}
@@ -148,7 +148,7 @@
 							<span>Register</span>
 							<span>|</span>
 							<span>Login</span>
-						</a>
+						</a> -->
 					</div>
 				{/if}
 			</div>
