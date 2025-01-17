@@ -49,7 +49,8 @@
 				answer: "More details will be shared soon!"
 			},
 			{
-				question: "What should I do if I encounter problems during registration?",
+				question:
+					"What should I do if I encounter problems during registration?",
 				answer: "More details will be shared soon!"
 			}
 		],
@@ -90,13 +91,19 @@
 	<title>FAQ - World Affairs Conference</title>
 </svelte:head>
 
-<section class="faq-section pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]">
+<section
+	class="faq-section pt-[5rem] md:pt-[7.5rem] lg:pt-[9rem] pb-[5rem] lg:pb-[7rem]"
+>
 	<div class="max-w-screen-xl mx-auto px-6 lg:px-16">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
-			<h3 class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary">
+			<h3
+				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
+			>
 				FAQ
 			</h3>
-			<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
+			<h1
+				class="font-bold text-white text-4xl md:text-5xl tracking-tight"
+			>
 				Any Questions?
 			</h1>
 		</div>
@@ -104,7 +111,9 @@
 		<div class="flex flex-col gap-16">
 			{#each Object.entries(faqByCategories) as [categoryName, records]}
 				<div>
-					<h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-8 text-center">
+					<h3
+						class="text-2xl md:text-3xl font-semibold text-white mb-4 md:mb-8 text-center"
+					>
 						{categoryName}
 					</h3>
 
