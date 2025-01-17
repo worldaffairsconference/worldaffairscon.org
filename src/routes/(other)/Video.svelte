@@ -4,7 +4,7 @@
 	import { ScrollTrigger } from "gsap/ScrollTrigger?client";
 	import { browser } from "$app/environment";
 
-	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.webp";
+	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.png";
 	import trailerVideo from "$lib/assets/video/wac_trailer.mp4";
 
 	let showVideoPreview = true;
