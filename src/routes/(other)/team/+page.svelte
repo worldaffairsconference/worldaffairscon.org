@@ -67,6 +67,9 @@
 	import morganHooyboer from "$lib/assets/images/team/morgan_hooyboer.jpg";
 	import suzanneMonir from "$lib/assets/images/team/suzanne_monir.jpg";
 	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
+	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
+	import tracyDalgdish from "$lib/assets/images/team/tracy_dalgdish.jpg";
+	
 	interface TeamMember {
 		name: string;
 		position: string;
@@ -428,12 +431,12 @@
 		{
 			name: "Jarrod Baker",
 			position: "Faculty Chair",
-			image: wacWSmall
+			image: jarrodBaker
 		},
 		{
 			name: "Tracy Dalgdish",
 			position: "Faculty Chair",
-			image: wacWSmall
+			image: tracyDalgdish
 		}
 	];
 </script>
