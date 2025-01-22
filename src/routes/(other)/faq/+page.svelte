@@ -38,20 +38,20 @@
 		"Registration": [
 			{
 				question: "How much does WAC cost?",
-				answer: "More details will be shared soon!"
+				answer: "WAC is fully free for all attendees this year! Lunch will be provided for an additional cost that will be communicated to attendees."
 			},
 			{
 				question: "When is registration due?",
-				answer: "More details will be shared soon!"
+				answer: "Registration deadlines will be announced at a later date. Please be reminded that attendee spots are first come, first serve and fill up quickly!"
 			},
 			{
 				question: "How can I register my school?",
-				answer: "More details will be shared soon!"
+				answer: "Teachers are kindly asked to register their schools at <a href='https://reg.worldaffairscon.org/tregister'>https://reg.worldaffairscon.org/tregister</a>. Once a teacher account has been created, a school-specific registration link will be generated for students to register themselves. Unfortunately, individual students are unable to register themselves this year."
 			},
 			{
 				question:
 					"What should I do if I encounter problems during registration?",
-				answer: "More details will be shared soon!"
+				answer: "For any inquiries or concerns, please contact wac@ucc.on.ca. Our team will be happy to assist you!"
 			}
 		],
 		"Keynote Address": [
