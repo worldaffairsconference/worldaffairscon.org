@@ -44,7 +44,7 @@
 	//import linaBoehmer from "$lib/assets/images/team/lina_boehmer.jpg";
 	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
 	import victoriaLuo from "$lib/assets/images/team/victoria_luo.jpg";
-	//import naomiNemickas from "$lib/assets/images/team/naomi_nemickas.jpg";
+	import naomiNemickas from "$lib/assets/images/team/naomi_nemickas.png";
 	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
 	import mayaChen from "$lib/assets/images/team/maya_chen.jpg";
 	import katieBuckley from "$lib/assets/images/team/katie_buckley.jpg";
@@ -275,7 +275,7 @@
 		{
 			name: "Naomi Nemickas",
 			position: "Plenary Head",
-			image: wacWSmall
+			image: naomiNemickas
 		},
 		{
 			name: "Kimi Zhao",
