@@ -31,22 +31,24 @@
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
 	// Images
-	import alexCui from "$lib/assets/images/speakers/alex-cui.webp";
-	import bobDameron from "$lib/assets/images/speakers/bob-dameron.webp";
-	import carolineCodsi from "$lib/assets/images/speakers/caroline-codsi.webp";
-	import chrisOShaughnessy from "$lib/assets/images/speakers/chris-o-shaughnessy.webp";
-	import cosmianMorariu from "$lib/assets/images/speakers/cosmian-morariu.webp";
-	import eskoAho from "$lib/assets/images/speakers/esko-aho.webp";
-	import franciscoSagasti from "$lib/assets/images/speakers/francisco-sagasti.webp";
-	import kathrynHume from "$lib/assets/images/speakers/kathryn-hume.webp";
-	import bruceKuwabara from "$lib/assets/images/speakers/bruce-kuwabara.webp";
-	import nikolasBadminton from "$lib/assets/images/speakers/nikolas-badminton.webp";
-	import robertaBondar from "$lib/assets/images/speakers/roberta-bondar.webp";
-	import sandraHawken from "$lib/assets/images/speakers/sandra-hawken.webp";
-	import tomHeintzman from "$lib/assets/images/speakers/tom-heintzman.webp";
-	import odedGalor from "$lib/assets/images/speakers/oded-galor.webp";
-	import bobRae from "$lib/assets/images/speakers/bob-rae.webp";
-	import faresKady from "$lib/assets/images/speakers/fares-kady.webp";
+	//import sebastianMaurice from "$lib/assets/images/speakers/sebastianMaurice.jpg";
+	import billWeir from "$lib/assets/images/speakers/billWeir.jpg";
+	import ericZhu from "$lib/assets/images/speakers/ericZhu.png";
+	//import jamesOrbinski from "$lib/assets/images/speakers/jamesOrbinski.jpg";
+	//import justinaRay from "$lib/assets/images/speakers/justinaRay.jpg";
+	import jeremyWang from "$lib/assets/images/speakers/jeremyWang.jpg";
+	import emmaLozhkin from "$lib/assets/images/speakers/emmaLozhkin.jpg";
+	//import sylviaTorresGuillen from "$lib/assets/images/speakers/sylviaTorresGuillen.jpg";
+	//import curtisVanWelleghem from "$lib/assets/images/speakers/curtisVanWelleghem.jpg";
+	//import shirleyBlumberg from "$lib/assets/images/speakers/shirleyBlumberg.jpg";
+	import johnSmol from "$lib/assets/images/speakers/johnSmol.jpg";
+	import jamesSuh from "$lib/assets/images/speakers/jamesSuh.webp";
+	import wolfgangSchwan from "$lib/assets/images/speakers/wolfgangSchwan.jpg";
+	//import tanBoechat from "$lib/assets/images/speakers/tanBoechat.png";
+	import michaelKaufman from "$lib/assets/images/speakers/michaelKaufman.jpg";	
+	import johnSitilides from "$lib/assets/images/speakers/johnSitilides.jpg";
+	import andrewHealey from "$lib/assets/images/speakers/andrewHealey.jpg";
+	import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg"
 
 	// Constants
 	const TOTAL_STARS = 500; // How many stars there are
@@ -60,85 +62,91 @@
 
 	const speakers: Speaker[] = [
 		{
-			name: "Bob Rae",
-			title: "Canadian Ambassador to UN",
-			image: bobRae
+			name: "Dr. Sebastian Maurice",
+			title: "",
+			image: wacWLarge
 		},
 		{
-			name: "Roberta Bondar",
-			title: "Roberta L Bondar, C.C. O.Ont. MD PhD FRSC ICD.D, Canada's First Female Astronaut in Space",
-			image: robertaBondar,
+			name: "Bill Weir",
+			title: "Chief Climate Correspondent",
+			image: billWeir,
 			tag: "Keynote Speaker"
 		},
 		{
-			name: "Francisco Sagasti",
-			title: "Former President of Peru (2020-2021)",
-			image: franciscoSagasti
+			name: "Dr. James Orbinski",
+			title: "",
+			image: wacWLarge,
+			tag: "Keynote Speaker"
 		},
 		{
-			name: "Esko Aho",
-			title: "Former PM of Finland",
-			image: eskoAho
+			name: "Eric Zhu",
+			title: "",
+			image: ericZhu
 		},
 		{
-			name: "Bruce Kuwabara, O. C.",
-			title: "Architect",
-			image: bruceKuwabara
+			name: "Dr. Justina Ray",
+			title: "",
+			image: wacWLarge
 		},
 		{
-			name: "Alex Cui",
-			title: "CTO @ GPTZero",
-			image: alexCui
+			name: "Dr. Jeremy Wang",
+			title: "",
+			image: jeremyWang
 		},
 		{
-			name: "Oded Galor",
-			title: "Founder of Unified Growth Theory, Herbert Goldberger Professor of Economics at Brown University",
-			image: odedGalor
+			name: "Emma Lozhkin",
+			title: "",
+			image: emmaLozhkin 
 		},
 		{
-			name: "Cosmina Morariu",
-			title: "Global Partner of Fragomen LPP",
-			image: cosmianMorariu
+			name: "Sylvia Torres-Guillen",
+			title: "",
+			image: wacWLarge
 		},
 		{
-			name: "Caroline Codsi",
-			title: "President of Women in Governance",
-			image: carolineCodsi
+			name: "Curtis VanWelleghem ",
+			title: "",
+			image: wacWLarge 
 		},
 		{
-			name: "Chris O'Shaugnessy",
-			title: "Author",
-			image: chrisOShaughnessy
+			name: "Shirley Blumberg ",
+			title: "",
+			image: wacWLarge 
 		},
 		{
-			name: "Fares Kady",
-			title: "Head of Aleppo Office, World Health Organization",
-			image: faresKady
+			name: "John Smol",
+			title: "",
+			image: johnSmol
 		},
 		{
-			name: "Bob Dameron '75",
-			title: "Head of Business Development of Multiverse Computing",
-			image: bobDameron
+			name: "James Suh",
+			title: "",
+			image: jamesSuh
 		},
 		{
-			name: "Tom Heintzman '82",
-			title: "Managing Director and Vice-Chair, Energy Transition & Sustainability CIBC Capital Markets",
-			image: tomHeintzman
+			name: "Michael Kaufman ",
+			title: "",
+			image: michaelKaufman 
 		},
 		{
-			name: "Kathryn Hume",
-			title: "VP of Digital Channels Technology at Royal Bank of Canada",
-			image: kathrynHume
+			name: "Wolfgang Schwan",
+			title: "",
+			image: wolfgangSchwan
 		},
 		{
-			name: "Nikolas Badminton",
-			title: "Futurist",
-			image: nikolasBadminton
+			name: "Yan Boechat",
+			title: "",
+			image: wacWLarge
 		},
 		{
-			name: "Sandra Hawken",
-			title: "President and CEO of Holland Bloorview Kids Rehabilitation Hospital Foundation",
-			image: sandraHawken
+			name: "John Sitilides",
+			title: "",
+			image: johnSitilides
+		},
+		{
+			name: "Dr. Andrew Healey",
+			title: "",
+			image: andrewHealey
 		}
 	];
 
