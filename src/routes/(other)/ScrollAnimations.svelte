@@ -68,7 +68,7 @@
 		},
 		{
 			name: "Bill Weir",
-			title: "Chief Climate Correspondent",
+			title: "CNN Chief Climate Correspondent",
 			image: billWeir,
 			tag: "Keynote Speaker"
 		},
@@ -437,7 +437,7 @@
 					<h2
 						class="text-center text-[2.75rem] sm:text-[4.3rem] font-bold text-white tracking-tight mb-8"
 					>
-						Last Year's 2024 Speakers
+						WAC 2025 Speakers
 					</h2>
 
 					<div class="grow overflow-hidden relative mb-6">
