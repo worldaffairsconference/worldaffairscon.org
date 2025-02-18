@@ -63,89 +63,89 @@
 	const speakers: Speaker[] = [
 		{
 			name: "Dr. Sebastian Maurice",
-			title: "",
+			title: "Global AI/ML Leader",
 			image: wacWLarge
 		},
 		{
 			name: "Bill Weir",
-			title: "Chief Climate Correspondent",
+			title: "CNN Chief Climate Correspondent",
 			image: billWeir,
 			tag: "Keynote Speaker"
 		},
 		{
 			name: "Dr. James Orbinski",
-			title: "",
+			title: "Former President of Doctors Without Borders & Nobel Prize Winner",
 			image: wacWLarge,
 			tag: "Keynote Speaker"
 		},
 		{
 			name: "Eric Zhu",
-			title: "",
+			title: "17 yr old, Co-founder of Aviato",
 			image: ericZhu
 		},
 		{
 			name: "Dr. Justina Ray",
-			title: "",
+			title: "President and Senior Scientist at Wildlife Conservation Society Canada",
 			image: wacWLarge
 		},
 		{
 			name: "Dr. Jeremy Wang",
-			title: "",
+			title: "Aerospace engineer and COO of Ribbit",
 			image: jeremyWang
 		},
 		{
 			name: "Emma Lozhkin",
-			title: "",
+			title: "2012-17 Junior Olympian & Member of the Canadian National Gymnastics Team, Branksome 2017 Graduate, Software Engineer",
 			image: emmaLozhkin 
 		},
 		{
 			name: "Sylvia Torres-Guillen",
-			title: "",
+			title: "General Counsel of the California ALRB, Executive director of Disability Rights Legal Center, social justice advocate",
 			image: wacWLarge
 		},
 		{
 			name: "Curtis VanWelleghem ",
-			title: "",
+			title: "Founder and CEO of Hydrostor",
 			image: wacWLarge 
 		},
 		{
 			name: "Shirley Blumberg ",
-			title: "",
+			title: "Founding partner of KPMB Architects and activist for social transformation and change through architecture",
 			image: wacWLarge 
 		},
 		{
 			name: "John Smol",
-			title: "",
+			title: "Canadian ecologist, limnologist and paleolimnologist",
 			image: johnSmol
 		},
 		{
 			name: "James Suh",
-			title: "",
+			title: "CFO of Florida Panthers",
 			image: jamesSuh
 		},
 		{
 			name: "Michael Kaufman ",
-			title: "",
+			title: "Co-Founder: White Ribbon Campaign, Author: The Guy’s Guide to Feminism",
 			image: michaelKaufman 
 		},
 		{
 			name: "Wolfgang Schwan",
-			title: "",
+			title: "Ukraine War Journalist & Photographer",
 			image: wolfgangSchwan
 		},
 		{
 			name: "Yan Boechat",
-			title: "",
+			title: "Conflict Journalist & War Correspondent",
 			image: wacWLarge
 		},
 		{
 			name: "John Sitilides",
-			title: "",
+			title: "Geopolitical Strategist & Diplomacy Consultant for Bush, Obama and Trump",
 			image: johnSitilides
 		},
 		{
 			name: "Dr. Andrew Healey",
-			title: "",
+			title: "Medical Director/Chief, Chief of Critical care at St. Joseph's Hamilton",
 			image: andrewHealey
 		}
 	];
