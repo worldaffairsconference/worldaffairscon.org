@@ -33,6 +33,10 @@
 			{
 				question: "Who can attend WAC?",
 				answer: "Any high school student can attend WAC. If you are interested in attending the conference, please contact a school teacher and ask them to reach out to wac@ucc.on.ca."
+			},
+			{
+				question: "What happens if I can’t come to WAC anymore?",
+				answer: "No worries! If you have already registered, kindly email us at wac@ucc.on.ca. Unfortunately, after Friday, February 28th 2025, all lunch orders are final and your school will be charged for all orders as they appear on that date."
 			}
 		],
 		"Registration": [
