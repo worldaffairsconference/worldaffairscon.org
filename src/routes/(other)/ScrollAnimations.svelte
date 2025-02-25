@@ -73,6 +73,12 @@
 			tag: "Keynote Speaker"
 		},
 		{
+			name: "Keith Pelley",
+			title: "President & CEO of Maple Leafs Sports and Entertainment",
+			image: wacWLarge,
+			tag: "Keynote Speaker"
+		},
+		{
 			name: "Dr. James Orbinski",
 			title: "Former President of Doctors Without Borders & Nobel Prize Winner",
 			image: wacWLarge,
