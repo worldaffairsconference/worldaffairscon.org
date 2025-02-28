@@ -34,20 +34,21 @@
 	//import sebastianMaurice from "$lib/assets/images/speakers/sebastianMaurice.jpg";
 	import billWeir from "$lib/assets/images/speakers/billWeir.jpg";
 	import ericZhu from "$lib/assets/images/speakers/ericZhu.png";
-	//import jamesOrbinski from "$lib/assets/images/speakers/jamesOrbinski.jpg";
+	import jamesOrbinski from "$lib/assets/images/speakers/jamesOrbinski.jpg";
 	//import justinaRay from "$lib/assets/images/speakers/justinaRay.jpg";
 	import jeremyWang from "$lib/assets/images/speakers/jeremyWang.jpg";
 	import emmaLozhkin from "$lib/assets/images/speakers/emmaLozhkin.jpg";
-	//import sylviaTorresGuillen from "$lib/assets/images/speakers/sylviaTorresGuillen.jpg";
-	//import curtisVanWelleghem from "$lib/assets/images/speakers/curtisVanWelleghem.jpg";
-	//import shirleyBlumberg from "$lib/assets/images/speakers/shirleyBlumberg.jpg";
+	import sylviaTorresGuillen from "$lib/assets/images/speakers/sylviaTorresGuillen.jpg";
+	import curtisVanWelleghem from "$lib/assets/images/speakers/curtisVanWelleghem.jpg";
+	import shirleyBlumberg from "$lib/assets/images/speakers/shirleyBlumberg.jpg";
 	import johnSmol from "$lib/assets/images/speakers/johnSmol.jpg";
 	import jamesSuh from "$lib/assets/images/speakers/jamesSuh.webp";
 	import wolfgangSchwan from "$lib/assets/images/speakers/wolfgangSchwan.jpg";
-	//import tanBoechat from "$lib/assets/images/speakers/tanBoechat.png";
+	//import yanBoechat from "$lib/assets/images/speakers/yanBoechat.png";
 	import michaelKaufman from "$lib/assets/images/speakers/michaelKaufman.jpg";	
 	import johnSitilides from "$lib/assets/images/speakers/johnSitilides.jpg";
 	import andrewHealey from "$lib/assets/images/speakers/andrewHealey.jpg";
+	import keithPelley from "$lib/assets/images/speakers/keithPelley.jpeg";
 	import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg"
 
 	// Constants
@@ -74,14 +75,14 @@
 		},
 		{
 			name: "Keith Pelley",
-			title: "President & CEO of Maple Leafs Sports and Entertainment",
-			image: wacWLarge,
+			title: "Former CEO of PGA European Tour, Current President & CEO of MLSE",
+			image: keithPelley,
 			tag: "Keynote Speaker"
 		},
 		{
 			name: "Dr. James Orbinski",
 			title: "Former President of Doctors Without Borders & Nobel Prize Winner",
-			image: wacWLarge,
+			image: jamesOrbinski,
 			tag: "Keynote Speaker"
 		},
 		{
@@ -107,17 +108,17 @@
 		{
 			name: "Sylvia Torres-Guillen",
 			title: "General Counsel of the California ALRB, Executive director of Disability Rights Legal Center, social justice advocate",
-			image: wacWLarge
+			image: sylviaTorresGuillen
 		},
 		{
 			name: "Curtis VanWelleghem ",
 			title: "Founder and CEO of Hydrostor",
-			image: wacWLarge 
+			image: curtisVanWelleghem 
 		},
 		{
 			name: "Shirley Blumberg ",
 			title: "Founding partner of KPMB Architects and activist for social transformation and change through architecture",
-			image: wacWLarge 
+			image: shirleyBlumberg 
 		},
 		{
 			name: "John Smol",
