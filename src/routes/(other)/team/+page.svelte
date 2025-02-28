@@ -243,7 +243,7 @@
 			image: mayaChen
 		},
 		{
-			name: "Lincoln Dugas-Nishisator",
+			name: "Lincoln Dugas-Nishisato",
 			position: "Plenary Head",
 			image: lincolnDugasNishisato
 		},
