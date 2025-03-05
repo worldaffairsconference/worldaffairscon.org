@@ -124,5 +124,8 @@
 			© 2025 Upper Canada College. All Rights Reserved —
 			<a href="/privacy-policy"> Privacy Policy </a>
 		</span>
+		<span class="text-zinc-400 text-xs md:text-sm mt-2">
+			We gratefully acknowledge the generous contributions of Zhaohui Liu and Jessie Wang and Satstreet, whose support has been vital to the success and continued growth of this program.
+		</span>
 	</div>
 </footer>
