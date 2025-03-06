@@ -105,7 +105,7 @@
 			image: sylviaTorresGuillen
 		},
 		{
-			name: "Curtis VanWelleghem ",
+			name: "Curtis VanWalleghem ",
 			title: "Founder and CEO of Hydrostor",
 			image: curtisVanWelleghem 
 		},
