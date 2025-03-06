@@ -33,7 +33,6 @@
 	// Images
 	//import sebastianMaurice from "$lib/assets/images/speakers/sebastianMaurice.jpg";
 	import billWeir from "$lib/assets/images/speakers/billWeir.jpg";
-	import ericZhu from "$lib/assets/images/speakers/ericZhu.png";
 	import jamesOrbinski from "$lib/assets/images/speakers/jamesOrbinski.jpg";
 	//import justinaRay from "$lib/assets/images/speakers/justinaRay.jpg";
 	import jeremyWang from "$lib/assets/images/speakers/jeremyWang.jpg";
@@ -84,11 +83,6 @@
 			title: "Former President of Doctors Without Borders & Nobel Prize Winner",
 			image: jamesOrbinski,
 			tag: "Keynote Speaker"
-		},
-		{
-			name: "Eric Zhu",
-			title: "17 yr old, Co-founder of Aviato",
-			image: ericZhu
 		},
 		{
 			name: "Dr. Justina Ray",
