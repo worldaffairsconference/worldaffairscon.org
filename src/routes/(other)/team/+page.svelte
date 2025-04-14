@@ -69,7 +69,7 @@
 	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
 	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
 	import tracyDalgdish from "$lib/assets/images/team/tracy_dalgdish.jpg";
-	
+
 	interface TeamMember {
 		name: string;
 		position: string;

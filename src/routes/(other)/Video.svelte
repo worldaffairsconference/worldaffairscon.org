@@ -5,7 +5,7 @@
 	import { browser } from "$app/environment";
 
 	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.png";
-	import trailerVideo from "$lib/assets/video/wac_trailer.mp4";
+	import trailerVideo from "$lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4";
 
 	let showVideoPreview = true;
 
@@ -119,7 +119,7 @@
 		class="w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 		id="videoTitle"
 	>
-		WAC 2025
+		WAC 2025 Recap
 	</h2>
 	{#if !showVideoPreview}
 		<button
