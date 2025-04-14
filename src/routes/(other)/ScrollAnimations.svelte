@@ -44,11 +44,11 @@
 	import jamesSuh from "$lib/assets/images/speakers/jamesSuh.webp";
 	import wolfgangSchwan from "$lib/assets/images/speakers/wolfgangSchwan.jpg";
 	//import yanBoechat from "$lib/assets/images/speakers/yanBoechat.png";
-	import michaelKaufman from "$lib/assets/images/speakers/michaelKaufman.jpg";	
+	import michaelKaufman from "$lib/assets/images/speakers/michaelKaufman.jpg";
 	import johnSitilides from "$lib/assets/images/speakers/johnSitilides.jpg";
 	import andrewHealey from "$lib/assets/images/speakers/andrewHealey.jpg";
 	import keithPelley from "$lib/assets/images/speakers/keithPelley.jpeg";
-	import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg"
+	import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg";
 
 	// Constants
 	const TOTAL_STARS = 500; // How many stars there are
@@ -97,7 +97,7 @@
 		{
 			name: "Emma Lozhkin",
 			title: "2012-17 Junior Olympian & Member of the Canadian National Gymnastics Team, Branksome 2017 Graduate, Software Engineer",
-			image: emmaLozhkin 
+			image: emmaLozhkin
 		},
 		{
 			name: "Sylvia Torres-Guillen",
@@ -107,12 +107,12 @@
 		{
 			name: "Curtis VanWalleghem ",
 			title: "Founder and CEO of Hydrostor",
-			image: curtisVanWelleghem 
+			image: curtisVanWelleghem
 		},
 		{
 			name: "Shirley Blumberg ",
 			title: "Founding partner of KPMB Architects and activist for social transformation and change through architecture",
-			image: shirleyBlumberg 
+			image: shirleyBlumberg
 		},
 		{
 			name: "John Smol",
@@ -127,7 +127,7 @@
 		{
 			name: "Michael Kaufman ",
 			title: "Co-Founder: White Ribbon Campaign, Author: The Guy’s Guide to Feminism",
-			image: michaelKaufman 
+			image: michaelKaufman
 		},
 		{
 			name: "Wolfgang Schwan",

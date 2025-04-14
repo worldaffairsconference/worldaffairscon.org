@@ -107,16 +107,21 @@
 				<div
 					class="flex flex-wrap gap-3 items-center justify-center sm:justify-start text-sm font-medium text-zinc-200"
 				>
-				{#each socials as social}
-					<a
-						href={social.link}
-						class="text-[1.4rem] sm:text-[1.5rem]"
-						{...(social.name !== "Email" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-						aria-label="{social.name} page"
-					>
-						<i class={social.icon}></i>
-					</a>
-				{/each}
+					{#each socials as social}
+						<a
+							href={social.link}
+							class="text-[1.4rem] sm:text-[1.5rem]"
+							{...social.name !== "Email"
+								? {
+										target: "_blank",
+										rel: "noopener noreferrer"
+									}
+								: {}}
+							aria-label="{social.name} page"
+						>
+							<i class={social.icon}></i>
+						</a>
+					{/each}
 				</div>
 			</div>
 		</div>
@@ -125,7 +130,9 @@
 			<a href="/privacy-policy"> Privacy Policy </a>
 		</span>
 		<span class="text-zinc-400 text-xs md:text-sm mt-2">
-			We gratefully acknowledge the generous contributions of Zhaohui Liu and Jessie Wang and Satstreet, whose support has been vital to the success and continued growth of this program.
+			We gratefully acknowledge the generous contributions of Zhaohui Liu
+			and Jessie Wang and Satstreet, whose support has been vital to the
+			success and continued growth of this program.
 		</span>
 	</div>
 </footer>
