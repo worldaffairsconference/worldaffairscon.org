@@ -70,6 +70,7 @@
 		// { name: "Schedule", path: "/schedule" },
 		{ name: "Team", path: "/team" },
 		// { name: "Past Speakers", path: "/past-speakers" },
+		{ name: "Past Years", path: "/past-years" },
 		{ name: "FAQ", path: "/faq" }
 	] satisfies Route[];
 </script>
@@ -244,6 +245,7 @@
 				{/if}
 			</div>
 		{:else}
+			<!-- Temporarily commented out register/login button
 			<a
 				class="hidden lg:flex gap-2 bg-gradient-to-r from-primary to-secondary rounded-full px-10 py-[0.825rem] text-white hover:brightness-[1.08] transition-all"
 				href="https://reg.worldaffairscon.org/"
@@ -252,6 +254,7 @@
 				<span>|</span>
 				<span>Login</span>
 			</a>
+			-->
 		{/if}
 	</nav>
 </header>
