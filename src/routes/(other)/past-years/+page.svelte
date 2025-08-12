@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Tab state management
-	let activeTab = "2024";
+	let activeTab = "2025";
 	const setActiveTab = (tab: string) => {
 		activeTab = tab;
 	};
@@ -16,12 +16,131 @@
 	const yearContent = {
 		"2025": {
 			title: "WAC 2025 - WAC To The Future",
-			description: "North America's largest and Canada's oldest annual student-run current events conference.",
+			description: "",
 			highlights: [
-				"Theme: WAC To The Future"
+				"Theme: WAC To The Future",
+				"Recap video coming soon"
 			],
 			detailedSpeakers: [
-
+				{
+					name: "Dr. Sebastian Maurice",
+					title: "Global AI/ML Leader",
+					image: "/src/lib/assets/images/team/wac_w_large.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Bill Weir",
+					title: "CNN Chief Climate Correspondent",
+					image: "/src/lib/assets/images/speakers/billWeir.jpg",
+					bio: "",
+					tag: "Keynote Speaker"
+				},
+				{
+					name: "Keith Pelley",
+					title: "Former CEO of PGA European Tour, Current President & CEO of MLSE",
+					image: "/src/lib/assets/images/speakers/keithPelley.jpeg",
+					bio: "",
+					tag: "Keynote Speaker"
+				},
+				{
+					name: "Dr. James Orbinski",
+					title: "Former President of Doctors Without Borders & Nobel Prize Winner",
+					image: "/src/lib/assets/images/speakers/jamesOrbinski.jpg",
+					bio: "",
+					tag: "Keynote Speaker"
+				},
+				{
+					name: "Dr. Justina Ray",
+					title: "President and Senior Scientist at Wildlife Conservation Society Canada",
+					image: "/src/lib/assets/images/team/wac_w_large.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Dr. Jeremy Wang",
+					title: "Aerospace engineer and COO of Ribbit",
+					image: "/src/lib/assets/images/speakers/jeremyWang.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Emma Lozhkin",
+					title: "2012-17 Junior Olympian & Member of the Canadian National Gymnastics Team, Branksome 2017 Graduate, Software Engineer",
+					image: "/src/lib/assets/images/speakers/emmaLozhkin.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Sylvia Torres-Guillen",
+					title: "General Counsel of the California ALRB, Executive director of Disability Rights Legal Center, social justice advocate",
+					image: "/src/lib/assets/images/speakers/sylviaTorresGuillen.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Curtis VanWalleghem",
+					title: "Founder and CEO of Hydrostor",
+					image: "/src/lib/assets/images/speakers/curtisVanWelleghem.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Shirley Blumberg",
+					title: "Founding partner of KPMB Architects and activist for social transformation and change through architecture",
+					image: "/src/lib/assets/images/speakers/shirleyBlumberg.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "John Smol",
+					title: "Canadian ecologist, limnologist and paleolimnologist",
+					image: "/src/lib/assets/images/speakers/johnSmol.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "James Suh",
+					title: "CFO of Florida Panthers",
+					image: "/src/lib/assets/images/speakers/jamesSuh.webp",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Michael Kaufman",
+					title: "Co-Founder: White Ribbon Campaign, Author: The Guy's Guide to Feminism",
+					image: "/src/lib/assets/images/speakers/michaelKaufman.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Wolfgang Schwan",
+					title: "Ukraine War Journalist & Photographer",
+					image: "/src/lib/assets/images/speakers/wolfgangSchwan.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Yan Boechat",
+					title: "Conflict Journalist & War Correspondent",
+					image: "/src/lib/assets/images/team/wac_w_large.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "John Sitilides",
+					title: "Geopolitical Strategist & Diplomacy Consultant for Bush, Obama and Trump",
+					image: "/src/lib/assets/images/speakers/johnSitilides.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				},
+				{
+					name: "Dr. Andrew Healey",
+					title: "Medical Director/Chief, Chief of Critical care at St. Joseph's Hamilton",
+					image: "/src/lib/assets/images/speakers/andrewHealey.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
+				}
 			]
 		},
 		"2024": {
@@ -273,7 +392,20 @@
 						
 						<div class="mb-8">
 							<h3 class="text-xl font-semibold text-white mb-4">Highlight Video</h3>
-							<div class="text-zinc-300">Coming soon...</div>
+							{#if year === "2025"}
+								<div class="relative w-full aspect-video rounded-lg overflow-hidden">
+									<!-- svelte-ignore a11y-media-has-caption -->
+									<video 
+										class="w-full h-full object-cover" 
+										controls
+									>
+										<source src="/src/lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4" type="video/mp4" />
+										Your browser does not support the video tag.
+									</video>
+								</div>
+							{:else}
+								<div class="text-zinc-300">Coming soon...</div>
+							{/if}
 						</div>
 
 						{#if yearContent[year].detailedSpeakers && yearContent[year].detailedSpeakers.length}
