@@ -426,6 +426,11 @@
 										<h4 class="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-1">
 										{speaker.name}
 										</h4>
+										{#if speaker.tag}
+										<div class="p-1 px-2.5 bg-gradient-to-r from-primary to-secondary rounded-md h-min text-white text-sm inline-block mb-2">
+											{speaker.tag}
+										</div>
+										{/if}
 										{#if speaker.title}
 										<div class="text-zinc-400 text-sm mb-2">{speaker.title}</div>
 										{/if}
