@@ -1,5 +1,26 @@
 <script lang="ts">
-	// Tab state management
+	// ---- Asset resolvers (Fix B) ----
+	// Map every image/video in /src/lib/assets to a built URL at compile time.
+	const imageModules = import.meta.glob(
+		'/src/lib/assets/images/**/*.{png,jpg,jpeg,webp,svg}',
+		{ eager: true, query: '?url', import: 'default' }
+	) as Record<string, string>;
+
+	const videoModules = import.meta.glob(
+		'/src/lib/assets/video/**/*.{mp4,webm,ogg}',
+		{ eager: true, query: '?url', import: 'default' }
+	) as Record<string, string>;
+
+	const resolveAsset = (path: string): string => {
+		// If it's an image we know, return its built URL
+		if (path in imageModules) return imageModules[path];
+		// If it's a video we know, return its built URL
+		if (path in videoModules) return videoModules[path];
+		// Fallback: return the original (useful during dev or if path is already a URL)
+		return path;
+	};
+
+	// ---- Tab state management ----
 	let activeTab = "2025";
 	const setActiveTab = (tab: string) => {
 		activeTab = tab;
@@ -12,7 +33,7 @@
 		expanded[name] = !expanded[name];
 	};
 
-	// Content for each year
+	// ---- Content for each year (keep your original paths) ----
 	const yearContent = {
 		"2025": {
 			title: "WAC 2025 - WAC To The Future",
@@ -153,12 +174,6 @@
 				"Student-led panels on youth activism and social justice"
 			],
 			detailedSpeakers: [
-				// {
-				// 	name: "The Honourable Bob Rae",
-				// 	title: "Canada’s Ambassador to the United Nations",
-				// 	image: "/src/lib/assets/images/speakers2024/Bob Rae.webp",
-				// 	bio: "The Honourable Ambassador Bob Rae is a prominent Canadian figure, distinguished as a diplomat, lawyer, former politician, and author. Ambassador Rae's political career began in the 1970s after completing his law degree at the University of Toronto. In 1982, he won a seat in the Ontario Legislature representing York South, rose to lead the NDP, and in 1990 was elected as the 21st Premier of Ontario, implementing significant social reforms. After provincial politics, he served as special envoy for the Rohingya crisis. In 2008 he returned to federal politics, later becoming interim leader of the Liberal Party (2011–2013). He practiced law specializing in corporate and Indigenous law and was appointed Canada's Ambassador to the United Nations in New York in 2020. Rae is the author of several books including 'From Protest to Power: Personal Reflections on a Life in Politics' and 'What's Happened to Politics?' Throughout his career, he has embodied compassion, integrity, and social justice on both national and international stages."
-				// },
 				{
 					name: "Dr. Roberta Bondar",
 					title: "Astronaut | Physician | Scientist | Photographer",
@@ -283,74 +298,74 @@
 			],
 			detailedSpeakers: [
 				{
-				name: "Rahul Singh",
-				title: "Founder & Executive Director, GlobalMedic",
-				image: "/src/lib/assets/images/speakers2023/rahul-singh.png",
-				bio: "Rahul Singh is the Executive Director of GlobalMedic, a registered Canadian charity which has provided life-saving aid in the aftermath of disasters since 2002.  Since then, Singh’s tireless efforts have created a globally recognized, innovative and efficient organization - earning him a spot on Time Magazine’s List of the 100 Most Influential People in the World in 2010."
+					name: "Rahul Singh",
+					title: "Founder & Executive Director, GlobalMedic",
+					image: "/src/lib/assets/images/speakers2023/rahul-singh.png",
+					bio: "Rahul Singh is the Executive Director of GlobalMedic, a registered Canadian charity which has provided life-saving aid in the aftermath of disasters since 2002.  Since then, Singh’s tireless efforts have created a globally recognized, innovative and efficient organization - earning him a spot on Time Magazine’s List of the 100 Most Influential People in the World in 2010."
 				},
 				{
-				name: "Matthew Ball",
-				title: "CEO, Epyllion; Founder, Roundhill Ball Metaverse ETF",
-				image: "/src/lib/assets/images/speakers2023/matthew-ball.png",
-				bio: "Matthew Ball is the CEO of Epyllion, a diversified holding company which makes angel investments, provides advisory services, and produces television, films, and video games. Ball also founded the Roundhill Ball Metaverse ETF on the New York Stock Exchange, which is the largest gaming or Metaverse ETF globally. Ball is also a Venture Partner at Makers Fund, Senior Advisor to KKR, Senior Advisor to McKinsey & Company, and sits on the board of numerous start-ups. His first book, “The Metaverse”, was published in July 2022 and became an instant national and international bestseller, Ball is also an “Occasional Contributor” to The Economist, holds bylines at Bloomberg, The New York Times, and the Wall Street Journal, and wrote the August 8, 2022 cover story for Time Magazine. He was previously the Global Head of Strategy for Amazon Studios."
+					name: "Matthew Ball",
+					title: "CEO, Epyllion; Founder, Roundhill Ball Metaverse ETF",
+					image: "/src/lib/assets/images/speakers2023/matthew-ball.png",
+					bio: "Matthew Ball is the CEO of Epyllion, a diversified holding company which makes angel investments, provides advisory services, and produces television, films, and video games. Ball also founded the Roundhill Ball Metaverse ETF on the New York Stock Exchange, which is the largest gaming or Metaverse ETF globally. Ball is also a Venture Partner at Makers Fund, Senior Advisor to KKR, Senior Advisor to McKinsey & Company, and sits on the board of numerous start-ups. His first book, “The Metaverse”, was published in July 2022 and became an instant national and international bestseller, Ball is also an “Occasional Contributor” to The Economist, holds bylines at Bloomberg, The New York Times, and the Wall Street Journal, and wrote the August 8, 2022 cover story for Time Magazine. He was previously the Global Head of Strategy for Amazon Studios."
 				},
 				{
-				name: "Ismael Loutfi",
-				title: "Comedian, Writer, and Actor",
-				image: "/src/lib/assets/images/speakers2023/ismael-loutfi.png",
-				bio: "Ismael Loutfi is a comedian, writer, and actor who developed his deeply acerbic sense of humor growing up a Muslim in rural North Florida. Ismael was recently writing on the animated Ramy Youssef project. Before that, he wrote for the critically acclaimed Patriot Act with Hasan Minhaj on Netflix for the entirety of its run. Ismael’s Comedy Central Half Hour special, Sound It Out, debuted in early March. His stand up was previously featured on This Week at the Cellar, Jimmy Kimmel Live, and Comedy Central’s The Ringers. He has performed on the FOX Night of Comedy showcase and has been named a New Face of Comedy by the prestigious Just for Laughs comedy festival. Ismael can be seen in HBO’s High Maintenance, the Sarah Silverman-produced Please Understand Me, and multiple episodes of Comedy Central’s Ahamed’s Ramadan Diary."
+					name: "Ismael Loutfi",
+					title: "Comedian, Writer, and Actor",
+					image: "/src/lib/assets/images/speakers2023/ismael-loutfi.png",
+					bio: "Ismael Loutfi is a comedian, writer, and actor who developed his deeply acerbic sense of humor growing up a Muslim in rural North Florida. Ismael was recently writing on the animated Ramy Youssef project. Before that, he wrote for the critically acclaimed Patriot Act with Hasan Minhaj on Netflix for the entirety of its run. Ismael’s Comedy Central Half Hour special, Sound It Out, debuted in early March. His stand up was previously featured on This Week at the Cellar, Jimmy Kimmel Live, and Comedy Central’s The Ringers. He has performed on the FOX Night of Comedy showcase and has been named a New Face of Comedy by the prestigious Just for Laughs comedy festival. Ismael can be seen in HBO’s High Maintenance, the Sarah Silverman-produced Please Understand Me, and multiple episodes of Comedy Central’s Ahamed’s Ramadan Diary."
 				},
 				{
-				name: "Leslie Madden",
-				title: "Senior Director, Regulatory Science & Quality Assurance, Moderna (Canada)",
-				image: "/src/lib/assets/images/speakers2023/leslie-madden.png",
-				bio: "Leslie Madden is a Senior Director of Regulatory Science and Quality Assurance at Moderna. Madden graduated with a Master of Business Administration from the University of Toronto - Rotman School of Management and a Global Professionals Masters of Law from the University of Toronto. She has worked in numerous pharmaceutical and biotechnology companies, including Biogen and Eluvium Life Sciences. Join this panel to learn more about Leslie Madden’s role in Regulatory Science and contribution to Moderna’s mission to revolutionize medicine through mRNA."
+					name: "Leslie Madden",
+					title: "Senior Director, Regulatory Science & Quality Assurance, Moderna (Canada)",
+					image: "/src/lib/assets/images/speakers2023/leslie-madden.png",
+					bio: "Leslie Madden is a Senior Director of Regulatory Science and Quality Assurance at Moderna. Madden graduated with a Master of Business Administration from the University of Toronto - Rotman School of Management and a Global Professionals Masters of Law from the University of Toronto. She has worked in numerous pharmaceutical and biotechnology companies, including Biogen and Eluvium Life Sciences. Join this panel to learn more about Leslie Madden’s role in Regulatory Science and contribution to Moderna’s mission to revolutionize medicine through mRNA."
 				},
 				{
-				name: "Katherine Tattum",
-				title: "Chief Operating Officer, Tali AI",
-				image: "/src/lib/assets/images/speakers2023/katherine-tattum.png",
-				bio: "Katherine is a graduate from MIT and have since worked in entrepreneurship in the Healthcare Information Technology Industry. Her most recent role at Tali AI aims to create a voice-enabled Physician's Assistant, providing AI scribing, medical search and EHR voice commands to minimize the time HCPs need to spend working in their EMR."
+					name: "Katherine Tattum",
+					title: "Chief Operating Officer, Tali AI",
+					image: "/src/lib/assets/images/speakers2023/katherine-tattum.png",
+					bio: "Katherine is a graduate from MIT and have since worked in entrepreneurship in the Healthcare Information Technology Industry. Her most recent role at Tali AI aims to create a voice-enabled Physician's Assistant, providing AI scribing, medical search and EHR voice commands to minimize the time HCPs need to spend working in their EMR."
 				},
 				{
-				name: "Martin Luther King III",
-				title: "Civil Rights Advocate & Global Humanitarian",
-				image: "/src/lib/assets/images/speakers2023/mlk-III.png",
-				bio: "With the past two years’ astounding display of social injustice, violence, and confusion around the pandemic, perhaps at no other time in recent history has our world needed the clear thinking and solutions-oriented voice of civil rights advocate and global humanitarian Martin Luther King III. From speaking to thousands at the August 2020 March On Washington to his dozens of arrests during peaceful protests, Mr. King is shepherding the healing of our nation and the world. He is connecting the important lessons of the past with the critical needs of our future and motivating a new generation of authentic leaders, while empowering others to use their voices to bring about change as well. As the oldest son of the late Dr. Martin Luther King Jr. and Mrs. Coretta Scott King, Martin Luther King III is a thought leader on the world stage, a peace maker, and a negotiator on some of today’s most critical national and international platforms for social change. Amplifying the work of his father, Mr. King and his wife Arndrea have devoted their lives to promoting global human rights and eradicating racism, violence, and poverty, earning a reputation as a respected international statesman and one of the world’s most passionate advocates for the poor and oppressed. Mr. King speaks on a variety of topics such as the importance of continuing the struggle for civil rights and taking a stand against adversity, emphasizing the importance of individual action in making his father’s dream a reality and challenging us all to do better. More recently, Martin and Arndrea launched an effort to fund Black and Brown organizers across the country. The first round of funding went to 40 organizations whose missions are to mobilize voters in key states. By 2024, the Drum Major Coalition will invest $100 million in grassroots organizations from coast to coast. Martin regularly appears on CNN, MSNBC, NBC News, and ABC News. His writings have been published in The Washington Post, The New York Times, on CNN.com, and other major news outlets."
+					name: "Martin Luther King III",
+					title: "Civil Rights Advocate & Global Humanitarian",
+					image: "/src/lib/assets/images/speakers2023/mlk-III.png",
+					bio: "With the past two years’ astounding display of social injustice, violence, and confusion around the pandemic, perhaps at no other time in recent history has our world needed the clear thinking and solutions-oriented voice of civil rights advocate and global humanitarian Martin Luther King III. From speaking to thousands at the August 2020 March On Washington to his dozens of arrests during peaceful protests, Mr. King is shepherding the healing of our nation and the world. He is connecting the important lessons of the past with the critical needs of our future and motivating a new generation of authentic leaders, while empowering others to use their voices to bring about change as well. As the oldest son of the late Dr. Martin Luther King Jr. and Mrs. Coretta Scott King, Martin Luther King III is a thought leader on the world stage, a peace maker, and a negotiator on some of today’s most critical national and international platforms for social change. Amplifying the work of his father, Mr. King and his wife Arndrea have devoted their lives to promoting global human rights and eradicating racism, violence, and poverty, earning a reputation as a respected international statesman and one of the world’s most passionate advocates for the poor and oppressed. Mr. King speaks on a variety of topics such as the importance of continuing the struggle for civil rights and taking a stand against adversity, emphasizing the importance of individual action in making his father’s dream a reality and challenging us all to do better. More recently, Martin and Arndrea launched an effort to fund Black and Brown organizers across the country. The first round of funding went to 40 organizations whose missions are to mobilize voters in key states. By 2024, the Drum Major Coalition will invest $100 million in grassroots organizations from coast to coast. Martin regularly appears on CNN, MSNBC, NBC News, and ABC News. His writings have been published in The Washington Post, The New York Times, on CNN.com, and other major news outlets."
 				},
 				{
-				name: "Meghan Roach",
-				title: "President & CEO, Roots Corporation",
-				image: "/src/lib/assets/images/speakers2023/meghan-roach.png",
-				bio: "Meghan Roach leads Roots Corporation as President & CEO, steering the iconic Canadian lifestyle and apparel brand through evolving consumer expectations. With deep expertise in retail strategy, brand storytelling, and organizational transformation, she champions Roots’ heritage while driving innovation, sustainability, and community connection."
+					name: "Meghan Roach",
+					title: "President & CEO, Roots Corporation",
+					image: "/src/lib/assets/images/speakers2023/meghan-roach.png",
+					bio: "Meghan Roach leads Roots Corporation as President & CEO, steering the iconic Canadian lifestyle and apparel brand through evolving consumer expectations. With deep expertise in retail strategy, brand storytelling, and organizational transformation, she champions Roots’ heritage while driving innovation, sustainability, and community connection."
 				},
 				{
-				name: "Pooja Handa",
-				title: "Morning Radio Co-Host, 98.1 CHFI; Former Host, CP24 Breakfast",
-				image: "/src/lib/assets/images/speakers2023/pooja-handa.png",
-				bio: "Pooja Handa, a voice you may recognize as the host of Toronto's morning radio show on CHFI. As a natural born storyteller and entertainer, she has spread her talents across various media platforms. As a new mom, she continues to share her personal experiences and never fails to engage her viewers."
+					name: "Pooja Handa",
+					title: "Morning Radio Co-Host, 98.1 CHFI; Former Host, CP24 Breakfast",
+					image: "/src/lib/assets/images/speakers2023/pooja-handa.png",
+					bio: "Pooja Handa, a voice you may recognize as the host of Toronto's morning radio show on CHFI. As a natural born storyteller and entertainer, she has spread her talents across various media platforms. As a new mom, she continues to share her personal experiences and never fails to engage her viewers."
 				},
 				{
-				name: "Adrienne Batra",
-				title: "Editor-in-Chief, Toronto Sun",
-				image: "/src/lib/assets/images/speakers2023/adrienne-batra.png",
-				bio: "Adrienne Batra is an award-winning journalist, currently the editor-in-chief for the Toronto Sun. Ms. Batra has an undergraduate degree in political science and a Masters in Public Administration and served as a Lieutenant in the Canadian Armed Forces. She was also the Director of Communications and later the Press Secretary in Mayor Rob Ford’s office. In 2013, she was awarded the Queen’s Diamond Jubilee Medal. Ms. Batra also hosted her own political television show on the Sun News Network and is a frequent contributor on CTV news, CP24 and AM640."
+					name: "Adrienne Batra",
+					title: "Editor-in-Chief, Toronto Sun",
+					image: "/src/lib/assets/images/speakers2023/adrienne-batra.png",
+					bio: "Adrienne Batra is an award-winning journalist, currently the editor-in-chief for the Toronto Sun. Ms. Batra has an undergraduate degree in political science and a Masters in Public Administration and served as a Lieutenant in the Canadian Armed Forces. She was also the Director of Communications and later the Press Secretary in Mayor Rob Ford’s office. In 2013, she was awarded the Queen’s Diamond Jubilee Medal. Ms. Batra also hosted her own political television show on the Sun News Network and is a frequent contributor on CTV news, CP24 and AM640."
 				},
 				{
-				name: "Francesca Quinn",
-				title: "CEO, Quinn+Partners; Board Director, Canada Nickel Company",
-				image: "/src/lib/assets/images/speakers2023/francesca-quinn.png",
-				bio: "Francesca Quinn is the Chief Executive Officer of Quinn+Partners and serves on the Board of Canada Nickel Company. With extensive experience in corporate strategy and board governance, she brings a forward-thinking, sustainability-focused leadership approach to both advisory and corporate roles."
+					name: "Francesca Quinn",
+					title: "CEO, Quinn+Partners; Board Director, Canada Nickel Company",
+					image: "/src/lib/assets/images/speakers2023/francesca-quinn.png",
+					bio: "Francesca Quinn is the Chief Executive Officer of Quinn+Partners and serves on the Board of Canada Nickel Company. With extensive experience in corporate strategy and board governance, she brings a forward-thinking, sustainability-focused leadership approach to both advisory and corporate roles."
 				},
 				{
-				name: "Barry McInerney",
-				title: "Former CEO, Mackenzie Investments; Board Member, Equitable Life of Canada",
-				image: "/src/lib/assets/images/speakers2023/barry-mcinerney.png",
-				bio: "Mr. McInerney was raised and educated in Canada and is a dual citizen of Canada and the United States, spending equal time over his 35-year career working and living in both countries. For the past 25 years, Mr. McInerney led Canadian, US and global investment companies based in New York, Chicago, and Toronto. In June of 2022, Mr. McInerney retired as President and Chief Executive Officer of Mackenzie Investments. During his six-year tenure, Mr. McInerney more than tripled assets under management, doubled earnings, experienced record sales, and revitalized the culture, diversity, and purpose of Mackenzie Investments with a modern, future-oriented business model and leadership style. Prior to joining Mackenzie Investments, Mr. McInerney was Co-Chief Executive Officer of BMO Global Asset Management, responsible for BMO’s asset management businesses in the United States, Europe, Middle East, and Asia Pacific. These businesses grew ten-fold via organic growth and several significant acquisitions during his seven years of leadership. Prior to BMO, Mr. McInerney was the Managing Director for Russell Investments’ institutional asset management business in the US and Canada, and Russell’s global consulting business. He also served as a member of Russell’s Global Management Committee and the Russell Trust Company Board. Mr. McInerney began his career at Mercer Inc. where he held a number of senior leadership positions including founding President of Mercer Global Investments in the U.S. and globally, President & Chairman of the Mercer Trust Company, and President of Mercer Investment Consulting in the U.S. and Canada. Recent awards include the Rotman Lifetime Achievement Award in 2022, the Alway Award in 2022 from St. Michael’s College (University of Toronto), the Number One Ranking of CEOs in Canada in 2021 by Glassdoor, the Arbor Award from the University of Toronto in 2020, and Wealth Professional’s CEO of the Year Award in 2020. Mr. McInerney is a graduate of the Master of Business Administration and the Bachelor of Commerce programs at the University of Toronto – Rotman School of Management. He also holds the Chartered Financial Analyst (CFA), Fellow of the Society of Actuaries (FSA) and Fellow of the Canadian Institute of Actuaries (FCIA) designations. Mr. McInerney serves on the Board of Equitable Life of Canada, the Rotman School of Management’s Dean Advisory Board, and the Tobacco Free Portfolios Foundation Board. Mr. McInerney is a frequent speaker on the topics of global investment, demographic, geo-economic and capital market trends."
+					name: "Barry McInerney",
+					title: "Former CEO, Mackenzie Investments; Board Member, Equitable Life of Canada",
+					image: "/src/lib/assets/images/speakers2023/barry-mcinerney.png",
+					bio: "Mr. McInerney was raised and educated in Canada and is a dual citizen of Canada and the United States, spending equal time over his 35-year career working and living in both countries. For the past 25 years, Mr. McInerney led Canadian, US and global investment companies based in New York, Chicago, and Toronto. In June of 2022, Mr. McInerney retired as President and Chief Executive Officer of Mackenzie Investments. During his six-year tenure, Mr. McInerney more than tripled assets under management, doubled earnings, experienced record sales, and revitalized the culture, diversity, and purpose of Mackenzie Investments with a modern, future-oriented business model and leadership style. Prior to joining Mackenzie Investments, Mr. McInerney was Co-Chief Executive Officer of BMO Global Asset Management, responsible for BMO’s asset management businesses in the United States, Europe, Middle East, and Asia Pacific. These businesses grew ten-fold via organic growth and several significant acquisitions during his seven years of leadership. Prior to BMO, Mr. McInerney was the Managing Director for Russell Investments’ institutional asset management business in the US and Canada, and Russell’s global consulting business. He also served as a member of Russell’s Global Management Committee and the Russell Trust Company Board. Mr. McInerney began his career at Mercer Inc. where he held a number of senior leadership positions including founding President of Mercer Global Investments in the U.S. and globally, President & Chairman of the Mercer Trust Company, and President of Mercer Investment Consulting in the U.S. and Canada. Recent awards include the Rotman Lifetime Achievement Award in 2022, the Alway Award in 2022 from St. Michael’s College (University of Toronto), the Number One Ranking of CEOs in Canada in 2021 by Glassdoor, the Arbor Award from the University of Toronto in 2020, and Wealth Professional’s CEO of the Year Award in 2020. Mr. McInerney is a graduate of the Master of Business Administration and the Bachelor of Commerce programs at the University of Toronto – Rotman School of Management. He also holds the Chartered Financial Analyst (CFA), Fellow of the Society of Actuaries (FSA) and Fellow of the Canadian Institute of Actuaries (FCIA) designations. Mr. McInerney serves on the Board of Equitable Life of Canada, the Rotman School of Management’s Dean Advisory Board, and the Tobacco Free Portfolios Foundation Board. Mr. McInerney is a frequent speaker on the topics of global investment, demographic, geo-economic and capital market trends."
 				}
 			]
 		}
-	};
+	} as const;
 </script>
 
 <svelte:head>
@@ -399,7 +414,10 @@
 										class="w-full h-full object-cover" 
 										controls
 									>
-										<source src="/src/lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4" type="video/mp4" />
+										<source
+											src={resolveAsset('/src/lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4')}
+											type="video/mp4"
+										/>
 										Your browser does not support the video tag.
 									</video>
 								</div>
@@ -414,48 +432,48 @@
 								<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 								{#each yearContent[year].detailedSpeakers as speaker (speaker.name)}
 									<div class="bg-zinc-800 border border-zinc-700 rounded-lg overflow-hidden hover:border-primary transition-all duration-300">
-									<div class="aspect-[3/4] overflow-hidden">
-										<img
-										src={speaker.image}
-										alt={speaker.name}
-										class="w-full h-full object-cover object-center"
-										loading="lazy"
-										/>
-									</div>
-									<div class="p-4">
-										<h4 class="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-1">
-										{speaker.name}
-										</h4>
-										{#if speaker.tag}
-										<div class="p-1 px-2.5 bg-gradient-to-r from-primary to-secondary rounded-md h-min text-white text-sm inline-block mb-2">
-											{speaker.tag}
+										<div class="aspect-[3/4] overflow-hidden">
+											<img
+												src={resolveAsset(speaker.image)}
+												alt={speaker.name}
+												class="w-full h-full object-cover object-center"
+												loading="lazy"
+											/>
 										</div>
-										{/if}
-										{#if speaker.title}
-										<div class="text-zinc-400 text-sm mb-2">{speaker.title}</div>
-										{/if}
-										<div class="text-zinc-300 text-sm mb-2">
-										{#if expanded[speaker.name]}
-											{speaker.bio}
-										{:else}
-											<div class="line-clamp-5">{speaker.bio}</div>
-										{/if}
+										<div class="p-4">
+											<h4 class="text-xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary mb-1">
+												{speaker.name}
+											</h4>
+											{#if speaker.tag}
+												<div class="p-1 px-2.5 bg-gradient-to-r from-primary to-secondary rounded-md h-min text-white text-sm inline-block mb-2">
+													{speaker.tag}
+												</div>
+											{/if}
+											{#if speaker.title}
+												<div class="text-zinc-400 text-sm mb-2">{speaker.title}</div>
+											{/if}
+											<div class="text-zinc-300 text-sm mb-2">
+												{#if expanded[speaker.name]}
+													{speaker.bio}
+												{:else}
+													<div class="line-clamp-5">{speaker.bio}</div>
+												{/if}
+											</div>
+											{#if speaker.bio && speaker.bio.split(/\s+/).length > 50}
+												<button
+													class="text-primary text-sm font-medium hover:underline"
+													on:click={() => toggleExpanded(speaker.name)}
+													aria-label={expanded[speaker.name] ? "Show less" : "Read more"}
+												>
+													{expanded[speaker.name] ? "Show less" : "Read more"}
+												</button>
+											{/if}
 										</div>
-										{#if speaker.bio && speaker.bio.split(/\s+/).length > 50}
-										<button
-											class="text-primary text-sm font-medium hover:underline"
-											on:click={() => toggleExpanded(speaker.name)}
-											aria-label={expanded[speaker.name] ? "Show less" : "Read more"}
-										>
-											{expanded[speaker.name] ? "Show less" : "Read more"}
-										</button>
-										{/if}
-									</div>
 									</div>
 								{/each}
 								</div>
 							</div>
-							{/if}
+						{/if}
 						
 						<div class="flex justify-center mt-8">
 							<a 
