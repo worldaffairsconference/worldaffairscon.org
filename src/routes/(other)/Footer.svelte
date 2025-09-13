@@ -126,7 +126,7 @@
 			</div>
 		</div>
 		<span class="text-xs md:text-sm text-zinc-400 mb-3 sm:mb-0">
-			© 2025 Upper Canada College. All Rights Reserved —
+			© 2026 Upper Canada College. All Rights Reserved —
 			<a href="/privacy-policy"> Privacy Policy </a>
 		</span>
 		<span class="text-zinc-400 text-xs md:text-sm mt-2">

@@ -41,19 +41,19 @@
 		return Math.floor(adjustedDaysDifference);
 	};
 
-	const timeUntilConference = calculateDaysUntilDate(new Date(2025, 3, 5)); // Change when the date is confirmed
+	const timeUntilConference = calculateDaysUntilDate(new Date(2026, 2, 26)); // Change when the date is confirmed
 </script>
 
 <section
 	class="pt-[4rem] md:pt-[6rem] text-center flex flex-col items-center h-screen w-screen absolute inset-0 z-20"
 >
-	<h2
-		class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
-	>
-		<span>Theme</span>
-		<span class="italic">WAC To The Future</span>
-	</h2>
 	<div class="w-5/6 mx-auto">
+		<h2
+			class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
+		>
+			<span>Theme</span>
+			<span class="italic">TBD</span>
+		</h2>
 		<h1
 			class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-5 lg:mb-6 tracking-[-0.03em]"
 		>
@@ -79,7 +79,7 @@
 				text={`${timeUntilConference} days away`}
 				placement="right"
 			>
-				March 5th, 2025
+				February 25th, 2026
 			</Tooltip>
 		</div>
 	</div>

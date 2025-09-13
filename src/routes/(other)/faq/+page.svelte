@@ -28,7 +28,7 @@
 			},
 			{
 				question: "When is WAC?",
-				answer: "WAC 2025 will be held on Wednesday, March 5th, 2025. It is an event that runs all day, filled with exciting and thoughtful discussions as well as networking opportunities."
+				answer: "WAC 2026 will be held on Wednesday, February 25th, 2026. It is an event that runs all day, filled with exciting and thoughtful discussions as well as networking opportunities."
 			},
 			{
 				question: "Who can attend WAC?",
