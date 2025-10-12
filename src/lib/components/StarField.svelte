@@ -109,5 +109,5 @@
 <div class="absolute inset-0 overflow-hidden">
 	<slot />
 
-	<canvas bind:this={canvasElement} class="absolute inset-0 -z-50" />
+	<canvas bind:this={canvasElement} class="fixed inset-0 -z-9" />
 </div>
