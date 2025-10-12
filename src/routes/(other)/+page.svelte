@@ -51,7 +51,7 @@
 		<h2
 			class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
 		>
-			<span>Theme</span>
+			<span>Theme:</span>
 			<span class="italic">Power in Perspective</span>
 		</h2>
 		<h1

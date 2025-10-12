@@ -52,9 +52,8 @@
 	<p>
 		All personal information collected will be promptly deleted following
 		the conclusion of the conference. The collected personal information
-		will also be stored securely in a database located in the State of
-		Virginia, United States of America, provided by our partner, Xatabase,
-		Inc.
+		will also be stored securely in a database located in Virginia, United
+		States of America, provided by our partner, Xatabase, Inc.
 	</p>
 
 	<h2 class="text-xl">V. DISCLOSURE OF INFORMATION</h2>

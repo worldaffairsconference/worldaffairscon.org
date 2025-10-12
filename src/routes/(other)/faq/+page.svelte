@@ -24,7 +24,7 @@
 			},
 			{
 				question: "Who makes WAC happen?",
-				answer: "A team of around 100 dedicated high school students from Upper Canada College and Branksome Hall voluntarily work for many months leading up to the day of the conference to ensure that WAC is a success and that everyone who attends has a positive and valuable experience."
+				answer: "A team of around 100 dedicated high school students from Upper Canada College and Branksome Hall, in collaboration with faculty, voluntarily work for many months leading up to the day of the conference to ensure that WAC is a success and that everyone who attends has a positive and valuable experience."
 			},
 			{
 				question: "When is WAC?",
