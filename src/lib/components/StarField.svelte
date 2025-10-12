@@ -14,7 +14,7 @@
 	export let speed = 5.0;
 
 	// Constants
-	const TOTAL_STARS = 1500; // How many stars there are
+	const TOTAL_STARS = 1000; // How many stars there are
 
 	onMount(() => {
 		// Setup scene

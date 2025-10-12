@@ -68,10 +68,15 @@
 
 	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
-		{ name: "Team", path: "/team" },
 		// { name: "Past Speakers", path: "/past-speakers" },
+		{
+			name: "Contact Us",
+			path: "https://mail.google.com/mail/?view=cm&to=wac@ucc.on.ca",
+			external: true
+		},
 		{ name: "Past Years", path: "/past-years" },
-		{ name: "FAQ", path: "/faq" }
+		{ name: "FAQ", path: "/faq" },
+		{ name: "Team", path: "/team" }
 	] satisfies Route[];
 </script>
 
@@ -102,16 +107,28 @@
 		<ul class="text-zinc-300 hidden lg:flex gap-16 items-center">
 			{#each routes as route}
 				<li class="transform translate-y-0 opacity-100">
-					<a
-						href={route.path}
-						class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
-                        {$page.url.pathname === route.path &&
-							'underline decoration-primary decoration-[1.5px] underline-offset-8'}
-                        "
-						on:click={closeNavBar}
-					>
-						{route.name}
-					</a>
+					{#if route.external}
+						<a
+							href={route.path}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer"
+							on:click={closeNavBar}
+						>
+							{route.name}
+						</a>
+					{:else}
+						<a
+							href={route.path}
+							class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
+								{$page.url.pathname === route.path
+								? 'underline decoration-primary decoration-[1.5px] underline-offset-8'
+								: ''}"
+							on:click={closeNavBar}
+						>
+							{route.name}
+						</a>
+					{/if}
 				</li>
 			{/each}
 		</ul>
