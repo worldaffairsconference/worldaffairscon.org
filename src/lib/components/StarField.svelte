@@ -14,7 +14,7 @@
 	export let speed = 5.0;
 
 	// Constants
-	const TOTAL_STARS = 1500; // How many stars there are
+	const TOTAL_STARS = 1000; // How many stars there are
 
 	onMount(() => {
 		// Setup scene
@@ -109,5 +109,5 @@
 <div class="absolute inset-0 overflow-hidden">
 	<slot />
 
-	<canvas bind:this={canvasElement} class="absolute inset-0 -z-50" />
+	<canvas bind:this={canvasElement} class="fixed inset-0 -z-9" />
 </div>
