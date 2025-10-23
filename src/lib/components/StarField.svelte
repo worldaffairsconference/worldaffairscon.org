@@ -106,8 +106,8 @@
 	});
 </script>
 
-<div class="absolute inset-0 overflow-hidden">
+<div class="relative inset-0 overflow-hidden">
 	<slot />
 
-	<canvas bind:this={canvasElement} class="fixed inset-0 -z-9" />
+	<canvas bind:this={canvasElement} class="fixed inset-0 -z-10" />
 </div>
