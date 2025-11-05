@@ -172,12 +172,12 @@
 			return image;
 		};
 
-		const load = (
-			desktopImages: string[],
-			mobileImages: string[]
-		): Texture => {
-			const texture = new Texture();
-			texture.colorSpace = SRGBColorSpace;
+        const load = (
+            desktopImages: string[],
+            mobileImages: string[]
+        ): Texture => {
+            const texture = new Texture();
+            texture.colorSpace = SRGBColorSpace;
 
 			let currentUpdatedImageIndex = 0;
 
@@ -196,10 +196,43 @@
 				};
 			});
 
+            return texture;
+        };
+		const createCircleTexture = () => {
+			const size = 64;
+			const circleCanvas = document.createElement("canvas");
+			circleCanvas.width = size;
+			circleCanvas.height = size;
+
+			const context = circleCanvas.getContext("2d");
+			if (!context) return undefined;
+
+			const gradient = context.createRadialGradient(
+				size / 2,
+				size / 2,
+				0,
+				size / 2,
+				size / 2,
+				size / 2
+			);
+
+			gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
+			gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.8)");
+			gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+			context.fillStyle = gradient;
+			context.beginPath();
+			context.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+			context.fill();
+
+			const texture = new Texture(circleCanvas);
+			texture.colorSpace = SRGBColorSpace;
+			texture.needsUpdate = true;
+
 			return texture;
 		};
-		// Setup scene
-		const scene = new Scene();
+        // Setup scene
+        const scene = new Scene();
 
 		// Setup camera
 		camera = new PerspectiveCamera();
@@ -267,7 +300,15 @@
 
 		// Stars
 		const starsGeometry = new BufferGeometry();
-		const starMaterial = new PointsMaterial({ color: 0xffffff });
+		const starTexture = createCircleTexture();
+		const starMaterial = new PointsMaterial({
+			color: 0xffffff,
+			size: 4,
+			map: starTexture,
+			transparent: true,
+			alphaTest: 0.2,
+			depthWrite: false
+		});
 
 		const starVertices: number[] = [];
 
