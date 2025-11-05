@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from "svelte";
+
 	// ---- Asset resolvers (Fix B) ----
 	// Map every image/video in /src/lib/assets to a built URL at compile time.
 	const imageModules = import.meta.glob(
@@ -26,12 +28,27 @@
 		activeTab = tab;
 	};
 
+	let recapVideoElement: HTMLVideoElement | null = null;
+
 	// Track expanded state per speaker (by name)
 	let expanded: Record<string, boolean> = {};
 
 	const toggleExpanded = (name: string) => {
 		expanded[name] = !expanded[name];
 	};
+
+	onMount(() => {
+		if (!recapVideoElement) return;
+
+		recapVideoElement.muted = true;
+		const playPromise = recapVideoElement.play();
+
+		if (playPromise !== undefined) {
+			playPromise.catch(() => {
+				recapVideoElement?.setAttribute("data-autoplay-failed", "true");
+			});
+		}
+	});
 
 	// ---- Content for each year (keep your original paths) ----
 	const yearContent = {
@@ -413,6 +430,11 @@
 									<video 
 										class="w-full h-full object-cover" 
 										controls
+										autoplay
+										muted
+										playsinline
+										preload="auto"
+										bind:this={recapVideoElement}
 									>
 										<source
 											src={resolveAsset('/src/lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4')}
