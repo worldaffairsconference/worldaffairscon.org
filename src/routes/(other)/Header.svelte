@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import { fly } from "svelte/transition";
 	import type { User } from "@auth/core/types";
 
@@ -16,31 +15,8 @@
 		name: string;
 	} & ({ path: string } | { action: () => void });
 
-	let headerElement: HTMLElement | undefined;
-	let lastScrollTop: number;
-
-	let navBarFixed = false;
-	let navBarShowing = true;
-
 	let showDropdown = false;
 	let navBarOpen = false;
-
-	onMount(async () => {
-		window.addEventListener("scroll", () => {
-			if (headerElement === undefined) return;
-
-			var scrollTop =
-				window.scrollY || document.documentElement.scrollTop;
-
-			navBarFixed = scrollTop >= 350;
-			navBarShowing = scrollTop < lastScrollTop;
-			lastScrollTop = scrollTop;
-		});
-
-		return () => {
-			window.removeEventListener("scroll", () => {});
-		};
-	});
 
 	const toggleDropdown = () => {
 		showDropdown = !showDropdown;
@@ -83,12 +59,7 @@
 <svelte:window on:click={closeDropdown} />
 
 <header
-	class="flex items-center justify-between px-6 lg:px-16 h-[5.5rem] sm:h-28 md:h-[8.5rem] w-full z-50 transition-all duration-[400ms]
-	{navBarFixed
-		? 'fixed bg-zinc-950/50 backdrop-blur-3xl shadow-md shadow-zinc-950/5'
-		: 'absolute bg-transparent'} 
-	{navBarFixed ? (navBarShowing ? 'top-0' : '-top-[150px]') : ''}"
-	bind:this={headerElement}
+	class="flex items-center justify-between px-6 lg:px-16 h-[5.5rem] sm:h-28 md:h-[8.5rem] w-full absolute top-0 left-0 z-50 bg-transparent"
 	id="header"
 >
 	<a
