@@ -69,13 +69,9 @@
 	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
 		// { name: "Past Speakers", path: "/past-speakers" },
-		{
-			name: "Contact Us",
-			path: "https://mail.google.com/mail/?view=cm&to=wac@ucc.on.ca",
-			external: true
-		},
+		{ name: "Contact Us", path: "/contact-us" },
 		{ name: "Past Years", path: "/past-years" },
-		{ name: "FAQ", path: "/faq" },
+		{ name: "WAC Explained", path: "/wac-explained" },
 		{ name: "Team", path: "/team" }
 	] satisfies Route[];
 </script>
