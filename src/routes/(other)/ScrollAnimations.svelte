@@ -172,12 +172,12 @@
 			return image;
 		};
 
-		const load = (
-			desktopImages: string[],
-			mobileImages: string[]
-		): Texture => {
-			const texture = new Texture();
-			texture.colorSpace = SRGBColorSpace;
+        const load = (
+            desktopImages: string[],
+            mobileImages: string[]
+        ): Texture => {
+            const texture = new Texture();
+            texture.colorSpace = SRGBColorSpace;
 
 			let currentUpdatedImageIndex = 0;
 
@@ -196,10 +196,43 @@
 				};
 			});
 
+            return texture;
+        };
+		const createCircleTexture = () => {
+			const size = 64;
+			const circleCanvas = document.createElement("canvas");
+			circleCanvas.width = size;
+			circleCanvas.height = size;
+
+			const context = circleCanvas.getContext("2d");
+			if (!context) return undefined;
+
+			const gradient = context.createRadialGradient(
+				size / 2,
+				size / 2,
+				0,
+				size / 2,
+				size / 2,
+				size / 2
+			);
+
+			gradient.addColorStop(0, "rgba(255, 255, 255, 1)");
+			gradient.addColorStop(0.4, "rgba(255, 255, 255, 0.8)");
+			gradient.addColorStop(1, "rgba(255, 255, 255, 0)");
+
+			context.fillStyle = gradient;
+			context.beginPath();
+			context.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+			context.fill();
+
+			const texture = new Texture(circleCanvas);
+			texture.colorSpace = SRGBColorSpace;
+			texture.needsUpdate = true;
+
 			return texture;
 		};
-		// Setup scene
-		const scene = new Scene();
+        // Setup scene
+        const scene = new Scene();
 
 		// Setup camera
 		camera = new PerspectiveCamera();
@@ -267,7 +300,15 @@
 
 		// Stars
 		const starsGeometry = new BufferGeometry();
-		const starMaterial = new PointsMaterial({ color: 0xffffff });
+		const starTexture = createCircleTexture();
+		const starMaterial = new PointsMaterial({
+			color: 0xffffff,
+			size: 4,
+			map: starTexture,
+			transparent: true,
+			alphaTest: 0.2,
+			depthWrite: false
+		});
 
 		const starVertices: number[] = [];
 
@@ -345,27 +386,37 @@
 			const textTimeline = gsap.timeline({
 				scrollTrigger: {
 					trigger: "#container",
-					start: "top+=900 center",
-					end: "top+=2100 center",
+					start: "top+=360 center",
+					end: "top+=1680 center",
 					scrub: true
 				}
 			});
 
-			// Reveals the statistics
 			textTimeline
-				.to("#stats", {
-					opacity: 1,
-					y: 10,
-					duration: 4,
-					display: "block"
-				})
-				.to("#stats", {
-					opacity: 0,
-					duration: 1,
-					y: -10,
-					display: "hidden",
-					delay: 5
-				});
+				.set("#aboutWac", { display: "flex" })
+				.fromTo(
+					"#aboutWac",
+					{ opacity: 0, y: 20 },
+					{ opacity: 1, y: 0, duration: 0.7, delay: 0.15 }
+				)
+				.to("#aboutWac", { opacity: 0, y: -12, duration: 0.45 })
+				.set("#aboutWac", { display: "none" })
+				.fromTo(
+					"#wacStory",
+					{ display: "flex", opacity: 0, y: 16 },
+					{ opacity: 1, y: 0, duration: 0.9, delay: 0.25 }
+				)
+				.to(
+					"#wacStory",
+					{ opacity: 0, y: -14, duration: 0.6 },
+					">+=0.2"
+				)
+				.set("#wacStory", { display: "none" })
+				.fromTo(
+					"#stats",
+					{ display: "flex", opacity: 0, y: 10 },
+					{ opacity: 1, y: 0, duration: 1.8, delay: 0.2 }
+				);
 
 			gsap.to(starVertices, {
 				scrollTrigger: {
@@ -430,6 +481,39 @@
 			class="absolute w-full h-screen flex justify-center inset-0 -z-50"
 			id="container"
 		>
+			<div
+				class="absolute inset-0 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 text-center opacity-0 hidden transition-opacity"
+				id="wacStory"
+			>
+				<div class="story-wrapper">
+					<span class="ray ray-one" />
+					<span class="ray ray-two" />
+					<span class="ray ray-three" />
+					<div class="story-card text-slate-100 text-base md:text-lg leading-relaxed space-y-6 px-8 py-10 md:px-14 md:py-12 rounded-3xl border border-white/15 bg-white/12 backdrop-blur-2xl shadow-[0_0_65px_rgba(129,140,248,0.45)]">
+						<p>
+							Since 1983, WAC has been a place for high school students to
+							listen, learn, and discuss a variety of topics ranging from STEM,
+							education, social justice, sustainability and diversity &
+							inclusion. Through keynote speakers, plenary panels, as well as
+							interactive sessions such as networking with the speakers
+							themselves, students have the opportunity to hear directly from
+							world renowned leaders as well as discuss ideas with their peers.
+						</p>
+						<p>
+							Led by a team of students from Upper Canada College and Branksome
+							Hall, through many months of hard work WAC each year brings
+							together an extraordinary roster of speakers to share their
+							perspective on current topics affecting our society.
+						</p>
+						<p>
+							In the end WAC is more than just a conference, it's a space where
+							innovative thinkers get to come together and engage in discussions
+							with like minded individuals.
+						</p>
+					</div>
+				</div>
+			</div>
+
 			<div
 				class="absolute inset-0 w-full h-screen text-left py-12 opacity-0 hidden transition-opacity"
 				id="stats"
@@ -540,3 +624,66 @@
 		{/if}
 	</div>
 </div>
+
+<style>
+	#wacStory {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.story-wrapper {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		max-width: 48rem;
+	}
+
+	.story-card {
+		width: 100%;
+	}
+
+	.ray {
+		position: absolute;
+		display: block;
+		width: 220px;
+		height: 6px;
+		background: linear-gradient(
+			to right,
+			rgba(255, 255, 255, 0),
+		rgba(255, 255, 255, 0.65),
+			rgba(255, 255, 255, 0)
+		);
+		filter: blur(1px);
+		opacity: 0.65;
+		pointer-events: none;
+		z-index: -1;
+		transition: opacity 0.6s ease;
+	}
+
+	.ray-one {
+		top: 12%;
+		left: 10%;
+		transform: rotate(-32deg) scaleX(1.1);
+	}
+
+	.ray-two {
+		bottom: 18%;
+		right: 8%;
+		transform: rotate(28deg) scaleX(1.7);
+		opacity: 0.45;
+	}
+
+	.ray-three {
+		top: 48%;
+		right: 20%;
+		transform: rotate(-58deg) scaleX(0.95);
+		opacity: 0.5;
+	}
+
+	.story-wrapper:hover .ray {
+		opacity: 0.85;
+	}
+</style>
