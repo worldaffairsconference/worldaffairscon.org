@@ -100,15 +100,10 @@
 >
 	<div class="max-w-screen-xl mx-auto px-6 lg:px-16">
 		<div class="mb-10 lg:mb-20 mt-6 text-center">
-			<h3
-				class="mb-1 md:mb-2 block md:text-lg font-semibold text-primary"
-			>
-				FAQ
-			</h3>
 			<h1
 				class="font-bold text-white text-4xl md:text-5xl tracking-tight"
 			>
-				Any Questions?
+				WAC Explained
 			</h1>
 		</div>
 

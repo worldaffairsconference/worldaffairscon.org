@@ -20,8 +20,8 @@
 	.gradient-bg {
 		position: fixed;
 		inset: 0;
-		z-index: -5;
-		background: linear-gradient(135deg, #0a0a0a, #1a1d29, #141825, #120c13);
+		z-index: -10;
+		background: linear-gradient(135deg, #171414, #202434, #171b2b, #150d16);
 		background-size: cover;
 	}
 </style>
