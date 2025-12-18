@@ -36,7 +36,7 @@
 			},
 			{
 				question: "What happens if I can’t come to WAC anymore?",
-				answer: "No worries! If you have already registered, kindly email us at wac@ucc.on.ca. Unfortunately, after Friday, February 28th 2025, all lunch orders are final and your school will be charged for all orders as they appear on that date."
+				answer: "No worries! If you have already registered, kindly email us at wac@ucc.on.ca. Alternatively, you can watch WAC's stream, which will be linked on this website."
 			}
 		],
 		"Registration": [
@@ -46,7 +46,7 @@
 			},
 			{
 				question: "When is registration due?",
-				answer: "Registration deadlines will be announced at a later date. Please be reminded that attendee spots are first come, first serve and fill up quickly!"
+				answer: "Registration deadlines will be announced at a later date, and it will open in mid-January. Please be reminded that attendee spots are first come, first serve and fill up quickly!"
 			},
 			{
 				question: "How can I register my school?",
