@@ -111,7 +111,7 @@
 			image: raykaFarahmand
 		},
 		{
-			name: "titoluwa Maxwell",
+			name: "Titoluwa Maxwell",
 			position: "Director of Marketing",
 			image: titoluwaMaxwell
 		},
@@ -121,12 +121,12 @@
 			image: johnKarakoulas
 		},
 		{
-			name: "serena Liu",
+			name: "Serena Liu",
 			position: "Director of Programs & Events",
 			image: serenaLiu
 		},
 		{
-			name: "Edmond Sheng",
+			name: "Edmond Shen",
 			position: "Director of Design & Production",
 			image: edmondShen
 		},
@@ -140,17 +140,17 @@
 	const seniorTeam: TeamMember[] = [
 		{
 			name: "Prince Zhang",
-			position: "Technology Head",
+			position: "Technology Executive",
 			image: princeZhang
 		},
 		{
 			name: "Johnathan Lee",
-			position: "Technology Head",
+			position: "Technology Executive",
 			image: johnathanLee
 		},
 		{
 			name: "Haoyue Chu",
-			position: "Technology Head",
+			position: "Technology Executive",
 			image: haoyueChu
 		},
 
@@ -158,27 +158,27 @@
 
 		{
 			name: "Alex Nitsou",
-			position: "Keynote Head",
+			position: "Keynote Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Bob Liu",
-			position: "Keynote Head",
+			position: "Keynote Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Kimi Zhao",
-			position: "Keynote Head",
+			position: "Keynote Executive",
 			image: kimiZhao
 		},
 		{
 			name: "Ana Luisa Brito Pound",
-			position: "Plenary Head",
+			position: "Plenary Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Jenelle Zhang",
-			position: "Plenary Head",
+			position: "Plenary Executive",
 			image: jenelleZhang
 		},
 		
@@ -186,17 +186,17 @@
 
 		{
 			name: "Justin Chan",
-			position: "Marketing Head",
+			position: "Marketing Executive",
 			image: justinChan
 		},
 		{
 			name: "Charles Paterson",
-			position: "Marketing Head",
+			position: "Marketing Executive",
 			image: charlesPaterson
 		},
 		{
 			name: "Aria Miletin",
-			position: "Marketing Head",
+			position: "Marketing Executive",
 			image: ariaMiletin
 		},
 		
@@ -204,12 +204,12 @@
 
 		{
 			name: "Nikhil Gupta",
-			position: "Production Head",
+			position: "Production Executive",
 			image: nikhilGupta
 		},
 		{
 			name: "Rohan Gupta",
-			position: "Production Head",
+			position: "Production Executive",
 			image: rohanGupta
 		},
 
@@ -217,7 +217,7 @@
 
 		{
 			name: "Michael Xu",
-			position: "Program Head",
+			position: "Program Executive",
 			image: michaelXu
 		},
 
@@ -225,27 +225,27 @@
 
 		{
 			name: "Ryan Sun",
-			position: "Design Head",
+			position: "Design Executive",
 			image: ryanSun
 		},
 		{
 			name: "Mathis Leveson",
-			position: "Design Head",
+			position: "Design Executive",
 			image: mathisLeveson
 		},
 		{
 			name: "Roger Zhu",
-			position: "Design Head",
+			position: "Design Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Joanna Gao",
-			position: "Design Head",
+			position: "Design Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Mia Berco",
-			position: "Design Head",
+			position: "Design Executive",
 			image: miaBerco
 		},
 	];
@@ -284,7 +284,7 @@
 			Team
 		</h3>
 		<h1 class="font-bold text-white text-4xl md:text-5xl tracking-tight">
-			WAC 2025 Team
+			WAC 2026 Team
 		</h1>
 	</div>
 
@@ -327,7 +327,7 @@
 			<h2
 				class="mb-7 md:mb-10 text-center text-3xl sm:text-4xl font-bold tracking-tight text-white"
 			>
-				Executives
+				Directors
 			</h2>
 
 			<div
