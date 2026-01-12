@@ -2,73 +2,42 @@
 	import { lazyLoad } from "$lib/lazyLoad";
 
 	// Team Members
-	import alexChen from "$lib/assets/images/team/alex_chen.jpg";
-	import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg";
 	import wacWSmall from "$lib/assets/images/team/wac_w_small.jpg";
-	import adrianMak from "$lib/assets/images/team/adrian_mak.jpg";
-	import darwinLi from "$lib/assets/images/team/darwin_li.jpg";
-	import katherineMa from "$lib/assets/images/team/katherine_ma.jpg";
-	import ruhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
-	import gordonWu from "$lib/assets/images/team/gordon_wu.jpg";
-	import lincolnDugasNishisato from "$lib/assets/images/team/lincoln_dugas.jpg";
+	import princeZhang from "$lib/assets/images/team/prince_zhang.jpg";
+	import mathisLeveson from "$lib/assets/images/team/mathis_leveson.jpg";
+	import ryanSun from "$lib/assets/images/team/ryan_sun.jpg";
+	import lincolnDugasNishisato from "$lib/assets/images/team/lincoln_dugasnishisato.jpg";
 	import johnKarakoulas from "$lib/assets/images/team/john_karakoulas.jpg";
-	import aariKhagiswale from "$lib/assets/images/team/aari_khagiswale.jpg";
+	import aariKhasgiwale from "$lib/assets/images/team/aari_khasgiwale.jpg";
 	import kimiZhao from "$lib/assets/images/team/kimi_zhao.jpg";
-	import willGreer from "$lib/assets/images/team/will_greer.jpg";
-	import matthewChan from "$lib/assets/images/team/matthew_chan.jpg";
 	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpg";
 	import charlesPaterson from "$lib/assets/images/team/charles_paterson.jpg";
-	import henryDeLuca from "$lib/assets/images/team/henry_deluca.jpg";
-	//import benedictWang from "$lib/assets/images/team/benedict_wang.jpg";
-	//import bobLiu from "$lib/assets/images/team/bob_liu.jpg";
-	import indigoChen from "$lib/assets/images/team/indigo_chen.jpg";
+	import karanMaheshwari from "$lib/assets/images/team/karan_maheshwari.jpg";
 	import zeenLiu from "$lib/assets/images/team/zeen_liu.jpg";
-	import danielDing from "$lib/assets/images/team/daniel_ding.jpg";
 	import johnathanLee from "$lib/assets/images/team/johnathan_lee.jpg";
-	import christopherChung from "$lib/assets/images/team/chris_chung.jpg";
-	import tonyZhang from "$lib/assets/images/team/tony_zhang.jpg";
-	import yunkaiShi from "$lib/assets/images/team/yunkai_shi.jpg";
+	import christopherChung from "$lib/assets/images/team/christopher_chung.jpg";
 	import edmondShen from "$lib/assets/images/team/edmond_shen.jpg";
-	import mikeChen from "$lib/assets/images/team/mike_chen.jpg";
-	import arthurAu from "$lib/assets/images/team/arthur_au.jpg";
-	import simonDeLuca from "$lib/assets/images/team/simon_deluca.jpg";
-	import ryanShe from "$lib/assets/images/team/ryan_she.jpg";
-	//import morganDeng from "$lib/assets/images/team/morgan_deng.jpg";
-	//import junoGoralski from "$lib/assets/images/team/juno_goralski.jpg";
 	import nikhilGupta from "$lib/assets/images/team/nikhil_gupta.jpg";
 	import rohanGupta from "$lib/assets/images/team/rohan_gupta.jpg";
-	import malekElhaddad from "$lib/assets/images/team/malek_elhaddad.jpg";
 	import michaelXu from "$lib/assets/images/team/michael_xu.jpg";
-	import alexWoosley from "$lib/assets/images/team/alex_woosley.jpg";
 	import liyangYin from "$lib/assets/images/team/liyang_yin.jpg";
-	//import linaBoehmer from "$lib/assets/images/team/lina_boehmer.jpg";
-	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
-	import victoriaLuo from "$lib/assets/images/team/victoria_luo.jpg";
-	import naomiNemickas from "$lib/assets/images/team/naomi_nemickas.png";
-	import jordinJames from "$lib/assets/images/team/jordin_james.jpg";
-	import mayaChen from "$lib/assets/images/team/maya_chen.jpg";
-	import katieBuckley from "$lib/assets/images/team/katie_buckley.jpg";
-	import chloeChen from "$lib/assets/images/team/chloe_chen.jpg";
-	import hazelTang from "$lib/assets/images/team/hazel_tang.jpg";
-	import titoluwaMaxwell from "$lib/assets/images/team/titoluwa_maxwell.jpg";
-	import aryanaKanji from "$lib/assets/images/team/aryana_kanji.jpg";
-	import ariaMiletin from "$lib/assets/images/team/aria_miletin.jpg";
-	import aryaPatil from "$lib/assets/images/team/arya_patil.jpg";
-	import jennyLiu from "$lib/assets/images/team/jenny_liu.jpg";
-	import andreaZeng from "$lib/assets/images/team/andrea_zeng.jpg";
-	import ciciXu from "$lib/assets/images/team/cici_xu.jpg";
-	import serenaLiu from "$lib/assets/images/team/serena_liu.jpg";
-	import anitaYan from "$lib/assets/images/team/anita_yan.jpg";
-	import peytonLee from "$lib/assets/images/team/peyton_lee.jpg";
-	import meganKwan from "$lib/assets/images/team/megan_kwan.jpg";
-	import alexaStewart from "$lib/assets/images/team/alexa_stewart.jpg";
+	import justinChan from "$lib/assets/images/team/justin_chan.jpg";
+	import ruhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
 	import alyssaDhanji from "$lib/assets/images/team/alyssa_dhanji.jpg";
-	import karenLiu from "$lib/assets/images/team/karen_liu.jpg";
-	import morganHooyboer from "$lib/assets/images/team/morgan_hooyboer.jpg";
+	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
+	import jenelleZhang from "$lib/assets/images/team/jenelle_zhang.jpg";
+	import titoluwaMaxwell from "$lib/assets/images/team/titoluwa_maxwell.jpg";
+	import ariaMiletin from "$lib/assets/images/team/aria_miletin.jpg";
+	import jennyLiu from "$lib/assets/images/team/jenny_liu.jpg";
+	import haoyueChu from "$lib/assets/images/team/haoyue_chu.jpg";
+	import peytonLee from "$lib/assets/images/team/peyton_lee.jpg";
+	import miaBerco from "$lib/assets/images/team/mia_berco.jpg";
+	import serenaLiu from "$lib/assets/images/team/serena_liu.jpg";
+	import hazelTang from "$lib/assets/images/team/hazel_tang.jpg";
 	import suzanneMonir from "$lib/assets/images/team/suzanne_monir.jpg";
 	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
-	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
 	import tracyDalgdish from "$lib/assets/images/team/tracy_dalgdish.jpg";
+	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
 
 	interface TeamMember {
 		name: string;
@@ -78,19 +47,19 @@
 
 	const chairs: TeamMember[] = [
 		{
-			name: "Darwin Li",
+			name: "Liyang Yin",
 			position: "Executive Chair",
-			image: darwinLi
+			image: liyangYin
 		},
 		{
-			name: "Adrian Mak",
+			name: "Karan Maheshwari",
 			position: "Executive Chair",
-			image: adrianMak
+			image: karanMaheshwari
 		},
 		{
-			name: "Katherine Ma",
+			name: "Alyssa Dhanji",
 			position: "Executive Chair",
-			image: katherineMa
+			image: alyssaDhanji
 		},
 		{
 			name: "Ruhani Mainra",
@@ -106,39 +75,35 @@
 			image: zeenLiu
 		},
 		{
-			name: "Arya Patil",
+			name: "Jenny Liu",
 			position: "Director of Technology",
-			image: aryaPatil
+			image: jennyLiu
 		},
 		{
-			name: "Alyssa Dhanji",
+			name: "Christopher Chung",
 			position: "Director of Internal Affairs",
-			image: alyssaDhanji
+			image: christopherChung
 		},
 		{
-			name: "Alex Woosley",
+			name: "Hazel Tang",
 			position: "Director of Internal Affairs",
-			image: alexWoosley
+			image: hazelTang
 		},
 		{
-			name: "Alex Chen",
-			position: "Director of Registration",
-			image: alexChen
-		},
-		{
-			name: "Karen Liu",
-			position: "Director of Registration",
-			image: karenLiu
-		},
-		{
-			name: "Lina Boehmer",
+			name: "Anya Dua",
 			position: "Director of Plenaries & Keynotes",
-			image: wacWLarge
+			image: anyaDua
 		},
 		{
-			name: "Gordon Wu",
+			name: "Lincoln Dugas-Nishisato",
 			position: "Director of Plenaries & Keynotes",
-			image: gordonWu
+			image: lincolnDugasNishisato
+
+		},
+		{
+			name: "Aari Khasgiwale",
+			position: "Director of Plenaries & Keynotes",
+			image: aariKhasgiwale
 		},
 		{
 			name: "Rayka Farahmand",
@@ -146,47 +111,37 @@
 			image: raykaFarahmand
 		},
 		{
-			name: "Hazel Tang",
+			name: "titoluwa Maxwell",
 			position: "Director of Marketing",
-			image: hazelTang
+			image: titoluwaMaxwell
 		},
 		{
-			name: "Malek Elhaddad",
+			name: "John Karakoulas",
 			position: "Director of Programs & Events",
-			image: malekElhaddad
+			image: johnKarakoulas
 		},
 		{
-			name: "Megan Kwan",
+			name: "serena Liu",
 			position: "Director of Programs & Events",
-			image: meganKwan
+			image: serenaLiu
 		},
 		{
-			name: "Tony Zhang",
+			name: "Edmond Sheng",
 			position: "Director of Design & Production",
-			image: tonyZhang
+			image: edmondShen
 		},
 		{
-			name: "Andrea Zeng",
+			name: "Peyton Lee",
 			position: "Director of Design & Production",
-			image: andreaZeng
+			image: peytonLee
 		}
 	];
 
 	const seniorTeam: TeamMember[] = [
 		{
-			name: "JT Borba",
+			name: "Prince Zhang",
 			position: "Technology Head",
-			image: wacWSmall
-		},
-		{
-			name: "Christopher Chung",
-			position: "Technology Head",
-			image: christopherChung
-		},
-		{
-			name: "Daniel Ding",
-			position: "Technology Head",
-			image: danielDing
+			image: princeZhang
 		},
 		{
 			name: "Johnathan Lee",
@@ -194,151 +149,59 @@
 			image: johnathanLee
 		},
 		{
-			name: "Jenny Liu",
+			name: "Haoyue Chu",
 			position: "Technology Head",
-			image: jennyLiu
-		},
-
-		/////////////////////////////////
-
-		{
-			name: "Liyang Yin",
-			position: "Internal Affairs Head",
-			image: liyangYin
-		},
-
-		/////////////////////////////////
-
-		{
-			name: "Morgan Hooyboer",
-			position: "Assistant Director of Registration",
-			image: morganHooyboer
+			image: haoyueChu
 		},
 
 		//////////////////////////
 
 		{
-			name: "Anya Dua",
-			position: "Assistant Director of Plenaries & Keynotes",
-			image: anyaDua
-		},
-		{
-			name: "Katie Buckley",
+			name: "Alex Nitsou",
 			position: "Keynote Head",
-			image: katieBuckley
-		},
-		{
-			name: "Chloe Chen",
-			position: "Keynote Head",
-			image: chloeChen
-		},
-		{
-			name: "Matthew Chan",
-			position: "Plenary Head",
-			image: matthewChan
-		},
-		{
-			name: "Maya Chen",
-			position: "Plenary Head",
-			image: mayaChen
-		},
-		{
-			name: "Lincoln Dugas-Nishisato",
-			position: "Plenary Head",
-			image: lincolnDugasNishisato
-		},
-		{
-			name: "Will Greer",
-			position: "Plenary Head",
-			image: willGreer
-		},
-		{
-			name: "Jordin James",
-			position: "Plenary Head",
-			image: jordinJames
-		},
-		{
-			name: "John Karakoulas",
-			position: "Plenary Head",
-			image: johnKarakoulas
-		},
-		{
-			name: "Aari Khagiswale",
-			position: "Plenary Head",
-			image: aariKhagiswale
-		},
-		{
-			name: "Victoria Luo",
-			position: "Plenary Head",
-			image: victoriaLuo
-		},
-		{
-			name: "Naomi Nemickas",
-			position: "Plenary Head",
-			image: naomiNemickas
-		},
-		{
-			name: "Kimi Zhao",
-			position: "Plenary Head",
-			image: kimiZhao
-		},
-
-		//////////////////////////////
-
-		{
-			name: "Indigo Chen",
-			position: "Marketing Head",
-			image: indigoChen
-		},
-		{
-			name: "Henry DeLuca",
-			position: "Marketing Head",
-			image: henryDeLuca
-		},
-		{
-			name: "Aryana Kanji",
-			position: "Marketing Head",
-			image: aryanaKanji
-		},
-		{
-			name: "Bob Liu",
-			position: "Marketing Head",
 			image: wacWSmall
 		},
 		{
-			name: "Titoluwa Maxwell",
-			position: "Marketing Head",
-			image: titoluwaMaxwell
+			name: "Bob Liu",
+			position: "Keynote Head",
+			image: wacWSmall
 		},
 		{
-			name: "Aria Miletin",
+			name: "Kimi Zhao",
+			position: "Keynote Head",
+			image: kimiZhao
+		},
+		{
+			name: "Ana Luisa Brito Pound",
+			position: "Plenary Head",
+			image: wacWSmall
+		},
+		{
+			name: "Jenelle Zhang",
+			position: "Plenary Head",
+			image: jenelleZhang
+		},
+		
+		//////////////////////////////
+
+		{
+			name: "Justin Chan",
 			position: "Marketing Head",
-			image: ariaMiletin
+			image: justinChan
 		},
 		{
 			name: "Charles Paterson",
 			position: "Marketing Head",
 			image: charlesPaterson
 		},
-
 		{
-			name: "Benedict Wang",
+			name: "Aria Miletin",
 			position: "Marketing Head",
-			image: wacWSmall
+			image: ariaMiletin
 		},
-
+		
 		/////////////////////////////////
 
-		{
-			name: "Morgan Deng",
-			position: "Production Head",
-			image: wacWSmall
-		},
-		{
-			name: "Juno Goralski",
-			position: "Production Head",
-			image: wacWSmall
-		},
 		{
 			name: "Nikhil Gupta",
 			position: "Production Head",
@@ -353,11 +216,6 @@
 		/////////////////////////////////
 
 		{
-			name: "Alexa Stewart",
-			position: "Program Head",
-			image: alexaStewart
-		},
-		{
 			name: "Michael Xu",
 			position: "Program Head",
 			image: michaelXu
@@ -366,55 +224,30 @@
 		////////////////////////////////
 
 		{
-			name: "Arthur Au",
+			name: "Ryan Sun",
 			position: "Design Head",
-			image: arthurAu
+			image: ryanSun
 		},
 		{
-			name: "Mike Chen",
+			name: "Mathis Leveson",
 			position: "Design Head",
-			image: mikeChen
+			image: mathisLeveson
 		},
 		{
-			name: "Simon DeLuca",
+			name: "Roger Zhu",
 			position: "Design Head",
-			image: simonDeLuca
+			image: wacWSmall
 		},
 		{
-			name: "Peyton Lee",
+			name: "Joanna Gao",
 			position: "Design Head",
-			image: peytonLee
+			image: wacWSmall
 		},
 		{
-			name: "Serena Liu",
+			name: "Mia Berco",
 			position: "Design Head",
-			image: serenaLiu
+			image: miaBerco
 		},
-		{
-			name: "Yunkai Shi",
-			position: "Design Head",
-			image: yunkaiShi
-		},
-		{
-			name: "Edmond Shen",
-			position: "Design Head",
-			image: edmondShen
-		},
-		{
-			name: "Ryan She",
-			position: "Design Head",
-			image: ryanShe
-		},
-		{
-			name: "Cici Xu",
-			position: "Design Head",
-			image: ciciXu
-		},
-		{
-			name: "Anita Yan ",
-			position: "Design Head",
-			image: anitaYan
-		}
 	];
 
 	const facultyChairs: TeamMember[] = [
