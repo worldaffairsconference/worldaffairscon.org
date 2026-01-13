@@ -404,7 +404,7 @@
 				.fromTo(
 					"#wacStory",
 					{ display: "flex", opacity: 0, y: 16 },
-					{ opacity: 1, y: 0, duration: 3.9, delay: 0.25 }
+					{ opacity: 1, y: 0, duration: 2.7, delay: 0.25 }
 				)
 				.to(
 					"#wacStory",
