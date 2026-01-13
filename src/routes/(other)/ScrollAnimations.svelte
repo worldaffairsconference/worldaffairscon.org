@@ -31,24 +31,14 @@
 	import { Swiper as SwiperContainer, SwiperSlide } from "swiper/svelte";
 
 	// Images
-	//import sebastianMaurice from "$lib/assets/images/speakers/sebastianMaurice.jpg";
-	import billWeir from "$lib/assets/images/speakers/billWeir.jpg";
-	import jamesOrbinski from "$lib/assets/images/speakers/jamesOrbinski.jpg";
-	//import justinaRay from "$lib/assets/images/speakers/justinaRay.jpg";
-	import jeremyWang from "$lib/assets/images/speakers/jeremyWang.jpg";
-	import emmaLozhkin from "$lib/assets/images/speakers/emmaLozhkin.jpg";
-	import sylviaTorresGuillen from "$lib/assets/images/speakers/sylviaTorresGuillen.jpg";
-	import curtisVanWelleghem from "$lib/assets/images/speakers/curtisVanWelleghem.jpg";
-	import shirleyBlumberg from "$lib/assets/images/speakers/shirleyBlumberg.jpg";
-	import johnSmol from "$lib/assets/images/speakers/johnSmol.jpg";
-	import jamesSuh from "$lib/assets/images/speakers/jamesSuh.webp";
-	import wolfgangSchwan from "$lib/assets/images/speakers/wolfgangSchwan.jpg";
-	//import yanBoechat from "$lib/assets/images/speakers/yanBoechat.png";
-	import michaelKaufman from "$lib/assets/images/speakers/michaelKaufman.jpg";
-	import johnSitilides from "$lib/assets/images/speakers/johnSitilides.jpg";
-	import andrewHealey from "$lib/assets/images/speakers/andrewHealey.jpg";
-	import keithPelley from "$lib/assets/images/speakers/keithPelley.jpeg";
 	import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg";
+
+	// Track expanded state per speaker (by name)
+	let expanded: Record<string, boolean> = {};
+
+	const toggleExpanded = (name: string) => {
+		expanded[name] = !expanded[name];
+	};
 
 	// Constants
 	const TOTAL_STARS = 500; // How many stars there are
@@ -57,97 +47,107 @@
 		name: string;
 		title: string;
 		image: string;
+		bio: string;
 		tag?: string;
 	}
 
 	const speakers: Speaker[] = [
 		{
-			name: "Dr. Sebastian Maurice",
-			title: "Global AI/ML Leader",
-			image: wacWLarge
+			name: "Paul Goddard",
+			title: "CEO and President of Pizza Pizza",
+			image: wacWLarge,
+			bio: "Paul Goddard holds a Bachelor of Science degree with Honours, Mechanical Engineering, from Queen's University, is a licensed Professional Engineer, and holds an MBA from London Business School, United Kingdom. Paul joined Pizza Pizza as Chief Information Officer and Vice President, Enterprise Development, before being appointed Chief Executive Officer in 2010."
 		},
 		{
-			name: "Bill Weir",
-			title: "CNN Chief Climate Correspondent",
-			image: billWeir,
+			name: "Chris Hadfield",
+			title: "Astronaut and Former Commander of the International Space Station",
+			image: wacWLarge,
+			bio: "",
 			tag: "Keynote Speaker"
 		},
 		{
-			name: "Keith Pelley",
-			title: "Former CEO of PGA European Tour, Current President & CEO of MLSE",
-			image: keithPelley,
-			tag: "Keynote Speaker"
+			name: "Martin Kon",
+			title: "Former CFO of YouTube, President Emeritus of Cohere",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "Dr. James Orbinski",
-			title: "Former President of Doctors Without Borders & Nobel Prize Winner",
-			image: jamesOrbinski,
-			tag: "Keynote Speaker"
+			name: "Arwa Damon",
+			title: "Former CNN Senior International Correspondent, Founder of INARA",
+			image: wacWLarge,
+			bio: "Arwa Damon is a five-time Emmy winning former CNN Senior International Correspondent. While her career has taken her across the globe, she is best known for her coverage of the Middle East, especially out of Iraq and Syria, and for the human stories she brings into her reporting. She is also the recipient of numberous Peabody Awards, the Investigative Reporters and Editors award for her coverage of the 2012 attack on the US Consulate in Benghazi, and the prestigious \"Courage in Journalism\" award by the International Women's Media Foundations."
 		},
 		{
-			name: "Dr. Justina Ray",
-			title: "President and Senior Scientist at Wildlife Conservation Society Canada",
-			image: wacWLarge
+			name: "Marci Shore",
+			title: "Chair of Intellectual European History at U of T, Former Yale Professor",
+			image: wacWLarge,
+			bio: "Marci Shore began a position as Chair in European Intellectual History at the Munk School for Global Affairs and Public Policy at the University of Toronto in 2025. She was previously professor of history at Yale University; she has also been a regular visiting fellow at the Institut für die Wissenschaften vom Menschen in Vienna since 2004. Her articles and essays have appeared in The New Yorker, Foreign Policy, Eurozine, the Atlantic, The Yale Review, The New York Review of Books, The Times Literary Supplement, The New York Times, and The Wall Street Journal. She is the recipient of a Guggenheim Fellowship for her book project about phenomenology in East-Central Europe tentatively titled \"In Pursuit of Certainty Lost: Central European Encounters on the Way to Truth.\""
 		},
 		{
-			name: "Dr. Jeremy Wang",
-			title: "Aerospace engineer and COO of Ribbit",
-			image: jeremyWang
+			name: "Malcolm McAdie",
+			title: "Wildlife Veterinarian, Saved Canada's Most Endangered Mammal",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "Emma Lozhkin",
-			title: "2012-17 Junior Olympian & Member of the Canadian National Gymnastics Team, Branksome 2017 Graduate, Software Engineer",
-			image: emmaLozhkin
+			name: "Myck Kabongo",
+			title: "Former NBA Player, D1 College Coach",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "Sylvia Torres-Guillen",
-			title: "General Counsel of the California ALRB, Executive director of Disability Rights Legal Center, social justice advocate",
-			image: sylviaTorresGuillen
+			name: "Neil Hetherington",
+			title: "CEO of Daily Bread Food Bank",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "Curtis VanWalleghem ",
-			title: "Founder and CEO of Hydrostor",
-			image: curtisVanWelleghem
+			name: "Tzeporah Berman",
+			title: "Founder of Fossil Fuel Non-Proliferation Treaty Initiative",
+			image: wacWLarge,
+			bio: "Tzeporah Berman BA, MES, LLD (honoris causa) has been designing climate justice and environmental advocacy campaigns and advising governments for over 30 years. She is the Co-founder and International Program Director at Stand.earth and the Founder and Chair of the Fossil Fuel Non-Proliferation Treaty Initiative."
 		},
 		{
-			name: "Shirley Blumberg ",
-			title: "Founding partner of KPMB Architects and activist for social transformation and change through architecture",
-			image: shirleyBlumberg
+			name: "Mark Cohon",
+			title: "Former CFL Commissioner",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "John Smol",
-			title: "Canadian ecologist, limnologist and paleolimnologist",
-			image: johnSmol
+			name: "Joseph Lace",
+			title: "Managing Director of JP Morgan",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "James Suh",
-			title: "CFO of Florida Panthers",
-			image: jamesSuh
+			name: "Jack Armstrong",
+			title: "Play by Play Commentator for the Toronto Raptors",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "Michael Kaufman ",
-			title: "Co-Founder: White Ribbon Campaign, Author: The Guy’s Guide to Feminism",
-			image: michaelKaufman
+			name: "Isaac Lax",
+			title: "Head of Roster Planning for the Toronto Raptors",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "Wolfgang Schwan",
-			title: "Ukraine War Journalist & Photographer",
-			image: wolfgangSchwan
+			name: "Greg Meredith",
+			title: "Retired NHL Player, Serial Entrepreneur",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "Yan Boechat",
-			title: "Conflict Journalist & War Correspondent",
-			image: wacWLarge
+			name: "Michael Serbinis",
+			title: "Founder and CEO of League and Three Angels Capital, Former CEO at Kobo, Critical Path, DocSpace, Zip2",
+			image: wacWLarge,
+			bio: ""
 		},
 		{
-			name: "John Sitilides",
-			title: "Geopolitical Strategist & Diplomacy Consultant for Bush, Obama and Trump",
-			image: johnSitilides
-		},
-		{
-			name: "Dr. Andrew Healey",
-			title: "Medical Director/Chief, Chief of Critical care at St. Joseph's Hamilton",
-			image: andrewHealey
+			name: "Alaa Murabit",
+			title: "Founder of The Voice of Libyan Women",
+			image: wacWLarge,
+			bio: ""
 		}
 	];
 
@@ -404,7 +404,7 @@
 				.fromTo(
 					"#wacStory",
 					{ display: "flex", opacity: 0, y: 16 },
-					{ opacity: 1, y: 0, duration: 0.9, delay: 0.25 }
+					{ opacity: 1, y: 0, duration: 3.9, delay: 0.25 }
 				)
 				.to(
 					"#wacStory",
@@ -506,7 +506,7 @@
 							perspective on current topics affecting our society.
 						</p>
 						<p>
-							In the end WAC is more than just a conference, it's a space where
+							In the end, WAC is more than just a conference; it's a space where
 							innovative thinkers get to come together and engage in discussions
 							with like minded individuals.
 						</p>
@@ -522,7 +522,7 @@
 					<h2
 						class="text-center text-[2.75rem] sm:text-[4.3rem] font-bold text-white tracking-tight mb-8"
 					>
-						WAC 2025 Speakers
+						WAC 2026 Speakers
 					</h2>
 
 					<div class="grow overflow-hidden relative mb-6">
@@ -568,7 +568,7 @@
 										/>
 
 										<div
-											class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 h-[6.25rem] px-3 sm:px-5 flex"
+											class="absolute bottom-0 w-full backdrop-blur-[8px] bg-zinc-900/30 min-h-[7.25rem] px-3 sm:px-5 flex"
 										>
 											<div class="my-auto">
 												<h3
@@ -580,7 +580,25 @@
 													class="text-zinc-200 text-xs"
 												>
 													{speaker.title}
+													<br>
+													<br>
 												</p>
+												<div class="text-zinc-200 text-xs">
+													{#if expanded[speaker.name]}
+														{speaker.bio}
+													{:else}
+														<div class="line-clamp-1">{speaker.bio}</div>
+													{/if}
+												</div>
+												{#if speaker.bio && speaker.bio.split(/\s+/).length > 20}
+													<button
+														class="text-primary text-sm font-medium hover:underline"
+														on:click={() => toggleExpanded(speaker.name)}
+														aria-label={expanded[speaker.name] ? "Show less" : "Read more"}
+													>
+														{expanded[speaker.name] ? "Show less" : "Read more"}
+													</button>
+												{/if}
 											</div>
 										</div>
 										<div
@@ -622,7 +640,7 @@
 				<Video />
 			{/await}
 		{/if}
-	</div>
+	</div> 
 </div>
 
 <style>
@@ -660,7 +678,7 @@
 		opacity: 0.65;
 		pointer-events: none;
 		z-index: -1;
-		transition: opacity 0.6s ease;
+		transform: opacity 0.6s ease;
 	}
 
 	.ray-one {
