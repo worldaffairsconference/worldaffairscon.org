@@ -32,7 +32,7 @@
 			},
 			{
 				question: "Who can attend WAC?",
-				answer: "Any high school student can attend WAC. If you are interested in attending the conference, please contact a school teacher and ask them to reach out to wac@ucc.on.ca."
+				answer: "Any high school student can attend WAC. Please note that WAC is environmentally friendly, so attendees need to bring their personal reusable water bottle. If you are interested in attending the conference, please contact a school teacher and ask them to reach out to wac@ucc.on.ca."
 			},
 			{
 				question: "What happens if I can’t come to WAC anymore?",
