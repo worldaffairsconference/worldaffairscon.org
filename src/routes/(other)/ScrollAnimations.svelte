@@ -272,31 +272,27 @@
 			const textTimeline = gsap.timeline({
 				scrollTrigger: {
 					trigger: "#container",
-					start: "top+=120 center",
+					start: "top+=320 center",
 					end: "top+=2600 center",
 					scrub: true
 				}
 			});
 
 			textTimeline
-				.set("#aboutWac", { display: "flex" })
-				.fromTo(
-					"#aboutWac",
-					{ opacity: 0, y: 20 },
-					{ opacity: 1, y: 0, duration: 0.8, delay: 0.15 }
-				)
-				.to("#aboutWac", { opacity: 1, duration: 0.7 })
+				.set("#aboutWac", { display: "flex", opacity: 1, y: 0 })
+				.to("#aboutWac", { opacity: 1, duration: 0.9 })
 				.to("#aboutWac", { opacity: 0, y: -12, duration: 0.45 })
 				.set("#aboutWac", { display: "none" })
 				.fromTo(
 					"#wacStory",
-					{ display: "flex", opacity: 0, y: 16 },
-					{ opacity: 1, y: 0, duration: 2.2, delay: 0.25 }
+					{ display: "flex", opacity: 0, y: 12 },
+					{ opacity: 1, y: 0, duration: 0.35 }
 				)
+				.to("#wacStory", { opacity: 1, duration: 1.6 })
 				.to(
 					"#wacStory",
-					{ opacity: 0, y: -14, duration: 0.6 },
-					">+=0.2"
+					{ opacity: 0, y: -14, duration: 0.3 },
+					">+=0.5"
 				)
 				.set("#wacStory", { display: "none" })
 				.fromTo(
@@ -379,7 +375,7 @@
 					<span class="ray ray-one" />
 					<span class="ray ray-two" />
 					<span class="ray ray-three" />
-					<div class="story-card text-slate-100 text-base md:text-lg leading-relaxed space-y-6 px-8 py-10 md:px-14 md:py-12 rounded-3xl border border-white/15 bg-white/12 backdrop-blur-2xl shadow-[0_0_65px_rgba(129,140,248,0.45)]">
+					<div class="story-card text-slate-100 text-base md:text-lg leading-relaxed space-y-6 px-8 py-10 md:px-14 md:py-12 rounded-3xl border border-white/15 bg-zinc-900/80 shadow-[0_0_65px_rgba(129,140,248,0.45)]">
 						<p>
 							Since 1983, WAC has been a place for high school students to
 							listen, learn, and discuss a variety of topics ranging from STEM,
