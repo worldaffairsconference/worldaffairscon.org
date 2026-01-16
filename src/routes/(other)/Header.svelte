@@ -45,6 +45,7 @@
 	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
 		// { name: "Past Speakers", path: "/past-speakers" },
+		{ name: "2026 Speakers", path: "/2026-speakers" },
 		{ name: "Contact Us", path: "/contact-us" },
 		{ name: "Past Years", path: "/past-years" },
 		{ name: "WAC Explained", path: "/wac-explained" },
