@@ -31,13 +31,6 @@ const slugify = (value: string) =>
 
 export const speakers2026: Speaker2026[] = [
 	{
-		name: "Paul Goddard",
-		title: "CEO and President of Pizza Pizza",
-		image: PaulGoddard,
-		bio: "Paul Goddard holds a Bachelor of Science degree with Honours, Mechanical Engineering, from Queen's University, is a licensed Professional Engineer, and holds an MBA from London Business School, United Kingdom. Paul joined Pizza Pizza as Chief Information Officer and Vice President, Enterprise Development, before being appointed Chief Executive Officer in 2010.",
-		slug: slugify("Paul Goddard")
-	},
-	{
 		name: "Chris Hadfield",
 		title:
 			"Astronaut and Former Commander of the International Space Station",
@@ -45,6 +38,13 @@ export const speakers2026: Speaker2026[] = [
 		bio: "Chris Hadfield is a Canadian astronaut, engineer, and former Commander of the International Space Station, becoming the first Canadian to lead the ISS. A retired Royal Canadian Air Force pilot, he flew on three space missions and is known for making space science accessible to the public. Hadfield is also a bestselling author and speaker, sharing insights on leadership, risk, and exploration.",
 		tag: "Keynote Speaker",
 		slug: slugify("Chris Hadfield")
+	},
+	{
+		name: "Paul Goddard",
+		title: "CEO and President of Pizza Pizza",
+		image: PaulGoddard,
+		bio: "Paul Goddard holds a Bachelor of Science degree with Honours, Mechanical Engineering, from Queen's University, is a licensed Professional Engineer, and holds an MBA from London Business School, United Kingdom. Paul joined Pizza Pizza as Chief Information Officer and Vice President, Enterprise Development, before being appointed Chief Executive Officer in 2010.",
+		slug: slugify("Paul Goddard")
 	},
 	{
 		name: "Martin Kon",

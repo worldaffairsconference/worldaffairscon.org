@@ -46,17 +46,17 @@
 		// { name: "Schedule", path: "/schedule" },
 		// { name: "Past Speakers", path: "/past-speakers" },
 		{ name: "2026 Speakers", path: "/2026-speakers" },
-		{ name: "Contact Us", path: "/contact-us" },
 		{ name: "Past Years", path: "/past-years" },
 		{ name: "WAC Explained", path: "/wac-explained" },
-		{ name: "Team", path: "/team" }
+		{ name: "Team", path: "/team" },
+		{ name: "Contact Us", path: "/contact-us" }
 	] satisfies Route[];
 </script>
 
 <svelte:window on:click={closeDropdown} />
 
 <header
-	class="flex items-center justify-between px-6 lg:px-16 h-[5.5rem] sm:h-28 md:h-[8.5rem] w-full absolute top-0 left-0 z-50 bg-transparent"
+	class="flex items-center justify-between px-6 lg:px-16 h-[4.75rem] sm:h-[6.25rem] md:h-[7rem] w-full absolute top-0 left-0 z-50 bg-transparent"
 	id="header"
 >
 	<a
@@ -91,7 +91,7 @@
 							class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
 								{$page.url.pathname === route.path
 								? 'underline decoration-primary decoration-[1.5px] underline-offset-8'
-								: ''}"
+								: ''} {route.name === '2026 Speakers' ? 'font-semibold text-white' : ''}"
 							on:click={closeNavBar}
 						>
 							{route.name}
@@ -114,6 +114,7 @@
 								class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
                         {$page.url.pathname === route.path &&
 									'underline decoration-primary decoration-[1.5px] underline-offset-8'}
+                        {route.name === '2026 Speakers' ? 'font-semibold text-white' : ''}
                         "
 								on:click={closeNavBar}
 							>
