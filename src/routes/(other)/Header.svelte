@@ -88,7 +88,7 @@
 					{:else}
 						<a
 							href={route.path}
-							class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
+							class="nav-glow text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
 								{$page.url.pathname === route.path
 								? 'underline decoration-primary decoration-[1.5px] underline-offset-8'
 								: ''} {route.name === '2026 Speakers' ? 'font-semibold text-white' : ''}"
@@ -111,7 +111,7 @@
 						<li>
 							<a
 								href={route.path}
-								class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
+								class="nav-glow text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
                         {$page.url.pathname === route.path &&
 									'underline decoration-primary decoration-[1.5px] underline-offset-8'}
                         {route.name === '2026 Speakers' ? 'font-semibold text-white' : ''}
@@ -244,3 +244,18 @@
 		{/if}
 	</nav>
 </header>
+
+<style>
+	.nav-glow {
+		text-shadow:
+			0 0 10px rgba(255, 255, 255, 0.65),
+			0 0 20px rgba(255, 255, 255, 0.45);
+		transition: text-shadow 0.3s ease-in-out;
+	}
+
+	.nav-glow:hover {
+		text-shadow:
+			0 0 14px rgba(255, 255, 255, 0.9),
+			0 0 26px rgba(255, 255, 255, 0.6);
+	}
+</style>

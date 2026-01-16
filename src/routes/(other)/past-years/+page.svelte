@@ -29,6 +29,16 @@
 	};
 
 	let recapVideoElement: HTMLVideoElement | null = null;
+	const attemptPlay = () => {
+		if (!recapVideoElement) return;
+		recapVideoElement.muted = true;
+		const playPromise = recapVideoElement.play();
+		if (playPromise !== undefined) {
+			playPromise.catch(() => {
+				recapVideoElement?.setAttribute("data-autoplay-failed", "true");
+			});
+		}
+	};
 
 	// Track expanded state per speaker (by name)
 	let expanded: Record<string, boolean> = {};
@@ -40,14 +50,7 @@
 	onMount(() => {
 		if (!recapVideoElement) return;
 
-		recapVideoElement.muted = true;
-		const playPromise = recapVideoElement.play();
-
-		if (playPromise !== undefined) {
-			playPromise.catch(() => {
-				recapVideoElement?.setAttribute("data-autoplay-failed", "true");
-			});
-		}
+		attemptPlay();
 	});
 
 	// ---- Content for each year (keep your original paths) ----
@@ -435,6 +438,8 @@
 										playsinline
 										preload="auto"
 										bind:this={recapVideoElement}
+										on:loadedmetadata={attemptPlay}
+										on:canplay={attemptPlay}
 									>
 										<source
 											src={resolveAsset('/src/lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4')}
