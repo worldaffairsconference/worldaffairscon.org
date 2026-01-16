@@ -267,7 +267,7 @@
 			image: jarrodBaker
 		},
 		{
-			name: "Tracy Dalgdish",
+			name: "Tracy Dalglish",
 			position: "Faculty Chair",
 			image: tracyDalgdish
 		}
