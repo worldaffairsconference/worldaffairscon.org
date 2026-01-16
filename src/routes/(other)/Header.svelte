@@ -45,17 +45,18 @@
 	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
 		// { name: "Past Speakers", path: "/past-speakers" },
-		{ name: "Contact Us", path: "/contact-us" },
+		{ name: "2026 Speakers", path: "/2026-speakers" },
 		{ name: "Past Years", path: "/past-years" },
 		{ name: "WAC Explained", path: "/wac-explained" },
-		{ name: "Team", path: "/team" }
+		{ name: "Team", path: "/team" },
+		{ name: "Contact Us", path: "/contact-us" }
 	] satisfies Route[];
 </script>
 
 <svelte:window on:click={closeDropdown} />
 
 <header
-	class="flex items-center justify-between px-6 lg:px-16 h-[5.5rem] sm:h-28 md:h-[8.5rem] w-full absolute top-0 left-0 z-50 bg-transparent"
+	class="flex items-center justify-between px-6 lg:px-16 h-[4.75rem] sm:h-[6.25rem] md:h-[7rem] w-full absolute top-0 left-0 z-50 bg-transparent"
 	id="header"
 >
 	<a
@@ -87,10 +88,10 @@
 					{:else}
 						<a
 							href={route.path}
-							class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
+							class="nav-glow text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
 								{$page.url.pathname === route.path
 								? 'underline decoration-primary decoration-[1.5px] underline-offset-8'
-								: ''}"
+								: ''} {route.name === '2026 Speakers' ? 'font-semibold text-white' : ''}"
 							on:click={closeNavBar}
 						>
 							{route.name}
@@ -110,9 +111,10 @@
 						<li>
 							<a
 								href={route.path}
-								class="text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
+								class="nav-glow text-zinc-300 hover:text-white transition-colors duration-100 cursor-pointer
                         {$page.url.pathname === route.path &&
 									'underline decoration-primary decoration-[1.5px] underline-offset-8'}
+                        {route.name === '2026 Speakers' ? 'font-semibold text-white' : ''}
                         "
 								on:click={closeNavBar}
 							>
@@ -242,3 +244,18 @@
 		{/if}
 	</nav>
 </header>
+
+<style>
+	.nav-glow {
+		text-shadow:
+			0 0 10px rgba(255, 255, 255, 0.65),
+			0 0 20px rgba(255, 255, 255, 0.45);
+		transition: text-shadow 0.3s ease-in-out;
+	}
+
+	.nav-glow:hover {
+		text-shadow:
+			0 0 14px rgba(255, 255, 255, 0.9),
+			0 0 26px rgba(255, 255, 255, 0.6);
+	}
+</style>

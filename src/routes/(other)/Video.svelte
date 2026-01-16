@@ -3,15 +3,26 @@
 	import { ScrollToPlugin } from "gsap/ScrollToPlugin?client";
 	import { ScrollTrigger } from "gsap/ScrollTrigger?client";
 	import { browser } from "$app/environment";
+	import { tick } from "svelte";
 
 	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.png";
 	import trailerVideo from "$lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4";
 
 	let showVideoPreview = true;
+	let recapVideoElement: HTMLVideoElement | null = null;
 
 	if (browser) {
 		gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 	}
+
+	const attemptPlay = () => {
+		if (!recapVideoElement) return;
+		recapVideoElement.muted = true;
+		const playPromise = recapVideoElement.play();
+		if (playPromise !== undefined) {
+			playPromise.catch(() => null);
+		}
+	};
 
 	// Animates out of the video showcase
 	const stopVideo = () => {
@@ -20,15 +31,6 @@
 		const stopVideoTimeline = gsap.timeline();
 
 		stopVideoTimeline
-			.to(
-				["#home", "#videoSection"],
-				{
-					backgroundColor: "#18181b", // bg-zinc-900
-					ease: "sine.out",
-					duration: 1
-				},
-				0
-			)
 			.to(
 				"#videoTitle",
 				{
@@ -83,20 +85,10 @@
 						onLeave: stopVideo
 					});
 					showVideoPreview = false;
+					void tick().then(attemptPlay);
 				},
 				duration: 0.6
 			})
-
-			.to(
-				["#home", "#videoSection"],
-				{
-					backgroundColor: "#000",
-					duration: 0.4,
-					ease: "sine.out",
-					delay: 0.3
-				},
-				0
-			)
 			.to(
 				"#videoTitle",
 				{
@@ -187,8 +179,13 @@
 					<video
 						class="w-full h-full sm:rounded-2xl sm:shadow-md absolute inset-0 z-50"
 						autoplay
+						muted
+						playsinline
 						controls
 						on:ended={stopVideo}
+						on:loadedmetadata={attemptPlay}
+						on:canplay={attemptPlay}
+						bind:this={recapVideoElement}
 					>
 						<source src={trailerVideo} type="video/mp4" />
 						Your browser does not support the video tag.
