@@ -1,6 +1,5 @@
 import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg";
 import MartinKon from "$lib/assets/images/speakers2026/martin_kon.jpg";
-import GregMeredith from "$lib/assets/images/speakers2026/greg_meredith.jpg";
 import JackArmstrong from "$lib/assets/images/speakers2026/jack_armstrong.jpg";
 import MarkCohon from "$lib/assets/images/speakers2026/mark_cohon.jpg";
 import NeilHetherington from "$lib/assets/images/speakers2026/neil_hetherington.jpg";
@@ -10,9 +9,7 @@ import MyckKabongo from "$lib/assets/images/speakers2026/myck_kabongo.png";
 import MalcolmMcAdie from "$lib/assets/images/speakers2026/malcolm_mcadie.png";
 import PaulGoddard from "$lib/assets/images/speakers2026/paul_goddard.jpg";
 import ArwaDamon from "$lib/assets/images/speakers2026/arwa_damon.jpg";
-import MichaelSerbinis from "$lib/assets/images/speakers2026/michael_serbinis.jpg";
 import ChrisHadfield from "$lib/assets/images/speakers2026/chris_hadfield.jpg";
-import AlaaMurabit from "$lib/assets/images/speakers2026/alaa_murabit.jpg";
 
 export type Speaker2026 = {
 	name: string;
@@ -123,27 +120,5 @@ export const speakers2026: Speaker2026[] = [
 		image: wacWLarge,
 		bio: "Isaac Lax is the Director of Roster Planning & Analysis for the Toronto Raptors, where he focuses on roster construction, salary-cap strategy, and CBA analysis. He has held multiple roles within the Raptors’ basketball operations department and works as part of the team’s front office in Toronto.",
 		slug: slugify("Isaac Lax")
-	},
-	{
-		name: "Greg Meredith",
-		title: "Retired NHL Player, Serial Entrepreneur",
-		image: GregMeredith,
-		bio: "Greg Meredith is a retired NHL player who played for the Calgary Flames after a record-setting college career at the University of Notre Dame. Drafted by the Atlanta Flames in 1978, he played in the NHL in the early 1980s before retiring due to injury. He later earned an MBA from Harvard Business School and became a finance professional and serial entrepreneur.",
-		slug: slugify("Greg Meredith")
-	},
-	{
-		name: "Michael Serbinis",
-		title:
-			"Founder and CEO of League and Three Angels Capital, Former CEO at Kobo, Critical Path, DocSpace, Zip2",
-		image: MichaelSerbinis,
-		bio: "Michael Serbinis is the Founder and CEO of League and 3Angels Capital, and serves as Board Chair of the Perimeter Institute, as well as a Director at the Vector Institute and Creative Destruction Lab. He is a serial entrepreneur who previously served as CEO of Kobo, Critical Path, DocSpace, and Zip2, helping build and scale globally impactful technology companies. Serbinis is widely recognized for his leadership in Canada’s technology, health, and AI innovation ecosystems.",
-		slug: slugify("Michael Serbinis")
-	},
-	{
-		name: "Alaa Murabit",
-		title: "Founder of The Voice of Libyan Women",
-		image: AlaaMurabit,
-		bio: "Alaa Murabit is a Libyan-Canadian physician, peacebuilder, and global advocate for gender equality and sustainable development. She is the founder of The Voice of Libyan Women and has served as a UN High-Level Commissioner on Health Employment and Economic Growth. Murabit is widely recognized for advancing women’s leadership, health equity, and peacebuilding in conflict-affected communities.",
-		slug: slugify("Alaa Murabit")
 	}
 ];
