@@ -32,15 +32,6 @@
 
 		stopVideoTimeline
 			.to(
-				["#home", "#videoSection"],
-				{
-					backgroundColor: "#18181b", // bg-zinc-900
-					ease: "sine.out",
-					duration: 1
-				},
-				0
-			)
-			.to(
 				"#videoTitle",
 				{
 					opacity: 1,
@@ -98,17 +89,6 @@
 				},
 				duration: 0.6
 			})
-
-			.to(
-				["#home", "#videoSection"],
-				{
-					backgroundColor: "#000",
-					duration: 0.4,
-					ease: "sine.out",
-					delay: 0.3
-				},
-				0
-			)
 			.to(
 				"#videoTitle",
 				{

@@ -206,6 +206,15 @@
 			starVertices.push(x, y, z);
 		}
 
+		const extraBottomStars = Math.floor(TOTAL_STARS * 0.35);
+		for (let i = 0; i < extraBottomStars; i++) {
+			const x = randFloatSpread(500);
+			const y = -Math.random() * 250;
+			const z = randFloatSpread(600);
+
+			starVertices.push(x, y, z);
+		}
+
 		starsGeometry.setAttribute(
 			"position",
 			new Float32BufferAttribute(starVertices, 3)
@@ -300,15 +309,13 @@
 					{ display: "flex", opacity: 0, y: 10 },
 					{ opacity: 1, y: 0, duration: 1.8, delay: 0.2 }
 				)
-				.to("#stats", { opacity: 1, duration: 1.2 })
-				.to("#stats", { opacity: 0, y: -12, duration: 0.6 })
-				.set("#stats", { display: "none" });
+				.to("#stats", { opacity: 1, duration: 1.2 });
 
 			gsap.to(starVertices, {
 				scrollTrigger: {
 					trigger: "#videoSection",
-					start: "top-=200% bottom",
-					end: "top bottom",
+					start: "top bottom",
+					end: "top top",
 					scrub: true,
 					onUpdate: (self) => {
 						// Removing last 10 items from starVertices array on ScrollTrigger on each update
@@ -358,9 +365,9 @@
 </script>
 
 <svelte:window on:resize={handleWindowResize} />
-<div bind:this={gsapScope}>
+<div bind:this={gsapScope} class="bg-zinc-900">
 	<section
-		class="pt-[10rem] md:pt-44 lg:pt-[13.5rem] text-center relative h-screen bg-zinc-900"
+		class="pt-[10rem] md:pt-44 lg:pt-[13.5rem] text-center relative h-screen"
 		id="home"
 	>
 		<div
@@ -503,9 +510,18 @@
 					</div>
 				</div>
 			</div>
-			<canvas bind:this={canvasElement} />
+			<canvas
+				bind:this={canvasElement}
+				class="fixed inset-0 w-full h-full -z-10 pointer-events-none"
+			/>
 		</div>
 	</section>
+
+	<div class="relative z-10 flex items-center justify-center py-6 sm:py-8">
+		<div class="h-px w-40 sm:w-64 bg-gradient-to-r from-transparent via-white/45 to-transparent"></div>
+		<div class="mx-4 h-2 w-2 rounded-full bg-white/60 shadow-[0_0_14px_rgba(255,255,255,0.7)]"></div>
+		<div class="h-px w-40 sm:w-64 bg-gradient-to-r from-transparent via-white/45 to-transparent"></div>
+	</div>
 
 	<div id="videoSection" class="h-screen">
 		{#if videoSection}
