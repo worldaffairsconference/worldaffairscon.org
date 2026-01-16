@@ -245,7 +245,7 @@
 				scrollTrigger: {
 					trigger: "#home",
 					start: "top top",
-					end: "bottom+=600 center",
+					end: "bottom+=1400 center",
 					pin: "#home",
 					scrub: true
 				}
@@ -272,8 +272,8 @@
 			const textTimeline = gsap.timeline({
 				scrollTrigger: {
 					trigger: "#container",
-					start: "top+=360 center",
-					end: "top+=1680 center",
+					start: "top+=120 center",
+					end: "top+=2600 center",
 					scrub: true
 				}
 			});
@@ -283,8 +283,9 @@
 				.fromTo(
 					"#aboutWac",
 					{ opacity: 0, y: 20 },
-					{ opacity: 1, y: 0, duration: 0.7, delay: 0.15 }
+					{ opacity: 1, y: 0, duration: 0.8, delay: 0.15 }
 				)
+				.to("#aboutWac", { opacity: 1, duration: 0.7 })
 				.to("#aboutWac", { opacity: 0, y: -12, duration: 0.45 })
 				.set("#aboutWac", { display: "none" })
 				.fromTo(
@@ -302,7 +303,10 @@
 					"#stats",
 					{ display: "flex", opacity: 0, y: 10 },
 					{ opacity: 1, y: 0, duration: 1.8, delay: 0.2 }
-				);
+				)
+				.to("#stats", { opacity: 1, duration: 1.2 })
+				.to("#stats", { opacity: 0, y: -12, duration: 0.6 })
+				.set("#stats", { display: "none" });
 
 			gsap.to(starVertices, {
 				scrollTrigger: {
