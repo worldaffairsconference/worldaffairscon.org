@@ -37,13 +37,6 @@ export const speakers2026: Speaker2026[] = [
 		slug: slugify("Chris Hadfield")
 	},
 	{
-		name: "Paul Goddard",
-		title: "CEO and President of Pizza Pizza",
-		image: PaulGoddard,
-		bio: "Paul Goddard holds a Bachelor of Science degree with Honours, Mechanical Engineering, from Queen's University, is a licensed Professional Engineer, and holds an MBA from London Business School, United Kingdom. Paul joined Pizza Pizza as Chief Information Officer and Vice President, Enterprise Development, before being appointed Chief Executive Officer in 2010.",
-		slug: slugify("Paul Goddard")
-	},
-	{
 		name: "Martin Kon",
 		title: "Former CFO of YouTube, President Emeritus of Cohere",
 		image: MartinKon,
@@ -106,6 +99,13 @@ export const speakers2026: Speaker2026[] = [
 		image: wacWLarge,
 		bio: "Joseph Lace is a Managing Director at J.P. Morgan based in Toronto, Ontario, where he specializes in investment banking and capital markets. He has extensive experience advising corporate clients on strategic financings, mergers and acquisitions, and market transactions. Lace is known for his leadership in developing financial solutions and driving key client relationships in the Canadian and global markets.",
 		slug: slugify("Joseph Lace")
+	},
+    {
+		name: "Paul Goddard",
+		title: "CEO and President of Pizza Pizza",
+		image: PaulGoddard,
+		bio: "Paul Goddard holds a Bachelor of Science degree with Honours, Mechanical Engineering, from Queen's University, is a licensed Professional Engineer, and holds an MBA from London Business School, United Kingdom. Paul joined Pizza Pizza as Chief Information Officer and Vice President, Enterprise Development, before being appointed Chief Executive Officer in 2010.",
+		slug: slugify("Paul Goddard")
 	},
 	{
 		name: "Jack Armstrong",

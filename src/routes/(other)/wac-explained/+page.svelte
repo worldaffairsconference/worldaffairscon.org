@@ -46,7 +46,7 @@
 			},
 			{
 				question: "When is registration due?",
-				answer: "Registration deadlines will be announced at a later date, and it will open in mid-January. Please be reminded that attendee spots are first come, first serve and fill up quickly!"
+				answer: "The registration deadline is February 20th, 2026. Please be reminded that attendee spots are first come, first serve and fill up quickly!"
 			},
 			{
 				question: "How can I register my school?",
