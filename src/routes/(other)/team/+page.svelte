@@ -38,6 +38,11 @@
 	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
 	import tracyDalgdish from "$lib/assets/images/team/tracy_dalgdish.jpg";
 	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
+	import anaLuisa from "$lib/assets/images/team/ana_luisa.jpg";
+	import joannaGao from "$lib/assets/images/team/joanna_gao.jpg";
+	import rogerZhu from "$lib/assets/images/team/roger_zhu.jpg";
+	import alexNitsou from "$lib/assets/images/team/alex_nitsou.jpg";
+
 
 	interface TeamMember {
 		name: string;
@@ -158,23 +163,23 @@
 
 		{
 			name: "Alex Nitsou",
-			position: "Keynote Executive",
-			image: wacWSmall
+			position: "Plenary Executive",
+			image: alexNitsou
 		},
 		{
 			name: "Bob Liu",
-			position: "Keynote Executive",
+			position: "Plenary Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Kimi Zhao",
-			position: "Keynote Executive",
+			position: "Plenary Executive",
 			image: kimiZhao
 		},
 		{
 			name: "Ana Luisa Brito Pound",
 			position: "Plenary Executive",
-			image: wacWSmall
+			image: anaLuisa
 		},
 		{
 			name: "Jenelle Zhang",
@@ -236,12 +241,12 @@
 		{
 			name: "Roger Zhu",
 			position: "Design Executive",
-			image: wacWSmall
+			image: rogerZhu
 		},
 		{
 			name: "Joanna Gao",
 			position: "Design Executive",
-			image: wacWSmall
+			image: joannaGao
 		},
 		{
 			name: "Mia Berco",
