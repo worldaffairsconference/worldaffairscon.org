@@ -11,7 +11,6 @@
 	import aariKhasgiwale from "$lib/assets/images/team/aari_khasgiwale.jpg";
 	import kimiZhao from "$lib/assets/images/team/kimi_zhao.jpg";
 	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpg";
-	import charlesPaterson from "$lib/assets/images/team/charles_paterson.jpg";
 	import karanMaheshwari from "$lib/assets/images/team/karan_maheshwari.jpg";
 	import zeenLiu from "$lib/assets/images/team/zeen_liu.jpg";
 	import johnathanLee from "$lib/assets/images/team/johnathan_lee.jpg";
@@ -19,7 +18,6 @@
 	import edmondShen from "$lib/assets/images/team/edmond_shen.jpg";
 	import nikhilGupta from "$lib/assets/images/team/nikhil_gupta.jpg";
 	import rohanGupta from "$lib/assets/images/team/rohan_gupta.jpg";
-	import michaelXu from "$lib/assets/images/team/michael_xu.jpg";
 	import liyangYin from "$lib/assets/images/team/liyang_yin.jpg";
 	import justinChan from "$lib/assets/images/team/justin_chan.jpg";
 	import ruhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
@@ -38,6 +36,11 @@
 	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
 	import tracyDalgdish from "$lib/assets/images/team/tracy_dalgdish.jpg";
 	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
+	import anaLuisa from "$lib/assets/images/team/ana_luisa.jpg";
+	import joannaGao from "$lib/assets/images/team/joanna_gao.jpg";
+	import rogerZhu from "$lib/assets/images/team/roger_zhu.jpg";
+	import alexNitsou from "$lib/assets/images/team/alex_nitsou.jpg";
+
 
 	interface TeamMember {
 		name: string;
@@ -158,23 +161,23 @@
 
 		{
 			name: "Alex Nitsou",
-			position: "Keynote Executive",
-			image: wacWSmall
+			position: "Plenary Executive",
+			image: alexNitsou
 		},
 		{
 			name: "Bob Liu",
-			position: "Keynote Executive",
+			position: "Plenary Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Kimi Zhao",
-			position: "Keynote Executive",
+			position: "Plenary Executive",
 			image: kimiZhao
 		},
 		{
 			name: "Ana Luisa Brito Pound",
 			position: "Plenary Executive",
-			image: wacWSmall
+			image: anaLuisa
 		},
 		{
 			name: "Jenelle Zhang",
@@ -188,11 +191,6 @@
 			name: "Justin Chan",
 			position: "Marketing Executive",
 			image: justinChan
-		},
-		{
-			name: "Charles Paterson",
-			position: "Marketing Executive",
-			image: charlesPaterson
 		},
 		{
 			name: "Aria Miletin",
@@ -216,14 +214,6 @@
 		/////////////////////////////////
 
 		{
-			name: "Michael Xu",
-			position: "Program Executive",
-			image: michaelXu
-		},
-
-		////////////////////////////////
-
-		{
 			name: "Ryan Sun",
 			position: "Design Executive",
 			image: ryanSun
@@ -236,12 +226,12 @@
 		{
 			name: "Roger Zhu",
 			position: "Design Executive",
-			image: wacWSmall
+			image: rogerZhu
 		},
 		{
 			name: "Joanna Gao",
 			position: "Design Executive",
-			image: wacWSmall
+			image: joannaGao
 		},
 		{
 			name: "Mia Berco",
