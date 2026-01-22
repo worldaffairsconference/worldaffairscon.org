@@ -11,7 +11,6 @@
 	import aariKhasgiwale from "$lib/assets/images/team/aari_khasgiwale.jpg";
 	import kimiZhao from "$lib/assets/images/team/kimi_zhao.jpg";
 	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpg";
-	import charlesPaterson from "$lib/assets/images/team/charles_paterson.jpg";
 	import karanMaheshwari from "$lib/assets/images/team/karan_maheshwari.jpg";
 	import zeenLiu from "$lib/assets/images/team/zeen_liu.jpg";
 	import johnathanLee from "$lib/assets/images/team/johnathan_lee.jpg";
@@ -19,7 +18,6 @@
 	import edmondShen from "$lib/assets/images/team/edmond_shen.jpg";
 	import nikhilGupta from "$lib/assets/images/team/nikhil_gupta.jpg";
 	import rohanGupta from "$lib/assets/images/team/rohan_gupta.jpg";
-	import michaelXu from "$lib/assets/images/team/michael_xu.jpg";
 	import liyangYin from "$lib/assets/images/team/liyang_yin.jpg";
 	import justinChan from "$lib/assets/images/team/justin_chan.jpg";
 	import ruhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
@@ -195,11 +193,6 @@
 			image: justinChan
 		},
 		{
-			name: "Charles Paterson",
-			position: "Marketing Executive",
-			image: charlesPaterson
-		},
-		{
 			name: "Aria Miletin",
 			position: "Marketing Executive",
 			image: ariaMiletin
@@ -219,14 +212,6 @@
 		},
 
 		/////////////////////////////////
-
-		{
-			name: "Michael Xu",
-			position: "Program Executive",
-			image: michaelXu
-		},
-
-		////////////////////////////////
 
 		{
 			name: "Ryan Sun",
