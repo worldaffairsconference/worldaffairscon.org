@@ -48,6 +48,7 @@ export const speakers2026: Speaker2026[] = [
 		title: "Former CFO of YouTube, President Emeritus of Cohere",
 		image: MartinKon,
 		bio: "Martin Kon is President Emeritus & Strategic Advisor at Cohere and a member of the company’s Board of Directors. Cohere is the leading independent, data-security-focused enterprise AI company, with offices in Toronto, Montreal, San Francisco, New York, London, Paris, and Seoul.",
+		tag: "Keynote Speaker",
 		slug: slugify("Martin Kon")
 	},
 	{
