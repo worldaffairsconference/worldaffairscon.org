@@ -5,7 +5,7 @@ import MarkCohon from "$lib/assets/images/speakers2026/mark_cohon.jpg";
 import NeilHetherington from "$lib/assets/images/speakers2026/neil_hetherington.jpg";
 import TzeporahBerman from "$lib/assets/images/speakers2026/tzeporah_berman.jpg";
 import MarciShore from "$lib/assets/images/speakers2026/marci_shore.jpg";
-import MyckKabongo from "$lib/assets/images/speakers2026/myck_kabongo.png";
+import MyckKabongo from "$lib/assets/images/speakers2026/myck_kabongo.jpg";
 import MalcolmMcAdie from "$lib/assets/images/speakers2026/malcolm_mcadie.png";
 import PaulGoddard from "$lib/assets/images/speakers2026/paul_goddard.jpg";
 import ArwaDamon from "$lib/assets/images/speakers2026/arwa_damon.jpg";
@@ -42,7 +42,7 @@ export const speakers2026: Speaker2026[] = [
 		image: MartinKon,
 		bio: "Martin Kon is President Emeritus & Strategic Advisor at Cohere and a member of the company’s Board of Directors. Cohere is the leading independent, data-security-focused enterprise AI company, with offices in Toronto, Montreal, San Francisco, New York, London, Paris, and Seoul.",
 		tag: "Keynote Speaker",
-        slug: slugify("Martin Kon")
+		slug: slugify("Martin Kon")
 	},
 	{
 		name: "Arwa Damon",
