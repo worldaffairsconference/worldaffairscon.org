@@ -5,7 +5,7 @@ import MarkCohon from "$lib/assets/images/speakers2026/mark_cohon.jpg";
 import NeilHetherington from "$lib/assets/images/speakers2026/neil_hetherington.jpg";
 import TzeporahBerman from "$lib/assets/images/speakers2026/tzeporah_berman.jpg";
 import MarciShore from "$lib/assets/images/speakers2026/marci_shore.jpg";
-import MyckKabongo from "$lib/assets/images/speakers2026/myck_kabongo.png";
+import MyckKabongo from "$lib/assets/images/speakers2026/myck_kabongo.jpg";
 import MalcolmMcAdie from "$lib/assets/images/speakers2026/malcolm_mcadie.png";
 import PaulGoddard from "$lib/assets/images/speakers2026/paul_goddard.jpg";
 import ArwaDamon from "$lib/assets/images/speakers2026/arwa_damon.jpg";
