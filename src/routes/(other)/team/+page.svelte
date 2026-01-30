@@ -32,14 +32,15 @@
 	import miaBerco from "$lib/assets/images/team/mia_berco.jpg";
 	import serenaLiu from "$lib/assets/images/team/serena_liu.jpg";
 	import hazelTang from "$lib/assets/images/team/hazel_tang.jpg";
-	import joannaGao from "$lib/assets/images/team/joanna_gao.jpg";
-	import anaLuisa from "$lib/assets/images/team/ana_luisa.jpg";
-	import rogerZhu from "$lib/assets/images/team/roger_zhu.jpg";
-	import alexNitsou from "$lib/assets/images/team/alex_nitsou.jpg";
 	import suzanneMonir from "$lib/assets/images/team/suzanne_monir.jpg";
 	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
 	import tracyDalgdish from "$lib/assets/images/team/tracy_dalgdish.jpg";
 	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
+	import anaLuisa from "$lib/assets/images/team/ana_luisa.jpg";
+	import joannaGao from "$lib/assets/images/team/joanna_gao.jpg";
+	import rogerZhu from "$lib/assets/images/team/roger_zhu.jpg";
+	import alexNitsou from "$lib/assets/images/team/alex_nitsou.jpg";
+
 
 	interface TeamMember {
 		name: string;
@@ -160,17 +161,17 @@
 
 		{
 			name: "Alex Nitsou",
-			position: "Keynote Executive",
+			position: "Plenary Executive",
 			image: alexNitsou
 		},
 		{
 			name: "Bob Liu",
-			position: "Keynote Executive",
+			position: "Plenary Executive",
 			image: wacWSmall
 		},
 		{
 			name: "Kimi Zhao",
-			position: "Keynote Executive",
+			position: "Plenary Executive",
 			image: kimiZhao
 		},
 		{
@@ -210,7 +211,7 @@
 			image: rohanGupta
 		},
 
-		////////////////////////////////
+		/////////////////////////////////
 
 		{
 			name: "Ryan Sun",
