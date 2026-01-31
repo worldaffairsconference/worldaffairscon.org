@@ -10,6 +10,7 @@ import MalcolmMcAdie from "$lib/assets/images/speakers2026/malcolm_mcadie.png";
 import PaulGoddard from "$lib/assets/images/speakers2026/paul_goddard.jpg";
 import ArwaDamon from "$lib/assets/images/speakers2026/arwa_damon.jpg";
 import ChrisHadfield from "$lib/assets/images/speakers2026/chris_hadfield.jpg";
+import JosephLace from "$lib/assets/images/speakers2026/joseph_lace.jpg";
 
 export type Speaker2026 = {
 	name: string;
@@ -96,8 +97,8 @@ export const speakers2026: Speaker2026[] = [
 	},
 	{
 		name: "Joseph Lace",
-		title: "Managing Director of JP Morgan",
-		image: wacWLarge,
+		title: "Managing Director at JP Morgan",
+		image: JosephLace,
 		bio: "Joseph Lace is a Managing Director at J.P. Morgan based in Toronto, Ontario, where he specializes in investment banking and capital markets. He has extensive experience advising corporate clients on strategic financings, mergers and acquisitions, and market transactions. Lace is known for his leadership in developing financial solutions and driving key client relationships in the Canadian and global markets.",
 		slug: slugify("Joseph Lace")
 	},
