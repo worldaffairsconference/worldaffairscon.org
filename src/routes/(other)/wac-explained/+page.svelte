@@ -32,7 +32,11 @@
 			},
 			{
 				question: "Who can attend WAC?",
-				answer: "Any high school student can attend WAC. Please note that WAC is environmentally friendly, so attendees need to bring their personal reusable water bottle. If you are interested in attending the conference, please contact a school teacher and ask them to reach out to wac@ucc.on.ca."
+				answer: "Any high school student can attend WAC. If you are interested in attending the conference, please contact a school teacher and ask them to reach out to wac@ucc.on.ca."
+			},
+			{
+				question: "How is WAC eco-friendly?",
+				answer: "We’re working to reduce single-use waste at WAC. Please bring a reusable water bottle—refill stations will be available throughout the venue. You’ll also see eco-focused messaging and signage with tips on keeping the conference low-waste."
 			},
 			{
 				question: "What happens if I can’t come to WAC anymore?",
@@ -47,6 +51,18 @@
 			{
 				question: "When is registration due?",
 				answer: "The registration deadline is February 20th, 2026. Please be reminded that attendee spots are first come, first serve and fill up quickly!"
+			},
+			{
+				question: "What’s the lunch menu and do you accommodate dietary needs?",
+				answer: "The menu is beef and vegetarian lasagna, caesar salad, cookies, and water. All options are halal. Alternative options will include gluten-free, dairy-free pasta with tomato sauce."
+			},
+			{
+				question: "Is there a limit to how many students a teacher can bring?",
+				answer: "We would like to ensure proper supervision for students at all times. The recommendation is 15–20 students per teacher/adult chaperone. Let us know if this is a concern; there is some flexibility."
+			},
+			{
+				question: "How will we know if the conference is full?",
+				answer: "We will send out an email to indicate that registration is closed and that plenary choices are in the process of being finalized."
 			},
 			{
 				question: "How can I register my school?",
@@ -84,6 +100,16 @@
 			{
 				question: "When do Plenary sessions start?",
 				answer: "The conference schedule, which will be shared at a later time, will outline the times for plenary sessions, lunch, and networking."
+			}
+		],
+		"Conference Day": [
+			{
+				question: "What is the schedule for the day?",
+				answer: "8:30–9:00 am – registration<br>9:10–10:25 am – opening keynote session (all students/teachers attend)<br>10:25–11:15 am – plenary session 1 (students will be able to choose)<br>11:15–11:45 am – break, networking sessions<br>11:45 am–12:35 pm – plenary session 2 (students will be able to choose)<br>12:35–1:35 pm – lunch in the Lett gym (all students and teachers)<br>1:35–2:25 pm – plenary session 3 (students will be able to choose)<br>2:30–3:40 pm – closing keynote (all students/teachers attend)"
+			},
+			{
+				question: "Are there several workshops to choose from? If so, when will we get a list of the workshops and how do we choose the one we want to attend?",
+				answer: "Topics and themes will be announced very soon as we make a few final adjustments. You will be able to choose on the registration website. Each plenary session will include 3–4 sessions to pick from. More to follow."
 			}
 		]
 	};
