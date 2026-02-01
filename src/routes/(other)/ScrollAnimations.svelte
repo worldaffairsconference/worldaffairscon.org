@@ -238,6 +238,7 @@
 				alpha: true
 			});
 
+			renderer.setClearColor(0x000000, 0);
 			renderer.setPixelRatio(
 				window.devicePixelRatio ? window.devicePixelRatio : 1
 			);
@@ -513,7 +514,7 @@
 			</div>
 			<canvas
 				bind:this={canvasElement}
-				class="fixed inset-0 w-full h-full -z-10 pointer-events-none"
+				class="fixed inset-0 w-full h-full z-10 pointer-events-none"
 			/>
 		</div>
 	</section>
@@ -524,12 +525,17 @@
 		<div class="h-px w-40 sm:w-64 bg-gradient-to-r from-transparent via-white/45 to-transparent"></div>
 	</div>
 
-	<div id="videoSection" class="h-screen">
-		{#if videoSection}
-			{#await videoSection then { default: Video }}
-				<Video />
-			{/await}
-		{/if}
+	<div id="videoSection" class="relative h-screen">
+		<div
+			class="absolute inset-0 z-0 bg-[linear-gradient(135deg,#171414,#202434,#171b2b,#150d16)]"
+		></div>
+		<div class="relative z-20 h-full">
+			{#if videoSection}
+				{#await videoSection then { default: Video }}
+					<Video />
+				{/await}
+			{/if}
+		</div>
 	</div> 
 </div>
 
