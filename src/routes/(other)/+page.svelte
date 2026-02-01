@@ -110,6 +110,43 @@
 
 <ScrollAnimations />
 
+<section
+	class="w-full px-6 pb-20 pt-16 sm:pt-20 flex justify-center"
+	id="eco"
+>
+	<div class="w-full max-w-5xl rounded-3xl border border-white/10 bg-white/5 px-6 py-10 sm:px-10 sm:py-12 text-white backdrop-blur">
+		<div class="text-center">
+			<p class="text-sm uppercase tracking-[0.35em] text-zinc-300">
+				Sustainability
+			</p>
+			<h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
+				Help Us Keep WAC Eco-Friendly
+			</h2>
+			<p class="mt-4 text-base sm:text-lg text-zinc-300">
+				Please bring a reusable water bottle to reduce single-use waste.
+				Refill stations will be available throughout the venue.
+			</p>
+		</div>
+
+		<div class="mt-8 grid gap-4 sm:grid-cols-2">
+			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+				<h3 class="text-lg font-semibold">Reusable Bottles</h3>
+				<p class="mt-2 text-sm text-zinc-300">
+					We encourage all attendees to bring their own bottle and help us
+					keep the conference low-waste.
+				</p>
+			</div>
+			<div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+				<h3 class="text-lg font-semibold">Eco Messaging</h3>
+				<p class="mt-2 text-sm text-zinc-300">
+					Look for signage and announcements throughout the event with tips
+					on reducing waste and staying sustainable.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
 <!-- <AnnouncementBanner /> -->
 
 <!--

@@ -238,6 +238,7 @@
 				alpha: true
 			});
 
+			renderer.setClearColor(0x000000, 0);
 			renderer.setPixelRatio(
 				window.devicePixelRatio ? window.devicePixelRatio : 1
 			);
