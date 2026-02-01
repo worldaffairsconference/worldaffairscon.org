@@ -51,6 +51,7 @@
 		{ name: "WAC Explained", path: "/wac-explained" },
 		{ name: "Past Years", path: "/past-years" },
 		{ name: "Team", path: "/team" },
+		{ name: "Merch", path: "/merch" },
 		{ name: "Contact Us", path: "/contact-us" }
 	] satisfies Route[];
 </script>
