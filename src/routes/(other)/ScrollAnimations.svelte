@@ -238,6 +238,7 @@
 				alpha: true
 			});
 
+			renderer.setClearColor(0x000000, 0);
 			renderer.setPixelRatio(
 				window.devicePixelRatio ? window.devicePixelRatio : 1
 			);
@@ -422,15 +423,16 @@
 						<div
 							class="absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-[200vw] md:w-[160vw] lg:w-[130vw] select-none"
 						>
-							<SwiperContainer
-								modules={[Mousewheel]}
-								spaceBetween={18}
-								slidesPerView={3}
-								freeMode={true}
-								mousewheel={{
-									releaseOnEdges: true,
-									forceToAxis: true,
-									thresholdDelta: 10
+								<SwiperContainer
+									modules={[Mousewheel]}
+									spaceBetween={18}
+									slidesPerView={3}
+									freeMode={true}
+									initialSlide={3}
+									mousewheel={{
+										releaseOnEdges: true,
+										forceToAxis: true,
+										thresholdDelta: 10
 								}}
 								class="w-full h-full"
 								loop={true}

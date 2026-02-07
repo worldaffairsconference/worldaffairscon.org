@@ -47,11 +47,12 @@
 		// { name: "Schedule", path: "/schedule" },
 		// { name: "Past Speakers", path: "/past-speakers" },
 		{ name: "2026 Speakers", path: "/2026-speakers" },
+		{ name: "Registration", path: "https://secure.e-registernow.com/cgi-bin/mkpayment.cgi?state=3999", external: true},
 		{ name: "WAC Explained", path: "/wac-explained" },
 		{ name: "Past Years", path: "/past-years" },
 		{ name: "Team", path: "/team" },
-		{ name: "Contact Us", path: "/contact-us" },
-		{ name: "Registration", path: "https://secure.e-registernow.com/cgi-bin/mkpayment.cgi?state=3999", external: true}
+		{ name: "Merch", path: "/merch" },
+		{ name: "Contact Us", path: "/contact-us" }
 	] satisfies Route[];
 </script>
 

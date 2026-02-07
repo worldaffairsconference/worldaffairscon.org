@@ -5,8 +5,8 @@
 	import { browser } from "$app/environment";
 	import { tick } from "svelte";
 
-	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.png";
-	import trailerVideo from "$lib/assets/video/WAC_2025_Recap_Every_Second_Counts_1080.mp4";
+	import trailerThumbnail from "$lib/assets/images/thumbnails/2026_trailer.png";
+	import trailerVideo from "$lib/assets/video/WAC_2026_Main_Video.mp4";
 
 	let showVideoPreview = true;
 	let recapVideoElement: HTMLVideoElement | null = null;
@@ -104,14 +104,14 @@
 </script>
 
 <section
-	class="h-screen w-screen relative flex flex-col mt-12 md:mt-20"
+	class="h-screen w-screen relative flex flex-col mt-12 md:mt-20 bg-transparent"
 	id="videoSection"
 >
 	<h2
 		class="w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 		id="videoTitle"
 	>
-		WAC 2025 Recap
+		WAC 2026 Trailer
 	</h2>
 	{#if !showVideoPreview}
 		<button

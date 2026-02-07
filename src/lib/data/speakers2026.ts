@@ -5,11 +5,12 @@ import MarkCohon from "$lib/assets/images/speakers2026/mark_cohon.jpg";
 import NeilHetherington from "$lib/assets/images/speakers2026/neil_hetherington.jpg";
 import TzeporahBerman from "$lib/assets/images/speakers2026/tzeporah_berman.jpg";
 import MarciShore from "$lib/assets/images/speakers2026/marci_shore.jpg";
-import MyckKabongo from "$lib/assets/images/speakers2026/myck_kabongo.png";
+import MyckKabongo from "$lib/assets/images/speakers2026/myck_kabongo.jpg";
 import MalcolmMcAdie from "$lib/assets/images/speakers2026/malcolm_mcadie.png";
 import PaulGoddard from "$lib/assets/images/speakers2026/paul_goddard.jpg";
 import ArwaDamon from "$lib/assets/images/speakers2026/arwa_damon.jpg";
 import ChrisHadfield from "$lib/assets/images/speakers2026/chris_hadfield.jpg";
+import JosephLace from "$lib/assets/images/speakers2026/joseph_lace.jpg";
 
 export type Speaker2026 = {
 	name: string;
@@ -27,22 +28,6 @@ const slugify = (value: string) =>
 		.replace(/(^-|-$)/g, "");
 
 export const speakers2026: Speaker2026[] = [
-	{
-		name: "Chris Hadfield",
-		title:
-			"Astronaut and Former Commander of the International Space Station",
-		image: ChrisHadfield,
-		bio: "Chris Hadfield is a Canadian astronaut, engineer, and former Commander of the International Space Station, becoming the first Canadian to lead the ISS. A retired Royal Canadian Air Force pilot, he flew on three space missions and is known for making space science accessible to the public. Hadfield is also a bestselling author and speaker, sharing insights on leadership, risk, and exploration.",
-		tag: "Keynote Speaker",
-		slug: slugify("Chris Hadfield")
-	},
-	{
-		name: "Martin Kon",
-		title: "Former CFO of YouTube, President Emeritus of Cohere",
-		image: MartinKon,
-		bio: "Martin Kon is President Emeritus & Strategic Advisor at Cohere and a member of the company’s Board of Directors. Cohere is the leading independent, data-security-focused enterprise AI company, with offices in Toronto, Montreal, San Francisco, New York, London, Paris, and Seoul.",
-		slug: slugify("Martin Kon")
-	},
 	{
 		name: "Arwa Damon",
 		title:
@@ -80,6 +65,23 @@ export const speakers2026: Speaker2026[] = [
 		slug: slugify("Neil Hetherington")
 	},
 	{
+		name: "Chris Hadfield",
+		title:
+			"Astronaut and Former Commander of the International Space Station",
+		image: ChrisHadfield,
+		bio: "Chris Hadfield is a Canadian astronaut, engineer, and former Commander of the International Space Station, becoming the first Canadian to lead the ISS. A retired Royal Canadian Air Force pilot, he flew on three space missions and is known for making space science accessible to the public. Hadfield is also a bestselling author and speaker, sharing insights on leadership, risk, and exploration.",
+		tag: "Keynote Speaker",
+		slug: slugify("Chris Hadfield")
+	},
+	{
+		name: "Martin Kon",
+		title: "Former CFO of YouTube, President Emeritus of Cohere",
+		image: MartinKon,
+		bio: "Martin Kon is President Emeritus & Strategic Advisor at Cohere and a member of the company’s Board of Directors. Cohere is the leading independent, data-security-focused enterprise AI company, with offices in Toronto, Montreal, San Francisco, New York, London, Paris, and Seoul.",
+		tag: "Keynote Speaker",
+		slug: slugify("Martin Kon")
+	},
+	{
 		name: "Tzeporah Berman",
 		title: "Founder of Fossil Fuel Non-Proliferation Treaty Initiative",
 		image: TzeporahBerman,
@@ -95,12 +97,12 @@ export const speakers2026: Speaker2026[] = [
 	},
 	{
 		name: "Joseph Lace",
-		title: "Managing Director of JP Morgan",
-		image: wacWLarge,
+		title: "Managing Director at JP Morgan",
+		image: JosephLace,
 		bio: "Joseph Lace is a Managing Director at J.P. Morgan based in Toronto, Ontario, where he specializes in investment banking and capital markets. He has extensive experience advising corporate clients on strategic financings, mergers and acquisitions, and market transactions. Lace is known for his leadership in developing financial solutions and driving key client relationships in the Canadian and global markets.",
 		slug: slugify("Joseph Lace")
 	},
-    {
+	{
 		name: "Paul Goddard",
 		title: "CEO and President of Pizza Pizza",
 		image: PaulGoddard,
