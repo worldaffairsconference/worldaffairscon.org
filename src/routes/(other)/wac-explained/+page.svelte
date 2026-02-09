@@ -1,6 +1,7 @@
 <script lang="ts">
 	import LargeAccordion from "$lib/components/LargeAccordion.svelte";
 	import DOMPurify from "dompurify";
+	import WACMap from "$lib/assets/images/map.png";
 
 	// Static FAQ data
 	interface FAQRecord {
@@ -20,7 +21,7 @@
 			},
 			{
 				question: "Where is WAC?",
-				answer: "WAC is held at Upper Canada College (200 Lonsdale Road) in Toronto, Canada."
+				answer: "WAC is held at Upper Canada College (200 Lonsdale Road) in Toronto, Canada. The main entrance is at the Clock Tower, and there are parking spaces in the Arena parking lot."
 			},
 			{
 				question: "Who makes WAC happen?",
@@ -36,7 +37,7 @@
 			},
 			{
 				question: "How is WAC eco-friendly?",
-				answer: "We’re working to reduce single-use waste at WAC. Please bring a reusable water bottle—refill stations will be available throughout the venue. You’ll also see eco-focused messaging and signage with tips on keeping the conference low-waste."
+				answer: "We’re working to reduce single-use waste at WAC. Please bring a reusable water bottle; refill stations will be available throughout the venue. You’ll also see eco-focused messaging and signage with tips on keeping the conference low-waste."
 			},
 			{
 				question: "What happens if I can’t come to WAC anymore?",
@@ -163,6 +164,13 @@
 										<div class="text-zinc-300 markdown">
 											{@html sanitizeHtml(record.answer)}
 										</div>
+                                        {#if record.question === "Where is WAC?"}
+											<img
+												src={WACMap}
+												alt="WAC Map"
+												class="mt-4 w-full rounded-lg"
+											/>
+										{/if}
 									</LargeAccordion>
 								{/if}
 							{/each}

@@ -3,43 +3,43 @@
 
 	// Team Members
 	import wacWSmall from "$lib/assets/images/team/wac_w_small.jpg";
+	import liyangYin from "$lib/assets/images/team/liyang_yin.jpg";
+	import karanMaheshwari from "$lib/assets/images/team/karan_maheshwari.jpg";
+	import alyssaDhanji from "$lib/assets/images/team/alyssa_dhanji.jpg";
+	import ruhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
+	import zeenLiu from "$lib/assets/images/team/zeen_liu.jpg";
+	import jennyLiu from "$lib/assets/images/team/jenny_liu.jpg";
+	import christopherChung from "$lib/assets/images/team/christopher_chung.jpg";
+	import hazelTang from "$lib/assets/images/team/hazel_tang.jpg";
+	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
+	import lincolnDugasNishisato from "$lib/assets/images/team/lincoln_dugasnishisato.jpg";
+	import aariKhasgiwale from "$lib/assets/images/team/aari_khasgiwale.jpg";
+	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpg";
+	import titoluwaMaxwell from "$lib/assets/images/team/titoluwa_maxwell.jpg";
+	import johnKarakoulas from "$lib/assets/images/team/john_karakoulas.jpg";
+	import serenaLiu from "$lib/assets/images/team/serena_liu.jpg";
+	import edmondShen from "$lib/assets/images/team/edmond_shen.jpg";
+	import peytonLee from "$lib/assets/images/team/peyton_lee.jpg";
 	import princeZhang from "$lib/assets/images/team/prince_zhang.jpg";
+	import johnathanLee from "$lib/assets/images/team/johnathan_lee.jpg";
+	import haoyueChu from "$lib/assets/images/team/haoyue_chu.jpg";
+	import alexNitsou from "$lib/assets/images/team/alex_nitsou.jpg";
+	import kimiZhao from "$lib/assets/images/team/kimi_zhao.jpg";
 	import mathisLeveson from "$lib/assets/images/team/mathis_leveson.jpg";
 	import ryanSun from "$lib/assets/images/team/ryan_sun.jpg";
-	import lincolnDugasNishisato from "$lib/assets/images/team/lincoln_dugasnishisato.jpg";
-	import johnKarakoulas from "$lib/assets/images/team/john_karakoulas.jpg";
-	import aariKhasgiwale from "$lib/assets/images/team/aari_khasgiwale.jpg";
-	import kimiZhao from "$lib/assets/images/team/kimi_zhao.jpg";
-	import raykaFarahmand from "$lib/assets/images/team/rayka_farahmand.jpg";
-	import karanMaheshwari from "$lib/assets/images/team/karan_maheshwari.jpg";
-	import zeenLiu from "$lib/assets/images/team/zeen_liu.jpg";
-	import johnathanLee from "$lib/assets/images/team/johnathan_lee.jpg";
-	import christopherChung from "$lib/assets/images/team/christopher_chung.jpg";
-	import edmondShen from "$lib/assets/images/team/edmond_shen.jpg";
 	import nikhilGupta from "$lib/assets/images/team/nikhil_gupta.jpg";
 	import rohanGupta from "$lib/assets/images/team/rohan_gupta.jpg";
-	import liyangYin from "$lib/assets/images/team/liyang_yin.jpg";
 	import justinChan from "$lib/assets/images/team/justin_chan.jpg";
-	import ruhaniMainra from "$lib/assets/images/team/ruhani_mainra.jpg";
-	import alyssaDhanji from "$lib/assets/images/team/alyssa_dhanji.jpg";
-	import anyaDua from "$lib/assets/images/team/anya_dua.jpg";
 	import jenelleZhang from "$lib/assets/images/team/jenelle_zhang.jpg";
-	import titoluwaMaxwell from "$lib/assets/images/team/titoluwa_maxwell.jpg";
 	import ariaMiletin from "$lib/assets/images/team/aria_miletin.jpg";
-	import jennyLiu from "$lib/assets/images/team/jenny_liu.jpg";
-	import haoyueChu from "$lib/assets/images/team/haoyue_chu.jpg";
-	import peytonLee from "$lib/assets/images/team/peyton_lee.jpg";
 	import miaBerco from "$lib/assets/images/team/mia_berco.jpg";
-	import serenaLiu from "$lib/assets/images/team/serena_liu.jpg";
-	import hazelTang from "$lib/assets/images/team/hazel_tang.jpg";
+	import anaLuisa from "$lib/assets/images/team/ana_luisa.jpg";
+	import joannaGao from "$lib/assets/images/team/joanna_gao.jpg";
+	import rogerZhu from "$lib/assets/images/team/roger_zhu.jpg";
 	import suzanneMonir from "$lib/assets/images/team/suzanne_monir.jpg";
 	import alvinJugoon from "$lib/assets/images/team/alvin_jugoon.jpg";
 	import tracyDalgdish from "$lib/assets/images/team/tracy_dalgdish.jpg";
 	import jarrodBaker from "$lib/assets/images/team/jarrod_baker.jpg";
-	import anaLuisa from "$lib/assets/images/team/ana_luisa.jpg";
-	import joannaGao from "$lib/assets/images/team/joanna_gao.jpg";
-	import rogerZhu from "$lib/assets/images/team/roger_zhu.jpg";
-	import alexNitsou from "$lib/assets/images/team/alex_nitsou.jpg";
 
 
 	interface TeamMember {

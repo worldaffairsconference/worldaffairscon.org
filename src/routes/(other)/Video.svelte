@@ -5,7 +5,7 @@
 	import { browser } from "$app/environment";
 	import { tick } from "svelte";
 
-	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.png";
+	import trailerThumbnail from "$lib/assets/images/thumbnails/2026_trailer.png";
 	import trailerVideo from "$lib/assets/video/WAC_2026_Main_Video.mp4";
 
 	let showVideoPreview = true;
