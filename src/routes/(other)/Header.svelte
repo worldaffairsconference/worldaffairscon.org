@@ -48,10 +48,10 @@
 		// { name: "Past Speakers", path: "/past-speakers" },
 		{ name: "2026 Speakers", path: "/2026-speakers" },
 		{ name: "Registration", path: "https://secure.e-registernow.com/cgi-bin/mkpayment.cgi?state=3999", external: true},
-		{ name: "WAC Explained", path: "/wac-explained" },
+		{ name: "FAQ", path: "/faq" },
 		{ name: "Past Years", path: "/past-years" },
 		{ name: "Team", path: "/team" },
-		{ name: "Merch", path: "/merch" },
+		{ name: "News", path: "/news" },
 		{ name: "Contact Us", path: "/contact-us" }
 	] satisfies Route[];
 </script>
