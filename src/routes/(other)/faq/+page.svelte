@@ -130,7 +130,7 @@
 			<h1
 				class="font-bold text-white text-4xl md:text-5xl tracking-tight"
 			>
-				WAC Explained
+				FAQ
 			</h1>
 		</div>
 
