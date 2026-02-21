@@ -1,4 +1,4 @@
-import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg";
+import IsaacLax from "$lib/assets/images/speakers2026/isaac_lax.jpg";
 import MartinKon from "$lib/assets/images/speakers2026/martin_kon.jpg";
 import JackArmstrong from "$lib/assets/images/speakers2026/jack_armstrong.jpg";
 import MarkCohon from "$lib/assets/images/speakers2026/mark_cohon.jpg";
@@ -11,6 +11,7 @@ import PaulGoddard from "$lib/assets/images/speakers2026/paul_goddard.jpg";
 import ArwaDamon from "$lib/assets/images/speakers2026/arwa_damon.jpg";
 import ChrisHadfield from "$lib/assets/images/speakers2026/chris_hadfield.jpg";
 import JosephLace from "$lib/assets/images/speakers2026/joseph_lace.jpg";
+import AbbyHoffman from "$lib/assets/images/speakers2026/abby_hoffman.jpg";
 
 export type Speaker2026 = {
 	name: string;
@@ -117,9 +118,16 @@ export const speakers2026: Speaker2026[] = [
 		slug: slugify("Jack Armstrong")
 	},
 	{
+		name: "Abby Hoffman",
+		title: "Former Olympian and Board Member of World Athletics",
+		image: AbbyHoffman,
+		bio: "Abby Hoffman has been a prominent figure in Canadian and international sport for over 50 years. She has championed equality and access for girls and women, strengthened support for Canadian athletes, and led efforts against doping and corruption. She competed in four Olympic Games, made two finals, and was Canada’s flag bearer at the 1976 Montreal Olympics. She is an Officer of the Order of Canada and continues to serve sport through leadership roles with World Athletics.",
+		slug: slugify("Abby Hoffman")
+	},
+	{
 		name: "Isaac Lax",
 		title: "Head of Roster Planning for the Toronto Raptors",
-		image: wacWLarge,
+		image: IsaacLax,
 		bio: "Isaac Lax is the Director of Roster Planning & Analysis for the Toronto Raptors, where he focuses on roster construction, salary-cap strategy, and CBA analysis. He has held multiple roles within the Raptors’ basketball operations department and works as part of the team’s front office in Toronto.",
 		slug: slugify("Isaac Lax")
 	}
