@@ -11,6 +11,7 @@ import PaulGoddard from "$lib/assets/images/speakers2026/paul_goddard.jpg";
 import ArwaDamon from "$lib/assets/images/speakers2026/arwa_damon.jpg";
 import ChrisHadfield from "$lib/assets/images/speakers2026/chris_hadfield.jpg";
 import JosephLace from "$lib/assets/images/speakers2026/joseph_lace.jpg";
+import AbbyHoffman from "$lib/assets/images/speakers2026/abby_hoffman.jpg";
 
 export type Speaker2026 = {
 	name: string;
@@ -115,6 +116,13 @@ export const speakers2026: Speaker2026[] = [
 		image: JackArmstrong,
 		bio: "Jack Armstrong is a Canadian basketball commentator and former professional player, best known as the longtime radio analyst for the Toronto Raptors. After playing college basketball and professionally in Europe, he transitioned into broadcasting and has become one of the most recognizable voices in Raptors media. Armstrong is known for his energetic commentary, strong basketball insight, and connection with the Canadian basketball community.",
 		slug: slugify("Jack Armstrong")
+	},
+	{
+		name: "Abby Hoffman",
+		title: "Former Olympian and Board Member of World Athletics",
+		image: AbbyHoffman,
+		bio: "Abby Hoffman has been a prominent figure in Canadian and international sport for over 50 years. She has championed equality and access for girls and women, strengthened support for Canadian athletes, and led efforts against doping and corruption. She competed in four Olympic Games, made two finals, and was Canada’s flag bearer at the 1976 Montreal Olympics. She is an Officer of the Order of Canada and continues to serve sport through leadership roles with World Athletics.",
+		slug: slugify("Abby Hoffman")
 	},
 	{
 		name: "Isaac Lax",
