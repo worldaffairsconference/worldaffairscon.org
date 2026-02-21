@@ -1,4 +1,4 @@
-import wacWLarge from "$lib/assets/images/team/wac_w_large.jpg";
+import IsaacLax from "$lib/assets/images/speakers2026/isaac_lax.jpg";
 import MartinKon from "$lib/assets/images/speakers2026/martin_kon.jpg";
 import JackArmstrong from "$lib/assets/images/speakers2026/jack_armstrong.jpg";
 import MarkCohon from "$lib/assets/images/speakers2026/mark_cohon.jpg";
@@ -127,7 +127,7 @@ export const speakers2026: Speaker2026[] = [
 	{
 		name: "Isaac Lax",
 		title: "Head of Roster Planning for the Toronto Raptors",
-		image: wacWLarge,
+		image: IsaacLax,
 		bio: "Isaac Lax is the Director of Roster Planning & Analysis for the Toronto Raptors, where he focuses on roster construction, salary-cap strategy, and CBA analysis. He has held multiple roles within the Raptors’ basketball operations department and works as part of the team’s front office in Toronto.",
 		slug: slugify("Isaac Lax")
 	}
