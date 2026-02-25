@@ -62,17 +62,26 @@
 	class="flex items-center justify-between px-6 lg:px-16 h-[4.75rem] sm:h-[6.25rem] md:h-[7rem] w-full absolute top-0 left-0 z-50 bg-transparent"
 	id="header"
 >
-	<a
-		href="/"
-		class="hover:brightness-110 transition-all z-50"
-		on:click={closeNavBar}
-	>
-		<img
-			src={wacLogo}
-			alt="World Affairs Conference Logo"
-			class="h-9 sm:h-14"
-		/>
-	</a>
+	<div class="z-50 flex items-center gap-3 sm:gap-4">
+		<a
+			href="/"
+			class="hover:brightness-110 transition-all"
+			on:click={closeNavBar}
+		>
+			<img
+				src={wacLogo}
+				alt="World Affairs Conference Logo"
+				class="h-9 sm:h-14"
+			/>
+		</a>
+		<a
+			href="/donate"
+			class="inline-flex items-center rounded-full bg-gradient-to-r from-primary to-secondary px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm text-white font-medium hover:brightness-[1.08] transition-all"
+			on:click={closeNavBar}
+		>
+			Donate
+		</a>
+	</div>
 
 	<nav class="flex items-center gap-4 lg:gap-10">
 		<ul class="text-zinc-300 hidden lg:flex gap-16 items-center">

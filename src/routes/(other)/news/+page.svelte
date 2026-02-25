@@ -7,6 +7,25 @@
 			<div class="w-full max-w-5xl rounded-3xl border border-white/10 bg-white/5 px-6 py-10 sm:px-10 sm:py-12 text-white backdrop-blur">
 				<div class="text-center">
 					<p class="text-sm uppercase tracking-[0.35em] text-zinc-300">
+						Conference Day - Attendee Notice
+					</p>
+					<h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
+						Personal Belongings
+					</h2>
+					<p class="mt-4 text-base sm:text-lg text-zinc-300">
+						Please keep all personal belongings with you at all times. While
+						we will do our best to support lost-and-found efforts, WAC cannot
+						accept responsibility for lost, misplaced, or unattended items.
+					</p>
+				</div>
+			</div>
+
+			<br>
+			<br>
+
+			<div class="w-full max-w-5xl rounded-3xl border border-white/10 bg-white/5 px-6 py-10 sm:px-10 sm:py-12 text-white backdrop-blur">
+				<div class="text-center">
+					<p class="text-sm uppercase tracking-[0.35em] text-zinc-300">
 						Sustainability
 					</p>
 					<h2 class="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight">
@@ -68,6 +87,7 @@
 					</p>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </section>
