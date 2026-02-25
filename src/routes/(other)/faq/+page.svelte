@@ -42,6 +42,10 @@
 			{
 				question: "What happens if I can’t come to WAC anymore?",
 				answer: "No worries! If you have already registered, kindly email us at wac@ucc.on.ca. Alternatively, you can watch WAC's stream, which will be linked on this website."
+			},
+            {
+				question: "Should I bring my valuables to WAC?",
+				answer: "There are designated rooms to keep bags and coats. However, attendees are responsible for their personal belongings at all times. WAC is not liable for any lost, stolen, or damaged items."
 			}
 		],
 		"Registration": [
