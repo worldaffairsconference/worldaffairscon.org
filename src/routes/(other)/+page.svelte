@@ -79,7 +79,7 @@
 				text={`${timeUntilConference} days away`}
 				placement="right"
 			>
-				February 25th, 2026
+				March 4th, 2027
 			</Tooltip>
 		</div>
 	</div>
