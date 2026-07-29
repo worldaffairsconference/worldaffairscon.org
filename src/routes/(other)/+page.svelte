@@ -41,7 +41,7 @@
 		return Math.floor(adjustedDaysDifference);
 	};
 
-	const timeUntilConference = calculateDaysUntilDate(new Date(2026, 2, 26)); // Change when the date is confirmed
+	const timeUntilConference = calculateDaysUntilDate(new Date(2027, 3, 4)); // Change when the date is confirmed
 </script>
 
 <section
