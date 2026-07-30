@@ -21,9 +21,6 @@ jobs:
             - name: Install pnpm
               uses: pnpm/action-setup@v6
               id: pnpm-install
-              with:
-                  version: 8
-                  run_install: false
             - name: Get pnpm store directory
               id: pnpm-cache
               shell: bash
@@ -102,8 +99,6 @@ jobs:
                       ${{ runner.os }}-pnpm-store-
             - name: Install dependencies
               run: pnpm install
-              env:
-                  NPM_TOKEN: ${{ secrets.ENV }} 
             - name: Export environment variables to file
               run: echo "${{ secrets.ENV }}" > .env
             - name: Install playwright
