@@ -21,9 +21,6 @@ jobs:
             - name: Install pnpm
               uses: pnpm/action-setup@v6
               id: pnpm-install
-              with:
-                  version: 8
-                  run_install: false
             - name: Get pnpm store directory
               id: pnpm-cache
               shell: bash
@@ -46,7 +43,16 @@ jobs:
               uses: actions/github-script@v8
               with:
                   script: |
-                      const report = require("./reports/unit.json");
+                      const fs = require('fs');
+                      const path = require('path');
+                      const jsonPath = path.resolve(process.env.GITHUB_WORKSPACE, 'reports/unit.json');
+                      
+                      if (!fs.existsSync(jsonPath)) {
+                        core.setFailed("The test report file 'reports/unit.json' was never created. Check the 'Run unit tests' step logs above for the real failure!");
+                        return;
+                      }
+
+                      const report = require(jsonPath);
                       for (const file of report.testResults) {
                         for (const result of file.assertionResults) {
                           if (result.status === "passed") continue;
@@ -59,6 +65,7 @@ jobs:
                         }
                       }
               if: success() || failure()
+
             - name: Upload coverage reports to Codecov
               uses: codecov/codecov-action@v3
               if: success() || failure()
