@@ -35,6 +35,8 @@ jobs:
                       ${{ runner.os }}-pnpm-store-
             - name: Install dependencies
               run: pnpm install
+              env: 
+                  NPM_TOKEN: ${{ secrets.ENV }} 
             - name: Export environment variables to file
               run: echo "${{ secrets.ENV }}" > .env
             - name: Run unit tests
