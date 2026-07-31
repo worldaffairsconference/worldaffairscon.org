@@ -11,25 +11,22 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v7
               with:
                   submodules: "true"
             - name: Install Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v7
               with:
-                  node-version: 20.x
+                  node-version: 24.x
             - name: Install pnpm
-              uses: pnpm/action-setup@v2
+              uses: pnpm/action-setup@v6
               id: pnpm-install
-              with:
-                  version: 8
-                  run_install: false
             - name: Get pnpm store directory
               id: pnpm-cache
               shell: bash
               run: |
                   echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-            - uses: actions/cache@v3
+            - uses: actions/cache@v5
               name: Setup pnpm cache
               with:
                   path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
@@ -43,10 +40,19 @@ jobs:
             - name: Run unit tests
               run: pnpm run test:unit
             - name: Report test results
-              uses: actions/github-script@v6
+              uses: actions/github-script@v8
               with:
                   script: |
-                      const report = require("./reports/unit.json");
+                      const fs = require('fs');
+                      const path = require('path');
+                      const jsonPath = path.resolve(process.env.GITHUB_WORKSPACE, 'reports/unit.json');
+                      
+                      if (!fs.existsSync(jsonPath)) {
+                        core.setFailed("The test report file 'reports/unit.json' was never created. Check the 'Run unit tests' step logs above for the real failure!");
+                        return;
+                      }
+
+                      const report = require(jsonPath);
                       for (const file of report.testResults) {
                         for (const result of file.assertionResults) {
                           if (result.status === "passed") continue;
@@ -59,32 +65,30 @@ jobs:
                         }
                       }
               if: success() || failure()
+
             - name: Upload coverage reports to Codecov
-              uses: codecov/codecov-action@v3
+              uses: codecov/codecov-action@v7
               if: success() || failure()
     e2e-tests:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v7
               with:
                   submodules: "true"
             - name: Install Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v7
               with:
-                  node-version: 20.x
+                  node-version: 24.x
             - name: Install pnpm
-              uses: pnpm/action-setup@v2
+              uses: pnpm/action-setup@v6
               id: pnpm-install
-              with:
-                  version: 8
-                  run_install: false
             - name: Get pnpm store directory
               id: pnpm-cache
               shell: bash
               run: |
                   echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-            - uses: actions/cache@v3
+            - uses: actions/cache@v5
               name: Setup pnpm cache
               with:
                   path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
