@@ -5,8 +5,8 @@
 	import { browser } from "$app/environment";
 	import { tick } from "svelte";
 
-	import trailerThumbnail from "$lib/assets/images/thumbnails/2026_trailer.png";
-	import trailerVideo from "$lib/assets/video/WAC_2026_Main_Video.mp4";
+	import trailerThumbnail from "$lib/assets/images/thumbnails/trailer_thumbnail.png";
+	import trailerVideo from "$lib/assets/video/WAC_2026_Recap.mp4";
 
 	let showVideoPreview = true;
 	let recapVideoElement: HTMLVideoElement | null = null;
@@ -111,7 +111,7 @@
 		class="w-full text-center text-4xl sm:text-5xl text-white tracking-tighter font-semibold"
 		id="videoTitle"
 	>
-		WAC 2026 Trailer
+		WAC 2026 Recap
 	</h2>
 	{#if !showVideoPreview}
 		<button
@@ -124,7 +124,7 @@
 			class="transition-opacity duration-500 {!showVideoPreview &&
 				'opacity-0'} absolute inset-0 z-30 group"
 			on:click={onClickVideo}
-			aria-label="Play WAC 2024 Trailer"
+			aria-label="Play WAC 2026 Recap"
 			id="video"
 		>
 			<img

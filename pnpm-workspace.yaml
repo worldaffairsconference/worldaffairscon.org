@@ -1,0 +1,8 @@
+overrides:
+  'protobufjs@>=6.10.0 <7.2.4': '>=7.2.4'
+  'follow-redirects@<1.15.4': '>=1.15.4'
+  '@adobe/css-tools@<4.3.2': '>=4.3.2'
+  'axios@<1.6.0': '>=1.6.0'
+  'get-func-name@<2.0.1': '>=2.0.1'
+
+lockfileIncludeTarballUrl: true
