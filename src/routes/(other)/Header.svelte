@@ -46,7 +46,7 @@
 	$: routes = [
 		// { name: "Schedule", path: "/schedule" },
 		// { name: "Past Speakers", path: "/past-speakers" },
-		{ name: "2026 Speakers", path: "/2026-speakers" },
+		{ name: "2026 Speakers", path: "/speakers" },
 		{ name: "Registration", path: "https://secure.e-registernow.com/cgi-bin/mkpayment.cgi?state=3999", external: true},
 		{ name: "FAQ", path: "/faq" },
 		{ name: "Past Years", path: "/past-years" },
