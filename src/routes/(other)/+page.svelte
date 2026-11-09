@@ -51,19 +51,18 @@
 		<h2
 			class="text-[1.4rem] sm:text-[1.6rem] lg:text-[1.9rem] uppercase mb-2.5 lg:mb-3.5 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary px-3"
 		>
-			<span>Theme:</span>
-			<span class="italic">TBD</span>
+			<span>Chase the Change</span>
 		</h2>
 		<h1
-			class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-5 lg:mb-6 tracking-[-0.03em]"
+			class="text-[3rem] leading-none sm:text-6xl lg:text-[5.5rem] text-white font-bold mb-0 lg:mb-1 tracking-[-0.03em]"
 		>
 			World Affairs Conference
 		</h1>
 		<p
 			class="text-zinc-400 text-md lg:text-[1.3rem] mb-3.5 md:px-32 lg:px-48"
 		>
-			North America's largest and Canada's oldest annual student-run
-			current events conference.
+			<em>North America's largest and Canada's oldest annual
+			student-run current events conference.</em> 
 		</p>
 	</div>
 
