@@ -64,13 +64,6 @@
 			],
 			detailedSpeakers: [
 				{
-					name: "Dr. Sebastian Maurice",
-					title: "Global AI/ML Leader",
-					image: "/src/lib/assets/images/team/wac_w_large.jpg",
-					bio: "",
-					tag: "Plenary Speaker"
-				},
-				{
 					name: "Bill Weir",
 					title: "CNN Chief Climate Correspondent",
 					image: "/src/lib/assets/images/speakers/billWeir.jpg",
@@ -90,6 +83,13 @@
 					image: "/src/lib/assets/images/speakers/jamesOrbinski.jpg",
 					bio: "",
 					tag: "Keynote Speaker"
+				},
+				{
+					name: "Dr. Sebastian Maurice",
+					title: "Global AI/ML Leader",
+					image: "/src/lib/assets/images/team/wac_w_large.jpg",
+					bio: "",
+					tag: "Plenary Speaker"
 				},
 				{
 					name: "Dr. Justina Ray",
@@ -318,6 +318,12 @@
 			],
 			detailedSpeakers: [
 				{
+					name: "Martin Luther King III",
+					title: "Civil Rights Advocate & Global Humanitarian",
+					image: "/src/lib/assets/images/speakers2023/mlk-III.png",
+					bio: "With the past two years’ astounding display of social injustice, violence, and confusion around the pandemic, perhaps at no other time in recent history has our world needed the clear thinking and solutions-oriented voice of civil rights advocate and global humanitarian Martin Luther King III. From speaking to thousands at the August 2020 March On Washington to his dozens of arrests during peaceful protests, Mr. King is shepherding the healing of our nation and the world. He is connecting the important lessons of the past with the critical needs of our future and motivating a new generation of authentic leaders, while empowering others to use their voices to bring about change as well. As the oldest son of the late Dr. Martin Luther King Jr. and Mrs. Coretta Scott King, Martin Luther King III is a thought leader on the world stage, a peace maker, and a negotiator on some of today’s most critical national and international platforms for social change. Amplifying the work of his father, Mr. King and his wife Arndrea have devoted their lives to promoting global human rights and eradicating racism, violence, and poverty, earning a reputation as a respected international statesman and one of the world’s most passionate advocates for the poor and oppressed. Mr. King speaks on a variety of topics such as the importance of continuing the struggle for civil rights and taking a stand against adversity, emphasizing the importance of individual action in making his father’s dream a reality and challenging us all to do better. More recently, Martin and Arndrea launched an effort to fund Black and Brown organizers across the country. The first round of funding went to 40 organizations whose missions are to mobilize voters in key states. By 2024, the Drum Major Coalition will invest $100 million in grassroots organizations from coast to coast. Martin regularly appears on CNN, MSNBC, NBC News, and ABC News. His writings have been published in The Washington Post, The New York Times, on CNN.com, and other major news outlets."
+				},
+				{
 					name: "Rahul Singh",
 					title: "Founder & Executive Director, GlobalMedic",
 					image: "/src/lib/assets/images/speakers2023/rahul-singh.png",
@@ -346,12 +352,6 @@
 					title: "Chief Operating Officer, Tali AI",
 					image: "/src/lib/assets/images/speakers2023/katherine-tattum.png",
 					bio: "Katherine is a graduate from MIT and have since worked in entrepreneurship in the Healthcare Information Technology Industry. Her most recent role at Tali AI aims to create a voice-enabled Physician's Assistant, providing AI scribing, medical search and EHR voice commands to minimize the time HCPs need to spend working in their EMR."
-				},
-				{
-					name: "Martin Luther King III",
-					title: "Civil Rights Advocate & Global Humanitarian",
-					image: "/src/lib/assets/images/speakers2023/mlk-III.png",
-					bio: "With the past two years’ astounding display of social injustice, violence, and confusion around the pandemic, perhaps at no other time in recent history has our world needed the clear thinking and solutions-oriented voice of civil rights advocate and global humanitarian Martin Luther King III. From speaking to thousands at the August 2020 March On Washington to his dozens of arrests during peaceful protests, Mr. King is shepherding the healing of our nation and the world. He is connecting the important lessons of the past with the critical needs of our future and motivating a new generation of authentic leaders, while empowering others to use their voices to bring about change as well. As the oldest son of the late Dr. Martin Luther King Jr. and Mrs. Coretta Scott King, Martin Luther King III is a thought leader on the world stage, a peace maker, and a negotiator on some of today’s most critical national and international platforms for social change. Amplifying the work of his father, Mr. King and his wife Arndrea have devoted their lives to promoting global human rights and eradicating racism, violence, and poverty, earning a reputation as a respected international statesman and one of the world’s most passionate advocates for the poor and oppressed. Mr. King speaks on a variety of topics such as the importance of continuing the struggle for civil rights and taking a stand against adversity, emphasizing the importance of individual action in making his father’s dream a reality and challenging us all to do better. More recently, Martin and Arndrea launched an effort to fund Black and Brown organizers across the country. The first round of funding went to 40 organizations whose missions are to mobilize voters in key states. By 2024, the Drum Major Coalition will invest $100 million in grassroots organizations from coast to coast. Martin regularly appears on CNN, MSNBC, NBC News, and ABC News. His writings have been published in The Washington Post, The New York Times, on CNN.com, and other major news outlets."
 				},
 				{
 					name: "Meghan Roach",
